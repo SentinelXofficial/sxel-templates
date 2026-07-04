@@ -1,0 +1,29 @@
+id: request-baskets-exposure
+brief:
+    title: Request Baskets - Exposure
+    by: DhiyaneshDk
+    level: low
+    about: Request Baskets is exposed.
+    label:
+        - misconfig
+        - requests-baskets
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web'
+      signs:
+        - "on": word
+          has:
+            - <title>Request Baskets</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

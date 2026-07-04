@@ -1,0 +1,24 @@
+id: projectsend-login
+brief:
+    title: ProjectSend Login Panel - Detect
+    by: idealphase
+    level: info
+    about: ProjectSend login panel was detected.
+    label:
+        - panel
+        - projectsend
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - id="login_form"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

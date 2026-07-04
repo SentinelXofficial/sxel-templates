@@ -1,0 +1,24 @@
+id: edge-phish
+brief:
+    title: edge phishing Detection
+    by: rxerium
+    level: info
+    about: A edge phishing website was detected
+    label:
+        - phishing
+        - edge
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Sign in - edge Accounts
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,20 @@
+id: csod-panel
+brief:
+    title: Cornerstone OnDemand Panel - Detect
+    by: righettod
+    level: info
+    about: Cornerstone OnDemand panel was detected.
+    label:
+        - panel
+        - csod
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - csod-custom
+            - csodcommon
+          in: body

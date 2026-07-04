@@ -1,0 +1,24 @@
+id: vodafone-voxui-panel
+brief:
+    title: Vodafone Vox UI Login Panel - Detect
+    by: Hardik-Solanki
+    level: info
+    about: Vodafone Vox UI login panel was detected.
+    label:
+        - panel
+        - vodafone
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.stm'
+      signs:
+        - "on": word
+          has:
+            - Vodafone Vox UI
+            - Welcome to your EasyBox
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

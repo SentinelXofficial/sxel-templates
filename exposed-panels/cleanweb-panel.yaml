@@ -1,0 +1,17 @@
+id: cleanweb-panel
+brief:
+    title: CleanWeb Login Panel - Detect
+    by: righettod
+    level: info
+    about: CleanWeb login panel was detected.
+    label:
+        - panel
+        - cleanweb
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

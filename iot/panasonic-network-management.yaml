@@ -1,0 +1,26 @@
+id: panasonic-network-management
+brief:
+    title: Panasonic Network Camera Management System - Detect
+    by: dhiyaneshDk
+    level: medium
+    about: Panasonic Network Camera Management System page with live views was detected.
+    label:
+        - iot
+        - camera
+        - panasonic
+        - edb
+        - discovery
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config/cam_portal.cgi'
+      signs:
+        - "on": word
+          has:
+            - <TITLE>Panasonic Network Camera Management System</TITLE>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

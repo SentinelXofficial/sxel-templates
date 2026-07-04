@@ -1,0 +1,17 @@
+id: algonomia-panel
+brief:
+    title: Algonomia Leaf Platform Panel - Detect
+    by: righettod
+    level: info
+    about: Algonomia Leaf Platform login panel was detected.
+    label:
+        - tech
+        - algonomia
+        - detect
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/assets/i18n/en.json'
+      signs: []

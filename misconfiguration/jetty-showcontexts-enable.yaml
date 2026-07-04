@@ -1,0 +1,23 @@
+id: jetty-showcontexts-enable
+brief:
+    title: Jetty showContexts Enable in DefaultHandler
+    by: dhiyaneshDK
+    level: low
+    about: Jetty showContexts is Enabled in DefaultHandler
+    label:
+        - jetty
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Contexts known to this server are:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

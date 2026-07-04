@@ -1,0 +1,25 @@
+id: manageengine-applications-manager
+brief:
+    title: ZOHO ManageEngine Applications Manager Panel - Detected
+    by: dhiyaneshDK
+    level: info
+    about: ZOHO ManageEngine panel was detected.
+    label:
+        - panel
+        - zoho
+        - manageengine
+        - zohocorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.do'
+      signs:
+        - "on": word
+          has:
+            - <title>Applications Manager Login Screen</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

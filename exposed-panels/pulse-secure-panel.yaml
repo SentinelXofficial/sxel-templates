@@ -1,0 +1,22 @@
+id: pulse-secure-panel
+brief:
+    title: Pulse Secure VPN Login Panel - Detect
+    by: bsysop
+    level: info
+    about: Pulse Secure VPN login panel was detected.
+    label:
+        - panel
+        - pulse
+        - vpn
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dana-na/auth/url_default/welcome.cgi'
+        - '{{BaseURL}}/dana-na/auth/url_2/welcome.cgi'
+        - '{{BaseURL}}/dana-na/auth/url_3/welcome.cgi'
+      signs:
+        - "on": word
+          has:
+            - /dana-na/auth/welcome.cgi
+          in: header

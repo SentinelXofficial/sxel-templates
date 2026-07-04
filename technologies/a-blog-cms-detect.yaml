@@ -1,0 +1,22 @@
+id: a-blog-cms-detect
+brief:
+    title: a-blog cms - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects the presence of a-blog cms, a Content Management System.
+    label:
+        - tech
+        - discovery
+        - cms
+        - a-blog-cms
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - a-blog cms
+            - acms-js
+          in: body
+          need: all

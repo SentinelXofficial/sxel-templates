@@ -1,0 +1,19 @@
+id: tixeo-panel
+brief:
+    title: Tixeo Login Panel - Detect
+    by: righettod
+    level: info
+    about: Tixeo login panel was detected.
+    label:
+        - panel
+        - tixeo
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/meet/services/json/v1/settings'
+        - '{{BaseURL}}/meet/login.html'
+        - '{{BaseURL}}/meet/'
+      signs: []

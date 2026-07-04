@@ -1,0 +1,70 @@
+id: error-based-sql-injection
+brief:
+    title: Error based SQL injection
+    by: geeknik
+    level: critical
+    about: A SQL injection vulnerability was identified based on an error message returned by the server.
+    label:
+        - sqli
+        - generic
+        - error
+        - vuln
+    score: CVSS:9.8
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'''
+      signs:
+        - "on": word
+          has:
+            - Adminer
+          in: body
+          need: all
+        - "on": word
+          has:
+            - MySQLSyntaxErrorException
+            - valid MySQL result
+            - MySqlException
+            - MemSQL does not support this type of query
+            - is not supported by MemSQL
+            - unsupported nested scalar subselect
+            - valid PostgreSQL result
+            - 'PG::SyntaxError:'
+            - ERROR:sssyntax error at or near
+            - 'ERROR: parser: parse error at or near'
+            - PostgreSQL query failed
+            - PSQLException
+            - ODBC SQL Server Driver
+            - SQLServer JDBC Driver
+            - Unclosed quotation mark after the character string
+            - JET Database Engine
+            - Access Database Engine
+            - ODBC Microsoft Access
+            - Oracle error
+            - quoted string not properly terminated
+            - SQL command not properly ended
+            - OracleException
+            - DB2 SQL error
+            - DB2Exception
+            - Informix ODBC Driver
+            - ODBC Informix driver
+            - IfxException
+            - Dynamic SQL Error
+            - SQLite/JDBCDriver
+            - SQLite3::SQLException
+            - SQLiteException
+            - DriverSapDB
+            - Sybase message
+            - SybSQLException
+            - Ingres SQLSTATE
+            - 'Syntax error: Encountered'
+            - ERROR 42X01
+            - /vertica/Parser/scan
+            - '&lt;REGEX_LITERAL&gt;'
+            - encountered after end of query
+            - A comparison operator is required here
+            - '-10048: Syntax error'
+            - 'SR185: Undefined procedure'
+            - 'SQ200: No table '
+            - Virtuoso S0002 Error
+          in: body

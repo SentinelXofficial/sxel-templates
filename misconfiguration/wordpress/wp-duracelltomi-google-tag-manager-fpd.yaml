@@ -1,0 +1,18 @@
+id: wp-duracelltomi-google-tag-manager-fpd
+brief:
+    title: WordPress Plugin Google Tag Manager - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Plugin Google Tag Manager files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - debug
+        - wordpress
+        - fpd
+        - vuln
+        - duracelltomi-google-tag-manager
+        - wp-plugin
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/duracelltomi-google-tag-manager/admin/admin.php'
+      signs: []

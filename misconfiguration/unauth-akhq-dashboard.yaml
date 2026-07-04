@@ -1,0 +1,17 @@
+id: unauth-akhq-dashboard
+brief:
+    title: AKHQ Dashboard - Unauthenticated Access
+    by: DhiyaneshDk
+    level: high
+    about: AKHQ Dashboard was detected and appeared to be accessible without authentication.
+    label:
+        - akhq
+        - misconfig
+        - unauth
+        - dashboard
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/me'
+      signs: []

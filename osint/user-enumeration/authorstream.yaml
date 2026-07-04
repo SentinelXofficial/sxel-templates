@@ -1,0 +1,24 @@
+id: authorstream
+brief:
+    title: AuthorSTREAM User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: AuthorSTREAM user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - authorstream
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://www.authorstream.com/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Presentations on authorSTREAM
+          in: body
+          need: all

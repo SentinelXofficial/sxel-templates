@@ -1,0 +1,20 @@
+id: circleci-config
+brief:
+    title: CircleCI Configuration File - Detect
+    by: geeknik
+    level: medium
+    about: CircleCI config.yml file was detected.
+    label:
+        - config
+        - exposure
+        - circleci
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.circleci/config.yml'
+      signs:
+        - "on": status
+          status:
+            - 200

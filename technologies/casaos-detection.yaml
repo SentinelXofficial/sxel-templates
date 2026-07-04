@@ -1,0 +1,16 @@
+id: casaos-detection
+brief:
+    title: CasaOS Detection
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - casaos
+        - tech
+        - oss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v1/sys/debug'
+      signs: []

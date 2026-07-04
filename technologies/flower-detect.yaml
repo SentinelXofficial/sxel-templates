@@ -1,0 +1,16 @@
+id: flower-detect
+brief:
+    title: Flower - Detect
+    by: righettod
+    level: info
+    about: Detected that Flower was a real-time monitor and web admin for the Celery distributed task queue.
+    label:
+        - tech
+        - flower
+        - detect
+        - oss
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

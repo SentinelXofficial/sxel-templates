@@ -1,0 +1,24 @@
+id: wishlistr
+brief:
+    title: Wishlistr User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Wishlistr user name information check was conducted.
+    label:
+        - osint
+        - osint-shopping
+        - wishlistr
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.wishlistr.com/profile/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s profile</title>
+          in: body
+          need: all

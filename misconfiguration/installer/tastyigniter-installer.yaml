@@ -1,0 +1,25 @@
+id: tastyigniter-installer
+brief:
+    title: TastyIgniter Setup Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed TastyIgniter Setup page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - tastyigniter
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup/'
+      signs:
+        - "on": word
+          has:
+            - TastyIgniter - Setup
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

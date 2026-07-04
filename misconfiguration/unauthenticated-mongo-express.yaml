@@ -1,0 +1,28 @@
+id: unauthenticated-mongo-express
+brief:
+    title: Mongo Express - Unauthenticated Access
+    by: dhiyaneshDK
+    level: high
+    about: Mongo Express was able to be access with no authentication requirements in place.
+    label:
+        - mongo
+        - unauth
+        - edb
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/mongo-express/'
+        - '{{BaseURL}}/db/admin/system.users'
+      signs:
+        - "on": word
+          has:
+            - <title>Home - Mongo Express</title>
+            - <title>system.users - Mongo Express</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

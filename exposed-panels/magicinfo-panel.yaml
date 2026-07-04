@@ -1,0 +1,17 @@
+id: magicinfo-panel
+brief:
+    title: Samsung MagicINFO Panel - Detect
+    by: s4e-io
+    level: info
+    about: Samsung MagicINFO panel was discovered.
+    label:
+        - panel
+        - login
+        - magicinfo
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/MagicInfo/login'
+      signs: []

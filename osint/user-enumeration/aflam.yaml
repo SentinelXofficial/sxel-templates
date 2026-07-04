@@ -1,0 +1,24 @@
+id: aflam
+brief:
+    title: Aflam User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Aflam user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - aflam
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.aflam4you.net/profile.html?u={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ) on بث حي و مباشر
+          in: body
+          need: all

@@ -1,0 +1,25 @@
+id: webmodule-ee-panel
+brief:
+    title: Webmodule Login Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Webmodule login panel was detected.
+    label:
+        - edb
+        - panel
+        - webmodule-ee
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webmodule-ee/login.seam'
+      signs:
+        - "on": word
+          has:
+            - <title>Webmodule</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,33 @@
+id: springboot-features
+brief:
+    title: Detects Springboot Features Actuator
+    by: DhiyaneshDK
+    level: low
+    about: Springboot Features Actuator is exposed.
+    label:
+        - misconfig
+        - springboot
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/features'
+        - '{{BaseURL}}/actuator/features'
+      signs:
+        - "on": word
+          has:
+            - '"enabled":['
+            - '"disabled":['
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v1+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

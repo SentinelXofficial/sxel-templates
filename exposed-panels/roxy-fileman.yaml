@@ -1,0 +1,32 @@
+id: roxy-fileman
+brief:
+    title: Roxy File Manager - Panel Detect
+    by: liquidsec
+    level: info
+    about: Roxy File Manager panel was detected.
+    label:
+        - tech
+        - roxy
+        - fileman
+        - panel
+        - roxyfileman
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/index.html'
+        - '{{BaseURL}}/fileman/index.html'
+        - '{{BaseURL}}/fileman/php/fileslist.php'
+        - '{{BaseURL}}/fileman/asp_net/main.ashx'
+      signs:
+        - "on": word
+          has:
+            - Roxy file manager
+            - RoxyFileman
+            - '[{"p":"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

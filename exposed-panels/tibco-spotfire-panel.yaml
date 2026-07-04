@@ -1,0 +1,24 @@
+id: tibco-spotfire-panel
+brief:
+    title: TIBCO Spotfire Login Panel - Detect
+    by: righettod
+    level: info
+    about: TIBCO Spotfire login panel was detected.
+    label:
+        - panel
+        - tibco
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/spotfire/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>TIBCO Spotfire Server
+            - content="TIBCO Spotfire
+            - /spotfire/ui/
+          in: body

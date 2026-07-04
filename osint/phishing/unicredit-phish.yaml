@@ -1,0 +1,26 @@
+id: unicredit-phish
+brief:
+    title: UniCredit phishing Detection
+    by: rxerium
+    level: info
+    about: A UniCredit phishing website was detected
+    label:
+        - phishing
+        - unicredit
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - UniCredit
+            - Sign On
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

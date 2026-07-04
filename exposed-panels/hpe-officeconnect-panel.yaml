@@ -1,0 +1,18 @@
+id: hpe-officeconnect-panel
+brief:
+    title: HPE OfficeConnect Switch - Panel Detect
+    by: pussycat0x
+    level: info
+    about: The HPE OfficeConnect Switch was a network switch series built for small and medium businesses.It provided reliable connectivity, simple management, and PoE options to support growing networks.
+    label:
+        - panel
+        - hp
+        - hpe
+        - officeconnect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

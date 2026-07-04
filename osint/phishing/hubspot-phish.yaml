@@ -1,0 +1,25 @@
+id: hubspot-phish
+brief:
+    title: HubSpot phishing Detection
+    by: rxerium
+    level: info
+    about: A HubSpot phishing website was detected
+    label:
+        - phishing
+        - hubspot
+        - crm
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>HubSpot | Software &amp; Tools for your Business - Homepage
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

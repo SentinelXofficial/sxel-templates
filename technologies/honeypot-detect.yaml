@@ -1,0 +1,20 @@
+id: honeypot-detect
+brief:
+    title: Honeypot Detection
+    by: j4vaovo
+    level: info
+    about: Honeypot was Detected.
+    label:
+        - honeypot
+        - tech
+        - cti
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?{{rand1}}=../../../../../../../../etc/passwd&{{rand3}}=1%20and%20updatexml(1,concat(0x7e,(select%20md5({{rand2}}))),1)'
+      signs:
+        - "on": word
+          has:
+            - '{{md5({{rand2}})}}'
+          in: body

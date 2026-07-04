@@ -1,0 +1,17 @@
+id: domibus-detect
+brief:
+    title: Domibus - Detect
+    by: righettod
+    level: info
+    about: Domibus was detected.
+    label:
+        - tech
+        - domibus
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/domibus/rest/application/info'
+        - '{{BaseURL}}/domibus/'
+      signs: []

@@ -1,0 +1,35 @@
+id: flask-debug-toolbar
+brief:
+    title: Flask Debug Toolbar - Exposure
+    by: 0x_Akoko
+    level: medium
+    about: Detected Flask Debug Toolbar was exposed in production, potentially leaking sensitive application information, SQL queries, request data, and configuration details.
+    label:
+        - flask
+        - python
+        - debug
+        - toolbar
+        - exposure
+        - misconfig
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - flDebugToolbar
+            - flDebugPanelList
+          in: body
+          need: all
+        - "on": word
+          has:
+            - /_debug_toolbar/
+            - flDebugVersionPanel
+            - DEBUG_TOOLBAR_STATIC_PATH
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

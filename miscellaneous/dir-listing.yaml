@@ -1,0 +1,23 @@
+id: dir-listing
+brief:
+    title: Directory listing enabled
+    by: _harleo
+    level: info
+    about: ""
+    label:
+        - miscellaneous
+        - misc
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Directory listing for '
+            - Index of /
+            - '[To Parent Directory]'
+            - 'Directory: /'
+          in: body

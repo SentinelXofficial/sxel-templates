@@ -1,0 +1,19 @@
+id: webpagetest-panel
+brief:
+    title: WebPageTest Login Panel - Detect
+    by: pdteam
+    level: info
+    about: WebPageTest login panel was detected.
+    label:
+        - panel
+        - webpagetest
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - WebPageTest - Website Performance and Optimization Test
+          in: body

@@ -1,0 +1,28 @@
+id: siemens-simatic-default-login
+brief:
+    title: Siemens SIMATIC HMI Miniweb - Default Login
+    by: biero-el-corridor
+    level: high
+    about: Identified Siemens SIMATIC HMI MiniWeb interfaces that were accessible using default credentials.These interfaces are used to remotely monitor and control Human-Machine Interface (HMI) panels deplo...
+    label:
+        - ics
+        - siemens
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/FormLogin'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: Login=Administrator&Redirection=/Templates/Loginpage.html&Password=100
+      signs:
+        - "on": word
+          has:
+            - siemens_ad_session=
+            - Auth Form Response
+          in: response
+          need: all
+        - "on": status
+          status:
+            - 200

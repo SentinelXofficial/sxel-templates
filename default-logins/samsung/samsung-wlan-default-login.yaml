@@ -1,0 +1,26 @@
+id: samsung-wlan-default-login
+brief:
+    title: Samsung Wlan AP (WEA453e) Default Login
+    by: pikpikcu
+    level: high
+    about: Samsung Wlan AP (WEA453e) default root credentials were discovered.
+    label:
+        - samsung
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/main.ehp'
+      body: httpd;General;lang=en&login_id={{username}}&login_pw={{password}}
+      signs:
+        - "on": word
+          has:
+            - document.formParent2.changepasswd1.value
+            - passwd_change.ehp
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

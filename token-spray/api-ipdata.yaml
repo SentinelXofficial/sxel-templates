@@ -1,0 +1,23 @@
+id: api-ipdata
+brief:
+    title: IP Data API Test
+    by: 0xpugal
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - ipdata
+moves:
+    - verb: GET
+      to:
+        - https://api.ipdata.co/?api-key={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"ip":'
+            - '"name":'
+            - '"asn":'
+            - '"route":'
+            - '"time_zone":'
+          in: body
+          need: all

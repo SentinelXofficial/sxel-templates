@@ -1,0 +1,17 @@
+id: mitel-nupoint-panel
+brief:
+    title: Mitel NuPoint Unified Messaging Panel - Detect
+    by: s4e-io
+    level: info
+    about: Mitel NuPoint Unified Messaging login panel was detected.
+    label:
+        - panel
+        - mitel
+        - nupoint-unified-messaging
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/npm-admin/showLoginPage.do'
+      signs: []

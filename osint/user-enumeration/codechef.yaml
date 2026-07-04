@@ -1,0 +1,25 @@
+id: codechef
+brief:
+    title: CodeChef User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: CodeChef user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - codechef
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.codechef.com/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - CodeChef User Profile for
+            - CodeChef
+          in: body
+          need: all

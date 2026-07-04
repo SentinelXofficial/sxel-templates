@@ -1,0 +1,25 @@
+id: api-screenshotapi
+brief:
+    title: ScreenshotAPI API Test
+    by: daffainfo
+    level: info
+    about: Create pixel-perfect website screenshots
+    label:
+        - token-spray
+        - screenshotapi
+moves:
+    - verb: GET
+      to:
+        - https://shot.screenshotapi.net/screenshot?token={{token}}&url=https://example.com
+      signs:
+        - "on": word
+          has:
+            - screenshot
+            - url
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 403
+            - 401
+            - 400

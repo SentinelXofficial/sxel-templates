@@ -1,0 +1,33 @@
+id: sap-web-dispatcher-admin-portal
+brief:
+    title: SAP Web Dispatcher admin portal detection
+    by: randomstr1ng
+    level: info
+    about: Detection of SAP Web Dispatcher Admin Portal
+    label:
+        - sap
+        - webserver
+        - proxy
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sap/wdisp/admin/public/default.html'
+      signs:
+        - "on": word
+          has:
+            - Basic realm="WEB ADMIN"
+            - SAP NetWeaver Application Server
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 401
+            - 200
+        - "on": word
+          has:
+            - SAP Web Dispatcher
+            - <title>Administration</title>
+          in: body
+          need: all

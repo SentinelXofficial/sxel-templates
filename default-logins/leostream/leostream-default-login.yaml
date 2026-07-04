@@ -1,0 +1,32 @@
+id: leostream-default-login
+brief:
+    title: Leostream Default Login
+    by: bhutch
+    level: high
+    about: Leostream default admin credentials were discovered.
+    label:
+        - leostream
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      body: login_type=0&user={{username}}&password={{password}}&submit=SIGN+IN
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: lld=%21'
+          in: header
+          need: all
+        - "on": word
+          has:
+            - index.pl
+            - server.pl
+            - status.pl
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

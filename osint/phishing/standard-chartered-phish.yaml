@@ -1,0 +1,25 @@
+id: standard-chartered-phish
+brief:
+    title: Standard Chartered phishing Detection
+    by: rxerium
+    level: info
+    about: A Standard Chartered phishing website was detected
+    label:
+        - phishing
+        - standard-chartered
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Standard Chartered Bank
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

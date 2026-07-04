@@ -1,0 +1,31 @@
+id: symfony-database-config
+brief:
+    title: Symfony Database Configuration File - Detect
+    by: pdteam
+    level: high
+    about: Symfony database configuration file was detected and may contain database credentials.
+    label:
+        - config
+        - exposure
+        - symfony
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config/databases.yml'
+      signs:
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'class:'
+            - 'param:'
+          in: body
+          need: all

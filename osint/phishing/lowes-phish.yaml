@@ -1,0 +1,26 @@
+id: lowes-phish
+brief:
+    title: Lowe's phishing Detection
+    by: rxerium
+    level: info
+    about: A Lowe's phishing website was detected
+    label:
+        - phishing
+        - lowes
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Lowe's
+            - Lowe’s Home Improvement
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

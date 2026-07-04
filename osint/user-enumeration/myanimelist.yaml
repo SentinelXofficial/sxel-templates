@@ -1,0 +1,24 @@
+id: myanimelist
+brief:
+    title: MyAnimeList User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: MyAnimeList user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - myanimelist
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://myanimelist.net/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Profile - MyAnimeList.net
+          in: body
+          need: all

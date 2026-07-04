@@ -1,0 +1,20 @@
+id: hatenablog-takeover
+brief:
+    title: Hatenablog Takeover Detection
+    by: pdteam
+    level: high
+    about: Hatenablog takeover was detected.
+    label:
+        - takeover
+        - hatenablog
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 404 Blog is not found
+          in: body
+          need: all

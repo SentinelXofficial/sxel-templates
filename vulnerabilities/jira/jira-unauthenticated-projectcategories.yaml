@@ -1,0 +1,30 @@
+id: jira-unauthenticated-projectcategories
+brief:
+    title: Jira Unauthenticated Project Categories
+    by: TESS
+    level: info
+    about: ""
+    label:
+        - atlassian
+        - jira
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/rest/api/2/projectCategory?maxResults=1000'
+      signs:
+        - "on": word
+          has:
+            - self
+            - description
+            - name
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - atlassian.xsrf.token
+          in: header
+          need: all

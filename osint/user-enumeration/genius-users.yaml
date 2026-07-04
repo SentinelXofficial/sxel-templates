@@ -1,0 +1,25 @@
+id: genius-users
+brief:
+    title: Genius Users User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Genius Users user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - genius
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://genius.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| Genius'
+            - genius.com/
+          in: body
+          need: all

@@ -1,0 +1,15 @@
+id: dell-idrac7-detect
+brief:
+    title: Detect Dell iDRAC7
+    by: kophjager007
+    level: info
+    about: Detected The Integrated Dell Remote Access Controller, (iDRAC) is designed for secure local and remote server management and helps IT administrators deploy, update and monitor Dell EMC PowerEdge se...
+    label:
+        - tech
+        - dell
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/data?get=prodServerGen'
+      signs: []

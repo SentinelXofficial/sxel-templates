@@ -1,0 +1,28 @@
+id: thinkphp-detect
+brief:
+    title: ThinkPHP - Detect
+    by: pwnhxl
+    level: info
+    about: ThinkPHP was detected.
+    label:
+        - thinkphp
+        - tech
+        - detect
+        - intrusive
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/?s={{randstr}}&c={{randstr}}&a={{randstr}}&m={{randstr}}'
+      signs:
+        - "on": word
+          has:
+            - /Library/Think/
+            - '{ Fast & Simple OOP PHP Framework } -- [ WE CAN DO IT JUST THINK ]'
+            - /thinkphp/library/think/
+          in: body
+        - "on": word
+          has:
+            - 'X-Powered-By: ThinkPHP'
+          in: header

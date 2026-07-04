@@ -1,0 +1,16 @@
+id: magento-detect
+brief:
+    title: Magento Detect
+    by: TechbrunchFR
+    level: info
+    about: Identify Magento
+    label:
+        - magento
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/graphql?query=+{customerDownloadableProducts+{+items+{+date+download_url}}+}'
+      signs: []

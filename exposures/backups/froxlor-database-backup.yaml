@@ -1,0 +1,36 @@
+id: froxlor-database-backup
+brief:
+    title: Froxlor Server Management Backup File - Detect
+    by: tess
+    level: medium
+    about: Froxlor Server Management backup file was detected.
+    label:
+        - froxlor
+        - backup
+        - exposure
+        - disclosure
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/froxlor.sql'
+      signs:
+        - "on": word
+          has:
+            - DROP TABLE IF EXISTS
+            - CREATE TABLE
+            - PRIMARY KEY
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/sql
+            - application/x-sql
+            - application/octet-stream
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

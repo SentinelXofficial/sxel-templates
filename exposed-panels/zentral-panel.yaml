@@ -1,0 +1,22 @@
+id: zentral-panel
+brief:
+    title: Zentral Panel - Detect
+    by: Adam Crosser
+    level: info
+    about: Zentral panel was detected.
+    label:
+        - panel
+        - zentral
+        - oss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Zentral</title>
+            - <div class="panel-footer btn-group btn-group-justified"
+          in: body
+          need: all

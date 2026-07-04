@@ -1,0 +1,20 @@
+id: core-dump
+brief:
+    title: Exposed Core Dump - File Disclosure
+    by: kazet
+    level: medium
+    about: Exposed Core Dump internal file is disclosed.
+    label:
+        - exposure
+        - files
+        - core-dump
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/core'
+      signs:
+        - "on": word
+          has:
+            - x7fELF
+          in: body

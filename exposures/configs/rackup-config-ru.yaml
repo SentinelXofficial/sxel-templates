@@ -1,0 +1,29 @@
+id: rackup-config-ru
+brief:
+    title: Rackup Configuration - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Rackup configuration information was detected.
+    label:
+        - exposure
+        - files
+        - config
+        - rackup
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config.ru'
+      signs:
+        - "on": word
+          has:
+            - run Rails.application
+            - /config/environment
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Bundler.require
+            - require 'rubygems'
+          in: body
+          need: all

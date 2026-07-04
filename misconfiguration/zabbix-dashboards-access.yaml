@@ -1,0 +1,29 @@
+id: zabbix-dashboards-access
+brief:
+    title: zabbix-dashboards-access
+    by: pussycat0x
+    level: medium
+    about: zabbix-dashboards-access guest login credentials were successful.
+    label:
+        - edb
+        - packetstorm
+        - zabbix
+        - unauth
+        - misconfig
+        - xss
+        - vuln
+    score: CVSS:5.8
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/zabbix/zabbix.php?action=dashboard.list'
+      signs:
+        - "on": word
+          has:
+            - Create dashboard
+            - Zabbix SIA
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: ring-phish
+brief:
+    title: Ring phishing Detection
+    by: rxerium
+    level: info
+    about: A Ring phishing website was detected
+    label:
+        - phishing
+        - ring
+        - security
+        - iot
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Home Security Systems - Cameras, Alarms, Doorbells | Ring
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

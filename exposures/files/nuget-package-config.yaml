@@ -1,0 +1,30 @@
+id: nuget-package-config
+brief:
+    title: NuGet Package.config File Disclosure
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - exposure
+        - sass
+        - devops
+        - cicd
+        - nuget
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/packages.config'
+        - '{{BaseURL}}/.nuget/packages.config'
+      signs:
+        - "on": word
+          has:
+            - <?xml version="1.0" encoding="utf-8"?>
+            - <packages>
+            - </packages>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

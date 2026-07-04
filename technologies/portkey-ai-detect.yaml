@@ -1,0 +1,25 @@
+id: portkey-ai-detect
+brief:
+    title: Portkey AI Detection
+    by: rxerium
+    level: info
+    about: Detected Portkey AI interface. Portkey was an AI gateway that provided observability, governance, and reliability for LLM applications.
+    label:
+        - tech
+        - portkey
+        - ai
+        - llm
+        - gateway
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Portkey AI
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

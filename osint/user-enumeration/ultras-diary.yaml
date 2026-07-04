@@ -1,0 +1,24 @@
+id: ultras-diary
+brief:
+    title: Ultras Diary User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Ultras Diary user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - ultras-diary
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://ultrasdiary.pl/u/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'Mecze wyjazdowe:'
+          in: body
+          need: all

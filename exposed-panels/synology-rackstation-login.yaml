@@ -1,0 +1,26 @@
+id: synology-rackstation-login
+brief:
+    title: Synology RackStation Login Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - login
+        - tech
+        - synology
+        - rackstation
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Synology&nbsp;RackStation</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

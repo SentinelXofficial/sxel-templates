@@ -1,0 +1,23 @@
+id: snapdrop-detect
+brief:
+    title: Snapdrop Detect
+    by: tess
+    level: info
+    about: Snapdrop panel was detected.
+    label:
+        - iot
+        - snapdrop
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - content="Snapdrop"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

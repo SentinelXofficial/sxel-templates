@@ -1,0 +1,18 @@
+id: wp-mailchimp-for-wp-fpd
+brief:
+    title: WordPress Mailchimp for WordPress Plugin - Full Path Disclosure
+    by: 0x_Akoko
+    level: info
+    about: 'WordPress plugin MC4WP: Mailchimp for WordPress internal file system path is exposed.'
+    label:
+        - debug
+        - wordpress
+        - fpd
+        - vuln
+        - mailchimp
+        - wp-plugin
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/mailchimp-for-wp/integrations/bootstrap.php'
+      signs: []

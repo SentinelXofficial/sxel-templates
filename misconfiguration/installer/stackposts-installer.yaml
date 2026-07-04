@@ -1,0 +1,25 @@
+id: stackposts-installer
+brief:
+    title: StackPosts Installation Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed StackPosts installation page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - stackposts
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/index.php'
+      signs:
+        - "on": word
+          has:
+            - Install - StackPosts - Social Marketing Tools
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

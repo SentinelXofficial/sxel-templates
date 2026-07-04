@@ -1,0 +1,27 @@
+id: couchbase-server-console
+brief:
+    title: Couchbase Server Console - Detect
+    by: Th3l0newolf
+    level: info
+    about: Couchbase Server administrative console was discovered.
+    label:
+        - panel
+        - login
+        - couchbase
+        - console
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/index.html'
+      signs:
+        - "on": word
+          has:
+            - Couchbase Console</title>
+            - /opt/couchbase/lib/
+            - content="Couchbase Server
+          in: body
+        - "on": word
+          has:
+            - Couchbase Server
+          in: server

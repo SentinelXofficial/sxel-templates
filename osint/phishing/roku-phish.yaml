@@ -1,0 +1,25 @@
+id: roku-phish
+brief:
+    title: Roku phishing Detection
+    by: rxerium
+    level: info
+    about: A Roku phishing website was detected
+    label:
+        - phishing
+        - roku
+        - streaming
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>Roku: Streaming TV Players, Streaming Media Players &amp; Smart TVs'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

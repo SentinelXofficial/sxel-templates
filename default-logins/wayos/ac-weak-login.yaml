@@ -1,0 +1,33 @@
+id: ac-default-login
+brief:
+    title: AC Centralized Management System - Default password
+    by: SleepingBag945
+    level: high
+    about: AC Centralized Management System default login credentials were discovered.
+    label:
+        - ways-ac
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login.cgi'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: user={{username}}&password={{ password }}&Submit=%E7%99%BB%E5%BD%95
+      signs:
+        - "on": word
+          has:
+            - ac_userid=admin
+            - ac_passwd=
+          in: header
+          need: all
+        - "on": word
+          has:
+            - window.open
+            - text/javascript
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

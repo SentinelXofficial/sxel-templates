@@ -1,0 +1,30 @@
+id: exagrid-manager-panel
+brief:
+    title: ExaGrid Manager Login Panel - Detect
+    by: pussycat0x
+    level: info
+    about: ExaGrid Manager login panel was detected.
+    label:
+        - exagrid
+        - manager
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ExaGrid Manager
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

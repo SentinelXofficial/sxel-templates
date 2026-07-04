@@ -1,0 +1,27 @@
+id: avtech-dvr-exposure
+brief:
+    title: AVTECH AVC798HA DVR - Information Exposure
+    by: geeknik
+    level: low
+    about: AVTECH AVC798HA DVR is susceptible to information exposure. CGI scripts in the /cgi-bin/nobody directory can be accessed without authentication. An attacker can possibly obtain sensitive informatio...
+    label:
+        - dvr
+        - exposure
+        - avtech
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/nobody/Machine.cgi?action=get_capability'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Firmware.Version=
+            - MACAddress=
+            - Product.Type=
+          in: body
+          need: all

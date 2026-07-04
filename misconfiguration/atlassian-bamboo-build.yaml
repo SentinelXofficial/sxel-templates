@@ -1,0 +1,31 @@
+id: atlassian-bamboo-build
+brief:
+    title: Atlassian Bamboo Build Dashboard
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - atlassian
+        - bamboo
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/allPlans.action'
+      signs:
+        - "on": word
+          has:
+            - <th>Project</th>
+            - <th>Plan</th>
+            - <th>Build</th>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

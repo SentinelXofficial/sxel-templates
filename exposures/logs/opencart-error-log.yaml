@@ -1,0 +1,38 @@
+id: opencart-error-log
+brief:
+    title: OpenCart Error Log Disclosure
+    by: DhiyaneshDk
+    level: medium
+    about: Detected exposed OpenCart error log files that may contain sensitive information
+    label:
+        - opencart
+        - exposure
+        - logs
+        - disclosure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/system/storage/logs/error.log'
+        - '{{BaseURL}}/opencart/system/storage/logs/error.log'
+        - '{{BaseURL}}/storage/logs/error.log'
+        - '{{BaseURL}}/error.log'
+        - '{{BaseURL}}/system/logs/error.log'
+      signs:
+        - "on": word
+          has:
+            - PHP Notice
+            - PHP Warning
+            - PHP Error
+            - PHP Fatal error
+            - opencart
+            - catalog/controller
+            - catalog/model
+            - system/library
+            - Undefined index
+            - MySQL
+            - mysqli
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

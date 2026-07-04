@@ -1,0 +1,26 @@
+id: phinx-config
+brief:
+    title: Phinx Configuration Exposure
+    by: DhiyaneshDk
+    level: medium
+    about: Phinx configuration file was exposed.
+    label:
+        - devops
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/phinx.yml'
+      signs:
+        - "on": word
+          has:
+            - 'paths:'
+            - 'environments:'
+            - 'development:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

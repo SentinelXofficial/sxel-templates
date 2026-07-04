@@ -1,0 +1,31 @@
+id: aem-security-users
+brief:
+    title: Adobe AEM Security Users Exposure
+    by: dhiyaneshDk
+    level: medium
+    about: Adobe AEM Security Users are exposed.
+    label:
+        - misconfig
+        - aem
+        - adobe
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/libs/granite/security/content/useradmin.html'
+      signs:
+        - "on": word
+          has:
+            - AEM Security | Users
+            - trackingelement="create user"
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

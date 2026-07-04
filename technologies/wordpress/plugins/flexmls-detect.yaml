@@ -1,0 +1,17 @@
+id: flexmls-idx-detect
+brief:
+    title: Flexmls IDX - Detect
+    by: rxerium
+    level: info
+    about: ""
+    label:
+        - tech
+        - detect
+        - flexmls
+        - idx
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/flexmls-idx/readme.txt'
+      signs: []

@@ -1,0 +1,24 @@
+id: sync-phish
+brief:
+    title: sync storage phishing Detection
+    by: rxerium
+    level: info
+    about: A sync storage phishing website was detected
+    label:
+        - phishing
+        - sync
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Sync | Secure Cloud Storage, File Sharing and Document Collaboration
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

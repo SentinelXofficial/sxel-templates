@@ -1,0 +1,17 @@
+id: imgproxy-unauth
+brief:
+    title: Imgproxy Unauthorized Access
+    by: userdehghani
+    level: low
+    about: imgproxy is a fast and secure standalone server for resizing, processing, and converting images.
+    label:
+        - imgproxy
+        - unauth
+        - misconfig
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_/resize:fill:10:10:0/gravity:sm/plain/{{img_url}}'
+      signs: []

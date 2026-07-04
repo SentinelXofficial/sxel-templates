@@ -1,0 +1,17 @@
+id: wordpress-pixelyoursite
+brief:
+    title: PixelYourSite – Your smart PIXEL (TAG) & API Manager Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/pixelyoursite/readme.txt'
+      signs: []

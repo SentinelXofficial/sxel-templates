@@ -1,0 +1,16 @@
+id: secui-waf-detect
+brief:
+    title: SECUI WAF Panel - Detect
+    by: gy741
+    level: info
+    about: SECUI WAF panel was detected.
+    label:
+        - tech
+        - panel
+        - secui
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/static/login/favicon.ico'
+      signs: []

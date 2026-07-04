@@ -1,0 +1,26 @@
+id: python-metrics
+brief:
+    title: Detect Python Exposed Metrics
+    by: dhiyaneshDK
+    level: low
+    about: Information Disclosure of Garbage Collection
+    label:
+        - exposure
+        - devops
+        - python
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/metrics'
+      signs:
+        - "on": word
+          has:
+            - python_gc_objects_collected_total
+            - python_info
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

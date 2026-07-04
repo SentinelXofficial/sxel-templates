@@ -1,0 +1,22 @@
+id: stridercd-panel
+brief:
+    title: Strider CD Panel - Detect
+    by: Adam Crosser
+    level: info
+    about: Strider CD panel was detected.
+    label:
+        - panel
+        - cicd
+        - oss
+        - stridercd
+        - strider
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Strider: Brilliant Continuous Deployment'
+          in: body

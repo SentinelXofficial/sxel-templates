@@ -1,0 +1,27 @@
+id: fork-installer
+brief:
+    title: Fork CMS - Installer
+    by: DhiyaneshDk
+    level: critical
+    about: Fork CMS installer page was detected.
+    label:
+        - misconfig
+        - exposure
+        - fork
+        - cms
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/2'
+      signs:
+        - "on": word
+          has:
+            - Install Fork CMS
+            - Settings
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

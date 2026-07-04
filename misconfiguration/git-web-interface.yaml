@@ -1,0 +1,23 @@
+id: git-web-interface
+brief:
+    title: Git web interface
+    by: dhiyaneshDK
+    level: low
+    about: Git Web Interface is exposed.
+    label:
+        - git
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - git web interface version
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,29 @@
+id: jmx-default-login
+brief:
+    title: JBoss JMX Console Weak Credential Discovery
+    by: paradessia
+    level: high
+    about: JBoss JMX Console default login information was discovered.
+    label:
+        - jboss
+        - jmx
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jmx-console/'
+      signs:
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jmx-console/'
+      head:
+        Authorization: Basic {{base64(user + ':' + pass)}}
+      signs:
+        - "on": status
+          status:
+            - 200

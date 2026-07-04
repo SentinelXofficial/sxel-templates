@@ -1,0 +1,31 @@
+id: chroma-db-unauth
+brief:
+    title: Chroma DB - Information Disclosure
+    by: Shay Ben Tikva
+    level: high
+    about: Chroma DB API endpoints were accessible and exposed collection metadata, enabling enumeration of collections under the default tenant and database, potentially leading to sensitive vector data disc...
+    label:
+        - misconfig
+        - api
+        - info-leak
+        - unauth
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/collections?tenant=default_tenant&database=default_database'
+        - '{{BaseURL}}/api/v2/tenants/default_tenant/databases/default_database/collections'
+      signs:
+        - "on": word
+          has:
+            - '"sync_threshold":'
+            - '"log_position"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

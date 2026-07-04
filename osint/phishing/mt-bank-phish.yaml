@@ -1,0 +1,25 @@
+id: mt-bank-phish
+brief:
+    title: M&T Bank phishing Detection
+    by: rxerium
+    level: info
+    about: An M&T Bank phishing website was detected
+    label:
+        - phishing
+        - mt-bank
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - With a community bank approach, M&T Bank helps people reach their personal and business goals with banking, mortgage, loan and investment services.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

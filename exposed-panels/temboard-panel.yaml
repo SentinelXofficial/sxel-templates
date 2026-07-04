@@ -1,0 +1,16 @@
+id: temboard-panel
+brief:
+    title: temBoard Panel - Detect
+    by: righettod
+    level: info
+    about: temBoard was detected — a powerful management tool for PostgreSQL.
+    label:
+        - panel
+        - temboard
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs: []

@@ -1,0 +1,26 @@
+id: commonwealth-bank-phish
+brief:
+    title: Commonwealth Bank phishing Detection
+    by: rxerium
+    level: info
+    about: A Commonwealth Bank phishing website was detected
+    label:
+        - phishing
+        - commonwealth-bank
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Commonwealth Bank
+            - CommBank offers personal banking, business solutions, institutional banking, company information, and more
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,21 @@
+id: nethermind-server-detect
+brief:
+    title: Nethermind JSON-RPC HTTP Server - Detect
+    by: Nullfuzz
+    level: info
+    about: Nethermind is a high-performance, highly configurable full Ethereum protocol execution client built on .NET that runs on Linux, Windows, and macOS, and supports Clique, Aura, and Ethash. By default...
+    label:
+        - tech
+        - nethermind
+        - ethereum
+        - web3
+        - blockchain
+        - discovery
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: '{"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"}'
+      signs: []

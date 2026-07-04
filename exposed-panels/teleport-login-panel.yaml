@@ -1,0 +1,21 @@
+id: teleport-login-panel
+brief:
+    title: Teleport Login Panel - Detect
+    by: pdteam
+    level: info
+    about: Detects Teleport web login interface exposed at /web/login and version information from /webapi/ping
+    label:
+        - panel
+        - teleport
+        - login
+        - oss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webapi/ping'
+      signs:
+        - "on": word
+          has:
+            - teleport
+          in: body

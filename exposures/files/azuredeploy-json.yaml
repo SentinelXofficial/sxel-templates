@@ -1,0 +1,31 @@
+id: azuredeploy-json
+brief:
+    title: Azure Resource Manager Template - File Exposure
+    by: DhiyaneshDk
+    level: medium
+    about: Azure Resource Manager deploy file is disclosed.
+    label:
+        - azure
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/azuredeploy.json'
+      signs:
+        - "on": word
+          has:
+            - '"$schema":'
+            - '"contentVersion":'
+            - '"parameters":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

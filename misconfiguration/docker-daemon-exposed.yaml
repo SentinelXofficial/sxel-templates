@@ -1,0 +1,20 @@
+id: docker-daemon-exposed
+brief:
+    title: Docker Daemon Exposed
+    by: Arm!tage
+    level: critical
+    about: Docker Daemon exposed on the network map can help remote attacker to gain access to the Docker containers and potentially the host system.
+    label:
+        - docker
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/version'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v{{version}}/containers/json'
+      signs: []

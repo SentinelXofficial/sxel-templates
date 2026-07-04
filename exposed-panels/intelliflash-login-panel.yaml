@@ -1,0 +1,23 @@
+id: intelliflash-login-panel
+brief:
+    title: IntelliFlash Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: IntelliFlash login panel was detected.
+    label:
+        - panel
+        - intelliflash
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>IntelliFlash</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

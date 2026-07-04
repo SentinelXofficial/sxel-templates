@@ -1,0 +1,25 @@
+id: centreon-panel
+brief:
+    title: Centreon Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: Centreon login panel was detected.
+    label:
+        - panel
+        - centreon
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/centreon/index.php'
+      signs:
+        - "on": word
+          has:
+            - <title>Centreon - IT & Network Monitoring</title>
+            - <input name="centreon_token" type="hidden"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

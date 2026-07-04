@@ -1,0 +1,18 @@
+id: superagi-panel
+brief:
+    title: SuperAGI Panel - Detect
+    by: rxerium
+    level: info
+    about: SuperAGI panel was detected. SuperAGI was an open-source autonomous AI agent platform that enables building, managing, and running AI agents. Exposed instances may allow unauthorized access to agen...
+    label:
+        - panel
+        - superagi
+        - ai
+        - agent
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

@@ -1,0 +1,28 @@
+id: soplanning-default-login
+brief:
+    title: SOPlanning - Default Login
+    by: s4e-io
+    level: high
+    about: SOPlanning contains default credentials. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - soplanning
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/process/login.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: login={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - title="Logout"
+            - title="Modify my profile"
+            - Settings
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

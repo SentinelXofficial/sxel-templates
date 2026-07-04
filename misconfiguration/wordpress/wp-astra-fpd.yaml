@@ -1,0 +1,20 @@
+id: wp-astra-fpd
+brief:
+    title: WordPress Astra - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Astra Theme files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - debug
+        - wp
+        - wp-theme
+        - wordpress
+        - fpd
+        - vuln
+        - astra
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/themes/astra/assets/svg/logo-svg-icons/icons-v6-0.php'
+        - '{{BaseURL}}/wp-content/themes/astra/inc/addons/scroll-to-top/class-astra-scroll-to-top.php'
+      signs: []

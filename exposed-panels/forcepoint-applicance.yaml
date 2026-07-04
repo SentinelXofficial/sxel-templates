@@ -1,0 +1,23 @@
+id: forcepoint-applicance
+brief:
+    title: Forcepoint Appliance
+    by: dhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - panel
+        - forcepoint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Forcepoint Appliance</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

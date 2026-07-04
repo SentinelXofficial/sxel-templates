@@ -1,0 +1,24 @@
+id: mastodon-rigczclub
+brief:
+    title: Mastodon-rigcz.club User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mastodon-rigcz.club user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastodon-rigczclub
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://rigcz.club/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '@rigcz.club'
+          in: body
+          need: all

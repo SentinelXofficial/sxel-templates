@@ -1,0 +1,18 @@
+id: axway-api-manager-panel
+brief:
+    title: Axway API Manager Panel - Detect
+    by: johnk3r
+    level: info
+    about: Axway API Manager panel was detected.
+    label:
+        - panel
+        - axway
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/portal/v1.4/appinfo'
+        - '{{BaseURL}}'
+      signs: []

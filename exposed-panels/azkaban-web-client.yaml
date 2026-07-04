@@ -1,0 +1,23 @@
+id: azkaban-web-client
+brief:
+    title: Azkaban Web Client
+    by: dhiyaneshDK
+    level: info
+    about: An Azkaban web client panel was discovered.
+    label:
+        - panel
+        - azkaban
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Azkaban Web Client
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

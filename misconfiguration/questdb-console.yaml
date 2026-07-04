@@ -1,0 +1,31 @@
+id: questdb-console
+brief:
+    title: QuestDB Console - Detect
+    by: tess
+    level: medium
+    about: QuestDB console was detected.
+    label:
+        - misconfig
+        - questdb
+        - exposure
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - QuestDB · Console
+            - Server rejected file due to unsupported file format.
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

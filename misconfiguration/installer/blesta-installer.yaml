@@ -1,0 +1,31 @@
+id: blesta-installer
+brief:
+    title: Blesta Installer Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Blesta is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - blesta
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php/install'
+      signs:
+        - "on": word
+          has:
+            - Blesta Installer
+            - Install via Web Browser
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

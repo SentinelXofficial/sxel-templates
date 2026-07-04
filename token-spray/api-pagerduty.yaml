@@ -1,0 +1,23 @@
+id: api-pagerduty
+brief:
+    title: Pagerduty API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - pagerduty
+moves:
+    - verb: GET
+      to:
+        - https://api.pagerduty.com/schedules
+      head:
+        Accept: application/vnd.pagerduty+json;version=2
+        Authorization: Token token={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"schedules":'
+            - '"id":'
+          in: body
+          need: all

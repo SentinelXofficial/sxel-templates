@@ -1,0 +1,27 @@
+id: kemp-loadmaster-panel
+brief:
+    title: Progress Kemp LoadMaster Panel - Detect
+    by: rxerium
+    level: info
+    about: A Progress Kemp LoadMaster panel was detected.
+    label:
+        - login
+        - progress
+        - kemp
+        - loadmaster
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Kemp Login Screen</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: mastodon-countersocial
+brief:
+    title: Mastodon-counter.social User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mastodon-counter.social user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastodon-countersocial
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://counter.social/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '@counter.social) - CounterSocial</title>'
+          in: body
+          need: all

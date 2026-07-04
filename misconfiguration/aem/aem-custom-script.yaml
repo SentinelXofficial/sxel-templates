@@ -1,0 +1,31 @@
+id: aem-custom-script
+brief:
+    title: Adobe AEM Custom Scripts Exposure
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - aem
+        - adobe
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/apps.tidy.infinity.json'
+        - '{{BaseURL}}{{path}}'
+      signs:
+        - "on": word
+          has:
+            - '"jcr:primaryType":'
+            - '"jcr:createdBy":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

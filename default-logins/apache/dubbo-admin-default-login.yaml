@@ -1,0 +1,30 @@
+id: dubbo-admin-default-login
+brief:
+    title: Apache Dubbo - Default Admin Discovery
+    by: ritikchaddha
+    level: high
+    about: Apache Dubbo default admin credentials were discovered.
+    label:
+        - dubbo
+        - apache
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+        Content-Type: application/x-www-form-urlencoded
+      signs:
+        - "on": word
+          has:
+            - <title>Dubbo Admin</title>
+            - /sysinfo/versions
+            - '{{username}}'', ''/logout'')'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

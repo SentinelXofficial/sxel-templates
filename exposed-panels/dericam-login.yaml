@@ -1,0 +1,24 @@
+id: dericam-login
+brief:
+    title: Dericam Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Dericam login panel was detected.
+    label:
+        - panel
+        - dericam
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Dericam</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

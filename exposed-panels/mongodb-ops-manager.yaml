@@ -1,0 +1,23 @@
+id: mongodb-ops-manager
+brief:
+    title: MongoDB Ops Manager Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: MongoDB Ops Manager login panel was detected.
+    label:
+        - panel
+        - mongodb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/account/login'
+      signs:
+        - "on": word
+          has:
+            - MongoDB Ops Manager</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

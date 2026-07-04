@@ -1,0 +1,32 @@
+id: desktop-ini-exposure
+brief:
+    title: desktop.ini exposure
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - exposure
+        - config
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/desktop.ini'
+      signs:
+        - "on": word
+          has:
+            - application/json
+            - application/html
+          in: header
+          need: all
+        - "on": word
+          has:
+            - '[.ShellClassInfo]'
+            - '[LocalizedFileNames]'
+            - '[ViewState]'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

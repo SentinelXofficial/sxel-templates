@@ -1,0 +1,24 @@
+id: ulubpl
+brief:
+    title: Ulub.pl User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Ulub.pl user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - ulubpl
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://ulub.pl/profil/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Muzyka (
+          in: body
+          need: all

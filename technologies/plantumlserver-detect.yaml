@@ -1,0 +1,17 @@
+id: plantumlserver-detect
+brief:
+    title: PlantUMLServer - Detect
+    by: s4e-io
+    level: info
+    about: PlantUMLServer is an open-source web application that renders UML diagrams from textual descriptions. It provides a web interface for the PlantUML diagram generation tool, allowing users to create ...
+    label:
+        - tech
+        - uml
+        - plantuml
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

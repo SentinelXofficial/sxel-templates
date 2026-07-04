@@ -1,0 +1,25 @@
+id: zencart-installer
+brief:
+    title: Zen Cart Installer
+    by: DhiyaneshDk
+    level: high
+    about: Zen Cart is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - zencart
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/zc_install/index.php'
+      signs:
+        - "on": word
+          has:
+            - <title>Zen Cart&reg; Installer</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

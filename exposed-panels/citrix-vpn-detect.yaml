@@ -1,0 +1,19 @@
+id: citrix-vpn-detect
+brief:
+    title: Citrix VPN Panel - Detect
+    by: pdteam
+    level: info
+    about: Citrix VPN panel was detected.
+    label:
+        - panel
+        - citrix
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/vpn/index.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Citrix Gateway</title>
+          in: body

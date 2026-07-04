@@ -1,0 +1,19 @@
+id: jira-unauthenticated-user-picker
+brief:
+    title: Jira Unauthenticated User Picker
+    by: TechbrunchFR
+    level: info
+    about: ""
+    label:
+        - atlassian
+        - jira
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/secure/popups/UserPickerBrowser.jspa'
+      signs:
+        - "on": word
+          has:
+            - user-picker
+          in: body

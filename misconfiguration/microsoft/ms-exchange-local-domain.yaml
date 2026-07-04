@@ -1,0 +1,22 @@
+id: ms-exchange-local-domain
+brief:
+    title: Microsoft Exchange Autodiscover - Local Domain Exposure
+    by: userdehghani
+    level: info
+    about: Microsoft Exchange is prone to a local domain exposure using the Autodiscover v2 endpoint.
+    label:
+        - misconfig
+        - microsoft
+        - ms-exchange
+        - ad
+        - dc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/autodiscover/autodiscover.json?Protocol=ActiveSync&Email=user@domain.tld&RedirectCount=1'
+      signs:
+        - "on": status
+          status:
+            - 200
+            - 302

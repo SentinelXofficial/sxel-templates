@@ -1,0 +1,24 @@
+id: tenda-web-master
+brief:
+    title: Tenda Web Master Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Tenda Web Master login panel was detected.
+    label:
+        - panel
+        - tenda
+        - router
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Tenda Web Master</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: imagefap
+brief:
+    title: Imagefap User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Imagefap user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - imagefap
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.imagefap.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s Profile
+          in: body
+          need: all

@@ -1,0 +1,17 @@
+id: kopano-webapp-panel
+brief:
+    title: Kopano WebApp Login Panel - Detect
+    by: righettod
+    level: info
+    about: Kopano WebApp login panel was detected.
+    label:
+        - panel
+        - kopano
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webapp/'
+      signs: []

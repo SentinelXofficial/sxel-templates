@@ -1,0 +1,18 @@
+id: minio-console
+brief:
+    title: MinIO Console Login Panel - Detect
+    by: pussycat0x
+    level: info
+    about: MinIO Console login panel was detected.
+    label:
+        - panel
+        - minio
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": status
+          status:
+            - 200

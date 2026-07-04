@@ -1,0 +1,27 @@
+id: npm-debug-log
+brief:
+    title: NPM Debug Log Disclosure
+    by: Hardik-Solanki
+    level: low
+    about: NPM Debug log file exposed.
+    label:
+        - exposure
+        - npm
+        - logs
+        - debug
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/npm-debug.log'
+        - '{{BaseURL}}/assets/npm-debug.log'
+      signs:
+        - "on": word
+          has:
+            - verbose cli
+            - verbose stack
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

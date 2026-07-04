@@ -1,0 +1,26 @@
+id: flarum-installer
+brief:
+    title: Flarum Installation Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed Flarum installation pages which could allow unauthorized access or information disclosure.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - flarum
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Install Flarum</title>
+            - Admin Password
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

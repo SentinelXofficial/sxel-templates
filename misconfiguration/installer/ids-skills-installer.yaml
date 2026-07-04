@@ -1,0 +1,25 @@
+id: ids-skills-installer
+brief:
+    title: IDP Skills Installer - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Checks for the presence of an IDS Skills Installer page.
+    label:
+        - install
+        - ids
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/install/main'
+      signs:
+        - "on": word
+          has:
+            - <title>IDP Skills Installer</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

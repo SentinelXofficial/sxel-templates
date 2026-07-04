@@ -1,0 +1,24 @@
+id: sporcle
+brief:
+    title: Sporcle User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Sporcle user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - sporcle
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.sporcle.com/user/{{user}}/people/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '''s Sporcle Friends'
+          in: body
+          need: all

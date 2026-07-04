@@ -1,0 +1,17 @@
+id: mamp-phpinfo-exposure
+brief:
+    title: MAMP - PHP Info Exposure
+    by: 0x_Akoko
+    level: low
+    about: Detected MAMP server was exposed phpinfo() page, revealing sensitive PHP configuration, server paths, and environment variables.
+    label:
+        - mamp
+        - phpinfo
+        - exposure
+        - misconfig
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/MAMP/phpinfo.php'
+      signs: []

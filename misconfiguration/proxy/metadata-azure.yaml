@@ -1,0 +1,29 @@
+id: metadata-service-azure
+brief:
+    title: Microsoft Azure Cloud Metadata Service Check
+    by: sullo
+    level: critical
+    about: The Microsoft Azure cloud host is configured as a proxy which allows access to the instance metadata service. This could allow significant access to the host/infrastructure.
+    label:
+        - exposure
+        - config
+        - azure
+        - microsoft
+        - proxy
+        - misconfig
+        - metadata
+        - vuln
+    score: CVSS:9.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://{{hostval}}/metadata/instance?api-version=2021-02-01'
+      head:
+        Metadata: "true"
+      signs:
+        - "on": word
+          has:
+            - osType
+            - ipAddress
+          in: body
+          need: all

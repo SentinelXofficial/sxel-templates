@@ -1,0 +1,19 @@
+id: biotime-panel
+brief:
+    title: BioTime Web Login Panel - Detect
+    by: robotshell
+    level: info
+    about: BioTime Web login panel was detected.
+    label:
+        - panel
+        - biotime
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login/'
+      signs:
+        - "on": status
+          status:
+            - 200

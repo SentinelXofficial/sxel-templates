@@ -1,0 +1,24 @@
+id: 9gag
+brief:
+    title: 9GAG User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: 9GAG user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - 9gag
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.9gag.com/u/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 9gag.com
+          in: body
+          need: all

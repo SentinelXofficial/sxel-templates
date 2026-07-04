@@ -1,0 +1,28 @@
+id: skyvern-panel
+brief:
+    title: Skyvern Panel - Detect
+    by: rxerium
+    level: info
+    about: Skyvern is an open-source AI agent that automates browser-based workflows using
+    label:
+        - panel
+        - skyvern
+        - llm
+        - ai
+        - agents
+        - automation
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Skyvern
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

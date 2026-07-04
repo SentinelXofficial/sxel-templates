@@ -1,0 +1,24 @@
+id: espocrm-detect
+brief:
+    title: EspoCRM - Detect
+    by: theamanrawat
+    level: info
+    about: EspoCRM panel was detected.
+    label:
+        - panel
+        - espocrm
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - title="Powered by EspoCRM"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

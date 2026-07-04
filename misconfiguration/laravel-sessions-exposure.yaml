@@ -1,0 +1,29 @@
+id: laravel-sessions-exposure
+brief:
+    title: Laravel Sessions Folder Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Detected unauthenticated access to the Laravel session storage directory, allowing attackers to browse and download session files that may contain active authentication tokens, CSRF tokens, and ser...
+    label:
+        - laravel
+        - exposure
+        - misconfig
+        - storage
+        - session
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/storage/framework/sessions/'
+        - '{{BaseURL}}/storage/sessions/'
+      signs:
+        - "on": word
+          has:
+            - Index of
+            - Parent Directory
+            - <title>Index of
+            - Directory listing for
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

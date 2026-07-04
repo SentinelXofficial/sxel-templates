@@ -1,0 +1,74 @@
+id: magnolia-default-login
+brief:
+    title: Magnolia CMS Default Login - Detect
+    by: pussycat0x
+    level: high
+    about: Magnolia CMS default login credentials were detected.
+    label:
+        - magnolia
+        - default-login
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.magnolia/admincentral'
+      signs:
+        - "on": word
+          has:
+            - '"changes":'
+            - '"resources":'
+          in: body_3
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header_3
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/.magnolia/admincentral'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Cookie: csrf={{csrf}};JSESSIONID={{session}}
+        Origin: '{{BaseURL}}'
+        Referer: '{{BaseURL}}/.magnolia/admincentral'
+      body: mgnlUserId={{username}}&mgnlUserPSWD={{password}}&csrf={{csrf}}
+      signs:
+        - "on": word
+          has:
+            - '"changes":'
+            - '"resources":'
+          in: body_3
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header_3
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.magnolia/admincentral/PUSH?v-uiId=1'
+      head:
+        Cookie: csrf={{csrf}}; JSESSIONID={{session}}
+      signs:
+        - "on": word
+          has:
+            - '"changes":'
+            - '"resources":'
+          in: body_3
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header_3
+          need: all
+        - "on": status
+          status:
+            - 200

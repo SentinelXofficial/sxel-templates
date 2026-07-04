@@ -1,0 +1,28 @@
+id: marimo-panel
+brief:
+    title: Marimo Panel - Detect
+    by: rxerium
+    level: info
+    about: Marimo is an open-source reactive Python notebook and app framework that replaces Jupyter
+    label:
+        - panel
+        - marimo
+        - notebook
+        - python
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - data-marimo="true"
+            - marimo-version
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

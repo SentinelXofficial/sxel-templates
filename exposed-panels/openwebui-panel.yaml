@@ -1,0 +1,20 @@
+id: openwebui-panel
+brief:
+    title: Openweb UI Panel - Detect
+    by: rxerium
+    level: info
+    about: OpenWebUI was detected - a platform for running AI on your own terms
+    label:
+        - panel
+        - openwebui
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/api/config'
+        - '{{BaseURL}}/auth'
+        - '{{BaseURL}}/opensearch.xml'
+      signs: []

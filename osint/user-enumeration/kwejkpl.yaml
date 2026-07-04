@@ -1,0 +1,24 @@
+id: kwejkpl
+brief:
+    title: Kwejk.pl User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Kwejk.pl user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - kwejkpl
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://kwejk.pl/uzytkownik/{{user}}#/tablica/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Kwejki użytkownika
+          in: body
+          need: all

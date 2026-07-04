@@ -1,0 +1,26 @@
+id: catalog-creator-detect
+brief:
+    title: CATALOGcreator Page Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: CATALOGcreator Page login panel detected.
+    label:
+        - tech
+        - catalogcreater
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/index.php'
+      signs:
+        - "on": word
+          has:
+            - Powered by CATALOGcreator
+            - content="CATALOGcreator
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

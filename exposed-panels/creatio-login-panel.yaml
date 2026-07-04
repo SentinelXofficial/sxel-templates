@@ -1,0 +1,25 @@
+id: creatio-login-panel
+brief:
+    title: Creatio Login Panel - Detect
+    by: theamanrawat
+    level: info
+    about: Creatio login panel was detected.
+    label:
+        - panel
+        - creatio
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Login/NuiLogin.aspx'
+      signs:
+        - "on": word
+          has:
+            - /creatio/widget
+            - creatio-sdk/
+            - Creatio Debug mode
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

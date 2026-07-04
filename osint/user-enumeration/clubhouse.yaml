@@ -1,0 +1,24 @@
+id: clubhouse
+brief:
+    title: Clubhouse User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Clubhouse user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - clubhouse
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.clubhouse.com/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - followers
+          in: body
+          need: all

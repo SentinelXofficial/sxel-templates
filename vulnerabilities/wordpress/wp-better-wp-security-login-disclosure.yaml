@@ -1,0 +1,19 @@
+id: wp-better-wp-security-login-disclosure
+brief:
+    title: WordPress Solid Security < 9.0.1 - Unauthenticated Login Page Disclosure
+    by: 0x_Akoko
+    level: medium
+    about: WordPress Solid Security (formerly iThemes Security/Better WP Security) plugin before 9.0.1 is vulnerable to login page disclosure. When the Hide Backend feature is enabled and comments require use...
+    label:
+        - wordpress
+        - wp-plugin
+        - wp
+        - exposure
+        - ithemes
+        - solid-security
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

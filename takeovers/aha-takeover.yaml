@@ -1,0 +1,19 @@
+id: aha-takeover
+brief:
+    title: Aha - Subdomain Takeover Detection
+    by: pdteam
+    level: high
+    about: An Aha subdomain takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - There is no portal here ... sending you back to Aha!
+          in: body
+          need: all

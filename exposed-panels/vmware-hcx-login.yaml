@@ -1,0 +1,23 @@
+id: vmware-hcx-login
+brief:
+    title: VMware HCX Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: VMware HCX login panel was detected.
+    label:
+        - panel
+        - vmware
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/hybridity/ui/hcx-client/index.html'
+      signs:
+        - "on": word
+          has:
+            - <title>VMware HCX</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

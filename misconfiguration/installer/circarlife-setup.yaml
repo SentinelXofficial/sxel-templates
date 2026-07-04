@@ -1,0 +1,38 @@
+id: circarlife-installer
+brief:
+    title: CirCarLife - Installer
+    by: geeknik
+    level: critical
+    about: A CirCarLife admin panel was accessed. CirCarLife is an internet-connected electric vehicle charging station
+    label:
+        - scada
+        - circontrol
+        - circarlife
+        - setup
+        - exposure
+        - panel
+        - installer
+        - misconfig
+        - vuln
+    score: CVSS:9.4
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/html/setup.html'
+      signs:
+        - "on": word
+          has:
+            - CirCarLife Scada
+          in: header
+          need: all
+        - "on": word
+          has:
+            - <title>- setup</title>
+            - Network setup
+            - Modem setup
+            - Security setup
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

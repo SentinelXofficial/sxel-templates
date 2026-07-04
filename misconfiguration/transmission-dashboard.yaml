@@ -1,0 +1,28 @@
+id: transmission-dashboard
+brief:
+    title: Transmission Dashboard - Detect
+    by: fabaff
+    level: medium
+    about: Transmission dashboard was detected.
+    label:
+        - misconfig
+        - transmission
+        - exposure
+        - dashboard
+        - discovery
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/transmission/web/'
+      signs:
+        - "on": word
+          has:
+            - The Transmission Project
+            - Transmission Web Interface
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Transmission
+          in: server

@@ -1,0 +1,26 @@
+id: jupyter-ipython-unauth
+brief:
+    title: Jupyter ipython - Authorization Bypass
+    by: pentest_swissky
+    level: critical
+    about: Jupyter was able to be accessed without authentication.
+    label:
+        - unauth
+        - jupyter
+        - misconfig
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ipython/tree'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ipython/static/components
+            - ipython/kernelspecs
+          in: body
+          need: all

@@ -1,0 +1,22 @@
+id: jira-unauthenticated-dashboards
+brief:
+    title: Jira Unauthenticated Dashboards
+    by: TechbrunchFR
+    level: info
+    about: ""
+    label:
+        - atlassian
+        - jira
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/rest/api/2/dashboard?maxResults=100'
+      signs:
+        - "on": word
+          has:
+            - dashboards
+            - startAt
+            - maxResults
+          in: body
+          need: all

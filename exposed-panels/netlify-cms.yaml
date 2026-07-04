@@ -1,0 +1,23 @@
+id: netlify-cms
+brief:
+    title: Netlify CMS Admin Login Panel - Detect
+    by: sullo
+    level: info
+    about: Netlify CMS admin login panel was detected.
+    label:
+        - panel
+        - netlify
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/index.html'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Netlify CMS
+          in: body
+          need: all

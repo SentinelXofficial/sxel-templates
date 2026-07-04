@@ -1,0 +1,33 @@
+id: kylin-default-login
+brief:
+    title: Apache Kylin Console - Default Login
+    by: SleepingBag945
+    level: high
+    about: The default password for the Apache Kylin Console is KYLIN for the ADMIN user in Kylin versions before 3.0.0.
+    label:
+        - kylin
+        - default-login
+        - apache
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/kylin/api/user/authentication'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+      signs:
+        - "on": word
+          has:
+            - '"userDetails":'
+            - '"username":'
+            - '"password":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,1015 @@
+id: tech-detect
+brief:
+    title: Wappalyzer Technology Detection
+    by: hakluke
+    level: info
+    about: ""
+    label:
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Project Management Software
+            - atlassian.com/software/jira
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <!-- WIKINGGRUPPEN
+          in: body
+        - "on": word
+          has:
+            - '<html id="XF" '
+          in: body
+        - "on": word
+          has:
+            - <title>Kibana</title>
+          in: body
+        - "on": word
+          has:
+            - <!-- WooCommerce
+          in: body
+        - "on": word
+          has:
+            - <!-- cPanel
+          in: body
+        - "on": word
+          has:
+            - no-title="YouTrack">
+          in: body
+        - "on": word
+          has:
+            - <div id="gsNavBar" class="gcBorder1">
+          in: body
+        - "on": word
+          has:
+            - '<redoc '
+          in: body
+        - "on": word
+          has:
+            - <title>Shell In A Box</title>
+            - must be enabled for ShellInABox</noscript>
+          in: body
+        - "on": word
+          has:
+            - <div class=phpbb_copyright>
+          in: body
+        - "on": word
+          has:
+            - <main id="bugzilla-body"
+          in: body
+        - "on": word
+          has:
+            - <div class="posterous
+          in: body
+        - "on": word
+          has:
+            - <!-- BC_OBNW -->
+          in: body
+        - "on": word
+          has:
+            - <title>SonarQube</title>
+          in: body
+        - "on": word
+          has:
+            - <html lang="en" class="k-source-essays k-lens-essays">
+          in: body
+        - "on": word
+          has:
+            - <clr-main-container
+          in: body
+        - "on": word
+          has:
+            - <ng-app
+          in: body
+        - "on": word
+          has:
+            - <!-- Factfinder
+          in: body
+        - "on": word
+          has:
+            - <i class="anticon anticon-
+          in: body
+        - "on": word
+          has:
+            - <script id="__NEXT_DATA__"
+            - 'X-Powered-By: Next.js'
+          in: response
+        - "on": word
+          has:
+            - <a target="_blank" title="Nuvemshop"
+          in: body
+        - "on": word
+          has:
+            - <title>ELOG Logbook Selection</title>
+          in: body
+        - "on": word
+          has:
+            - <div id="flarum-loading"
+          in: body
+        - "on": word
+          has:
+            - <header class="navbar navbar-fixed-top navbar-gitlab with-horizontal-nav">
+          in: body
+        - "on": word
+          has:
+            - <div id="copyright">Powered by vBulletin
+          in: body
+        - "on": word
+          has:
+            - vBulletin.version
+            - content="vBulletin
+          in: body
+        - "on": word
+          has:
+            - <asciinema-player
+          in: body
+        - "on": word
+          has:
+            - <input name="koha_login_context" value="intranet" type="hidden">
+            - <a href="/cgi-bin/koha/
+          in: body
+        - "on": word
+          has:
+            - <!-- Begin MailChimp Signup Form -->
+          in: body
+        - "on": word
+          has:
+            - This website is powered by TYPO3
+          in: body
+        - "on": word
+          has:
+            - <meta data-chorus-version=
+          in: body
+        - "on": word
+          has:
+            - <html ng-app="kubernetesDashboard">
+          in: body
+        - "on": word
+          has:
+            - <!-- Created with Jekyll Now -
+            - <!-- Begin Jekyll SEO tag
+          in: body
+        - "on": word
+          has:
+            - <link href="/opencms/
+          in: body
+        - "on": word
+          has:
+            - <!-- Powered by Question2Answer
+          in: body
+        - "on": word
+          has:
+            - Web site created using create-react-app
+          in: body
+        - "on": word
+          has:
+            - <!-- EBiS contents tag
+            - <!--EBiS tag
+            - <!-- Tag EBiS
+            - <!-- EBiS common tag
+          in: body
+        - "on": word
+          has:
+            - <script type="text/x-magento-init">
+          in: body
+        - "on": word
+          has:
+            - <body class="shopatron
+          in: body
+        - "on": word
+          has:
+            - <!-- Start of Async HubSpot
+          in: body
+        - "on": word
+          has:
+            - <script id="staticAssetAggregatedJavascrip
+          in: body
+        - "on": word
+          has:
+            - <!--LiveInternet counter-->
+            - <!--/LiveInternet-->
+          in: body
+        - "on": word
+          has:
+            - <button class="ui basic clone button" id="repo-clone-ssh" data-link="gogs@
+          in: body
+        - "on": word
+          has:
+            - <a id="tracpowered
+          in: body
+        - "on": word
+          has:
+            - <div id="___gatsby">
+            - <style id="gatsby-inlined-css">
+          in: body
+        - "on": word
+          has:
+            - <div id="vmMainPage
+          in: body
+        - "on": word
+          has:
+            - 'SRVE0255E:'
+            - A WebGroup/Virtual Host to handle
+          in: body
+        - "on": word
+          has:
+            - '$wsep:'
+            - '$WSEP:'
+          in: all_headers
+        - "on": word
+          has:
+            - <!-- Rendered with Melis CMS V2
+            - <!-- Rendered with Melis Platform
+          in: body
+        - "on": word
+          has:
+            - Powered by Gitea
+          in: body
+        - "on": word
+          has:
+            - <!-- This comment is expected by the docker HEALTHCHECK  -->
+          in: body
+        - "on": word
+          has:
+            - <!-- Generated by javadoc -->
+          in: body
+        - "on": word
+          has:
+            - <!-- Lightmon Engine Copyright Lightmon
+          in: body
+        - "on": word
+          has:
+            - <yatag class="ya-partner__ads">
+          in: body
+        - "on": word
+          has:
+            - <!-- Powered by XMB
+          in: body
+        - "on": word
+          has:
+            - <ish-root
+          in: body
+        - "on": word
+          has:
+            - <div id="particles-js">
+          in: body
+        - "on": word
+          has:
+            - <title>RoundCube
+          in: body
+        - "on": word
+          has:
+            - <!-- by DotNetNuke Corporation
+            - <!-- DNN Platform
+          in: body
+        - "on": word
+          has:
+            - <noscript><div class='syno-no-script'
+          in: body
+        - "on": word
+          has:
+            - <input type="hidden" name="shopid"
+          in: body
+        - "on": word
+          has:
+            - <!-- Generated by phpDocumentor
+          in: body
+        - "on": word
+          has:
+            - content="a-blog cms
+          in: body
+        - "on": word
+          has:
+            - content="Adobe GoLive
+          in: body
+        - "on": word
+          has:
+            - content="AdVantShop.NET
+          in: body
+        - "on": word
+          has:
+            - AVE.cms
+          in: header
+        - "on": word
+          has:
+            - alterian
+          in: body
+        - "on": word
+          has:
+            - = Amiro.CMS (c) =
+          in: body
+        - "on": word
+          has:
+            - content="Apache Lenya"
+          in: body
+        - "on": word
+          has:
+            - content="Backdrop CMS
+          in: body
+        - "on": word
+          has:
+            - content="BaseKit"
+          in: body
+        - "on": word
+          has:
+            - content="Big Cartel"
+          in: body
+        - "on": word
+          has:
+            - content='blogger'
+          in: body
+        - "on": word
+          has:
+            - content="Bolt"
+          in: body
+        - "on": word
+          has:
+            - content="Bricolage
+          in: body
+        - "on": word
+          has:
+            - content="Composite C1 CMS
+          in: body
+        - "on": word
+          has:
+            - content="www.cm4all.com"
+          in: body
+        - "on": word
+          has:
+            - content="CMS Tool www.cms-tool.net"
+          in: body
+        - "on": word
+          has:
+            - content="CMS Tool www.cms-tool.net"
+          in: body
+        - "on": word
+          has:
+            - content="CMS Made Simple
+          in: body
+        - "on": word
+          has:
+            - content="CMSimple_XH
+          in: body
+        - "on": word
+          has:
+            - content="CanalBlog
+          in: body
+        - "on": word
+          has:
+            - content="CoffeeCup
+          in: body
+        - "on": word
+          has:
+            - content="CommonSpot
+          in: body
+        - "on": word
+          has:
+            - content="CMS CONTENIDO
+          in: body
+        - "on": word
+          has:
+            - content="Contensis CMS
+          in: body
+        - "on": word
+          has:
+            - content="contentXXL
+          in: body
+        - "on": word
+          has:
+            - content="Convio CMS"
+          in: body
+        - "on": word
+          has:
+            - content="CoreMedia
+          in: body
+        - "on": word
+          has:
+            - content="CorePublish
+          in: body
+        - "on": word
+          has:
+            - content="DIAFAN.CMS
+          in: body
+        - "on": word
+          has:
+            - content="CMS Danneo
+          in: body
+        - "on": word
+          has:
+            - Dim Works Kernel
+          in: body
+        - "on": word
+          has:
+            - 'content="Discourse '
+          in: body
+        - "on": word
+          has:
+            - content="Hycus
+          in: body
+        - "on": word
+          has:
+            - content="Doteasy Website Creator"
+          in: body
+        - "on": word
+          has:
+            - <!-- RT CSS Include d-css-runtime-desktop-one-package-new-->
+          in: body
+        - "on": word
+          has:
+            - 'content="Dynamicweb '
+          in: body
+        - "on": word
+          has:
+            - 'content="e-plus '
+          in: body
+        - "on": word
+          has:
+            - content="e-monsite (e-monsite.com)"
+          in: body
+        - "on": word
+          has:
+            - 'content="ECSHOP '
+          in: body
+        - "on": word
+          has:
+            - 'content="Ideagen - WCM '
+          in: body
+        - "on": word
+          has:
+            - src="https://dl.episerver.net/
+          in: body
+        - "on": word
+          has:
+            - 'content="EverWeb '
+          in: body
+        - "on": word
+          has:
+            - content="Fork CMS"
+          in: body
+        - "on": word
+          has:
+            - 'content="Zeta Producer '
+          in: body
+        - "on": word
+          has:
+            - content="GX WebManager
+          in: body
+        - "on": word
+          has:
+            - content="GetSimple"
+          in: body
+        - "on": word
+          has:
+            - 'content="Ghost '
+          in: body
+        - "on": word
+          has:
+            - content="Starfield Technologies; Go Daddy Website Builder
+          in: body
+        - "on": word
+          has:
+            - content="Government Site Builder"
+          in: body
+        - "on": word
+          has:
+            - content="Graffiti CMS
+          in: body
+        - "on": word
+          has:
+            - content="GravCMS"
+          in: body
+        - "on": word
+          has:
+            - content="Drupal
+          in: body
+        - "on": word
+          has:
+            - content="Webnode
+          in: body
+        - "on": word
+          has:
+            - '''Shopsys\'
+          in: body
+        - "on": word
+          has:
+            - 'content="pluck '
+          in: body
+        - "on": word
+          has:
+            - content="Homestead SiteBuilder"
+          in: body
+        - "on": word
+          has:
+            - content="HostedShop"
+          in: body
+        - "on": word
+          has:
+            - content="ImageCMS"
+          in: body
+        - "on": word
+          has:
+            - content="Immediacy .NET CMS
+          in: body
+        - "on": word
+          has:
+            - content="ImpressCMS"
+          in: body
+        - "on": word
+          has:
+            - content="ImpressPages"
+          in: body
+        - "on": word
+          has:
+            - content="Rails Connector for Infopark CMS Fiona
+          in: body
+        - "on": word
+          has:
+            - content="InstantCMS"
+          in: body
+        - "on": word
+          has:
+            - X-Interactsh-Version
+          in: header
+        - "on": word
+          has:
+            - 'content="InterRed '
+          in: body
+        - "on": word
+          has:
+            - //www.jadu.net
+          in: body
+        - "on": word
+          has:
+            - content="jieqi.com"
+          in: body
+        - "on": word
+          has:
+            - content="JustSystems Homepage Builder
+          in: body
+        - "on": word
+          has:
+            - 'content="Kernel Video Sharing '
+          in: body
+        - "on": word
+          has:
+            - content="Komodo CMS"
+          in: body
+        - "on": word
+          has:
+            - content="Kryptronic Software"
+          in: body
+        - "on": word
+          has:
+            - by Labrador CMS
+          in: body
+        - "on": word
+          has:
+            - 'content="Lauyan TOWeb '
+          in: body
+        - "on": word
+          has:
+            - content="http://www.getLiveEdit.com"
+          in: body
+        - "on": word
+          has:
+            - content="LogiCommerce"
+          in: body
+        - "on": word
+          has:
+            - content="Loja Integrada"
+          in: body
+        - "on": word
+          has:
+            - content="Mabisy"
+          in: body
+        - "on": word
+          has:
+            - content="Mambo -
+          in: body
+        - "on": word
+          has:
+            - content="Melody CMS"
+          in: body
+        - "on": word
+          has:
+            - 'content="Metro Publisher '
+          in: body
+        - "on": word
+          has:
+            - powered">Midgard CMS
+          in: body
+        - "on": word
+          has:
+            - content="Mijnwebwinkel"
+          in: body
+        - "on": word
+          has:
+            - MintoxPlaceHolder
+          in: body
+        - "on": word
+          has:
+            - content="JetBrains PhpStorm/Intercat/Movable Type
+          in: body
+        - "on": word
+          has:
+            - content="Netvolution WCM"
+          in: body
+        - "on": word
+          has:
+            - 'content="Nucleus CMS '
+          in: body
+        - "on": word
+          has:
+            - 'content="NukeViet '
+          in: body
+        - "on": word
+          has:
+            - content="One.com Web Editor"
+          in: body
+        - "on": word
+          has:
+            - 'content="OpenNemas '
+          in: body
+        - "on": word
+          has:
+            - content="Orchard"
+          in: body
+        - "on": word
+          has:
+            - 'content="Orthodox Web Solutions '
+          in: body
+        - "on": word
+          has:
+            - oc-includes/osclass/
+          in: body
+        - "on": word
+          has:
+            - 'content="Oxatis '
+          in: body
+        - "on": word
+          has:
+            - 'content="PHPShop CMS '
+          in: body
+        - "on": word
+          has:
+            - content="PHPVibe"
+          in: body
+        - "on": word
+          has:
+            - content="Pagecloud"
+          in: body
+        - "on": word
+          has:
+            - content="Pagekit"
+          in: body
+        - "on": word
+          has:
+            - 'content="Parallels Presence Builder '
+          in: body
+        - "on": word
+          has:
+            - content="RiteCMS
+          in: body
+        - "on": word
+          has:
+            - 'content="rCMS '
+          in: body
+        - "on": word
+          has:
+            - content="Rvglobalsoft"
+          in: body
+        - "on": word
+          has:
+            - content="Subrion CMS
+          in: body
+        - "on": word
+          has:
+            - content="RapidWeaver"
+          in: body
+        - "on": word
+          has:
+            - content="SUMOshop"
+          in: body
+        - "on": word
+          has:
+            - content="Sana Commerce"
+          in: body
+        - "on": word
+          has:
+            - 'content="Sandvox '
+          in: body
+        - "on": word
+          has:
+            - 'content="OpenCities '
+          in: body
+        - "on": word
+          has:
+            - 'content="Serendipity '
+          in: body
+        - "on": word
+          has:
+            - 'content="ShopFactory '
+          in: body
+        - "on": word
+          has:
+            - 'X-Clockwork-Id:'
+            - 'X-Clockwork-Version:'
+          in: header
+        - "on": word
+          has:
+            - 'Set-Cookie: symfony='
+          in: header
+        - "on": word
+          has:
+            - 'Set-Cookie: laravel_session='
+          in: header
+        - "on": word
+          has:
+            - 'Set-Cookie: {{DN}}_session='
+            - 'Set-Cookie: XSRF-TOKEN='
+          in: header
+          need: all
+        - "on": word
+          has:
+            - 'X-Powered-By: Express'
+          in: header
+        - "on": word
+          has:
+            - meta content="authenticity_token" name="csrf-param
+          in: body
+        - "on": word
+          has:
+            - ng-app="
+            - <ng-app
+            - '*ngIf='
+            - ng-controller=
+          in: body
+        - "on": word
+          has:
+            - lighttpd
+          in: header
+        - "on": word
+          has:
+            - lighttpd
+          in: header
+        - "on": word
+          has:
+            - WSGIServer
+          in: header
+        - "on": word
+          has:
+            - SimpleHTTP
+          in: header
+        - "on": word
+          has:
+            - TwistedWeb
+          in: header
+        - "on": word
+          has:
+            - TSM_HTTP
+          in: header
+        - "on": word
+          has:
+            - Microsoft-IIS
+          in: header
+        - "on": word
+          has:
+            - Microsoft-HTTPAPI
+          in: header
+        - "on": word
+          has:
+            - darkhttpd
+          in: header
+        - "on": word
+          has:
+            - CherryPy
+          in: header
+        - "on": word
+          has:
+            - Cherokee
+          in: header
+        - "on": word
+          has:
+            - Caddy
+          in: header
+        - "on": word
+          has:
+            - Jetty
+          in: header
+        - "on": word
+          has:
+            - 'Server: nginx'
+          in: header
+        - "on": word
+          has:
+            - 'X-Powered-By: PHP'
+            - PHPSESSID
+          in: header
+        - "on": word
+          has:
+            - 'Server: NodeJS'
+            - 'X-Powered-By: nodejs'
+          in: header
+        - "on": word
+          has:
+            - Python/2.
+            - Python/3.
+            - CPython/3.
+          in: header
+        - "on": word
+          has:
+            - X-Jenkins
+          in: header
+        - "on": word
+          has:
+            - cloudflare
+          in: server
+        - "on": word
+          has:
+            - AkamaiGHost
+          in: header
+        - "on": word
+          has:
+            - Sucuri/Cloudproxy
+          in: header
+        - "on": word
+          has:
+            - 'X-Iinfo:'
+          in: header
+        - "on": word
+          has:
+            - ddos-guard
+          in: header
+        - "on": word
+          has:
+            - DOSarrest
+            - 'X-DIS-Request-ID:'
+          in: header
+        - "on": word
+          has:
+            - ArvanCloud
+            - 'AR-Request-ID:'
+          in: header
+        - "on": word
+          has:
+            - /etc/clientlibs/
+            - /content/dam/
+          in: body
+        - "on": word
+          has:
+            - 'Server: Lotus-Domino'
+          in: header
+        - "on": word
+          has:
+            - 'Set-Cookie: mongo-express='
+          in: header
+        - "on": word
+          has:
+            - Login to pfSense
+          in: body
+        - "on": word
+          has:
+            - <title>Weave Scope</title>
+            - __WEAVEWORKS_CSRF_TOKEN
+            - __CSRF_TOKEN_PLACEHOLDER__
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <title>Mida eFramework</title>
+            - 'Server: Mida eFramework'
+          in: response
+        - "on": word
+          has:
+            - SEEEMS.CMS
+            - SEEEMS.FRAMEWORK
+          in: body
+        - "on": word
+          has:
+            - awselb
+          in: header
+        - "on": word
+          has:
+            - Login to pfSense
+            - <title>pfSense - Login</title>
+            - maintained by Netgate
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 'Server: monit'
+          in: header
+        - "on": word
+          has:
+            - ThinkPHP
+          in: header
+        - "on": word
+          has:
+            - initApollo)(i.ApolloTargetServer.Self)
+          in: body
+        - "on": word
+          has:
+            - <!-- BEGIN PAN_FORM_CONTENT -->
+            - js/pan/
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 'X-Powered-By: Sails'
+          in: header
+        - "on": word
+          has:
+            - Tengine
+          in: server
+        - "on": word
+          has:
+            - TornadoServer/
+          in: header
+        - "on": word
+          has:
+            - uvicorn
+          in: server
+        - "on": word
+          has:
+            - istio-envoy
+          in: server
+        - "on": word
+          has:
+            - X-ClickHouse-Summary
+          in: header
+        - "on": word
+          has:
+            - content="Coolify
+          in: body
+        - "on": word
+          has:
+            - <title>IQ Messenger</title>
+          in: body
+        - "on": word
+          has:
+            - realm="Sagemcom TR-069"
+          in: header
+        - "on": word
+          has:
+            - <title>FASTPANEL</title>
+          in: body
+        - "on": word
+          has:
+            - <title>Vaka</title>
+          in: body
+        - "on": word
+          has:
+            - <title>Ksenia Lares WebServer</title>
+          in: body
+        - "on": word
+          has:
+            - /tas/css/auth.css
+            - topdeskidploginforwardurl
+          in: body
+        - "on": word
+          has:
+            - <title>UserGate UTM</title>
+          in: body
+        - "on": word
+          has:
+            - <title>UserGate NGFW</title>
+          in: body
+        - "on": word
+          has:
+            - <title>RouterOS router configuration page</title>
+          in: body
+        - "on": word
+          has:
+            - <title>ETHM-1 Plus</title>
+          in: body
+        - "on": word
+          has:
+            - <title>Qlik Sense login page</title>
+          in: body
+        - "on": word
+          has:
+            - 'Server: REDY-Process'
+          in: header
+        - "on": word
+          has:
+            - href="css/img/ENTEK.ico"
+          in: body
+        - "on": word
+          has:
+            - <title>Macroscop Web Client</title>
+            - <title>macroscop</title>
+          in: body
+        - "on": word
+          has:
+            - <title>Etic Telecom</title>
+          in: body
+        - "on": word
+          has:
+            - content="Quantum Spark Security Appliance - Login"
+          in: body

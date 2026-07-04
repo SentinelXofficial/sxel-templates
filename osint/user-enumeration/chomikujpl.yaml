@@ -1,0 +1,24 @@
+id: chomikujpl
+brief:
+    title: Chomikuj.pl User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Chomikuj.pl user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - chomikujpl
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://chomikuj.pl/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Foldery
+          in: body
+          need: all

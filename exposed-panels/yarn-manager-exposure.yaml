@@ -1,0 +1,24 @@
+id: yarn-manager-exposure
+brief:
+    title: Apache YARN ResourceManager Panel - Detect
+    by: pdteam
+    level: low
+    about: Apache YARN ResourceManager panel was detected.
+    label:
+        - panel
+        - apache
+        - yarn
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cluster/cluster'
+      signs:
+        - "on": word
+          has:
+            - hadoop
+            - resourcemanager
+            - 'logged in as: dr.who'
+          in: body
+          need: all

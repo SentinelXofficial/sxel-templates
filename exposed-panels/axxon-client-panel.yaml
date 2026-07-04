@@ -1,0 +1,27 @@
+id: axxon-client-panel
+brief:
+    title: Axxon Next Client Login - Detect
+    by: irshadahamed
+    level: info
+    about: Axxon One is a limitlessly scalable video management software
+    label:
+        - panel
+        - axxon
+        - vms
+        - login
+        - detect
+        - axxonsoft
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Axxon Next client
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

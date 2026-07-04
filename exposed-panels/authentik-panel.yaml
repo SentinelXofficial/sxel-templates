@@ -1,0 +1,25 @@
+id: authentik-panel
+brief:
+    title: Authentik Panel - Detect
+    by: rxerium
+    level: info
+    about: An Authentik search engine was detected.
+    label:
+        - authentik
+        - sso
+        - mfa
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/static/dist/assets/icons/icon.png'
+      signs:
+        - "on": word
+          has:
+            - <title>authentik</title>
+            - window.authentik
+            - authentik.css
+          in: body

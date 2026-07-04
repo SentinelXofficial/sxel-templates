@@ -1,0 +1,28 @@
+id: deos-open500ems-panel
+brief:
+    title: DEOS OPEN 500EMS Controller - Admin Exposure
+    by: sullo
+    level: high
+    about: The DEOS OPEN 500EMS controller exposes administrative functions without authentication.
+    label:
+        - openv500
+        - disclosure
+        - panel
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/cosmobdf.cgi?function=0'
+        - '{{BaseURL}}/cgi-bin/cosmobdf.cgi?function=1'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <b>OPENview</b>
+            - /cgi-bin/cosmobdf.cgi?function=12
+            - /cgi-bin/cosmobdf.cgi?function=2
+          in: body
+          need: all

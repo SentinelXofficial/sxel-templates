@@ -1,0 +1,23 @@
+id: honeywell-web-controller
+brief:
+    title: Honeywell Excel Web Control Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Honeywell Excel Web Control login panel was detected.
+    label:
+        - edb
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/standard/default.php'
+      signs:
+        - "on": word
+          has:
+            - <title>Honeywell XL Web Controller</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

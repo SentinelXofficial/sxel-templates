@@ -1,0 +1,23 @@
+id: sentinelone-console
+brief:
+    title: SentinelOne Management Console Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: SentinelOne Management Console login panel was detected.
+    label:
+        - panel
+        - sentinelone
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - SentinelOne - Management Console
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

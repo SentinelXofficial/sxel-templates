@@ -1,0 +1,45 @@
+id: joomla-fpd
+brief:
+    title: Joomla! - Full Path Disclosure
+    by: pussycat0x
+    level: low
+    about: Detects full path disclosure in Joomla! sending requests to specific paths and identifying fatal error stack traces that leaked absolute filesystem paths.
+    label:
+        - joomla
+        - misconfiguration
+        - fpd
+        - disclosure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/administrator/manifests/files/joomla.xml'
+        - '{{BaseURL}}/language/en-GB/en-GB.xml'
+        - '{{BaseURL}}/README.txt'
+        - '{{BaseURL}}/modules/custom.xml'
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <version>
+            - <creationDate>
+            - </metafile>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - FILES_JOOMLA_XML_DESCRIPTION
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/libraries/phputf8/utils/bad.php'
+        - '{{BaseURL}}/libraries/php-inputfilter/inputfilter.php'
+        - '{{BaseURL}}/libraries/php-fileupload/fileupload.php'
+        - '{{BaseURL}}/libraries/joomla/filesystem/archive/archive.php'
+        - '{{BaseURL}}/libraries/joomla/filesystem/archive/tar.php'
+        - '{{BaseURL}}/libraries/joomla/filesystem/archive/zip.php'
+        - '{{BaseURL}}/libraries/phpmailer/phpmailer.php'
+        - '{{BaseURL}}/libraries/phputf8/utils/unicode.php'
+      signs:
+        - "on": status
+          status:
+            - 200

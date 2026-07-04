@@ -1,0 +1,23 @@
+id: wp-mailchimp-log-exposure
+brief:
+    title: WordPress MC4WP - Debug Log Exposure
+    by: aashiq
+    level: medium
+    about: Detected WordPress Mailchimp for WordPress (MC4WP) debug log. The log file may contain email addresses, Mailchimp API keys, and error details.
+    label:
+        - wordpress
+        - wp-plugin
+        - mailchimp
+        - mc4wp
+        - exposure
+        - logs
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/uploads/mc4wp-debug.log'
+        - '{{BaseURL}}/wp-content/uploads/mc4wp-debug-log.php'
+        - '{{BaseURL}}/wp-content/uploads/mailchimp-for-wp/debug-log.php'
+        - '{{BaseURL}}/wp-content/uploads/sites/1/mc4wp-debug-log.php'
+        - '{{BaseURL}}/wp-content/uploads/sites/1/mailchimp-for-wp/debug-log.php'
+      signs: []

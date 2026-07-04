@@ -1,0 +1,25 @@
+id: coolify-register-account
+brief:
+    title: Coolify Register User Account - Enabled
+    by: DhiyaneshDk
+    level: medium
+    about: Exposed Coolify user register page.
+    label:
+        - coolify
+        - register
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/register'
+      signs:
+        - "on": word
+          has:
+            - Password again
+            - Coolify
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

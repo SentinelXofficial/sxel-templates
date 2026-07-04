@@ -1,0 +1,27 @@
+id: array-networks-ssl-vpn-panel
+brief:
+    title: Array Networks SSL VPN - Login Panel
+    by: rxerium
+    level: info
+    about: Array Networks AG Series SSL VPN appliances provide enterprise remote access.
+    label:
+        - panel
+        - array-networks
+        - ssl-vpn
+        - vpn
+        - network
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Array Networks Pilot Login
+            - Array Networks
+            - ArrayOS
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: homebridge-panel
+brief:
+    title: Homebridge Panel - Detect
+    by: rxerium
+    level: info
+    about: Homebridge allows you to integrate with smart home devices that do not natively support HomeKit.
+    label:
+        - panel
+        - homebridge
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Homebridge</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

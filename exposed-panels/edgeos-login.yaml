@@ -1,0 +1,27 @@
+id: edgeos-login
+brief:
+    title: EdgeOS Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: EdgeOS login panel was detected.
+    label:
+        - login
+        - tech
+        - edgeos
+        - edgemax
+        - panel
+        - ui
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>EdgeOS</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

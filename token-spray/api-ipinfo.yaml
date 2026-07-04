@@ -1,0 +1,23 @@
+id: api-ipinfo
+brief:
+    title: IPinfo API Test
+    by: 0xpugal
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - ipinfo
+moves:
+    - verb: GET
+      to:
+        - https://ipinfo.io/?token={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"ip"'
+            - '"city"'
+            - '"org"'
+            - '"postal"'
+            - '"timezone"'
+          in: body
+          need: all

@@ -1,0 +1,20 @@
+id: keybase-domain-owwnership-verification
+brief:
+    title: Keybase Domain Ownership Verification
+    by: rxerium
+    level: info
+    about: Detects presence of keybase.txt used to prove domain ownership via Keybase identity.
+    label:
+        - keybase
+        - identity
+        - well-known
+        - pgp
+        - discovery
+        - osint
+        - misc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.well-known/keybase.txt'
+      signs: []

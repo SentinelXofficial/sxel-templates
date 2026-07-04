@@ -1,0 +1,25 @@
+id: homer-panel
+brief:
+    title: Homer Panel - Detect
+    by: rxerium
+    level: info
+    about: A simple static homepage was discovered
+    label:
+        - panel
+        - homer
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Homer</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

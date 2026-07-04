@@ -1,0 +1,26 @@
+id: ektron-cms-panel
+brief:
+    title: Ektron CMS Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: Ektron CMS login panel was detected.
+    label:
+        - panel
+        - ektron
+        - cms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - EktronClientManager
+            - ektronTheme
+            - Ektron.ready
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: cold-fusion-cfcache-map
+brief:
+    title: Discover Cold Fusion cfcache.map Files
+    by: geeknik
+    level: low
+    about: Adobe Cold Fusion cfcache.map file is exposed.
+    label:
+        - exposure
+        - coldfusion
+        - adobe
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cfcache.map'
+      signs:
+        - "on": word
+          has:
+            - Mapping=
+            - SourceTimeStamp=
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

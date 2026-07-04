@@ -1,0 +1,18 @@
+id: wp-wps-hide-login-log
+brief:
+    title: WordPress WPS Hide Login - Error Log Disclosure
+    by: pussycat0x
+    level: low
+    about: Detected whether the WPS Hide Login plugin’s /classes/ directory was exposed with directory listing enabled due to server misconfiguration, potentially disclosing PHP error logs or source code.
+    label:
+        - wordpress
+        - wp
+        - wp-plugin
+        - wps-hide-login
+        - log
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wps-hide-login/classes/error_log'
+      signs: []

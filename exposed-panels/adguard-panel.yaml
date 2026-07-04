@@ -1,0 +1,25 @@
+id: adguard-panel
+brief:
+    title: AdGuard Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: AdGuard panel has been detected.
+    label:
+        - adguard
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - AdGuard Home</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

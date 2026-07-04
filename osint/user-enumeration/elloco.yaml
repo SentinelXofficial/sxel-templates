@@ -1,0 +1,24 @@
+id: elloco
+brief:
+    title: Ello.co User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Ello.co user name information check was conducted.
+    label:
+        - osint
+        - osint-art
+        - elloco
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://ello.co/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| Ello'
+          in: body
+          need: all

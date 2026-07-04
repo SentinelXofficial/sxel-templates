@@ -1,0 +1,32 @@
+id: graphiql-exposure
+brief:
+    title: GraphiQL - Exposure
+    by: Vincent Olagbemide
+    level: low
+    about: Detected publicly exposed GraphiQL consoles.
+    label:
+        - misconfig
+        - graphql
+        - graphiql
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/graphiql'
+        - '{{BaseURL}}/graphql'
+        - '{{BaseURL}}/api/graphql'
+        - '{{BaseURL}}/v1/graphql'
+        - '{{BaseURL}}/query'
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - graphiql.createFetcher
+            - id="graphiql"
+            - id='graphiql'
+            - /graphiql.css
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

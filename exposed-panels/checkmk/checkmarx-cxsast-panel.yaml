@@ -1,0 +1,20 @@
+id: checkmarx-cxsast-panel
+brief:
+    title: Checkmarx CxSAST Login Panel - Detect
+    by: joanbonon
+    level: info
+    about: Checkmarx CxSAST login panel was detected.
+    label:
+        - panel
+        - checkmarx
+        - cxsast
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cxrestapi/help/system/version'
+        - '{{BaseURL}}/cxwebclient/Login.aspx'
+        - '{{BaseURL}}/cxrestapi/auth/identity/.well-known/openid-configuration'
+      signs: []

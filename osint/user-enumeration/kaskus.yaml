@@ -1,0 +1,24 @@
+id: kaskus
+brief:
+    title: Kaskus User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Kaskus user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - kaskus
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.kaskus.co.id/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - KASKUS - Berbagi Hobi
+          in: body
+          need: all

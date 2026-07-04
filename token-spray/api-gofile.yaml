@@ -1,0 +1,21 @@
+id: api-gofile
+brief:
+    title: GoFile API Test
+    by: daffainfo
+    level: info
+    about: Unlimited size file uploads for free
+    label:
+        - token-spray
+        - gofile
+moves:
+    - verb: GET
+      to:
+        - https://api.gofile.io/getAccountDetails?token={{token}}&allDetails=true
+      signs:
+        - "on": word
+          has:
+            - '"token"'
+            - '"email"'
+            - '"rootFolder"'
+          in: body
+          need: all

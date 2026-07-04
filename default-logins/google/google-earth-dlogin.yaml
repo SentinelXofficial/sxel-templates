@@ -1,0 +1,27 @@
+id: google-earth-dlogin
+brief:
+    title: Google Earth Enterprise Default Login
+    by: orpheus
+    level: high
+    about: Google Earth Enterprise default login credentials were discovered.
+    label:
+        - default-login
+        - google-earth
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - DashboardPanel
+            - Earth Enterprise Server
+          in: body
+          need: all

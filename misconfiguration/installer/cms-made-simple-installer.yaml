@@ -1,0 +1,25 @@
+id: cms-made-simple-installer
+brief:
+    title: CMS Made Simple Installation Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed CMS Made Simple Installation page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - cms-made-simple
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/'
+      signs:
+        - "on": word
+          has:
+            - CMS Made Simple Install/Upgrade
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

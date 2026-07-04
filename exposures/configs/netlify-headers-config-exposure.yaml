@@ -1,0 +1,18 @@
+id: netlify-headers-config-exposure
+brief:
+    title: Netlify Headers Configuration - Exporsure
+    by: theamanrawat
+    level: low
+    about: Detected publicly accessible Netlify configuration files such as _headers, headers, or netlify.toml. Exposure of these files may disclose security header settings, routing rules, authentication mec...
+    label:
+        - netlify
+        - config
+        - exposure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_headers'
+        - '{{BaseURL}}/headers'
+        - '{{BaseURL}}/netlify.toml'
+      signs: []

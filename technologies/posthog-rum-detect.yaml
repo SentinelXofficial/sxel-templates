@@ -1,0 +1,16 @@
+id: posthog-rum-detect
+brief:
+    title: PostHog Browser RUM - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects PostHog Product Analytics & RUM (Real User Monitoring) SDK artifacts in HTML responses.
+    label:
+        - tech
+        - discovery
+        - rum
+        - posthog
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

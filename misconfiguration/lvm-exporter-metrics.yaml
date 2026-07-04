@@ -1,0 +1,30 @@
+id: lvm-exporter-metrics
+brief:
+    title: LVM Exporter Metrics
+    by: DhiyaneshDk
+    level: low
+    about: LVM Exporter Metrics is exposed.
+    label:
+        - lvm
+        - exposure
+        - debug
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/metrics'
+      signs:
+        - "on": word
+          has:
+            - '# HELP'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - lvm_
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

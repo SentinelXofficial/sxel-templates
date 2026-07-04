@@ -1,0 +1,30 @@
+id: gitea-installer
+brief:
+    title: Gitea Installer Exposure
+    by: DhiyaneshDk
+    level: medium
+    about: Gitea is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - gitea
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Installation -  Gitea: Git with a cup of tea'
+            - Database Name
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

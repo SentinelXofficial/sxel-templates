@@ -1,0 +1,26 @@
+id: api-intelx
+brief:
+    title: Intelligence X API Test
+    by: 0ri2N
+    level: info
+    about: Intelligence X is a search engine and data archive. Search Tor, I2P, data leaks and the public web by email, domain, IP, CIDR, Bitcoin address and more.
+    label:
+        - scan
+        - recon
+        - intelx
+        - token-spray
+moves:
+    - verb: GET
+      to:
+        - https://2.intelx.io/authenticate/info
+      head:
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2656.18 Safari/537.36
+        X-Key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - added
+            - preview
+            - buckets
+          in: body
+          need: all

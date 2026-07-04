@@ -1,0 +1,23 @@
+id: apc-ups-login
+brief:
+    title: APC UPS Login - Detect
+    by: droberson
+    level: info
+    about: APC UPS panel was detected.
+    label:
+        - iot
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/logon.htm'
+      signs:
+        - "on": word
+          has:
+            - <title>APC | Log On</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

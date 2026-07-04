@@ -1,0 +1,25 @@
+id: ubs-phish
+brief:
+    title: UBS phishing Detection
+    by: rxerium
+    level: info
+    about: A UBS phishing website was detected
+    label:
+        - phishing
+        - ubs
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - UBS is a global firm providing financial services in over 50 countries. Visit our site to find out what we offer.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

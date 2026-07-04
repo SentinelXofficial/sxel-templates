@@ -1,0 +1,24 @@
+id: aircube-login
+brief:
+    title: airCube Login - Detect
+    by: DhiyaneshDk
+    level: info
+    about: airCube login panel was detected.
+    label:
+        - panel
+        - aircube
+        - ubiquiti
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>airCube</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

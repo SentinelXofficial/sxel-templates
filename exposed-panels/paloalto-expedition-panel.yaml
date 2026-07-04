@@ -1,0 +1,26 @@
+id: paloalto-expedition-panel
+brief:
+    title: Palo Alto Expedition Project Login - Detect
+    by: johnk3r
+    level: info
+    about: Palo Alto Expedition Project login panel was detected.
+    label:
+        - panel
+        - expedition
+        - palo-alto
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Expedition Project</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

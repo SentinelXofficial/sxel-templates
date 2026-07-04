@@ -1,0 +1,17 @@
+id: pahtool-panel
+brief:
+    title: PAHTool Login Panel - Detect
+    by: righettod
+    level: info
+    about: PAHTool login panel was detected.
+    label:
+        - panel
+        - pahtool
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

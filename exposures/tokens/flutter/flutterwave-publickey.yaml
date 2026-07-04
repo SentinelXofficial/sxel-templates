@@ -1,0 +1,17 @@
+id: flutterwave-publickey
+brief:
+    title: Flutterwave Public Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - flutterwave
+        - exposure
+        - tokens
+        - publickey
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

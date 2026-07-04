@@ -1,0 +1,29 @@
+id: ruckus-wireless-default-login
+brief:
+    title: Ruckus Wireless - Default Login
+    by: pussycat0x
+    level: critical
+    about: Ruckus Wireless router contains a default admin login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operat...
+    label:
+        - default-login
+        - router
+        - ruckus
+        - vuln
+    score: CVSS:9.8
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/forms/doLogin'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: login_username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - <title>Ruckus Wireless Admin</title>
+            - /status/device.asp
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

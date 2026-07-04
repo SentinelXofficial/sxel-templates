@@ -1,0 +1,20 @@
+id: airee-takeover
+brief:
+    title: Airee Takeover Detection
+    by: pdteam
+    level: high
+    about: Airee takeover was detected.
+    label:
+        - takeover
+        - airee
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Ошибка 402. Сервис Айри.рф не оплачен
+          in: body
+          need: all

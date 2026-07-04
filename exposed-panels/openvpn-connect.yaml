@@ -1,0 +1,22 @@
+id: openvpn-connect
+brief:
+    title: OpenVPN Connect Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: OpenVPN Connect panel was detected.
+    label:
+        - panel
+        - openvpn
+        - connect
+        - vpn
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?src=connect'
+      signs:
+        - "on": word
+          has:
+            - content="OpenVPN Connect
+            - <title>OpenVPN Connect</title>
+          in: body

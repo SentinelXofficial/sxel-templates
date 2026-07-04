@@ -1,0 +1,24 @@
+id: supertokens-login-panel
+brief:
+    title: Supertokens Login Panel - Detect
+    by: rxerium
+    level: info
+    about: A Supertokens login panel was detected.
+    label:
+        - panel
+        - login
+        - supertokens
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth'
+      signs:
+        - "on": word
+          has:
+            - <title>SuperTokens + React
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

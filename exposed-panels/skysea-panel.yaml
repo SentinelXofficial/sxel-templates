@@ -1,0 +1,25 @@
+id: skysea-panel
+brief:
+    title: SKYSEA Client View Panel - Detect
+    by: rxerium
+    level: info
+    about: SKYSEA Client View panel was detected.
+    label:
+        - panel
+        - skysea
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - SKYSEA Client View
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

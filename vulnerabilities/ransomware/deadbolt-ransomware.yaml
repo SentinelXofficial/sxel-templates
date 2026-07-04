@@ -1,0 +1,19 @@
+id: deadbolt-ransomware
+brief:
+    title: Deadbolt Ransomware Detection
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - ransomware
+        - deadbolt
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ALL YOUR FILES HAVE BEEN LOCKED BY DEADBOLT.</title>
+          in: body

@@ -1,0 +1,28 @@
+id: svn-wc-db
+brief:
+    title: SVN wc.db File Exposure
+    by: Hardik-Solanki
+    level: medium
+    about: SVN wc.db file is exposed.
+    label:
+        - msf
+        - exposure
+        - svn
+        - config
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.svn/wc.db'
+        - '{{BaseURL}}/wc.db'
+      signs:
+        - "on": word
+          has:
+            - SQLite format
+            - WCROOT
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,28 @@
+id: v2924-admin-panel
+brief:
+    title: V2924 Admin Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: V2924 admin login panel was detected.
+    label:
+        - panel
+        - v2924
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>V2924</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

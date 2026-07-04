@@ -1,0 +1,25 @@
+id: graylog-api-browser
+brief:
+    title: Detect Graylog REST API
+    by: PR3R00T
+    level: info
+    about: ""
+    label:
+        - tech
+        - graylog
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/api-browser/'
+      signs:
+        - "on": word
+          has:
+            - Graylog
+            - REST API browser
+            - swagger
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

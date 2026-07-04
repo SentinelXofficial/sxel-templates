@@ -1,0 +1,29 @@
+id: saltbo-zpan-installer
+brief:
+    title: Saltbo/zpan Installer - Exposure
+    by: ritikchaddha
+    level: high
+    about: Detects the exposure of the Saltbo/zpan installer page, which could allow unauthorized setup or reinstallation of the application.
+    label:
+        - saltbo
+        - zpan
+        - installer
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/system/options/core.email'
+        - '{{BaseURL}}/install'
+      signs:
+        - "on": word
+          has:
+            - <title>ZPan
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - system is not initialized
+          in: body_1
+          need: all

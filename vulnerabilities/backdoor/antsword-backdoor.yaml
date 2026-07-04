@@ -1,0 +1,27 @@
+id: antsword-backdoor
+brief:
+    title: AntSword Backdoor Detection
+    by: ffffffff0x
+    level: critical
+    about: An AntSword application backdoor shell was discovered.
+    label:
+        - backdoor
+        - antsword
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/.antproxy.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: ant=echo md5("antproxy.php");
+      signs:
+        - "on": word
+          has:
+            - 951d11e51392117311602d0c25435d7f
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

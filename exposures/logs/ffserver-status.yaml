@@ -1,0 +1,27 @@
+id: ffserver-status
+brief:
+    title: FFserver Status Detect
+    by: notnotnotveg
+    level: low
+    about: FFserver status panel exposed.
+    label:
+        - exposure
+        - exposures
+        - logs
+        - ffserver
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ffserver Status
+            - Available Streams
+            - Connection Status
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

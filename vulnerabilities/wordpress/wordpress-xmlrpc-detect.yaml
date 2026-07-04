@@ -1,0 +1,18 @@
+id: wordpress-xmlrpc-detect
+brief:
+    title: WordPress XMLRPC
+    by: udit_thakkur
+    level: info
+    about: ""
+    label:
+        - wordpress
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/xmlrpc.php'
+      signs:
+        - "on": word
+          has:
+            - XML-RPC server accepts POST requests only.
+          in: body

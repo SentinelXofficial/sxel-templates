@@ -1,0 +1,20 @@
+id: bigbluebutton-login
+brief:
+    title: BigBlueButton Login Panel
+    by: myztique
+    level: info
+    about: A BigBlueButton login panel was detected.
+    label:
+        - panel
+        - bigbluebutton
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - content="BigBlueButton
+          in: body
+          need: all

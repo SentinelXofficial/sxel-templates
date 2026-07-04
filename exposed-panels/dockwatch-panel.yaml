@@ -1,0 +1,17 @@
+id: dockwatch-panel
+brief:
+    title: Dockwatch Panel - Detect
+    by: s4e-io
+    level: info
+    about: Dockwatch panel was discovered
+    label:
+        - panel
+        - login
+        - dockwatch
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.php'
+      signs: []

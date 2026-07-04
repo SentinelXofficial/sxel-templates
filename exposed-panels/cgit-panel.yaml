@@ -1,0 +1,16 @@
+id: cgit-panel
+brief:
+    title: CGIT - Detect
+    by: tess
+    level: info
+    about: CGIT panel was detected.
+    label:
+        - panel
+        - git
+        - cgit_project
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

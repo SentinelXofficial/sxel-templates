@@ -1,0 +1,23 @@
+id: api-heroku
+brief:
+    title: Heroku API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - heroku
+moves:
+    - verb: POST
+      to:
+        - https://api.heroku.com/apps
+      head:
+        Accept: application/vnd.heroku+json; version=3
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"created_at":'
+            - '"git_url":'
+          in: body
+          need: all

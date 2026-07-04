@@ -1,0 +1,25 @@
+id: isams-panel
+brief:
+    title: iSAMS Panel - Detect
+    by: righettod
+    level: info
+    about: iSAMS was detected.
+    label:
+        - panel
+        - isams
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth'
+      signs:
+        - "on": word
+          has:
+            - iSAMS Ltd
+            - iSAMS Authentication Server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

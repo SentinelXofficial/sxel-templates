@@ -1,0 +1,26 @@
+id: storybook-panel
+brief:
+    title: Storybook Panel - Detect
+    by: kh4sh3i
+    level: info
+    about: Storybook panel was detected.
+    label:
+        - panel
+        - storybook
+        - workshop
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/?path=/settings/about'
+      signs:
+        - "on": word
+          has:
+            - <title>Storybook</title>
+            - storybook-
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,32 @@
+id: robots-txt
+brief:
+    title: robots.txt file
+    by: CasperGN
+    level: info
+    about: ""
+    label:
+        - miscellaneous
+        - misc
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/robots.txt'
+      signs:
+        - "on": word
+          has:
+            - 'Allow:'
+            - 'Disallow:'
+            - 'Sitemap:'
+            - 'User-agent:'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,17 @@
+id: wordpress-user-enum
+brief:
+    title: Wordpress User Enumeration
+    by: r3dg33k
+    level: info
+    about: This template detects user enumeration in wordpress.
+    label:
+        - wordpress
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?author=1'
+      signs:
+        - "on": status
+          status:
+            - 301

@@ -1,0 +1,26 @@
+id: cyberchef-panel
+brief:
+    title: Cyber Chef Panel - Detect
+    by: rxerium
+    level: info
+    about: A Cyber Chef Panel was detected
+    label:
+        - panel
+        - cyberchef
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>CyberChef</title>
+            - The Cyber Swiss Army Knife
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

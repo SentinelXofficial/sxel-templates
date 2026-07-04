@@ -1,0 +1,16 @@
+id: featherpanel-panel
+brief:
+    title: FeatherPanel Panel - Detect
+    by: Th3l0newolf
+    level: info
+    about: FeatherPanel login interface was detected.
+    label:
+        - panel
+        - featherpanel
+        - discovery
+        - login
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+      signs: []

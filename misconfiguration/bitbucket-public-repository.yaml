@@ -1,0 +1,29 @@
+id: bitbucket-public-repository
+brief:
+    title: Atlassian Bitbucket Public Repository Exposure
+    by: DhiyaneshDk
+    level: low
+    about: Bitbucket Public Repository is exposed.
+    label:
+        - misconfig
+        - bitbucket
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/repos?visibility=public'
+        - '{{BaseURL}}/bitbucket/repos?visibility=public'
+      signs:
+        - "on": word
+          has:
+            - Public Repositories - Bitbucket
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: prvpl
+brief:
+    title: Prv.pl User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Prv.pl user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - prvpl
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.prv.pl/osoba/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - LOGIN
+          in: body
+          need: all

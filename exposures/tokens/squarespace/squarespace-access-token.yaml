@@ -1,0 +1,16 @@
+id: squarespace-access-token
+brief:
+    title: Squarespace Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - squarespace
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

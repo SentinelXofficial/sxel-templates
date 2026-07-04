@@ -1,0 +1,29 @@
+id: tomcat-snoop-servlet-exposed
+brief:
+    title: Apache Tomcat - Snoop Servlet Information Disclosure
+    by: Thabisocn
+    level: info
+    about: The Snoop servlet is exposed in the Apache Tomcat examples directory.
+    label:
+        - apache
+        - jakarta
+        - tomcat
+        - exposure
+        - info-leak
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/examples/jsp/snp/snoop.jsp'
+      signs:
+        - "on": word
+          has:
+            - Request Information
+            - Path info
+            - Server name
+            - Remote address
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

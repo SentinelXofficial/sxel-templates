@@ -1,0 +1,26 @@
+id: etic-telecom-panel
+brief:
+    title: ETIC Telecom Device Login - Panel
+    by: biero-el-corridor
+    level: info
+    about: ETIC Telecom device login panel was discovered
+    label:
+        - etic
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.htm'
+        - '{{BaseURL}}/common.etic_cgi_portal/login.html'
+      signs:
+        - "on": word
+          has:
+            - Please identify yourself
+            - ETIC Telecom device login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

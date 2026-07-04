@@ -1,0 +1,16 @@
+id: frameio-token
+brief:
+    title: Frameio API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - frameio
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

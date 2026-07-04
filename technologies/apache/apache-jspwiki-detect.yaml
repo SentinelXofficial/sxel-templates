@@ -1,0 +1,17 @@
+id: apache-jspwiki-detect
+brief:
+    title: Apache JSPWiki - Detect
+    by: icarot
+    level: info
+    about: Detects a Apache JSPWiki web application, leading open source WikiWiki engine, feature-rich and built around standard JEE components (Java, servlets, JSP).
+    label:
+        - tech
+        - jspwiki
+        - apache
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

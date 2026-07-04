@@ -1,0 +1,23 @@
+id: api-segment
+brief:
+    title: Segment API Test
+    by: geeknik
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - segment
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://platform.segmentapis.com/v1beta/workspaces/myworkspace'
+      head:
+        Authorization: Bearer {{token}}
+        Content-Type: application/json
+      signs:
+        - "on": word
+          has:
+            - '"name":'
+            - '"id"'
+          in: body
+          need: all

@@ -1,0 +1,25 @@
+id: opennebula-panel
+brief:
+    title: OpenNebula Login Panel - Detect
+    by: kh4sh3i
+    level: info
+    about: OpenNebula login panel was detected.
+    label:
+        - panel
+        - opennebula
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>OpenNebula
+            - OpenNebula Systems
+            - target="_blank">OpenNebula
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

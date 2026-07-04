@@ -1,0 +1,28 @@
+id: unauth-hoteldruid-panel
+brief:
+    title: Hoteldruid Management Panel Access
+    by: princechaddha
+    level: high
+    about: A vulnerability in Hoteldruid Panel allows remote unauthenticated users access to the management portal without authentication.
+    label:
+        - hoteldruid
+        - panel
+        - unauth
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/hoteldruid/inizio.php'
+        - '{{BaseURL}}/inizio.php'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title> HotelDruid </title>
+            - <b>INSERT:</b>
+            - <b>TABLES:</b>
+          in: body
+          need: all

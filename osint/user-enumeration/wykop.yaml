@@ -1,0 +1,24 @@
+id: wykop
+brief:
+    title: Wykop User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Wykop user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - wykop
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.wykop.pl/ludzie/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Aktywność użytkownika
+          in: body
+          need: all

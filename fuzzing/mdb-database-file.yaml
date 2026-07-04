@@ -1,0 +1,29 @@
+id: mdb-database-file
+brief:
+    title: Microsoft Access Database File - Detect
+    by: pdteam
+    level: medium
+    about: Microsoft Access database file was detected.
+    label:
+        - fuzz
+        - mdb
+        - asp
+        - fuzzing
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{mdbPaths}}'
+      head:
+        Accept-Language: en-US,en;q=0.9
+        Origin: '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - application/x-msaccess
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

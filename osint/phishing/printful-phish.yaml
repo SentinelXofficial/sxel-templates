@@ -1,0 +1,25 @@
+id: printful-phish
+brief:
+    title: Printful phishing Detection
+    by: rxerium
+    level: info
+    about: A Printful phishing website was detected
+    label:
+        - phishing
+        - printful
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Printful
+            - '<title>Printful: Custom Print On Demand &amp; Dropshipping'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

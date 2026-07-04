@@ -1,0 +1,27 @@
+id: amatera-stealer-panel
+brief:
+    title: Amatera Stealer C2 Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Amatera Stealer C2 Login Panel was discovered.
+    label:
+        - c2
+        - amatera
+        - stealer
+        - panel
+        - login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sign-in'
+      signs:
+        - "on": word
+          has:
+            - <title>Amatera App
+            - Amatera Stealer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

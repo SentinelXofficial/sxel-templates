@@ -1,0 +1,24 @@
+id: twig-runtime-error
+brief:
+    title: Twig Runtime Error - Page
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - error
+        - twig
+        - log
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Twig Runtime Error – Twig\Error\RuntimeError
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 500

@@ -1,0 +1,26 @@
+id: grailed-phish
+brief:
+    title: Grailed phishing Detection
+    by: rxerium
+    level: info
+    about: A Grailed phishing website was detected
+    label:
+        - phishing
+        - grailed
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Grailed
+            - '<title>Grailed: Online Marketplace to Buy Fashion'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

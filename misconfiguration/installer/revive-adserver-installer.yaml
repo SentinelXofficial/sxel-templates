@@ -1,0 +1,27 @@
+id: revive-adserver-installer
+brief:
+    title: Revive Adserver - Exposed Installer
+    by: DhiyaneshDk
+    level: high
+    about: Detected exposed Revive Adserver installation wizard that allows unauthorized installation and configuration.
+    label:
+        - misconfig
+        - revive
+        - adserver
+        - exposure
+        - unauth
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/www/admin/install.php?action=welcome'
+        - '{{BaseURL}}/admin/install.php?action=welcome'
+      signs:
+        - "on": word
+          has:
+            - Installing Revive Adserver
+            - installer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

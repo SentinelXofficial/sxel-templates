@@ -1,0 +1,28 @@
+id: langsmith-panel
+brief:
+    title: LangSmith Panel - Detect
+    by: rxerium
+    level: info
+    about: LangSmith panel was detected. LangSmith is LangChain's platform for debugging, testing, evaluating, and monitoring LLM applications.
+    label:
+        - panel
+        - langsmith
+        - langchain
+        - llm
+        - ai
+        - observability
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>LangSmith</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

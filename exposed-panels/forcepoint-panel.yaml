@@ -1,0 +1,24 @@
+id: forcepoint-login-panel
+brief:
+    title: Forcepoint Login Panel - Detect
+    by: husain
+    level: info
+    about: ""
+    label:
+        - forcepoint
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pem/login/pages/login.jsf'
+      signs:
+        - "on": word
+          has:
+            - Forcepoint Email Security
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

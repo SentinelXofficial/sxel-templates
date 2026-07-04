@@ -1,0 +1,27 @@
+id: unauth-apache-kafka-ui
+brief:
+    title: Apache Kafka - Unauthorized UI Exposure
+    by: theamanrawat
+    level: medium
+    about: Unauthorized access to apache kakfa UI.
+    label:
+        - misconfig
+        - apache
+        - kafka
+        - unauth
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/ui/clusters/kafka-ui/brokers'
+      signs:
+        - "on": word
+          has:
+            - <title>UI for Apache Kafka</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

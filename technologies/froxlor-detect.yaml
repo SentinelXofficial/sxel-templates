@@ -1,0 +1,23 @@
+id: froxlor-detect
+brief:
+    title: Froxlor Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - froxlor
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Froxlor Server Management Panel</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

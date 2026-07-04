@@ -1,0 +1,26 @@
+id: blackbox-exporter-metrics
+brief:
+    title: Blackbox Exporter Metrics Exposed
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - blackbox
+        - exposure
+        - debug
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/metrics'
+      signs:
+        - "on": word
+          has:
+            - Blackbox exporter
+            - blackbox_exporter_build_info
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

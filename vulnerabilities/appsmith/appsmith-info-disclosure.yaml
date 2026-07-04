@@ -1,0 +1,29 @@
+id: appsmith-info-disclosure
+brief:
+    title: Appsmith <= v1.97 - Information Disclosure
+    by: ritikchaddha
+    level: medium
+    about: Appsmith <= v1.97 instance management API endpoints are accessible without authentication, allowing an attacker to obtain sensitive information such as license plan, instance ID, authentication pro...
+    label:
+        - appsmith
+        - disclosure
+        - exposure
+    score: CVSS:4.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/consolidated-api/view'
+        - '{{BaseURL}}/api/v1/users/features'
+        - '{{BaseURL}}/api/v1/tenants/current'
+      signs:
+        - "on": word
+          has:
+            - '{"responseMeta":{'
+            - status":200,"success":true
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all

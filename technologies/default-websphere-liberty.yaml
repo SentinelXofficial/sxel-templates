@@ -1,0 +1,24 @@
+id: default-websphere-liberty
+brief:
+    title: WebSphere Liberty Default Page
+    by: oppsec
+    level: info
+    about: ""
+    label:
+        - tech
+        - websphere
+        - liberty
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - WebSphere Liberty
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: social-msdn
+brief:
+    title: Social msdn User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Social msdn user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - social-msdn
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://social.msdn.microsoft.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Member Since
+          in: body
+          need: all

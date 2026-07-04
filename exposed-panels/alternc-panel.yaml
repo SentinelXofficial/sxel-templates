@@ -1,0 +1,17 @@
+id: alternc-panel
+brief:
+    title: AlternC Desktop Panel - Detect
+    by: Splint3r7
+    level: info
+    about: AlternC Desktop panel was detected.
+    label:
+        - panel
+        - alternc
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

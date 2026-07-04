@@ -1,0 +1,31 @@
+id: openshift-installer-panel
+brief:
+    title: OpenShift Assisted Installer Panel - Detect
+    by: DhiyaneshDk
+    level: medium
+    about: OpenShift Assisted Installer panel was detected.
+    label:
+        - panel
+        - openshift
+        - cluster
+        - misconfig
+        - vuln
+    score: CVSS:4.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/clusters'
+      signs:
+        - "on": word
+          has:
+            - OpenShift Assisted Installer
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: automation-direct
+brief:
+    title: AutomationDirect Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: AutomationDirect panel was detected.
+    label:
+        - panel
+        - iot
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.html'
+      signs:
+        - "on": word
+          has:
+            - <TITLE>C-more -- the best HMI presented by AutomationDirect</TITLE>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: bnp-paribas-phish
+brief:
+    title: BNP Paribas phishing Detection
+    by: rxerium
+    level: info
+    about: A BNP Paribas phishing website was detected
+    label:
+        - phishing
+        - bnp-paribas
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - BNP Paribas
+            - <title>Banque BNP Paribas | La banque d&#039;un monde qui change
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

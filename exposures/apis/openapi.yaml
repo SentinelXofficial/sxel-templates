@@ -1,0 +1,30 @@
+id: openapi
+brief:
+    title: OpenAPI - Detect
+    by: pdteam
+    level: info
+    about: OpenAPI was detected.
+    label:
+        - exposure
+        - api
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/openapi.json'
+      signs:
+        - "on": word
+          has:
+            - openapi
+            - paths
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/openapi+json
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

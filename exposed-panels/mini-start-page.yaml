@@ -1,0 +1,25 @@
+id: mini-start-page
+brief:
+    title: Miniweb Start Page Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Miniweb Start Page login panel was detected.
+    label:
+        - edb
+        - panel
+        - miniweb_http_server_project
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/start.html'
+        - '{{BaseURL}}/www/start.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Miniweb Start Page</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

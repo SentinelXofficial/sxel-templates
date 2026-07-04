@@ -1,0 +1,16 @@
+id: clojars-token
+brief:
+    title: Clojars Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - clojars
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

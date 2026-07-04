@@ -1,0 +1,17 @@
+id: traefik-api-enabled
+brief:
+    title: Traefik API - enabled
+    by: DhiyaneshDK
+    level: low
+    about: Traefik API is publicly accessible.It could expose sensitive routing, middleware, and service configuration details.
+    label:
+        - traefik
+        - exposure
+        - apis
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/rawdata'
+        - '{{BaseURL}}/api/http/routers'
+      signs: []

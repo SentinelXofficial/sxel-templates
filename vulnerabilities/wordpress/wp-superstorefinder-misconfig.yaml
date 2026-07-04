@@ -1,0 +1,18 @@
+id: wp-superstorefinder-misconfig
+brief:
+    title: Superstorefinder WP-plugin - Security Misconfigurations
+    by: r3Y3r53
+    level: medium
+    about: Security misconfiguration is a common security issue that occurs when a system, application, or network is not properly configured to protect against threats and vulnerabilities.
+    label:
+        - wordpress
+        - wp-plugin
+        - superstorefinder-wp
+        - wp
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/superstorefinder-wp/ssf-wp-admin/pages/exportAjax.php'
+      signs: []

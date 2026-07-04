@@ -1,0 +1,31 @@
+id: pagekit-installer
+brief:
+    title: Pagekit Installer Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Pagekit is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - pagekit
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/installer'
+      signs:
+        - "on": word
+          has:
+            - Pagekit Installer
+            - Connect database
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

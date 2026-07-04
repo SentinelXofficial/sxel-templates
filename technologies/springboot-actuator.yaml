@@ -1,0 +1,27 @@
+id: springboot-actuator
+brief:
+    title: Detect Springboot Actuators
+    by: that_juan_
+    level: info
+    about: ""
+    label:
+        - tech
+        - springboot
+        - actuator
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/actuator'
+        - '{{BaseURL}}/actuator%72'
+        - '{{BaseURL}}/favicon.ico'
+        - '{{BaseURL}}/actuator/favicon.ico'
+      signs:
+        - "on": word
+          has:
+            - '"_links":'
+            - '"self":'
+            - '"health"'
+          in: body
+          need: all

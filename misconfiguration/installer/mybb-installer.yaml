@@ -1,0 +1,32 @@
+id: mybb-installer
+brief:
+    title: MyBB Installation Panel - Detect
+    by: ritikchaddha
+    level: high
+    about: Detects exposed MyBB Installation page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - mybb
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/index.php'
+      signs:
+        - "on": word
+          has:
+            - MyBB
+            - Installation Wizard
+          in: body
+          need: all
+        - "on": word
+          has:
+            - currently locked
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: open-virtualization-manager-panel
+brief:
+    title: Open Virtualization Userportal & Webadmin Panel Detection
+    by: idealphase
+    level: info
+    about: Open Virtualization Userportal & Webadmin panels were detected. Open Virtualization Manager is an open-source distributed virtualization solution designed to manage enterprise infrastructure. oVirt...
+    label:
+        - panel
+        - ovirt
+        - oss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ovirt-engine/userportal/'
+        - '{{BaseURL}}/ovirt-engine/webadmin/'
+      signs:
+        - "on": word
+          has:
+            - '"application_title":"oVirt Engine User Portal"'
+            - '"application_title":"oVirt Engine Web Administration"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

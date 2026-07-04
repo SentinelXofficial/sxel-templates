@@ -1,0 +1,18 @@
+id: newcapec-rce
+brief:
+    title: Newcapec - Remote Code Execution
+    by: ritikchaddha
+    level: critical
+    about: Newcapec front-end service management platform service.action interface has a remote command execution vulnerability, attackers can use the vulnerability to obtain server permissions.
+    label:
+        - newcapec
+        - rce
+        - intrusive
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{file}}.txt'
+      head:
+        Content-Type: application/json
+      signs: []

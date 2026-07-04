@@ -1,0 +1,31 @@
+id: marimo-proxy-abuse
+brief:
+    title: Marimo > 0.9.20 - Proxy Abuse
+    by: ritikchaddha
+    level: medium
+    about: The /mpl/<port>/<route> endpoint, which is accessible without authentication on default Marimo installations allows for external attackers to reach internal services and arbitrary ports.
+    label:
+        - cve
+        - cve2026
+        - marimo
+        - proxy-abuse
+    score: CVSS:6.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mpl/1234'
+      signs:
+        - "on": word
+          has:
+            - Connection refused"}
+            - 'detail":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 500

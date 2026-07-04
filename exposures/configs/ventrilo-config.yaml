@@ -1,0 +1,32 @@
+id: ventrilo-config
+brief:
+    title: Ventrilo Configuration File - Detect
+    by: geeknik
+    level: high
+    about: Ventrilo configuration file was detected, The file discloses the application's Adminpassword and Password.
+    label:
+        - ventrilo
+        - config
+        - exposure
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ventrilo_srv.ini'
+      signs:
+        - "on": word
+          has:
+            - '[Server]'
+            - Name
+            - Phonetic
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

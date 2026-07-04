@@ -1,0 +1,24 @@
+id: pritunl-panel
+brief:
+    title: Pritunl - Panel
+    by: irshad ahamed
+    level: info
+    about: Realtime website and application monitoring tool
+    label:
+        - pritunl
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Pritunl</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: snipeit-panel
+brief:
+    title: Snipe-IT Panel - Detect
+    by: pikpikcu
+    level: info
+    about: Snipe-IT panel was detected.
+    label:
+        - panel
+        - snipeit
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - window.snipeit
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,29 @@
+id: oracle-httpserver12c
+brief:
+    title: Oracle HTTPServer12c
+    by: tess
+    level: info
+    about: ""
+    label:
+        - tech
+        - oracle
+        - httpserver
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Oracle HTTP Server 12c</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

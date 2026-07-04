@@ -1,0 +1,25 @@
+id: smartping-dashboard
+brief:
+    title: SmartPing Dashboard Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: SmartPing Dashboard panel was detected.
+    label:
+        - panel
+        - misconfig
+        - unauth
+        - smartping
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config.html'
+      signs:
+        - "on": word
+          has:
+            - SmartPing Dashboard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

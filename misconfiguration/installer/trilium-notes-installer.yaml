@@ -1,0 +1,25 @@
+id: trilium-notes-installer
+brief:
+    title: Trilium Notes Installer - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Detects if the Trilium Notes setup page is accessible.
+    label:
+        - trilium
+        - setup
+        - misconfig
+        - installer
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup'
+      signs:
+        - "on": word
+          has:
+            - Trilium Notes setup
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

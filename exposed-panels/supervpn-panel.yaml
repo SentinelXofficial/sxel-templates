@@ -1,0 +1,18 @@
+id: supervpn-detect
+brief:
+    title: SuperVPN Login Panel - Detect
+    by: organiccrap
+    level: info
+    about: SuperVPN login panel was detected.
+    label:
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Sign In-SuperVPN</title>
+          in: body

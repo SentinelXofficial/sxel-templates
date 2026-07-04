@@ -1,0 +1,27 @@
+id: flock-safety-camera-panel
+brief:
+    title: Flock Safety Camera Admin Panel - Detect
+    by: inokii
+    level: info
+    about: Detected the Flock Safety camera admin panel.
+    label:
+        - panel
+        - iot
+        - camera
+        - flock-safety
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Flock Admin</title>
+            - com.flocksafety.android.cameraconfig
+            - com.flocksafety.android.videorecording
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

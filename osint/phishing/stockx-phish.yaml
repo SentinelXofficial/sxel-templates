@@ -1,0 +1,26 @@
+id: stockx-phish
+brief:
+    title: StockX phishing Detection
+    by: rxerium
+    level: info
+    about: A StockX phishing website was detected
+    label:
+        - phishing
+        - stockx
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - StockX
+            - Buy and sell the hottest sneakers including Adidas Yeezy and Retro Jordans, Supreme streetwear, trading cards, collectibles, designer handbags and watches.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

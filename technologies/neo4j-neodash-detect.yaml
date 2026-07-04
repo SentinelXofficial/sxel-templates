@@ -1,0 +1,17 @@
+id: neo4j-neodash-detect
+brief:
+    title: Neo4j Neodash - Detect
+    by: icarot
+    level: info
+    about: Detects a Neo4j Neodash web application, a Dashboard Builder for Neo4j.
+    label:
+        - tech
+        - neodash
+        - neo4j
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

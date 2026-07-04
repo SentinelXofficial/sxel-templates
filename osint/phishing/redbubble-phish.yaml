@@ -1,0 +1,25 @@
+id: redbubble-phish
+brief:
+    title: Redbubble phishing Detection
+    by: rxerium
+    level: info
+    about: A Redbubble phishing website was detected
+    label:
+        - phishing
+        - redbubble
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Redbubble
+            - Over 700,000 creatives worldwide making things like shirts, stickers, phone cases, and pillows weirdly meaningful. Find your thing or open your own shop.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: kanboard-default-login
+brief:
+    title: Kanboard - Default Login
+    by: shelled
+    level: high
+    about: Kanboard contains a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - default-login
+        - kanboard
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?controller=AuthController&action=login'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/?controller=AuthController&action=check'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{user}}&password={{pass}}&csrf_token={{csrf_token}}
+      signs: []

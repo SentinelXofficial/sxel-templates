@@ -1,0 +1,27 @@
+id: siemens-simatic-panel
+brief:
+    title: Siemens SIMATIC HMI Miniweb - Login Panel
+    by: biero-el-corridor
+    level: info
+    about: Siemens SIMATIC HMI Miniweb Login Panel was discovered.
+    label:
+        - ics
+        - siemens
+        - login
+        - panel
+        - miniweb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/start.html'
+      signs:
+        - "on": word
+          has:
+            - Miniweb Start Page
+            - HMI_Panel
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

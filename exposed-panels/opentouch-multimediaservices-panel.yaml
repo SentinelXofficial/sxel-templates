@@ -1,0 +1,28 @@
+id: opentouch-multimediaservices-panel
+brief:
+    title: OpenTouch Multimedia Services - Detect
+    by: righettod
+    level: info
+    about: OpenTouch Multimedia Services Login Panel was detected.
+    label:
+        - panel
+        - opentouch
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/authenticationform/login'
+        - '{{BaseURL}}/authenticationform/jsp/logonWeb.jsp'
+      signs:
+        - "on": word
+          has:
+            - OpenTouch
+            - Multimedia Services
+            - Alcatel-Lucent
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

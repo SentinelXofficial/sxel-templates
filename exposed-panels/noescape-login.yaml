@@ -1,0 +1,20 @@
+id: noescape-login
+brief:
+    title: NoEscape Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: NoEscape login panel was detected.
+    label:
+        - panel
+        - noescape
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - NoEscape - Login
+          in: body
+          need: all

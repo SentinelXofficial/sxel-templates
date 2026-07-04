@@ -1,0 +1,24 @@
+id: riot-games-phish
+brief:
+    title: Riot Games phishing Detection
+    by: rxerium
+    level: info
+    about: A Riot Games phishing website was detected
+    label:
+        - phishing
+        - riot-games
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Riot Games. Developer of League of Legends, VALORANT, Teamfight Tactics, Legends of Runeterra, and Wild Rift. Creators of Arcane. Home of LOL and VALORANT Esports.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

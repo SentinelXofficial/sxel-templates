@@ -1,0 +1,21 @@
+id: api-npm
+brief:
+    title: NPM API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - node
+        - npm
+moves:
+    - verb: GET
+      to:
+        - https://registry.npmjs.org/-/whoami
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": status
+          status:
+            - 401
+            - 403

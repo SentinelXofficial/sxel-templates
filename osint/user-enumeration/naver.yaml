@@ -1,0 +1,24 @@
+id: naver
+brief:
+    title: Naver User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Naver user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - naver
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://blog.naver.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' : 네이버 블로그'
+          in: body
+          need: all

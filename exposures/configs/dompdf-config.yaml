@@ -1,0 +1,30 @@
+id: dompdf-config
+brief:
+    title: DomPDF - Configuration Page
+    by: kazet
+    level: low
+    about: DOMPDF Configuration page was detected, which contains paths, library versions and other potentially sensitive information
+    label:
+        - config
+        - exposure
+        - dompdf
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/www/setup.php'
+        - '{{BaseURL}}/dompdf/dompdf/www/setup.php'
+        - '{{BaseURL}}/js/dompdf/www/setup.php'
+        - '{{BaseURL}}/portal/application/libraries/dompdf/www/setup.php'
+        - '{{BaseURL}}/sites/all/libraries/dompdf/www/setup.php'
+        - '{{BaseURL}}/vendor/dompdf/dompdf/www/setup.php'
+      signs:
+        - "on": word
+          has:
+            - HTML to PDF Converter</title>
+            - <td class="title">DOMPDF_PDF_BACKEND</td>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,32 @@
+id: gcloudignore-file-exposure
+brief:
+    title: Google Cloud Ignore File Exposure
+    by: DhiyaneshDK
+    level: low
+    about: Detected exposed .gcloudignore files which may reveal directory structure,deployment configurations, and sensitive project information used by Google Cloud SDK (gcloud) during deployments.
+    label:
+        - exposure
+        - gcloud
+        - google
+        - config
+        - files
+        - cloud
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.gcloudignore'
+      signs:
+        - "on": word
+          has:
+            - deployment
+            - Cloud Build
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

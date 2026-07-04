@@ -1,0 +1,47 @@
+id: open-proxy-portscan
+brief:
+    title: Open Proxy to Ports on the Proxy's localhost Interface
+    by: sullo
+    level: high
+    about: The host is configured as a proxy which allows access to its internal interface
+    label:
+        - exposure
+        - config
+        - proxy
+        - misconfig
+        - fuzz
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://somethingelsethatdoesnotexist/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://127.0.0.1:21'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://127.0.0.1:22'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://127.0.0.1:25'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://127.0.0.1:110'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://127.0.0.1:587'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://127.0.0.1:587'
+      signs: []

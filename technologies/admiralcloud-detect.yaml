@@ -1,0 +1,16 @@
+id: admiralcloud-detect
+brief:
+    title: AdmiralCloud - Detect
+    by: righettod
+    level: info
+    about: AdmiralCloud was detected.
+    label:
+        - tech
+        - admiralcloud
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

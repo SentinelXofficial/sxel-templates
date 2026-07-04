@@ -1,0 +1,30 @@
+id: pma-server-import
+brief:
+    title: PhpMyAdmin Server Import Page - Detect
+    by: Cristi vlad (@cristivlad25)
+    level: high
+    about: Multiple phpMyAdmin server import pages were detected.
+    label:
+        - phpmyadmin
+        - misconfig
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - File to import
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Location of the text file
+            - Browse your computer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

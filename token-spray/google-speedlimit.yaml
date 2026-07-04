@@ -1,0 +1,20 @@
+id: api-googlespeedlimit
+brief:
+    title: Google Speed Limit API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - speed
+        - limit
+moves:
+    - verb: GET
+      to:
+        - https://roads.googleapis.com/v1/speedLimits?path=38.75807927603043,-9.03741754643809&key={{token}}
+      signs:
+        - "on": word
+          has:
+            - error
+          in: body

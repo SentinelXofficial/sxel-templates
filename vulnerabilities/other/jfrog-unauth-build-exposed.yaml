@@ -1,0 +1,31 @@
+id: jfrog-unauth-build-exposed
+brief:
+    title: JFrog Unauthentication Builds
+    by: dhiyaneshDK
+    level: medium
+    about: JFrog Builds are exposed to Unauthenticated users.
+    label:
+        - jfrog
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/ui/api/v1/global-search/builds?jfLoader=true'
+      head:
+        Content-Type: application/json
+      body: '{"name":"","before":"","after":"","direction":"desc","order_by":"date","num_of_rows":100}'
+      signs:
+        - "on": word
+          has:
+            - last_build_number
+            - build_name
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

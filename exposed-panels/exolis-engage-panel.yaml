@@ -1,0 +1,29 @@
+id: exolis-engage-panel
+brief:
+    title: Exolis Engage Panel - Detect
+    by: righettod
+    level: info
+    about: Exolis Engage panel was detected.
+    label:
+        - panel
+        - exolis
+        - engage
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/app.js'
+      signs:
+        - "on": word
+          has:
+            - engage-specific-config
+            - engage-lastAppUserType
+            - engage-lastHelperPatientContext
+            - engage-preferred-language
+            - engageManager.admin
+            - engageManager.user
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

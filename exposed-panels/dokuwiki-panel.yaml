@@ -1,0 +1,16 @@
+id: dokuwiki-panel
+brief:
+    title: Dokuwiki Login Panel - Detect
+    by: righettod
+    level: info
+    about: Dokuwiki login panel was detected.
+    label:
+        - panel
+        - dokuwiki
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/doku.php'
+      signs: []

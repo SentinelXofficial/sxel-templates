@@ -1,0 +1,26 @@
+id: apache-apollo-panel
+brief:
+    title: Apache Apollo Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - apache
+        - apollo
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/console/index.html'
+      signs:
+        - "on": word
+          has:
+            - Apache Apollo - Admin Console
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

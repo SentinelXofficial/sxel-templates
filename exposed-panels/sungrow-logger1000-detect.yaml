@@ -1,0 +1,30 @@
+id: sungrow-logger1000-detect
+brief:
+    title: SUNGROW Logger1000 Panel - Detect
+    by: gy741
+    level: info
+    about: SUNGROW (Solar Energy Inverter Monitoring Devices) Logger1000 panel was detected.
+    label:
+        - panel
+        - logger1000
+        - sungrow
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - htmlWebpackPlugin.options.title
+            - logger
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

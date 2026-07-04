@@ -1,0 +1,17 @@
+id: wordpress-favicon-by-realfavicongenerator
+brief:
+    title: Favicon by RealFaviconGenerator Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/favicon-by-realfavicongenerator/readme.txt'
+      signs: []

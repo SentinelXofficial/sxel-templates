@@ -1,0 +1,26 @@
+id: call-com-installer
+brief:
+    title: Call.com Setup Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed Call.com  Setup page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - cal
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/setup'
+      signs:
+        - "on": word
+          has:
+            - Setup | Cal.com
+            - Minimum 15 characters long</li>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

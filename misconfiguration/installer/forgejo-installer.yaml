@@ -1,0 +1,24 @@
+id: forgejo-installer
+brief:
+    title: Forgejo Installation Page - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Checks for the presence of a Forgejo Installer Page.
+    label:
+        - install
+        - Forgejo
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>Installation - Forgejo: Beyond coding. We Forge.</title>'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

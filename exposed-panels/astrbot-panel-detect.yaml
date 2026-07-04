@@ -1,0 +1,23 @@
+id: astrbot-panel-detect
+brief:
+    title: AstrBot WebUI Login Panel - Detect
+    by: theamanrawat
+    level: info
+    about: Astrbot WebUI login panel was detected.
+    label:
+        - panel
+        - astrbot
+        - login
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - <title>AstrBot
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

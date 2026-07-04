@@ -1,0 +1,21 @@
+id: kafka-monitoring
+brief:
+    title: Apache Kafka Monitor Login Panel - Detect
+    by: pdteam
+    level: info
+    about: Apache Kafka Monitor login panel was detected.
+    label:
+        - panel
+        - kafka
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '>KafkaMonitor</a>'
+            - '>Kafka Monitor GUI</h1>'
+          in: body

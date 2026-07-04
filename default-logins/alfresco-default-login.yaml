@@ -1,0 +1,26 @@
+id: alfresco-default-login
+brief:
+    title: Alfresco - Default Admin Credentials
+    by: 0x_Akoko
+    level: high
+    about: Detected Alfresco Content Services was found to have been using the default administrator credentials (admin:admin). An attacker could have gained full administrative access to manage content, user...
+    label:
+        - alfresco
+        - default-login
+        - auth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/alfresco/'
+      head:
+        Accept: text/html
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/alfresco/service/api/login'
+      head:
+        Accept: application/json
+        Content-Type: application/json
+      body: '{"username":"{{username}}","password":"{{password}}"}'
+      signs: []

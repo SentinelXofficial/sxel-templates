@@ -1,0 +1,22 @@
+id: xprober-service
+brief:
+    title: X Prober Server - Information Disclosure
+    by: pdteam
+    level: medium
+    about: X Prober Server information disclosure was detected.
+    label:
+        - config
+        - exposure
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/xprober.php'
+      signs:
+        - "on": word
+          has:
+            - '"appName":"X Prober"'
+            - <title>X Prober
+          in: body
+          need: all

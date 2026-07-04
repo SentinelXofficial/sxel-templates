@@ -1,0 +1,24 @@
+id: alloannonces
+brief:
+    title: Alloannonces User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Alloannonces user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - alloannonces
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.alloannonces.ma/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Vendeurs/Agents
+          in: body
+          need: all

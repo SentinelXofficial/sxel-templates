@@ -1,0 +1,26 @@
+id: laravel-filemanager
+brief:
+    title: Laravel File Manager - Panel Detect
+    by: princechaddha
+    level: info
+    about: Laravel File Manager panel was detected.
+    label:
+        - panel
+        - laravel
+        - filemanager
+        - fileupload
+        - intrusive
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/laravel-filemanager?type=Files'
+      signs:
+        - "on": word
+          has:
+            - Laravel FileManager
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

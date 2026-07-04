@@ -1,0 +1,33 @@
+id: chainlit-panel
+brief:
+    title: Chainlit Panel - Detect
+    by: rxerium
+    level: info
+    about: Chainlit panel was detected. Chainlit is an open-source framework for building production-ready conversational AI applications.
+    label:
+        - panel
+        - chainlit
+        - llm
+        - ai
+        - chatbot
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - chainlit
+            - Assistant
+          in: body
+          need: all
+        - "on": word
+          has:
+            - og:url" content="https://github.com/Chainlit/chainlit
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

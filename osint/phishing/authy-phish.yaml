@@ -1,0 +1,26 @@
+id: authy-phish
+brief:
+    title: Authy phishing Detection
+    by: rxerium
+    level: info
+    about: A Authy phishing website was detected
+    label:
+        - phishing
+        - authy
+        - security
+        - 2fa
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>Authy: Two-factor Authentication (2FA) App &amp; Guides | Authy'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

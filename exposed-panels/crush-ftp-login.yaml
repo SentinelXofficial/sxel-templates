@@ -1,0 +1,27 @@
+id: crushftp-login
+brief:
+    title: CrushFTP WebInterface Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: CrushFTP WebInterface login panel was detected.
+    label:
+        - panel
+        - edb
+        - crushftp
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/WebInterface/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>CrushFTP WebInterface</title>
+            - <title>CrushFTP - Login</title>
+            - src="/WebInterface/Resources/js/crushftp.customize.js"
+          in: body
+        - "on": word
+          has:
+            - 'Server: CrushFTP HTTP Server'
+          in: header

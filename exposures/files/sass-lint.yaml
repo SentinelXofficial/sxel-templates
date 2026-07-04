@@ -1,0 +1,28 @@
+id: sass-lint
+brief:
+    title: Sass Lint File Exposure
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - exposure
+        - sass
+        - devops
+        - cicd
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.sass-lint.yml'
+      signs:
+        - "on": word
+          has:
+            - 'options:'
+            - 'formatter:'
+            - 'files:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

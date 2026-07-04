@@ -1,0 +1,22 @@
+id: datadog-rum-detect
+brief:
+    title: Datadog Browser RUM - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects Datadog Browser RUM (Real User Monitoring) SDK artifacts in HTML responses.
+    label:
+        - tech
+        - detect
+        - rum
+        - datadog
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - DD_RUM.init
+            - DD_RUM.onReady
+          in: body
+          need: all

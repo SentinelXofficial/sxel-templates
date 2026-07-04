@@ -1,0 +1,21 @@
+id: active-admin-exposure
+brief:
+    title: ActiveAdmin Admin Dasboard Exposure
+    by: pdteam
+    level: info
+    about: An ActiveAdmin Admin dashboard was discovered.
+    label:
+        - panel
+        - activeadmin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login'
+      signs:
+        - "on": word
+          has:
+            - active_admin_content
+            - active_admin-
+          in: body
+          need: all

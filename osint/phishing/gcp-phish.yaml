@@ -1,0 +1,26 @@
+id: gcp-phish
+brief:
+    title: Google Cloud Platform phishing Detection
+    by: rxerium
+    level: info
+    about: A Google Cloud Platform phishing website was detected
+    label:
+        - phishing
+        - gcp
+        - google-cloud
+        - cloud
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Meet your business challenges head on with cloud computing services from Google, including data management, hybrid & multi-cloud, and AI & ML.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

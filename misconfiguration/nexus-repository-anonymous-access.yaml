@@ -1,0 +1,18 @@
+id: nexus-repository-anonymous-access
+brief:
+    title: Nexus Repository Manager - Anonymous Access Enabled
+    by: 0x_Akoko
+    level: medium
+    about: Detected Nexus Repository Manager instance with anonymous access enabled, allowing unauthenticated users to list and browse repositories containing private artifacts including source code, packages...
+    label:
+        - misconfig
+        - nexus
+        - sonatype
+        - exposure
+        - unauth
+    score: CVSS:6.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/service/rest/v1/repositories'
+      signs: []

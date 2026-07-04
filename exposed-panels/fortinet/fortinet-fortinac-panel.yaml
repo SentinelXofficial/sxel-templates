@@ -1,0 +1,26 @@
+id: fortinet-fortinac-panel
+brief:
+    title: Fortinet FortiNAC Login Panel - Detect
+    by: johnk3r
+    level: info
+    about: Fortinet FortiNAC login panel was detected.
+    label:
+        - panel
+        - fortinet
+        - fortinac
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/WelcomeActions.jsp?action=ajaxGetWelcomeViewInfo'
+      signs:
+        - "on": word
+          has:
+            - FortiNAC
+            - '"product":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

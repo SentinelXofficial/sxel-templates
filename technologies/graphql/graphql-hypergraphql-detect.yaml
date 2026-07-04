@@ -1,0 +1,30 @@
+id: graphql-hypergraphql-detect
+brief:
+    title: Graphql Hypergraphql Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - graphql
+        - hypergraphql
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/graphql'
+        - '{{BaseURL}}/api/graphql'
+        - '{{BaseURL}}/query'
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: '{"query":"zzz { __typename }"}'
+      signs:
+        - "on": status
+          status:
+            - 200
+            - 400
+        - "on": word
+          has:
+            - 'Validation error of type InvalidSyntax: Invalid query syntax.'
+          in: body
+          need: all

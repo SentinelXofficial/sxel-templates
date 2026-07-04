@@ -1,0 +1,24 @@
+id: grandprof
+brief:
+    title: Grandprof User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Grandprof user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - grandprof
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://grandprof.org/communaute/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s Profile
+          in: body
+          need: all

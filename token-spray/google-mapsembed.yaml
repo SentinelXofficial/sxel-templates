@@ -1,0 +1,19 @@
+id: api-googlemapsembed
+brief:
+    title: Google Maps Embed API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - maps
+        - embed
+moves:
+    - verb: GET
+      to:
+        - https://www.google.com/maps/embed/v1/place?q=Seattle&key={{token}}
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,30 @@
+id: graphql-flutter-detect
+brief:
+    title: Graphql Flutter Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - graphql
+        - flutter
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/graphql'
+        - '{{BaseURL}}/api/graphql'
+        - '{{BaseURL}}/query'
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: '{"query":"query { __typename @deprecated }"}'
+      signs:
+        - "on": status
+          status:
+            - 200
+            - 400
+        - "on": word
+          has:
+            - Directive "deprecated" may not be used on FIELD.
+          in: body
+          need: all

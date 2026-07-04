@@ -1,0 +1,25 @@
+id: icecast-mediaserver-detect
+brief:
+    title: Icecast Streaming Media Server Information Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Icecast Streaming Media Server information panel was detected.
+    label:
+        - tech
+        - icecast
+        - media-server
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/server_version.xsl'
+      signs:
+        - "on": word
+          has:
+            - Icecast Streaming Media Server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

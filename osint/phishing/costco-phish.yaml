@@ -1,0 +1,26 @@
+id: costco-phish
+brief:
+    title: Costco phishing Detection
+    by: rxerium
+    level: info
+    about: A Costco phishing website was detected
+    label:
+        - phishing
+        - costco
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Costco
+            - Shop Costco.com for electronics, computers, furniture, outdoor living, appliances, jewelry and more. Enjoy low warehouse prices on name-brands products delivered to your door
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

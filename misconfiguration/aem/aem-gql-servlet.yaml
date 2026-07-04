@@ -1,0 +1,25 @@
+id: aem-gql-servlet
+brief:
+    title: AEM GQLServlet
+    by: dhiyaneshDk
+    level: low
+    about: AEM GQLServlet is exposed.
+    label:
+        - aem
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - excerpt
+            - path
+            - hits
+          in: body
+          need: all

@@ -1,0 +1,37 @@
+id: atom-sync-remote
+brief:
+    title: Atom Synchronization Exposure
+    by: geeknik
+    level: high
+    about: It discloses username and password created by remote-sync for Atom, contains FTP and/or SCP/SFTP/SSH server details and credentials
+    label:
+        - atom
+        - exposure
+        - config
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.remote-sync.json'
+      signs:
+        - "on": word
+          has:
+            - '"hostname":'
+            - '"username":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - passphrase
+            - password
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

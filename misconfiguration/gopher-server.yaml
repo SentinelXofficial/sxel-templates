@@ -1,0 +1,25 @@
+id: gopher-server
+brief:
+    title: Gopher Server - Exposure
+    by: DhiyaneshDk
+    level: medium
+    about: Gopher Server is exposed.
+    label:
+        - misconfig
+        - gopher
+        - server
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Gopher Server
+            - Environment Variables
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

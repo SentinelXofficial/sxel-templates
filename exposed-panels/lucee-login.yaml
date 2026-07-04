@@ -1,0 +1,28 @@
+id: lucee-login
+brief:
+    title: Lucee Web and Lucee Server Admin Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Lucee admin login panels were detected in both Web and Server tabs.
+    label:
+        - panel
+        - lucee
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/lucee/admin/web.cfm'
+        - '{{BaseURL}}/lucee/admin/server.cfm'
+      signs:
+        - "on": word
+          has:
+            - <title>Login - Lucee Web Administrator</title>
+            - <title>Login - Lucee Server Administrator</title>
+            - lucee-admin-search-input
+            - lucee-docs-search-input
+            - server-lucee-small.png.cfm
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

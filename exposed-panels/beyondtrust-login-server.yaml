@@ -1,0 +1,23 @@
+id: beyondtrust-login-server
+brief:
+    title: BeyondTrust Privileged Access Management Login - Detect
+    by: r3dg33k
+    level: info
+    about: BeyondTrust Privileged Access Management login panel was detected.
+    label:
+        - beyondtrust
+        - pam
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/WebConsole/api/security/auth/loginServers'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"domains":'
+          in: body

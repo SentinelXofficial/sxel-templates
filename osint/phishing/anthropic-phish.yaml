@@ -1,0 +1,27 @@
+id: anthropic-phish
+brief:
+    title: Anthropic phishing Detection
+    by: rxerium
+    level: info
+    about: A Anthropic phishing website was detected
+    label:
+        - phishing
+        - anthropic
+        - claude
+        - ai
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Anthropic
+            - <title>Home \ Anthropic
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

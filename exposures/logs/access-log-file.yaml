@@ -1,0 +1,31 @@
+id: access-log-file
+brief:
+    title: Publicly accessible access-log file
+    by: sheikhrishad
+    level: low
+    about: Log file was exposed.
+    label:
+        - logs
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/access.log'
+        - '{{BaseURL}}/log/access.log'
+        - '{{BaseURL}}/logs/access.log'
+        - '{{BaseURL}}/application/logs/access.log'
+      signs:
+        - "on": word
+          has:
+            - '"GET /'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

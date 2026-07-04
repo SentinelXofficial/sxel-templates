@@ -1,0 +1,24 @@
+id: newgrounds
+brief:
+    title: Newgrounds User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Newgrounds user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - newgrounds
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://{{user}}.newgrounds.com/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - fans
+          in: body
+          need: all

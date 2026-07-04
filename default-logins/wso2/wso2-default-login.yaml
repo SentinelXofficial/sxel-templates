@@ -1,0 +1,25 @@
+id: wso2-default-login
+brief:
+    title: WSO2 Management Console Default Login
+    by: cocxanh
+    level: high
+    about: WSO2 Management Console default admin credentials were discovered.
+    label:
+        - default-login
+        - wso2
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/carbon/admin/login_action.jsp'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - /carbon/admin/index.jsp?loginStatus=true
+            - JSESSIONID
+          in: header
+          need: all

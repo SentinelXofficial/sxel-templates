@@ -1,0 +1,24 @@
+id: engadget
+brief:
+    title: Engadget User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Engadget user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - engadget
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.engadget.com/about/editors/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- Engadget</title>'
+          in: body
+          need: all

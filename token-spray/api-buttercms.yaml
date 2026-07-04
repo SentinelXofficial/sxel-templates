@@ -1,0 +1,21 @@
+id: api-buttercms
+brief:
+    title: ButterCMS API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - buttercms
+moves:
+    - verb: GET
+      to:
+        - https://api.buttercms.com/v2/posts/?auth_token={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"meta":'
+            - '"data":'
+            - '"url":'
+          in: body
+          need: all

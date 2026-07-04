@@ -1,0 +1,30 @@
+id: graphql-ruby-detect
+brief:
+    title: Graphql Ruby Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - graphql
+        - ruby
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/graphql'
+        - '{{BaseURL}}/api/graphql'
+        - '{{BaseURL}}/query'
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: '{"query":"query @skip {__typename}"}'
+      signs:
+        - "on": status
+          status:
+            - 200
+            - 400
+        - "on": word
+          has:
+            - '''@skip'' can''t be applied to queries (allowed: fields, fragment spreads, inline fragments)'
+          in: body
+          need: all

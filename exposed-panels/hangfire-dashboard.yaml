@@ -1,0 +1,25 @@
+id: hangfire-dashboard
+brief:
+    title: Hangfire Dashboard Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Hangfire Dashboard panel was detected.
+    label:
+        - panel
+        - hangfire
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/hangfire'
+      signs:
+        - "on": word
+          has:
+            - Hangfire Dashboard
+            - Realtime Graph
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

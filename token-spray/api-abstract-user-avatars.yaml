@@ -1,0 +1,18 @@
+id: api-abstract-user-avatars
+brief:
+    title: Abstract Api User Avatars Test
+    by: daffainfo
+    level: info
+    about: Create highly customizable avatar images with a person's name or initials to improve your user experience.
+    label:
+        - token-spray
+        - abstractapi
+moves:
+    - verb: GET
+      to:
+        - https://avatars.abstractapi.com/v1/?api_key={{token}}&name=example
+      signs:
+        - "on": word
+          has:
+            - image/png
+          in: header

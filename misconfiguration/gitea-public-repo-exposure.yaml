@@ -1,0 +1,20 @@
+id: gitea-public-repo-exposure
+brief:
+    title: Gitea Public Repository - Exposure
+    by: theamanrawat
+    level: low
+    about: Detected publicly accessible Gitea instances exposing repository listings and user information without authentication.
+    label:
+        - gitea
+        - exposure
+        - misconfig
+        - git
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/explore/repos'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/repos/search?q=&limit=50'
+      signs: []

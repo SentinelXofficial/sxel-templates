@@ -1,0 +1,24 @@
+id: sitecore-login-panel
+brief:
+    title: Sitecore Admin Login Panel - Detect
+    by: b4uh0lz
+    level: info
+    about: Sitecore admin login panel was detected.
+    label:
+        - panel
+        - sitecore
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sitecore/admin/login.aspx'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Sitecore Login
+          in: body
+          need: all

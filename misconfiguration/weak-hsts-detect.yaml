@@ -1,0 +1,15 @@
+id: weak-hsts-detect
+brief:
+    title: Weak HTTP Strict-Transport-Security - Detect
+    by: saint_orion
+    level: info
+    about: Detected HTTP Strict-Transport-Security header with a weak max-age value (less than one year). A low max-age reduces the effectiveness of HSTS, leaving users vulnerable to protocol downgrade attack...
+    label:
+        - misconfig
+        - headers
+        - hsts
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

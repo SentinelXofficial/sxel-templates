@@ -1,0 +1,19 @@
+id: firebase-detect
+brief:
+    title: firebase detect
+    by: organiccrap
+    level: low
+    about: ""
+    label:
+        - tech
+        - firebase
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.settings/rules.json?auth=FIREBASE_SECRET'
+      signs:
+        - "on": word
+          has:
+            - Could not parse auth token
+          in: body

@@ -1,0 +1,24 @@
+id: node-red-detect
+brief:
+    title: Node-RED Dashboard - Detect
+    by: pikpikcu
+    level: info
+    about: Node-RED dashboard was detected.
+    label:
+        - tech
+        - apache
+        - node-red-dashboard
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Node-RED</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

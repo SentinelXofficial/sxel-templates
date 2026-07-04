@@ -1,0 +1,16 @@
+id: celebrus-detect
+brief:
+    title: Celebrus - Detect
+    by: righettod
+    level: info
+    about: Celebrus was detected.
+    label:
+        - tech
+        - celebrus
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

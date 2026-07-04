@@ -1,0 +1,25 @@
+id: saltbo-zpan-panel
+brief:
+    title: Saltbo/zpan Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Detects the presence of the Saltbo/zpan file management panel.
+    label:
+        - panel
+        - zpan
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ZPan
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: gophish-default-login
+brief:
+    title: Gophish < v0.10.1 Default Credentials
+    by: arcc
+    level: high
+    about: For versions of Gophish > 0.10.1, the temporary administrator credentials are printed in the logs when you first execute the Gophish binary.
+    label:
+        - gophish
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{user}}&password={{pass}}&csrf_token={{replace(url_encode(html_unescape(csrf_token)), "+", "%2B")}}
+      signs: []

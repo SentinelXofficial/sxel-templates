@@ -1,0 +1,30 @@
+id: office-webapps-panel
+brief:
+    title: Office Web Apps Server Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Microsoft Office Web App Login Panel was discovered.
+    label:
+        - panel
+        - office-webapps
+        - login
+        - microsoft
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/op/generate.aspx'
+        - '{{BaseURL}}/op/wrongfiletype.htm'
+      signs:
+        - "on": word
+          has:
+            - Provide a link that opens Word
+            - PowerPoint files in a web browser
+          in: body
+          need: all
+        - "on": word
+          has:
+            - _OFUError
+            - Wrong file type
+          in: body
+          need: all

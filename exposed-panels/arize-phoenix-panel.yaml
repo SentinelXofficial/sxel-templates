@@ -1,0 +1,29 @@
+id: arize-phoenix-panel
+brief:
+    title: Arize Phoenix - Detect
+    by: rxerium
+    level: info
+    about: Arize Phoenix is an open-source AI observability and evaluation platform for monitoring,
+    label:
+        - panel
+        - arize
+        - phoenix
+        - llm
+        - ai
+        - observability
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Arize Phoenix
+            - <title>Phoenix
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

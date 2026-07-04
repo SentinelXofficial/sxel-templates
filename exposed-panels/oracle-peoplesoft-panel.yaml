@@ -1,0 +1,19 @@
+id: oracle-peoplesoft-panel
+brief:
+    title: Oracle PeopleSoft Login Panel - Detect
+    by: idealphase
+    level: info
+    about: Oracle PeopleSoft login panel was detected.
+    label:
+        - oracle
+        - peoplesoft
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/{{path}}'
+      signs: []

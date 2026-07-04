@@ -1,0 +1,15 @@
+id: magento-unprotected-dev-files
+brief:
+    title: Magento Unprotected development files
+    by: TechbrunchFR
+    level: high
+    about: Magento version 1.9.2.x includes /dev directories or files that might reveal your passwords and other sensitive information. The /dev directories and files are not protected by default. According t...
+    label:
+        - magento
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dev/tests/functional/credentials.xml.dist'
+        - '{{BaseURL}}/dev/tests/functional/etc/config.xml.dist'
+      signs: []

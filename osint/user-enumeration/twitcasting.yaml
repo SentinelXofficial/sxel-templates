@@ -1,0 +1,24 @@
+id: twitcasting
+brief:
+    title: Twitcasting User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Twitcasting user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - twitcasting
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://twitcasting.tv/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Live History
+          in: body
+          need: all

@@ -1,0 +1,23 @@
+id: ghe-encrypt-saml
+brief:
+    title: GitHub Enterprise - Encrypted SAML
+    by: rootxharsh
+    level: info
+    about: This template checks if Encrypted SAML (Security Assertion Markup Language) is enabled on a GitHub Enterprise instance.
+    label:
+        - github
+        - ghe
+        - saml
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/saml/metadata'
+      signs:
+        - "on": word
+          has:
+            - EntityDescriptor
+            - KeyDescriptor
+            - use="encryption"
+          in: body
+          need: all

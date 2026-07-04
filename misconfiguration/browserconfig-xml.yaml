@@ -1,0 +1,30 @@
+id: browserconfig-xml
+brief:
+    title: Browser Configuration "browserconfig.xml" Exposure
+    by: DhiyaneshDk
+    level: info
+    about: Browser Configuration "browserconfig.xml" File was exposed.
+    label:
+        - browserconfig
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/browserconfig.xml'
+      signs:
+        - "on": word
+          has:
+            - <browserconfig>
+            - </msapplication>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/xml
+            - application/xml
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

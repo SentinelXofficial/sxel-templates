@@ -1,0 +1,24 @@
+id: cisco-integrated-login
+brief:
+    title: Cisco Integrated Management Controller Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Cisco Integrated Management Controller login panel was detected.
+    label:
+        - panel
+        - cisco
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Cisco Integrated Management Controller Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: buzznet
+brief:
+    title: Buzznet User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Buzznet user name information check was conducted.
+    label:
+        - osint
+        - osint-news
+        - buzznet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.buzznet.com/author/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '<title>Author:'
+          in: body
+          need: all

@@ -1,0 +1,28 @@
+id: chamilo-installer
+brief:
+    title: Chamilo Installer Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Chamilo is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - chamilo
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/main/install/index.php'
+      signs:
+        - "on": word
+          has:
+            - Chamilo installation
+            - Installation Language
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <title>Chamilo has not been installed</title>
+          in: body

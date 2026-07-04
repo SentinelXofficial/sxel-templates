@@ -1,0 +1,15 @@
+id: intermapper-exposure
+brief:
+    title: InterMapper - Exposure
+    by: pussycat0x
+    level: high
+    about: Detected unauthenticated InterMapper access, which could allow unauthorized users to view or interact with monitoring data without proper authentication.
+    label:
+        - exposure
+        - intermapper
+        - unauth
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

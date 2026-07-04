@@ -1,0 +1,26 @@
+id: librespeed-panel
+brief:
+    title: LibreSpeed Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: LibreSpeed is a very lightweight speed test implemented in Javascript, using XMLHttpRequest and Web Workers.
+    label:
+        - panel
+        - librespeed
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - LibreSpeed
+            - Ping
+            - Jitter
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

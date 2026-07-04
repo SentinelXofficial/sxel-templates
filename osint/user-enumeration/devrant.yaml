@@ -1,0 +1,24 @@
+id: devrant
+brief:
+    title: DevRant User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: DevRant user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - devrant
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://devrant.com/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Joined devRant on
+          in: body
+          need: all

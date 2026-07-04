@@ -1,0 +1,28 @@
+id: stormshield-network-security-panel
+brief:
+    title: Stormshield Network Security - Login Panel
+    by: rxerium
+    level: info
+    about: Stormshield Network Security (SNS) is a French network security appliance providing
+    label:
+        - panel
+        - stormshield
+        - vpn
+        - firewall
+        - network-security
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/admin'
+        - '{{BaseURL}}/admin/admin.html'
+      signs:
+        - "on": word
+          has:
+            - Stormshield Network Security - Portal
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

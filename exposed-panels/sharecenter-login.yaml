@@ -1,0 +1,22 @@
+id: sharecenter-login
+brief:
+    title: ShareCenter Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: ShareCenter login panel was detected.
+    label:
+        - edb
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ShareCenter
+            - Please Select Your Account
+          in: body
+          need: all

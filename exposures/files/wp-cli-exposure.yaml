@@ -1,0 +1,26 @@
+id: wp-cli-exposure
+brief:
+    title: WP-CLI Yaml File Exposure
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - config
+        - exposure
+        - wp-cli
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-cli.yml'
+      signs:
+        - "on": word
+          has:
+            - 'apache_modules:'
+            - mod_rewrite
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

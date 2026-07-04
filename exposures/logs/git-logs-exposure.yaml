@@ -1,0 +1,24 @@
+id: git-logs-exposure
+brief:
+    title: Git Logs Disclosure
+    by: NullFuzz
+    level: info
+    about: Searches Git Logs files and passed URLs.
+    label:
+        - logs
+        - git
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.git/logs/HEAD'
+      signs:
+        - "on": word
+          has:
+            - application/octet-stream
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

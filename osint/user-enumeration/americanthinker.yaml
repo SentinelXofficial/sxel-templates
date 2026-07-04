@@ -1,0 +1,24 @@
+id: americanthinker
+brief:
+    title: AmericanThinker User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: AmericanThinker user name information check was conducted.
+    label:
+        - osint
+        - osint-political
+        - americanthinker
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.americanthinker.com/author/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Articles &amp;
+          in: body
+          need: all

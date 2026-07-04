@@ -1,0 +1,36 @@
+id: jellyfin-public-users-exposure
+brief:
+    title: Jellyfin Public Users - Exposure
+    by: theamanrawat
+    level: medium
+    about: The Jellyfin media server exposed user information via the public users API endpoint. This endpoint could have leaked sensitive data including usernames, user IDs, server IDs, administrator status,...
+    label:
+        - misconfig
+        - jellyfin
+        - exposure
+        - api
+        - disclosure
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Users/Public'
+        - '{{BaseURL}}/jellyfin/Users/Public'
+      signs:
+        - "on": word
+          has:
+            - '"Name"'
+            - '"ServerId"'
+            - '"Id"'
+            - '"Policy"'
+            - '"Configuration"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

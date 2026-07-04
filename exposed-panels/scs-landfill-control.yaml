@@ -1,0 +1,26 @@
+id: scs-landfill-control
+brief:
+    title: SCS Remote Monitoring and Control Login Panel - Detect
+    by: geeknik
+    level: info
+    about: SCS Remote Monitoring and Control login panel was detected.
+    label:
+        - panel
+        - scs
+        - rmc
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Log in to SCS RMC®</title>
+            - SCS RMC®</div>
+          in: body
+          need: all

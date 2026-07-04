@@ -1,0 +1,26 @@
+id: latemodel-restoration-phish
+brief:
+    title: Late Model Restoration phishing Detection
+    by: rxerium
+    level: info
+    about: A Late Model Restoration phishing website was detected
+    label:
+        - phishing
+        - latemodel-restoration
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - lmr.com
+            - <title>Ford Mustang Parts &amp; Accessories | Late Model Restoration
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

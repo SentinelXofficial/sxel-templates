@@ -1,0 +1,27 @@
+id: bigant-db-install
+brief:
+    title: Bigant DataBase - Exposed Installation
+    by: pussycat0x
+    level: high
+    about: Bigant DataBase Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - install
+        - bigant
+        - database
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/update.html'
+      signs:
+        - "on": word
+          has:
+            - BigAnt Database Upgrade Wizard1
+            - //DB-MS
+            - <title>BigAntSetup
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

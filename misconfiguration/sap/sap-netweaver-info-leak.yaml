@@ -1,0 +1,15 @@
+id: sap-netweaver-info-leak
+brief:
+    title: SAP NetWeaver ICM Info page leak
+    by: randomstr1ng
+    level: medium
+    about: Detection of SAP NetWeaver ABAP Webserver /public/info page
+    label:
+        - sap
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sap/public/info'
+      signs: []

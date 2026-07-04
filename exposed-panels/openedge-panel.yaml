@@ -1,0 +1,25 @@
+id: openedge-panel
+brief:
+    title: OpenEdge Login Panel - Detect
+    by: rxerium
+    level: info
+    about: An OpenEdge login panel was detected.
+    label:
+        - panel
+        - openedge
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Progress Application Server for OpenEdge
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

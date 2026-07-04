@@ -1,0 +1,26 @@
+id: dell-openmanager-login
+brief:
+    title: Dell OpenManage Switch Administrator Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Dell OpenManage Switch Administrator login panel was detected.
+    label:
+        - panel
+        - dell
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/config/authentication_page.htm'
+      signs:
+        - "on": word
+          has:
+            - <title>Dell OpenManage Switch Administrator</title>
+          in: body
+        - "on": word
+          has:
+            - <TITLE>Log In</TITLE>
+            - device/logOff_up_menu1.htm
+          in: body
+          need: all

@@ -1,0 +1,24 @@
+id: gigapan
+brief:
+    title: Gigapan User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Gigapan user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - gigapan
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.gigapan.com/profiles/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - width="100"
+          in: body
+          need: all

@@ -1,0 +1,26 @@
+id: hp-ilo-serial-key-disclosure
+brief:
+    title: HP iLO Serial Key - Detect
+    by: dhiyaneshDk
+    level: medium
+    about: HP iLO serial key was detected.
+    label:
+        - exposure
+        - config
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/xmldata?item=CpqKey'
+      signs:
+        - "on": word
+          has:
+            - LTYPE
+            - LNAME
+            - KEY
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

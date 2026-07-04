@@ -1,0 +1,25 @@
+id: versa-director-login
+brief:
+    title: Versa Director Login Panel - Detect
+    by: c-sh0
+    level: info
+    about: Versa Director login panel was detected.
+    label:
+        - panel
+        - versa
+        - director
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/versa/login'
+      signs:
+        - "on": word
+          has:
+            - versa-login-logo
+            - VERSA DIRECTOR
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

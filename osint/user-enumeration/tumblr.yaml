@@ -1,0 +1,24 @@
+id: tumblr
+brief:
+    title: Tumblr User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Tumblr user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - tumblr
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://{{valid_username}}.tumblr.com
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - avatar
+          in: body
+          need: all

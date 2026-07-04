@@ -1,0 +1,24 @@
+id: spark-panel
+brief:
+    title: Apache Spark Panel - Detect
+    by: righettod
+    level: info
+    about: Apache Spark panel was detected.
+    label:
+        - panel
+        - spark
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - url=servlet/hype
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

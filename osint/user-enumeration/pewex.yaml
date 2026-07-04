@@ -1,0 +1,24 @@
+id: pewex
+brief:
+    title: Pewex User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Pewex user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - pewex
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://retro.pewex.pl/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'Zamieszcza eksponaty od:'
+          in: body
+          need: all

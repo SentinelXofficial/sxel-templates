@@ -1,0 +1,24 @@
+id: manyvids
+brief:
+    title: MANYVIDS User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: MANYVIDS user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - manyvids
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.manyvids.com/results.php?keywords={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' Vids</h3>'
+          in: body
+          need: all

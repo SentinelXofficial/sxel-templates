@@ -1,0 +1,27 @@
+id: avtech-avn801-camera-panel
+brief:
+    title: Avtech AVN801 Network Camera Admin Panel - Detect
+    by: idealphase
+    level: info
+    about: An Avtech AVN801 Network Camera administration panel was detected.
+    label:
+        - panel
+        - avtech
+        - iot
+        - camera
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - IP Surveillance for Your Life
+            - avtech
+            - /cgi-bin/guest/Login.cgi?rnd=
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

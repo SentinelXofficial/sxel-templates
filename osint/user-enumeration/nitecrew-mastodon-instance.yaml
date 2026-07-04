@@ -1,0 +1,24 @@
+id: nitecrew-mastodon-instance
+brief:
+    title: Nitecrew (Mastodon Instance) User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Nitecrew (Mastodon Instance) user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - nitecrew-mastodon-instance
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://nitecrew.rip/api/v1/accounts/lookup?acct={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - display_name
+          in: body
+          need: all

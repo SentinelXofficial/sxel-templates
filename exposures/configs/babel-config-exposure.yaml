@@ -1,0 +1,25 @@
+id: babel-config-exposure
+brief:
+    title: Babel Configuration - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Babel configuration information was detected.
+    label:
+        - exposure
+        - config
+        - file
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/babel.config.js'
+      signs:
+        - "on": word
+          has:
+            - module.exports = {
+            - 'presets: ['
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

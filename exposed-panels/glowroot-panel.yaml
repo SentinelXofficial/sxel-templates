@@ -1,0 +1,25 @@
+id: glowroot-panel
+brief:
+    title: Glowroot - Panel
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - panel
+        - login
+        - glowroot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Glowroot
+            - Change my password
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

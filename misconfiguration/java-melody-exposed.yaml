@@ -1,0 +1,26 @@
+id: java-melody-exposed
+brief:
+    title: JavaMelody Monitoring Exposed
+    by: dhiyaneshDK
+    level: medium
+    about: JavaMelody is a tool used to monitor Java or Java EE applications in QA and production environments. JavaMelody was detected on this web application. One option in the dashboard is to "View http se...
+    label:
+        - config
+        - java
+        - javamelody
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/monitoring'
+        - '{{BaseURL}}/..%3B/monitoring'
+      signs:
+        - "on": word
+          has:
+            - Monitoring JavaMelody on
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

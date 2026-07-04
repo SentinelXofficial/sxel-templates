@@ -1,0 +1,26 @@
+id: forgejo-repo-exposure
+brief:
+    title: Forgejo Repositories - Exposure
+    by: DhiyaneshDK
+    level: medium
+    about: The Forgejo repo is being exposed publically.
+    label:
+        - misconfig
+        - exposure
+        - forgejo
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/explore/repos'
+      signs:
+        - "on": word
+          has:
+            - Powered by Forgejo
+            - Explore</a>
+            - Repositories
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

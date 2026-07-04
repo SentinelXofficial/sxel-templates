@@ -1,0 +1,25 @@
+id: qnap-qts-panel
+brief:
+    title: QNAP Turbo NAS Login Panel - Detect
+    by: idealphase
+    level: info
+    about: QNAP QTS login panel was detected.
+    label:
+        - panel
+        - qnap
+        - qts
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/'
+        - '{{BaseURL}}/cgi-bin/html/login.html'
+      signs:
+        - "on": word
+          has:
+            - QNAP Turbo NAS</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

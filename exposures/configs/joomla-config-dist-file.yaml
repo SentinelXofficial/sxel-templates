@@ -1,0 +1,31 @@
+id: joomla-config-dist-file
+brief:
+    title: Joomla! Configuration File - Detect
+    by: oppsec
+    level: low
+    about: Joomla! configuration.php-dist file was detected.
+    label:
+        - config
+        - exposure
+        - joomla
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/configuration.php-dist'
+      signs:
+        - "on": word
+          has:
+            - Joomla
+            - JConfig
+            - '@package'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

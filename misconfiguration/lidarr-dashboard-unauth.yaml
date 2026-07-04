@@ -1,0 +1,29 @@
+id: lidarr-dashboard-unauth
+brief:
+    title: Lidarr Dashboard - Unauthenticated
+    by: ProjectDiscoveryAI
+    level: medium
+    about: Exposed Lidarr was detected which can lead to sensitive information disclosure.
+    label:
+        - lidarr
+        - dashboard
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Lidarr</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Login - Lidarr
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

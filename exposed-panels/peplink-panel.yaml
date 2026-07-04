@@ -1,0 +1,26 @@
+id: peplink-panel
+brief:
+    title: Peplink Login Panel - Detect
+    by: pussycat0x
+    level: info
+    about: peplink login panel was detected.
+    label:
+        - panel
+        - peplink
+        - router
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/MANGA/index.cgi'
+      signs:
+        - "on": word
+          has:
+            - init_company_name = "Peplink"
+            - <title>Web Admin | Welcome
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

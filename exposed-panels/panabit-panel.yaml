@@ -1,0 +1,23 @@
+id: panabit-panel
+brief:
+    title: Panabit Login Panel - Detect
+    by: ffffffff0x
+    level: info
+    about: Panabit login panel was detected.
+    label:
+        - panabit
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/login.htm'
+      signs:
+        - "on": word
+          has:
+            - <title>Panabit</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

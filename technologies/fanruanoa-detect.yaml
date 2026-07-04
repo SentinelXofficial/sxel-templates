@@ -1,0 +1,26 @@
+id: fanruanoa-detect
+brief:
+    title: FanRuanOA-detect
+    by: YanYun
+    level: info
+    about: ""
+    label:
+        - oa
+        - tech
+        - dotnet
+        - fanruan
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/WebReport/ReportServer'
+        - '{{BaseURL}}/ReportServer'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - DeploySuccess._init
+          in: body
+          need: all

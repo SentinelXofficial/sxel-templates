@@ -1,0 +1,25 @@
+id: youtube-music-phish
+brief:
+    title: YouTube Music phishing Detection
+    by: rxerium
+    level: info
+    about: A YouTube Music phishing website was detected
+    label:
+        - phishing
+        - youtube-music
+        - streaming
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Your browser is deprecated. Please upgrade.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

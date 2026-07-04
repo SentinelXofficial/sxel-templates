@@ -1,0 +1,28 @@
+id: adobe-connect-version
+brief:
+    title: Adobe Connect Central Version
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - adobe
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/version.txt'
+      signs:
+        - "on": word
+          has:
+            - package=
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

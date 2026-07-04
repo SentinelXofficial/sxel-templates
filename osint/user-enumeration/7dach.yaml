@@ -1,0 +1,24 @@
+id: 7dach
+brief:
+    title: 7dach User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: 7dach user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - 7dach
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://7dach.ru/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Информация / Профиль
+          in: body
+          need: all

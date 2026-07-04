@@ -1,0 +1,32 @@
+id: druid-default-login
+brief:
+    title: Alibaba Druid Monitor Default Login
+    by: pikpikcu
+    level: high
+    about: Alibaba Druid Monitor default login information (admin/admin) was discovered.
+    label:
+        - druid
+        - alibaba
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/druid/submitLogin'
+      signs:
+        - "on": word
+          has:
+            - error
+          in: body
+    - verb: POST
+      to:
+        - '{{BaseURL}}/druid/submitLogin'
+      body: loginUsername={{username}}&loginPassword={{password}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - success
+          in: body

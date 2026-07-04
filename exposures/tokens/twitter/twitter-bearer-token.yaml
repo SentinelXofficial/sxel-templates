@@ -1,0 +1,16 @@
+id: twitter-bearer-token
+brief:
+    title: Twitter Bearer Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - twitter
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

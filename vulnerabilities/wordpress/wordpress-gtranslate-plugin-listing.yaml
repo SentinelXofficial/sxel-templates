@@ -1,0 +1,26 @@
+id: wordpress-gtranslate-plugin-listing
+brief:
+    title: WordPress gtranslate Plugin Directory Listing
+    by: dhiyaneshDK
+    level: info
+    about: Searches for sensitive directories present in the gtranslate wordpress plugin.
+    label:
+        - wordpress
+        - listing
+        - plugin
+        - edb
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/gtranslate/'
+      signs:
+        - "on": word
+          has:
+            - Index of
+            - /wp-content/plugins/gtranslate/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

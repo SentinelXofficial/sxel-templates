@@ -1,0 +1,31 @@
+id: weblate-public-project-exposure
+brief:
+    title: Weblate Public Project - Exposure
+    by: ritikchaddha
+    level: info
+    about: Weblate instance is publicly accessible. Public exposure of Weblate may lead to unauthorized access to translation projects, potential data leaks, credential exposure, or manipulation of open sourc...
+    label:
+        - misconfig
+        - exposure
+        - weblate
+        - public
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/projects/'
+      signs:
+        - "on": word
+          has:
+            - Weblate
+            - Untranslated
+            - Browse all projects
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

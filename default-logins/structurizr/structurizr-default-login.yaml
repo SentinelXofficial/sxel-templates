@@ -1,0 +1,56 @@
+id: structurizr-default-login
+brief:
+    title: Structurizr - Default Login
+    by: DhiyaneshDK
+    level: high
+    about: Structurizr contains default credentials.
+    label:
+        - structurizr
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/signin'
+      signs:
+        - "on": word
+          has:
+            - <a href="/dashboard">
+            - Sign out
+          in: body_3
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{RootURL}}'
+      body: username={{username}}&password={{password}}&_csrf={{csrf}}&hash=
+      signs:
+        - "on": word
+          has:
+            - <a href="/dashboard">
+            - Sign out
+          in: body_3
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      signs:
+        - "on": word
+          has:
+            - <a href="/dashboard">
+            - Sign out
+          in: body_3
+          need: all
+        - "on": status
+          status:
+            - 200

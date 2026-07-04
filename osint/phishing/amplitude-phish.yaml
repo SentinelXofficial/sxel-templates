@@ -1,0 +1,25 @@
+id: amplitude-phish
+brief:
+    title: Amplitude phishing Detection
+    by: rxerium
+    level: info
+    about: A Amplitude phishing website was detected
+    label:
+        - phishing
+        - amplitude
+        - analytics
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>AI Analytics Platform for Modern Digital Analytics | Amplitude
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

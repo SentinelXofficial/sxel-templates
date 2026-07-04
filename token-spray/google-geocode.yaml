@@ -1,0 +1,19 @@
+id: api-googlegeocode
+brief:
+    title: Google Geocode API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - geocode
+moves:
+    - verb: GET
+      to:
+        - https://maps.googleapis.com/maps/api/geocode/json?latlng=40,30&key={{token}}
+      signs:
+        - "on": word
+          has:
+            - error_message
+          in: body

@@ -1,0 +1,16 @@
+id: travisci-access-token
+brief:
+    title: TravisCI Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - travisci
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

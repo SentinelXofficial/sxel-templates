@@ -1,0 +1,26 @@
+id: intelbras-dvr-unauth
+brief:
+    title: Intelbras DVR - Unrestricted Access
+    by: pussycat0x
+    level: low
+    about: The HTTP GET request to /cap.js on the server Intelbras DVR reveals several potentially sensitive pieces of information that are not properly protected or encrypted.
+    label:
+        - unauth
+        - intelbras
+        - dvr
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cap.js'
+      signs:
+        - "on": word
+          has:
+            - var talkTypes=
+            - var userInfo=
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

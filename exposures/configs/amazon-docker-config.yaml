@@ -1,0 +1,24 @@
+id: amazon-docker-config
+brief:
+    title: Dockerrun AWS Configuration Page - Detect
+    by: pdteam
+    level: medium
+    about: Dockerrun AWS configuration page was detected.
+    label:
+        - config
+        - exposure
+        - aws
+        - devops
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Dockerrun.aws.json'
+      signs:
+        - "on": word
+          has:
+            - AWSEBDockerrunVersion
+            - containerDefinitions
+          in: body
+          need: all

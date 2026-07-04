@@ -1,0 +1,37 @@
+id: aem-querybuilder-json-servlet
+brief:
+    title: AEM QueryBuilder Json Servlet
+    by: DhiyaneshDk
+    level: info
+    about: Sensitive information might be exposed via AEMs QueryBuilderServlet or QueryBuilderFeedServlet.
+    label:
+        - aem
+        - adobe
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/bin/querybuilder.json'
+        - '{{BaseURL}}/bin/querybuilder.json.servlet'
+        - '{{BaseURL}}///bin///querybuilder.json'
+        - '{{BaseURL}}///bin///querybuilder.json.servlet'
+        - '{{BaseURL}}/bin/querybuilder.feed'
+        - '{{BaseURL}}/bin/querybuilder.feed.servlet'
+        - '{{BaseURL}}///bin///querybuilder.feed'
+        - ' {{BaseURL}}///bin///querybuilder.feed.servlet'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": word
+          has:
+            - success
+            - results
+          in: body
+          need: all

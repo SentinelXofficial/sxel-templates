@@ -1,0 +1,25 @@
+id: teradici-pcoip-panel
+brief:
+    title: Teradici PCoIP Zero Client Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Teradici PCoIP Zero Client login panel was detected.
+    label:
+        - panel
+        - teradici
+        - pcoip
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - <h4>PCoIP&#174 Zero Client</h4>
+            - terastyle.css
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

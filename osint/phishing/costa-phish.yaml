@@ -1,0 +1,24 @@
+id: costa-phish
+brief:
+    title: costa phishing Detection
+    by: rxerium
+    level: info
+    about: A costa phishing website was detected
+    label:
+        - phishing
+        - costa
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - The Nation&#x27;s Favourite Coffee Shop | Costa Coffee
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

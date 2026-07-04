@@ -1,0 +1,29 @@
+id: karaf-default-login
+brief:
+    title: Apache Karaf - Default Login
+    by: s0obi
+    level: high
+    about: Apache Karaf contains a default login vulnerability. Default login credentials were detected. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or ex...
+    label:
+        - default-login
+        - apache
+        - karaf
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/system/console'
+      head:
+        Authorization: Basic {{base64('karaf:karaf')}}
+      signs:
+        - "on": word
+          has:
+            - Apache Karaf Web Console - Bundles
+            - Web Console</a>
+            - Log out</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

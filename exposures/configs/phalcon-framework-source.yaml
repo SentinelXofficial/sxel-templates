@@ -1,0 +1,25 @@
+id: phalcon-framework-source
+brief:
+    title: Phalcon Framework - Source Code Leakage
+    by: philippedelteil
+    level: high
+    about: Phalcon Framework source code was discovered.
+    label:
+        - exposure
+        - debug
+        - phalcon
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/anything_here'
+      signs:
+        - "on": word
+          has:
+            - Phalcon Framework
+            - AnythingHereController
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

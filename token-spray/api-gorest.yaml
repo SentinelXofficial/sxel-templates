@@ -1,0 +1,26 @@
+id: api-gorest
+brief:
+    title: Gorest API Test
+    by: daffainfo
+    level: info
+    about: Online REST API for Testing and Prototyping
+    label:
+        - token-spray
+        - gorest
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://gorest.co.in/public/v2/users'
+      head:
+        Authorization: Bearer {{token}}
+        Content-Type: application/json
+      body: '{"name":"Tenali Ramakrishna", "gender":"male", "email":"tenali.rdamakrishna@15ce.com", "status":"active"}'
+      signs:
+        - "on": status
+          status:
+            - 201
+        - "on": word
+          has:
+            - '"name"'
+          in: body
+          need: all

@@ -1,0 +1,29 @@
+id: canal-default-login
+brief:
+    title: Alibaba Canal Default Login
+    by: pdteam
+    level: high
+    about: An Alibaba Canal default login was discovered.
+    label:
+        - canal
+        - alibaba
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/v1/user/login'
+      head:
+        Content-Type: application/json
+      body: '{"username":"{{user}}","password":"{{pass}}"}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - data":{"token"
+            - '"code":20000'
+          in: body
+          need: all

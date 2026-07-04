@@ -1,0 +1,36 @@
+id: unauth-ztp-ping
+brief:
+    title: Unauthenticated ZyXEL USG ZTP - Detect
+    by: dmartyn
+    level: high
+    about: Make a ZyXEL USG with ZTP support, pre CVE-2023-28771 patch, do a DNS lookup by asking it to make an ICMP request.
+    label:
+        - misconfig
+        - unauth
+        - zyxel
+        - ztp
+        - rce
+        - oast
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/ztp/cgi-bin/handler'
+      head:
+        Content-Type: application/json
+      body: '{"command":"ping","dest":"{{interactsh-url}}"}'
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all
+        - "on": word
+          has:
+            - message
+            - result
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

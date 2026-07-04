@@ -1,0 +1,29 @@
+id: kafka-topics-ui
+brief:
+    title: Apache Kafka Topics Panel - Detect
+    by: pdteam
+    level: info
+    about: Apache Kafka Topics panel was detected.
+    label:
+        - panel
+        - kafka
+        - apache
+        - detect
+        - provectus
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/info'
+      signs:
+        - "on": word
+          has:
+            - <title>Kafka Topics UI - Browse Kafka Data</title>
+            - <title>UI for Apache Kafka</title>
+            - github.com/provectus/kafka-ui
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

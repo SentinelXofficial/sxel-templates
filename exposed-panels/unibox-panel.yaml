@@ -1,0 +1,30 @@
+id: unibox-panel
+brief:
+    title: Unibox Panel - Detect
+    by: theamanrawat
+    level: info
+    about: Unibox Administrator panel was detected.
+    label:
+        - panel
+        - unibox
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Unibox Administration</title>
+            - Please Login to continue
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

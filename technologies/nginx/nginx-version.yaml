@@ -1,0 +1,18 @@
+id: nginx-version
+brief:
+    title: Nginx version detect
+    by: philippedelteil
+    level: info
+    about: Some nginx servers have the version on the response header. Useful when you need to find specific CVEs on your targets.
+    label:
+        - tech
+        - nginx
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

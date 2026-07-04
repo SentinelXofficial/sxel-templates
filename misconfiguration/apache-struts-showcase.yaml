@@ -1,0 +1,27 @@
+id: apache-struts-showcase
+brief:
+    title: Apache Struts - ShowCase Application Exposure
+    by: DhiyaneshDK
+    level: low
+    about: Apache Structs ShowCase Application is exposed.
+    label:
+        - apache
+        - struts
+        - showcase
+        - misconfig
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/struts2-showcase/showcase.action'
+      signs:
+        - "on": word
+          has:
+            - <title>Struts2 Showcase
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

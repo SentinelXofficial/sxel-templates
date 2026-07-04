@@ -1,0 +1,24 @@
+id: detect-sentry
+brief:
+    title: Detect Sentry Instance
+    by: Sicksec
+    level: info
+    about: ""
+    label:
+        - ssrf
+        - sentry
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Sentry.init
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: wordpress-popup-listing
+brief:
+    title: WordPress Popup Plugin Directory Listing
+    by: aashiq
+    level: info
+    about: Searches for sensitive directories present in the wordpress-popup plugin.
+    label:
+        - wordpress
+        - listing
+        - plugin
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wordpress-popup/views/admin/'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Index of
+            - /wp-content/plugins/wordpress-popup/views/admin
+          in: body
+          need: all

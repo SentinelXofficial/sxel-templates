@@ -1,0 +1,25 @@
+id: bsky
+brief:
+    title: Bsky User Name Information - Detect
+    by: gl0bal01
+    level: info
+    about: Bsky user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - bsky
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://bsky.app/profile/{{user}}.bsky.social
+      signs:
+        - "on": word
+          has:
+            - '@{{user}}.bsky.social'
+            - bsky_profile_summary
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

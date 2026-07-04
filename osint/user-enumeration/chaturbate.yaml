@@ -1,0 +1,24 @@
+id: chaturbate
+brief:
+    title: Chaturbate User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Chaturbate user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - chaturbate
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://chaturbate.com/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '''s Bio and Free Webcam'
+          in: body
+          need: all

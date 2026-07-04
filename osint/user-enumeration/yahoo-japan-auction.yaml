@@ -1,0 +1,24 @@
+id: yahoo-japan-auction
+brief:
+    title: Yahoo! JAPAN Auction User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Yahoo! JAPAN Auction user name information check was conducted.
+    label:
+        - osint
+        - osint-shopping
+        - yahoo-japan-auction
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://auctions.yahoo.co.jp/follow/list/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 出品者
+          in: body
+          need: all

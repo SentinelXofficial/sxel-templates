@@ -1,0 +1,16 @@
+id: dynatrace-api-token
+brief:
+    title: Dynatrace API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - dynatrace
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

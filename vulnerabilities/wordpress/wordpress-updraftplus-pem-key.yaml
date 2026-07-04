@@ -1,0 +1,26 @@
+id: updraftplus-pem-keys
+brief:
+    title: UpdraftPlus Plugin Pem Key
+    by: dhiyaneshDk
+    level: info
+    about: UpdraftPlus wordpress plugin private key leaked with directory listing.
+    label:
+        - wp-plugin
+        - edb
+        - wordpress
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/updraftplus/includes/'
+      signs:
+        - "on": word
+          has:
+            - Index of /
+            - .pem
+            - updraftplus
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

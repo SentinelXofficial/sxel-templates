@@ -1,0 +1,24 @@
+id: phabricator-login
+brief:
+    title: Phabricator Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Phabricator login panel was detected.
+    label:
+        - panel
+        - phabricator
+        - phacility
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login/'
+      signs:
+        - "on": word
+          has:
+            - phabricator-standard-page
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

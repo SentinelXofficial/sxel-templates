@@ -1,0 +1,15 @@
+id: zurb-foundation-detect
+brief:
+    title: ZURB Foundation Framework - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects the presence of ZURB Foundation, a responsive front-end framework.
+    label:
+        - tech
+        - discovery
+        - zurb
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

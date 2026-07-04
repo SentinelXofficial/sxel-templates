@@ -1,0 +1,17 @@
+id: rocketchat-panel
+brief:
+    title: RocketChat Login Panel - Detect
+    by: righettod
+    level: info
+    about: RocketChat login panel was detected.
+    label:
+        - panel
+        - rocketchat
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

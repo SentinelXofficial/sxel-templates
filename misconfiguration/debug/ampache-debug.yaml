@@ -1,0 +1,25 @@
+id: ampache-debug
+brief:
+    title: Ampache Debug Page
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - ampache
+        - debug
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/test.php?action=config'
+      signs:
+        - "on": word
+          has:
+            - Ampache Debug
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

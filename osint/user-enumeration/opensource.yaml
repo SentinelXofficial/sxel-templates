@@ -1,0 +1,24 @@
+id: opensource
+brief:
+    title: Opensource User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Opensource user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - opensource
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://opensource.com/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| Opensource.com'
+          in: body
+          need: all

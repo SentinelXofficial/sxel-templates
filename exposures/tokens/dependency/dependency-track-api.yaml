@@ -1,0 +1,16 @@
+id: dependency-track-api
+brief:
+    title: Dependency Track API Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - dependency
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

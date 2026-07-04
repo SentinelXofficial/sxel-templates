@@ -1,0 +1,21 @@
+id: uberflip-takeover
+brief:
+    title: Uberflip Takeover Detection
+    by: pdteam
+    level: high
+    about: Uberflip takeover was detected.
+    label:
+        - takeover
+        - uberflip
+        - hackerone
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Non-hub domain, The URL you've accessed does not provide a hub.
+          in: body
+          need: all

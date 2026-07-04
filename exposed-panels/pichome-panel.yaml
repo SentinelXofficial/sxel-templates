@@ -1,0 +1,25 @@
+id: pichome-panel
+brief:
+    title: Pichome Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Pichome login panel was detected.
+    label:
+        - pichome
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/user.php?mod=login'
+      signs:
+        - "on": word
+          has:
+            - Powered By oaooa PicHome
+            - content="oaooa"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

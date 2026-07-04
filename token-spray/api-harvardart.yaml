@@ -1,0 +1,21 @@
+id: api-harvardart
+brief:
+    title: Harvard Art Museums API Test
+    by: daffainfo
+    level: info
+    about: Harvard Art
+    label:
+        - token-spray
+        - harvardart
+moves:
+    - verb: GET
+      to:
+        - https://api.harvardartmuseums.org/color/34838442?apikey={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"colorid"'
+            - '"name"'
+            - '"hex"'
+          in: body
+          need: all

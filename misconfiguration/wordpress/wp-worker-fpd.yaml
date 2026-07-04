@@ -1,0 +1,16 @@
+id: wp-worker-fpd
+brief:
+    title: WordPress ManageWP Worker - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress ManageWP Worker plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - debug
+        - wordpress
+        - fpd
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/worker/src/MMB/User.php'
+      signs: []

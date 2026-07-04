@@ -1,0 +1,26 @@
+id: advance-auto-phish
+brief:
+    title: Advance Auto Parts phishing Detection
+    by: rxerium
+    level: info
+    about: An Advance Auto Parts phishing website was detected
+    label:
+        - phishing
+        - advance-auto
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Advance Auto Parts: Car, Engine, Batteries, Brakes, Replacement, Performance &amp; Accessories'
+            - 'Advance Auto '
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

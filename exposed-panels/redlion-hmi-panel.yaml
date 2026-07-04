@@ -1,0 +1,26 @@
+id: redlion-hmi-panel
+brief:
+    title: Red Lion HMI - Login Panel
+    by: rxerium
+    level: info
+    about: Red Lion HMI web interface panel has been detected.
+    label:
+        - panel
+        - redlion
+        - hmi
+        - ics
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Red Lion Controls
+            - www.redlion.net
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

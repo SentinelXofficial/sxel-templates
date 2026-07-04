@@ -1,0 +1,26 @@
+id: solr-admin-query
+brief:
+    title: Solr - Admin Page Access
+    by: dhiyaneshDK
+    level: high
+    about: Solr's admin page was able to be accessed with no authentication requirements in place.
+    label:
+        - solr
+        - unauth
+        - edb
+        - misconfig
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/'
+        - '{{BaseURL}}/solr/admin/'
+      signs:
+        - "on": word
+          has:
+            - <title>Solr admin page</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

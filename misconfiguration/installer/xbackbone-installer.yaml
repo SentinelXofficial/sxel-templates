@@ -1,0 +1,25 @@
+id: xbackbone-installer
+brief:
+    title: XBackBone Installer - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Checks for the presence of a XBackBone Installer.
+    label:
+        - install
+        - xbackbone
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/'
+      signs:
+        - "on": word
+          has:
+            - <title>XBackBone Installer</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

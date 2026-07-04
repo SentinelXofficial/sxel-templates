@@ -1,0 +1,16 @@
+id: missing-cookie-samesite-strict
+brief:
+    title: Missing Cookie SameSite Strict
+    by: lucky0x0d
+    level: info
+    about: Identified cookies that lacked the samesite=strict attribute, which prevented enforcement of restrictions on cross-domain cookie transmission.
+    label:
+        - misconfig
+        - samesite
+        - cookie
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

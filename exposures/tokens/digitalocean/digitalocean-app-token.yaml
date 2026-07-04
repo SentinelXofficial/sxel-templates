@@ -1,0 +1,16 @@
+id: digitalocean-app-token
+brief:
+    title: DigitalOcean Application Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - digitalocean
+        - exposure
+        - token
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

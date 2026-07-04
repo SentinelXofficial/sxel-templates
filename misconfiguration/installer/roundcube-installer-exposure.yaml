@@ -1,0 +1,19 @@
+id: roundcube-installer-exposure
+brief:
+    title: Roundcube Webmail Installer - Exposure
+    by: theamanrawat
+    level: high
+    about: Detects exposure of the Roundcube Webmail installer interface. Public access to this installer may allow attackers to reconfigure the webmail application, potentially leading to email account compr...
+    label:
+        - roundcube
+        - webmail
+        - installer
+        - config
+        - misconfig
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/installer/'
+        - '{{BaseURL}}/installer/index.php?_step=2'
+      signs: []

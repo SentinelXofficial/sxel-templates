@@ -1,0 +1,28 @@
+id: CNVD-2019-01348
+brief:
+    title: Xiuno BBS CNVD-2019-01348
+    by: princechaddha
+    level: high
+    about: The Xiuno BBS system has a system reinstallation vulnerability. The vulnerability stems from the failure to protect or filter the installation directory after the system is installed. Attackers can...
+    label:
+        - cnvd2019
+        - cnvd
+        - xiuno
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/'
+      head:
+        Accept-Encoding: deflate
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - /view/js/xiuno.js
+            - Choose Language (选择语言)
+          in: body
+          need: all

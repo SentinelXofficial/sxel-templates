@@ -1,0 +1,17 @@
+id: tomcat-stacktraces
+brief:
+    title: Tomcat Stack Traces Enabled
+    by: lucky0x0d
+    level: low
+    about: Examine whether Tomcat stack traces are turned on by employing a designated problematic pattern.
+    label:
+        - misconfig
+        - tech
+        - tomcat
+        - apache
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?f=\['
+      signs: []

@@ -1,0 +1,24 @@
+id: promodj
+brief:
+    title: Promodj User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Promodj user name information check was conducted.
+    label:
+        - osint
+        - osint-music
+        - promodj
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://promodj.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Favorite styles
+          in: body
+          need: all

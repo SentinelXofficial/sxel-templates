@@ -1,0 +1,30 @@
+id: inspur-clusterengine-default-login
+brief:
+    title: Inspur Clusterengine 4 - Default Admin Login
+    by: ritikchaddha
+    level: high
+    about: Inspur Clusterengine version 4 default admin login credentials were successful.
+    label:
+        - default-login
+        - inspur
+        - clusterengine
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      body: op=login&username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - '"exitcode":0'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - username=admin|pwd
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

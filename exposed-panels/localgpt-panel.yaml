@@ -1,0 +1,27 @@
+id: localgpt-panel
+brief:
+    title: LocalGPT Panel - Detect
+    by: rxerium
+    level: info
+    about: LocalGPT is an open-source project that allows users to chat with their documents
+    label:
+        - panel
+        - localgpt
+        - llm
+        - ai
+        - rag
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - LocalGPT
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

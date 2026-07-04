@@ -1,0 +1,27 @@
+id: apache-syncope-detect
+brief:
+    title: Apache Syncope - Detect
+    by: icarot
+    level: info
+    about: Detected an Apache Syncope server, an enterprise digital identity management platform built with Java EE and licensed under Apache 2.0.
+    label:
+        - tech
+        - apache
+        - syncope
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/syncope-enduser/'
+        - '{{BaseURL}}/syncope-wa/'
+        - '{{BaseURL}}/syncope-console/'
+      signs:
+        - "on": word
+          has:
+            - <title>Apache Syncope
+            - org.apache.syncope
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

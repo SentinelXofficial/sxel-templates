@@ -1,0 +1,25 @@
+id: sauter-moduwebvision-panel
+brief:
+    title: SAUTER moduWeb Vision Panel - Detect
+    by: righettod
+    level: info
+    about: Sauter moduWeb Vision was detected.
+    label:
+        - panel
+        - moduweb
+        - sauter
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>SAUTER moduWeb Vision</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

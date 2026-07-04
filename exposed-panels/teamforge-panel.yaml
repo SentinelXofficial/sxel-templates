@@ -1,0 +1,25 @@
+id: teamforge-panel
+brief:
+    title: TeamForge Panel - Detection
+    by: lstatro
+    level: info
+    about: TeamForge Login Panel was discovered.
+    label:
+        - panel
+        - teamforge
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>TeamForge :'
+            - Log In to TeamForge
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

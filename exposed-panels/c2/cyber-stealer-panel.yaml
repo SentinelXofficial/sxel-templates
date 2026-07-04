@@ -1,0 +1,26 @@
+id: cyber-stealer-panel
+brief:
+    title: Cyber Stealer C2 Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Cyber Stealer C2 Login Panel was discovered.
+    label:
+        - c2
+        - cyber-stealer
+        - stealer
+        - panel
+        - login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webpanel/panel/login.php'
+      signs:
+        - "on": word
+          has:
+            - <title>Cyber Stealer - Secure Access
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

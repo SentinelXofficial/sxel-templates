@@ -1,0 +1,26 @@
+id: alfresco-detect
+brief:
+    title: Alfresco CMS Detection
+    by: pathtaga
+    level: info
+    about: Alfresco CMS was discovered.
+    label:
+        - alfresco
+        - tech
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/alfresco/api/-default-/public/cmis/versions/1.1/atom'
+      signs:
+        - "on": word
+          has:
+            - org\/alfresco\/api\/opencmis\/OpenCMIS.get
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

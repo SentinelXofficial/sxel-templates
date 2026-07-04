@@ -1,0 +1,23 @@
+id: total-web-solutions-panel
+brief:
+    title: Total Web Solutions Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Total Web Solutions panel was detected.
+    label:
+        - panel
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Total Web Solutions</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

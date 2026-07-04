@@ -1,0 +1,21 @@
+id: mcp-inspector-detect
+brief:
+    title: MCP Inspector Detect
+    by: pussycat0x
+    level: info
+    about: MCP Inspector was a debugging tool used to inspect and test MCP servers, including their resources, prompts, and tools.
+    label:
+        - tech
+        - mcp
+        - anthropic
+        - discovery
+        - ai
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{js}}'
+      signs: []

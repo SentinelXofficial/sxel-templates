@@ -1,0 +1,24 @@
+id: zoom-phish
+brief:
+    title: zoom phishing Detection
+    by: rxerium
+    level: info
+    about: A zoom phishing website was detected
+    label:
+        - phishing
+        - zoom
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - One platform to connect | Zoom
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

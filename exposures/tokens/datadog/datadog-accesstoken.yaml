@@ -1,0 +1,16 @@
+id: datadog-accesstoken
+brief:
+    title: Datadog Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - datadog
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

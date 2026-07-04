@@ -1,0 +1,23 @@
+id: ez-publish-panel
+brief:
+    title: eZ Publish Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: eZ Publish login panel was detected.
+    label:
+        - panel
+        - ez
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - content="eZ Publish
+          in: body
+        - "on": word
+          has:
+            - eZ Publish
+          in: header

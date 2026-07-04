@@ -1,0 +1,18 @@
+id: sharepoint-toolshell-backdoor
+brief:
+    title: SharePoint Webshell - ToolShell
+    by: johnk3r
+    level: critical
+    about: Detects a persistent webshell named 'spinstall0.aspx' deployed on Microsoft SharePoint servers.
+    label:
+        - sharepoint
+        - webshell
+        - implant
+        - aspx
+        - backdoor
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_layouts/15/spinstall0.aspx'
+      signs: []

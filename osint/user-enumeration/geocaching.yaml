@@ -1,0 +1,24 @@
+id: geocaching
+brief:
+    title: Geocaching User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Geocaching user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - geocaching
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.geocaching.com/p/?u={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Groundspeak - User Profile
+          in: body
+          need: all

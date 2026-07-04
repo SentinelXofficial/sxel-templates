@@ -1,0 +1,29 @@
+id: nexus-default-login
+brief:
+    title: Nexus Default Login
+    by: pikpikcu
+    level: high
+    about: Nexus default admin credentials were discovered.
+    label:
+        - nexus
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/service/rapture/session'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+        X-Nexus-UI: "true"
+      body: username={{base64(username)}}&password={{base64(password)}}
+      signs:
+        - "on": status
+          status:
+            - 204
+        - "on": word
+          has:
+            - 'Server: Nexus'
+            - NXSESSIONID
+          in: header
+          need: all

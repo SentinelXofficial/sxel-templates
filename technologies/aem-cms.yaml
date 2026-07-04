@@ -1,0 +1,19 @@
+id: aem-cms
+brief:
+    title: AEM Finder
+    by: Swissky
+    level: info
+    about: ""
+    label:
+        - aem
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Adobe Experience Manager
+          in: body

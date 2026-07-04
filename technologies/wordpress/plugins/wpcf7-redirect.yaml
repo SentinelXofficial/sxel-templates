@@ -1,0 +1,17 @@
+id: wordpress-wpcf7-redirect
+brief:
+    title: Redirection for Contact Form 7 Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wpcf7-redirect/readme.txt'
+      signs: []

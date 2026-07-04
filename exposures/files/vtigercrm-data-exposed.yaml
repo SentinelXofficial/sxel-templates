@@ -1,0 +1,22 @@
+id: vtigercrm-exposed-directory
+brief:
+    title: Vtiger CRM - Exposed Directory
+    by: icarot
+    level: low
+    about: Detected a Vtiger CRM directory listing exposure that could have revealed sensitive files and internal application structure.
+    label:
+        - vtiger
+        - exposure
+        - vtiger-crm
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{exposed_path}}'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      signs: []

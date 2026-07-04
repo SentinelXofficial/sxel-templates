@@ -1,0 +1,30 @@
+id: keycloak-admin-panel
+brief:
+    title: Keycloak Admin Login Panel - Detect
+    by: incogbyte
+    level: info
+    about: Keycloak admin login panel was detected.
+    label:
+        - panel
+        - keycloak
+        - redhat
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/auth/admin'
+        - '{{BaseURL}}/auth/admin/master/console/'
+      signs:
+        - "on": word
+          has:
+            - <span>Keycloak</span>
+            - alt="Keycloak
+            - kc-form-buttons
+            - /keycloak/img/favicon.ico
+            - /admin/keycloak/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

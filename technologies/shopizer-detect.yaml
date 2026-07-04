@@ -1,0 +1,24 @@
+id: shopizer-detect
+brief:
+    title: Shopizer Detection
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - shopizer
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/shop/'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Powered by <a href="http://www.shopizer.com"
+          in: body
+          need: all

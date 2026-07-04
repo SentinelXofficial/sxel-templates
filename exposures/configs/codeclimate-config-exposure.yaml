@@ -1,0 +1,25 @@
+id: codeclimate-config-exposure
+brief:
+    title: CodeClimate Configuration File - Exposure
+    by: 0x_Akoko
+    level: info
+    about: Detected CodeClimate configuration file, exposing code quality settings and excluded paths.
+    label:
+        - exposure
+        - config
+        - codeclimate
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.codeclimate.yml'
+      signs:
+        - "on": word
+          has:
+            - 'languages:'
+            - 'engines:'
+            - 'exclude_paths:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

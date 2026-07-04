@@ -1,0 +1,22 @@
+id: api-gitlab
+brief:
+    title: Gitlab API Test
+    by: Adam Crosser
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - gitlab
+moves:
+    - verb: GET
+      to:
+        - https://gitlab.com/api/v4/personal_access_tokens
+      head:
+        PRIVATE-TOKEN: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"id":'
+            - '"created_at":'
+          in: body
+          need: all

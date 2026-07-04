@@ -1,0 +1,23 @@
+id: mysql-dump
+brief:
+    title: MySQL - Dump Files
+    by: geeknik
+    level: medium
+    about: A MySQL dump file was found
+    label:
+        - exposure
+        - backup
+        - mysql
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      head:
+        Range: bytes=0-3000
+      signs:
+        - "on": status
+          status:
+            - 200
+            - 206

@@ -1,0 +1,16 @@
+id: dd-wrt-controlpanel-exposure
+brief:
+    title: DD-WRT Control Panel - Exposure
+    by: DhiyaneshDk
+    level: low
+    about: The DD-WRT web interface was found exposed without proper access controls, potentially allowing unauthorized users to view.
+    label:
+        - dd-wrt
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

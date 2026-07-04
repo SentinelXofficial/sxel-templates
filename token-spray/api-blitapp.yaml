@@ -1,0 +1,24 @@
+id: api-blitapp
+brief:
+    title: Blitapp API Test
+    by: daffainfo
+    level: info
+    about: Schedule screenshots of web pages and sync them to your cloud storage
+    label:
+        - token-spray
+        - blitapp
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://blitapp.com/api/scheduledcapture'
+      head:
+        Accept: application/json
+        Api-key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"id"'
+            - '"name"'
+            - '"apps"'
+          in: body
+          need: all

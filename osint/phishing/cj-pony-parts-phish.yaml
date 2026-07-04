@@ -1,0 +1,25 @@
+id: cj-pony-parts-phish
+brief:
+    title: CJ Pony Parts phishing Detection
+    by: rxerium
+    level: info
+    about: A CJ Pony Parts phishing website was detected
+    label:
+        - phishing
+        - cj-pony-parts
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Empowering enthusiasts to build their dream vehicles with top aftermarket parts for Ford Mustangs, Broncos, Focus STs, F-100s, and Chevy C10s. Shop now!
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

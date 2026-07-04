@@ -1,0 +1,29 @@
+id: labtech-panel
+brief:
+    title: LabTech Web Portal Login Panel - Detect
+    by: deFr0ggy
+    level: info
+    about: LabTech Web Portal login panel was detected.
+    label:
+        - panel
+        - labtech
+        - labtech_software
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/WCC2/'
+      signs:
+        - "on": word
+          has:
+            - <li>LabTech</li>
+            - <form action="/WCC2/Search/search" id="searchForm method="post">
+            - <h1> Welcome to the LabTech Web Portal</h1>
+            - Universal Agent Uninstaller
+            - Technician Login
+            - <form action="/WCC2/Home/Login" autocomplete="off" method="post">
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

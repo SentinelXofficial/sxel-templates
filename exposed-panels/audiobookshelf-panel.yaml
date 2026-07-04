@@ -1,0 +1,26 @@
+id: audiobookshelf-panel
+brief:
+    title: Audiobookshelf Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - audiobookshelf
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Audiobookshelf
+            - content="Audiobookshelf
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: ivanti-connect-secure-panel
+brief:
+    title: Ivanti Connect Secure Panel - Detect
+    by: rxerium
+    level: info
+    about: Ivanti Connect Secure provides a seamless, cost-effective SSL VPN solution for remote and mobile users from any web-enabled device to corporate resources— anytime, anywhere.
+    label:
+        - panel
+        - connectsecure
+        - login
+        - ivanti
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/dana-na/auth/url_default/welcome.cgi'
+      signs:
+        - "on": word
+          has:
+            - <title>Ivanti Connect Secure</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

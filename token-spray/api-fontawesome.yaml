@@ -1,0 +1,25 @@
+id: api-fontawesome
+brief:
+    title: FontAwesome API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - fontawesome
+moves:
+    - verb: GET
+      to:
+        - https://api.fontawesome.com/token
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"access_token":'
+            - '"scopes":'
+          in: body
+          need: all

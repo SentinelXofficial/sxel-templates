@@ -1,0 +1,24 @@
+id: spotify-phish
+brief:
+    title: spotify phishing Detection
+    by: rxerium
+    level: info
+    about: A spotify phishing website was detected
+    label:
+        - phishing
+        - spotify
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Spotify - Web Player: Music for everyone'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

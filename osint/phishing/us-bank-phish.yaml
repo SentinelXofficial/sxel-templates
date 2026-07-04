@@ -1,0 +1,25 @@
+id: us-bank-phish
+brief:
+    title: US Bank phishing Detection
+    by: rxerium
+    level: info
+    about: A US Bank phishing website was detected
+    label:
+        - phishing
+        - us-bank
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Experience personalized banking services for your unique needs with U.S. Bank - Checking, credit cards, home loans & convenient online banking. Member FDIC.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

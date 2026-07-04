@@ -1,0 +1,25 @@
+id: jsapi-ticket-json
+brief:
+    title: JsAPI Ticket Json
+    by: DhiyaneshDK
+    level: low
+    about: JsAPI Ticket internal file is exposed.
+    label:
+        - exposure
+        - jsapi
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jsapi_ticket.json'
+      signs:
+        - "on": word
+          has:
+            - '"expire_time":'
+            - '"jsapi_ticket":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

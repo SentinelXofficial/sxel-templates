@@ -1,0 +1,23 @@
+id: weblocal-craft-login
+brief:
+    title: Web Local Craft Terminal Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Web Local Craft Terminal login panel was detected.
+    label:
+        - panel
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/home.html'
+      signs:
+        - "on": word
+          has:
+            - WEB Local Craft Terminal
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

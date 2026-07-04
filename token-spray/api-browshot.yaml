@@ -1,0 +1,21 @@
+id: api-browshot
+brief:
+    title: Browshot API Test
+    by: daffainfo
+    level: info
+    about: Easily make screenshots of web pages in any screen size, as any device
+    label:
+        - token-spray
+        - browshot
+moves:
+    - verb: GET
+      to:
+        - https://api.browshot.com/api/v1/simple?url=http://mobilito.net/&instance_id=12&width=640&height=480&key={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"cost"'
+            - '"priority"'
+            - '"url"'
+          in: body
+          need: all

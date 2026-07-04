@@ -1,0 +1,33 @@
+id: api-onyphe
+brief:
+    title: Onyphe API Test
+    by: 0xpugal
+    level: info
+    about: Cyber Defense Search Engine and Attack Surface Management
+    label:
+        - token-spray
+        - onyphe
+moves:
+    - verb: GET
+      to:
+        - https://www.onyphe.io/api/v2/user
+      head:
+        Authorization: Bearer {{token}}
+        Content-Type: application/json
+      signs:
+        - "on": word
+          has:
+            - '"apikey":"'
+            - '"apis":'
+            - '"@timestamp":'
+            - '"@category":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

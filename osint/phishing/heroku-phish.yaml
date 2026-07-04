@@ -1,0 +1,25 @@
+id: heroku-phish
+brief:
+    title: Heroku phishing Detection
+    by: rxerium
+    level: info
+    about: A Heroku phishing website was detected
+    label:
+        - phishing
+        - heroku
+        - cloud
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Heroku is an AI platform as a service (AI PaaS) that enables developers to build, run, and scale applications entirely in the cloud.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

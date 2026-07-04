@@ -1,0 +1,21 @@
+id: backpack-admin-panel
+brief:
+    title: Laravel Backpack Admin Login Panel - Detect
+    by: shine
+    level: info
+    about: Laravel Backpack admin login panel was detected.
+    label:
+        - panel
+        - backpack
+        - admin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login'
+      signs:
+        - "on": word
+          has:
+            - Backpack Admin
+            - backpack_alerts
+          in: body

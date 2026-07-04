@@ -1,0 +1,19 @@
+id: pagespeed-detect
+brief:
+    title: Pagespeed Detection
+    by: geeknik
+    level: info
+    about: ""
+    label:
+        - tech
+        - pagespeed
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'X-Mod-Pagespeed:'
+          in: header

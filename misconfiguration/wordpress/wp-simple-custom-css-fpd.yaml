@@ -1,0 +1,21 @@
+id: wp-simple-custom-css-fpd
+brief:
+    title: WordPress Simple Custom CSS Plugin - Full Path Disclosure
+    by: 0x_Akoko
+    level: low
+    about: Detected WordPress Simple Custom CSS plugin internal file system path was exposed through direct file access.
+    label:
+        - debug
+        - wordpress
+        - fpd
+        - vuln
+        - simple-custom-css
+        - wp-plugin
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/simple-custom-css/simple-custom-css.php'
+        - '{{BaseURL}}/wp-content/plugins/simple-custom-css/includes/admin.php'
+        - '{{BaseURL}}/wp-content/plugins/simple-custom-css/includes/public.php'
+        - '{{BaseURL}}/wp-content/plugins/simple-custom-css/includes/customizer.php'
+      signs: []

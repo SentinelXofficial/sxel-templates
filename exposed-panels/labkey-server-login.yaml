@@ -1,0 +1,30 @@
+id: labkey-server-login
+brief:
+    title: LabKey Server Login Panel - Detect
+    by: tess
+    level: info
+    about: LabKey Server login panel was detected.
+    label:
+        - panel
+        - labkey
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/labkey/home/login-login.view'
+        - '{{BaseURL}}/login/home/login.view'
+      signs:
+        - "on": word
+          has:
+            - 'TCTU LabKey Server: /home'
+            - Powered by LabKey
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

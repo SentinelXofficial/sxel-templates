@@ -1,0 +1,22 @@
+id: ip-webcam
+brief:
+    title: IP Webcam Viewer Page - Detect
+    by: gy741
+    level: low
+    about: Searches for exposed webcams by querying the  endpoint and the existence of IP Webcam in the body.
+    label:
+        - webcam
+        - iot
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>IP Webcam</title>
+            - Pavel Khlebovich
+          in: body
+          need: all

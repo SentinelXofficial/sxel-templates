@@ -1,0 +1,24 @@
+id: hetzner-cloud-detect
+brief:
+    title: Hetzner Cloud Detect
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - hetzner
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Hetzner Cloud
+            - Hetzner Logo
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

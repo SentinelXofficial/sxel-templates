@@ -1,0 +1,30 @@
+id: manage-engine-ad-search
+brief:
+    title: Manage Engine AD Search
+    by: PR3R00T
+    level: high
+    about: Manage Engine AD Manager service can be configured to allow anonymous users to browse the AD list remotely.
+    label:
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ADSearch.cc?methodToCall=search'
+      signs:
+        - "on": word
+          has:
+            - ManageEngine
+            - Showing Objects Of
+            - Export as
+          in: body
+          need: all
+        - "on": word
+          has:
+            - This search has been disabled
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

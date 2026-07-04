@@ -1,0 +1,24 @@
+id: rallly-login-panel
+brief:
+    title: Rallly Login - Panel Detect
+    by: Th3l0newolf
+    level: info
+    about: Rallly login interface was discovered.
+    label:
+        - panel
+        - login
+        - rallly
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Login | Rallly</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

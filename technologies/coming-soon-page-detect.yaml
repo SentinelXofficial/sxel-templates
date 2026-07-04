@@ -1,0 +1,29 @@
+id: coming-soon-page-detect
+brief:
+    title: Coming Soon Page Detect
+    by: tess
+    level: info
+    about: ""
+    label:
+        - tech
+        - default-page
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Coming Soon
+            - Future home of something quite cool.
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

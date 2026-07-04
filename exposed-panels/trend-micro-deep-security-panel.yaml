@@ -1,0 +1,24 @@
+id: trend-micro-deep-security-panel
+brief:
+    title: Trend Micro Deep Security Manager - Login Panel
+    by: rxerium
+    level: info
+    about: Trend Micro Deep Security Manager is an enterprise server security platform that provides intrusion detection, anti-malware, firewall, and integrity monitoring capabilities for physical, virtual, a...
+    label:
+        - panel
+        - trend-micro
+        - deep-security
+        - vpn
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Trend Micro Deep Security Manager
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

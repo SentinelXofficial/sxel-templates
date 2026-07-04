@@ -1,0 +1,38 @@
+id: webdav-enabled
+brief:
+    title: WebDAV Protocol - Detect
+    by: tess
+    level: info
+    about: WebDAV protocol was detected.
+    label:
+        - webdav
+        - misconfig
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - 'Ms-Author-Via: DAV'
+          in: header
+    - verb: OPTIONS
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - 'Ms-Author-Via: DAV'
+          in: header
+    - verb: OPTIONS
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Authorization: Basic YW5vbnltb3VzOmFub255bW91cw==
+      signs:
+        - "on": word
+          has:
+            - 'Ms-Author-Via: DAV'
+          in: header

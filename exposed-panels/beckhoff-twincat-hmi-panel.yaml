@@ -1,0 +1,30 @@
+id: beckhoff-twincat-hmi-panel
+brief:
+    title: Beckhoff TwinCAT HMI Server - Login Panel
+    by: rxerium
+    level: info
+    about: Beckhoff TwinCAT HMI (Human Machine Interface) Server is part of the TwinCAT
+    label:
+        - panel
+        - scada
+        - ics
+        - beckhoff
+        - twincat
+        - hmi
+        - plc
+        - automation
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - TwinCAT
+            - Beckhoff
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

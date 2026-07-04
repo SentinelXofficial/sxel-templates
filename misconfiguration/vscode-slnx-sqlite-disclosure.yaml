@@ -1,0 +1,19 @@
+id: vscode-slnx-sqlite-disclosure
+brief:
+    title: Visual Studio Code - Slnx.SQLite File Disclosure
+    by: ritikchaddha
+    level: high
+    about: Visual Studio Code and Visual Studio may create slnx.sqlite database files that contain solution metadata, project information, and potentially sensitive configuration data. If these files are acce...
+    label:
+        - vscode
+        - visual-studio
+        - sqlite
+        - disclosure
+        - exposure
+        - file
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/slnx.sqlite'
+        - '{{BaseURL}}/.vs/slnx.sqlite'
+      signs: []

@@ -1,0 +1,20 @@
+id: clever-takeover
+brief:
+    title: Clever Cloud - Subdomain Takeover Detection
+    by: supr4s
+    level: high
+    about: Clever Cloud subdomain takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - The application you're trying to access doesn't seem to exist
+            - support@clever-cloud.com
+          in: body
+          need: all

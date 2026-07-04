@@ -1,0 +1,34 @@
+id: pi-hole-panel
+brief:
+    title: Pi-hole Login Panel - Detect
+    by: geeknik
+    level: info
+    about: ""
+    label:
+        - tech
+        - pihole
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/admin/index.php'
+        - '{{BaseURL}}/admin/login.php'
+        - '{{BaseURL}}/admin/index.php?login'
+        - '{{BaseURL}}/index.php?login'
+      signs:
+        - "on": word
+          has:
+            - Pi-hole
+            - Web Interface
+            - FTL
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <title>Pi-hole
+            - 'Pi-hole: Your black hole for Internet advertisements'
+            - 'Pi-hole: A black hole for Internet advertisements'
+            - <pre>sudo pihole -a -p</pre>
+          in: body

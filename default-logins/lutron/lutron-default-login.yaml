@@ -1,0 +1,32 @@
+id: lutron-default-login
+brief:
+    title: Lutron - Default Account
+    by: geeknik
+    level: critical
+    about: Multiple Lutron devices contain a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - default-login
+        - lutron
+        - iot
+        - vuln
+    score: CVSS:9.8
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login?login={{username}}&password={{password}}'
+      signs:
+        - "on": word
+          has:
+            - LUTRON
+            - DeviceIP
+            - Get Database Info as XML
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

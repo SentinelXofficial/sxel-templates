@@ -1,0 +1,25 @@
+id: sogo-detect
+brief:
+    title: SOGo Detect
+    by: righettod
+    level: info
+    about: This template will detect a running SOGo instance
+    label:
+        - sogo
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/SOGo'
+      signs:
+        - "on": word
+          has:
+            - content="SOGo Web Interface"
+            - sg-default="SOGo
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

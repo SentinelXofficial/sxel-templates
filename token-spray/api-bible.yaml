@@ -1,0 +1,23 @@
+id: api-bible
+brief:
+    title: API.Bible API Test
+    by: daffainfo
+    level: info
+    about: Everything you need from the Bible in one discoverable place
+    label:
+        - token-spray
+        - bible
+moves:
+    - verb: GET
+      to:
+        - https://api.scripture.api.bible/v1/bibles/a6aee10bb058511c-02/verses/JHN.3.16?fums-version=3
+      head:
+        api-key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - orgId
+            - bookId
+            - bibleId
+          in: body
+          need: all

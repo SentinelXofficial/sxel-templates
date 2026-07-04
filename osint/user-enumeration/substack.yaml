@@ -1,0 +1,25 @@
+id: substack
+brief:
+    title: substack.com User Name Information - Detect
+    by: cheesymoon
+    level: info
+    about: substack.com user name information check was conducted.
+    label:
+        - osint
+        - substack
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://substack.com/@{{user}}
+      signs:
+        - "on": word
+          has:
+            - No people found for
+          in: body
+          need: all
+        - "on": word
+          has:
+            - handle\":\"{{user}}\"
+          in: body
+          need: all

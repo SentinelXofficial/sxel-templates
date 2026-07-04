@@ -1,0 +1,27 @@
+id: forticlientems-panel
+brief:
+    title: FortiClient Endpoint Management Server Panel - Detect
+    by: h4sh5
+    level: info
+    about: ""
+    label:
+        - panel
+        - fortinet
+        - forticlient
+        - ems
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/signin'
+      signs:
+        - "on": word
+          has:
+            - FortiClient Endpoint Management Server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

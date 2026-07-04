@@ -1,0 +1,25 @@
+id: zebra-printer-detect
+brief:
+    title: Zebra Printer Detect
+    by: gy741
+    level: info
+    about: Zebra Printer panel was detected.
+    label:
+        - iot
+        - zebra
+        - printer
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Zebra Technologies
+            - PrintServer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

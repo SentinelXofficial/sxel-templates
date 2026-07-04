@@ -1,0 +1,25 @@
+id: truist-phish
+brief:
+    title: truist phishing Detection
+    by: rxerium
+    level: info
+    about: A truist phishing website was detected
+    label:
+        - phishing
+        - bbt
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Your journey to better banking starts with Truist. Checking and savings accounts, credit cards, mortgages, small business, commercial banking, and more.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,34 @@
+id: ibm-mfp-default-login
+brief:
+    title: IBM MobileFirst Foundation - Default Credentials
+    by: Vishal Vishwakarma
+    level: critical
+    about: Detected IBM MobileFirst Foundation Operations Console was found using default credentials. The administration REST API exposes full control over mobile application backends including adapter manag...
+    label:
+        - ibm
+        - mobilefirst
+        - default-login
+    score: CVSS:9.8
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mfpadmin/management-apis/2.0/runtimes'
+      head:
+        Accept: application/json
+        Authorization: Basic {{base64(username + ':' + password)}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - productVersion
+            - synchronizationStatus
+            - management-apis
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

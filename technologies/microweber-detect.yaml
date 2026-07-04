@@ -1,0 +1,24 @@
+id: microweber-detect
+brief:
+    title: Microweber Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - microweber
+        - oss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '"generator" content="Microweber" />'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,27 @@
+id: adhoc-transfer-panel
+brief:
+    title: WS-FTP Ad Hoc Transfer Panel - Detect
+    by: johnk3r
+    level: info
+    about: WS_FTP Ad Hoc panel was detected.
+    label:
+        - panel
+        - wsftp
+        - ad-hoc
+        - detect
+        - login
+        - progress
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/AHT/'
+      signs:
+        - "on": word
+          has:
+            - Ad Hoc Transfer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

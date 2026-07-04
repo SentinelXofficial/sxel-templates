@@ -1,0 +1,35 @@
+id: directory-listing
+brief:
+    title: Directory Listing Enabled
+    by: theMiddle
+    level: low
+    about: Directory Indexing is a web server feature that allows the contents of a directory to be displayed when no index file is present. This can be a security risk as it can expose sensitive files, old b...
+    label:
+        - misc
+        - generic
+        - misconfig
+        - fuzz
+        - miscellaneous
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{path_to_check}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Index of
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

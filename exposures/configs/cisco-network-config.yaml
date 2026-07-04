@@ -1,0 +1,25 @@
+id: cisco-network-config
+brief:
+    title: Cisco System Network Configuration Page - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Cisco System Network configuration page was detected. Page lists whole network configuration and internal logs of Cisco IP phones.
+    label:
+        - exposure
+        - cisco
+        - edb
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/CGI/Java/Serviceability?adapter=device.statistics.configuration'
+      signs:
+        - "on": word
+          has:
+            - Network Configuration
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

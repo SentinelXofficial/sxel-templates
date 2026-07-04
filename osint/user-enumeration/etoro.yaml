@@ -1,0 +1,24 @@
+id: etoro
+brief:
+    title: EToro User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: EToro user name information check was conducted.
+    label:
+        - osint
+        - osint-finance
+        - etoro
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.etoro.com/api/logininfo/v1.1/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - – eToro</title>
+          in: body
+          need: all

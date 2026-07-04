@@ -1,0 +1,24 @@
+id: adult-forum
+brief:
+    title: Adult Forum User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Adult Forum user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - adult-forum
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://adultforum.gr/{{user}}-glamour-escorts/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'Glamour Escorts '
+          in: body
+          need: all

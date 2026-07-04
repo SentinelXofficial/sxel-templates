@@ -1,0 +1,26 @@
+id: slurm-hpc-dashboard
+brief:
+    title: Slurm HPC Dashboard - Detect
+    by: ritikchaddha
+    level: medium
+    about: Slurm HPC Dashboard was detected.
+    label:
+        - misconfig
+        - slurm
+        - dashboard
+        - discovery
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/slurm/'
+      signs:
+        - "on": word
+          has:
+            - <title>Slurm HPC Dashboard</title>
+            - content="Slurm HPC dashboard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

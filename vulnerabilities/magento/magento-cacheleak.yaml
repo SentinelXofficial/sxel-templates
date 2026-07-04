@@ -1,0 +1,28 @@
+id: magento-cacheleak
+brief:
+    title: Magento Cacheleak
+    by: TechbrunchFR
+    level: high
+    about: Magento Cacheleak is an implementation vulnerability, result of bad implementation of web-server configuration for Magento platform. Magento was developed to work under the Apache web-server which ...
+    label:
+        - magento
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/var/resource_config.json'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - media_directory
+            - allowed_resources
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

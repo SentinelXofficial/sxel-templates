@@ -1,0 +1,23 @@
+id: x-recruiting-header
+brief:
+    title: X-Recruiting Header
+    by: geeknik
+    level: info
+    about: Websites that advertise jobs via HTTP headers
+    label:
+        - miscellaneous
+        - misc
+        - hiring
+        - jobs
+        - employment
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'X-Recruiting:'
+          in: header

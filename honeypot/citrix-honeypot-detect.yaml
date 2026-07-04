@@ -1,0 +1,27 @@
+id: citrix-honeypot-detect
+brief:
+    title: Citrix Honeypot - Detect
+    by: UnaPibaGeek
+    level: info
+    about: A Citrix honeypot has been identified.
+    label:
+        - citrix
+        - honeypot
+        - ir
+        - cti
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Citrix Login</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - In order to use our services, you must agree to Citrix's Terms of Service.
+          in: body
+          need: all

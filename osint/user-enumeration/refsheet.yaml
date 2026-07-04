@@ -1,0 +1,24 @@
+id: refsheet
+brief:
+    title: Refsheet User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Refsheet user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - refsheet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://refsheet.net/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - og:title
+          in: body
+          need: all

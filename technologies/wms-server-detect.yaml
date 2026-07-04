@@ -1,0 +1,20 @@
+id: wms-server-detect
+brief:
+    title: Wms-Server detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - wms
+        - httpserver
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - WMSServer/
+          in: header

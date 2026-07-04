@@ -1,0 +1,25 @@
+id: tactical-rmm-panel
+brief:
+    title: Tactical RMM Login Panel - Detect
+    by: johnk3r
+    level: info
+    about: Tactical RMM login panel was detected.
+    label:
+        - panel
+        - tacticalrmm
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Tactical RMM - Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

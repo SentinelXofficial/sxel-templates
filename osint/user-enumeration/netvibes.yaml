@@ -1,0 +1,24 @@
+id: netvibes
+brief:
+    title: Netvibes User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Netvibes user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - netvibes
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.netvibes.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - userId
+          in: body
+          need: all

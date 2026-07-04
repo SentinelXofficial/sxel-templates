@@ -1,0 +1,30 @@
+id: solar-log-authbypass
+brief:
+    title: Solar-Log 500 2.8.2 - Incorrect Access Control
+    by: geeknik
+    level: high
+    about: Solar-Log 500 2.8.2 is susceptible to incorrect access control because the web administration server for Solar-Log 500 all versions prior to 2.8.2 Build 52 does not require authentication, which al...
+    label:
+        - solarlog
+        - auth-bypass
+        - edb
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/lan.html'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - IPC@CHIP
+          in: header
+          need: all
+        - "on": word
+          has:
+            - ' Solare Datensysteme GmbH'
+            - mailto:info@solar-log.com
+          in: body
+          need: all

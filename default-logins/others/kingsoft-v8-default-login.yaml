@@ -1,0 +1,26 @@
+id: kingsoft-v8-default-login
+brief:
+    title: Kingsoft 8 - Default Login
+    by: ritikchaddha
+    level: high
+    about: Kingsoft version 8 contains a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - kingsoft
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/inter/ajax.php?cmd=get_user_login_cmd'
+      body: '{"get_user_login_cmd":{"name":"{{username}}","password":"{{md5(password)}}"}}'
+      signs:
+        - "on": word
+          has:
+            - ADMIN
+            - userSession
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

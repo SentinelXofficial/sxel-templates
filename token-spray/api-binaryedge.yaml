@@ -1,0 +1,23 @@
+id: api-binaryedge
+brief:
+    title: BinaryEdge API Test
+    by: 0ri2N
+    level: info
+    about: BinaryEdge combines Machine Learning and Cybersecurity techniques in a custom built platform to scan, acquire and classify public Internet data. This platform scans the entire public Internet space...
+    label:
+        - recon
+        - binaryedge
+        - token-spray
+moves:
+    - verb: GET
+      to:
+        - https://api.binaryedge.io/v2/user/subscription
+      head:
+        X-Key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"subscription"'
+            - '"requests_left"'
+          in: body
+          need: all

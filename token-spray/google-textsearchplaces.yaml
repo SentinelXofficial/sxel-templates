@@ -1,0 +1,21 @@
+id: api-googletextsearchplaces
+brief:
+    title: Google Places Text Search API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - search
+        - places
+        - text
+moves:
+    - verb: GET
+      to:
+        - https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+Sydney&key={{token}}
+      signs:
+        - "on": word
+          has:
+            - error_message
+          in: body

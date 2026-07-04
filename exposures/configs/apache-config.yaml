@@ -1,0 +1,17 @@
+id: apache-config
+brief:
+    title: Apache Configuration File - Detect
+    by: sheikhrishad
+    level: medium
+    about: Apache configuration file was detected.
+    label:
+        - config
+        - exposure
+        - apache
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/apache.conf'
+      signs: []

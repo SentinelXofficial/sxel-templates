@@ -1,0 +1,32 @@
+id: jupyter-notebook
+brief:
+    title: Jupyter Notebook Login Panel - Detect
+    by: hakimkt
+    level: info
+    about: Jupyter Notebook login panel was detected.
+    label:
+        - edb
+        - panel
+        - jupyter
+        - notebook
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jupyter/login'
+        - '{{BaseURL}}/jupyter/lab'
+        - '{{BaseURL}}/jupyter/hub/lti/launch'
+        - '{{BaseURL}}/hub/login'
+      signs:
+        - "on": word
+          has:
+            - /jupyter/static/base/images/logo.png
+            - /jupyter/hub/logo
+            - Select items to perform actions on them.
+            - JupyterHub
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

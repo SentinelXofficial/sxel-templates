@@ -1,0 +1,24 @@
+id: fastcgi-test-page
+brief:
+    title: FastCGI Test Page
+    by: DhiyaneshDk
+    level: info
+    about: FastCGI test page was discovered.
+    label:
+        - tech
+        - fastcgi
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/test/fcgi/test.html'
+      signs:
+        - "on": word
+          has:
+            - FastCGI test page
+            - FastCGI possibilities test page
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,15 @@
+id: goliath-detect
+brief:
+    title: Goliath Detection
+    by: geeknik
+    level: info
+    about: Goliath is a non-blocking Ruby web server framework
+    label:
+        - tech
+        - goliath
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

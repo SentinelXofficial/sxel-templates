@@ -1,0 +1,25 @@
+id: imgbb
+brief:
+    title: ImgBB User Name Information - Detect
+    by: cheesymoon
+    level: info
+    about: ImgBB user name information check was conducted.
+    label:
+        - osint
+        - osint-image
+        - imgbb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://{{user}}.imgbb.com
+      signs:
+        - "on": word
+          has:
+            - Most recent
+            - Followers
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

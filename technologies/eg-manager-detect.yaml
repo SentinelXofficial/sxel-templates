@@ -1,0 +1,24 @@
+id: eg-manager-detect
+brief:
+    title: eG Manager Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - eg
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/final/'
+      signs:
+        - "on": word
+          has:
+            - <title> eG Innovations, Inc.</title>
+            - eG Innovations, Inc. All Rights Reserved
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

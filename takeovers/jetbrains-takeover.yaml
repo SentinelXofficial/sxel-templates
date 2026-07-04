@@ -1,0 +1,20 @@
+id: jetbrains-takeover
+brief:
+    title: Jetbrains Takeover Detection
+    by: pdteam
+    level: high
+    about: Jetbrains takeover was detected.
+    label:
+        - takeover
+        - jetbrains
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - is not a registered InCloud YouTrack.
+          in: body
+          need: all

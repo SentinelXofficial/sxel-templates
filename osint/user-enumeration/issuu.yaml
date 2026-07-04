@@ -1,0 +1,24 @@
+id: issuu
+brief:
+    title: Issuu User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Issuu user name information check was conducted.
+    label:
+        - osint
+        - osint-shopping
+        - issuu
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://issuu.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- Issuu'
+          in: body
+          need: all

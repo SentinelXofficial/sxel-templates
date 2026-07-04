@@ -1,0 +1,24 @@
+id: fatpipe-warp-panel
+brief:
+    title: FatPipe WARP - Panel Detect
+    by: princechaddha
+    level: info
+    about: the FatPipe WARP administration panel was discovered.
+    label:
+        - tech
+        - fatpipe
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/fpui/jsp/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - <title>FatPipe WARP&nbsp;| Log in</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

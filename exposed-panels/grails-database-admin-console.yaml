@@ -1,0 +1,27 @@
+id: grails-database-admin-console
+brief:
+    title: Grails Admin Console Panel - Detect
+    by: emadshanab
+    level: medium
+    about: Grails Admin Console panel was detected.
+    label:
+        - grails
+        - panel
+        - discovery
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dbconsole/'
+        - '{{BaseURL}}/h2-console/'
+      signs:
+        - "on": word
+          has:
+            - <title>H2 Console</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Sorry, remote connections ('webAllowOthers') are disabled on this server
+          in: body
+          need: all

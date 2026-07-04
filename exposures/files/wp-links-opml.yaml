@@ -1,0 +1,31 @@
+id: wp-links-opml
+brief:
+    title: WordPress wp-links-opml.php - Version Disclosure
+    by: princechaddha
+    level: info
+    about: WordPress wp-links-opml.php file was publicly accessible and expossed the WordPress version in the generator tag.
+    label:
+        - exposure
+        - wordpress
+        - wp
+        - version
+        - files
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-links-opml.php'
+      signs:
+        - "on": word
+          has:
+            - generator=
+            - WordPress/
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/xml
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

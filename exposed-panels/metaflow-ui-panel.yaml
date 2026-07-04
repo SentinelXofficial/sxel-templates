@@ -1,0 +1,33 @@
+id: metaflow-ui-panel
+brief:
+    title: Metaflow UI Panel - Detect
+    by: rxerium
+    level: info
+    about: Metaflow is an open-source ML platform created by Netflix for building and managing real-life data science projects.
+    label:
+        - panel
+        - metaflow
+        - netflix
+        - mlops
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Metaflow UI</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - webpackJsonpmetaflow-ui
+            - metaflow-ui
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,30 @@
+id: codemeter-webadmin
+brief:
+    title: CodeMeter Webadmin Dashboard
+    by: DhiyaneshDk
+    level: low
+    about: CodeMeter Webadmin Dashboard is exposed.
+    label:
+        - misconfig
+        - exposure
+        - codemeter
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.html'
+      signs:
+        - "on": word
+          has:
+            - WebAdmin | Dashboard
+            - CodeMeter
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

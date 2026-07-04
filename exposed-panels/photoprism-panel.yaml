@@ -1,0 +1,17 @@
+id: photoprism-panel
+brief:
+    title: PhotoPrism Panel - Detect
+    by: rxerium
+    level: info
+    about: PhotoPrism is an AI-powered photos app for the decentralized web. This template detects the presence of PhotoPrism login panel.
+    label:
+        - photoprism
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/library/login'
+      signs: []

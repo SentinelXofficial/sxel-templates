@@ -1,0 +1,25 @@
+id: activecollab-installer
+brief:
+    title: ActiveCollab Installation Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed ActiveCollab Installation page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - activecollab
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ActiveCollab Installer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,31 @@
+id: trace-axd-expose
+brief:
+    title: ASP.NET Trace.AXD - Exposure
+    by: dhiyaneshDK
+    level: low
+    about: ASP.NET Trace.AXD information was exposed.
+    label:
+        - logs
+        - asp
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Trace.axd'
+      signs:
+        - "on": word
+          has:
+            - <td><h1>Application Trace</h1></td>
+            - <title>Trace Error</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - The current trace settings prevent trace.axd from being viewed
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+            - 403

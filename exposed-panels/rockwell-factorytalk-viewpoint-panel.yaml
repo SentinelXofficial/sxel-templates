@@ -1,0 +1,28 @@
+id: rockwell-factorytalk-viewpoint-panel
+brief:
+    title: Rockwell Automation FactoryTalk ViewPoint - Panel
+    by: rxerium
+    level: info
+    about: Rockwell Automation FactoryTalk ViewPoint is a web-based HMI that allows remote
+    label:
+        - panel
+        - ics
+        - scada
+        - rockwell
+        - factorytalk
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - /ftvp/ViewPoint.aspx
+            - <title>FTVP</title>
+            - /ftvp/Images/favicon.ico
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: wordpress-wp-cron
+brief:
+    title: Wordpress wp-cron.php DOS
+    by: pathtaga
+    level: info
+    about: When this file is accessed a heavy MySQL query is performed, so it could be used by attackers to cause a DoS.
+    label:
+        - wordpress
+        - cron
+        - wp
+        - dos
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/wp-cron.php'
+      signs: []

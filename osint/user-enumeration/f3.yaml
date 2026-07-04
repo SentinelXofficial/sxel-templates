@@ -1,0 +1,24 @@
+id: f3
+brief:
+    title: F3 User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: F3 user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - f3
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://f3.cool/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>@
+          in: body
+          need: all

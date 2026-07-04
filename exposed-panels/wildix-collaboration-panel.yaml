@@ -1,0 +1,21 @@
+id: wildix-collaboration-panel
+brief:
+    title: Wildix Collaboration Panel - Detect
+    by: rxerium
+    level: info
+    about: Wildix Collaboration login panel was detected.
+    label:
+        - panel
+        - login
+        - wildix
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - wildix
+          in: server

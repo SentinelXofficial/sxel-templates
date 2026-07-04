@@ -1,0 +1,30 @@
+id: wgetrc-config
+brief:
+    title: Wgetrc Configuration File - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Wgetrc configuration file was detected.
+    label:
+        - devops
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wgetrc'
+        - '{{BaseURL}}/.wgetrc'
+      signs:
+        - "on": word
+          has:
+            - /etc/wgetrc
+            - wget.info
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

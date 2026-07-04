@@ -1,0 +1,25 @@
+id: barracuda-message-panel
+brief:
+    title: Barracuda Message Archiver - Panel Detect
+    by: inokii
+    level: info
+    about: Barracuda Networks Barracuda Message Archiver (BMA) panel was detected.
+    label:
+        - barracuda
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-mod/index.cgi'
+      signs:
+        - "on": word
+          has:
+            - <link href="/css/archiver.css
+            - <div id="barracuda_info" style="float:right">
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

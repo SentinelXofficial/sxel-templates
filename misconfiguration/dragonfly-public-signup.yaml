@@ -1,0 +1,36 @@
+id: dragonfly-public-signup
+brief:
+    title: DragonFly Public - Signup Enabled
+    by: DhiyaneshDK
+    level: high
+    about: Dragonfly public registration is enabled was discovered.
+    label:
+        - dragonfly
+        - misconfig
+        - register
+        - signup
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/v1/users/signup'
+      head:
+        Content-Type: application/json;charset=UTF-8
+      body: '{"name":"{{username}}","password":"{{password}}","email":"{{email}}","passwordT":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - '"id":'
+            - '"created_at":'
+            - '"updated_at":'
+            - '"state":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: bamboo-detect
+brief:
+    title: Bamboo - Detection
+    by: bhutch
+    level: info
+    about: Detect the presence of Bamboo, a CI/CD tool.
+    label:
+        - tech
+        - bamboo
+        - atlassian
+        - detect
+        - cicd
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

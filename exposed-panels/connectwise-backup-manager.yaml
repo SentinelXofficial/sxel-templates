@@ -1,0 +1,24 @@
+id: connectwise-backup-manager
+brief:
+    title: ConnectWise Server Backup Manager SE Panel - Detect
+    by: prajiteshsingh
+    level: info
+    about: ConnectWise Server Backup Manager SE login panel was detected.
+    label:
+        - panel
+        - connectwise
+        - backup
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.zul'
+      signs:
+        - "on": word
+          has:
+            - Server Backup Manager SE
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

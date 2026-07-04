@@ -1,0 +1,27 @@
+id: jaspersoft-panel
+brief:
+    title: TIBCO Jaspersoft Login Panel - Detect
+    by: koti2
+    level: info
+    about: TIBCO Jaspersoft login panel was detected.
+    label:
+        - panel
+        - jaspersoft
+        - tibco
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jasperserver/login.html?error=1'
+        - '{{BaseURL}}/jasperserver-pro/login.html?error=1'
+      signs:
+        - "on": word
+          has:
+            - 'TIBCO Jaspersoft: Login'
+            - Could not login to JasperReports Server
+            - About TIBCO JasperReports Server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

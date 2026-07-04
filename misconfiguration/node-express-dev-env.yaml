@@ -1,0 +1,27 @@
+id: node-express-dev-env
+brief:
+    title: Node.js Express NODE_ENV Development Mode
+    by: FLX
+    level: medium
+    about: The Node.js application runs in development mode, which can expose sensitive information, such as source code and secrets, depending on the application.
+    label:
+        - nodejs
+        - express
+        - misconfig
+        - devops
+        - cicd
+        - trace
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Connection: close
+        Content-Type: application/json
+      body: t
+      signs: []

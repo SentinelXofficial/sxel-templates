@@ -1,0 +1,24 @@
+id: hackerearth
+brief:
+    title: Hackerearth User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Hackerearth user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - hackerearth
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.hackerearth.com/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| Developer Profile on HackerEarth'
+          in: body
+          need: all

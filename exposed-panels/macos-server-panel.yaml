@@ -1,0 +1,26 @@
+id: macos-server-panel
+brief:
+    title: macOS Server Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - panel
+        - login
+        - macos-server
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - macOS Server
+            - apple-system
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

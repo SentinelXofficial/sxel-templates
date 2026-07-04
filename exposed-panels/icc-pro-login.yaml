@@ -1,0 +1,29 @@
+id: icc-pro-login
+brief:
+    title: ICC PRO Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: ICC PRO login panel was detected.
+    label:
+        - panel
+        - icc-pro
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Account/Login'
+      signs:
+        - "on": word
+          has:
+            - <title>Login to ICC PRO system</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

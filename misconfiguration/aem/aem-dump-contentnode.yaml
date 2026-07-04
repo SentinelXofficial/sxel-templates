@@ -1,0 +1,30 @@
+id: aem-dump-contentnode
+brief:
+    title: AEM Dump Content Node Properties
+    by: DhiyaneshDK
+    level: medium
+    about: Node Properties are exposed in AEM Dump.
+    label:
+        - misconfig
+        - aem
+        - adobe
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/content.infinity.json'
+        - '{{BaseURL}}/{{path}}'
+      signs:
+        - "on": word
+          has:
+            - '"rep:privileges":['
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

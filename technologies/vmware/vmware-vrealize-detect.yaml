@@ -1,0 +1,29 @@
+id: vmware-vrealize
+brief:
+    title: VMware vRealize
+    by: milo2012
+    level: info
+    about: Version of VMware vRealize Operations Manager
+    label:
+        - vmware
+        - vrealize
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/login.action'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": word
+          has:
+            - <title>vRealize Operations Manager</title>
+          in: body
+          need: all

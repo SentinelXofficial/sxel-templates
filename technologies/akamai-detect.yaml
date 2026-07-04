@@ -1,0 +1,22 @@
+id: akamai-detect
+brief:
+    title: akamai cdn detection
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - akamai
+        - cdn
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      head:
+        Pragma: akamai-x-cache-on
+      signs:
+        - "on": word
+          has:
+            - deploy.akamai
+          in: x_cache

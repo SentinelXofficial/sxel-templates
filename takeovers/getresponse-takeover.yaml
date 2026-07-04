@@ -1,0 +1,20 @@
+id: getresponse-takeover
+brief:
+    title: Getresponse Takeover Detection
+    by: pdteam
+    level: high
+    about: Getresponse takeover was detected.
+    label:
+        - takeover
+        - getresponse
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - With GetResponse Landing Pages, lead generation has never been easier
+          in: body
+          need: all

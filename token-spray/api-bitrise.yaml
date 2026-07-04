@@ -1,0 +1,23 @@
+id: api-bitrise
+brief:
+    title: Bitrise API Test
+    by: daffainfo
+    level: info
+    about: Build tool and processes integrations to create efficient development pipelines
+    label:
+        - token-spray
+        - bitrise
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://api.bitrise.io/v0.1/me'
+      head:
+        Authorization: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"username":'
+            - '"slug":'
+            - '"email":'
+          in: body
+          need: all

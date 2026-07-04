@@ -1,0 +1,24 @@
+id: apache-zeppelin-detect
+brief:
+    title: Apache Zeppelin detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - apache
+        - zeppelin
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title ng-bind="$root.pageTitle">Zeppelin</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

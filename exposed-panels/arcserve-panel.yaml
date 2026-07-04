@@ -1,0 +1,26 @@
+id: arcserve-panel
+brief:
+    title: ArcServe Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - panel
+        - login
+        - arcserve
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Arcserve UDP
+            - /arcserve.js
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

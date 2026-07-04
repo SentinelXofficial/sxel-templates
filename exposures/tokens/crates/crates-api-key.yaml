@@ -1,0 +1,16 @@
+id: crates-api-key
+brief:
+    title: Crates.io API Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - crates
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

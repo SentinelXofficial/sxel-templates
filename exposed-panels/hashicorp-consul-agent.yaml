@@ -1,0 +1,25 @@
+id: hashicorp-consul-agent
+brief:
+    title: Hashicorp Consul Agent - Detect
+    by: c-sh0
+    level: info
+    about: Hashicorp Consul Agent was detected.
+    label:
+        - tech
+        - consul
+        - api
+        - panel
+        - hashicorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v1/agent/self'
+      signs:
+        - "on": word
+          has:
+            - '"Datacenter":'
+            - '"Revision":'
+            - '"PrimaryDatacenter"'
+          in: body
+          need: all

@@ -1,0 +1,26 @@
+id: oracle-atg-commerce
+brief:
+    title: Oracle ATG Commerce Panel - Detect
+    by: Dale Clarke
+    level: info
+    about: Oracle ATG Commerce panel was detected.
+    label:
+        - tech
+        - oracle
+        - atg
+        - commerce
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - x-atg-version
+            - atg_session_id
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

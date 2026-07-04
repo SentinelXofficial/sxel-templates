@@ -1,0 +1,24 @@
+id: rockstar-social-club-phish
+brief:
+    title: Rockstar Social Club phishing Detection
+    by: rxerium
+    level: info
+    about: A Rockstar Social Club phishing website was detected
+    label:
+        - phishing
+        - rockstar-social-club
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - The official home of Rockstar Games
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

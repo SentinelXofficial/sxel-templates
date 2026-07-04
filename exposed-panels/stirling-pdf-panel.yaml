@@ -1,0 +1,17 @@
+id: stirling-pdf-panel
+brief:
+    title: Stirling PDF Panel - Detect
+    by: s4e-io
+    level: info
+    about: Stirling PDF panel was discovered.
+    label:
+        - panel
+        - login
+        - stirling-pdf
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

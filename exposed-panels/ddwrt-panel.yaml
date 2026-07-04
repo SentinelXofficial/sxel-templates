@@ -1,0 +1,23 @@
+id: ddwrt-panel
+brief:
+    title: DD-WRT - Router Panel
+    by: rxerium
+    level: info
+    about: DD-WRT router management panel detected.
+    label:
+        - panel
+        - ddwrt
+        - router
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - DD-WRT
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

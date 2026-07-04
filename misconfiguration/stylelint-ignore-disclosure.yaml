@@ -1,0 +1,32 @@
+id: stylelint-ignore-disclosure
+brief:
+    title: Stylelint - Ignore File Disclosure
+    by: ritikchaddha
+    level: info
+    about: The .stylelintignore file is publicly accessible, potentially revealing project structure, sensitive file paths, and internal directory organization.
+    label:
+        - stylelintignore
+        - config
+        - exposure
+        - disclosure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.stylelintignore'
+      signs:
+        - "on": word
+          has:
+            - MongoDB over HTTP on the native
+            - application/javascript
+            - application/x-javascript
+            - application/json
+            - application/xml
+            - text/xml
+            - <html
+            - <!doctype
+            - <script
+            - <meta
+            - image/
+            - Response xmlns
+          in: response
+          need: all

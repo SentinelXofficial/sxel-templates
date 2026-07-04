@@ -1,0 +1,16 @@
+id: exposed-gitmodules
+brief:
+    title: .gitmodules File Exposed
+    by: pussycat0x
+    level: high
+    about: The .gitmodules file was exposed on the web server as part of an accessible .git directory.This exposure indicated a misconfiguration that could have allowed attackers to explore the .git directory...
+    label:
+        - exposure
+        - git
+        - source-disclosure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.gitmodules'
+      signs: []

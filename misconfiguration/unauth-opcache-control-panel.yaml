@@ -1,0 +1,17 @@
+id: opcache-control-panel
+brief:
+    title: Opcache control Panel - Unauthenticated Access
+    by: pussycat0x
+    level: medium
+    about: Opcache control Panel is exposed.
+    label:
+        - misconfig
+        - opcache
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/ocp.php'
+      signs: []

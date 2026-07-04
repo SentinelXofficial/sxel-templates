@@ -1,0 +1,24 @@
+id: garmin-connect
+brief:
+    title: Garmin connect User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Garmin connect user name information check was conducted.
+    label:
+        - osint
+        - osint-health
+        - garmin-connect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://connect.garmin.com/modern/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - window.ERROR_VIEW = null
+          in: body
+          need: all

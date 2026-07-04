@@ -1,0 +1,19 @@
+id: erpnext-default-login
+brief:
+    title: ERPNext - Default Login
+    by: 0x_Akoko
+    level: high
+    about: Detects ERPNext installations that use the default Administrator/admin login credentials. This misconfiguration grants attackers full administrative access to the system.
+    label:
+        - erpnext
+        - erp
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: cmd=login&usr={{username}}&pwd={{password}}&device=desktop
+      signs: []

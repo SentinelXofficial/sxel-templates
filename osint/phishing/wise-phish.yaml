@@ -1,0 +1,25 @@
+id: wise-phish
+brief:
+    title: Wise phishing Detection
+    by: rxerium
+    level: info
+    about: A Wise phishing website was detected
+    label:
+        - phishing
+        - wise
+        - fintech
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 160+ countries, 40 currencies, one account. Save when you send, spend and manage your money internationally.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

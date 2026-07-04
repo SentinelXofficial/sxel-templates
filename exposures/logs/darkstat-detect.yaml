@@ -1,0 +1,25 @@
+id: darkstat-detect
+brief:
+    title: Detect Darkstat Reports
+    by: geeknik
+    level: high
+    about: Darkstat captures network traffic, calculates statistics about usage, and serves reports over HTTP
+    label:
+        - darkstat
+        - logs
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/darkstat/'
+      signs:
+        - "on": word
+          has:
+            - darkstat
+            - <title>Graphs
+            - Measuring for
+            - hosts</a>
+          in: body
+          need: all

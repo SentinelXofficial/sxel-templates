@@ -1,0 +1,23 @@
+id: google-adk-webui-exposed
+brief:
+    title: Google ADK Development UI Exposure
+    by: princechaddha
+    level: info
+    about: Detects the exposure of the Google Agent Development Kit (ADK) Development UI, which may lead to sensitive information disclosure or unauthorized access.
+    label:
+        - adk
+        - exposure
+        - google
+        - ai
+        - agent
+        - devops
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dev-ui/'
+      signs:
+        - "on": word
+          has:
+            - <title>Agent Development Kit Dev UI</title>
+          in: body

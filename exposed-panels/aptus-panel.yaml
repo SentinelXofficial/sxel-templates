@@ -1,0 +1,23 @@
+id: aptus-panel
+brief:
+    title: Aptus Login - Panel Detect
+    by: princechaddha
+    level: info
+    about: Aptus login panel was detected.
+    label:
+        - panel
+        - aptus
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Aptus Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

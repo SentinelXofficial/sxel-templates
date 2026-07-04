@@ -1,0 +1,25 @@
+id: openbao-webui-detect
+brief:
+    title: OpenBao Web UI Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Detects the presence of the OpenBao web console.
+    label:
+        - panel
+        - openbao
+        - detect
+        - ui
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui'
+      signs:
+        - "on": word
+          has:
+            - <title>OpenBao
+            - Welcome to OpenBao
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

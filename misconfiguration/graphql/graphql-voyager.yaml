@@ -1,0 +1,25 @@
+id: graphql-voyager
+brief:
+    title: GraphQL Voyager - Exposed
+    by: Hamza Sahin
+    level: low
+    about: GraphQL Voyager UI exposed (often a dev tool) which visualizes the GraphQL schema in production.
+    label:
+        - misconfig
+        - graphql
+        - voyager
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/voyager'
+        - '{{BaseURL}}/voyager/'
+        - '{{BaseURL}}/ui/voyager'
+        - '{{BaseURL}}/graphql/voyager'
+      signs:
+        - "on": word
+          has:
+            - GraphQL Voyager
+            - Voyager helps represent any GraphQL API
+          in: body
+          need: all

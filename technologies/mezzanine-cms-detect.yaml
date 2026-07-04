@@ -1,0 +1,22 @@
+id: mezzanine-cms-detect
+brief:
+    title: Mezzanine CMS - Detect
+    by: Chirag Mistry
+    level: info
+    about: Detects instances of Mezzanine CMS based on unique fingerprints and identifiers.
+    label:
+        - detect
+        - mezzanine
+        - cms
+        - tech
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - powered by Mezzanine
+            - Welcome to Mezzanine
+            - Mezzanine version
+          in: body

@@ -1,0 +1,45 @@
+id: molgenis-default-login
+brief:
+    title: Molgenis - Default Login
+    by: ritikchaddha
+    level: high
+    about: Attempts to login to Molgenis using the default credentials (admin/admin). Successful login may indicate a security risk due to unchanged default credentials.
+    label:
+        - molgenis
+        - default-login
+        - exposure
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: JSESSIONID='
+          in: header_1
+          need: all
+        - "on": word
+          has:
+            - Sign out</button>
+            - Log manager</a>
+          in: body_2
+          need: all
+    - verb: GET
+      to:
+        - '{{BaseURL}}/menu/admin/logmanager'
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: JSESSIONID='
+          in: header_1
+          need: all
+        - "on": word
+          has:
+            - Sign out</button>
+            - Log manager</a>
+          in: body_2
+          need: all

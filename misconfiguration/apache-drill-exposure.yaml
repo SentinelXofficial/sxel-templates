@@ -1,0 +1,30 @@
+id: apache-drill-exposure
+brief:
+    title: Apache Drill Exposure
+    by: DhiyaneshDK
+    level: low
+    about: Apache Drill is exposed.
+    label:
+        - misconfig
+        - exposure
+        - apache
+        - drill
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Apache Drill</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

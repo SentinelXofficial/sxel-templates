@@ -1,0 +1,23 @@
+id: hp-media-vault-detect
+brief:
+    title: HP Media Vault Detect
+    by: pussycat0x
+    level: info
+    about: ""
+    label:
+        - tech
+        - hp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>HP Media Vault
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

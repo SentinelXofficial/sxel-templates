@@ -1,0 +1,17 @@
+id: oracle-ebusiness-panel
+brief:
+    title: Oracle E-Business Suite Login Panel - Detect
+    by: righettod
+    level: info
+    about: Oracle E-Business Suite login panel was detected.
+    label:
+        - panel
+        - oracle
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/OA_HTML/AppsLogin'
+      signs: []

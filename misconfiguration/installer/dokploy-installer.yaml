@@ -1,0 +1,26 @@
+id: dokploy-installer
+brief:
+    title: Dokploy Installer Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Dokploy is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - dokploy
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/register'
+      signs:
+        - "on": word
+          has:
+            - Setup the server
+            - Dokploy
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

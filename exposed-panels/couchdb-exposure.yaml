@@ -1,0 +1,25 @@
+id: couchdb-exposure
+brief:
+    title: Apache CouchDB Panel - Detect
+    by: organiccrap
+    level: info
+    about: Apache CouchDB panel was detected.
+    label:
+        - panel
+        - couchdb
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_all_dbs'
+      signs:
+        - "on": word
+          has:
+            - CouchDB/
+            - Erlang OTP/
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

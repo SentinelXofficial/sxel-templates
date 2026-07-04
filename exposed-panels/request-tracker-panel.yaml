@@ -1,0 +1,23 @@
+id: request-tracker-panel
+brief:
+    title: Request Tracker - Panel
+    by: burso
+    level: info
+    about: Request Tracker panel was discovered.
+    label:
+        - panel
+        - login
+        - request
+        - tracker
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - RT.Config
+            - RT.CurrentUser
+          in: body
+          need: all

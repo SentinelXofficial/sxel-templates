@@ -1,0 +1,20 @@
+id: wp-smart-manager-sqli
+brief:
+    title: Smart Manager for WooCommerce & WPeC <= 3.9.6 - SQL Injection
+    by: r3Y3r53
+    level: critical
+    about: The Smart Manager For WooCommerce – Stock Management, Bulk Edit & more… WordPress plugin was affected by an Unauthenticated SQL Injection security vulnerability.
+    label:
+        - time-based-sqli
+        - wpscan
+        - wp
+        - wp-plugin
+        - wordpress
+        - smart-manager-for-wp-e-commerce
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/smart-manager-for-wp-e-commerce/readme.txt'
+      signs: []

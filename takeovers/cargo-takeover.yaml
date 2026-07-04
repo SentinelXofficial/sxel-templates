@@ -1,0 +1,19 @@
+id: cargo-takeover
+brief:
+    title: cargo takeover detection
+    by: pdteam
+    level: high
+    about: cargo takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - If you're moving your domain away from Cargo you must make this configuration through your registrar's DNS control panel.
+          in: body
+          need: all

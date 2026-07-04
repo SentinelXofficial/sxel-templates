@@ -1,0 +1,19 @@
+id: kanboard-database-exposure
+brief:
+    title: Kanboard - SQLite Database Exposure
+    by: 0x_Akoko
+    level: high
+    about: Detected Kanboard SQLite database file was found to be exposed, containing sensitive information including user credentials, project data, tasks, and comments.
+    label:
+        - kanboard
+        - exposure
+        - database
+        - sqlite
+        - misconfig
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/data/db.sqlite'
+        - '{{BaseURL}}/kanboard/data/db.sqlite'
+      signs: []

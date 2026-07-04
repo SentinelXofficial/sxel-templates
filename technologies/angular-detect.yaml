@@ -1,0 +1,20 @@
+id: angular-detect
+brief:
+    title: Angular detect
+    by: TechbrunchFR
+    level: info
+    about: Angular is a development platform for building mobile and desktop web applications using Typescript/JavaScript and other languages.
+    label:
+        - tech
+        - angular
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ng-version=
+          in: body
+          need: all

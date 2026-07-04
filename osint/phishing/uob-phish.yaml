@@ -1,0 +1,25 @@
+id: uob-phish
+brief:
+    title: UOB phishing Detection
+    by: rxerium
+    level: info
+    about: A UOB phishing website was detected
+    label:
+        - phishing
+        - uob
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - United Overseas Bank
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

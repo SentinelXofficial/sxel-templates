@@ -1,0 +1,28 @@
+id: prestashop-admin-panel
+brief:
+    title: Prestashop Admin Login Panel - Detect
+    by: mastercho
+    level: info
+    about: Prestashop admin login panel was detected.
+    label:
+        - prestashop
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{paths}}/'
+      signs:
+        - "on": word
+          has:
+            - PrestaShop
+            - class="show-forgot-password
+          in: body
+          need: all
+        - "on": word
+          has:
+            - themes/default/css/admin-theme.css
+            - class="show-forgot-password
+          in: body
+          need: all

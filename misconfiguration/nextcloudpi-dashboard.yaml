@@ -1,0 +1,18 @@
+id: nextcloudpi-dashboard
+brief:
+    title: NextcloudPi Dashboard - Exposed
+    by: ritikchaddha
+    level: high
+    about: Detects exposed NextcloudPi dashboard instances. NextcloudPi dashboard is typically accessible on port 4443 and should not be exposed to the internet as it provides administrative access to the Nex...
+    label:
+        - nextcloud
+        - nextcloudpi
+        - dashboard
+        - misconfig
+        - exposed
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?app=config'
+      signs: []

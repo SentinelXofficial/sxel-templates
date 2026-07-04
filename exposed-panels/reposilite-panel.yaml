@@ -1,0 +1,16 @@
+id: reposilite-panel
+brief:
+    title: Reposilite Login Panel - Detect
+    by: righettod
+    level: info
+    about: Reposilite products was detected.
+    label:
+        - panel
+        - reposilite
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

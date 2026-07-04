@@ -1,0 +1,28 @@
+id: microfocus-filr-panel
+brief:
+    title: Micro Focus Filr Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Micro Focus Filr login panel was detected.
+    label:
+        - panel
+        - microfocus
+        - filr
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/filr/login'
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Micro Focus Filr
+            - Filr Appliance
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404
+            - 200

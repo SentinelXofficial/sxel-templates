@@ -1,0 +1,24 @@
+id: openstreetmap
+brief:
+    title: OpenStreetMap User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: OpenStreetMap user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - openstreetmap
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.openstreetmap.org/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'Mapper since:'
+          in: body
+          need: all

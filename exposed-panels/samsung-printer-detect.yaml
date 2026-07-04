@@ -1,0 +1,25 @@
+id: samsung-printer-detect
+brief:
+    title: Samsung Printer Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Samsung printer panel was detected.
+    label:
+        - iot
+        - panel
+        - samsung
+        - printer
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sws/index.html'
+      signs:
+        - "on": word
+          has:
+            - SyncThru Web Service
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

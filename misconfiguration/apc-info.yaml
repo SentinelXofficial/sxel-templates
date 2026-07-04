@@ -1,0 +1,24 @@
+id: apcu-service
+brief:
+    title: APCu service information leakage
+    by: koti2
+    level: low
+    about: APCu service is vulnerable to information leakage.
+    label:
+        - config
+        - service
+        - apcu
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/apc/apc.php'
+        - '{{BaseURL}}/apc.php'
+      signs:
+        - "on": word
+          has:
+            - APCu Version Information
+            - General Cache Information
+            - Detailed Memory Usage and Fragmentation
+          in: body

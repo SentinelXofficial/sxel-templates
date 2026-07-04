@@ -1,0 +1,29 @@
+id: cisco-esa-panel
+brief:
+    title: Cisco Email Security Appliance - Panel
+    by: rxerium
+    level: info
+    about: Detected Cisco Email Security Appliance login panel.
+    label:
+        - login
+        - cisco
+        - panel
+        - email
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Email Security Appliance
+            - Email Security Virtual Appliance
+            - IronPort C
+          in: body
+          need: all
+        - "on": word
+          has:
+            - action:Login
+          in: body
+          need: all

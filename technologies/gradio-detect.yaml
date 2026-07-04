@@ -1,0 +1,16 @@
+id: gradio-detect
+brief:
+    title: Gradio - Detect
+    by: s4e-io
+    level: info
+    about: An instance running Gradio was detected.
+    label:
+        - gradio
+        - tech
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

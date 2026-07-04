@@ -1,0 +1,17 @@
+id: bugzilla-config
+brief:
+    title: Bugzilla - Config Exposed
+    by: icarot
+    level: low
+    about: Because the config.cgi is publicly exposed, it is possible to enumerate main domain and possible users registered on Bugzilla server.
+    label:
+        - bugzilla
+        - mozilla
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config.cgi'
+      signs: []

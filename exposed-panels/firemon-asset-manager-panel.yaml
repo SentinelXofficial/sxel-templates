@@ -1,0 +1,24 @@
+id: firemon-asset-manager-panel
+brief:
+    title: FireMon Asset Manager - Login Panel
+    by: rxerium
+    level: info
+    about: FireMon Asset Manager is a network security management platform that provides visibility, policy management, and compliance reporting for firewalls, routers, and other network security infrastructure.
+    label:
+        - panel
+        - firemon
+        - firewall
+        - vpn
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - FireMon Asset Manager
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

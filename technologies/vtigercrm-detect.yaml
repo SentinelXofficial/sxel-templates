@@ -1,0 +1,17 @@
+id: vtigercrm-detect
+brief:
+    title: Vtiger CRM - Detect
+    by: icarot
+    level: info
+    about: Detected a Vtiger CRM web application, a PHP-based platform that enabled businesses to increase sales wins, marketing ROI, and support satisfaction capabilities.
+    label:
+        - tech
+        - vtiger
+        - vtiger-crm
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,16 @@
+id: codecov-accesstoken
+brief:
+    title: Codecov Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - codecov
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

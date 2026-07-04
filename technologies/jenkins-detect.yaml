@@ -1,0 +1,27 @@
+id: jenkins-detect
+brief:
+    title: Jenkins Detection
+    by: philippdelteil
+    level: info
+    about: ""
+    label:
+        - tech
+        - jenkins
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/whoAmI/'
+      signs:
+        - "on": word
+          has:
+            - 'x-jenkins:'
+          in: header
+          need: all
+        - "on": word
+          has:
+            - Jenkins
+          in: body
+          need: all

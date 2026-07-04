@@ -1,0 +1,26 @@
+id: cal
+brief:
+    title: Cal User Name Information - Detect
+    by: olearycrew
+    level: info
+    about: Cal user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - cal
+        - caldotcom
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://cal.com/{{user}}
+      signs:
+        - "on": word
+          has:
+            - username":"{{user}}"
+            - '"email":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

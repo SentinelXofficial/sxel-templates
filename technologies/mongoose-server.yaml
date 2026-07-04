@@ -1,0 +1,23 @@
+id: mongoose-server
+brief:
+    title: Mongoose Server
+    by: lu4nx
+    level: info
+    about: Mongoose is a embedded web server
+    label:
+        - tech
+        - mongoose
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Server: Mongoose'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

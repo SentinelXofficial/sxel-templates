@@ -1,0 +1,17 @@
+id: gude-default-login
+brief:
+    title: GUDE - Default Login
+    by: Bretss
+    level: high
+    about: GUDE 2301 and 2302 default administrator login credentials (admin:admin) were detected.
+    label:
+        - gude
+        - default-login
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ov.html?'
+      head:
+        Authorization: Basic YWRtaW46YWRtaW4=
+      signs: []

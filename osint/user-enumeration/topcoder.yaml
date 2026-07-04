@@ -1,0 +1,24 @@
+id: topcoder
+brief:
+    title: Topcoder User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Topcoder user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - topcoder
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://profiles.topcoder.com/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Topcoder Top Technology Talent On-Demand
+          in: body
+          need: all

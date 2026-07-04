@@ -1,0 +1,17 @@
+id: churchcrm-panel
+brief:
+    title: ChurchCRM Panel - Detect
+    by: Kazgangap
+    level: info
+    about: ChurchCRM panel was discovered.
+    label:
+        - panel
+        - login
+        - churchcrm
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/session/begin'
+      signs: []

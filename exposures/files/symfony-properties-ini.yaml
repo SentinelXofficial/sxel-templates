@@ -1,0 +1,27 @@
+id: symfony-properties-ini
+brief:
+    title: Symfony properties.ini File Disclosure
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - symfony
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/properties.ini'
+        - '{{BaseURL}}/config/properties.ini'
+      signs:
+        - "on": word
+          has:
+            - name=
+            - author=
+            - orm=
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

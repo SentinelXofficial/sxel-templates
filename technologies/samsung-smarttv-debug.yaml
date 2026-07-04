@@ -1,0 +1,25 @@
+id: samsung-smarttv-debug
+brief:
+    title: Samsung SmartTV Debug Config
+    by: pussycat0x
+    level: info
+    about: ""
+    label:
+        - samsung
+        - tech
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Debug Config</title>
+            - MultiScreen Service
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: polycom-hdx-web-exposure
+brief:
+    title: Polycom HDX - Web Interface Exposure
+    by: 0x_Akoko
+    level: low
+    about: Detecetd Polycom HDX video conferencing system web interface, potentially allowing unauthorized access to device configuration and video calls.
+    label:
+        - polycom
+        - hdx
+        - iot
+        - exposure
+        - video-conferencing
+    score: CVSS:6.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

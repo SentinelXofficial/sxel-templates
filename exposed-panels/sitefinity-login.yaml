@@ -1,0 +1,25 @@
+id: sitefinity-login
+brief:
+    title: Sitefinity Login
+    by: dhiyaneshDK
+    level: info
+    about: This template identifies the Sitefinity login page.
+    label:
+        - sitefinity
+        - edb
+        - panel
+        - progress
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Sitefinity/Authenticate/SWT'
+      signs:
+        - "on": word
+          has:
+            - Telerik.Sitefinity.Web.UI.UserPreferences
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,22 @@
+id: phpmyadmin-panel
+brief:
+    title: phpMyAdmin Panel - Detect
+    by: pdteam
+    level: info
+    about: phpMyAdmin panel was detected.
+    label:
+        - panel
+        - phpmyadmin
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - alt="phpMyAdmin
+            - name="pma_username
+            - /pmahomme/
+          in: body

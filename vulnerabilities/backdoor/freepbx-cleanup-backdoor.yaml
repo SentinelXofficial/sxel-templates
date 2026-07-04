@@ -1,0 +1,27 @@
+id: freepbx-cleanup-backdoor
+brief:
+    title: FreePBX - CVE-2025-57819 Backdoor
+    by: darses
+    level: high
+    about: FreePBX backdoor cleanup script used in 0-day exploitation of CVE-2025-57819 was detected.
+    label:
+        - backdoor
+        - sangoma
+        - freepbx
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.clean.sh'
+      signs:
+        - "on": word
+          has:
+            - LOGS
+            - Processing file
+            - sed -i --follow-symlinks
+            - /var/log/asterisk/freepbx_security.log
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

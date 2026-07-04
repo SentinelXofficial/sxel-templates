@@ -1,0 +1,31 @@
+id: netsparker-enterprise-installer
+brief:
+    title: Netsparker Enterprise Installer
+    by: pussycat0x
+    level: info
+    about: Netsparker Enterprise is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - exposure
+        - install
+        - netsparker
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wizard/database/'
+      signs:
+        - "on": word
+          has:
+            - Netsparker Enterprise - Installation Wizard
+            - Netsparker Ltd
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

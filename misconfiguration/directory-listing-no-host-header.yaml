@@ -1,0 +1,15 @@
+id: directory-listing-no-host-header
+brief:
+    title: Directory Listing - No Host header
+    by: kazet
+    level: info
+    about: The HTTP server is configured to list files in the root directory when no Host header is provided.
+    label:
+        - misconfig
+        - listing
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

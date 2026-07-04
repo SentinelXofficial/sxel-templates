@@ -1,0 +1,16 @@
+id: adobe-client-id
+brief:
+    title: Adobe Client ID
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - adobe
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

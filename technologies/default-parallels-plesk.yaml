@@ -1,0 +1,17 @@
+id: default-parallels-plesk
+brief:
+    title: Default Parallels Plesk Panel Page
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - tech
+        - default-page
+        - parallels
+        - plesk
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

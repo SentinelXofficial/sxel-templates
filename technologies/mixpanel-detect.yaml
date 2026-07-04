@@ -1,0 +1,25 @@
+id: mixpanel-detect
+brief:
+    title: Mixpanel Analytics - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected the presence of Mixpanel, a business analytics service.
+    label:
+        - tech
+        - discovery
+        - mixpanel
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - cdn.mxpnl.com
+            - window.mixpanel
+            - mixpanel-2-latest.min.js
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

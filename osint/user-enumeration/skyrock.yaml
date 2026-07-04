@@ -1,0 +1,24 @@
+id: skyrock
+brief:
+    title: Skyrock User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Skyrock user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - skyrock
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://{{user}}.skyrock.com/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '&#039;s blog'
+          in: body
+          need: all

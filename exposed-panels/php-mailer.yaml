@@ -1,0 +1,24 @@
+id: php-mailer
+brief:
+    title: PHPMailer Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: PHPMailer panel was detected.
+    label:
+        - panel
+        - php
+        - mailer
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>PHP Mailer</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

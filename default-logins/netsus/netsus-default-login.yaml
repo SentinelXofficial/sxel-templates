@@ -1,0 +1,28 @@
+id: netsus-default-login
+brief:
+    title: NetSUS Server Default Login
+    by: princechaddha
+    level: high
+    about: NetSUS Server default admin credentials were discovered.
+    label:
+        - netsus
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/webadmin/index.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: loginwith=suslogin&username={{username}}&password={{password}}&submit=
+      signs:
+        - "on": word
+          has:
+            - 'Location: dashboard.php'
+            - PHPSESSID=
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

@@ -1,0 +1,23 @@
+id: zerof-webserver-detect
+brief:
+    title: ZEROF Web Server Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - zerof
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ZEROF Web Server</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

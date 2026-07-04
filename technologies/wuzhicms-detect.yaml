@@ -1,0 +1,24 @@
+id: wuzhicms-detect
+brief:
+    title: Wuzhicms Detected
+    by: pikpikcu
+    level: info
+    about: Wuzhicms was detected.
+    label:
+        - tech
+        - wuzhicms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Powered by wuzhicms
+            - 五指CMS
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

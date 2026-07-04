@@ -1,0 +1,26 @@
+id: tractor-supply-phish
+brief:
+    title: Tractor Supply phishing Detection
+    by: rxerium
+    level: info
+    about: A Tractor Supply phishing website was detected
+    label:
+        - phishing
+        - tractor-supply
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Tractor Supply
+            - <title>For Life Out Here | Tractor Supply Co.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: covenant-c2
+brief:
+    title: Covenant C2 - Detect
+    by: pussycat0x
+    level: info
+    about: Covenant is a .NET command and control framework that aims to highlight the attack surface of .NET, make the use of offensive .NET tradecraft easier,and serve as a collaborative command and control...
+    label:
+        - c2
+        - ir
+        - osint
+        - covenant
+        - panel
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/covenantuser/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Covenant - Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

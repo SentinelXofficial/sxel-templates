@@ -1,0 +1,20 @@
+id: caprover-default-login
+brief:
+    title: Caprover - Default Login
+    by: ritikchaddha
+    level: high
+    about: Caprover defaultl login has been detected.
+    label:
+        - caprover
+        - default-login
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/v2/login'
+      head:
+        Content-Type: application/json
+        x-namespace: captain
+      body: '{"password":"{{password}}"}'
+      signs: []

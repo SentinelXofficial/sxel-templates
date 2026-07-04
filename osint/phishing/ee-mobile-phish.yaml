@@ -1,0 +1,24 @@
+id: ee-mobile-phish
+brief:
+    title: ee phishing Detection
+    by: rxerium
+    level: info
+    about: A ee phishing website was detected
+    label:
+        - phishing
+        - ee
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Superfast 5G &amp; 4G Phones, Tablets and Fibre Broadband | EE
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

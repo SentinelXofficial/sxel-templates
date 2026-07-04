@@ -1,0 +1,25 @@
+id: token-info-json
+brief:
+    title: Token Info Json File
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/constant-contact-forms/vendor/constantcontact/constantcontact/test/Json/Auth/token_info.json'
+        - '{{BaseURL}}/wp-content/plugins/constant-contact-api-old/vendor/constantcontact/constantcontact/test/Json/Auth/token_info.json'
+      signs:
+        - "on": word
+          has:
+            - '"client_id":'
+            - '"user_name":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

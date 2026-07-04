@@ -1,0 +1,16 @@
+id: magento-2-exposed-api
+brief:
+    title: Exposed Magento 2 API
+    by: TechbrunchFR
+    level: info
+    about: The API in Magento 2 can be accessed by the world without providing credentials. Through the API information like storefront, (hidden) products including prices are exposed.
+    label:
+        - magento
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/rest/V1/products'
+        - '{{BaseURL}}/rest/V1/store/storeConfigs'
+        - '{{BaseURL}}/rest/V1/store/storeViews'
+      signs: []

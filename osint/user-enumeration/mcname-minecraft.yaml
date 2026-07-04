@@ -1,0 +1,24 @@
+id: mcname-minecraft
+brief:
+    title: MCName (Minecraft) User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: MCName (Minecraft) user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - mcname-minecraft
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://mcname.info/en/search?q={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - card mb-3 text-monospace
+          in: body
+          need: all

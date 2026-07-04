@@ -1,0 +1,16 @@
+id: irisnext-panel
+brief:
+    title: IRISNext Login Panel - Detect
+    by: righettod
+    level: info
+    about: IRISNext products was detected.
+    label:
+        - panel
+        - irisnext
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dblang.dcw'
+      signs: []

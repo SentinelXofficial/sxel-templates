@@ -1,0 +1,27 @@
+id: unauthenticated-tensorboard
+brief:
+    title: Tensorflow Tensorboard - Unauthenticated Access
+    by: dhiyaneshDk
+    level: high
+    about: Tensorflow Tensorboard was able to be accessed with no authentication requirements in place.
+    label:
+        - tensorflow
+        - tensorboard
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/data/plugins_listing'
+      signs:
+        - "on": word
+          has:
+            - scalars
+            - loading_mechanism
+            - custom_scalars
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

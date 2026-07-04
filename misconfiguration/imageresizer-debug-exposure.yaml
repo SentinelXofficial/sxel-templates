@@ -1,0 +1,28 @@
+id: imageresizer-debug-exposure
+brief:
+    title: ImageResizer Debug - Information Exposure
+    by: ritikchaddha
+    level: low
+    about: The ImageResizer debug endpoint exposes sensitive server configuration and path information.
+    label:
+        - exposure
+        - debug
+        - imageresizer
+        - config
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/resizer.debug.ashx'
+        - '{{BaseURL}}/resizer.debug'
+      signs:
+        - "on": word
+          has:
+            - ImageResizer.
+            - Diagnostics
+            - 'Configuration:'
+            - 'Registered plugins:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

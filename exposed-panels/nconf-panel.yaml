@@ -1,0 +1,24 @@
+id: nconf-panel
+brief:
+    title: NConf Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: NConf login panel was detected.
+    label:
+        - panel
+        - nconf
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - nconf.js
+            - <title>NConf
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

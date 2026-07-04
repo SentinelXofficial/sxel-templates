@@ -1,0 +1,26 @@
+id: node-ecstatic-internal-path
+brief:
+    title: Node ecstatic Internal Path - Exposure
+    by: DhiyaneshDK
+    level: low
+    about: Internal path exposure in Node ecstatic.
+    label:
+        - node
+        - js
+        - exposure
+        - ecstatic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{payload}}'
+      signs:
+        - "on": word
+          has:
+            - ENAMETOOLONG
+            - stat
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 500

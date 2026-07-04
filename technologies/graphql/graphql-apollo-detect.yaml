@@ -1,0 +1,40 @@
+id: graphql-apollo-detect
+brief:
+    title: Graphql Apollo Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - graphql
+        - apollo
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/graphql'
+        - '{{BaseURL}}/api/graphql'
+        - '{{BaseURL}}/query'
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: '{"query":"query @skip {__typename}"}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Directive "@skip" argument "if" of type "Boolean!" is required, but it was not provided.
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 'Content-Type: text/html'
+          in: header
+          need: all
+        - "on": word
+          has:
+            - <html
+            - <body
+          in: body
+          need: all

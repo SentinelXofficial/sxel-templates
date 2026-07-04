@@ -1,0 +1,30 @@
+id: netis-router
+brief:
+    title: Netis Router Login Panel - Detect
+    by: gy741
+    level: info
+    about: Netis router login panel was detected.
+    label:
+        - panel
+        - login
+        - netis
+        - router
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.htm'
+      signs:
+        - "on": word
+          has:
+            - <title>AP setup</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 'Server: netis'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

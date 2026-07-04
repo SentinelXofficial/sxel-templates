@@ -1,0 +1,25 @@
+id: unauth-etherpad
+brief:
+    title: Unauthenticated Etherpad
+    by: philippedelteil
+    level: low
+    about: Finds Etherpad instances that allow adding new notes without authentication.
+    label:
+        - etherpad
+        - misconfig
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - index.createOpenPad
+            - index.newPad
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

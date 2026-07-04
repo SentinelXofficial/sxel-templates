@@ -1,0 +1,17 @@
+id: chemotargets-clarityvista-panel
+brief:
+    title: Chemotargets Clarity Vista Login Panel - Detect
+    by: righettod
+    level: info
+    about: Chemotargets Clarity Vista login panel was detected.
+    label:
+        - panel
+        - chemotargets
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs: []

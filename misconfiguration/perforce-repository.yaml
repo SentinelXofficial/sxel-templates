@@ -1,0 +1,30 @@
+id: perforce-repository
+brief:
+    title: Perforce Repository Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: Detected an exposed .p4ignore file, which could have revealed ignored files, sensitive paths, or developer-specific information useful for further enumeration.
+    label:
+        - exposure
+        - perforce
+        - repo
+        - disclosure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.p4ignore'
+      signs:
+        - "on": word
+          has:
+            - '*.log'
+            - yarn-error.log
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

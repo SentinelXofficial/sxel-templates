@@ -1,0 +1,26 @@
+id: rbc-phish
+brief:
+    title: RBC phishing Detection
+    by: rxerium
+    level: info
+    about: An RBC phishing website was detected
+    label:
+        - phishing
+        - rbc
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - RBC
+            - Sign On
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,29 @@
+id: wildfly-default-login
+brief:
+    title: Wildfly - Default Admin Login
+    by: s0obi
+    level: high
+    about: Wildfly default admin login credentials were successful.
+    label:
+        - wildfly
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/management'
+      signs:
+        - "on": word
+          has:
+            - management-major-version
+            - product-version
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

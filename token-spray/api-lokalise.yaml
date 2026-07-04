@@ -1,0 +1,23 @@
+id: api-lokalise
+brief:
+    title: Lokalise API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - lokalise
+moves:
+    - verb: GET
+      to:
+        - https://api.lokalise.com/api2/teams
+      head:
+        x-api-Token: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"teams":'
+            - '"team_id":'
+            - '"name":'
+          in: body
+          need: all

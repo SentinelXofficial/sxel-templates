@@ -1,0 +1,24 @@
+id: authelia-panel
+brief:
+    title: Authelia Panel - Detect
+    by: rxerium
+    level: info
+    about: Authelia is an open-source authentication and authorisation service providing two-factor authentication and single sign-on (SSO) for applications via a web portal.
+    label:
+        - login
+        - panel
+        - authelia
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Login - Authelia</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

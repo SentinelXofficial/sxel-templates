@@ -1,0 +1,30 @@
+id: pa11y-dashboard
+brief:
+    title: Pa11y Dashboard Exposure
+    by: tess
+    level: low
+    about: Pa11y Dashboard is exposed.
+    label:
+        - misconfig
+        - exposure
+        - pa11y
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Pa11y Dashboard
+            - Add new URL
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

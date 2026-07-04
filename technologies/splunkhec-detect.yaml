@@ -1,0 +1,17 @@
+id: splunk-hec-detect
+brief:
+    title: Splunk HEC - Detect
+    by: idealphase
+    level: info
+    about: Splunk HCE (HTTP Event Collector (HEC)) was detected.
+    label:
+        - tech
+        - splunk
+        - hec
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/services/collector/health'
+      signs: []

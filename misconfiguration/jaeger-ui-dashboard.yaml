@@ -1,0 +1,15 @@
+id: jaeger-ui-dashboard
+brief:
+    title: Jaeger UI
+    by: dhiyaneshDK
+    level: low
+    about: Jaeger UI dashboard is exposed.
+    label:
+        - misconfig
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/search'
+        - '{{BaseURL}}/api/services'
+      signs: []

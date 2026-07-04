@@ -1,0 +1,26 @@
+id: sap-successfactors-detect
+brief:
+    title: SAP SuccessFactors Login Panel - Detect
+    by: tess
+    level: info
+    about: SAP SuccessFactors login panel was detected.
+    label:
+        - panel
+        - sap
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/sf/start'
+      signs:
+        - "on": word
+          has:
+            - SAP SuccessFactors
+            - sap-ui-core
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

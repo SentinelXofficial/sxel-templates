@@ -1,0 +1,17 @@
+id: kaeser-sigma-air-manager-panel
+brief:
+    title: Kaeser Sigma Air Manager - Panel
+    by: Th3l0newolf
+    level: info
+    about: Detected exposed Kaeser Sigma Air Manager login panel
+    label:
+        - kaeser
+        - login
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/HMI/login.html'
+      signs: []

@@ -1,0 +1,30 @@
+id: graphql-wpgraphql-detect
+brief:
+    title: Graphql wpgraphql Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - graphql
+        - wordpress
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/graphql'
+        - '{{BaseURL}}/api/graphql'
+        - '{{BaseURL}}/query'
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: '{"query":"query { alias1$1:__typename }"}'
+      signs:
+        - "on": status
+          status:
+            - 200
+            - 400
+        - "on": word
+          has:
+            - 'Syntax Error: Expected Name, found $'
+          in: body
+          need: all

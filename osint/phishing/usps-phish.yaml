@@ -1,0 +1,25 @@
+id: usps-phish
+brief:
+    title: USPS phishing Detection
+    by: rxerium
+    level: info
+    about: A USPS phishing website was detected
+    label:
+        - phishing
+        - usps
+        - government
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to USPS.com. Track packages, pay and print postage with Click-N-Ship, schedule free package pickups, look up ZIP Codes, calculate postage prices, and find everything you need for sending mail and shipping packages.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

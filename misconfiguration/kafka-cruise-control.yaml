@@ -1,0 +1,19 @@
+id: kafka-cruise-control
+brief:
+    title: Kafka Cruise Control UI
+    by: dhiyaneshDK
+    level: medium
+    about: Kafka Cruise Control UI is exposed.
+    label:
+        - kafka
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Kafka Cruise Control UI</title>
+          in: body

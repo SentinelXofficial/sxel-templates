@@ -1,0 +1,25 @@
+id: beyondtrust-remotesupport-panel
+brief:
+    title: BeyondTrust Remote Support Panel - Detect
+    by: darses
+    level: info
+    about: Detect BeyondTrust Remote Support Panel.
+    label:
+        - panel
+        - detect
+        - beyondtrust
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - BeyondTrust Remote Support
+            - powered_by_text
+          in: body
+          need: all

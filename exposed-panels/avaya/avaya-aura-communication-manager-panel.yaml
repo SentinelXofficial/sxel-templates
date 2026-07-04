@@ -1,0 +1,24 @@
+id: avaya-aura-communication-manager-panel
+brief:
+    title: Avaya Aura Communication Manager Login - Panel Detect
+    by: princechaddha
+    level: info
+    about: Avaya Aura Communication Manager login panel was detected.
+    label:
+        - panel
+        - avaya
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/common/login/webLogin'
+      signs:
+        - "on": word
+          has:
+            - Avaya Aura
+            - Communication Manager (CM)
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

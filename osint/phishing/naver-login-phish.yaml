@@ -1,0 +1,25 @@
+id: naver-login-phish
+brief:
+    title: naver login phishing Detection
+    by: hahwul
+    level: info
+    about: A naver login phishing website was detected
+    label:
+        - phishing
+        - naver
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '네이버 : 로그인'
+            - 로그인
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

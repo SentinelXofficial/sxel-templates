@@ -1,0 +1,17 @@
+id: opnsense-panel
+brief:
+    title: OPNsense Panel - Detect
+    by: Splint3r7
+    level: info
+    about: OPNsense panel was detected.
+    label:
+        - panel
+        - login
+        - detect
+        - opnsense
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

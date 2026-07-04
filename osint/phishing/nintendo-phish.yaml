@@ -1,0 +1,24 @@
+id: nintendo-phish
+brief:
+    title: Nintendo phishing Detection
+    by: rxerium
+    level: info
+    about: A Nintendo phishing website was detected
+    label:
+        - phishing
+        - nintendo
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Visit the official Nintendo site to shop for Nintendo Switch™ systems and video games, read the latest news, find fun gear and gifts with a Nintendo twist, and much more.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

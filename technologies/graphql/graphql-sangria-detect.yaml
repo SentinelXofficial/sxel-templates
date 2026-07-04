@@ -1,0 +1,40 @@
+id: graphql-sangria-detect
+brief:
+    title: Graphql Sangria Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - graphql
+        - sangria
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/graphql'
+        - '{{BaseURL}}/api/graphql'
+        - '{{BaseURL}}/query'
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: '{"query":"queryy { __typename }"}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Syntax error while parsing GraphQL query. Invalid input "queryy", expected ExecutableDefinition or TypeSystemDefinition
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 'Content-Type: text/html'
+          in: header
+          need: all
+        - "on": word
+          has:
+            - <html
+            - <body
+          in: body
+          need: all

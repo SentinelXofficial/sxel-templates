@@ -1,0 +1,26 @@
+id: ampps-panel
+brief:
+    title: AMPPS Login Panel
+    by: deFr0ggy
+    level: info
+    about: An AMPPS login panel was detected.
+    label:
+        - panel
+        - ampps
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ampps/index.php?act=login'
+      signs:
+        - "on": word
+          has:
+            - <a href="http://www.ampps.com">
+            - <title>Login</title>
+            - themes/default/images/ampps/favicon.ico
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

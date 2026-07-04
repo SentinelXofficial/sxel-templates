@@ -1,0 +1,23 @@
+id: graphql-directive-overloading
+brief:
+    title: GraphQL Directive Overloading
+    by: shamo0
+    level: info
+    about: GraphQL directive overloading occurs when multiple duplicated directives are allowed in a single query, potentially leading to denial of service attacks or resource exhaustion.
+    label:
+        - graphql
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/graphql'
+      head:
+        Content-Type: application/json
+      body: '{"query": "query cop { __typename @aa@aa@aa@aa@aa@aa@aa@aa@aa@aa }", "operationName": "cop"}'
+      signs:
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all

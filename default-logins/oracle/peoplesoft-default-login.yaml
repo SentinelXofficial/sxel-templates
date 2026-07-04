@@ -1,0 +1,48 @@
+id: peoplesoft-default-login
+brief:
+    title: Oracle PeopleSoft - Default Login
+    by: LogicalHunter
+    level: high
+    about: Oracle PeopleSoft contains a default admin login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - default-login
+        - peoplesoft
+        - oracle
+        - fuzz
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/psc/ps/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/csperf/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/FMPRD/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/csprd/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/hcmprdfp/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/HRPRODASP/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/guest/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/CSPRD_PUB/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/LHCGWPRD_1/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/CCHIPRD_2/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/applyuth/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/HRPRD/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/CAREERS/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/heprod_5/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/saprod/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/hr857prd_er/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/CHUMPRDM/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/HR92PRD/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/cangate_1/?&cmd=login&languageCd=ENG'
+        - '{{BaseURL}}/psp/ihprd/?&cmd=login&languageCd=ENG'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: timezoneOffset=360&ptmode=f&ptlangcd=ENG&ptinstalledlang=ENG&userid={{username}}&pwd={{password}}&ptlangsel=ENG
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: PS_TOKEN='
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

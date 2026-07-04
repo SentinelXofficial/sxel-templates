@@ -1,0 +1,19 @@
+id: api-c99
+brief:
+    title: C99 API Test
+    by: 0ri2N
+    level: info
+    about: ""
+    label:
+        - c99
+        - api
+        - token-spray
+moves:
+    - verb: GET
+      to:
+        - https://api.c99.nl/ping?key={{token}}&host=1.1.1.1
+      signs:
+        - "on": word
+          has:
+            - PING 1.1.1.1
+          in: body

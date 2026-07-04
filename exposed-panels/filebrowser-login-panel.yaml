@@ -1,0 +1,23 @@
+id: filebrowser-login-panel
+brief:
+    title: File Browser Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - filebrowser
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login'
+        - '{{BaseURL}}/static/img/icons/favicon-32x32.png'
+      signs:
+        - "on": word
+          has:
+            - File Browser</title>
+            - window.FileBrowser
+          in: body

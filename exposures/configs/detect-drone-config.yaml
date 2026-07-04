@@ -1,0 +1,26 @@
+id: detect-drone-config
+brief:
+    title: Drone - Configuration Detection
+    by: geeknik
+    level: high
+    about: Drone configuration was discovered.
+    label:
+        - config
+        - exposure
+        - drone
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.drone.yml'
+      signs:
+        - "on": word
+          has:
+            - 'kind:'
+            - 'name:'
+            - 'steps:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

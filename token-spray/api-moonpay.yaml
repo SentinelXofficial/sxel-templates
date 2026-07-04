@@ -1,0 +1,20 @@
+id: api-moonpay
+brief:
+    title: MoonPay API Test
+    by: 0ri2N
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - moonpay
+        - cryptocurrencies
+moves:
+    - verb: GET
+      to:
+        - https://api.moonpay.com/v3/currencies/btc/buy_quote?apiKey={{token}}&baseCurrencyAmount=1
+      signs:
+        - "on": word
+          has:
+            - '"accountId":'
+          in: body
+          need: all

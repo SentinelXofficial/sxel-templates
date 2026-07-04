@@ -1,0 +1,28 @@
+id: token-json
+brief:
+    title: Token Json File Disclosure
+    by: DhiyaneshDK
+    level: low
+    about: Internal token.json file is exposed.
+    label:
+        - exposure
+        - cloud
+        - google
+        - devops
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/token.json'
+        - '{{BaseURL}}/search/token.json'
+      signs:
+        - "on": word
+          has:
+            - '"access_token":'
+            - '"token_type":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: litmindclub-mastodon-instance
+brief:
+    title: Litmind.club (Mastodon Instance) User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Litmind.club (Mastodon Instance) user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - litmindclub-mastodon-instance
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://litmind.club/api/v1/accounts/lookup?acct={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - display_name
+          in: body
+          need: all

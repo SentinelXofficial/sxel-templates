@@ -1,0 +1,25 @@
+id: xerox-panel
+brief:
+    title: Xerox Fuji/VersaLink Login - Panel
+    by: DhiyaneshDk
+    level: info
+    about: Xerox Fuji / VersaLink Login Panel was discovered
+    label:
+        - panel
+        - xerox
+        - discovery
+        - login
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/home/index.html#hashHome'
+      signs:
+        - "on": word
+          has:
+            - /XUX-nwave/
+            - xuxInitialize
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

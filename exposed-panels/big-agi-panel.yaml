@@ -1,0 +1,27 @@
+id: big-agi-panel
+brief:
+    title: big-AGI Panel - Detect
+    by: rxerium
+    level: info
+    about: big-AGI is a generative AI suite for power users, teams, and developers. It provides
+    label:
+        - panel
+        - big-agi
+        - llm
+        - ai
+        - chat
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - big-AGI
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

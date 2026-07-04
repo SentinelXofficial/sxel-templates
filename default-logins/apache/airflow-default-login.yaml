@@ -1,0 +1,38 @@
+id: airflow-default-login
+brief:
+    title: Apache Airflow Default Login
+    by: pdteam
+    level: high
+    about: Apache Airflow default login credentials were discovered.
+    label:
+        - airflow
+        - default-login
+        - apache
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/'
+      head:
+        Origin: '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'You should be redirected automatically to target URL: <a href="/">'
+          in: body
+          need: all
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login/'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{BaseURL}}'
+        Referer: '{{BaseURL}}/admin/airflow/login'
+      body: username={{username}}&password={{password}}&_csrf_token={{csrf_token}}
+      signs:
+        - "on": word
+          has:
+            - 'You should be redirected automatically to target URL: <a href="/">'
+          in: body
+          need: all

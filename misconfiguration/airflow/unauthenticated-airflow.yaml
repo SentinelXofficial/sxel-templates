@@ -1,0 +1,26 @@
+id: unauthenticated-airflow-instance
+brief:
+    title: Unauthenticated Airflow Instance
+    by: dhiyaneshDK
+    level: high
+    about: Airflow Instance is exposed.
+    label:
+        - apache
+        - airflow
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/admin/'
+      signs:
+        - "on": word
+          has:
+            - <title>Airflow - DAGs</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

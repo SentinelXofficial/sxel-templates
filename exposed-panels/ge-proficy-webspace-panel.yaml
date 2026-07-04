@@ -1,0 +1,32 @@
+id: ge-proficy-webspace-panel
+brief:
+    title: GE Proficy WebSpace - Login Panel
+    by: rxerium
+    level: info
+    about: GE Proficy WebSpace is a thin-client delivery platform for GE Proficy
+    label:
+        - panel
+        - scada
+        - hmi
+        - ics
+        - ge
+        - proficy
+        - webspace
+        - ifix
+        - cimplicity
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Proficy WebSpace
+            - BRAND_NAME_PRODUCT
+            - brand.js
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

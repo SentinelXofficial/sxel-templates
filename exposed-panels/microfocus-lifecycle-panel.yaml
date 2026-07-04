@@ -1,0 +1,17 @@
+id: microfocus-lifecycle-panel
+brief:
+    title: Micro Focus Application Lifecycle Management - Panel
+    by: righettod
+    level: info
+    about: Micro Focus Application Lifecycle Management login panel was detected.
+    label:
+        - panel
+        - microfocus
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/qcbin/'
+      signs: []

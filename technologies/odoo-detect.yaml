@@ -1,0 +1,19 @@
+id: odoo-detection
+brief:
+    title: Odoo - Detect
+    by: keyboard-slayer
+    level: info
+    about: Detected Odoo by sending an empty JSON POST request to the /web/webclient/version_info endpoint.
+    label:
+        - tech
+        - odoo
+        - detect
+        - discovery
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/web/webclient/version_info'
+      head:
+        Content-Type: application/json
+      body: '{}'
+      signs: []

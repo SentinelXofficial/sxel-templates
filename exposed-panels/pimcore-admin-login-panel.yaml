@@ -1,0 +1,26 @@
+id: pimcore-admin-login-panel
+brief:
+    title: Pimcore Admin Login - Panel Detect
+    by: Th3l0newolf
+    level: info
+    about: Pimcore admin login interface was discovered.
+    label:
+        - panel
+        - login
+        - pimcore
+        - admin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Welcome to Pimcore!</title>
+            - Pimcore GmbH
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

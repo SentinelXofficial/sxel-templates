@@ -1,0 +1,25 @@
+id: watchguard-panel
+brief:
+    title: Watchguard Login Panel - Detect
+    by: ahmetpergamum
+    level: info
+    about: Watchguard login panel was detected.
+    label:
+        - watchguard
+        - edb
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sslvpn_logon.shtml'
+      signs:
+        - "on": word
+          has:
+            - <title>User Authentication
+            - WatchGuard Technologies
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

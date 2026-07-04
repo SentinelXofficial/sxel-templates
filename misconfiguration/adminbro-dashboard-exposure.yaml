@@ -1,0 +1,20 @@
+id: adminbro-dashboard-exposure
+brief:
+    title: AdminBro Dashboard - Unauthenticated Access
+    by: 0x_Akoko
+    level: high
+    about: Detected AdminBro/AdminJS admin panel was exposed without authentication, allowing unauthenticated users to access the admin dashboard and potentially view, modify, or delete sensitive data. This m...
+    label:
+        - adminbro
+        - adminjs
+        - misconfig
+        - exposure
+        - unauth
+        - panel
+    score: CVSS:8.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin'
+        - '{{BaseURL}}/admin/'
+      signs: []

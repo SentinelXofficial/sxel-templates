@@ -1,0 +1,20 @@
+id: mikrotik-httpproxy
+brief:
+    title: MikroTik httpproxy
+    by: its0x08
+    level: info
+    about: ""
+    label:
+        - tech
+        - mikrotik
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Server: Mikrotik HttpProxy'
+          in: header
+          need: all

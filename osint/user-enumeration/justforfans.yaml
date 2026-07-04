@@ -1,0 +1,24 @@
+id: justforfans
+brief:
+    title: Justforfans User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Justforfans user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - justforfans
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://justfor.fans/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' @ JustFor.Fans'
+          in: body
+          need: all

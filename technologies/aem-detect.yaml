@@ -1,0 +1,17 @@
+id: aem-detect
+brief:
+    title: Favicon based AEM Detection
+    by: shifacyclewala
+    level: info
+    about: ""
+    label:
+        - aem
+        - favicon
+        - tech
+        - adobe
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/libs/granite/core/content/login/favicon.ico'
+      signs: []

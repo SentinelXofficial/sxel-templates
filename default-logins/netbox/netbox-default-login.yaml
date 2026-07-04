@@ -1,0 +1,25 @@
+id: netbox-default-login
+brief:
+    title: NetBox - Default Admin Credentials
+    by: 0x_Akoko
+    level: high
+    about: Detected that NetBox was using the default credentials admin:admin. The official netbox-docker deployment set SUPERUSER_NAME=admin and SUPERUSER_PASSWORD=admin by default.
+    label:
+        - default-login
+        - netbox
+        - auth
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/'
+      head:
+        Accept: text/html
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/users/tokens/provision/'
+      head:
+        Accept: application/json
+        Content-Type: application/json
+      body: '{"username":"{{username}}","password":"{{password}}"}'
+      signs: []

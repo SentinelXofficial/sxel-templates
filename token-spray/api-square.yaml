@@ -1,0 +1,22 @@
+id: api-square
+brief:
+    title: Square API Test
+    by: zzeitlin
+    level: info
+    about: Easy way to take payments, manage refunds, and help customers checkout online
+    label:
+        - token-spray
+        - square
+moves:
+    - verb: GET
+      to:
+        - https://connect.squareup.com/v2/locations
+        - https://connect.squareupsandbox.com/v2/locations
+      head:
+        Authorization: Bearer {{token}}
+        Content-Type: application/json
+      signs:
+        - "on": word
+          has:
+            - errors
+          in: body

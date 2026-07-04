@@ -1,0 +1,30 @@
+id: graphql-java-detect
+brief:
+    title: Graphql Java Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - graphql
+        - java
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/graphql'
+        - '{{BaseURL}}/api/graphql'
+        - '{{BaseURL}}/query'
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: '{"query":"queryy { __typename }"}'
+      signs:
+        - "on": status
+          status:
+            - 200
+            - 400
+        - "on": word
+          has:
+            - 'Invalid Syntax : offending token ''queryy'''
+          in: body
+          need: all

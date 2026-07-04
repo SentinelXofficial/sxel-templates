@@ -1,0 +1,17 @@
+id: wordpress-contact-form-cfdb7
+brief:
+    title: Contact Form 7 Database Addon – CFDB7 Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/contact-form-cfdb7/readme.txt'
+      signs: []

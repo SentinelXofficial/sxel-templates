@@ -1,0 +1,25 @@
+id: routeros-login
+brief:
+    title: RouterOS Router Login - Detect
+    by: dhiyaneshDK
+    level: info
+    about: RouterOS router login panel was detected.
+    label:
+        - panel
+        - router
+        - routeros
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>RouterOS router configuration page</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

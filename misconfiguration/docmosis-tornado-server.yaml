@@ -1,0 +1,25 @@
+id: docmosis-tornado-server
+brief:
+    title: Docmosis Tornado Server Exposure
+    by: tess
+    level: low
+    about: Docmosis Tornado Server is exposed.
+    label:
+        - misconfig
+        - tornado
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Docmosis Tornado
+            - href="WebServerDownload.css
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

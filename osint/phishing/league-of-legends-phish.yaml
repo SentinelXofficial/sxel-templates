@@ -1,0 +1,25 @@
+id: league-of-legends-phish
+brief:
+    title: League of Legends phishing Detection
+    by: rxerium
+    level: info
+    about: A League of Legends phishing website was detected
+    label:
+        - phishing
+        - league-of-legends
+        - riot-games
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - League of Legends is a team-based game with over 140 champions to make epic plays with. Play now for free.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

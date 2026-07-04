@@ -1,0 +1,17 @@
+id: wordpress-twentynineteen-fpd
+brief:
+    title: WordPress Twenty Nineteen - Full Path Disclosure
+    by: pussycat0x
+    level: low
+    about: The WordPress Twentytwenty themes was detected to be vulnerable to Full Path Disclosure, allowing unauthenticated access to the full application path.
+    label:
+        - wordpress
+        - wp
+        - wp-theme
+        - twentytwenty
+        - fpd
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/themes/twentynineteen/functions.php'
+      signs: []

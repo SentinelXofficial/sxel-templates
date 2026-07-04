@@ -1,0 +1,26 @@
+id: autozone-phish
+brief:
+    title: AutoZone phishing Detection
+    by: rxerium
+    level: info
+    about: An AutoZone phishing website was detected
+    label:
+        - phishing
+        - autozone
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - AutoZone
+            - Shop top-quality auto parts at AutoZone. Your go-to source for car and truck parts, DIY repair advice, and Free Next Day Delivery. Shop at over 6300 locations nationwide
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

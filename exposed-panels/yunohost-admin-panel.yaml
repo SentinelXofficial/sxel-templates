@@ -1,0 +1,17 @@
+id: yunohost-admin-panel
+brief:
+    title: YunoHost Admin Panel - Detect
+    by: s4e-io
+    level: info
+    about: YunoHost Admin panel was discovered.
+    label:
+        - panel
+        - login
+        - yunohost
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/yunohost/admin'
+      signs: []

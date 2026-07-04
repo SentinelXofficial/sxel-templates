@@ -1,0 +1,24 @@
+id: mitel-panel-detect
+brief:
+    title: Mitel Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Mitel login panel was detected.
+    label:
+        - panel
+        - mitel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/server-common/cgi-bin/login'
+      signs:
+        - "on": word
+          has:
+            - Mitel Networks Corporation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

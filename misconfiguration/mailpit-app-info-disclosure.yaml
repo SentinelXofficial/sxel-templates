@@ -1,0 +1,31 @@
+id: mailpit-app-info-disclosure
+brief:
+    title: Mailpit App - Information Disclosure
+    by: DhiyaneshDK
+    level: medium
+    about: Mailpit exposes the /api/v1/messages endpoint which can leak email metadata or full email content without authentication, leading to information disclosure.
+    label:
+        - mailpit
+        - exposure
+        - disclosure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/messages'
+      signs:
+        - "on": word
+          has:
+            - '"messages":'
+            - '"ID":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

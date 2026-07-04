@@ -1,0 +1,23 @@
+id: dbt-docs-panel
+brief:
+    title: dbt Docs Panel - Detect
+    by: johnk3r
+    level: info
+    about: dbt Docs panel was detected.
+    label:
+        - panel
+        - dbt
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>dbt Docs</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

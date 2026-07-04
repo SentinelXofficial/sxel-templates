@@ -1,0 +1,16 @@
+id: concrete5-panel
+brief:
+    title: Concrete5 Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Concrete5 login panel was detected.
+    label:
+        - panel
+        - concrete5
+        - cms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php/login'
+      signs: []

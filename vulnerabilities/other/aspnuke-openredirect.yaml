@@ -1,0 +1,17 @@
+id: aspnuke-openredirect
+brief:
+    title: ASP-Nuke - Open Redirect
+    by: pdteam
+    level: medium
+    about: ASP-Nuke contains an open redirect vulnerability. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - packetstorm
+        - aspnuke
+        - redirect
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/gotoURL.asp?url=interact.sh&id=43569'
+      signs: []

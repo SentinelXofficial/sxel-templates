@@ -1,0 +1,20 @@
+id: cx-cloud-login
+brief:
+    title: CX Cloud Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: CX Cloud panel was detected,
+    label:
+        - panel
+        - cx
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/cxcum/'
+      signs:
+        - "on": word
+          has:
+            - <title>CX Cloud</title>
+          in: body

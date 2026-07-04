@@ -1,0 +1,25 @@
+id: raspberry-shake-config
+brief:
+    title: Raspberry Shake Config Detection
+    by: pussycat0x
+    level: medium
+    about: The Shake Board digitizer receives, processes, and interprets the sensor data in real-time, allowing for the Raspberry Pi computer to export the data for easy access. The data output can be display...
+    label:
+        - misconfig
+        - unauth
+        - iot
+        - raspberry
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Raspberry Shake Config
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

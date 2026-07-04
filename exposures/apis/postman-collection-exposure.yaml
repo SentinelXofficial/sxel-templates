@@ -1,0 +1,23 @@
+id: postman-collection-exposure
+brief:
+    title: Postman Collection Exposure
+    by: Hamza Sahin
+    level: low
+    about: Detected exposed Postman collection JSON files that contained API endpoints and environment details. These files were publicly accessible and disclosed authentication headers and other sensitive in...
+    label:
+        - api
+        - postman
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/postman.json'
+        - '{{BaseURL}}/docs/postman.json'
+        - '{{BaseURL}}/api/postman.json'
+        - '{{BaseURL}}/postman_collection.json'
+        - '{{BaseURL}}/collections/postman.json'
+      signs:
+        - "on": status
+          status:
+            - 200

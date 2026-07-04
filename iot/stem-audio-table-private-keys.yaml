@@ -1,0 +1,25 @@
+id: stem-audio-table-private-keys
+brief:
+    title: Detect Private Key on STEM Audio Table
+    by: gy741
+    level: high
+    about: Private Key on STEM audio table was detected.
+    label:
+        - stem
+        - config
+        - exposure
+        - iot
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/privatekey.pem'
+      signs:
+        - "on": word
+          has:
+            - BEGIN RSA PRIVATE KEY
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

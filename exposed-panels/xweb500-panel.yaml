@@ -1,0 +1,23 @@
+id: xweb500-panel
+brief:
+    title: Xweb500 Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Xweb500 login panel was detected.
+    label:
+        - panel
+        - xweb500
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/xweb500.cgi'
+      signs:
+        - "on": word
+          has:
+            - <title>Xweb500</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

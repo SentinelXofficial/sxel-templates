@@ -1,0 +1,26 @@
+id: mysqld-exporter-metrics
+brief:
+    title: MySQL Exporter Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: MYSQL Exporter panel was detected.
+    label:
+        - mysqld
+        - exposure
+        - debug
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/metrics'
+      signs:
+        - "on": word
+          has:
+            - mysqld
+            - '# HELP'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

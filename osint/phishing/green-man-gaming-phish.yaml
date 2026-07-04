@@ -1,0 +1,24 @@
+id: green-man-gaming-phish
+brief:
+    title: Green Man Gaming phishing Detection
+    by: rxerium
+    level: info
+    about: A Green Man Gaming phishing website was detected
+    label:
+        - phishing
+        - green-man-gaming
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Buy games & game keys with Green Man Gaming - get the best prices, awesome bundles & exclusive game deals daily! Visit to explore Green Man Gaming now!
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

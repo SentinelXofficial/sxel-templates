@@ -1,0 +1,26 @@
+id: webswing-api-version-detect
+brief:
+    title: WebSwing REST API Version - Detection
+    by: aushack
+    level: info
+    about: WebSwing REST API version via the /rest/version endpoint.
+    label:
+        - webswing
+        - rest
+        - api
+        - version
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/rest/version'
+      signs:
+        - "on": word
+          has:
+            - webswing.org
+          in: server
+          need: all
+        - "on": status
+          status:
+            - 200

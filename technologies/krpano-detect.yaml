@@ -1,0 +1,24 @@
+id: krpano-detect
+brief:
+    title: Krpano Panorama Viewer - Detection
+    by: matejsmycka
+    level: info
+    about: Detected Krpano Panorama Viewer by identifying known Krpano-specific resources and response patterns.
+    label:
+        - tech
+        - krpano
+        - viewer
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/krpano.html'
+      signs:
+        - "on": word
+          has:
+            - embedpano({
+            - passQueryParameters:true
+            - swf
+          in: body
+          need: all

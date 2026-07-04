@@ -1,0 +1,27 @@
+id: easydiffusion-panel
+brief:
+    title: Easy Diffusion Panel - Detect
+    by: rxerium
+    level: info
+    about: Easy Diffusion (formerly Stable Diffusion UI) was detected. Easy Diffusion is a one-click, self-hosted Stable Diffusion web application focused on accessibility and ease of use for AI image generat...
+    label:
+        - panel
+        - easydiffusion
+        - stable-diffusion
+        - ai
+        - image-generation
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Easy Diffusion</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

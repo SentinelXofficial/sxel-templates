@@ -1,0 +1,17 @@
+id: polyfill-backdoor
+brief:
+    title: Polyfill.io - Backdoor
+    by: kazet
+    level: info
+    about: 'The polyfill.io CDN was suspected to serve malware. Note: it''s not exploitable anymore'
+    label:
+        - cdn
+        - polyfill-io
+        - backdoor
+        - malware
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

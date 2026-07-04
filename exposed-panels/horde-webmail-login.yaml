@@ -1,0 +1,25 @@
+id: horde-webmail-login
+brief:
+    title: Horde Webmail Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Horde Webmail login panel was detected.
+    label:
+        - horde
+        - webmail
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/horde/imp/login.php'
+        - '{{BaseURL}}/imp/login.php'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Horde
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

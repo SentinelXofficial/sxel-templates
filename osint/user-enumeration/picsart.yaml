@@ -1,0 +1,24 @@
+id: picsart
+brief:
+    title: Picsart User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Picsart user name information check was conducted.
+    label:
+        - osint
+        - osint-art
+        - picsart
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://picsart.com/u/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Profiles on Picsart
+          in: body
+          need: all

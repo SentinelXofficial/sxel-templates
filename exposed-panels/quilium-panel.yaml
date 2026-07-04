@@ -1,0 +1,27 @@
+id: quilium-panel
+brief:
+    title: Quilium Panel - Detect
+    by: righettod
+    level: info
+    about: Quilium CMS Login Panel was detected.
+    label:
+        - panel
+        - quilium
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/en/login'
+      signs:
+        - "on": word
+          has:
+            - content="CMS Quilium
+            - Quilium</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

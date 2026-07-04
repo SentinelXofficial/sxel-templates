@@ -1,0 +1,28 @@
+id: fusionauth-admin-panel
+brief:
+    title: FusionAuth Admin Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - fusionauth
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/oauth2/authorize'
+      signs:
+        - "on": word
+          has:
+            - <title>Login | FusionAuth
+            - FusionAuth.OAuth2
+            - content="FusionAuth
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

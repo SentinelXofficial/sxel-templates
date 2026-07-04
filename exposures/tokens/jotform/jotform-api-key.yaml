@@ -1,0 +1,22 @@
+id: jotform-api-key
+brief:
+    title: Jotform API Key
+    by: Shankar Acharya
+    level: info
+    about: ""
+    label:
+        - token
+        - exposure
+        - jotform
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - jotform
+            - api
+          in: body
+          need: all

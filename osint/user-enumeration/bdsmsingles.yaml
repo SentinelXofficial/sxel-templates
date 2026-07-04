@@ -1,0 +1,24 @@
+id: bdsmsingles
+brief:
+    title: Bdsmsingles User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Bdsmsingles user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - bdsmsingles
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.bdsmsingles.com/members/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Profile
+          in: body
+          need: all

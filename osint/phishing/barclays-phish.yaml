@@ -1,0 +1,26 @@
+id: barclays-phish
+brief:
+    title: Barclays phishing Detection
+    by: rxerium
+    level: info
+    about: A Barclays phishing website was detected
+    label:
+        - phishing
+        - barclays
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Barclays
+            - <title>Barclays Group corporate website | Barclays
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: dqs-superadmin-panel
+brief:
+    title: DQS Superadmin Login Panel - Detect
+    by: Hardik-Solanki
+    level: info
+    about: DQS Superadmin login panel was detected.
+    label:
+        - panel
+        - dqs
+        - superadmin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/login'
+      signs:
+        - "on": word
+          has:
+            - DQS | Superadmin
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

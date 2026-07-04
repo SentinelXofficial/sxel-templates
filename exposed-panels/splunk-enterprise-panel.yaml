@@ -1,0 +1,23 @@
+id: splunk-enterprise-panel
+brief:
+    title: Splunk Enterprise Login Panel - Detect
+    by: praetorian-thendrickson
+    level: info
+    about: Splunk Enterprise login panel was detected.
+    label:
+        - panel
+        - splunk
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/en-US/account/login'
+      signs:
+        - "on": word
+          has:
+            - Splunk Inc.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

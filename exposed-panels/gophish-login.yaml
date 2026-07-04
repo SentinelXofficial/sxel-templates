@@ -1,0 +1,23 @@
+id: gophish-login
+brief:
+    title: Gophish Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Gophish login panel was detected.
+    label:
+        - panel
+        - gophish
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Gophish - Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

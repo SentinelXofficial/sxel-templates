@@ -1,0 +1,26 @@
+id: docker-registry
+brief:
+    title: Docker Registry Listing
+    by: puzzlepeaches
+    level: medium
+    about: Docker Registry Listing enabled.
+    label:
+        - misconfig
+        - docker
+        - devops
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v2/_catalog'
+      signs:
+        - "on": word
+          has:
+            - '"repositories":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

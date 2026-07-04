@@ -1,0 +1,16 @@
+id: beamer-token
+brief:
+    title: Beamer API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - beamer
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

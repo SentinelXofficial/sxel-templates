@@ -1,0 +1,19 @@
+id: openlitespeed-default-login
+brief:
+    title: OpenLiteSpeed WebAdmin - Default Login
+    by: 0x_Akoko
+    level: high
+    about: Detected OpenLiteSpeed WebAdmin Console was using default credentials.
+    label:
+        - default-login
+        - openlitespeed
+        - litespeed
+        - webadmin
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: userid={{username}}&pass={{password}}
+      signs: []

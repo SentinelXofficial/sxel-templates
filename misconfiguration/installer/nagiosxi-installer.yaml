@@ -1,0 +1,25 @@
+id: nagiosxi-installer
+brief:
+    title: Nagios XI Installer
+    by: ritikchaddha
+    level: high
+    about: Nagios XI is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - exposure
+        - install
+        - nagiosxi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nagiosxi/install.php'
+      signs:
+        - "on": word
+          has:
+            - Nagios XI Installation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

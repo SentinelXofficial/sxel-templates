@@ -1,0 +1,26 @@
+id: wordpress-bbpress-plugin-listing
+brief:
+    title: WordPress bbPress Plugin Directory Listing
+    by: dhiyaneshDK
+    level: info
+    about: Searches for sensitive directories present in the bbpress wordpress plugin.
+    label:
+        - wordpress
+        - listing
+        - plugin
+        - edb
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/bbpress/'
+      signs:
+        - "on": word
+          has:
+            - Index of
+            - /wp-content/plugins/bbpress/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: gumroad
+brief:
+    title: Gumroad User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Gumroad user name information check was conducted.
+    label:
+        - osint
+        - osint-shopping
+        - gumroad
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://{{user}}.gumroad.com/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s profile picture
+          in: body
+          need: all

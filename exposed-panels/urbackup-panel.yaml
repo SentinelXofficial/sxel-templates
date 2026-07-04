@@ -1,0 +1,25 @@
+id: urbackup-panel
+brief:
+    title: UrBackup Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - urbackup
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>UrBackup - Keeps your data safe</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

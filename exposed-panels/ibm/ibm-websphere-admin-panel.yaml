@@ -1,0 +1,25 @@
+id: ibm-websphere-admin-panel
+brief:
+    title: IBM WebSphere Application Server Community Edition Admin Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: IBM WebSphere Application Server Community Edition admin login panel was detected.
+    label:
+        - websphere
+        - panel
+        - ibm
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/console'
+      signs:
+        - "on": word
+          has:
+            - Administrative Console Login
+            - Log in to the Administrative Console
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

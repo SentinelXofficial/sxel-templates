@@ -1,0 +1,30 @@
+id: inductive-automation-ignition-panel
+brief:
+    title: Inductive Automation Ignition - Gateway Panel
+    by: rxerium
+    level: info
+    about: Inductive Automation Ignition is a widely-deployed industrial SCADA/HMI
+    label:
+        - panel
+        - scada
+        - hmi
+        - ics
+        - ignition
+        - inductive-automation
+        - opc-ua
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Ignition Gateway</title>
+            - Inductive Automation
+            - /res/perspective/client.js
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

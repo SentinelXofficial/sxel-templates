@@ -1,0 +1,25 @@
+id: writebook-detect
+brief:
+    title: Writebook - Detect
+    by: hahwul
+    level: info
+    about: ""
+    label:
+        - writebook
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/session/new'
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: _writebook_session'
+          in: header
+        - "on": word
+          has:
+            - Made with Writebook
+            - Writebook</h1>
+          in: body

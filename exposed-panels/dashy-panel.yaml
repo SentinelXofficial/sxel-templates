@@ -1,0 +1,27 @@
+id: dashy-panel
+brief:
+    title: Dashy Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - dashy
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Dashy
+            - content="Dashy
+            - /css/dashy.
+            - web-icons/dashy-logo.png
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

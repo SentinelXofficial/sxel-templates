@@ -1,0 +1,26 @@
+id: guard-config
+brief:
+    title: Guardfile Config - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Guardfile configuration information was detected.
+    label:
+        - exposure
+        - file
+        - guard
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Guardfile'
+      signs:
+        - "on": word
+          has:
+            - 'guard :'
+            - end
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

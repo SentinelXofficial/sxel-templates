@@ -1,0 +1,16 @@
+id: prestashop-detect
+brief:
+    title: PrestaShop Tech Detection
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - tech
+        - cms
+        - prestashop
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

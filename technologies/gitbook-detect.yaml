@@ -1,0 +1,21 @@
+id: gitbook-detect
+brief:
+    title: GitBook Detect
+    by: ffffffff0x
+    level: info
+    about: GitBook is a collaborative documentation tool that allows anyone to document anything—such as products and APIs—and share knowledge through a user-friendly online platform.
+    label:
+        - tech
+        - gitbook
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - gitbook.page.hasChanged
+            - <meta name="generator" content="GitBook
+          in: body
+          need: all

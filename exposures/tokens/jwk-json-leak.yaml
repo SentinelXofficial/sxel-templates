@@ -1,0 +1,34 @@
+id: jwk-json-leak
+brief:
+    title: JSON Web Key File - Exposure
+    by: Mohsen Yaghoubi
+    level: info
+    about: Searches for JSON Web Key (JWK) file.
+    label:
+        - exposure
+        - token
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.well-known/jwks.json'
+        - '{{BaseURL}}/.well-known/jwks'
+        - '{{BaseURL}}/.well-known/openid-configuration/jwks.json'
+        - '{{BaseURL}}/.well-known/openid-configuration/jwks'
+        - '{{BaseURL}}/jwks.json'
+        - '{{BaseURL}}/jwks'
+      signs:
+        - "on": word
+          has:
+            - '"kty":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

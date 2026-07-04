@@ -1,0 +1,26 @@
+id: ntopng-traffic-dashboard
+brief:
+    title: Ntopng Traffic Dashboard - Detect
+    by: theamanrawat
+    level: medium
+    about: Ntopng traffic dashboard was detected.
+    label:
+        - misconfig
+        - ntopng
+        - dashboard
+        - discovery
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ntopng - Traffic Dashboard</title>
+            - https://github.com/ntop/ntopng
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

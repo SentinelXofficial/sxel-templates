@@ -1,0 +1,26 @@
+id: fedex-phish
+brief:
+    title: FedEx phishing Detection
+    by: rxerium
+    level: info
+    about: A FedEx phishing website was detected
+    label:
+        - phishing
+        - fedex
+        - shipping
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - FedEx
+            - <title>Track &amp; Ship Online or Find Nearby Locations | FedEx
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

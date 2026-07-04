@@ -1,0 +1,25 @@
+id: tailon-panel
+brief:
+    title: Tailon Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - tailon
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Tailon
+            - class="tailon-dark
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

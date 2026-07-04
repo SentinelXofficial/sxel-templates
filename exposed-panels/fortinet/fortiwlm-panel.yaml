@@ -1,0 +1,30 @@
+id: fortiwlm-panel
+brief:
+    title: Fortinet FortiWLM Login Panel - Detect
+    by: EgemenKochisarli
+    level: info
+    about: Fortinet FortiWLM login panel was detected.
+    label:
+        - panel
+        - fortinet
+        - fortiwlm
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wlm/login?next=/wlm'
+      signs:
+        - "on": word
+          has:
+            - <title>FortiWLM Login</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

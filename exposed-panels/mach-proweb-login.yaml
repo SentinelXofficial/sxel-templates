@@ -1,0 +1,24 @@
+id: mach-proweb-login
+brief:
+    title: MACH-ProWeb Login Panel - Detect
+    by: Jaskaran
+    level: info
+    about: MACH-ProWeb login panel was detected.
+    label:
+        - panel
+        - machproweb
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - Log on to MACH-ProWeb
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

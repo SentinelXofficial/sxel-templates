@@ -1,0 +1,34 @@
+id: magento-config-disclosure
+brief:
+    title: Magento Configuration Panel - Detect
+    by: ptonewreckin
+    level: high
+    about: Magento configuration panel was detected. Misconfigured instances of Magento may disclose usernames, passwords, and database configurations via /app/etc/local.xml.
+    label:
+        - magento
+        - exposure
+        - credential
+        - config
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/app/etc/local.xml'
+        - '{{BaseURL}}/app/etc/local.xml.additional'
+        - '{{BaseURL}}/store/app/etc/local.xml'
+      signs:
+        - "on": word
+          has:
+            - '* Magento'
+            - <dbname>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/xml
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

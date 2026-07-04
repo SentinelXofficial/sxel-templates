@@ -1,0 +1,16 @@
+id: flexnet-operations-panel
+brief:
+    title: FlexNet Operations Panel - Detect
+    by: righettod
+    level: info
+    about: FlexNet Operations was detected — a software monetization platform.
+    label:
+        - panel
+        - flexnet
+        - login
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/flexnet/logon.do'
+      signs: []

@@ -1,0 +1,20 @@
+id: terraform-enterprise-panel
+brief:
+    title: Terraform Enterprise Panel - Detect
+    by: Adam Crosser
+    level: info
+    about: Terraform Enterprise panel was detected.
+    label:
+        - panel
+        - terraform
+        - hashicorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/session'
+      signs:
+        - "on": word
+          has:
+            - Terraform Enterprise
+          in: body

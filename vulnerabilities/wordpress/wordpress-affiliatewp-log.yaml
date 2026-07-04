@@ -1,0 +1,30 @@
+id: wordpress-affiliatewp-log
+brief:
+    title: WordPress Plugin "AffiliateWP -- Allowed Products" Log Disclosure
+    by: dhiyaneshDK
+    level: low
+    about: Exposed debug log in AffiliateWP Wordpress Plugin
+    label:
+        - wordpress
+        - log
+        - plugin
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/uploads/affwp-debug.log'
+      signs:
+        - "on": word
+          has:
+            - Referral could not be retrieved
+            - Affiliate CSV
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

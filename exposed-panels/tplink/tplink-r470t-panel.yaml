@@ -1,0 +1,24 @@
+id: tplink-r470t-panel
+brief:
+    title: TP-LINK Router R470T - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - tplink
+        - r470t
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - userRpm
+            - R470T
+          in: response
+          need: all

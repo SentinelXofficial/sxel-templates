@@ -1,0 +1,17 @@
+id: manageengine-keymanagerplus
+brief:
+    title: ZOHO ManageEngine KeyManagerPlus Panel - Detect
+    by: righettod
+    level: info
+    about: ZOHO ManageEngine KeyManagerPlus panel was detected.
+    label:
+        - panel
+        - zoho
+        - manageengine
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/apiclient/index.jsp'
+        - '{{BaseURL}}/pki/images/keyManager_title.ico'
+      signs: []

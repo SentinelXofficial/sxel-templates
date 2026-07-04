@@ -1,0 +1,24 @@
+id: dojoverse
+brief:
+    title: Dojoverse User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Dojoverse user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - dojoverse
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://dojoverse.com/members/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Joined
+          in: body
+          need: all

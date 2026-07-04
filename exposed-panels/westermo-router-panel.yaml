@@ -1,0 +1,27 @@
+id: westermo-router-panel
+brief:
+    title: Westermo Industrial Router - Login Panel
+    by: rxerium
+    level: info
+    about: Westermo industrial router web interface panel has been detected.
+    label:
+        - panel
+        - westermo
+        - router
+        - ics
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>lynx - westermo</title>
+            - westermo.com
+            - lynx - westermo
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,67 @@
+id: jboss-jbpm-default-login
+brief:
+    title: JBoss jBPM Administration Console Default Login - Detect
+    by: DhiyaneshDk
+    level: high
+    about: JBoss jBPM Administration Console default login information was detected.
+    label:
+        - jboss
+        - jbpm
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jbpm-console/app/tasks.jsf'
+      signs:
+        - "on": word
+          has:
+            - JBoss jBPM Administration Console
+          in: body_1
+          need: all
+        - "on": word
+          has:
+            - </span>Tasks
+          in: body_3
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/jbpm-console/app/j_security_check'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: j_username={{user}}&j_password={{pass}}
+      signs:
+        - "on": word
+          has:
+            - JBoss jBPM Administration Console
+          in: body_1
+          need: all
+        - "on": word
+          has:
+            - </span>Tasks
+          in: body_3
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jbpm-console/app/tasks.jsf'
+      signs:
+        - "on": word
+          has:
+            - JBoss jBPM Administration Console
+          in: body_1
+          need: all
+        - "on": word
+          has:
+            - </span>Tasks
+          in: body_3
+          need: all
+        - "on": status
+          status:
+            - 200

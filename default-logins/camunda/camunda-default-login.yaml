@@ -1,0 +1,43 @@
+id: camunda-default-login
+brief:
+    title: Camunda - Default Login
+    by: bhutch
+    level: high
+    about: Camunda login panel contains a default login vulnerability.
+    label:
+        - default-login
+        - camunda
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/camunda/app/welcome/default/'
+      signs:
+        - "on": word
+          has:
+            - '"userId"'
+            - '"authorizedApps"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/camunda/api/admin/auth/user/default/login/welcome'
+      head:
+        Accept: application/json, text/plain, */*
+        Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+        X-Xsrf-Token: '{{xsrf_token}}'
+      body: username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - '"userId"'
+            - '"authorizedApps"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

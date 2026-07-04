@@ -1,0 +1,24 @@
+id: forumprawneorg
+brief:
+    title: Forumprawne.org User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Forumprawne.org user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - forumprawneorg
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://forumprawne.org/members/{{user}}.html
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Wiadomość
+          in: body
+          need: all

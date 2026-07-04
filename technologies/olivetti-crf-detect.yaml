@@ -1,0 +1,23 @@
+id: olivetti-crf-detect
+brief:
+    title: Olivetti CRF Detect
+    by: pussycat0x
+    level: info
+    about: ""
+    label:
+        - tech
+        - olivetti
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <TITLE>Olivetti CRF</TITLE>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

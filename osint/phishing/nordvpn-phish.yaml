@@ -1,0 +1,25 @@
+id: nordvpn-phish
+brief:
+    title: NordVPN phishing Detection
+    by: rxerium
+    level: info
+    about: A NordVPN phishing website was detected
+    label:
+        - phishing
+        - nordvpn
+        - vpn
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>The best VPN service online for free, open internet | NordVPN
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: ibm-http-server
+brief:
+    title: Default IBM HTTP Server
+    by: dhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - tech
+        - ibm
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>IBM HTTP Server</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

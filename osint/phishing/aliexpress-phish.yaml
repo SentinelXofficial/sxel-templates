@@ -1,0 +1,24 @@
+id: aliexpress-phish
+brief:
+    title: aliexpress phishing Detection
+    by: rxerium
+    level: info
+    about: An aliexpress phishing website was detected
+    label:
+        - phishing
+        - aliexpress
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - AliExpress - Affordable Prices on Top Brands with Free Shipping
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

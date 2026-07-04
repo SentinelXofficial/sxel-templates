@@ -1,0 +1,25 @@
+id: default-symfony-page
+brief:
+    title: Symfony Default Page
+    by: pussycat0x
+    level: info
+    about: ""
+    label:
+        - tech
+        - symfony
+        - default-page
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Symfony!
+            - Documentation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

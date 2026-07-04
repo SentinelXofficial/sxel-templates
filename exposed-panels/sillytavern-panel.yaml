@@ -1,0 +1,26 @@
+id: sillytavern-panel
+brief:
+    title: SillyTavern Panel - Detect
+    by: rxerium
+    level: info
+    about: SillyTavern was detected. SillyTavern is a character-based AI roleplay and chat frontend that connects to local or remote LLM backends. Exposed instances may allow unauthenticated access to AI mode...
+    label:
+        - panel
+        - sillytavern
+        - llm
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>SillyTavern</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

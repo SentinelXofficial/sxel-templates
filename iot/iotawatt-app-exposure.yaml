@@ -1,0 +1,26 @@
+id: iotawatt-app-exposure
+brief:
+    title: IoTaWatt Configuration App Exposure
+    by: pussycat0x
+    level: high
+    about: An IoTaWatt configuration app was discovered. Unauthenticated access to an IoTaWatt energy monitor could give a malicious attacker the means to upload to any of several third-party energy websites/...
+    label:
+        - iot
+        - exposure
+        - vuln
+        - discovery
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <h3>Configure IoTaWatt Device</h3>
+            - <title>IoTaWatt Configuration app</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

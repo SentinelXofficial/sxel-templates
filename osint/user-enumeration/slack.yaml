@@ -1,0 +1,24 @@
+id: slack
+brief:
+    title: Slack User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Slack user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - slack
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://{{user}}.slack.com
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Slack
+          in: body
+          need: all

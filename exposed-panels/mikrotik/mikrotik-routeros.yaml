@@ -1,0 +1,41 @@
+id: mikrotik-routeros
+brief:
+    title: MikroTik Router OS Login Panel - Detect
+    by: gy741
+    level: info
+    about: MikroTik Router OS login panel was detected.
+    label:
+        - panel
+        - login
+        - mikrotik
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - If this device is not in your possession, please contact your local network administrator
+            - .mikrotik.com
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <title>mikrotik routeros > administration</title>
+            - <title>Mikrotik Router
+            - <img src="/webcfg/
+            - <title>MikroTik RouterOS Managing Webpage</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Please log on to use the mikrotik hotspot service
+            - mikrotik hotspot > login
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 'Server: mikrotik httpproxy'
+          in: header
+          need: all

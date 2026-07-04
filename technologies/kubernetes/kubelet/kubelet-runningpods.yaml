@@ -1,0 +1,27 @@
+id: kubelet-scan
+brief:
+    title: Kubelet Running Pods
+    by: sharath
+    level: info
+    about: Scans for kubelet running pods
+    label:
+        - tech
+        - k8s
+        - kubernetes
+        - devops
+        - kubelet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/runningpods/'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"PodList":'
+            - '"items":'
+          in: body
+          need: all

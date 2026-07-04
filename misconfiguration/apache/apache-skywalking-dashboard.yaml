@@ -1,0 +1,25 @@
+id: apache-skywalking-dashboard
+brief:
+    title: Apache SkyWalking - Dashboard
+    by: icarot
+    level: high
+    about: Apache SkyWalking server, an APM, Application Performance Monitoring System, exposed the backend monitoring dashboard. An attacker can execute unauthorized operations.
+    label:
+        - apache
+        - skywalking
+        - misconfig
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard/list'
+      signs:
+        - "on": word
+          has:
+            - title>Apache SkyWalking
+            - /css/monaco-editor
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

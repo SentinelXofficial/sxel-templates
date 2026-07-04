@@ -1,0 +1,25 @@
+id: sftpgo-admin-setup
+brief:
+    title: SFTPGo Admin - Setup
+    by: ritikchaddha
+    level: high
+    about: SFTPGo Admin Password setup page has been exposed.
+    label:
+        - sftpgo
+        - misconfig
+        - setup
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web/admin/setup'
+      signs:
+        - "on": word
+          has:
+            - SFTPGo - Setup
+            - SFTPGo you need to create an admin user
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: pypi
+brief:
+    title: Pypi User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Pypi user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - pypi
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://pypi.org/user/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Profile of
+          in: body
+          need: all

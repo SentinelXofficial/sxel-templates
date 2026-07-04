@@ -1,0 +1,22 @@
+id: api-flowdash
+brief:
+    title: Flowdash API Test
+    by: daffainfo
+    level: info
+    about: Automate business workflows
+    label:
+        - token-spray
+        - flowdash
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://app.flowdash.com/api/v1/workflows'
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"id":'
+            - '"name":'
+          in: body
+          need: all

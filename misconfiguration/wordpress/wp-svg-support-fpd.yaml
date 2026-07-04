@@ -1,0 +1,25 @@
+id: wp-svg-support-fpd
+brief:
+    title: WordPress SVG Support - Full Path Disclosure
+    by: pussycat0x
+    level: low
+    about: The WordPress SVG Support plugin was detected to have publicly accessible PHP files without ABSPATH protection, which exposed sensitive server path information. Direct access to vendor/composer fil...
+    label:
+        - wordpress
+        - fpd
+        - disclosure
+        - wp
+        - wp-plugin
+        - svg-support
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/svg-support/vendor/composer/InstalledVersions.php'
+        - '{{BaseURL}}/wp-content/plugins/svg-support/vendor/autoload.php'
+        - '{{BaseURL}}/wp-content/plugins/svg-support/vendor/composer/autoload_real.php'
+        - '{{BaseURL}}/wp-content/plugins/svg-support/vendor/composer/ClassLoader.php'
+        - '{{BaseURL}}/wp-content/plugins/svg-support/vendor/composer/autoload_static.php'
+        - '{{BaseURL}}/wp-content/plugins/svg-support/svg-support.php'
+        - '{{BaseURL}}/wp-content/plugins/svg-support/functions/mime-types.php'
+        - '{{BaseURL}}/wp-content/plugins/svg-support/includes/svg-tags.php'
+      signs: []

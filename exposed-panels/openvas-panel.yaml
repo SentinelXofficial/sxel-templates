@@ -1,0 +1,25 @@
+id: openvas-panel
+brief:
+    title: OpenVas Login Panel - Detect
+    by: rxerium
+    level: info
+    about: An OpenVas Admin login panel was detected.
+    label:
+        - panel
+        - openvas
+        - admin
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Greenbone Security Assistant
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

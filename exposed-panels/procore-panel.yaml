@@ -1,0 +1,25 @@
+id: procore-panel
+brief:
+    title: Procore Login - Panel
+    by: rxerium
+    level: info
+    about: ""
+    label:
+        - panel
+        - login
+        - detect
+        - procore
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/favicon.ico'
+        - '{{BaseURL}}/images/favicon.ico'
+      signs:
+        - "on": word
+          has:
+            - <title>Procore Log In</title>
+            - Log in to your Procore account using your email and password
+          in: body
+          need: all

@@ -1,0 +1,26 @@
+id: phpmyfaq-installer
+brief:
+    title: phpMyFAQ Installation - Exposure
+    by: ritikchaddha
+    level: high
+    about: phpMyFAQ installation is exposed.
+    label:
+        - misconfig
+        - phpmyfaq
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup/index.php'
+      signs:
+        - "on": word
+          has:
+            - <title>phpMyFAQ
+            - Setup</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - phpmyfaq-setup
+          in: header

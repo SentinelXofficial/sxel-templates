@@ -1,0 +1,27 @@
+id: selenium-exposure
+brief:
+    title: Selenium - Node Exposure
+    by: w0Tx
+    level: high
+    about: Selenium was shown to have an exposed node. If a Selenium node is exposed without any form of authentication, remote command execution could be possible if chromium is configured. By default the po...
+    label:
+        - misconfig
+        - selenium
+        - misconfiguration
+        - rce
+        - chromium
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wd/hub'
+      signs:
+        - "on": word
+          has:
+            - WebDriverRequest
+            - <title>WebDriver Hub</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

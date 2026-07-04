@@ -1,0 +1,24 @@
+id: codeberg
+brief:
+    title: Codeberg User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Codeberg user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - codeberg
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://codeberg.org/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ui avatar vm
+          in: body
+          need: all

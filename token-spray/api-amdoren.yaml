@@ -1,0 +1,20 @@
+id: api-amdoren
+brief:
+    title: Amdoren API Test
+    by: daffainfo
+    level: info
+    about: Free currency API with over 150 currencies
+    label:
+        - token-spray
+        - amdoren
+moves:
+    - verb: GET
+      to:
+        - https://www.amdoren.com/api/currency.php?api_key={{token}}&from=USD&to=EUR
+      signs:
+        - "on": word
+          has:
+            - '"error" : 0'
+            - '"error_message" : "-"'
+          in: body
+          need: all

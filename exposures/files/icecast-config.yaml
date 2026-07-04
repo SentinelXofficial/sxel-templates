@@ -1,0 +1,17 @@
+id: icecast-config
+brief:
+    title: Icecast Config - File Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: Icecast Config file is exposed.
+    label:
+        - exposure
+        - icecast
+        - config
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/icecast.xml'
+      signs: []

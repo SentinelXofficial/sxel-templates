@@ -1,0 +1,32 @@
+id: springboot-auditevents
+brief:
+    title: Spring Boot AuditEvents Actuator Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Spring Boot Auditevents Actuator panel was detected.
+    label:
+        - misconfig
+        - springboot
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auditevents'
+        - '{{BaseURL}}/actuator/auditevents'
+      signs:
+        - "on": word
+          has:
+            - '{"events":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v1+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

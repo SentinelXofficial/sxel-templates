@@ -1,0 +1,18 @@
+id: dify-panel
+brief:
+    title: Dify Panel - Detect
+    by: s4e-io
+    level: info
+    about: Dify panel was discovered.
+    label:
+        - panel
+        - login
+        - dify
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/signin'
+        - '{{BaseURL}}'
+      signs: []

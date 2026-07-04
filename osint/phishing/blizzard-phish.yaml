@@ -1,0 +1,25 @@
+id: blizzard-phish
+brief:
+    title: Blizzard phishing Detection
+    by: rxerium
+    level: info
+    about: A Blizzard phishing website was detected
+    label:
+        - phishing
+        - blizzard
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Creators of the Warcraft, Diablo, StarCraft, and Overwatch series, Blizzard Entertainment is an industry-leading developer responsible for the most epic entertainment experiences, ever.
+            - Blizzard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

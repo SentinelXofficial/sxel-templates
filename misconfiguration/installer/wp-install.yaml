@@ -1,0 +1,26 @@
+id: wp-install
+brief:
+    title: WordPress Exposed Installation
+    by: princechaddha
+    level: critical
+    about: Wordpress installation files have been detected
+    label:
+        - misconfig
+        - panel
+        - wordpress
+        - vuln
+    score: CVSS:9.4
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-admin/install.php?step=1'
+      signs:
+        - "on": word
+          has:
+            - <title>WordPress &rsaquo; Installation</title>
+            - Site Title
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

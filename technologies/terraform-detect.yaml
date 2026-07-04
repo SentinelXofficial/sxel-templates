@@ -1,0 +1,24 @@
+id: terraform-detect
+brief:
+    title: Detect Terraform Provider
+    by: geeknik
+    level: info
+    about: Write Infrastructure as Code - https://www.terraform.io/
+    label:
+        - tech
+        - terraform
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/provider.tf'
+      signs:
+        - "on": word
+          has:
+            - access_key
+            - terraform
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

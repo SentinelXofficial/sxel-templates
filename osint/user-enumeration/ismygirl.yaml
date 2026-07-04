@@ -1,0 +1,24 @@
+id: ismygirl
+brief:
+    title: IsMyGirl User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: IsMyGirl user name information check was conducted.
+    label:
+        - osint
+        - osint-finance
+        - ismygirl
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://api.fxcservices.com/pub/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - display_name
+          in: body
+          need: all

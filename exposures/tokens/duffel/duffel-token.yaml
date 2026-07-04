@@ -1,0 +1,16 @@
+id: duffel-token
+brief:
+    title: Duffel API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - duffel
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

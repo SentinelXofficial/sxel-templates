@@ -1,0 +1,34 @@
+id: xss-fuzz
+brief:
+    title: Fuzzing Parameters - Cross-Site Scripting
+    by: kazet
+    level: medium
+    about: Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+    label:
+        - xss
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?{{xss_param}}'
+      signs:
+        - "on": word
+          has:
+            - '''>"<svg/onload=confirm(''xss-'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Access Denied</title>
+            - You don't have permission to access
+          in: body
+          need: all

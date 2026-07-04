@@ -1,0 +1,24 @@
+id: tlr-2005ksh-login
+brief:
+    title: Telesquare TLR-2005KSH Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Telesquare TLR-2005KSH login panel was detected.
+    label:
+        - panel
+        - router
+        - telesquare
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Login to TLR-2005KSH</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

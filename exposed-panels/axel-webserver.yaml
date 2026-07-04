@@ -1,0 +1,19 @@
+id: axel-webserver
+brief:
+    title: Axel WebServer - Panel Detect
+    by: pikpikcu
+    level: info
+    about: Axel WebServer panel was detected.
+    label:
+        - panel
+        - axel
+        - webserver
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

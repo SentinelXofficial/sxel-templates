@@ -1,0 +1,18 @@
+id: wordpress-disable-comments
+brief:
+    title: Disable Comments – Remove Comments & Stop Spam [Multi-Site Support] Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/disable-comments/readme.txt'
+      signs: []

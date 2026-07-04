@@ -1,0 +1,27 @@
+id: api-hubspot
+brief:
+    title: HubSpot API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - hubspot
+moves:
+    - verb: GET
+      to:
+        - https://api.hubapi.com/owners/v2/owners?hapikey={{token}}
+        - https://api.hubapi.com/contacts/v1/lists/static?count=3&hapikey={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"portalId":'
+            - '"ownerId":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - '"metaData":'
+            - '"portalId":'
+          in: body
+          need: all

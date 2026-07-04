@@ -1,0 +1,16 @@
+id: ricoh-webimagemonitor-panel
+brief:
+    title: Ricoh Web Image Monitor - Detect
+    by: righettod
+    level: info
+    about: Ricoh Web Image Monitor device was detected.
+    label:
+        - panel
+        - ricoh
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web/guest/en/websys/webArch/header.cgi'
+      signs: []

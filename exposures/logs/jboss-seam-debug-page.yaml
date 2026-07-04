@@ -1,0 +1,25 @@
+id: jboss-seam-debug-page
+brief:
+    title: Jboss Seam Debug Page Enabled
+    by: dhiyaneshDK
+    level: medium
+    about: Jboss Seam Debug Page was exposed.
+    label:
+        - jboss
+        - logs
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/debug.seam'
+      signs:
+        - "on": word
+          has:
+            - SeamDebugPage
+            - org.jboss.seam
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

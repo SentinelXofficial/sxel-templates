@@ -1,0 +1,24 @@
+id: martech
+brief:
+    title: Martech User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Martech user name information check was conducted.
+    label:
+        - osint
+        - osint-business
+        - martech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://martech.org/author/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - twitter:site
+          in: body
+          need: all

@@ -1,0 +1,26 @@
+id: veracore-panel
+brief:
+    title: Veracore Login - Detect
+    by: rxerium
+    level: info
+    about: A veracore login panel was detected.
+    label:
+        - panel
+        - veracore
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/veracore/Home/#systems'
+      signs:
+        - "on": word
+          has:
+            - VeraCore
+            - /veracore/img/LoginLogo.png
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

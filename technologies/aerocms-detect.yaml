@@ -1,0 +1,18 @@
+id: aerocms-detect
+brief:
+    title: AeroCMS Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - aerocms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,43 @@
+id: apache-server-status-localhost
+brief:
+    title: Server Status Disclosure
+    by: pdteam
+    level: low
+    about: Apache Server Status page is exposed, which may contain information about pages visited by the users, their IPs or sensitive information such as session tokens.
+    label:
+        - apache
+        - debug
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/server-status'
+      signs:
+        - "on": status
+          status:
+            - 403
+            - 404
+            - 401
+    - verb: GET
+      to:
+        - '{{BaseURL}}/server-status'
+      head:
+        Forwarded: 127.0.0.1
+        X-Client-IP: 127.0.0.1
+        X-Forwarded-By: 127.0.0.1
+        X-Forwarded-For: 127.0.0.1
+        X-Forwarded-For-IP: 127.0.0.1
+        X-Forwarded-Host: 127.0.0.1
+        X-Host: 127.0.0.1
+        X-Originating-IP: 127.0.0.1
+        X-Remote-Addr: 127.0.0.1
+        X-Remote-IP: 127.0.0.1
+        X-True-IP: 127.0.0.1
+      signs:
+        - "on": word
+          has:
+            - Apache Server Status
+            - Server Version
+          in: body
+          need: all

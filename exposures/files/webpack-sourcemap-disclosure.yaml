@@ -1,0 +1,26 @@
+id: webpack-sourcemap-disclosure
+brief:
+    title: Webpack Sourcemap Disclosure
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{RootURL}}/{{Path}}/{{map}}.js.map'
+      signs:
+        - "on": word
+          has:
+            - '"version":'
+            - '"file":'
+            - '"sources":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

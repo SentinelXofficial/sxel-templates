@@ -1,0 +1,31 @@
+id: esmtprc-config
+brief:
+    title: eSMTP - Config Discovery
+    by: geeknik
+    level: high
+    about: eSMTP configuration was discovered.
+    label:
+        - esmtp
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.esmtprc'
+      signs:
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": word
+          has:
+            - hostname
+            - username
+            - password
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

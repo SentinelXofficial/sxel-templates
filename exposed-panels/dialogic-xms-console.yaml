@@ -1,0 +1,26 @@
+id: dialogic-xms-console
+brief:
+    title: Dialogic XMS Admin Console - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - dialogic
+        - admin
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php'
+      signs:
+        - "on": word
+          has:
+            - Dialogic XMS Admin Console
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

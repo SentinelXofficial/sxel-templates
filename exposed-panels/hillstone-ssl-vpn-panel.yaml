@@ -1,0 +1,28 @@
+id: hillstone-ssl-vpn-panel
+brief:
+    title: Hillstone Networks SSL VPN - Login Panel
+    by: rxerium
+    level: info
+    about: Hillstone Networks SSL VPN (SG-6000 series) is an enterprise network security
+    label:
+        - panel
+        - hillstone
+        - ssl-vpn
+        - vpn
+        - ics
+        - network
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Hillstone Networks
+            - hillstonenet.com
+            - HILLSTONE NETWORKS
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

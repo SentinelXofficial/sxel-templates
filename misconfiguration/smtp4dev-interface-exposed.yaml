@@ -1,0 +1,26 @@
+id: smtp4dev-interface-exposed
+brief:
+    title: SMTP4Dev Interface - Exposed
+    by: DhiyaneshDk
+    level: high
+    about: Publicly exposed smtp4dev interface allowing access to intercepted emails and test configurations.
+    label:
+        - smtp4dev
+        - misconfig
+        - exposure
+        - mail
+        - interface
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>smtp4dev</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

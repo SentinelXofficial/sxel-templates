@@ -1,0 +1,32 @@
+id: redis-config
+brief:
+    title: Redis Configuration File - Detect
+    by: geeknik
+    level: medium
+    about: Redis configuration file was detected.
+    label:
+        - redis
+        - exposure
+        - config
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/redis.conf'
+      signs:
+        - "on": word
+          has:
+            - bind
+            - protected-mode
+            - 'port '
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,16 @@
+id: wireguard-private-key
+brief:
+    title: WireGuard Private Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - wireguard
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,26 @@
+id: filestash-installer
+brief:
+    title: Filestash - Installer Exposure
+    by: DhiyaneshDk
+    level: high
+    about: FreeScout is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - exposure
+        - install
+        - filestash
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/setup'
+      signs:
+        - "on": word
+          has:
+            - <title>Admin Console</title>
+            - component-loader
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

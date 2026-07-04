@@ -1,0 +1,33 @@
+id: salesforce-community-misconfig
+brief:
+    title: Salesforce Community Misconfiguration
+    by: domwhewell-sage
+    level: medium
+    about: A misconfigured Salesforce Community may lead to sensitive Salesforce data being exposed to anyone on the internet. Anonymous users can query objects that contain sensitive information such as cust...
+    label:
+        - aura
+        - unauth
+        - salesforce
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{RootURL}}/s/'
+      signs:
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{RootURL}}/s/sfsites/aura'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: |
+        message={{url_encode(actions)}}&aura.context={{aura_context}}&aura.token=null
+      signs:
+        - "on": word
+          has:
+            - recordTypeInfo
+          in: body

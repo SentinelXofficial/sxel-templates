@@ -1,0 +1,25 @@
+id: apache-gravitino-detect
+brief:
+    title: Apache Gravitino - Detect
+    by: icarot
+    level: info
+    about: Detects a Apache Gravitino web application, world's most powerful open data catalog for building a high-performance, geo-distributed and federated metadata lake.
+    label:
+        - tech
+        - gravitino
+        - apache
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/metalakes'
+      signs:
+        - "on": word
+          has:
+            - <title>Gravitino
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

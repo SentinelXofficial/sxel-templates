@@ -1,0 +1,26 @@
+id: peacock-phish
+brief:
+    title: Peacock phishing Detection
+    by: rxerium
+    level: info
+    about: A Peacock phishing website was detected
+    label:
+        - phishing
+        - peacock
+        - streaming
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Peacock
+            - Watch TV shows and movies online with Peacock. Stream iconic shows and movies, exclusive Peacock Originals, live news and sports and more.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,31 @@
+id: echelon-ilon-smartserver-panel
+brief:
+    title: Echelon i.LON SmartServer - Login Panel
+    by: rxerium
+    level: info
+    about: Echelon (now Adesto/Dialog Semiconductor) i.LON SmartServer is a LonWorks/IP-852
+    label:
+        - panel
+        - echelon
+        - ilon
+        - lonworks
+        - scada
+        - ics
+        - ot
+        - building-automation
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - i.LON SmartServer
+            - Echelon
+            - SmartServer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

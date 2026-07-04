@@ -1,0 +1,20 @@
+id: chirpstack-default-login
+brief:
+    title: ChirpStack - Default Login
+    by: t3l3machus
+    level: high
+    about: Fresh ChirpStack installations use the default credentials (admin/admin), allowing attackers to easily access the admin console.
+    label:
+        - default-login
+        - chirpstack
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api.InternalService/Login'
+      head:
+        Accept: application/grpc-web-text
+        Content-Type: application/grpc-web-text
+      body: AAAAAA4KBWFkbWluEgVhZG1pbg==
+      signs: []

@@ -1,0 +1,26 @@
+id: cypress-web-config
+brief:
+    title: Cypress Oxygen Configuration Page - Detect
+    by: tess
+    level: info
+    about: Cypress Oxygen configuration page was detected.
+    label:
+        - exposure
+        - cypress
+        - pendinginstallvzw
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - PendingInstallVZW - Web Page Configuration
+            - alt="Cypress Oxygen-3
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

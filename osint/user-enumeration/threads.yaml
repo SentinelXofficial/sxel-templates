@@ -1,0 +1,25 @@
+id: threads
+brief:
+    title: Threads User Name Information - Detect
+    by: olearycrew
+    level: info
+    about: Threads user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - threads
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.threads.com/@{{user}}
+      signs:
+        - "on": word
+          has:
+            - user?username=
+            - Threads
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

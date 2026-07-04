@@ -1,0 +1,17 @@
+id: i-librarian-panel
+brief:
+    title: I-Librarian Panel - Detect
+    by: s4e-io
+    level: info
+    about: I Librarian panel was discovered.
+    label:
+        - panel
+        - login
+        - i-librarian
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

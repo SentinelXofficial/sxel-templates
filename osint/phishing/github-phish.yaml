@@ -1,0 +1,24 @@
+id: github-phish
+brief:
+    title: github phishing Detection
+    by: rxerium
+    level: info
+    about: A github phishing website was detected
+    label:
+        - phishing
+        - github
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Sign in to GitHub · GitHub
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

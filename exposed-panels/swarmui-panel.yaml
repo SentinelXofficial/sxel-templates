@@ -1,0 +1,29 @@
+id: swarmui-panel
+brief:
+    title: SwarmUI Panel - Detect
+    by: rxerium
+    level: info
+    about: SwarmUI (formerly StableSwarmUI) is a modular Stable Diffusion web interface built on ASP.NET Core.
+    label:
+        - panel
+        - swarmui
+        - stablediffusion
+        - ai
+        - image-generation
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/Login'
+      signs:
+        - "on": word
+          has:
+            - version-display
+            - SwarmUI
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: web-ftp-detect
+brief:
+    title: Web FTP Detection
+    by: pussycat0x
+    level: info
+    about: ""
+    label:
+        - webftp
+        - tech
+        - ftp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/upload/web-ftp.cgi'
+      signs:
+        - "on": word
+          has:
+            - Web-FTP
+            - square login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

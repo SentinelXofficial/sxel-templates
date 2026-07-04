@@ -1,0 +1,26 @@
+id: acti-panel
+brief:
+    title: ACTi Video Monitoring Panel - Detection
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - acti
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/videoconfiguration.cgi'
+      signs:
+        - "on": word
+          has:
+            - Web Configurator
+            - ACTi
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

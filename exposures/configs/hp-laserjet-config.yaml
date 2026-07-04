@@ -1,0 +1,32 @@
+id: hp-laserjet-config
+brief:
+    title: HP LaserJet Configuration Exposure
+    by: DhiyaneshDk
+    level: medium
+    about: HP LaserJet printer web interface exposes sensitive configuration information without authentication.This includes device information, network configuration, SNMP settings, and other sensitive data...
+    label:
+        - hp
+        - laserjet
+        - printer
+        - iot
+        - config
+        - exposure
+        - misconfig
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/hp/device/this.LCDispatcher?nav=hp.Config'
+        - '{{BaseURL}}/info_configuration.html?tab=Home&menu=DevConfig'
+        - '{{BaseURL}}/SSI/info_configuration.htm'
+      signs:
+        - "on": word
+          has:
+            - Configuration Page
+            - Device Configuration
+            - set_config_deviceinfo
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

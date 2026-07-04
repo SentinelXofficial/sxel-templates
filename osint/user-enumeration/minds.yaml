@@ -1,0 +1,24 @@
+id: minds
+brief:
+    title: Minds User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Minds user name information check was conducted.
+    label:
+        - osint
+        - osint-political
+        - minds
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.minds.com/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ) | Minds</title>
+          in: body
+          need: all

@@ -1,0 +1,115 @@
+id: open-proxy-internal
+brief:
+    title: Open Proxy To Internal Network
+    by: sullo
+    level: high
+    about: The host is configured as a proxy which allows access to other hosts on the internal network.
+    label:
+        - exposure
+        - config
+        - proxy
+        - misconfig
+        - fuzz
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://192.168.0.1/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://192.168.0.1/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://192.168.0.1:22/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://192.168.1.1/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://192.168.1.1/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://192.168.1.1:22/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://192.168.2.1/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://192.168.2.1/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://192.168.2.1:22/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http:/10.0.0.1/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://10.0.0.1/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://10.0.0.1:22/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http:/172.16.0.1/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://172.16.0.1/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://172.16.0.1:22/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http:/intranet/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://intranet/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://intranet:22/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http:/mail/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://mail/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://mail:22/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http:/ntp/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://ntp/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://ntp:22/'
+      signs: []

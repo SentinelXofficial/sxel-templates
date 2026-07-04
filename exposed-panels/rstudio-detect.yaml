@@ -1,0 +1,23 @@
+id: rstudio-detect
+brief:
+    title: RStudio Panel - Detect
+    by: philippedelteil
+    level: info
+    about: RStudio panel was detected.
+    label:
+        - panel
+        - rstudio
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - RStudio
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

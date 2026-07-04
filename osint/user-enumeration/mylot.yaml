@@ -1,0 +1,24 @@
+id: mylot
+brief:
+    title: MyLot User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: MyLot user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mylot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.mylot.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - on myLot</title>
+          in: body
+          need: all

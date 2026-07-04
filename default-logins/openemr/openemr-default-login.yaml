@@ -1,0 +1,28 @@
+id: openemr-default-login
+brief:
+    title: OpenEMR - Default Admin Discovery
+    by: Geekby
+    level: high
+    about: OpenEMR default admin credentials were discovered.
+    label:
+        - openemr
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/interface/main/main_screen.php?auth=login&site=default'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: new_login_session_management=1&languageChoice=1&authUser={{user}}&clearPass={{pass}}&languageChoice=10
+      signs:
+        - "on": word
+          has:
+            - main.php?token_main=
+            - OpenEMR
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

@@ -1,0 +1,24 @@
+id: eyesofnetwork-detect
+brief:
+    title: EyesOfNetwork Detect
+    by: praetorian-thendrickson
+    level: info
+    about: EyesOfNetwork detection
+    label:
+        - tech
+        - cisa
+        - eyesofnetwork
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.php'
+      signs:
+        - "on": word
+          has:
+            - <title>EyesOfNetwork</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

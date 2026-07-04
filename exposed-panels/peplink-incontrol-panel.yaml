@@ -1,0 +1,25 @@
+id: peplink-incontrol-panel
+brief:
+    title: Peplink InControl - Login Panel
+    by: rxerium
+    level: info
+    about: Peplink InControl is a centralised cloud-based SD-WAN and device management platform for Peplink routers and access points, enabling remote configuration, monitoring, and SpeedFusion VPN management...
+    label:
+        - panel
+        - peplink
+        - incontrol
+        - sd-wan
+        - vpn
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Peplink InControl
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

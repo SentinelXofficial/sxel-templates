@@ -1,0 +1,30 @@
+id: seafile-api
+brief:
+    title: Seafile API - Detect
+    by: righettod
+    level: info
+    about: Seafile API was detected.
+    label:
+        - exposure
+        - api
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api2/server-info/'
+      signs:
+        - "on": word
+          has:
+            - seafile-basic
+            - seafile-pro
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

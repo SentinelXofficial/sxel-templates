@@ -1,0 +1,27 @@
+id: skycaiji-install
+brief:
+    title: SkyCaiji - Exposed Installation
+    by: pikpikcu
+    level: high
+    about: SkyCaiji was discovered.
+    label:
+        - tech
+        - skycaiji
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?s=/install/index/index'
+      signs:
+        - "on": word
+          has:
+            - <title>蓝天采集器 SkyCaiji 安装</title>
+            - https://www.skycaiji.com
+            - <a href="/index.php?s=/Install/Index/step1" class="btn btn-lg btn-success">
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

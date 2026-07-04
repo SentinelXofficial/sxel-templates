@@ -1,0 +1,24 @@
+id: xiaomi-wireless-router-login
+brief:
+    title: Xiaomi Wireless Router Admin Panel - Detect
+    by: lu4nx
+    level: info
+    about: Xiaomi Wireless router admin panel was detected.
+    label:
+        - panel
+        - xiaomi
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/luci/web'
+      signs:
+        - "on": word
+          has:
+            - <title>小米路由器</title>
+            - <title>Redmi路由器</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

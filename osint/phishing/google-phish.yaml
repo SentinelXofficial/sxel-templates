@@ -1,0 +1,24 @@
+id: google-phish
+brief:
+    title: Google phishing Detection
+    by: rxerium
+    level: info
+    about: A google phishing website was detected
+    label:
+        - phishing
+        - google
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Sign in - Google Accounts
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

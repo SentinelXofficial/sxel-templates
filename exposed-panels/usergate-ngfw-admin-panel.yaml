@@ -1,0 +1,19 @@
+id: usergate-ngfw-admin-panel
+brief:
+    title: UserGate NGFW/UTM Admin Panel - Detect
+    by: darses
+    level: info
+    about: Detect UserGate NGFW/UTM Admin Panel.
+    label:
+        - detect
+        - panel
+        - usergate
+        - ngfw
+        - utm
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/static/console-utm-webui/js/preinit.js'
+      signs: []

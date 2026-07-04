@@ -1,0 +1,24 @@
+id: adobe-experience-manager-login
+brief:
+    title: Adobe Experience Manager Login Panel
+    by: dhiyaneshDK
+    level: info
+    about: An Adobe Experience Manager login panel was detected.
+    label:
+        - panel
+        - aem
+        - adobe
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/libs/granite/core/content/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>AEM Sign In</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: colourlovers
+brief:
+    title: COLOURlovers User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: COLOURlovers user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - colourlovers
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.colourlovers.com/lover/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Color lovin' since
+          in: body
+          need: all

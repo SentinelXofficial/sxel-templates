@@ -1,0 +1,28 @@
+id: orangehrm-panel
+brief:
+    title: OrangeHRM Login Panel - Detect
+    by: Th3l0newolf
+    level: info
+    about: The OrangeHRM login panel was discovered.
+    label:
+        - orangehrm
+        - hrm
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/symfony/web/index.php/auth/login'
+        - '{{BaseURL}}/web/index.php/auth/login'
+      signs:
+        - "on": word
+          has:
+            - <title>OrangeHRM</title>
+            - OrangeHRM, Inc. All rights reserved
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

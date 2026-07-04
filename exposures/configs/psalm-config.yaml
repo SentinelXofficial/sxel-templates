@@ -1,0 +1,33 @@
+id: psalm-config
+brief:
+    title: Psalm Configuration Exposure - Detect
+    by: DhiyaneshDK
+    level: low
+    about: Psalm configuration page was detected.
+    label:
+        - devops
+        - exposure
+        - php
+        - psalm
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/psalm.xml'
+      signs:
+        - "on": word
+          has:
+            - <psalm
+            - <projectFiles
+            - xmlns:xsi
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/xml
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

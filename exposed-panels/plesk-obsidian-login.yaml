@@ -1,0 +1,25 @@
+id: plesk-obsidian-login
+brief:
+    title: Plesk Obsidian Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Plesk Obsidian login panel was detected.
+    label:
+        - panel
+        - plesk
+        - login
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login_up.php'
+      signs:
+        - "on": word
+          has:
+            - Plesk Obsidian
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

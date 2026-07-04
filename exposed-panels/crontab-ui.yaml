@@ -1,0 +1,25 @@
+id: crontab-ui
+brief:
+    title: Crontab UI - Dashboard Exposure
+    by: DhiyaneshDk
+    level: high
+    about: ""
+    label:
+        - exposure
+        - crontab
+        - ui
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Crontab UI</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: stestr-config
+brief:
+    title: Stestr Configuration File - Detect
+    by: Hardik-Solanki
+    level: info
+    about: Stestr configuration file was detected.
+    label:
+        - exposure
+        - stestr
+        - config
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.stestr.conf'
+      signs:
+        - "on": word
+          has:
+            - '[DEFAULT]'
+            - test_path=
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: frp-default-login
+brief:
+    title: FRP Default Login
+    by: pikpikcu
+    level: high
+    about: FRP default login credentials were discovered.
+    label:
+        - frp
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/proxy/tcp'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+      signs:
+        - "on": word
+          has:
+            - '"proxies":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

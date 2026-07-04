@@ -1,0 +1,27 @@
+id: bugzilla-detect
+brief:
+    title: Bugzilla - Detect
+    by: icarot
+    level: info
+    about: Detects a Bugzilla server, official repository for the Bugzilla bug tracking system.
+    label:
+        - tech
+        - bugzilla
+        - mozilla
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Bugzilla Main
+            - title="Bugzilla
+            - href="https://bugzilla.readthedocs.org/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

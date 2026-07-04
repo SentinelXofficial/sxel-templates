@@ -1,0 +1,17 @@
+id: email-extractor
+brief:
+    title: Email Extractor
+    by: panch0r3d
+    level: info
+    about: ""
+    label:
+        - miscellaneous
+        - misc
+        - email
+        - generic
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,28 @@
+id: facebook-page
+brief:
+    title: Facebook Page Name Information - Detect
+    by: gpiechnik2
+    level: info
+    about: Facebook Page name information check was conducted.
+    label:
+        - osint
+        - osint-business
+        - osint-social
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://facebook.com/{{user}}'
+      head:
+        Accept-Language: en-US,en;q=0.9
+        Sec-Fetch-Mode: navigate
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5672.127 Safari/537.36
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'Link: <https://www.facebook.com/{{user}}>'
+          in: header
+          need: all

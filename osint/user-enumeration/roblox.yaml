@@ -1,0 +1,24 @@
+id: roblox
+brief:
+    title: Roblox User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Roblox user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - roblox
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://auth.roblox.com/v1/usernames/validate?username={{user}}&birthday=2019-12-31T23:00:00.000Z
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Username is already in use
+          in: body
+          need: all

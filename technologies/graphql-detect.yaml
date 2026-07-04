@@ -1,0 +1,30 @@
+id: graphql-detect
+brief:
+    title: GraphQL API Detection
+    by: nkxxkn
+    level: info
+    about: ""
+    label:
+        - tech
+        - graphql
+        - discovery
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}{{paths}}'
+      head:
+        Content-Type: application/json
+      body: '{"query":"query IntrospectionQuery{__schema {queryType { name }}}"}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": word
+          has:
+            - __schema
+          in: body

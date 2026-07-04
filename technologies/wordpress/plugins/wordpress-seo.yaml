@@ -1,0 +1,18 @@
+id: wordpress-wordpress-seo
+brief:
+    title: Yoast SEO – Advanced SEO with real-time guidance and built-in AI Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wordpress-seo/readme.txt'
+      signs: []

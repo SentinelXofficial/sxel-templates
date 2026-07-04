@@ -1,0 +1,18 @@
+id: wordpress-limit-login-attempts-reloaded
+brief:
+    title: Limit Login Attempts Reloaded – Login Security, Brute Force Protection, Firewall Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/limit-login-attempts-reloaded/readme.txt'
+      signs: []

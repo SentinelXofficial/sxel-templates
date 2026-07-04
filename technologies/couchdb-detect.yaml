@@ -1,0 +1,31 @@
+id: couchdb-detect
+brief:
+    title: CouchDB - Detect
+    by: pussycat0x
+    level: info
+    about: Detects instances of Apache CouchDB server.
+    label:
+        - couchdb
+        - tech
+        - detect
+        - db
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '"couchdb":'
+            - '"vendor":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: tiny-file-manager
+brief:
+    title: Tiny File Manager Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Tiny File Manager panel was detected.
+    label:
+        - panel
+        - filemanager
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php'
+      signs:
+        - "on": word
+          has:
+            - <title>Tiny File Manager
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

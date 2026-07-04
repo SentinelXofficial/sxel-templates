@@ -1,0 +1,16 @@
+id: woodwing-panel
+brief:
+    title: Woodwing Studio Server Panel - Detect
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - woodwing
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/StudioServer/server/apps/login.php'
+        - '{{BaseURL}}/server/apps/login.php'
+      signs: []

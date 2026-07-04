@@ -1,0 +1,24 @@
+id: ruckus-unleashed-panel
+brief:
+    title: Ruckus Wireless Unleashed Login Panel - Detect
+    by: idealphase
+    level: info
+    about: Ruckus Wireless Unleashed login panel was detected.
+    label:
+        - panel
+        - ruckus
+        - ruckuswireless
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - <title>Unleashed Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

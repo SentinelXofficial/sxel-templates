@@ -1,0 +1,22 @@
+id: api-blockfrost
+brief:
+    title: Blockfrost API Test
+    by: daffainfo
+    level: info
+    about: Interaction with the Cardano mainnet and several testnets
+    label:
+        - token-spray
+        - blockfrost
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://cardano-mainnet.blockfrost.io/api/v0/'
+      head:
+        project_id: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"url":'
+            - '"version":'
+          in: body
+          need: all

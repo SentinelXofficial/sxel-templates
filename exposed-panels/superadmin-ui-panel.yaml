@@ -1,0 +1,23 @@
+id: superadmin-ui-panel
+brief:
+    title: SuperAdmin Login Panel - Detect
+    by: Hardik-Solanki
+    level: info
+    about: SuperAdmin login panel was detected.
+    label:
+        - panel
+        - superadmin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/login'
+      signs:
+        - "on": word
+          has:
+            - Superadmin UI - 4myhealth
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: webasyst-installer
+brief:
+    title: Webasyst Installer Exposure
+    by: ritikchaddha
+    level: high
+    about: Webasyst is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - webasyst
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Webasyst Installer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

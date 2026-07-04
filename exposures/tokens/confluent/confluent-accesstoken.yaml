@@ -1,0 +1,16 @@
+id: confluent-accesstoken
+brief:
+    title: Confluent Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - confluent
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

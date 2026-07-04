@@ -1,0 +1,19 @@
+id: api-googlecustomsearch
+brief:
+    title: Google Custom Search API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - search
+moves:
+    - verb: GET
+      to:
+        - https://www.googleapis.com/customsearch/v1?cx=017576662512468239146:omuauf_lfve&q=lectures&key={{token}}
+      signs:
+        - "on": word
+          has:
+            - error
+          in: body

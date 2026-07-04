@@ -1,0 +1,16 @@
+id: victoriametrics-panel
+brief:
+    title: VictoriaMetrics Panel - Detect
+    by: Shivam Kamboj
+    level: info
+    about: A VictoriaMetrics panel was discovered.
+    label:
+        - victoriametrics
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/vmui/'
+      signs: []

@@ -1,0 +1,24 @@
+id: imgur
+brief:
+    title: Imgur User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Imgur user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - imgur
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://api.imgur.com/account/v1/accounts/{{user}}?client_id=546c25a59c58ad7&include=trophies%2Cmedallions
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - created_at
+          in: body
+          need: all

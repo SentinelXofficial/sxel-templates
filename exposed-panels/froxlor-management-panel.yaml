@@ -1,0 +1,28 @@
+id: froxlor-management-panel
+brief:
+    title: Froxlor Server Management Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Froxlor Server Management login panel was detected.
+    label:
+        - panel
+        - froxlor
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Froxlor Server Management Panel</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

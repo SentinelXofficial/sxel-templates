@@ -1,0 +1,25 @@
+id: plausible-panel
+brief:
+    title: Plausible Panel - Detect
+    by: rxerium
+    level: info
+    about: Plausible is intuitive, lightweight and open source web analytics.
+    label:
+        - panel
+        - plausible
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Login
+            - Plausible · Web analytics
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: sexworker
+brief:
+    title: Sexworker User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Sexworker user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - sexworker
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://sexworker.com/api/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - profilePictureUrl
+          in: body
+          need: all

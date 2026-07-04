@@ -1,0 +1,27 @@
+id: trendmicro-apexone-panel
+brief:
+    title: Trend Micro Apex One Login Panel - Detect
+    by: johnk3r
+    level: info
+    about: Trend Micro Apex One login panel was detected.
+    label:
+        - panel
+        - trendmicro
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/officescan/console/html/cgi/cgiChkMasterPwd.exe'
+        - '{{BaseURL}}/SMB/console/html/cgi/cgiChkMasterPwd.exe'
+      signs:
+        - "on": word
+          has:
+            - Trend Micro
+            - TMlogonEncrypted
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

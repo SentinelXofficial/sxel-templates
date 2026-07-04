@@ -1,0 +1,19 @@
+id: wp-easy-wp-smtp-log-exposure
+brief:
+    title: WordPress Easy WP SMTP - Log Exposure
+    by: 0x_Akoko
+    level: medium
+    about: Detected WordPress Easy WP SMTP plugin debug log file exposed via directory listing, potentially revealing sensitive email contents including password reset links.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - easy-wp-smtp
+        - exposure
+        - logs
+    score: CVE-2020-35234 CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/easy-wp-smtp/logs/'
+      signs: []

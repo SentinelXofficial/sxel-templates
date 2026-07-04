@@ -1,0 +1,26 @@
+id: rabbitmq-exporter-metrics
+brief:
+    title: RabbitMQ Exporter
+    by: DhiyaneshDk
+    level: low
+    about: RabbitMQ Exporter is exposed.
+    label:
+        - rabbitmq
+        - exposure
+        - debug
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/metrics'
+      signs:
+        - "on": word
+          has:
+            - rabbitmq_up
+            - rabbitmq_exporter_build_info
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

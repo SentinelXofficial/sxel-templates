@@ -1,0 +1,27 @@
+id: jira-setup
+brief:
+    title: Atlassian JIRA Setup - Installer
+    by: ritikchaddha
+    level: high
+    about: Atlassian JIRA is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - jira
+        - atlassian
+        - installer
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/secure/SetupMode!default.jspa'
+      signs:
+        - "on": word
+          has:
+            - JIRA - JIRA setup
+            - jira.webresources:jira-setup"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

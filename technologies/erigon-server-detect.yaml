@@ -1,0 +1,21 @@
+id: erigon-server-detect
+brief:
+    title: Erigon JSON-RPC HTTP Server - Detect
+    by: Nullfuzz
+    level: info
+    about: Erigon is an implementation of Ethereum (execution layer with embeddable consensus layer). By default Erigon runs a JSON-RPC HTTP server on port 8545/TCP
+    label:
+        - tech
+        - erigon
+        - ethereum
+        - web3
+        - blockchain
+        - discovery
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: '{"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"}'
+      signs: []

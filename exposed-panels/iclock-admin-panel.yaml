@@ -1,0 +1,27 @@
+id: iclock-admin-panel
+brief:
+    title: iClock Automatic Data Master Server Admin Panel - Detect
+    by: deFr0ggy
+    level: info
+    about: An iClock Automatic Data Master Server Admin login panel was detected.
+    label:
+        - panel
+        - iclock
+        - login
+        - admin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/iclock/accounts/login/'
+        - '{{BaseURL}}/iclock/accounts/login/?next=/iclock/data/iclock/'
+      signs:
+        - "on": word
+          has:
+            - '"site-name">iClock Automatic Data Master Server'
+            - <title> | Django site admin</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

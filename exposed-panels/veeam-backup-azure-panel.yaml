@@ -1,0 +1,26 @@
+id: veeam-backup-azure-panel
+brief:
+    title: Veeam Backup for Microsoft Azure Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Veeam Backup for Microsoft Azure panel was detected.
+    label:
+        - azure
+        - panel
+        - backup
+        - veeam
+        - microsoft
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Veeam Backup for Microsoft Azure</title>
+          in: body
+          need: all

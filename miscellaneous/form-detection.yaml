@@ -1,0 +1,23 @@
+id: form-detection
+brief:
+    title: Form Detection
+    by: pdteam
+    level: info
+    about: A template to detect HTML Forms in page response.
+    label:
+        - form
+        - misc
+        - miscellaneous
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <form
+            - </form>
+            - <button
+          in: body
+          need: all

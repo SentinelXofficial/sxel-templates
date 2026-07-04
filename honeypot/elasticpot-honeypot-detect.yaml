@@ -1,0 +1,22 @@
+id: elasticpot-honeypot-detect
+brief:
+    title: ElasticPot Honeypot - Detect
+    by: UnaPibaGeek
+    level: info
+    about: A ElasticPot (ElasticSearch) honeypot has been identified.
+    label:
+        - elasticpot
+        - elasticsearch
+        - honeypot
+        - ir
+        - cti
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_cluster/settings'
+      signs:
+        - "on": word
+          has:
+            - index_not_found_exception
+          in: body

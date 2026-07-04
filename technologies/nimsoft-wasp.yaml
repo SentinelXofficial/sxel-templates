@@ -1,0 +1,25 @@
+id: nimsoft-wasp
+brief:
+    title: Nimsoft Wasp Detection
+    by: Nullfuzz
+    level: info
+    about: Detect Nimsoft Wasp WebPage
+    label:
+        - nimsoft
+        - exposure
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Powered by <b>Nimsoft WASP '
+            - <title>WASP</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

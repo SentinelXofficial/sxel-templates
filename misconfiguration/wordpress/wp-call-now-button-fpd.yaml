@@ -1,0 +1,19 @@
+id: wp-call-now-button-fpd
+brief:
+    title: WordPress Call Now Button - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Plugin Call Now Button files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - fpd
+        - call-now-button
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/call-now-button/call-now-button.php'
+        - '{{BaseURL}}/wp-content/plugins/call-now-button/src/renderers/noop/class-nooprenderer.php'
+      signs: []

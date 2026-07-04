@@ -1,0 +1,24 @@
+id: eset-phish
+brief:
+    title: eset phishing Detection
+    by: rxerium
+    level: info
+    about: A eset phishing website was detected
+    label:
+        - phishing
+        - eset
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Malware Protection & Internet Security &#124; ESET
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

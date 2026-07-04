@@ -1,0 +1,15 @@
+id: wp-twentysixteen-fpd
+brief:
+    title: WordPress Twenty Sixteen - Full Path Disclosure
+    by: theamanrawat
+    level: low
+    about: WordPress Twenty Sixteen theme files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - debug
+        - wordpress
+        - fpd
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/themes/twentysixteen/functions.php'
+      signs: []

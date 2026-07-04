@@ -1,0 +1,29 @@
+id: monitorix-exposure
+brief:
+    title: Monitorix Panel - Detect
+    by: geeknik
+    level: info
+    about: Monitorix panel was detected.
+    label:
+        - monitorix
+        - exposure
+        - logs
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/monitorix-cgi/monitorix.cgi?mode=localhost&graph=all&when=1day'
+      signs:
+        - "on": word
+          has:
+            - <!-- graph table begins -->
+            - Global kernel usage</b>
+            - Kernel usage per processor</b>
+            - <!-- graph table ends -->
+            - 1day.png'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,19 @@
+id: tinytiny-rss-redirect
+brief:
+    title: TinyTiny RSS Open Redirect
+    by: DhiyaneshDk
+    level: low
+    about: Detected an open redirect vulnerability in Tiny Tiny RSS where the return parameter in public.php was abused to redirect users to an attacker-controlled external URL after the authentication flow.
+    label:
+        - redirect
+        - tiny-tiny
+        - rss
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/public.php?return=http%3a%2f%2finteract.sh%2f&op=login&login=password=&profile=0'
+      signs:
+        - "on": status
+          status:
+            - 302
+            - 301

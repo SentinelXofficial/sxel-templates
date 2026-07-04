@@ -1,0 +1,21 @@
+id: sql-server-reportviewer
+brief:
+    title: SQL Server ReportViewer - Exposure
+    by: kazet
+    level: high
+    about: SQL Server ReportViewer page exposed.
+    label:
+        - misconfig
+        - sql
+        - report
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Reports/Pages/Folder.aspx'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ReportServer/Pages/Folder.aspx'
+      signs: []

@@ -1,0 +1,25 @@
+id: xbox-phish
+brief:
+    title: Xbox phishing Detection
+    by: rxerium
+    level: info
+    about: An Xbox phishing website was detected
+    label:
+        - phishing
+        - xbox
+        - microsoft
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Xbox Official Site: Play Games Anywhere | Xbox'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

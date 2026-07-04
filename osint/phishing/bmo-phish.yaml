@@ -1,0 +1,26 @@
+id: bmo-phish
+brief:
+    title: BMO phishing Detection
+    by: rxerium
+    level: info
+    about: A BMO phishing website was detected
+    label:
+        - phishing
+        - bmo
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - BMO
+            - We're here to help! BMO offers a wide range of personal and business banking services, including bank accounts, mortgages, credit cards, loans and more.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

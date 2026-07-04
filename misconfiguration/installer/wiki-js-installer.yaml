@@ -1,0 +1,25 @@
+id: wiki-js-installer
+brief:
+    title: Wiki.js Setup - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Checks for the presence of a Wiki.js Setup Page.
+    label:
+        - install
+        - wiki-js
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Wiki.js Setup</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

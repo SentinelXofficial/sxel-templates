@@ -1,0 +1,27 @@
+id: firebase-debug-log
+brief:
+    title: Firebase Debug Log File Exposure
+    by: Hardik-Solanki
+    level: low
+    about: Firebase debug log file was exposed.
+    label:
+        - exposure
+        - firebase
+        - logs
+        - debug
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/firebase-debug.log'
+      signs:
+        - "on": word
+          has:
+            - '[debug]'
+            - firebase
+            - googleapis.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

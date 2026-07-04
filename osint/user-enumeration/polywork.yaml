@@ -1,0 +1,24 @@
+id: polywork
+brief:
+    title: Polywork User Name Information - Detect
+    by: olearycrew
+    level: info
+    about: Polywork user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - polywork
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://polywork.com/{{user}}
+      signs:
+        - "on": word
+          has:
+            - profile on Polywork
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

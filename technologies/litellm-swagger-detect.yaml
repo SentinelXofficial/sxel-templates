@@ -1,0 +1,26 @@
+id: litellm-swagger-detect
+brief:
+    title: LiteLLM API - Swagger UI Detection
+    by: rxerium
+    level: info
+    about: Detects exposed LiteLLM API Swagger UI interface. LiteLLM is a unified API for 100+ LLM providers (OpenAI, Azure, Anthropic, etc.).
+    label:
+        - tech
+        - litellm
+        - swagger
+        - api
+        - ai
+        - llm
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>LiteLLM API - Swagger UI
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

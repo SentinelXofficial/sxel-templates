@@ -1,0 +1,30 @@
+id: fuji-xerox-default-login
+brief:
+    title: Fuji Xerox ApeosPort - Default Login
+    by: Morgan Robertson
+    level: high
+    about: 'This template checks for the default credentials (username: 11111, password: x-admin) on Fuji Xerox ApeosPort series printers. If the credentials are valid, the response will have a 200 HTTP status...'
+    label:
+        - default-login
+        - fuji
+        - fuji-xerox
+        - printer
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/prop.htm'
+      head:
+        Authorization: Basic MTExMTE6eC1hZG1pbg==
+        Connection: close
+      signs:
+        - "on": word
+          has:
+            - Configuration Overview
+            - Description
+            - System Administrator Settings
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

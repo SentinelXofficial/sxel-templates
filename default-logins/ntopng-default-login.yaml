@@ -1,0 +1,27 @@
+id: ntopng-default-login
+brief:
+    title: ntopng - Default Login
+    by: 0x_Akoko
+    level: high
+    about: Detected the ntopng network traffic monitoring tool was found to be using default credentials (admin:admin). An attacker could have gained full administrative access to network traffic data, flow a...
+    label:
+        - ntopng
+        - default-login
+        - auth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/authorize.html'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: user={{username}}&password={{password}}&referer=%2F
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

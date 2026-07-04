@@ -1,0 +1,16 @@
+id: fastly-token
+brief:
+    title: Fastly API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - fastly
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,28 @@
+id: facefusion-panel
+brief:
+    title: FaceFusion Panel - Detect
+    by: rxerium
+    level: info
+    about: FaceFusion panel was detected. FaceFusion is a next-generation face swapper and enhancer.
+    label:
+        - panel
+        - facefusion
+        - ai
+        - face-swap
+        - deepfake
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - FaceFusion
+            - _app.config.js
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

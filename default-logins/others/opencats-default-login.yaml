@@ -1,0 +1,29 @@
+id: opencats-default-login
+brief:
+    title: OpenCATS - Default Login
+    by: arafatansari
+    level: high
+    about: OpenCATS contains a default admin login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - default-login
+        - opencats
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/index.php?m=login&a=attemptLogin'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - <title>OpenCATS - Home</title>
+            - CATS Administrator
+            - Dashboard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

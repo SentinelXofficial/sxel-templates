@@ -1,0 +1,17 @@
+id: wordpress-easy-wp-smtp
+brief:
+    title: Easy WP SMTP – WordPress SMTP and Email Logs' Gmail, Office 365, Outlook, Custom SMTP, and more Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/easy-wp-smtp/readme.txt'
+      signs: []

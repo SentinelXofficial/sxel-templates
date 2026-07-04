@@ -1,0 +1,14 @@
+id: mixed-passive-content
+brief:
+    title: Mixed Passive Content
+    by: Liwermor
+    level: info
+    about: This check detects if there are any passive content being loaded over HTTP instead of HTTPS.
+    label:
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

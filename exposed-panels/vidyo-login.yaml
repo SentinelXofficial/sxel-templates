@@ -1,0 +1,25 @@
+id: vidyo-login
+brief:
+    title: Vidyo Admin Login Panel - Detect
+    by: johnk3r
+    level: info
+    about: Vidyo admin login panel was detected.
+    label:
+        - panel
+        - vidyo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login.html?lang=en'
+        - '{{BaseURL}}/vr2conf/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Vidyo Admin</title>
+            - <title>VidyoRouter Configuration</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

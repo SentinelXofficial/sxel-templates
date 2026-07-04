@@ -1,0 +1,26 @@
+id: pgwatch2-db-exposure
+brief:
+    title: Pgwatch2 DBs to monitor - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: 'Pgwatch2 :: DBs to monitor Dashboard was discovered.'
+    label:
+        - dashboard
+        - exposure
+        - pgwatch2
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Databases under monitoring
+            - pgwatch2
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

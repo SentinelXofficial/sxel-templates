@@ -1,0 +1,24 @@
+id: disneyplus-phish
+brief:
+    title: disneyplus phishing Detection
+    by: rxerium
+    level: info
+    about: A disneyplus phishing website was detected
+    label:
+        - phishing
+        - disneyplus
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Disney+ | Stream new Originals, blockbusters and series
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

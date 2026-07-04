@@ -1,0 +1,34 @@
+id: springboot-httpexchanges
+brief:
+    title: Detects Springboot HTTP Exchanges Actuator
+    by: parkyoungdu
+    level: low
+    about: The exposed httpexchanges endpoint can leak recent HTTP request/response data, including URIs, headers, and status codes.
+    label:
+        - springboot
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/httpexchanges'
+        - '{{BaseURL}}/actuator/httpexchanges'
+      signs:
+        - "on": word
+          has:
+            - '"exchanges"'
+            - '"request"'
+            - '"response"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v3+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

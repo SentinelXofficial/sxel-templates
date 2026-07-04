@@ -1,0 +1,24 @@
+id: reddit
+brief:
+    title: Reddit User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Reddit user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - reddit
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.reddit.com/user/{{user}}/about/.json
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - total_karma
+          in: body
+          need: all

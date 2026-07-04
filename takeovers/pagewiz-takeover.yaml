@@ -1,0 +1,21 @@
+id: pagewiz-takeover
+brief:
+    title: Pagewiz subdomain takeover
+    by: brabbit10
+    level: high
+    about: Pagewiz takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 404 - Page Not Found
+            - Start Your New Landing Page Now!
+            - pagewiz
+          in: body
+          need: all

@@ -1,0 +1,25 @@
+id: thinkcmf-detection
+brief:
+    title: ThinkCMF Panel - Detect
+    by: pikpikcu
+    level: info
+    about: ThinkCMF panel was detected.
+    label:
+        - panel
+        - thinkcmf
+        - login
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <meta name="author" content="ThinkCMF">
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

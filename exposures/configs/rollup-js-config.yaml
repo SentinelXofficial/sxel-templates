@@ -1,0 +1,26 @@
+id: rollup-js-config
+brief:
+    title: Rollup.js Configuration - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Rollup configuration was detected.
+    label:
+        - exposure
+        - devops
+        - cicd
+        - rollupjs
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/rollup.config.js'
+      signs:
+        - "on": word
+          has:
+            - export default [
+            - 'input:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

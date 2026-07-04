@@ -1,0 +1,18 @@
+id: weglot-api-key-exposure
+brief:
+    title: Weglot API Key - Exposed
+    by: 0x_Akoko
+    level: medium
+    about: Detected Weglot API key was found exposed in a publicly accessible JavaScript file.
+    label:
+        - exposure
+        - weglot
+        - api-key
+        - secret
+        - js
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/scripts/weglot.js'
+      signs: []

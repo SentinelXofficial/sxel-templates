@@ -1,0 +1,24 @@
+id: 3dtoday
+brief:
+    title: 3dtoday User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: 3dtoday user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - 3dtoday
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://3dtoday.ru/blogs/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Блог владельца 3d-принтера
+          in: body
+          need: all

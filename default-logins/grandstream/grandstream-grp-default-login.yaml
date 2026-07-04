@@ -1,0 +1,33 @@
+id: grandstream-grp-default-login
+brief:
+    title: Grandstream GRP - Default Login
+    by: DhiyaneshDK
+    level: high
+    about: Grandstream GRP series devices use default credentials (admin/admin). The web UI login sends a SHA-256 hash of the password to /cgi-bin/access. Successful authentication returns a JSON response wit...
+    label:
+        - default-login
+        - grandstream
+        - grp
+        - iot
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/cgi-bin/access'
+      head:
+        Accept: application/json, text/plain, */*
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}'
+        X-Requested-With: XMLHttpRequest
+      body: access={{sha256("admin")}}
+      signs:
+        - "on": word
+          has:
+            - '"response":"success"'
+            - '"body":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

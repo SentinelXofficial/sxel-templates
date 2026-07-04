@@ -1,0 +1,24 @@
+id: xanga
+brief:
+    title: Xanga User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Xanga user name information check was conducted.
+    label:
+        - osint
+        - osint-blog
+        - xanga
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://{{user}}.xanga.com/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s Xanga Site | Just
+          in: body
+          need: all

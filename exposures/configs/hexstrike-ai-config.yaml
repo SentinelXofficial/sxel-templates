@@ -1,0 +1,27 @@
+id: hexstrike-ai-config
+brief:
+    title: HexStrike AI MCP Agents - Config
+    by: icarot
+    level: info
+    about: HexStrike AI MCP Agents server config page exposure.
+    label:
+        - config
+        - exposure
+        - hexstrike-ai
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/health'
+      signs:
+        - "on": word
+          has:
+            - HexStrike
+            - telemetry
+            - tools_status
+            - uptime
+            - version
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

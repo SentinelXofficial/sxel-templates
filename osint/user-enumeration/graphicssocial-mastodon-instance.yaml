@@ -1,0 +1,24 @@
+id: graphicssocial-mastodon-instance
+brief:
+    title: Graphics.social (Mastodon Instance) User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Graphics.social (Mastodon Instance) user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - graphicssocial-mastodon-instance
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://graphics.social/api/v1/accounts/lookup?acct={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - display_name
+          in: body
+          need: all

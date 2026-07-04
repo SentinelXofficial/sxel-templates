@@ -1,0 +1,24 @@
+id: spiceworks
+brief:
+    title: SpiceWorks User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: SpiceWorks user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - spiceworks
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://community.spiceworks.com/people/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Portfolio of IT Projects - Spiceworks
+          in: body
+          need: all

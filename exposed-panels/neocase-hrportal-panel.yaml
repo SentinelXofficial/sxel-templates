@@ -1,0 +1,17 @@
+id: neocase-hrportal-panel
+brief:
+    title: Neocase HR Portal Login Panel - Detect
+    by: righettod
+    level: info
+    about: Neocase HR Portal login panel was detected.
+    label:
+        - panel
+        - neocase
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

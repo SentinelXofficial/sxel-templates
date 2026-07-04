@@ -1,0 +1,32 @@
+id: cobbler-version
+brief:
+    title: Cobbler Version Detection
+    by: c-sh0
+    level: info
+    about: Obtain cobbler version information
+    label:
+        - tech
+        - cobbler
+        - api
+        - discovery
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/cobbler_api'
+      head:
+        Content-Type: text/xml
+      body: |
+        <?xml version='1.0'?>
+        <methodCall>
+        <methodName>extended_version</methodName>
+        <params></params>
+        </methodCall>
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <name>version</name>
+          in: body
+          need: all

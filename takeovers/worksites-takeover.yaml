@@ -1,0 +1,24 @@
+id: worksites-takeover
+brief:
+    title: Worksites Takeover Detection
+    by: melbadry9
+    level: high
+    about: Worksites takeover was detected.
+    label:
+        - takeover
+        - dns
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Company Not Found
+            - worksites.net
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

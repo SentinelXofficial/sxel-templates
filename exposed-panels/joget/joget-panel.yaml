@@ -1,0 +1,23 @@
+id: joget-panel
+brief:
+    title: Joget Panel - Detect
+    by: Podalirius
+    level: info
+    about: Joget panel was detected.
+    label:
+        - panel
+        - joget
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jw/web/;'
+      signs:
+        - "on": word
+          has:
+            - System Error
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 500

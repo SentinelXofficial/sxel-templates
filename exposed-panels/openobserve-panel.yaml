@@ -1,0 +1,16 @@
+id: openobserve-panel
+brief:
+    title: OpenObserve Login Panel - Detect
+    by: righettod
+    level: info
+    about: OpenObserve products was detected.
+    label:
+        - panel
+        - openobserve
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web/login'
+      signs: []

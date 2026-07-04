@@ -1,0 +1,25 @@
+id: liferay-jsonws
+brief:
+    title: Liferay /api/jsonws - API Exposed
+    by: DhiyaneshDk
+    level: low
+    about: Liferay /api/jsonws - API is Exposed.
+    label:
+        - liferay
+        - exposure
+        - api
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/jsonws'
+      signs:
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

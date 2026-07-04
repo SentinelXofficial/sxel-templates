@@ -1,0 +1,20 @@
+id: api-googleplayablelocations
+brief:
+    title: Google Playable Locations API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - playable
+        - locations
+moves:
+    - verb: GET
+      to:
+        - https://playablelocations.googleapis.com/v3:samplePlayableLocations?key={{token}}
+      signs:
+        - "on": word
+          has:
+            - error
+          in: body

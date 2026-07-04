@@ -1,0 +1,26 @@
+id: flowise-panel
+brief:
+    title: Flowise Panel - Detect
+    by: rxerium
+    level: info
+    about: Flowise panel was detected. Flowise is an open-source drag-and-drop LLM flow builderand AI agent platform. Exposed instances may reveal AI workflow configurations, API keys, and connected data sour...
+    label:
+        - panel
+        - flowise
+        - llm
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Flowise - Build AI Agents, Visually</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

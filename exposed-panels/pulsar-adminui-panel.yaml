@@ -1,0 +1,26 @@
+id: pulsar-adminui-panel
+brief:
+    title: Pulsar Admin UI Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Pulsar admin UI panel was detected.
+    label:
+        - panel
+        - pulsar
+        - pulsarui
+        - admin
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/login?redirect=%2F'
+      signs:
+        - "on": word
+          has:
+            - Pulsar Admin UI
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

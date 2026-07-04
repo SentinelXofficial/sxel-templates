@@ -1,0 +1,37 @@
+id: elasticsearch
+brief:
+    title: ElasticSearch Information Disclosure
+    by: Shine
+    level: low
+    about: Internal information is exposed in elasticsearch to external users.
+    label:
+        - elastic
+        - unauth
+        - elasticsearch
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?pretty'
+        - '{{BaseURL}}/_cat/indices?v'
+        - '{{BaseURL}}/_all/_search'
+        - '{{BaseURL}}/_cluster/health?pretty'
+      signs:
+        - "on": word
+          has:
+            - '"took":'
+            - '"number" :'
+            - '"number_of_nodes"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.api+json
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

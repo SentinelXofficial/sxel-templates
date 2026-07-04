@@ -1,0 +1,24 @@
+id: weiphp-panel
+brief:
+    title: Weiphp Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Weiphp panel was detected.
+    label:
+        - panel
+        - weiphp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php'
+      signs:
+        - "on": word
+          has:
+            - _blank">WeiPHP
+            - /weiphp.css?
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

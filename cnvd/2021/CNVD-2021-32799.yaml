@@ -1,0 +1,34 @@
+id: CNVD-2021-32799
+brief:
+    title: 360 Xintianqing - SQL Injection
+    by: SleepingBag945
+    level: high
+    about: The Tianqing Terminal Security Management System, designed for government and enterprise use, faces a SQL injection vulnerability. This flaw could enable attackers to access sensitive database info...
+    label:
+        - cnvd2021
+        - cnvd
+        - "360"
+        - xintianqing
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/dp/rptsvcsyncpoint?ccid=1'
+      signs:
+        - "on": word
+          has:
+            - '"reason":'
+            - '"success"'
+            - '"antiadwa":'
+            - '"clientupgrade":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,21 @@
+id: dotcms-admin-panel
+brief:
+    title: dotAdmin Login Panel- Detect
+    by: impramodsargar
+    level: info
+    about: dotAdmin login panel was detected.
+    label:
+        - panel
+        - dotcms
+        - cms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dotAdmin/'
+      signs:
+        - "on": word
+          has:
+            - <title>dotCMS Content Management Platform</title>
+          in: body
+          need: all

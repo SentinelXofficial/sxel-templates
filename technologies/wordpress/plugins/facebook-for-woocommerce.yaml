@@ -1,0 +1,17 @@
+id: wordpress-facebook-for-woocommerce
+brief:
+    title: Facebook for WooCommerce Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/facebook-for-woocommerce/readme.txt'
+      signs: []

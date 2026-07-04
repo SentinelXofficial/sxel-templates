@@ -1,0 +1,29 @@
+id: sapfiori-panel
+brief:
+    title: SAP Fiori Login Panel - Detect
+    by: righettod
+    level: info
+    about: SAP Fiori login panel was detected.
+    label:
+        - panel
+        - sap
+        - fiori
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/fiori'
+        - '{{BaseURL}}/irj/portal/fiori'
+      signs:
+        - "on": word
+          has:
+            - fioriLogin
+            - action="/fiori"
+          in: body
+          need: all
+        - "on": word
+          has:
+            - UIPPortalPath
+            - /irj/portal/fiori
+          in: body
+          need: all

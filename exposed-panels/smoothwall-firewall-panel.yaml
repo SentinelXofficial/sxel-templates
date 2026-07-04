@@ -1,0 +1,24 @@
+id: smoothwall-firewall-panel
+brief:
+    title: Smoothwall Firewall - Login Panel
+    by: rxerium
+    level: info
+    about: Smoothwall is a UK-based firewall and web filtering appliance commonly deployed in schools, local authorities, and enterprises for internet safety and network security management.
+    label:
+        - panel
+        - smoothwall
+        - firewall
+        - vpn
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Smoothwall
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

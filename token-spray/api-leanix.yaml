@@ -1,0 +1,23 @@
+id: api-leanix
+brief:
+    title: LeanIX API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - leanix
+moves:
+    - verb: GET
+      to:
+        - https://us.leanix.net/services/integration-api/v1/examples/starterExample
+        - https://eu.leanix.net/services/integration-api/v1/examples/starterExample
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"input":'
+            - '"connectorType":'
+          in: body
+          need: all

@@ -1,0 +1,27 @@
+id: mofi4500-default-login
+brief:
+    title: MOFI4500-4GXeLTE-V2 Default Login
+    by: pikpikcu
+    level: high
+    about: Mofi Network MOFI4500-4GXELTE wireless router default admin credentials were discovered.
+    label:
+        - mofi
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/cgi-bin/luci/'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username=root&password=admin
+      signs:
+        - "on": word
+          has:
+            - MOFI4500 - General - LuCI
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

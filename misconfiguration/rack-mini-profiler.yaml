@@ -1,0 +1,25 @@
+id: rack-mini-profiler
+brief:
+    title: rack-mini-profiler - Environment Information Disclosure
+    by: vzamanillo
+    level: high
+    about: rack-mini-profiler is prone to environmental information disclosure which could help an attacker formulate additional attacks.
+    label:
+        - config
+        - debug
+        - rails
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?pp=env'
+      signs:
+        - "on": word
+          has:
+            - Rack Environment
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

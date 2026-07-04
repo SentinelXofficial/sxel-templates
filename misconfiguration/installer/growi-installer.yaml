@@ -1,0 +1,25 @@
+id: growi-installer
+brief:
+    title: GROWI Installer - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Checks for the presence of a GROWI Installer.
+    label:
+        - install
+        - growi
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/installer'
+      signs:
+        - "on": word
+          has:
+            - <title>Installer - GROWI</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

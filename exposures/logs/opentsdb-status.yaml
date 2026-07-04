@@ -1,0 +1,31 @@
+id: opentsdb-status
+brief:
+    title: OpenTSDB - Detect
+    by: pussycat0x
+    level: low
+    about: OpenTSDB stats exposed which is commonly used in monitoring and observability scenarios where tracking and analyzing the performance of systems, applications, and infrastructure over time is essent...
+    label:
+        - opentsdb
+        - exposure
+        - logs
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/stats?json'
+      signs:
+        - "on": word
+          has:
+            - tsd.connectionmgr.connections
+            - tsd.http
+            - host
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,22 @@
+id: api-strava
+brief:
+    title: Strava API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - strava
+moves:
+    - verb: GET
+      to:
+        - https://www.strava.com/api/v3/athlete
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"id"'
+            - '"username"'
+          in: body
+          need: all

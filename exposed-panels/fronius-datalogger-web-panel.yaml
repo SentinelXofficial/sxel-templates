@@ -1,0 +1,28 @@
+id: fronius-datalogger-web-panel
+brief:
+    title: Fronius Datalogger Web - Login Panel
+    by: rxerium
+    level: info
+    about: Fronius Datalogger Web is a web interface for Fronius solar inverter data loggers, providing real-time monitoring and configuration of photovoltaic systems.
+    label:
+        - panel
+        - fronius
+        - ics
+        - scada
+        - solar
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Fronius Datalogger Web
+            - Fronius
+            - datalogger
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

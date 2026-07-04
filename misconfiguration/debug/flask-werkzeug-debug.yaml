@@ -1,0 +1,25 @@
+id: flask-werkzeug-debug
+brief:
+    title: Flask Werkzeug Debugger Exposure
+    by: DhiyaneshDk
+    level: low
+    about: Flask Werkzeug Debugger is exposed.
+    label:
+        - werkzeug
+        - exposure
+        - debug
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Werkzeug powered traceback interpreter
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 500

@@ -1,0 +1,24 @@
+id: ctflearn
+brief:
+    title: CTFLearn User Name Information - Detect
+    by: olearycrew
+    level: info
+    about: CTFLearn user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - ctflearn
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://ctflearn.com/user/{{user}}
+      signs:
+        - "on": word
+          has:
+            - Profile -  CTFlearn
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

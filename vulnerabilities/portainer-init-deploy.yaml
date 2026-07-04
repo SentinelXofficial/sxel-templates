@@ -1,0 +1,32 @@
+id: portainer-init-deploy
+brief:
+    title: Portainer - Init Deploy Discovery
+    by: princechaddha
+    level: medium
+    about: Portainer initialization deployment files were discovered.
+    label:
+        - portainer
+        - exposure
+        - docker
+        - devops
+        - disclosure
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/users/admin/check'
+      signs:
+        - "on": word
+          has:
+            - No administrator account found inside the database
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 404

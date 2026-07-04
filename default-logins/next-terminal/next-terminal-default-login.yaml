@@ -1,0 +1,29 @@
+id: next-terminal-default-login
+brief:
+    title: Next Terminal - Default Login
+    by: ritikchaddha
+    level: high
+    about: Next Terminal default login was discovered.
+    label:
+        - default-login
+        - next-terminal
+        - next
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/json
+      body: '{"username":"{{username}}","password":"{{password}}","remember":false}'
+      signs:
+        - "on": word
+          has:
+            - message":"success
+            - code":1
+            - data":"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,16 @@
+id: twilio-api-key
+brief:
+    title: Twilio API Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - twilio
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

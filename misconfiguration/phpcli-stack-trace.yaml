@@ -1,0 +1,29 @@
+id: phpcli-stack-trace
+brief:
+    title: PHP CLI Server Stack Trace
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - phpcli
+        - intrusive
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{randstr}}.php'
+      signs:
+        - "on": word
+          has:
+            - 404 Not Found
+            - <h1>Not Found</h1>
+          in: body
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 404

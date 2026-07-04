@@ -1,0 +1,23 @@
+id: dont-panic-traceback
+brief:
+    title: DON'T PANIC Traceback
+    by: ritikchaddha
+    level: low
+    about: DON'T PANIC Traceback was detected.
+    label:
+        - traceback
+        - dont-panic
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - most recent call last
+            - Traceback
+            - DON'T PANIC
+          in: body
+          need: all

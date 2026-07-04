@@ -1,0 +1,30 @@
+id: meddream-dicom-viewer-panel
+brief:
+    title: MedDream DICOM Viewer - Panel
+    by: darses
+    level: info
+    about: MedDream DICOM Viewer panel was detected.
+    label:
+        - panel
+        - meddream
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - src="js/md.main.min.
+            - unsupported-browser-msg
+          in: body
+          need: all
+        - "on": word
+          has:
+            - MEDDREAMSESSID
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

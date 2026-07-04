@@ -1,0 +1,19 @@
+id: nocodb-public-registration-enabled
+brief:
+    title: NocoDB Public Registration Enabled
+    by: pussycat0x
+    level: medium
+    about: Detected NocoDB instances that allow public user registration without requiring an invitation. This misconfiguration allows anyone to create an account on the NocoDB instance, potentially leading t...
+    label:
+        - nocodb
+        - misconfig
+        - exposure
+        - intrusive
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/v1/auth/user/signup'
+      head:
+        Content-Type: application/json
+      body: '{"email":"{{email}}","password":"{{password}}"}'
+      signs: []

@@ -1,0 +1,27 @@
+id: radius-manager-login
+brief:
+    title: Radius Manager Admininstration Control Panel Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Radius Manager Administration Control Panel login panel was detected.
+    label:
+        - panel
+        - radius
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/admin.php'
+        - '{{BaseURL}}/radiusmanager/user.php'
+        - '{{BaseURL}}/user.php'
+      signs:
+        - "on": word
+          has:
+            - <title>Radius Manager - User Control Panel</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

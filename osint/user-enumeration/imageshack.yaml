@@ -1,0 +1,24 @@
+id: imageshack
+brief:
+    title: ImageShack User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: ImageShack user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - imageshack
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://imageshack.com/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s Images</title>
+          in: body
+          need: all

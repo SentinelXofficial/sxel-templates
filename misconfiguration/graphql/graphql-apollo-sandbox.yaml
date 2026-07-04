@@ -1,0 +1,19 @@
+id: apollo-sandbox-ui-exposed
+brief:
+    title: Apollo Sandbox UI - Exposed
+    by: Hamza Sahin
+    level: low
+    about: Detects the Apollo Sandbox developer interface exposed in production environments, which could facilitate schema discovery or testing by unauthorized users.
+    label:
+        - apollo
+        - misconfig
+        - exposure
+        - graphql
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Accept: text/html
+      signs: []

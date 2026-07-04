@@ -1,0 +1,16 @@
+id: thruk-panel
+brief:
+    title: Thruk Login Panel - Detect
+    by: ffffffff0x
+    level: info
+    about: Thruk Monitoring panel was detected.
+    label:
+        - thruk
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

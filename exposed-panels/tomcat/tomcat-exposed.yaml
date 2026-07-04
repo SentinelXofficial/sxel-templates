@@ -1,0 +1,21 @@
+id: tomcat-exposed
+brief:
+    title: Tomcat Exposed - Detect
+    by: Podalirius
+    level: info
+    about: An Apache Tomcat instance was detected.
+    label:
+        - tomcat
+        - panel
+        - apache
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/host-manager/html'
+        - '{{BaseURL}}/manager/status'
+        - '{{BaseURL}}/manager/html'
+        - '{{BaseURL}}/docs/'
+        - '{{BaseURL}}/examples/'
+      signs: []

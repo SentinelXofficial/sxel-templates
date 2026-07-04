@@ -1,0 +1,31 @@
+id: fastcgi-echo
+brief:
+    title: FastCGI Echo Endpoint Script - Detect
+    by: powerexploit
+    level: info
+    about: FastCGI echo endpoint script was detected, which lists several kinds of sensitive information such as port numbers, server software versions, port numbers, and IP addresses.
+    label:
+        - exposure
+        - logs
+        - oracle
+        - fastcgi
+        - edb
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/fcgi-bin/echo'
+      signs:
+        - "on": word
+          has:
+            - <title>FastCGI echo</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

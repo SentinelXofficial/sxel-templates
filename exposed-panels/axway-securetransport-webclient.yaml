@@ -1,0 +1,25 @@
+id: axway-securetransport-webclient
+brief:
+    title: Axway SecureTransport Web Client Panel - Detect
+    by: righettod
+    level: info
+    about: AXWAY Secure Transport Web Client panel was detected.
+    label:
+        - panel
+        - axway
+        - securetransport
+        - webclient
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/html/skin/ric/C/config/default.config.json'
+      signs:
+        - "on": word
+          has:
+            - 'header": "ST Web Client'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

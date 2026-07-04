@@ -1,0 +1,24 @@
+id: 1001mem
+brief:
+    title: 1001mem User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: 1001mem user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - 1001mem
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://1001mem.ru/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| Новости - Приколы - Комиксы - Мемы'
+          in: body
+          need: all

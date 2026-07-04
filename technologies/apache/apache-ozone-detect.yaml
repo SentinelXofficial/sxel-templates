@@ -1,0 +1,25 @@
+id: apache-ozone-detect
+brief:
+    title: Apache Ozone - Detect
+    by: icarot
+    level: info
+    about: Detects a Apache Ozone web application, a scalable, redundant, and distributed object store for Hadoop and Cloud-native environments.
+    label:
+        - tech
+        - ozone
+        - apache
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/static/'
+      signs:
+        - "on": word
+          has:
+            - Apache Ozone</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

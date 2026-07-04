@@ -1,0 +1,26 @@
+id: wp-acf-fpd
+brief:
+    title: Advanced Custom Fields (ACF) - Full Path Disclosure
+    by: theamanrawat
+    level: low
+    about: Advanced Custom Fields (ACF) for WordPress contains a full path disclosure vulnerability due to improper access restrictions in its source files, allowing unauthenticated attackers to retrieve full...
+    label:
+        - debug
+        - wordpress
+        - wp
+        - wp-plugin
+        - acf
+        - fpd
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/advanced-custom-fields/includes/fields/class-acf-field-accordion.php'
+      signs:
+        - "on": word
+          has:
+            - text/html
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

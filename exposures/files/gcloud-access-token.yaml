@@ -1,0 +1,33 @@
+id: gcloud-access-token
+brief:
+    title: Google Cloud Access Token
+    by: DhiyaneshDK
+    level: medium
+    about: Internal Google Cloud access tokens are exposed.
+    label:
+        - google
+        - cloud
+        - devops
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/access_tokens.db'
+        - '{{BaseURL}}/.config/gcloud/access_tokens.db'
+      signs:
+        - "on": word
+          has:
+            - SQLite
+            - access_token
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

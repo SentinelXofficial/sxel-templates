@@ -1,0 +1,23 @@
+id: fastpanel-hosting-control-panel
+brief:
+    title: FASTPANEL Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: FASTPANEL login panel was detected.
+    label:
+        - panel
+        - fastpanel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/authentication'
+      signs:
+        - "on": word
+          has:
+            - FASTPANEL HOSTING CONTROL
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

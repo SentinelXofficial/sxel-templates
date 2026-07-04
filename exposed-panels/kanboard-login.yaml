@@ -1,0 +1,23 @@
+id: kanboard-login
+brief:
+    title: Kanboard Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Kanboard login panel was detected.
+    label:
+        - panel
+        - kanboard
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - /?controller=UserAjaxController&amp;action=status
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

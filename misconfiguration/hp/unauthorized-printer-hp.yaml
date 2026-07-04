@@ -1,0 +1,21 @@
+id: unauthorized-printer-hp
+brief:
+    title: Unauthorized HP office pro printer
+    by: pussycat0x
+    level: high
+    about: HP office pro printer web access is exposed.
+    label:
+        - hp
+        - iot
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/hp/device/webAccess/index.htm?content=security'
+      signs:
+        - "on": status
+          status:
+            - 200

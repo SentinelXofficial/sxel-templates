@@ -1,0 +1,31 @@
+id: sel-rtac-panel
+brief:
+    title: SEL Real-Time Automation Controller - Login Panel
+    by: rxerium
+    level: info
+    about: Schweitzer Engineering Laboratories (SEL) Real-Time Automation Controller (RTAC)
+    label:
+        - panel
+        - scada
+        - ics
+        - sel
+        - rtac
+        - schweitzer
+        - energy
+        - utilities
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>SEL-RTAC</title>
+            - selinc.com
+            - SEL-RTAC
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: kubernetes-operational-view-detect
+brief:
+    title: Kubernetes Operational View Detect
+    by: idealphase
+    level: info
+    about: ""
+    label:
+        - tech
+        - k8s
+        - kubernetes
+        - devops
+        - kube
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Kubernetes Operational View
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: vultr-phish
+brief:
+    title: vultr phishing Detection
+    by: rxerium
+    level: info
+    about: A vultr phishing website was detected
+    label:
+        - phishing
+        - vultr
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Log In to your Vultr Account - Vultr.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

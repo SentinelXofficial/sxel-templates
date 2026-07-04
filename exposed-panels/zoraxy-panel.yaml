@@ -1,0 +1,16 @@
+id: zoraxy-panel
+brief:
+    title: Zoraxy Login Panel - Detect
+    by: righettod
+    level: info
+    about: Zoraxy products was detected.
+    label:
+        - panel
+        - zoraxy
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web/login.html'
+      signs: []

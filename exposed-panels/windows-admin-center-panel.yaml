@@ -1,0 +1,24 @@
+id: windows-admin-center-panel
+brief:
+    title: Windows Admin Center Panel - Detection
+    by: darses
+    level: info
+    about: Detect Windows Admin Center Panel web interface.
+    label:
+        - detect
+        - windows
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 403
+        - "on": word
+          has:
+            - Windows Admin Center</title>
+          in: body
+          need: all

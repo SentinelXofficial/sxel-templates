@@ -1,0 +1,25 @@
+id: fuji-xerox-printer-detect
+brief:
+    title: Fuji Xerox Printer Panel - Detect
+    by: gy741
+    level: info
+    about: Fuji Xerox printer panel was detected.
+    label:
+        - iot
+        - panel
+        - fuji
+        - printer
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/hdstat.htm'
+      signs:
+        - "on": word
+          has:
+            - Fuji Xerox Co., Ltd
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

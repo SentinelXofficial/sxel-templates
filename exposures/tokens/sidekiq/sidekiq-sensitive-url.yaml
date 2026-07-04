@@ -1,0 +1,16 @@
+id: sidekiq-sensitive-url
+brief:
+    title: Sidekiq Sensitive URL
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - sidekiq
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

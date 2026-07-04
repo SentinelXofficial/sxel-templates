@@ -1,0 +1,16 @@
+id: exposed-pki-cert
+brief:
+    title: Exposed Internal PKI Infrastructure - Detect
+    by: nullenc0de
+    level: high
+    about: Detects exposed internal PKI infrastructure including CRL distribution points and OCSP responders
+    label:
+        - pki
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs: []

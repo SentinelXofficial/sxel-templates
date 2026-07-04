@@ -1,0 +1,30 @@
+id: readarr-dashboard-unauth
+brief:
+    title: Readarr Dashboard - Unauthenticated
+    by: ProjectDiscoveryAI
+    level: medium
+    about: Exposure of Readarr dashboard which can lead to sensitive information disclosure.
+    label:
+        - readarr
+        - dashboard
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Readarr</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Login - Readarr
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

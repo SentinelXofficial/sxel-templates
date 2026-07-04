@@ -1,0 +1,18 @@
+id: wp-beaver-builder-lite-version-fpd
+brief:
+    title: Beaver Builder Page Builder - Full Path Disclosure
+    by: theamanrawat
+    level: low
+    about: Beaver Builder Page Builder WordPress plugin contains a full path disclosure vulnerability due to improper access restrictions in its source files, allowing unauthenticated attackers to retrieve fu...
+    label:
+        - debug
+        - wordpress
+        - wp
+        - wp-plugin
+        - beaver-builder-lite-version
+        - fpd
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/beaver-builder-lite-version/fl-builder.php'
+      signs: []

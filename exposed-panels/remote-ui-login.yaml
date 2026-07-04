@@ -1,0 +1,23 @@
+id: remote-ui-login
+brief:
+    title: Canon Remote UI Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Canon Remote UI login panel was detected.
+    label:
+        - panel
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - <th>System Manager ID:</th>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

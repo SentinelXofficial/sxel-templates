@@ -1,0 +1,28 @@
+id: gitlab-user-enum
+brief:
+    title: GitLab - User Enumeration
+    by: Suman_Kar
+    level: info
+    about: ""
+    label:
+        - gitlab
+        - enum
+        - misconfig
+        - fuzz
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/users/{{user}}/exists'
+      head:
+        Accept: application/json, text/plain, */*
+        Referer: '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

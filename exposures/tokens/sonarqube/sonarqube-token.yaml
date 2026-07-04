@@ -1,0 +1,16 @@
+id: sonarqube-token
+brief:
+    title: SonarQube Token Disclosure
+    by: Ice3man
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - sonarqube
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

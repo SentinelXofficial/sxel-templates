@@ -1,0 +1,18 @@
+id: evilginx
+brief:
+    title: EvilGinx - Detect
+    by: pussycat0x
+    level: info
+    about: Evilginx2 is a man-in-the-middle attack framework used for phishing login credentials along with session cookies which in turn allows bypassing 2-factor authentication protection.
+    label:
+        - tech
+        - evilginx
+        - c2
+        - phishing
+        - panel
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs: []

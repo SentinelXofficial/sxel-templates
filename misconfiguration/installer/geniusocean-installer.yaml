@@ -1,0 +1,31 @@
+id: geniusocean-installer
+brief:
+    title: GeniusOcean Installer Exposure
+    by: DhiyaneshDk
+    level: high
+    about: GeniusOcean is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - geniusocean
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/?step=1'
+      signs:
+        - "on": word
+          has:
+            - GeniusOcean - Script Installer
+            - GeniusOcean Installer
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

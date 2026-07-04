@@ -1,0 +1,24 @@
+id: resumes-actorsaccess
+brief:
+    title: Resumes actorsaccess User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Resumes actorsaccess user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - resumes-actorsaccess
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://resumes.actorsaccess.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- Resume | Actors Access</title>'
+          in: body
+          need: all

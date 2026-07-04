@@ -1,0 +1,24 @@
+id: solikick
+brief:
+    title: SoliKick User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: SoliKick user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - solikick
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://solikick.com/-{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - page_guest_users-view
+          in: body
+          need: all

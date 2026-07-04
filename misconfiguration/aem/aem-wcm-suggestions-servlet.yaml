@@ -1,0 +1,26 @@
+id: aem-wcm-suggestions-servlet
+brief:
+    title: AEM WCM Suggestions Servlet
+    by: DhiyaneshDk
+    level: low
+    about: AEM WCM Suggestions Servlet is exposed.
+    label:
+        - aem
+        - misconfig
+        - intrusive
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/bin/wcm/contentfinder/connector/suggestions.json;%0aOJh.css?query_term=path%3a/&pre={{randstr}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '{{randstr}}'
+            - '"results":'
+            - '"suggestions":'
+          in: body
+          need: all

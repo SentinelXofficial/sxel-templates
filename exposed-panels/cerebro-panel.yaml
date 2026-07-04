@@ -1,0 +1,19 @@
+id: cerebro-panel
+brief:
+    title: Cerebro Login Panel - Detect
+    by: huowuzhao
+    level: info
+    about: Cerebro login panel was detected.
+    label:
+        - panel
+        - cerebro
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Cerebro</title>
+          in: body

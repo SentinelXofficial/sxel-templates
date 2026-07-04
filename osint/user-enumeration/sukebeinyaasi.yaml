@@ -1,0 +1,24 @@
+id: sukebeinyaasi
+brief:
+    title: Sukebei.nyaa.si User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Sukebei.nyaa.si user name information check was conducted.
+    label:
+        - osint
+        - osint-video
+        - sukebeinyaasi
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://sukebei.nyaa.si/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '''s torrents'
+          in: body
+          need: all

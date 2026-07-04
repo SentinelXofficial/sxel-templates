@@ -1,0 +1,24 @@
+id: mastodon-tootcommunity
+brief:
+    title: Mastodon-Toot.Community User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mastodon-Toot.Community user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastodon-tootcommunity
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://toot.community/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '@toot.community) - toot.community</title>'
+          in: body
+          need: all

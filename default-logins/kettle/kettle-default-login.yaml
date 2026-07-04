@@ -1,0 +1,26 @@
+id: kettle-default-login
+brief:
+    title: Kettle - Default Login
+    by: For3stCo1d
+    level: medium
+    about: Kettle contains a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - default-login
+        - kettle
+        - vuln
+    score: CVSS:5.8
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+      signs:
+        - "on": word
+          has:
+            - Kettle slave server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

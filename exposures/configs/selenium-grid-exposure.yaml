@@ -1,0 +1,17 @@
+id: selenium-grid-exposure
+brief:
+    title: Selenium Grid Exposure
+    by: 0x_Akoko
+    level: high
+    about: Detected Selenium Grid console without authentication, exposing internal network IPs, container names, OS details, software versions, and browser node configurations. Attackers could abuse this for...
+    label:
+        - selenium
+        - grid
+        - testing
+        - exposure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wd/hub/status'
+      signs: []

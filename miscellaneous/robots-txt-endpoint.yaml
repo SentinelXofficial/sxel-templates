@@ -1,0 +1,29 @@
+id: robots-txt-endpoint
+brief:
+    title: robots.txt endpoint prober
+    by: CasperGN
+    level: info
+    about: ""
+    label:
+        - miscellaneous
+        - misc
+        - generic
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/robots.txt'
+      signs:
+        - "on": word
+          has:
+            - 'User-agent:'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

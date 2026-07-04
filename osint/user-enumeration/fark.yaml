@@ -1,0 +1,24 @@
+id: fark
+brief:
+    title: Fark User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Fark user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - fark
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.fark.com/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Fark account number
+          in: body
+          need: all

@@ -1,0 +1,28 @@
+id: cloud-metadata
+brief:
+    title: GCP/AWS Metadata Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: GCP/AWS Metadata is exposed.
+    label:
+        - misconfig
+        - exposure
+        - devops
+        - cloud
+        - aws
+        - gcp
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '"instance_metadata":'
+            - '"cloud":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,21 @@
+id: default-asp-net-page
+brief:
+    title: ASP.Net Default Page
+    by: dhiyaneshDk
+    level: info
+    about: Detected default ASP.NET application pages including both traditional and modern versions.
+    label:
+        - tech
+        - asp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Home Page - My ASP.NET Application
+            - ASP.NET is a free web framework for building great Web sites and Web applications
+            - My ASP.NET Application
+          in: body

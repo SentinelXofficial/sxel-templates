@@ -1,0 +1,16 @@
+id: openreplay-rum-detect
+brief:
+    title: OpenReplay RUM - Tech Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects OpenReplay (formerly Asayer) Session Replay & RUM SDK implementation.
+    label:
+        - tech
+        - discovery
+        - rum
+        - openreplay
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

@@ -1,0 +1,28 @@
+id: pega-detect
+brief:
+    title: Pega Infinity Detection
+    by: sshell
+    level: info
+    about: ""
+    label:
+        - tech
+        - pega
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/prweb/PRRestService/unauthenticatedAPI/v1/docs'
+      signs:
+        - "on": word
+          has:
+            - '"description" :"The Pega API'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

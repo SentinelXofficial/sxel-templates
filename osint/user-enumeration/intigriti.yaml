@@ -1,0 +1,30 @@
+id: intigriti
+brief:
+    title: Intigriti User Name Information - Detect
+    by: philippedelteil
+    level: info
+    about: Intigriti user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - intigriti
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://app.intigriti.com/profile/{{user}}
+      signs:
+        - "on": word
+          has:
+            - Rep. all time</h5>
+            - <title>{{user}} - Intigriti</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - We didn't find what you're looking for
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

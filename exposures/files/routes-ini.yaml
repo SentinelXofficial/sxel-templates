@@ -1,0 +1,29 @@
+id: routes-ini
+brief:
+    title: routes.ini File Exposure
+    by: geeknik
+    level: info
+    about: ""
+    label:
+        - routes
+        - config
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - defaults.action
+            - routes.admin
+          in: body
+          need: all
+        - "on": word
+          has:
+            - '[routes]'
+            - GET /
+          in: body
+          need: all

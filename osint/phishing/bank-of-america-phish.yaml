@@ -1,0 +1,24 @@
+id: bank-of-america-phish
+brief:
+    title: Bank Of America phishing Detection
+    by: rxerium
+    level: info
+    about: A Bank Of America phishing website was detected
+    label:
+        - phishing
+        - BankOfAmerica
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Bank of America - Banking, Credit Cards, Loans and Merrill Investing
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

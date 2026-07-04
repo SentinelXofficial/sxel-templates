@@ -1,0 +1,33 @@
+id: apache-mod-negotiation-listing
+brief:
+    title: Apache mod_negotiation - Pseudo Directory Listing
+    by: 0x_Akoko
+    level: low
+    about: Detected Apache server with mod_negotiation and MultiViews enabled, exposing a pseudo directory listing when invalid Accept headers are sent to extensionless filenames.
+    label:
+        - apache
+        - misconfig
+        - exposure
+        - mod-negotiation
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{path}}'
+      head:
+        Accept: fake/fake
+      signs:
+        - "on": word
+          has:
+            - Available variants
+            - href=
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 406
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

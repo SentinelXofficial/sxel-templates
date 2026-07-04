@@ -1,0 +1,23 @@
+id: apiman-panel
+brief:
+    title: Apiman Login Panel
+    by: righettod
+    level: info
+    about: An Apiman instance was detected via the login redirection.
+    label:
+        - panel
+        - apiman
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/apimanui/api-manager'
+      signs:
+        - "on": word
+          has:
+            - /auth/realms/apiman
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

@@ -1,0 +1,25 @@
+id: miro-phish
+brief:
+    title: Miro phishing Detection
+    by: rxerium
+    level: info
+    about: A Miro phishing website was detected
+    label:
+        - phishing
+        - miro
+        - collaboration
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>AI Innovation Workspace | Miro
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

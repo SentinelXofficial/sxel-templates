@@ -1,0 +1,33 @@
+id: jfrog-artifactory-build-exposure
+brief:
+    title: JFrog Artifactory Build - Exposure
+    by: theamanrawat
+    level: medium
+    about: Detected exposure of build information in JFrog Artifactory via unauthenticated API endpoints. Access to these endpoints may disclose sensitive data such as build names, numbers, CI/CD pipeline det...
+    label:
+        - jfrog
+        - artifactory
+        - exposure
+        - misconfig
+        - cicd
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/artifactory/api/build'
+      signs:
+        - "on": word
+          has:
+            - '"builds"'
+            - '"uri"'
+            - '"lastStarted"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.org.jfrog
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

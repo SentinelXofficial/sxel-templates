@@ -1,0 +1,35 @@
+id: springboot-httptrace
+brief:
+    title: Detect Springboot httptrace
+    by: that_juan_
+    level: low
+    about: View recent HTTP requests and responses
+    label:
+        - springboot
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/httptrace'
+        - '{{BaseURL}}/actuator/httptrace'
+      signs:
+        - "on": word
+          has:
+            - '"traces"'
+            - '"timestamp"'
+            - '"principal"'
+            - '"session"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v1+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

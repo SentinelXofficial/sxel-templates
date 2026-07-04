@@ -1,0 +1,25 @@
+id: jboss-jbpm-admin
+brief:
+    title: JBoss jBPM Administration Console Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: JBoss jBPM Administration Console login panel was detected.
+    label:
+        - jboss
+        - panel
+        - login
+        - redhat
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jbpm-console/app/tasks.jsf'
+      signs:
+        - "on": word
+          has:
+            - JBoss jBPM Administration Console
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

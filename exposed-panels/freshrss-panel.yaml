@@ -1,0 +1,27 @@
+id: freshrss-panel
+brief:
+    title: Freshrss Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Freshrss panel has been detected.
+    label:
+        - freshrss
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - content="FreshRSS
+            - alt="FreshRSS
+            - About FreshRSS
+            - FreshRSS</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

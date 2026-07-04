@@ -1,0 +1,24 @@
+id: directum-login
+brief:
+    title: Directum Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: Directum login panel was detected.
+    label:
+        - directum
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Login.aspx'
+      signs:
+        - "on": word
+          has:
+            - DIRECTUM Login
+            - Directum Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

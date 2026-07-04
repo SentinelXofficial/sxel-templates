@@ -1,0 +1,24 @@
+id: lighttpd-placeholder-page
+brief:
+    title: Lighttpd Placeholder Page
+    by: idealphase
+    level: info
+    about: ""
+    label:
+        - tech
+        - lighttpd
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - If you find a bug in this Lighttpd package, or in Lighttpd itself
+            - <h1> Placeholder page </h1>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

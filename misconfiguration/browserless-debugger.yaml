@@ -1,0 +1,26 @@
+id: browserless-debugger
+brief:
+    title: Exposed Browserless debugger
+    by: ggranjus
+    level: medium
+    about: Browserless instance can be used to make web requests. May worth checking /workspace for juicy files.
+    label:
+        - browserless
+        - unauth
+        - debug
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>browserless debugger</title>
+            - <code>Click the ► button to run your code.</code>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

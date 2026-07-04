@@ -1,0 +1,34 @@
+id: apollo-adminservice-unauth
+brief:
+    title: Apollo Admin Service - Unauthenticated Access
+    by: j4vaovo
+    level: medium
+    about: ApolloAdminservice was able to be accessed without authentication.
+    label:
+        - misconfig
+        - unauth
+        - apollo
+        - apolloadminservice
+        - vuln
+    score: CVSS:5.8
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/apps'
+      signs:
+        - "on": word
+          has:
+            - appId
+            - orgName
+            - ownerName
+            - dataChangeCreatedBy
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

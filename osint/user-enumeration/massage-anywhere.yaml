@@ -1,0 +1,24 @@
+id: massage-anywhere
+brief:
+    title: Massage Anywhere User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Massage Anywhere user name information check was conducted.
+    label:
+        - osint
+        - osint-health
+        - massage-anywhere
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.massageanywhere.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '<title>MassageAnywhere.com Profile for '
+          in: body
+          need: all

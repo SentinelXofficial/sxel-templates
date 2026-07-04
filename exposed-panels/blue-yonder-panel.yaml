@@ -1,0 +1,18 @@
+id: blue-yonder-panel
+brief:
+    title: Blue Yonder Panel - Detect
+    by: sorrowx3
+    level: info
+    about: Blue Yonder login panel was discovered
+    label:
+        - panel
+        - login
+        - blue-yonder
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/base/home'
+      signs: []

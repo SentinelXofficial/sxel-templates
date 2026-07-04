@@ -1,0 +1,24 @@
+id: oglaszamy24hpl
+brief:
+    title: Oglaszamy24h.pl User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Oglaszamy24h.pl user name information check was conducted.
+    label:
+        - osint
+        - osint-shopping
+        - oglaszamy24hpl
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://oglaszamy24h.pl/profil,{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'Profil użytkownika:'
+          in: body
+          need: all

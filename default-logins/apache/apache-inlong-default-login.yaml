@@ -1,0 +1,35 @@
+id: apache-inlong-default-login
+brief:
+    title: Apache InLong - Default Login
+    by: icarot
+    level: high
+    about: Apache InLong server enables default admin credentials. An attacker can execute unauthorized operations.
+    label:
+        - apache
+        - inlong
+        - default-login
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/inlong/manager/api/anno/login'
+      head:
+        Content-Type: application/json
+      body: '{"username":"{{username}}","password":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - '"success":true'
+            - '"errMsg":null'
+            - '"data":true'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

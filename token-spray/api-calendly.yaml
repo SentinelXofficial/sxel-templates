@@ -1,0 +1,23 @@
+id: api-calendly
+brief:
+    title: Calendly API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - calendly
+moves:
+    - verb: GET
+      to:
+        - https://calendly.com/api/v1/users/me
+      head:
+        X-Token: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"data":'
+            - '"id":'
+            - '"email":'
+          in: body
+          need: all

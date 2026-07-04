@@ -1,0 +1,22 @@
+id: api-box
+brief:
+    title: Box API Test
+    by: daffainfo
+    level: info
+    about: File Sharing and Storage Service
+    label:
+        - token-spray
+        - box
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://api.box.com/2.0/collections'
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - 'total_count":'
+            - 'limit":'
+          in: body
+          need: all

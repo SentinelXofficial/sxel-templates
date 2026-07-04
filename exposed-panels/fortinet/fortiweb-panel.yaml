@@ -1,0 +1,26 @@
+id: fortiweb-login
+brief:
+    title: Fortinet FortiWeb Login Panel - Detect
+    by: PR3R00T
+    level: info
+    about: Fortinet FortiWeb login panel was detected.
+    label:
+        - panel
+        - fortinet
+        - fortiweb
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Please login
+            - ftnt-fortinet-grid
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

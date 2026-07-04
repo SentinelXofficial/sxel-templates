@@ -1,0 +1,19 @@
+id: wp-fastest-cache-fpd
+brief:
+    title: WordPress WP Fastest Cache Plugin - Full Path Disclosure
+    by: 0x_Akoko
+    level: info
+    about: WordPress plugin WP Fastest Cache internal file system path was disclosed through direct access to unprotected PHP files.
+    label:
+        - debug
+        - wordpress
+        - fpd
+        - wp-fastest-cache
+        - wp-plugin
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wp-fastest-cache/wpFastestCache.php'
+        - '{{BaseURL}}/wp-content/plugins/wp-fastest-cache/inc/cache.php'
+        - '{{BaseURL}}/wp-content/plugins/wp-fastest-cache/templates/timeout.php'
+      signs: []

@@ -1,0 +1,24 @@
+id: houzz
+brief:
+    title: Houzz User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Houzz user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - houzz
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.houzz.com/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Followers
+          in: body
+          need: all

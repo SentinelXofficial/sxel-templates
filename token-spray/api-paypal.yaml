@@ -1,0 +1,20 @@
+id: api-paypal
+brief:
+    title: PayPal API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - paypal
+moves:
+    - verb: GET
+      to:
+        - https://api-m.sandbox.paypal.com/v1/identity/oauth2/userinfo?schema=paypalv1.1
+      head:
+        Authorization: Bearer {{token}}
+        Content-Type: application/json
+      signs:
+        - "on": status
+          status:
+            - 200

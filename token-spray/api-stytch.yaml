@@ -1,0 +1,25 @@
+id: api-stytch
+brief:
+    title: Stytch API Test
+    by: daffainfo
+    level: info
+    about: User infrastructure for modern applications
+    label:
+        - token-spray
+        - stytch
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}https://test.stytch.com/v1/users'
+      head:
+        Authorization: Basic {{base64(id + ':' + secret)}}
+        Content-Type: application/json
+      body: '{"email": "test@stytch.com"}'
+      signs:
+        - "on": word
+          has:
+            - '"status_code":'
+            - '"request_id":'
+            - '"user_id":'
+          in: body
+          need: all

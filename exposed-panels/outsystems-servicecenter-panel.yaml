@@ -1,0 +1,23 @@
+id: outsystems-servicecenter-panel
+brief:
+    title: OutSystems Service Center Login Panel - Detect
+    by: righettod
+    level: info
+    about: OutSystems Service Center login panel was detected.
+    label:
+        - panel
+        - outsystems
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Login.aspx'
+        - '{{BaseURL}}/ServiceCenter/Login.aspx'
+      signs:
+        - "on": word
+          has:
+            - osVisitor=
+            - osVisit=
+          in: set_cookie

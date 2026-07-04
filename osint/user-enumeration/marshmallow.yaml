@@ -1,0 +1,24 @@
+id: marshmallow
+brief:
+    title: Marshmallow User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Marshmallow user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - marshmallow
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://marshmallow-qa.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - さんにメッセージをおくる
+          in: body
+          need: all

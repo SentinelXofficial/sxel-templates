@@ -1,0 +1,24 @@
+id: tileserver-gl
+brief:
+    title: TileServer GL Page - Detect
+    by: DhiyaneshDK
+    level: info
+    about: TileServer GL page was detected.
+    label:
+        - tech
+        - tileserver
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>TileServer GL - Server for vector and raster maps with GL styles</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

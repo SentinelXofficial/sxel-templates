@@ -1,0 +1,24 @@
+id: gerapy-detect
+brief:
+    title: Gerapy Panel - Detect
+    by: pikpikcu
+    level: info
+    about: Gerapy panel was detected.
+    label:
+        - tech
+        - gerapy
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Gerapy</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

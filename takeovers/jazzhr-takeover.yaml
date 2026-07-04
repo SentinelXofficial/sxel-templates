@@ -1,0 +1,19 @@
+id: jazzhr-takeover
+brief:
+    title: jazzhr takeover detection
+    by: pdteam
+    level: high
+    about: jazzhr takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - This account no longer active
+          in: body
+          need: all

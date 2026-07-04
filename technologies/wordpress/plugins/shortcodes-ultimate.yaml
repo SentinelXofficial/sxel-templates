@@ -1,0 +1,17 @@
+id: wordpress-shortcodes-ultimate
+brief:
+    title: WP Shortcodes Plugin — Shortcodes Ultimate Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/shortcodes-ultimate/readme.txt'
+      signs: []

@@ -1,0 +1,28 @@
+id: spectracom-default-login
+brief:
+    title: Spectracom Default Login
+    by: madrobot
+    level: high
+    about: Spectracom default admin credentials were discovered.
+    label:
+        - spectracom
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/users/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: data%5Bbutton%5D=submit&data%5BUser%5D%5Busername%5D={{username}}&data%5BUser%5D%5Bpassword%5D={{password}}
+      signs:
+        - "on": word
+          has:
+            - spectracom
+            - deleted
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

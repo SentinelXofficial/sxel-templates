@@ -1,0 +1,24 @@
+id: ilch-admin-panel
+brief:
+    title: Ilch CMS Admin Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Ilch CMS admin login panel was detected.
+    label:
+        - panel
+        - ilch
+        - cms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php/admin/admin/login/index/'
+      signs:
+        - "on": word
+          has:
+            - ilch_token
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

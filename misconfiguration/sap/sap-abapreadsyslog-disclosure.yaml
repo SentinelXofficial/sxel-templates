@@ -1,0 +1,44 @@
+id: sap-abapreadsyslog-disclosure
+brief:
+    title: SAPControl ABAPReadSyslog - Disclosure
+    by: LRVT
+    level: medium
+    about: Detected SAP systems where the SAPControl SOAP web service exposes the ABAPReadSyslog operation without authentication. ABAPReadSyslog returns the ABAP system log (equivalent to transaction SM21) v...
+    label:
+        - misconfig
+        - sap
+        - sapcontrol
+        - soap
+        - log
+        - disclosure
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: text/xml; charset=UTF-8
+        SOAPAction: '''""'''
+      body: |-
+        <?xml version="1.0" encoding="utf-8"?>
+        <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+          <SOAP-ENV:Header>
+            <sapsess:Session xmlns:sapsess="http://www.sap.com/webas/630/soap/features/session/">
+              <enableSession>true</enableSession>
+            </sapsess:Session>
+          </SOAP-ENV:Header>
+          <SOAP-ENV:Body>
+            <ns1:ABAPReadSyslog xmlns:ns1="urn:SAPControl"></ns1:ABAPReadSyslog>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      signs:
+        - "on": word
+          has:
+            - <item>
+            - <Time>
+            - <Text>
+            - ABAPReadSyslogResponse
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

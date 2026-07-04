@@ -1,0 +1,26 @@
+id: siemens-logo8-panel
+brief:
+    title: Siemens Logo! 8 Web - Panel
+    by: biero-el-corridor
+    level: info
+    about: Siemens Logo! 8 Web Login Panel was discovered.
+    label:
+        - ics
+        - siemens
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/logo_login.shtm?!App-Language=1'
+      signs:
+        - "on": word
+          has:
+            - LOGO! Login
+            - ReadMe OSS
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,22 @@
+id: matomo-rum-detect
+brief:
+    title: Matomo (Piwik) RUM - Tech Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects Matomo (formerly Piwik) Web Analytics & RUM artifacts. Identifies Standard Tracking, Image Tracking, Tag Manager, and Cloud instances using strict matching.
+    label:
+        - tech
+        - discovery
+        - rum
+        - matomo
+        - piwik
+        - analytics
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - MatomoTagManager
+          in: body

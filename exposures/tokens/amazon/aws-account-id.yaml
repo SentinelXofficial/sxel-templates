@@ -1,0 +1,17 @@
+id: aws-account-id
+brief:
+    title: AWS Account ID
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - aws
+        - amazon
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,24 @@
+id: utipio
+brief:
+    title: Utip.io User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Utip.io user name information check was conducted.
+    label:
+        - osint
+        - osint-finance
+        - utipio
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://utip.io/creator/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"userName"'
+          in: body
+          need: all

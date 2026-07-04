@@ -1,0 +1,30 @@
+id: trilithic-viewpoint-default
+brief:
+    title: Trilithic Viewpoint Default Login
+    by: davidmckennirey
+    level: high
+    about: Trilithic Viewpoint application default admin credentials were discovered. Note this product has been discontinued.
+    label:
+        - default-login
+        - trilithic
+        - viewpoint
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/ViewPoint/admin/Site/ViewPointLogin'
+      head:
+        Content-Type: application/json
+        Cookie: trilithic_win_auth=false
+      body: '{u:"{{username}}", t:"undefined", p:"{{password}}", d:"", r:false, w:false}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"authorized":true'
+            - redirectUrl
+          in: body
+          need: all

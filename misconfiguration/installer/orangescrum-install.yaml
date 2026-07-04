@@ -1,0 +1,24 @@
+id: orangescrum-install
+brief:
+    title: Orangescrum Exposed Installation
+    by: ritikchaddha
+    level: high
+    about: Orangescrum is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - orangescrum
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Orangescrum Setup Wizard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

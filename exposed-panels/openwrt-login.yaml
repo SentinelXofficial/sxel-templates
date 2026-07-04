@@ -1,0 +1,22 @@
+id: openwrt-login
+brief:
+    title: Opentwrt Login / Configuration Interface
+    by: For3stCo1d
+    level: info
+    about: ""
+    label:
+        - openwrt
+        - router
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/cgi-bin/luci/'
+      signs:
+        - "on": word
+          has:
+            - <title>OpenWrt
+            - Powered by LuCI
+          in: body

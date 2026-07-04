@@ -1,0 +1,31 @@
+id: powerjob-default-login
+brief:
+    title: PowerJob - Default Login
+    by: j4vaovo
+    level: high
+    about: PowerJob default login credentials were discovered.
+    label:
+        - powerjob
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/appInfo/assert'
+      head:
+        Content-Type: application/json
+      body: '{"appName":{{username}},"password":{{password}}}'
+      signs:
+        - "on": word
+          has:
+            - '{"success":true,"data":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

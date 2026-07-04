@@ -1,0 +1,25 @@
+id: napa-phish
+brief:
+    title: NAPA Auto Parts phishing Detection
+    by: rxerium
+    level: info
+    about: A NAPA Auto Parts phishing website was detected
+    label:
+        - phishing
+        - napa
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - NAPA Auto Parts - Buy Car &amp; Truck Parts Online | Auto Supply Stores Near Me
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,30 @@
+id: dialogic-xms-default-login
+brief:
+    title: Dialogic XMS Admin Console - Default Login
+    by: ritikchaddha
+    level: high
+    about: Dialogic XMS Admin Console was using default credentials and it was discovered.
+    label:
+        - dialogic
+        - admin
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/index.php/verifyLogin/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: usernameId={{username}}&passwordId={{password}}
+      signs:
+        - "on": word
+          has:
+            - DialogicDojo
+            - 'userId">user:'
+            - var downloads
+            - onclick="logout
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

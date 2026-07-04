@@ -1,0 +1,24 @@
+id: disqus
+brief:
+    title: Disqus User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Disqus user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - disqus
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://disqus.com/by/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Disqus Profile
+          in: body
+          need: all

@@ -1,0 +1,30 @@
+id: prowlarr-dashboard-unauth
+brief:
+    title: Prowlarr Dashboard - Unauthenticated
+    by: ProjectDiscoveryAI
+    level: medium
+    about: Exposure of Prowlarr dashboard which can lead to sensitive information disclosure.
+    label:
+        - prowlarr
+        - dashboard
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Prowlarr</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Login - Prowlarr
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

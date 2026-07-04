@@ -1,0 +1,25 @@
+id: dahua-web-panel
+brief:
+    title: Dahua Web Service Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: A Dahua admin login panel was detected.
+    label:
+        - edb
+        - panel
+        - dahua
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>WEB SERVICE</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

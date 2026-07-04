@@ -1,0 +1,24 @@
+id: aboutme
+brief:
+    title: About.me User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: About.me user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - aboutme
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://about.me/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' | about.me'
+          in: body
+          need: all

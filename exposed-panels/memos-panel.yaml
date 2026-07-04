@@ -1,0 +1,26 @@
+id: memos-panel
+brief:
+    title: Memos Panel - Detect
+    by: rxerium
+    level: info
+    about: Memos is a privacy-first, lightweight note-taking service
+    label:
+        - panel
+        - memos
+        - detect
+        - usememos
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/explore'
+      signs:
+        - "on": word
+          has:
+            - <title>Memos
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

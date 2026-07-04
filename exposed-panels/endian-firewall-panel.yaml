@@ -1,0 +1,26 @@
+id: endian-firewall-panel
+brief:
+    title: Endian Firewall - Login Panel
+    by: rxerium
+    level: info
+    about: Endian Firewall Community is an open-source UTM (Unified Threat Management) appliance
+    label:
+        - panel
+        - endian
+        - firewall
+        - utm
+        - vpn
+        - network
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Endian Firewall
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

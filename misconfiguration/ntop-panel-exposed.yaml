@@ -1,0 +1,30 @@
+id: ntop-panel-exposed
+brief:
+    title: ntop Network Traffix Exposed
+    by: tess
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - ntop
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Configure ntop
+            - directory is properly installed
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,29 @@
+id: kubernetes-kustomization-disclosure
+brief:
+    title: Kubernetes Kustomize Configuration - Detect
+    by: dhiyaneshDk
+    level: medium
+    about: Kubernetes Kustomize configuration was detected.
+    label:
+        - exposure
+        - config
+        - kubernetes
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/kustomization.yml'
+      signs:
+        - "on": word
+          has:
+            - 'apiVersion:'
+            - 'resources:'
+            - 'namespace:'
+            - 'commonLabels:'
+            - Kustomization
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

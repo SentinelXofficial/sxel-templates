@@ -1,0 +1,23 @@
+id: oracle-iplanet-web-server
+brief:
+    title: Detect Oracle-iPlanet-Web-Server
+    by: pussycat0x
+    level: info
+    about: ""
+    label:
+        - tech
+        - oracle
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Oracle iPlanet Web Server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

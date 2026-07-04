@@ -1,0 +1,25 @@
+id: ivanti-csa-panel
+brief:
+    title: Ivanti(R) Cloud Services Appliance - Panel
+    by: rxerium
+    level: info
+    about: An Ivanti Cloud Services Appliance panel was detected.
+    label:
+        - ivanti
+        - csa
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Ivanti(R) Cloud Services Appliance</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

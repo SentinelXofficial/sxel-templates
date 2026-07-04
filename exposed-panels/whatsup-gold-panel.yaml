@@ -1,0 +1,25 @@
+id: whatsup-gold-panel
+brief:
+    title: Whatsup Gold Login Panel - Detect
+    by: rxerium
+    level: info
+    about: Whatsup Gold login panel was detected.
+    label:
+        - panel
+        - whatsup-gold
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/NmConsole'
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>WhatsUp Gold</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

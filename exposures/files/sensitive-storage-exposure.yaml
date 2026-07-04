@@ -1,0 +1,37 @@
+id: sensitive-storage-data-expose
+brief:
+    title: Sensitive Storage Data - Detect
+    by: pussycat0x
+    level: medium
+    about: A generic search for 'storage' in sensitive key files, file names, logs, etc., returned a match.
+    label:
+        - expose
+        - listing
+        - config
+        - logs
+        - storage
+        - edb
+        - files
+        - exposure
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/storage/'
+        - '{{BaseURL}}/api_smartapp/storage/'
+        - '{{BaseURL}}/equipbid/storage/'
+        - '{{BaseURL}}/server/storage/'
+        - '{{BaseURL}}/intikal/storage/'
+        - '{{BaseURL}}/elocker_old/storage/'
+      signs:
+        - "on": word
+          has:
+            - Index of
+            - oauth-private.key
+            - oauth-private.key
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

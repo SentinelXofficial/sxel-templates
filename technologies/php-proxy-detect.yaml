@@ -1,0 +1,25 @@
+id: php-proxy-detect
+brief:
+    title: PHP Proxy Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - php
+        - proxy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/proxy'
+      signs:
+        - "on": word
+          has:
+            - <title>PHP-Proxy</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: b2b-builder-detect
+brief:
+    title: B2BBuilder Detect
+    by: ffffffff0x
+    level: info
+    about: ""
+    label:
+        - b2bbuilder
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - content="B2Bbuilder"
+            - translateButtonId = "B2Bbuilder"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

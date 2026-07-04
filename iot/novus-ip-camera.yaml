@@ -1,0 +1,31 @@
+id: novus-ip-camera
+brief:
+    title: NoVus IP Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: NoVus IP login panel was detected.
+    label:
+        - camera
+        - novus
+        - edb
+        - iot
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Pages/login.htm'
+      signs:
+        - "on": word
+          has:
+            - <title>NoVus IP camera</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

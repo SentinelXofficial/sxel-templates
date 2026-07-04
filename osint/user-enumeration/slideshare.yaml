@@ -1,0 +1,24 @@
+id: slideshare
+brief:
+    title: Slideshare User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Slideshare user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - slideshare
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.slideshare.net/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - photo user-photo
+          in: body
+          need: all

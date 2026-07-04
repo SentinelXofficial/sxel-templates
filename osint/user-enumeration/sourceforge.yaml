@@ -1,0 +1,24 @@
+id: sourceforge
+brief:
+    title: Sourceforge User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Sourceforge user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - sourceforge
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://sourceforge.net/u/{{user}}/profile
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' / Profile</title>'
+          in: body
+          need: all

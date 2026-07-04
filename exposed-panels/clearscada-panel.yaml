@@ -1,0 +1,28 @@
+id: clearscada-panel
+brief:
+    title: Schneider Electric ClearSCADA - Panel
+    by: rxerium
+    level: info
+    about: ClearSCADA (now branded as EcoStruxure Geo SCADA Expert) is a Schneider Electric
+    label:
+        - panel
+        - ics
+        - scada
+        - schneider
+        - clearscada
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ClearSCADA Home
+            - ClearSCADA
+            - /webservices
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

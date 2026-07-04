@@ -1,0 +1,19 @@
+id: default-payara-server-page
+brief:
+    title: Payara Server Default Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - payara
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Payara Server - Server Running</title>
+          in: body

@@ -1,0 +1,26 @@
+id: cloudflare-phish
+brief:
+    title: Cloudflare phishing Detection
+    by: rxerium
+    level: info
+    about: A Cloudflare phishing website was detected
+    label:
+        - phishing
+        - cloudflare
+        - cdn
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Cloudflare
+            - Make employees, applications and networks faster and more secure everywhere, while reducing complexity and cost.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

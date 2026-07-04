@@ -1,0 +1,21 @@
+id: api-ip2whois
+brief:
+    title: IP2WHOIS API Test
+    by: daffainfo
+    level: info
+    about: WHOIS domain name lookup
+    label:
+        - token-spray
+        - ip2whois
+moves:
+    - verb: GET
+      to:
+        - https://api.ip2whois.com/v2?key={{token}}&domain=daffa.tech&format=json
+      signs:
+        - "on": word
+          has:
+            - '"domain"'
+            - '"domain_id"'
+            - '"whois_server"'
+          in: body
+          need: all

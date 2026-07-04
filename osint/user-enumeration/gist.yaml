@@ -1,0 +1,25 @@
+id: gist
+brief:
+    title: Gist User Name Information - Detect
+    by: philippedelteil
+    level: info
+    about: Gist user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - gist
+        - github
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://gist.github.com/{{user}}
+      signs:
+        - "on": word
+          has:
+            - p-nickname vcard-username d-block
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

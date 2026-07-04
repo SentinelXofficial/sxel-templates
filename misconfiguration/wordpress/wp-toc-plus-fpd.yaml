@@ -1,0 +1,20 @@
+id: wp-toc-plus-fpd
+brief:
+    title: WordPress Plugin Table of Contents Plus - Full Path Disclosure
+    by: ritikchaddha
+    level: low
+    about: The Table of Contents Plus WordPress plugin is vulnerable to Full Path Disclosure. This vulnerability allows attackers to view the full server path by accessing certain files or triggering error co...
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - table-of-contents-plus
+        - fpd
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/table-of-contents-plus/toc-plus.php'
+        - '{{BaseURL}}/wp-content/plugins/table-of-contents-plus/toc.php'
+        - '{{BaseURL}}/wp-content/plugins/table-of-contents-plus/includes/class-toc.php'
+      signs: []

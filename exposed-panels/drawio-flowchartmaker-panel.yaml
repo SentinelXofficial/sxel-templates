@@ -1,0 +1,25 @@
+id: drawio-flowchartmaker-panel
+brief:
+    title: draw.io Flowchart Maker Panel - Detect
+    by: princechaddha
+    level: info
+    about: draw.io Flowchart Maker panel was detected.
+    label:
+        - panel
+        - drawio
+        - oss
+        - diagrams
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Flowchart Maker & Online Diagram Software</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

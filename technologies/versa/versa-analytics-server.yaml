@@ -1,0 +1,21 @@
+id: versa-analytics-server
+brief:
+    title: Versa Analytics Server Detection
+    by: c-sh0
+    level: info
+    about: ""
+    label:
+        - tech
+        - versa
+        - analytics
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Versa-Analytics-Server
+          in: header
+          need: all

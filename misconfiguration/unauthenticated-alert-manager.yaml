@@ -1,0 +1,24 @@
+id: unauthenticated-alert-manager
+brief:
+    title: Alert Manager - Unauthenticated Access
+    by: dhiyaneshDK
+    level: high
+    about: Alert Manager was able to be accessed with no authentication requirements in place.
+    label:
+        - unauth
+        - alertmanager
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/alerts'
+      signs:
+        - "on": word
+          has:
+            - <title>Alertmanager</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: gocd-encryption-key
+brief:
+    title: GoCd Encryption Key
+    by: dhiyaneshDk
+    level: low
+    about: GoCd Encryption Key is exposed.
+    label:
+        - go
+        - gocd
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/go/add-on/business-continuity/api/cipher.aes'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all

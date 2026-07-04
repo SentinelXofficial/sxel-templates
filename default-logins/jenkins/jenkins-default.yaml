@@ -1,0 +1,27 @@
+id: jenkins-weak-password
+brief:
+    title: Jenkins Default Login
+    by: Zandros0
+    level: high
+    about: Jenkins credentials of admin:admin were discovered.
+    label:
+        - jenkins
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/j_spring_security_check'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: j_username=admin&j_password=admin&from=%2F&Submit=Sign+in
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

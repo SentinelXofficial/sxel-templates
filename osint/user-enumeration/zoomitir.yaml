@@ -1,0 +1,24 @@
+id: zoomitir
+brief:
+    title: Zoomitir User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Zoomitir user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - zoomitir
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.zoomit.ir/user/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - پروفایل - زومیت
+          in: body
+          need: all

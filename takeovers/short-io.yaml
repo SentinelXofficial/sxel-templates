@@ -1,0 +1,21 @@
+id: short-io-takeover
+brief:
+    title: Short.io takeover detection
+    by: philippedelteil
+    level: high
+    about: Short.io takeover was detected.
+    label:
+        - takeover
+        - short.io
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Link does not exist
+            - This domain is not configured on Short.io
+          in: body
+          need: all

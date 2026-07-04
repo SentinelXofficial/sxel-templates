@@ -1,0 +1,38 @@
+id: bigant-default-login
+brief:
+    title: BigAnt - Default Password
+    by: ritikchaddha
+    level: critical
+    about: Misconfiguratoin leads to Default Login into BigAnt Super Admin Account.
+    label:
+        - default-login
+        - bigant
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php/Home/login/index.html'
+      signs:
+        - "on": word
+          has:
+            - Login Successfully! Loading...
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/index.php/Home/Login/login_post.html'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: saas=default&account={{username}}&password={{base64(password)}}&to=admin&app=&__hash__={{hash}}&__hash__={{hash}}&submit=
+      signs:
+        - "on": word
+          has:
+            - Login Successfully! Loading...
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200

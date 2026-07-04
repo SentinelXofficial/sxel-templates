@@ -1,0 +1,17 @@
+id: wordpress-contact-form-7-honeypot
+brief:
+    title: CF7 Apps – [Honeypot and hCAPTCHA for Contact Form 7] Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/contact-form-7-honeypot/readme.txt'
+      signs: []

@@ -1,0 +1,31 @@
+id: viminfo-disclosure
+brief:
+    title: Viminfo - File Disclosure
+    by: DhiyaneshDK
+    level: low
+    about: Viminfo file was detected.
+    label:
+        - devops
+        - exposure
+        - viminfo
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.viminfo'
+      signs:
+        - "on": word
+          has:
+            - Viminfo version
+            - Command Line History
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

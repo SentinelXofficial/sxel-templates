@@ -1,0 +1,19 @@
+id: api-deviantart
+brief:
+    title: DeviantArt API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - deviantart
+moves:
+    - verb: POST
+      to:
+        - https://www.deviantart.com/api/v1/oauth2/placebo
+      body: access_token={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"status" : "success"'
+          in: body

@@ -1,0 +1,26 @@
+id: node-express-status
+brief:
+    title: Node Express Status - Detect
+    by: DhiyaneshDk
+    level: low
+    about: Node Express Status is detected.
+    label:
+        - node
+        - express
+        - misconfig
+        - status
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Express Status
+            - CPU Usage
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

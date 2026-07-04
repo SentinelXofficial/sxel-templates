@@ -1,0 +1,24 @@
+id: akniga
+brief:
+    title: Akniga User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Akniga user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - akniga
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://akniga.org/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' - Аудиокниги Клуб</title'
+          in: body
+          need: all

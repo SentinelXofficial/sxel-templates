@@ -1,0 +1,27 @@
+id: wanhuoa-officeserverservlet-file-upload
+brief:
+    title: Wanhu OA OfficeServerServlet - Arbitrary File Upload
+    by: SleepingBag945
+    level: critical
+    about: Wanhu OA officeserverservlet file upload vulnerability
+    label:
+        - wanhu
+        - oa
+        - officeserver
+        - fileupload
+        - intrusive
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/defaultroot/officeserverservlet'
+      signs:
+        - "on": word
+          has:
+            - DBSTEP V3.0
+            - Post
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

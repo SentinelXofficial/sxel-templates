@@ -1,0 +1,24 @@
+id: apc-nmc-default-login
+brief:
+    title: Schneider Electric APC NMC - Default Login
+    by: x-stp
+    level: high
+    about: Schneider Electric APC Network Management Cards with default credentials.
+    label:
+        - apc
+        - default-login
+        - iot
+        - ups
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/Forms/login1'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: login_username={{username}}&login_password={{password}}&prefLanguage=00000000&submit=Log+On
+      signs:
+        - "on": status
+          status:
+            - 303

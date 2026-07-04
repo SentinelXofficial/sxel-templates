@@ -1,0 +1,25 @@
+id: ldap-account-manager-panel
+brief:
+    title: LDAP Account Manager Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: LDAP Account Manager login panel was detected.
+    label:
+        - panel
+        - ldap
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/templates/login.php'
+        - '{{BaseURL}}/lam/templates/login.php'
+      signs:
+        - "on": word
+          has:
+            - LDAP Account Manager
+            - LAM configuration
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

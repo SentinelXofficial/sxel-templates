@@ -1,0 +1,23 @@
+id: api-mywot
+brief:
+    title: My Web of Trust API
+    by: daffainfo
+    level: info
+    about: IP/domain/URL reputation
+    label:
+        - token-spray
+        - weboftrust
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://scorecard.api.mywot.com/v3/targets?t=hbo.com&t=google.com'
+      head:
+        x-api-key: '{{token}}'
+        x-user-id: '{{id}}'
+      signs:
+        - "on": word
+          has:
+            - '"target":'
+            - '"safety":'
+          in: body
+          need: all

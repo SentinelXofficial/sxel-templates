@@ -1,0 +1,24 @@
+id: jamf-setup-assistant
+brief:
+    title: Jamf Pro Setup Assistant Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Jamf Pro Setup Assistant panel was detected.
+    label:
+        - jamf
+        - setup
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setupAssistant.html'
+      signs:
+        - "on": word
+          has:
+            - Jamf Pro Setup Assistant
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

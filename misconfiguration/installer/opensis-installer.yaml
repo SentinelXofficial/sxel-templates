@@ -1,0 +1,30 @@
+id: opensis-installer
+brief:
+    title: openSIS Installation Wizard
+    by: DhiyaneshDk
+    level: high
+    about: openSIS is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - opensis
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/index.php'
+      signs:
+        - "on": word
+          has:
+            - openSIS Installer
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

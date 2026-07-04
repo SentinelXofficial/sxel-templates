@@ -1,0 +1,26 @@
+id: aem-debugging-libraries
+brief:
+    title: Adobe AEM Debugging Client Libraries
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - aem
+        - adobe
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/libs/cq/ui/content/dumplibs.html'
+        - '{{BaseURL}}/libs/granite/ui/content/dumplibs.validate.html'
+        - '{{BaseURL}}/libs/granite/ui/content/dumplibs.rebuild.html'
+        - '{{BaseURL}}/libs/granite/ui/content/dumplibs.test.html'
+        - '{{BaseURL}}/libs/granite/ui/content/dumplibs.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Client Libraries</title>
+            - <title>Rebuild Client Libraries</title>
+            - <title>Client Libraries Test Output</title>
+          in: body

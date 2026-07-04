@@ -1,0 +1,19 @@
+id: samba-swat-panel
+brief:
+    title: Samba SWAT Panel - Detect
+    by: PR3R00T
+    level: info
+    about: Samba SWAT panel was detected.
+    label:
+        - panel
+        - samba
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Basic realm="SWAT"
+          in: header

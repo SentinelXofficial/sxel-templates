@@ -1,0 +1,24 @@
+id: livemasterru
+brief:
+    title: Livemaster.ru User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Livemaster.ru user name information check was conducted.
+    label:
+        - osint
+        - osint-shopping
+        - livemasterru
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.livemaster.ru/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Магазин мастера
+          in: body
+          need: all

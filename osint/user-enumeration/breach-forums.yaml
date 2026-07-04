@@ -1,0 +1,24 @@
+id: breach-forums
+brief:
+    title: Breach Forums User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Breach Forums user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - breach-forums
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://breached.vc/User-{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Time Spent Online
+          in: body
+          need: all

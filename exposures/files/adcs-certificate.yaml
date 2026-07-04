@@ -1,0 +1,22 @@
+id: adcs-certificate
+brief:
+    title: Microsoft AD CS Web Enrollment - Detect
+    by: pastaga
+    level: info
+    about: Detects Microsoft Active Directory Certificate Services (AD CS) Web Enrollment and certificate download pages.
+    label:
+        - ad
+        - adcs
+        - exposure
+        - files
+        - web-enrollment
+        - detect
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/certenroll/'
+        - '{{BaseURL}}/CertEnroll/'
+        - '{{BaseURL}}/certsrv/'
+        - '{{BaseURL}}/certsrv'
+      signs: []

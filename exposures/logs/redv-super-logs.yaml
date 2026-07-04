@@ -1,0 +1,17 @@
+id: redv-super-logs
+brief:
+    title: RED-V Super Digital Signage System RXV-A740R - Log Information Disclosure
+    by: r3Y3r53
+    level: medium
+    about: The application is vulnerable to sensitive information disclosure vulnerability. An unauthenticated attacker can visit several endpoints and disclose the webserver's log file list containing sensit...
+    label:
+        - redv
+        - log
+        - disclosure
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/downloader.log'
+      signs: []

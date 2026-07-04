@@ -1,0 +1,24 @@
+id: weblate
+brief:
+    title: Weblate User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Weblate user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - weblate
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://hosted.weblate.org/user/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Ion Adrian-Ionut @ Hosted Weblate
+          in: body
+          need: all

@@ -1,0 +1,24 @@
+id: fotka
+brief:
+    title: Fotka User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Fotka user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - fotka
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://api.fotka.com/v2/user/dataStatic?login={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - profil
+          in: body
+          need: all

@@ -1,0 +1,15 @@
+id: phpminiadmin-panel
+brief:
+    title: phpMiniAdmin Login Panel - Detect
+    by: nullfuzz
+    level: info
+    about: phpMiniAdmin login panel was detected.
+    label:
+        - panel
+        - phpminiadmin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/phpminiadmin.php'
+      signs: []

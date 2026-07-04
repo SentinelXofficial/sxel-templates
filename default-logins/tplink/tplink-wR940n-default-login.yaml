@@ -1,0 +1,27 @@
+id: tplink-wR940n-default-login
+brief:
+    title: TP-Link Wireless N Router WR940N - Default-Login
+    by: ritikchaddha
+    level: high
+    about: ""
+    label:
+        - tplink
+        - wR940n
+        - default-login
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/userRpm/LoginRpm.htm?Save=Save'
+      head:
+        Cookie: JS=true; Authorization=Basic {{cookie}}
+      signs:
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

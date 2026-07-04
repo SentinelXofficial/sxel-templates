@@ -1,0 +1,15 @@
+id: arcane-login-panel
+brief:
+    title: Arcane Login Panel - Detect
+    by: Kazgangap
+    level: info
+    about: Detects the presence of the Arcane login panel, a modern Docker management platform.
+    label:
+        - arcane
+        - login-panel
+        - docker
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+      signs: []

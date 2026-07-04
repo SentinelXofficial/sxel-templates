@@ -1,0 +1,44 @@
+id: crushftp-anonymous-login
+brief:
+    title: CrushFTP - Anonymous Login
+    by: pussycat0x
+    level: high
+    about: CrushFTP Anonymous login credentials were discovered.
+    label:
+        - default-logins
+        - anonymous
+        - crushftp
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/WebInterface/'
+      signs:
+        - "on": word
+          has:
+            - <username>anonymous</username>
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - text/xml
+          in: header_2
+          need: all
+    - verb: POST
+      to:
+        - '{{BaseURL}}/WebInterface/function/'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: command=getUsername&random=0.4186510822713485&c2f={{auth}}
+      signs:
+        - "on": word
+          has:
+            - <username>anonymous</username>
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - text/xml
+          in: header_2
+          need: all

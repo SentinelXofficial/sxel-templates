@@ -1,0 +1,25 @@
+id: wix-phish
+brief:
+    title: Wix phishing Detection
+    by: rxerium
+    level: info
+    about: A Wix phishing website was detected
+    label:
+        - phishing
+        - wix
+        - website-builder
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Website Builder - Create a Free Website In Minutes | Wix.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

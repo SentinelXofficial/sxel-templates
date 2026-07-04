@@ -1,0 +1,29 @@
+id: zuul-panel
+brief:
+    title: Zuul Panel - Detect
+    by: Yuzhe-zhang-0
+    level: info
+    about: ZUUL panel was detected.
+    label:
+        - panel
+        - zuul
+        - cicd
+        - oss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/tenants'
+        - '{{BaseURL}}/api/status'
+      signs:
+        - "on": word
+          has:
+            - '"name":'
+            - '"projects":'
+            - '"queue":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - zuul_version
+          in: body

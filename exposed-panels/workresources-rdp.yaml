@@ -1,0 +1,23 @@
+id: workresources-rdp
+brief:
+    title: RDWeb RemoteApp and Desktop Connections - Web Access
+    by: dhiyaneshDK
+    level: info
+    about: RDWeb RemoteApp and Desktop Connections does not display.
+    label:
+        - panel
+        - workresources
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/RDWeb/Pages/en-US/login.aspx'
+      signs:
+        - "on": word
+          has:
+            - '<title>Error: Unable to display RD Web Access</title>'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

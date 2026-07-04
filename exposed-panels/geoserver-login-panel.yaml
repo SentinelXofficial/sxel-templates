@@ -1,0 +1,25 @@
+id: geoserver-login-panel
+brief:
+    title: GeoServer Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: GeoServer login panel was detected.
+    label:
+        - panel
+        - geoserver
+        - osgeo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web'
+        - '{{BaseURL}}/geoserver/web/'
+      signs:
+        - "on": word
+          has:
+            - '<title>GeoServer: Welcome</title>'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

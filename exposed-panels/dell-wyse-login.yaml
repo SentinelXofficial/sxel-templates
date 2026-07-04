@@ -1,0 +1,24 @@
+id: dell-wyse-login
+brief:
+    title: Dell Wyse Management Suite Login Panel - Detect
+    by: gy741
+    level: info
+    about: Dell Wyse Management Suite login panel was detected.
+    label:
+        - panel
+        - dell
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ccm-web/'
+      signs:
+        - "on": word
+          has:
+            - <title>Wyse Management Suite</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

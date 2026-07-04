@@ -1,0 +1,24 @@
+id: hp-device-info-detect
+brief:
+    title: HP Device Info Detection
+    by: pussycat0x
+    level: low
+    about: Internal info is disclosed to external users in HP Device.
+    label:
+        - iot
+        - hp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/hp/device/DeviceInformation/View'
+      signs:
+        - "on": word
+          has:
+            - Device Information
+            - hp
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

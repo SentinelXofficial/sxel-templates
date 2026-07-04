@@ -1,0 +1,23 @@
+id: puppetdb-dashboard-unauth
+brief:
+    title: PuppetDB Dashboard - Unauthenticated Access
+    by: DhiyaneshDk
+    level: high
+    about: PuppetDB dashboard and API endpoints were found accessible without authentication. PuppetDB stores infrastructure configuration data including node facts, catalogs, and reports. Unauthenticated acc...
+    label:
+        - puppetdb
+        - misconfig
+        - exposure
+        - unauth
+        - dashboard
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pdb/dashboard/index.html'
+        - '{{BaseURL}}/dashboard/index.html'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pdb/query/v4/facts'
+      signs: []

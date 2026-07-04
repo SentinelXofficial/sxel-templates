@@ -1,0 +1,15 @@
+id: bubble-detect
+brief:
+    title: Bubble - Detect
+    by: johnk3r
+    level: info
+    about: Detected the presence of Bubble, an AI-powered no-code app platform.
+    label:
+        - tech
+        - bubble
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

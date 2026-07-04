@@ -1,0 +1,17 @@
+id: brother-printer-panel
+brief:
+    title: Brother Printer Panel - Detect
+    by: pdteam
+    level: info
+    about: Brother printer web interface and management panel was detected. This template identifies exposed Brother printer panels that may be accessible without authentication.
+    label:
+        - panel
+        - brother
+        - printer
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/general/status.html'
+      signs: []

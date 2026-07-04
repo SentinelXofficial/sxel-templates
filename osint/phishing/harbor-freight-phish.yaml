@@ -1,0 +1,26 @@
+id: harbor-freight-phish
+brief:
+    title: Harbor Freight phishing Detection
+    by: rxerium
+    level: info
+    about: A Harbor Freight phishing website was detected
+    label:
+        - phishing
+        - harbor-freight
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Harbor Freight
+            - Harbor Freight is America&#x27;s go-to store for low prices on power tools, generators, jacks, tool boxes and more. Shop our 1600+ locations. Do More for Less at Harbor Freight.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

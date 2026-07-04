@@ -1,0 +1,16 @@
+id: dropbox-long-token
+brief:
+    title: Dropbox Long Lived API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - dropbox
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,18 @@
+id: wordpress-wp-mail-smtp
+brief:
+    title: WP Mail SMTP by WPForms – The Most Popular SMTP and Email Log Plugin Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wp-mail-smtp/readme.txt'
+      signs: []

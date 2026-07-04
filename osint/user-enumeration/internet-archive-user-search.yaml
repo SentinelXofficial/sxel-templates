@@ -1,0 +1,24 @@
+id: internet-archive-user-search
+brief:
+    title: Internet Archive User Search User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Internet Archive User Search user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - internet-archive-user-search
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://archive.org/search.php?query={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <!--/.item-ia-->
+          in: body
+          need: all

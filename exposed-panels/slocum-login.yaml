@@ -1,0 +1,24 @@
+id: slocum-login
+brief:
+    title: Slocum Fleet Mission Control Login Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Slocum Fleet Mission Control login panel was detected.
+    label:
+        - panel
+        - tech
+        - slocum
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sfmc/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Slocum Fleet Mission Control - Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

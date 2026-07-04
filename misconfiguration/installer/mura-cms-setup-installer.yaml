@@ -1,0 +1,25 @@
+id: mura-cms-setup-installer
+brief:
+    title: Mura CMS Setup Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed Mura CMS Setup page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - mura-cms
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Mura CMS - Setup
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

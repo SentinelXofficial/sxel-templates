@@ -1,0 +1,25 @@
+id: luma
+brief:
+    title: Luma User Name Information - Detect
+    by: rxerium
+    level: info
+    about: Luma user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - luma
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://lu.ma/user/{{user}}
+      signs:
+        - "on": word
+          has:
+            - ' Luma</title>'
+            - username
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

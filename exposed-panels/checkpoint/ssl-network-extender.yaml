@@ -1,0 +1,24 @@
+id: ssl-network-extender
+brief:
+    title: CheckPoint SSL Network Extender Login Panel - Detect
+    by: idealphase
+    level: info
+    about: CheckPoint SSL Network Extender login panel was detected.
+    label:
+        - panel
+        - checkpoint
+        - router
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - <TITLE>SSL Network Extender Login</TITLE>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

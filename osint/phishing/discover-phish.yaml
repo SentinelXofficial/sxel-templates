@@ -1,0 +1,26 @@
+id: discover-phish
+brief:
+    title: Discover phishing Detection
+    by: rxerium
+    level: info
+    about: A Discover phishing website was detected
+    label:
+        - phishing
+        - discover
+        - credit-card
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Discover
+            - <title>Discover - Personal Banking, Credit Cards &amp; Loans
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

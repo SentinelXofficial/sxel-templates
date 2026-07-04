@@ -1,0 +1,23 @@
+id: rhymix-cms-detect
+brief:
+    title: Rhymix CMS Detect
+    by: gy741
+    level: info
+    about: Detects Rhymix CMS
+    label:
+        - tech
+        - rhymix
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - rx_sesskey1
+          in: header
+        - "on": word
+          has:
+            - <meta name="generator" content="Rhymix" />
+          in: body

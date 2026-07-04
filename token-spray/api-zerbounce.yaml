@@ -1,0 +1,21 @@
+id: api-zerobounce
+brief:
+    title: Zerobounce API Test
+    by: 0xpugal
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - zerobounce
+moves:
+    - verb: GET
+      to:
+        - https://api.zerobounce.net/v2/getapiusage?api_key={{token}}&start_date=2018-01-01&end_date=2019-12-12
+      signs:
+        - "on": word
+          has:
+            - '"total":'
+            - '"start_date":'
+            - '"end_date":'
+          in: body
+          need: all

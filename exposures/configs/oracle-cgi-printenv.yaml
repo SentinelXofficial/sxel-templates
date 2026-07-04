@@ -1,0 +1,30 @@
+id: oracle-cgi-printenv
+brief:
+    title: Oracle CGI printenv - Information Disclosure
+    by: DhiyaneshDk
+    level: medium
+    about: Oracle CGI printenv component is susceptible to an information disclosure vulnerability.
+    label:
+        - exposure
+        - oracle
+        - config
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/printenv'
+      signs:
+        - "on": word
+          has:
+            - DOCUMENT_ROOT="
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

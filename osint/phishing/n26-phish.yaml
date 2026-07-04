@@ -1,0 +1,25 @@
+id: n26-phish
+brief:
+    title: N26 phishing Detection
+    by: rxerium
+    level: info
+    about: An N26 phishing website was detected
+    label:
+        - phishing
+        - n26
+        - fintech
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - It is with sincere gratitude and appreciation of everything we built together, that we made the tough decision to sharpen our focus on our European business.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,32 @@
+id: exposed-docker-api
+brief:
+    title: Exposed Docker API
+    by: furkansenan
+    level: info
+    about: ""
+    label:
+        - docker
+        - unauth
+        - devops
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - http://{{Hostname}}/version
+        - http://{{Hostname}}/v1.24/version
+      signs:
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": word
+          has:
+            - KernelVersion
+            - BuildTime
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

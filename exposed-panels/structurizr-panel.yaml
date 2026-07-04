@@ -1,0 +1,27 @@
+id: structurizr-panel
+brief:
+    title: Structurizr Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Structurizr login panel was detected.
+    label:
+        - panel
+        - structurizr
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/signin'
+      signs:
+        - "on": word
+          has:
+            - <title>Structurizr
+            - alt="Structurizr
+            - structurizrBackground
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

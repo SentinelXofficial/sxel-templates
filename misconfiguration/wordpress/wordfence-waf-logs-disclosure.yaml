@@ -1,0 +1,43 @@
+id: wordfence-waf-logs-disclosure
+brief:
+    title: WordPress Wordfence - WAF Logs and Data Disclosure
+    by: ritikchaddha
+    level: low
+    about: The Wordfence Security plugin creates various log and data files in the wflogs directory. If directory listing is enabled or files are directly accessible, sensitive information about blocked attac...
+    label:
+        - wordpress
+        - wp
+        - wp-plugin
+        - wordfence
+        - logs
+        - exposure
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - plugins/wordfence
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/wflogs/'
+        - '{{BaseURL}}/wp-content/plugins/wordfence/lib/wflogs/'
+        - '{{BaseURL}}/wp-content/plugins/wordfence/tmp/'
+      signs:
+        - "on": word
+          has:
+            - Index of
+          in: body
+          need: all
+        - "on": word
+          has:
+            - /wp-content/wflogs
+            - /wp-content/plugins/wordfence
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

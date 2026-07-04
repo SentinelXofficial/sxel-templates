@@ -1,0 +1,30 @@
+id: moodle-installer
+brief:
+    title: Moodle Installation Exposure
+    by: tess
+    level: high
+    about: Moodle is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - moodle
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install.php'
+      signs:
+        - "on": word
+          has:
+            - Installation - Moodle
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

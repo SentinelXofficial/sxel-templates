@@ -1,0 +1,21 @@
+id: cas-login
+brief:
+    title: CAS Login Panel - Detect
+    by: pdteam
+    level: info
+    about: CAS login panel was detected.
+    label:
+        - apereo
+        - cas
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cas/login'
+      signs:
+        - "on": word
+          has:
+            - Central Authentication Service
+          in: body

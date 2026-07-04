@@ -1,0 +1,26 @@
+id: log4-properties
+brief:
+    title: Log4j Properties - File Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: Log4j Properties file is exposed.
+    label:
+        - exposure
+        - files
+        - log4j
+        - oracle
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/log4j.properties'
+      signs:
+        - "on": word
+          has:
+            - log4j.rootLogger=
+            - log4j.logger
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

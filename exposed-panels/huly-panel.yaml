@@ -1,0 +1,16 @@
+id: huly-panel
+brief:
+    title: Huly Login Panel - Detect
+    by: righettod
+    level: info
+    about: Huly products was detected.
+    label:
+        - panel
+        - huly
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login%3Acomponent%3ALoginApp'
+      signs: []

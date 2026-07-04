@@ -1,0 +1,26 @@
+id: linktap-gateway-exposure
+brief:
+    title: LinkTap Gateway Exposure
+    by: DhiyaneshDk
+    level: low
+    about: LinkTap Gateway is exposed.
+    label:
+        - misconfig
+        - linktap
+        - iot
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Device infomation
+            - Ethernet settings
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: perfsonar-toolkit
+brief:
+    title: perfSONAR Toolkit - Exposure
+    by: DhiyaneshDk
+    level: medium
+    about: perfSONAR Toolkit is exposed.
+    label:
+        - misconfig
+        - perfsonar
+        - toolkit
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/toolkit/'
+      signs:
+        - "on": word
+          has:
+            - <title>perfSONAR Toolkit</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,22 @@
+id: api-hirak-rates
+brief:
+    title: Hirak Exchange Rates API Test
+    by: daffainfo
+    level: info
+    about: Exchange rates between 162 currency & 300 crypto currency update each 5 min, accurate, no limits
+    label:
+        - token-spray
+        - hirak
+moves:
+    - verb: GET
+      to:
+        - https://rates.hirak.site/stat/?token={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"token":'
+            - '"plan":'
+            - '"hits":'
+            - '"remain":'
+          in: body
+          need: all

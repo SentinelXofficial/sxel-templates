@@ -1,0 +1,20 @@
+id: laravel-env
+brief:
+    title: Laravel - Sensitive Information Disclosure
+    by: pxmme1337
+    level: high
+    about: A Laravel .env file was discovered, which stores sensitive information like database credentials and tokens. It should not be publicly accessible.
+    label:
+        - config
+        - exposure
+        - laravel
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,30 @@
+id: aem-offloading-browser
+brief:
+    title: Adobe AEM Offloading Browser
+    by: dhiyaneshDk
+    level: medium
+    about: Adobe AEM Offloading Browser is exposed.
+    label:
+        - misconfig
+        - aem
+        - adobe
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/libs/granite/offloading/content/view.html'
+      signs:
+        - "on": word
+          has:
+            - Offloading Browser
+            - '>CLUSTER</th>'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

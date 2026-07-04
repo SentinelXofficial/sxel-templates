@@ -1,0 +1,28 @@
+id: jolokia-mbean-search
+brief:
+    title: Jolokia - Searching MBeans
+    by: pussycat0x
+    level: low
+    about: Unauth users can search Mbeans in Jolokia.
+    label:
+        - jolokia
+        - springboot
+        - mbean
+        - tomcat
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jolokia/search/*:test=test'
+        - '{{BaseURL}}/actuator/jolokia/search/*:test=test'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"type":"search"'
+            - '"value":'
+          in: body
+          need: all

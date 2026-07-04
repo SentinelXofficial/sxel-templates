@@ -1,0 +1,35 @@
+id: springboot-startup
+brief:
+    title: Springboot Actuator startup
+    by: ELSFA7110
+    level: low
+    about: The startup endpoint provides information about the application’s startup sequence.
+    label:
+        - misconfig
+        - springboot
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/startup'
+        - '{{BaseURL}}/actuator/startup'
+      signs:
+        - "on": word
+          has:
+            - springBootVersion
+            - startTime
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v1+json
+            - application/vnd.spring-boot.actuator.v2+json
+            - application/vnd.spring-boot.actuator.v3+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

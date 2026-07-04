@@ -1,0 +1,24 @@
+id: raddleme
+brief:
+    title: Raddle.me User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Raddle.me user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - raddleme
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://raddle.me/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - sidebar__title
+          in: body
+          need: all

@@ -1,0 +1,16 @@
+id: hotjar-rum-detect
+brief:
+    title: Hotjar RUM - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects Hotjar Web Analytics & Session Recording artifacts.
+    label:
+        - tech
+        - discovery
+        - rum
+        - hotjar
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

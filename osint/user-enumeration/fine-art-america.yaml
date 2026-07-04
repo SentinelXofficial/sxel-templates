@@ -1,0 +1,24 @@
+id: fine-art-america
+brief:
+    title: Fine art america User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Fine art america user name information check was conducted.
+    label:
+        - osint
+        - osint-shopping
+        - fine-art-america
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://fineartamerica.com/profiles/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Shop for artwork by
+          in: body
+          need: all

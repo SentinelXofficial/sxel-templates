@@ -1,0 +1,25 @@
+id: apple-developer
+brief:
+    title: Apple Developer User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Apple Developer user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - apple
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://developer.apple.com/forums/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Apple Developer Forums
+            - developer.apple.com
+          in: body
+          need: all

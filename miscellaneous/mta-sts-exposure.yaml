@@ -1,0 +1,28 @@
+id: mta-sts-exposure
+brief:
+    title: Well-Known MTA-STS Policy
+    by: rxerium
+    level: info
+    about: Detects SMTP MTA-STS policy file (RFC 8461).
+    label:
+        - well-known
+        - email
+        - security
+        - rfc8461
+        - miscellaneous
+        - misc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.well-known/mta-sts.txt'
+      signs:
+        - "on": word
+          has:
+            - 'version: STS'
+            - 'mode:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

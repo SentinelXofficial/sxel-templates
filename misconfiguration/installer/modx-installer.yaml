@@ -1,0 +1,25 @@
+id: modx-installer
+brief:
+    title: ModX CMS - Unfinished Installation
+    by: DhiyaneshDk
+    level: high
+    about: Detected accessible ModX CMS installation or setup pages that indicated an incomplete installation.An exposed installation interface allowed attackers to complete the setup process and gain adminis...
+    label:
+        - modx
+        - install
+        - exposure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup/'
+      signs:
+        - "on": word
+          has:
+            - ModX Revolution
+            - installer-steps
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

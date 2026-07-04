@@ -1,0 +1,22 @@
+id: api-dropbox
+brief:
+    title: Dropbox API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - dropbox
+moves:
+    - verb: POST
+      to:
+        - https://api.dropboxapi.com/2/users/get_current_account
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"account_id":'
+            - '"email":'
+          in: body
+          need: all

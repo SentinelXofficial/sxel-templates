@@ -1,0 +1,17 @@
+id: etsy-accesstoken
+brief:
+    title: Etsy Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - etsy
+        - exposure
+        - tokens
+        - accesskey
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

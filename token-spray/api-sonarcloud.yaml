@@ -1,0 +1,20 @@
+id: api-sonarcloud
+brief:
+    title: SonarCloud API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - sonarcloud
+moves:
+    - verb: GET
+      to:
+        - https://sonarcloud.io/api/authentication/validate
+      head:
+        Authorization: Basic {{base64(token + ':')}}
+      signs:
+        - "on": word
+          has:
+            - '{"valid": true}'
+          in: body

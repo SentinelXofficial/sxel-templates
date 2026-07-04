@@ -1,0 +1,30 @@
+id: schneider-tac-vista-panel
+brief:
+    title: Schneider TAC Vista - Login Panel
+    by: rxerium
+    level: info
+    about: Schneider TAC Vista building automation panel has been detected.
+    label:
+        - panel
+        - schneider
+        - tac
+        - vista
+        - ics
+        - bms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/webstation/'
+      signs:
+        - "on": word
+          has:
+            - TAC Vista
+            - Webstation
+            - schneider-electric.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

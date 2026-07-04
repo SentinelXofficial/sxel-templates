@@ -1,0 +1,28 @@
+id: bonita-default-login
+brief:
+    title: Bonita - Default Login
+    by: DhiyaneshDk
+    level: high
+    about: Bonita login was using default credentials which can led to gain super administrator access.
+    label:
+        - bonita
+        - default-login
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/bonita/loginservice?redirect=true&redirectUrl=%2Fbonita%2Fapps%2FappDirectoryBonita'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}&_l=en
+      signs:
+        - "on": word
+          has:
+            - Layout Without Menu
+            - bonitasoft.ui.services
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

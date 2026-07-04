@@ -1,0 +1,23 @@
+id: aem-bg-servlet
+brief:
+    title: AEM BG-Servlets
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - aem
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/system/bgservlets/test.css'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <br/>Flushing output<br/>
+          in: body
+          need: all

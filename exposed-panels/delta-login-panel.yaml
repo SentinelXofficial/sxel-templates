@@ -1,0 +1,23 @@
+id: delta-login-panel
+brief:
+    title: Delta Controls Admin Login Panel - Detect
+    by: gy741
+    level: info
+    about: Delta Controls admin login panel was detected.
+    label:
+        - panel
+        - delta
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/deltaweb/hmi_login.asp'
+      signs:
+        - "on": word
+          has:
+            - Delta Controls ORCAview
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

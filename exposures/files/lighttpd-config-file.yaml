@@ -1,0 +1,27 @@
+id: lighttpd-config-file
+brief:
+    title: Lighttpd Config File - File Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: Lighttpd Config file is exposed.
+    label:
+        - exposure
+        - files
+        - lighttpd
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/lighttpd.conf'
+      signs:
+        - "on": word
+          has:
+            - server.document-root =
+            - server.port =
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+          in: content_type
+          need: all

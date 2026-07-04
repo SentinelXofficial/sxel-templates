@@ -1,0 +1,19 @@
+id: openresty-detect
+brief:
+    title: OpenResty detection
+    by: jcockhren
+    level: info
+    about: Some deployments of OpenResty spill their version numbers.
+    label:
+        - tech
+        - openresty
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - openresty
+          in: server

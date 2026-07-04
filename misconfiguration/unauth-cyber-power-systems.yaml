@@ -1,0 +1,24 @@
+id: unauth-cyber-power-systems
+brief:
+    title: Cyber Power Systems - Unauthenticated
+    by: DhiyaneshDK
+    level: high
+    about: Detects unauthenticated access to Cyber Power Systems, which could lead to unauthorized control or information disclosure.
+    label:
+        - unauth
+        - cyber-power
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/devices'
+      signs:
+        - "on": word
+          has:
+            - <title>PDNU</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

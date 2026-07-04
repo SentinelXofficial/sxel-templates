@@ -1,0 +1,22 @@
+id: s3-torrent
+brief:
+    title: Amazon S3 Torrent Download - Detect
+    by: ambassify
+    level: info
+    about: Amazon S3 Torrent download was detected, which can allow a malicious user to download files.
+    label:
+        - misconfig
+        - aws
+        - s3
+        - bucket
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?torrent'
+      signs:
+        - "on": word
+          has:
+            - RequestTorrentOfBucketError
+            - s3-tracker
+          in: body

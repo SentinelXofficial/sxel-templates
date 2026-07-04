@@ -1,0 +1,23 @@
+id: gxd5-pacs-connexion-utilisateur
+brief:
+    title: GXD5 Pacs Connexion Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: GXD5 Pacs Connexion panel was detected.
+    label:
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>GXD5 Pacs Connexion utilisateur</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

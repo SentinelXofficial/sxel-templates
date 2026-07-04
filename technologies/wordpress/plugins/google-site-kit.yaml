@@ -1,0 +1,18 @@
+id: wordpress-google-site-kit
+brief:
+    title: Site Kit by Google – Analytics, Search Console, AdSense, Speed Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/google-site-kit/readme.txt'
+      signs: []

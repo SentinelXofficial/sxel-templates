@@ -1,0 +1,25 @@
+id: medium-phish
+brief:
+    title: Medium phishing Detection
+    by: rxerium
+    level: info
+    about: A Medium phishing website was detected
+    label:
+        - phishing
+        - medium
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Medium: Read and write stories.'
+            - Medium
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

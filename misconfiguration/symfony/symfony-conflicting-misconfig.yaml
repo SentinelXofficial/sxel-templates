@@ -1,0 +1,27 @@
+id: symfony-conflicting-misconfig
+brief:
+    title: Symfony Conflicting Headers - Information Disclosure
+    by: wakedxy
+    level: medium
+    about: A misconfiguration in Symfony’s trusted proxy and header settings could trigger a ConflictingHeadersException when both Forwarded and X-Forwarded-* headers were present. When debug mode was enabl...
+    label:
+        - misconfig
+        - symfony
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      head:
+        Forwarded: for=127.0.0.1;host=oast.me
+        X-Forwarded-Host: oast.me
+      signs:
+        - "on": word
+          has:
+            - Symfony\Component\HttpFoundation\Exception\ConflictingHeadersException
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 500

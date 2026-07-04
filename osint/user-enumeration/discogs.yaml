@@ -1,0 +1,24 @@
+id: discogs
+brief:
+    title: Discogs User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Discogs user name information check was conducted.
+    label:
+        - osint
+        - osint-music
+        - discogs
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.discogs.com/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Joined on
+          in: body
+          need: all

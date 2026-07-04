@@ -1,0 +1,29 @@
+id: google-api-private-key
+brief:
+    title: Google Api Private Key
+    by: DhiyaneshDK
+    level: medium
+    about: Google API private keys are exposed in files.
+    label:
+        - exposure
+        - cloud
+        - google
+        - devops
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/google-api-private-key.json'
+        - '{{BaseURL}}/app/config/pimcore/google-api-private-key.json'
+        - '{{BaseURL}}/pimcore/app/config/pimcore/google-api-private-key.json'
+      signs:
+        - "on": word
+          has:
+            - private_key_id
+            - private_key
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

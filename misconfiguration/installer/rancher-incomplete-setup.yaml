@@ -1,0 +1,24 @@
+id: rancher-incomplete-setup
+brief:
+    title: Rancher - Incomplete Setup Exposure
+    by: 0x_Akoko
+    level: low
+    about: Detected Rancher installation was found with an incomplete first-time setup. The bootstrap login page was publicly accessible at /dashboard/auth/login, indicating an unconfigured instance that coul...
+    label:
+        - rancher
+        - misconfig
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v3/settings/first-login'
+      signs:
+        - "on": word
+          has:
+            - '"value":"true"'
+            - '"name":"first-login"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

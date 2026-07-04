@@ -1,0 +1,19 @@
+id: default-redhat-test-page
+brief:
+    title: Red Hat Enterprise Linux Test Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - redhat
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Test Page for the Apache HTTP Server on Red Hat Enterprise Linux</title>
+          in: body

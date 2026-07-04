@@ -1,0 +1,15 @@
+id: centos-eol
+brief:
+    title: CentOS EOL - Detect
+    by: staticnoise
+    level: info
+    about: Detected CentOS systems that had reached End-of-Life (EOL) status by identifying outdated version information in HTTP response.
+    label:
+        - centos
+        - eol
+        - tech
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

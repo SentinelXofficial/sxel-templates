@@ -1,0 +1,25 @@
+id: system-properties-exposure
+brief:
+    title: System Properties Exposure
+    by: DhiyaneshDk
+    level: low
+    about: System Properties is exposed.
+    label:
+        - misconfig
+        - system
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'System Properties:'
+            - 'Environment Variables:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

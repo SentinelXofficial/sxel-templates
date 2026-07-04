@@ -1,0 +1,24 @@
+id: aem-default-get-servlet
+brief:
+    title: AEM DefaultGetServlet
+    by: DhiyaneshDk
+    level: low
+    about: Sensitive information might be exposed via AEM DefaultGetServlet.
+    label:
+        - aem
+        - adobe
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - jcr:createdBy
+          in: body
+          need: all

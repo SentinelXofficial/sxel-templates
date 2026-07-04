@@ -1,0 +1,20 @@
+id: backup-directory-listing
+brief:
+    title: Backup Directory Listing - Detect
+    by: DhiyaneshDK
+    level: low
+    about: Backup Directory Listing folder was detected.
+    label:
+        - hackerone
+        - backups
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/backup/'
+        - '{{BaseURL}}/php/backup/'
+      signs:
+        - "on": status
+          status:
+            - 200

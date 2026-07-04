@@ -1,0 +1,24 @@
+id: limesurvey-open-redirect
+brief:
+    title: LimeSurvey - Open Redirect via editorLink
+    by: Melvin Lammerts
+    level: medium
+    about: LimeSurvey before 6.16.11 contains an open redirect vulnerability in the editorLink route. An attacker can craft a URL that redirects users to an arbitrary external site, potentially enabling phish...
+    label:
+        - limesurvey
+        - redirect
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?r=editorLink&url=http://interact.sh/'
+      signs:
+        - "on": word
+          has:
+            - LS_AUTH_INIT
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

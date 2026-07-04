@@ -1,0 +1,24 @@
+id: medium
+brief:
+    title: Medium User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Medium user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - medium
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://medium.com/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Followers
+          in: body
+          need: all

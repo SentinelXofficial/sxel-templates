@@ -1,0 +1,19 @@
+id: cockpit-detect
+brief:
+    title: Detect Agentejo Cockpit
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - tech
+        - cockpit
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Authenticate Please!</title>
+          in: body

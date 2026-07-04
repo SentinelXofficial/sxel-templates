@@ -1,0 +1,18 @@
+id: wordpress-user-role-editor
+brief:
+    title: User Role Editor Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/user-role-editor/readme.txt'
+      signs: []

@@ -1,0 +1,23 @@
+id: joplin-default-login
+brief:
+    title: Joplin - Default Login
+    by: pussycat0x
+    level: high
+    about: Joplin Server installations are vulnerable to default administrative credentials. The system ships with a default admin account using the credentials admin@localhost:admin. Attackers can leverage t...
+    label:
+        - joplin
+        - oss
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/sessions'
+      head:
+        Content-Type: application/json
+      body: |-
+        {
+          "email": "{{username}}",
+          "password": "{{password}}"
+        }
+      signs: []

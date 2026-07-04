@@ -1,0 +1,75 @@
+id: empirec2-default-login
+brief:
+    title: Empire C2 / Starkiller Interface - Default Login
+    by: clem9669
+    level: high
+    about: Empire C2 / Starkiller Default Administrator Credentials Discovered.
+    label:
+        - default-login
+        - empire
+        - c2
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/token'
+      head:
+        Accept: application/json, text/plain, */*
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryoZwyedGcQU4FrcFV
+      body: |-
+        ------WebKitFormBoundaryoZwyedGcQU4FrcFV
+        Content-Disposition: form-data; name="username"
+
+        {{username}}
+        ------WebKitFormBoundaryoZwyedGcQU4FrcFV
+        Content-Disposition: form-data; name="password"
+
+        {{password}}
+        ------WebKitFormBoundaryoZwyedGcQU4FrcFV--
+      signs:
+        - "on": word
+          has:
+            - access_token
+            - '{"token":".*"}'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - '"code":1001'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/admin/login'
+      head:
+        Content-Type: application/json
+      body: '{"username":"{{user}}","password":"{{pass}}"}'
+      signs:
+        - "on": word
+          has:
+            - access_token
+            - '{"token":".*"}'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - '"code":1001'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

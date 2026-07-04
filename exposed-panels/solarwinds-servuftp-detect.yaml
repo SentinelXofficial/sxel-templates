@@ -1,0 +1,22 @@
+id: solarwinds-servuftp-detect
+brief:
+    title: SolarWinds Serv-U File Server Panel - Detect
+    by: johnk3r
+    level: info
+    about: SolarWinds Serv-U File Server panel was detected.
+    label:
+        - solarwinds
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Serv-U
+          in: header
+        - "on": status
+          status:
+            - 200

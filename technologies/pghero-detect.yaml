@@ -1,0 +1,16 @@
+id: pghero-detect
+brief:
+    title: PgHero - Detect
+    by: righettod
+    level: info
+    about: PgHero products was detected.
+    label:
+        - tech
+        - pghero
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

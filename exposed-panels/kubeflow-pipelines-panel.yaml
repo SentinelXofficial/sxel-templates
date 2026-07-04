@@ -1,0 +1,33 @@
+id: kubeflow-pipelines-panel
+brief:
+    title: Kubeflow Pipelines Panel - Detect
+    by: rxerium
+    level: info
+    about: Kubeflow Pipelines is an open-source platform for building and deploying portable, scalable ML workflows.
+    label:
+        - panel
+        - kubeflow
+        - kubernetes
+        - mlops
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Kubeflow Pipelines</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - window.KFP_FLAGS
+            - KFP_FLAGS
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

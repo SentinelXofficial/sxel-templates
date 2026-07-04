@@ -1,0 +1,18 @@
+id: wp-all-in-one-wp-security-and-firewall-fpd
+brief:
+    title: All In One WP Security & Firewall - Full Path Disclosure
+    by: theamanrawat
+    level: low
+    about: All In One WP Security & Firewall WordPress plugin contains a full path disclosure vulnerability due to improper access restrictions in its source files, allowing unauthenticated attackers to retri...
+    label:
+        - debug
+        - wordpress
+        - wp
+        - wp-plugin
+        - all-in-one-wp-security-and-firewall
+        - fpd
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/all-in-one-wp-security-and-firewall/wp-security-core.php'
+      signs: []

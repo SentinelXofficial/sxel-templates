@@ -1,0 +1,26 @@
+id: aem-login-status
+brief:
+    title: AEM Login Status
+    by: DhiyaneshDk
+    level: info
+    about: LoginStatusServlet is exposed, it allows to bruteforce credentials.
+    label:
+        - aem
+        - adobe
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/system/sling/loginstatus'
+        - '{{BaseURL}}/system/sling/loginstatus.css'
+        - '{{BaseURL}}///system///sling///loginstatus'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - CREDENTIAL_CHALLENGE
+          in: body
+          need: all

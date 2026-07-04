@@ -1,0 +1,23 @@
+id: solarwinds-arm-panel
+brief:
+    title: SolarWinds ARM (Access Rights Manager) - Detect
+    by: bhutch
+    level: info
+    about: SolarWinds ARM login panel was detected.
+    label:
+        - panel
+        - solarwinds
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Solarwinds Access Rights Manager</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

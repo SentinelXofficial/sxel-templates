@@ -1,0 +1,15 @@
+id: kodexplorer-detect
+brief:
+    title: KodExplorer-detect
+    by: ffffffff0x
+    level: info
+    about: ""
+    label:
+        - kodexplorer
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

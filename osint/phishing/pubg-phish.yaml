@@ -1,0 +1,25 @@
+id: pubg-phish
+brief:
+    title: PUBG phishing Detection
+    by: rxerium
+    level: info
+    about: A PUBG phishing website was detected
+    label:
+        - phishing
+        - pubg
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - PUBG
+            - '<title>PUBG: BATTLEGROUNDS'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

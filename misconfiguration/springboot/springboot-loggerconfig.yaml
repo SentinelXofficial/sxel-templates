@@ -1,0 +1,33 @@
+id: springboot-loggerconfig
+brief:
+    title: Spring Boot LoggerConfig Actuator Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Spring Boot LoggerConfig Actuator panel was detected.
+    label:
+        - misconfig
+        - springboot
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/loggingConfig'
+        - '{{BaseURL}}/actuator/loggingConfig'
+      signs:
+        - "on": word
+          has:
+            - '["loggingConfig"]'
+            - '"propertySources"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v1+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

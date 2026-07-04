@@ -1,0 +1,24 @@
+id: popl
+brief:
+    title: Popl User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Popl user name information check was conducted.
+    label:
+        - osint
+        - osint-business
+        - popl
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://poplme.co/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - MuiTypography-root MuiTypography-body1 css-kj7pvm
+          in: body
+          need: all

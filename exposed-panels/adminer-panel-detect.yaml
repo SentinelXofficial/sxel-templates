@@ -1,0 +1,21 @@
+id: adminer-panel-detect
+brief:
+    title: Adminer Login Panel - Detect
+    by: random_robbie
+    level: info
+    about: Adminer login panel was detected.
+    label:
+        - panel
+        - fuzz
+        - adminer
+        - login
+        - sqli
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{path}}'
+      head:
+        Accept: application/json, text/plain, */*
+        Referer: '{{BaseURL}}'
+      signs: []

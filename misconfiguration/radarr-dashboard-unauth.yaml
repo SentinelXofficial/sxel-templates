@@ -1,0 +1,30 @@
+id: radarr-dashboard-unauth
+brief:
+    title: Radarr Dashboard - Unauthenticated
+    by: ProjectDiscoveryAI
+    level: medium
+    about: Exposure of Radarr dashboard which can lead to sensitive information disclosure.
+    label:
+        - radarr
+        - dashboard
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Radarr</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Login - Radarr
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

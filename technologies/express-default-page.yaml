@@ -1,0 +1,29 @@
+id: express-default-page
+brief:
+    title: Express Default Page
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - express
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Express</title>
+            - Welcome to Express
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

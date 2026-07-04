@@ -1,0 +1,24 @@
+id: runescape
+brief:
+    title: RuneScape User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: RuneScape user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - runescape
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://apps.runescape.com/runemetrics/app/overview/player/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - RuneMetrics - RuneScape player profiles and stat tracking
+          in: body
+          need: all

@@ -1,0 +1,22 @@
+id: api-weglot
+brief:
+    title: WeGlot API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - weglot
+moves:
+    - verb: POST
+      to:
+        - https://api.weglot.com/translate?api_key={{token}}
+      head:
+        Content-Type: application/json
+      body: '{"l_from":"en","l_to":"fr","request_url":"https://www.website.com/","words":[{"w":"This is a blue car","t":1},{"w":"This is a black car","t":1}]}'
+      signs:
+        - "on": word
+          has:
+            - does not exist
+            - Invalid authorization
+          in: body

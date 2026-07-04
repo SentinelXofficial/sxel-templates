@@ -1,0 +1,18 @@
+id: api-savepage
+brief:
+    title: SavePage API Test
+    by: daffainfo
+    level: info
+    about: A free, RESTful API used to screenshot any desktop, or mobile website
+    label:
+        - token-spray
+        - savepage
+moves:
+    - verb: GET
+      to:
+        - https://api.savepage.io/v1?key={{token}}&q=https://selfcontained.test
+      signs:
+        - "on": word
+          has:
+            - getaddrinfo ENOTFOUND selfcontained.test
+          in: body

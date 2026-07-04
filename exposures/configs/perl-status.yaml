@@ -1,0 +1,24 @@
+id: perl-status
+brief:
+    title: Apache Mod_perl Status Page - Detect
+    by: pdteam
+    level: medium
+    about: Apache mod_perl status page was detected.
+    label:
+        - config
+        - exposure
+        - apache
+        - status
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/perl-status'
+      signs:
+        - "on": word
+          has:
+            - <title>Apache2::Status
+            - Perl version
+          in: body
+          need: all

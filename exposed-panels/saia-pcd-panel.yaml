@@ -1,0 +1,25 @@
+id: saia-pcd-panel
+brief:
+    title: Saia PCD Web Server Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Saia PCD Web Server panel was detected.
+    label:
+        - saia
+        - login
+        - panel
+        - pcd
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pwdform.htm'
+      signs:
+        - "on": word
+          has:
+            - <title>Saia PCD Web Server</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

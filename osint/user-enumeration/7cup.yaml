@@ -1,0 +1,24 @@
+id: 7cup
+brief:
+    title: 7cup User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: 7cup user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - 7cup
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.7cups.com/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Profile - 7 Cups
+          in: body
+          need: all

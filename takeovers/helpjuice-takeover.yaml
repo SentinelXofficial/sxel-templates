@@ -1,0 +1,19 @@
+id: helpjuice-takeover
+brief:
+    title: helpjuice takeover detection
+    by: pdteam
+    level: high
+    about: helpjuice takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - We could not find what you're looking for.
+          in: body
+          need: all

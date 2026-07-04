@@ -1,0 +1,17 @@
+id: sharepoint-layouts-disclosure
+brief:
+    title: Microsoft SharePoint - Layouts Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: Detected exposed SharePoint Layouts endpoints.
+    label:
+        - sharepoint
+        - microsoft
+        - exposure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_layouts/15/viewlsts.aspx'
+        - '{{BaseURL}}/_layouts/viewlsts.aspx'
+      signs: []

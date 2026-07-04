@@ -1,0 +1,24 @@
+id: codeforces
+brief:
+    title: Codeforces User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Codeforces user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - codeforces
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://codeforces.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' - Codeforces</title>'
+          in: body
+          need: all

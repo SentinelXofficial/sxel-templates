@@ -1,0 +1,23 @@
+id: appsmith-web-login
+brief:
+    title: Appsmith User Login - Panel Detect
+    by: powerexploit
+    level: info
+    about: Appsmith user login panel was detected.
+    label:
+        - panel
+        - appsmith
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/user/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Appsmith</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

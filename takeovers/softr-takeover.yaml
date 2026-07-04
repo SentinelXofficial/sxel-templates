@@ -1,0 +1,24 @@
+id: softr-takeover
+brief:
+    title: Softr.io Takeover Detection
+    by: philippedelteil
+    level: high
+    about: ""
+    label:
+        - takeover
+        - softr
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - The application you were looking for was built on Softr
+            - Get started with Softr
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

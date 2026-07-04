@@ -1,0 +1,26 @@
+id: jsherp-boot-panel
+brief:
+    title: JshERP Boot Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - panel
+        - jsherp
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/user/login'
+      signs:
+        - "on": word
+          has:
+            - jshERP-boot
+            - ERP系统
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

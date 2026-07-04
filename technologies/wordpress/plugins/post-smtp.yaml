@@ -1,0 +1,17 @@
+id: wordpress-post-smtp
+brief:
+    title: Post SMTP – WP SMTP Plugin with Email Logs and Mobile App for Failure Notifications – Gmail SMTP, Office 365, Brevo, Mailgun, Amazon SES and more Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/post-smtp/readme.txt'
+      signs: []

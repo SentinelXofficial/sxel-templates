@@ -1,0 +1,31 @@
+id: turbo-website-installer
+brief:
+    title: Turbo Website Reviewer Installer Panel
+    by: tess
+    level: high
+    about: Turbo Website Reviewer is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - turbo
+        - misconfig
+        - exposure
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/install/install.php'
+      signs:
+        - "on": word
+          has:
+            - Turbo Website Reviewer | Installer panel
+            - '>Admin!</a> </p>'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: opensearch-dashboard-panel
+brief:
+    title: OpenSearch Dashboard Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: OpenSearch Dashboard is a visualization and management tool for OpenSearch. This template detects the presence of the OpenSearch Dashboard login panel, which is the default authentication interface...
+    label:
+        - opensearch
+        - dashboard
+        - login
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/app/login?'
+      signs:
+        - "on": word
+          has:
+            - OpenSearch Dashboard
+            - login
+          in: body
+          need: all

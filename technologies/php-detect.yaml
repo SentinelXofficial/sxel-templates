@@ -1,0 +1,23 @@
+id: php-detect
+brief:
+    title: PHP Detect
+    by: y0no
+    level: info
+    about: ""
+    label:
+        - tech
+        - php
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - PHP
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

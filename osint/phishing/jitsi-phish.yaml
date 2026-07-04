@@ -1,0 +1,26 @@
+id: jitsi-phish
+brief:
+    title: Jitsi phishing Detection
+    by: rxerium
+    level: info
+    about: A Jitsi phishing website was detected
+    label:
+        - phishing
+        - jitsi
+        - video
+        - communication
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Free Video Conferencing Software for Web &amp; Mobile | Jitsi
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: aveva-edge-panel
+brief:
+    title: AVEVA Edge SCADA - Login Panel
+    by: rxerium
+    level: info
+    about: AVEVA Edge SCADA web interface panel has been detected.
+    label:
+        - panel
+        - aveva
+        - edge
+        - scada
+        - ics
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,29 @@
+id: oauth-authorization-server-exposure
+brief:
+    title: Well-Known OAuth Authorization Server Metadata
+    by: rxerium
+    level: info
+    about: Detects OAuth 2.0 Authorization Server metadata (RFC 8414).
+    label:
+        - well-known
+        - oauth
+        - oidc
+        - security
+        - rfc8414
+        - miscellaneous
+        - misc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.well-known/oauth-authorization-server'
+      signs:
+        - "on": word
+          has:
+            - issuer
+            - authorization_endpoint
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

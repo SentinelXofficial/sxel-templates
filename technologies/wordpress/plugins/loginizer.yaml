@@ -1,0 +1,18 @@
+id: wordpress-loginizer
+brief:
+    title: Loginizer Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/loginizer/readme.txt'
+      signs: []

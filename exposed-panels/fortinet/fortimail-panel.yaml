@@ -1,0 +1,25 @@
+id: fortimail-login
+brief:
+    title: Fortinet FortiMail Login Panel - Detect
+    by: johnk3r
+    level: info
+    about: Fortinet FortiMail login panel was detected.
+    label:
+        - panel
+        - fortinet
+        - fortimail
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/m/'
+      signs:
+        - "on": word
+          has:
+            - <title>FortiMail</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

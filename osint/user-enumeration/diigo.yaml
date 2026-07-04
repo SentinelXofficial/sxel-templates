@@ -1,0 +1,24 @@
+id: diigo
+brief:
+    title: Diigo User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Diigo user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - diigo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.diigo.com/interact_api/load_profile_info?name={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - regist_at
+          in: body
+          need: all

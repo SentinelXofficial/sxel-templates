@@ -1,0 +1,27 @@
+id: signet-explorer-dashboard
+brief:
+    title: Signet Explorer Dashboard - Detect
+    by: ritikchaddha
+    level: info
+    about: Signet Explorer Dashboard was detected.
+    label:
+        - panel
+        - signet
+        - bitcoin
+        - dashboard
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Signet Explorer</
+            - mempool-summary
+            - mempool-space
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

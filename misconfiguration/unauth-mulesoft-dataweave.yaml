@@ -1,0 +1,18 @@
+id: unauth-mulesoft-dataweave
+brief:
+    title: MuleSoft DataWeave Interactive Learning Environment - Unauthenticated Access
+    by: Th3l0newolf
+    level: high
+    about: The MuleSoft DataWeave Interactive Learning Environment is publicly accessible without authentication
+    label:
+        - panel
+        - mulesoft
+        - dataweave
+        - rce
+        - critical
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

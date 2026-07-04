@@ -1,0 +1,26 @@
+id: django-debug-exposure
+brief:
+    title: Django Debug Exposure
+    by: geeknik
+    level: high
+    about: Django debug mode enabled exposes internal information.
+    label:
+        - django
+        - exposure
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/admin/login/?next=/admin/'
+      signs:
+        - "on": status
+          status:
+            - 500
+        - "on": word
+          has:
+            - DB_HOST
+            - DB_NAME
+            - DJANGO
+            - ADMIN_PASSWORD
+          in: body
+          need: all

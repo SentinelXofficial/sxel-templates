@@ -1,0 +1,33 @@
+id: aem-crx-search
+brief:
+    title: Adobe AEM CRX Search Exposed
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - aem
+        - adobe
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/crx/explorer/ui/search.jsp'
+        - '{{BaseURL}}/crx/explorer/ui/search.jsp?Path=&amp;Query='
+        - '{{BaseURL}}/crx/explorer/ui/search.jsp?Path=&Query='
+      signs:
+        - "on": word
+          has:
+            - <title>Search</title>
+            - '"/crx/explorer/ui/";'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

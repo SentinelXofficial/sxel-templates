@@ -1,0 +1,17 @@
+id: actifio-panel
+brief:
+    title: Actifio Resource Center - Panel
+    by: Splint3r7
+    level: info
+    about: Actifio Resource Center was detected.
+    label:
+        - panel
+        - actifio
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

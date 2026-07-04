@@ -1,0 +1,32 @@
+id: cisco-ucm-cluster-enum
+brief:
+    title: Cisco Unified Communications Manager - Cluster Enumeration
+    by: Morgan Robertson
+    level: low
+    about: Enumerated Cisco UCM cluster nodes (servers) using the unauthenticated UDS API (XML), allowing identification of backend servers without authentication.
+    label:
+        - cisco
+        - ucm
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cucm-uds/servers'
+      head:
+        Accept: application/xml
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - text/xml
+            - application/xml
+          in: header
+          need: all
+        - "on": word
+          has:
+            - <servers uri
+            - <server>
+          in: body
+          need: all

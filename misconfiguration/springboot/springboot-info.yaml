@@ -1,0 +1,27 @@
+id: springboot-info
+brief:
+    title: Spring Boot Information Panel - Detect
+    by: philippedelteil
+    level: info
+    about: Spring Boot information panel displaying app name, version information, and other values was detected.
+    label:
+        - springboot
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/info'
+        - '{{BaseURL}}/actuator/info'
+        - '{{BaseURL}}/management'
+        - '{{BaseURL}}/management/info'
+      signs:
+        - "on": word
+          has:
+            - '"os"'
+            - '"runtime"'
+            - '"jvm"'
+            - '"build"'
+            - '"vendor"'
+          in: body
+          need: all

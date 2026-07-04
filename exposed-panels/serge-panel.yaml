@@ -1,0 +1,27 @@
+id: serge-panel
+brief:
+    title: Serge Panel - Detect
+    by: rxerium
+    level: info
+    about: Serge is a web interface for chatting with Alpaca through llama.cpp. This template detects the presence of a Serge chat interface.
+    label:
+        - panel
+        - serge
+        - llm
+        - ai
+        - chat
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Serge - Powered by LLaMA
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: hbo-max-phish
+brief:
+    title: HBO Max phishing Detection
+    by: rxerium
+    level: info
+    about: An HBO Max phishing website was detected
+    label:
+        - phishing
+        - hbo-max
+        - streaming
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Stream must-see series, hit movies, exclusive originals, family favorites, and live sports.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

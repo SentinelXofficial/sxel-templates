@@ -1,0 +1,32 @@
+id: rakefile-disclosure
+brief:
+    title: Rakefile - File Disclosure
+    by: DhiyaneshDK
+    level: info
+    about: Rakefile configuration file was detected.
+    label:
+        - devops
+        - exposure
+        - rakefile
+        - config
+        - ruby
+        - rails
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Rakefile'
+      signs:
+        - "on": word
+          has:
+            - application.load_tasks
+            - config/application
+          in: body
+          need: all
+        - "on": word
+          has:
+            - require
+            - desc
+            - 'task :'
+          in: body
+          need: all

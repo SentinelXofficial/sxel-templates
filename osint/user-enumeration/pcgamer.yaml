@@ -1,0 +1,24 @@
+id: pcgamer
+brief:
+    title: PCGamer User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: PCGamer user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - pcgamer
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://forums.pcgamer.com/members/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Joined
+          in: body
+          need: all

@@ -1,0 +1,16 @@
+id: hashicorp-token
+brief:
+    title: Hashicorp API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - hashicorp
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

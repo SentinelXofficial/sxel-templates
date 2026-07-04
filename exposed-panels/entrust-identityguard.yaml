@@ -1,0 +1,15 @@
+id: identityguard-selfservice-entrust
+brief:
+    title: Entrust IdentityGuard Self-Service Login Panel - Detect
+    by: nodauf
+    level: info
+    about: Entrust IdentityGuard Self-Service login panel was detected.
+    label:
+        - panel
+        - identityguard
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

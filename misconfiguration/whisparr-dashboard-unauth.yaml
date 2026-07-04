@@ -1,0 +1,30 @@
+id: whisparr-dashboard-unauth
+brief:
+    title: Whisparr Dashboard - Unauthenticated
+    by: ProjectDiscoveryAI
+    level: medium
+    about: Exposure of Whisparr dashboard which can lead to sensitive information disclosure.
+    label:
+        - whisparr
+        - dashboard
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Whisparr</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Login - Whisparr
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

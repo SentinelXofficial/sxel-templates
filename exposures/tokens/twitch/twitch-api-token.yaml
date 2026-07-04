@@ -1,0 +1,16 @@
+id: twitch-api-token
+brief:
+    title: Twitch API Secret Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - twitch
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

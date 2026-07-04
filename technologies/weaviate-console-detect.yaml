@@ -1,0 +1,18 @@
+id: weaviate-console-detect
+brief:
+    title: Weaviate Console - Detect
+    by: rxerium
+    level: info
+    about: Detected Weaviate Console interface. Weaviate was open-source vector database that stores data objects and vector embeddings for AI applications.
+    label:
+        - tech
+        - weaviate
+        - vector-database
+        - ai
+        - ml
+        - database
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

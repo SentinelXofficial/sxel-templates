@@ -1,0 +1,19 @@
+id: default-oracle-application-page
+brief:
+    title: Oracle Application Server Containers
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - oracle
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <TITLE>Oracle Application Server
+          in: body

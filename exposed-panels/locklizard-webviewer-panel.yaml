@@ -1,0 +1,25 @@
+id: locklizard-webviewer-panel
+brief:
+    title: Locklizard Web Viewer Login Panel - Detect
+    by: righettod
+    level: info
+    about: Locklizard Web Viewer login panel was detected.
+    label:
+        - panel
+        - locklizard
+        - webviewer
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Locklizard Web Viewer
+            - Did you remember your password?
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

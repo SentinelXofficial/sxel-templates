@@ -1,0 +1,28 @@
+id: hpe-autopass-panel
+brief:
+    title: HPE AutoPass License Server - Panel Detection
+    by: kylianghd
+    level: info
+    about: Detected an exposed HPE AutoPass License Server web interface on the default HTTPS port (5814) by probing the /autopass endpoint.
+    label:
+        - panel
+        - exposure
+        - misconfig
+        - hpe
+        - autopass
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/autopass'
+        - https://{{Host}}:5814/autopass
+        - https://{{Host}}:5814/autopass/
+      signs:
+        - "on": word
+          has:
+            - AutoPass License Server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+            - 404

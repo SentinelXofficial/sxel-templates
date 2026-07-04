@@ -1,0 +1,24 @@
+id: thegatewaypundit
+brief:
+    title: Thegatewaypundit User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Thegatewaypundit user name information check was conducted.
+    label:
+        - osint
+        - osint-political
+        - thegatewaypundit
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.thegatewaypundit.com/author/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - summary
+          in: body
+          need: all

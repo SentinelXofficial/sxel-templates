@@ -1,0 +1,23 @@
+id: api-safebrowsing
+brief:
+    title: Google Safe Browsing API Test
+    by: daffainfo
+    level: info
+    about: Google Link/Domain Flagging
+    label:
+        - token-spray
+        - google
+        - safebrowsing
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}https://safebrowsing.googleapis.com/v4/threatListUpdates:fetch?key={{token}}'
+      head:
+        Content-Type: application/json
+      signs:
+        - "on": word
+          has:
+            - '"clientId"'
+            - '"clientVersion"'
+          in: body
+          need: all

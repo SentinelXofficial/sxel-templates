@@ -1,0 +1,23 @@
+id: flowci-panel
+brief:
+    title: FlowCI Panel - Detect
+    by: Adam Crosser
+    level: info
+    about: FlowCI panel was detected.
+    label:
+        - panel
+        - flowci
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>flow-web-x</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

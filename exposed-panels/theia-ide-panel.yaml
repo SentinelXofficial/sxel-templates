@@ -1,0 +1,18 @@
+id: theia-ide-panel
+brief:
+    title: Eclipse Theia IDE Panel - Detect
+    by: 0x_Akoko
+    level: info
+    about: Detected Eclipse Theia IDE panel was exposed. Theia is an extensible platform for multi-language Cloud and Desktop IDEs. Exposed panels may have allowed unauthenticated access to development enviro...
+    label:
+        - theia
+        - ide
+        - panel
+        - detect
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

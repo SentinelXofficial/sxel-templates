@@ -1,0 +1,27 @@
+id: servicenow-widget-misconfig
+brief:
+    title: ServiceNow Widget-Simple-List - Misconfiguration
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - servicenow
+        - widget
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/now/sp/widget/widget-simple-list?{{table_list}}'
+      head:
+        Accept: application/json
+        Content-Type: application/json
+        X-UserToken: '{{user-token}}'
+      body: '{}'
+      signs:
+        - "on": word
+          has:
+            - '"isValid":true'
+            - '"count":'
+          in: body
+          need: all

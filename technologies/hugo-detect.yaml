@@ -1,0 +1,23 @@
+id: hugo-detect
+brief:
+    title: Hugo Detect
+    by: daffainfo
+    level: info
+    about: Hugo is a fast and modern static site generator written in Go
+    label:
+        - tech
+        - hugo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <meta name=generator content="Hugo
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

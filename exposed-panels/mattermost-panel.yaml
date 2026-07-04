@@ -1,0 +1,24 @@
+id: mattermost-panel
+brief:
+    title: Mattermost Login - Panel
+    by: darses
+    level: info
+    about: Mattermost Login Panel was discovered.
+    label:
+        - login
+        - mattermost
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - content="Mattermost"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

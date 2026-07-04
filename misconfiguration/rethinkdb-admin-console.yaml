@@ -1,0 +1,26 @@
+id: rethinkdb-admin-console
+brief:
+    title: RethinkDB Administration Console - Detect
+    by: tess
+    level: medium
+    about: RethinkDB Administration Console was detected.
+    label:
+        - misconfig
+        - rethinkdb
+        - console
+        - dashboard
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#dashboard'
+      signs:
+        - "on": word
+          has:
+            - RethinkDB Administration Console
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

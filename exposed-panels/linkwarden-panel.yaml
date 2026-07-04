@@ -1,0 +1,18 @@
+id: linkwarden-panel
+brief:
+    title: Linkwarden Panel - Detect
+    by: ChrisJr404
+    level: info
+    about: Linkwarden (linkwarden.app / github.com/linkwarden/linkwarden) is a popular open-source self-hosted bookmark and link archiving manager. Default Docker port 3000. Exposed instances may reveal users...
+    label:
+        - panel
+        - linkwarden
+        - bookmarks
+        - selfhosted
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,25 @@
+id: affirm-phish
+brief:
+    title: Affirm phishing Detection
+    by: rxerium
+    level: info
+    about: A Affirm phishing website was detected
+    label:
+        - phishing
+        - affirm
+        - payment
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Affirm | Pay over time with flexible payment plans and no fees
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

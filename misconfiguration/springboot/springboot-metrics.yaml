@@ -1,0 +1,29 @@
+id: springboot-metrics
+brief:
+    title: Springboot Actuator Metrics - Exposure
+    by: pussycat0x
+    level: low
+    about: Spring Boot Metrics Actuator endpoint was detected, which may expose system metrics information. This template detects both older Spring Boot 1.x format and newer 2.x/3.x format.
+    label:
+        - springboot
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/metrics'
+        - '{{BaseURL}}/actuator/metrics'
+      signs:
+        - "on": word
+          has:
+            - '{"mem":'
+            - '{"heap":'
+            - '{"nonheap":'
+            - '{"threads":'
+            - '{"gc":'
+            - '{"names":['
+            - '"jvm.memory'
+            - '"process.cpu'
+          in: body
+          need: all

@@ -1,0 +1,30 @@
+id: sonarqube-projects-disclosure
+brief:
+    title: SonarQube - Information Disclosure
+    by: DhiyaneshDk
+    level: medium
+    about: Information leakage vulnerability in an interface of SonarQube, you can download the source code through the tool.
+    label:
+        - sonarqube
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/components/search_projects'
+      signs:
+        - "on": word
+          has:
+            - '"visibility":"public"'
+            - '{"organization'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

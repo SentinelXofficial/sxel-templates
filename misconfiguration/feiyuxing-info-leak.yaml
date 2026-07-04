@@ -1,0 +1,18 @@
+id: feiyuxing-info-leak
+brief:
+    title: Feiyuxing Information - Exposure
+    by: SleepingBag945
+    level: high
+    about: Feiyuxing enterprise-level intelligent online behavior management system has authority bypass and information leakage vulnerabilities, which can obtain administrator rights and user passwords
+    label:
+        - misconfig
+        - exposure
+        - iot
+        - wpa
+        - wpa2
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/request_para.cgi?parameter=wifi_get_5g_host'
+      signs: []

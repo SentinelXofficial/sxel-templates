@@ -1,0 +1,20 @@
+id: google-frontend-httpserver
+brief:
+    title: Google frontend HttpServer
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - google
+        - httpserver
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Google Frontend
+          in: header

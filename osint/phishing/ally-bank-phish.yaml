@@ -1,0 +1,26 @@
+id: ally-bank-phish
+brief:
+    title: Ally Bank phishing Detection
+    by: rxerium
+    level: info
+    about: An Ally Bank phishing website was detected
+    label:
+        - phishing
+        - ally-bank
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Ally
+            - 'anage your money with Ally: online banking, auto financing, and investments. Financial products designed to help you pursue your goals.'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

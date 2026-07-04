@@ -1,0 +1,28 @@
+id: safeq-panel
+brief:
+    title: YSoft SafeQ Panel - Detect
+    by: matejsmycka
+    level: info
+    about: The YSoft SafeQ panel is umbrella printer management software used by many printer vendors. This should not be exposed to the public internet.
+    label:
+        - panel
+        - ysoft
+        - login
+        - safeq
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - YSoft SafeQ
+            - Y Soft Corporation, a.s.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

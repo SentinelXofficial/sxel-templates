@@ -1,0 +1,30 @@
+id: moxa-mxview-panel
+brief:
+    title: Moxa MXview One - Network Management Panel
+    by: rxerium
+    level: info
+    about: Moxa MXview One is a network management platform for industrial Ethernet
+    label:
+        - panel
+        - ics
+        - ot
+        - networking
+        - moxa
+        - mxview
+        - industrial-ethernet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - MXview One Central Manager
+            - MXview
+            - Central Manager
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

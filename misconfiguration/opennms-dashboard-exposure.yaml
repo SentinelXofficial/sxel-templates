@@ -1,0 +1,38 @@
+id: opennms-dashboard-exposure
+brief:
+    title: OpenNMS Dashboard - Exposure Detection
+    by: ritikchaddha
+    level: medium
+    about: OpenNMS Dashboard exposure was detected. OpenNMS is an enterprise-grade network monitoring platform. Exposed dashboards may reveal sensitive network infrastructure information, monitoring data, ala...
+    label:
+        - panel
+        - opennms
+        - exposure
+        - dashboard
+        - network-monitoring
+        - misconfig
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/opennms/index.jsp'
+        - '{{BaseURL}}/opennms/dashboard.jsp'
+        - '{{BaseURL}}/opennms/'
+      signs:
+        - "on": word
+          has:
+            - OpenNMS Web Console
+            - OpenNMS
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Status
+            - Dashboard
+            - Home
+            - Maps
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: rhadamanthys-stealer-panel
+brief:
+    title: Rhadamanthys Stealer C2 Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - c2
+        - rhadamanthys
+        - stealer
+        - panel
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/console/index.html'
+      signs:
+        - "on": word
+          has:
+            - Rhadamanthys Admin
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

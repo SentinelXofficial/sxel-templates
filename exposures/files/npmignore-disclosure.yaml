@@ -1,0 +1,47 @@
+id: npmignore-disclosure
+brief:
+    title: NPM .npmignore File Disclosure
+    by: 0x_Akoko
+    level: info
+    about: Detected NPM .npmignore configuration file, potentially exposing excluded files and project structure information.
+    label:
+        - exposure
+        - npm
+        - config
+        - node
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.npmignore'
+        - '{{BaseURL}}/node_modules/.npmignore'
+        - '{{BaseURL}}/src/.npmignore'
+        - '{{BaseURL}}/api/.npmignore'
+        - '{{BaseURL}}/backend/.npmignore'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - node_modules
+          in: body
+          need: all
+        - "on": word
+          has:
+            - .*
+            - '*~'
+            - '*.swp'
+            - '*.log'
+            - '*.md'
+            - .git
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <html
+            - <body
+            - <!DOCTYPE
+            - <script
+            - <?php
+          in: body
+          need: all

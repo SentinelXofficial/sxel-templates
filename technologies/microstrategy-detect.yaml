@@ -1,0 +1,16 @@
+id: microstrategy-detect
+brief:
+    title: MicroStrategy Instances Detection Template
+    by: philippedelteil
+    level: info
+    about: Detect if MicroStrategy instances exist in your URLS
+    label:
+        - microstrategy
+        - panel
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{path}}'
+      signs: []

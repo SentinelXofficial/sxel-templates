@@ -1,0 +1,17 @@
+id: sharepoint-sitepages-disclosure
+brief:
+    title: Microsoft SharePoint - Site Pages Disclosure
+    by: pussycat0x
+    level: low
+    about: Microsoft SharePoint Site Pages library (/SitePages/) is accessible without proper authentication, exposing site content, page structure, and potentially sensitive information. The Site Pages libra...
+    label:
+        - sharepoint
+        - microsoft
+        - disclosure
+        - sitepages
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/SitePages/Forms/AllPages.aspx'
+      signs: []

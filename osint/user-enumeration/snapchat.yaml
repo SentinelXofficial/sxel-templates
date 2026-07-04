@@ -1,0 +1,24 @@
+id: snapchat
+brief:
+    title: Snapchat User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Snapchat user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - snapchat
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://feelinsonice.appspot.com/web/deeplink/snapcode?username={{user}}&size=400&type=SVG
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - </clipPath>
+          in: body
+          need: all

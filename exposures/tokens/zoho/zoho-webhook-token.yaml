@@ -1,0 +1,16 @@
+id: zoho-webhook-token
+brief:
+    title: Zoho Webhook Disclosure
+    by: Ice3man
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - zoho
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

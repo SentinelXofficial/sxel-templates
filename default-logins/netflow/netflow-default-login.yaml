@@ -1,0 +1,30 @@
+id: netflow-default-login
+brief:
+    title: Netflow Analyzer - Default Login
+    by: DhiyaneshDK
+    level: high
+    about: Netflow Analyzer default login was discovered.
+    label:
+        - default-login
+        - netflow
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/netflow/jspui/j_security_check'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: radiusUserEnabled=false&AUTHRULE_NAME=Authenticator&j_username={{username}}&j_password={{password}}&Submit=Login
+      signs:
+        - "on": word
+          has:
+            - NFA_Jsession=
+            - JSESSIONID
+          in: set_cookie
+          need: all
+        - "on": word
+          has:
+            - /netflow;jsessionid
+          in: location
+          need: all

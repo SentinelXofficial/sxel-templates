@@ -1,0 +1,21 @@
+id: api-loqate
+brief:
+    title: Loqate API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - loqate
+moves:
+    - verb: GET
+      to:
+        - https://api.addressy.com/Capture/Interactive/Find/v1.00/json3.ws?Key={{token}}&Countries=US,CA&Language=en&Limit=5&Text=BHAR
+      signs:
+        - "on": word
+          has:
+            - '"Id":'
+            - '"Type":'
+            - '"Text":'
+          in: body
+          need: all

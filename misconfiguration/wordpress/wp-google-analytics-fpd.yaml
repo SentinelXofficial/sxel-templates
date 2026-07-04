@@ -1,0 +1,17 @@
+id: wp-google-analytics-fpd
+brief:
+    title: WordPress Google Analytics - Full Path Disclosure
+    by: 0x_Akoko
+    level: info
+    about: Detected WordPress Google Analytics Dashboard Plugin for WordPress by MonsterInsights, potentially revealing analytics data, file paths, and errors.
+    label:
+        - debug
+        - wordpress
+        - fpd
+        - wp-google-analytics
+        - wp-plugin
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/google-analytics-for-wordpress/lite/includes/admin/connect.php'
+      signs: []

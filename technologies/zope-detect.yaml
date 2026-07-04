@@ -1,0 +1,23 @@
+id: zope-detect
+brief:
+    title: Zope Quick Start Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - zope
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Zope QuickStart</title>
+          in: body
+        - "on": word
+          has:
+            - Zope/
+          in: server

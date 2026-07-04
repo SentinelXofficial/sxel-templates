@@ -1,0 +1,17 @@
+id: woodwing-phpinfo
+brief:
+    title: Woodwing Studio Server - Phpinfo Config
+    by: pdteam
+    level: medium
+    about: Phpinfo Config file exposed in Woodwing Studio Server.
+    label:
+        - misconfig
+        - woodwing
+        - phpinfo
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/StudioServer/server/wwtest/phpinfo.php'
+        - '{{BaseURL}}/server/wwtest/phpinfo.php'
+      signs: []

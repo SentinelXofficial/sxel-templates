@@ -1,0 +1,30 @@
+id: kodbox-installer
+brief:
+    title: Kodbox Installation Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Kodbox is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - exposure
+        - install
+        - kodbox
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Kodbox-Installation
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

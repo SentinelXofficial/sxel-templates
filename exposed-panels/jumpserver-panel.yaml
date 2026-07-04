@@ -1,0 +1,20 @@
+id: jumpserver-panel
+brief:
+    title: JumpServer Login Panel - Detect
+    by: lu4nx
+    level: info
+    about: JumpServer Open Source Bastion Host login panel was detected.
+    label:
+        - panel
+        - jumpserver
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/core/auth/login/'
+        - '{{BaseURL}}/users/login/'
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,28 @@
+id: brickcom-camera-default-login
+brief:
+    title: Brickcom Camera - Default Login
+    by: 0x_Akoko
+    level: high
+    about: Detected Brickcom IP cameras accessible using default credentials (admin/admin). Successful authentication exposed full camera configuration, live video streams, LED control, and network settings t...
+    label:
+        - iot
+        - camera
+        - default-login
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index_mjpg.html'
+      head:
+        Authorization: Basic YWRtaW46YWRtaW4=
+        Connection: close
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - var viewer='admin'
+            - Brickcom Corporation
+            - wledctl.cgi
+          in: body
+          need: all

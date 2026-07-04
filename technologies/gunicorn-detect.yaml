@@ -1,0 +1,15 @@
+id: gunicorn-detect
+brief:
+    title: Detect Gunicorn Server
+    by: joanbono
+    level: info
+    about: Gunicorn Python WSGI HTTP Server for UNIX
+    label:
+        - tech
+        - gunicorn
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

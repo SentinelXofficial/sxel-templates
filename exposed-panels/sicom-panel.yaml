@@ -1,0 +1,24 @@
+id: sicom-mgrng-login
+brief:
+    title: Sicom MGRNG - Administrative Login Found
+    by: sullo
+    level: info
+    about: Sicom MGRNG administrative login page found.
+    label:
+        - sicom
+        - mgrng
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/~sicom/mgrng/LoginForm.php'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>MGRNG Login</title>
+          in: body
+          need: all

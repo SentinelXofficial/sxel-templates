@@ -1,0 +1,29 @@
+id: olt-web-interface
+brief:
+    title: OLT Web Management Interface Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: OLT Web Management Interface login panel was detected.
+    label:
+        - edb
+        - panel
+        - olt
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/action/login.html'
+      signs:
+        - "on": word
+          has:
+            - OLT Web Management Interface
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

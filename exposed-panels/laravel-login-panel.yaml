@@ -1,0 +1,26 @@
+id: laravel-login-panel
+brief:
+    title: Laravel Login - Panel Detection
+    by: ProjectDiscoveryAI
+    level: info
+    about: A Laravel login panel was detected.
+    label:
+        - laravel
+        - login
+        - panel
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login'
+        - '{{BaseURL}}/authentication/login'
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - content="Laravel"
+            - Laravel Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

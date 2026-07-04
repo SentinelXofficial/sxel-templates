@@ -1,0 +1,24 @@
+id: codementor
+brief:
+    title: Codementor User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Codementor user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - codementor
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.codementor.io/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ABOUT ME
+          in: body
+          need: all

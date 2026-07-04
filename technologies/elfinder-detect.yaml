@@ -1,0 +1,24 @@
+id: elfinder-detect
+brief:
+    title: elFinder - Install Detection
+    by: pikpikcu
+    level: info
+    about: An elFinder implementation was discovered.
+    label:
+        - tech
+        - elfinder
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/elfinder.html'
+      signs:
+        - "on": word
+          has:
+            - <!-- Element where elFinder will be created (REQUIRED) -->
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

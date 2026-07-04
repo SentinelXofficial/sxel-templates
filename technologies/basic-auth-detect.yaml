@@ -1,0 +1,19 @@
+id: basic-auth-detect
+brief:
+    title: Basic Auth Detection
+    by: w4cky_
+    level: info
+    about: ""
+    label:
+        - tech
+        - basic
+        - auth
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 401

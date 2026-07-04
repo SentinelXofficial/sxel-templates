@@ -1,0 +1,25 @@
+id: grubhub-phish
+brief:
+    title: Grubhub phishing Detection
+    by: rxerium
+    level: info
+    about: A Grubhub phishing website was detected
+    label:
+        - phishing
+        - grubhub
+        - food-delivery
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Prepare your taste buds...
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

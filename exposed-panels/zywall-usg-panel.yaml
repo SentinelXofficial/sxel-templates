@@ -1,0 +1,24 @@
+id: zywall-usg-panel
+brief:
+    title: ZyXEL ZyWALL USG - Login Panel
+    by: rxerium
+    level: info
+    about: ZyXEL ZyWALL USG firewall login panel detected.
+    label:
+        - panel
+        - zyxel
+        - zywall
+        - firewall
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ZyWALL USG
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

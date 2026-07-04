@@ -1,0 +1,23 @@
+id: gitlist-disclosure
+brief:
+    title: GitList Disclosure
+    by: dhiyaneshDK
+    level: low
+    about: GitList is exposed.
+    label:
+        - gitlist
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - GitList</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

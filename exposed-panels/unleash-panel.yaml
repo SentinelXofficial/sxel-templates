@@ -1,0 +1,26 @@
+id: unleash-panel
+brief:
+    title: Unleash Panel - Detect
+    by: userdehghani
+    level: info
+    about: Open-source feature management solution built for developers.
+    label:
+        - panel
+        - unleash
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+        - '{{BaseURL}}/sign-in'
+        - '{{BaseURL}}/favicon.ico'
+      signs:
+        - "on": word
+          has:
+            - <title>Unleash
+            - content="unleash
+            - alt="getunleash
+            - Sign-in - Unleash hosted
+          in: body

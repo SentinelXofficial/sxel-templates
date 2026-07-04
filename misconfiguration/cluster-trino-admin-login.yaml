@@ -1,0 +1,28 @@
+id: cluster-trino-admin-login
+brief:
+    title: Cluster Overview Trino - Admin Login
+    by: DhiyaneshDK
+    level: high
+    about: The /ui/login endpoint accepted a POST request with username=admin and an empty password, which resulted in a successful login. This indicated improper authentication validation or a default/admin ...
+    label:
+        - vuln
+        - misconfig
+        - dashboard
+        - cluster
+        - trino
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/ui/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password=&redirectPath=
+      signs:
+        - "on": word
+          has:
+            - Trino-UI-Token
+          in: set_cookie
+          need: all
+        - "on": status
+          status:
+            - 303

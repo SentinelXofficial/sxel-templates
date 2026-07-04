@@ -1,0 +1,25 @@
+id: instacart-phish
+brief:
+    title: Instacart phishing Detection
+    by: rxerium
+    level: info
+    about: An Instacart phishing website was detected
+    label:
+        - phishing
+        - instacart
+        - food-delivery
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Instacart | Grocery Delivery or Pickup from Local Stores Near You
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

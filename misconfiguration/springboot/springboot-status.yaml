@@ -1,0 +1,26 @@
+id: springboot-status
+brief:
+    title: Spring Boot Status Actuator Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Spring Boot Status Actuator panel was detected.
+    label:
+        - misconfig
+        - springboot
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/status'
+        - '{{BaseURL}}/actuator/status'
+      signs:
+        - "on": word
+          has:
+            - '"freeMemory":'
+            - '"maxMemory":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

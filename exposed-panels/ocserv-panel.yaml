@@ -1,0 +1,26 @@
+id: ocserv-panel
+brief:
+    title: OpenConnect VPN Server (ocserv) - Detect
+    by: rxerium
+    level: info
+    about: OpenConnect VPN Server (ocserv) is an open-source VPN server compatible with
+    label:
+        - panel
+        - ocserv
+        - openconnect
+        - vpn
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ocserv
+            - OCServer
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

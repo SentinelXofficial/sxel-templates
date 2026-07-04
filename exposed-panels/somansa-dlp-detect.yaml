@@ -1,0 +1,23 @@
+id: somansa-dlp-detect
+brief:
+    title: Somansa DLP Login Panel - Detect
+    by: gy741
+    level: info
+    about: Somansa DLP login panel was detected.
+    label:
+        - panel
+        - somansa
+        - dlp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/DLPCenter/loginform.sms'
+        - '{{BaseURL}}/DLPCenter/images/favicon.ico'
+      signs:
+        - "on": word
+          has:
+            - /DLPCenter/js/
+            - SOMANSA
+          in: body
+          need: all

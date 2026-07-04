@@ -1,0 +1,17 @@
+id: wordpress-enable-media-replace
+brief:
+    title: Enable Media Replace Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/enable-media-replace/readme.txt'
+      signs: []

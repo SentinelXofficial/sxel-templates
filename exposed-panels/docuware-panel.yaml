@@ -1,0 +1,17 @@
+id: docuware-panel
+brief:
+    title: DocuWare - Detect
+    by: righettod
+    level: info
+    about: DocuWare panel was detected.
+    label:
+        - panel
+        - docuware
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/DocuWare/Identity/Account/Login'
+      signs: []

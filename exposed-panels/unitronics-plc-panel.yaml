@@ -1,0 +1,27 @@
+id: unitronics-plc-panel
+brief:
+    title: Unitronics PLC - Login Panel
+    by: rxerium
+    level: info
+    about: Unitronics PLC web interface panel has been detected.
+    label:
+        - panel
+        - unitronics
+        - plc
+        - ics
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Unitronics</title>
+            - Logo-Unitronics.svg
+            - unitronics.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

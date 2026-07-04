@@ -1,0 +1,25 @@
+id: ntfy-web-exposure
+brief:
+    title: NTFY Web - Exposure
+    by: DhiyaneshDk
+    level: medium
+    about: Publicly exposed NTFY web interface allowing unauthorized publish or subscribe access.
+    label:
+        - exposure
+        - ntfy
+        - web
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/settings'
+      signs:
+        - "on": word
+          has:
+            - <title>ntfy web</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: darudar
+brief:
+    title: Darudar User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Darudar user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - darudar
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://darudar.org/users/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - . Дарудар
+          in: body
+          need: all

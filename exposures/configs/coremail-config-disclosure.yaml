@@ -1,0 +1,27 @@
+id: coremail-config-disclosure
+brief:
+    title: Coremail - Config Discovery
+    by: princechaddha
+    level: high
+    about: Coremail configuration information was discovered.
+    label:
+        - config
+        - exposure
+        - coremail
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mailsms/s?func=ADMIN:appState&dumpConfig=/'
+      signs:
+        - "on": word
+          has:
+            - <object name="cm_md_db">
+            - containerDefinitions
+            - <string name="User">coremail</string>
+            - <string name="EnableCoremailSmtp">
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

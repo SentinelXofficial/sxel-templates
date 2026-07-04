@@ -1,0 +1,24 @@
+id: vrealize-loginsight-panel
+brief:
+    title: vRealize Log Insight - Panel Detect
+    by: pussycat0x
+    level: info
+    about: Detect vRealize Log Insight login panel was detected.
+    label:
+        - panel
+        - vmware
+        - vrealize
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login?loginUrl=%2Findex'
+      signs:
+        - "on": word
+          has:
+            - vRealize Log Insight
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

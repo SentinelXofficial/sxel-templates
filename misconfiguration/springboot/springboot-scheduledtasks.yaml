@@ -1,0 +1,34 @@
+id: springboot-scheduledtasks
+brief:
+    title: Spring Boot Scheduledtasks Actuator Panel - Detect
+    by: ELSFA7110
+    level: info
+    about: Spring Boot Scheduledtasks Actuator panel was detected.
+    label:
+        - misconfig
+        - springboot
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/scheduledtasks'
+        - '{{BaseURL}}/actuator/scheduledtasks'
+      signs:
+        - "on": word
+          has:
+            - cron
+            - fixedDelay
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v1+json
+            - application/vnd.spring-boot.actuator.v2+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,56 @@
+id: nacos-default-login
+brief:
+    title: Alibaba Nacos - Default Login
+    by: SleepingBag945
+    level: high
+    about: The default username and password for Nacos are both nacos.
+    label:
+        - nacos
+        - default-login
+        - alibaba
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/v1/auth/users/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        User-Agent: Nacos-Server
+      body: username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - '"accessToken":'
+            - '"username":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/nacos/v1/auth/users/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        User-Agent: Nacos-Server
+      body: username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - '"accessToken":'
+            - '"username":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

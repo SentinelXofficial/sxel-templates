@@ -1,0 +1,33 @@
+id: netflix-conductor-version
+brief:
+    title: Netflix Conductor Version Detection
+    by: c-sh0
+    level: info
+    about: Obtain netflix conductor version information
+    label:
+        - miscellaneous
+        - tech
+        - netflix
+        - conductor
+        - api
+        - misc
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/admin/config'
+        - '{{BaseURL}}/api/sys'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": word
+          has:
+            - CONDUCTOR_
+          in: body
+          need: all

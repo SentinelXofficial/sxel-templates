@@ -1,0 +1,24 @@
+id: piwigo-detect
+brief:
+    title: Piwigo Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - piwigo
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - piwigo.org">Piwigo</a>
+            - Piwigo (aka PWG), see piwigo.org
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

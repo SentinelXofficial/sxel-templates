@@ -1,0 +1,21 @@
+id: sweetrice-backup-disclosure
+brief:
+    title: SweetRice CMS 1.5.1 - Backup Disclosure
+    by: mananispiwpiw
+    level: medium
+    about: Detected SweetRice-specific backups and generic .sql files exposed via directory listing in the SweetRice mysql_backup directory.
+    label:
+        - sweetrice
+        - cms
+        - exposure
+        - backup
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/inc/mysql_backup/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/inc/mysql_backup/{{backup_file}}'
+      signs: []

@@ -1,0 +1,18 @@
+id: composer-config
+brief:
+    title: Composer Config - Detect
+    by: Mahendra Purbia (Mah3Sec_)
+    level: info
+    about: Composer configuration file detected.
+    label:
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/composer.json'
+        - '{{BaseURL}}/composer.lock'
+        - '{{BaseURL}}/.composer/composer.json'
+        - '{{BaseURL}}/vendor/composer/installed.json'
+      signs: []

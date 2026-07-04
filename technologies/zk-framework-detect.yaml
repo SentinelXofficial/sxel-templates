@@ -1,0 +1,27 @@
+id: zk-framework-detect
+brief:
+    title: ZK Framework - Detect
+    by: ErikOwen
+    level: info
+    about: Detects the presence of ZK JavaFramework and attempts to extract its version.
+    label:
+        - zk
+        - zkoss
+        - framework
+        - detect
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ZK Framework
+            - zk.wpd
+            - zkau/web
+            - zkau/zkau
+            - zkau/web/js/zk/zk.wpd
+            - '<!-- ZK '
+          in: body

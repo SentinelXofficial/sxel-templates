@@ -1,0 +1,33 @@
+id: s3cfg-config
+brief:
+    title: S3CFG Configuration - Detect
+    by: geeknik
+    level: high
+    about: S3CFG configuration file was detected.
+    label:
+        - amazon
+        - s3
+        - exposure
+        - config
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.s3cfg'
+      signs:
+        - "on": word
+          has:
+            - access_key
+            - bucket_location
+            - secret_key
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

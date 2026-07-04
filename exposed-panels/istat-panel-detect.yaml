@@ -1,0 +1,24 @@
+id: istat-panel-detect
+brief:
+    title: Abbott i-STAT Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Abbott i-STAT login panel was detected.
+    label:
+        - panel
+        - abbott
+        - istat
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Abbott Point of Care Inc. i-STAT</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

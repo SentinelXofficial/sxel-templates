@@ -1,0 +1,25 @@
+id: zend-config-file
+brief:
+    title: Zend Configuration File
+    by: pdteam
+    level: high
+    about: Zend configuration file was exposed.
+    label:
+        - config
+        - exposure
+        - zend
+        - php
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

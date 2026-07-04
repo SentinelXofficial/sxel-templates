@@ -1,0 +1,19 @@
+id: atlassian-crowd-panel
+brief:
+    title: Atlassian Crowd Login Panel
+    by: organiccrap
+    level: info
+    about: An Atlassian Crowd login panel was discovered.
+    label:
+        - panel
+        - atlassian
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/crowd/console/login.action'
+      signs:
+        - "on": word
+          has:
+            - <title>Atlassian Crowd - Login</title>
+          in: body

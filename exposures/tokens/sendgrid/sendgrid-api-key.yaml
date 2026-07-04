@@ -1,0 +1,16 @@
+id: sendgrid-api-key
+brief:
+    title: Sendgrid API Key Disclosure
+    by: Ice3man
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - sendgrid
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

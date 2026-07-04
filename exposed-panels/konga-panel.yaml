@@ -1,0 +1,26 @@
+id: konga-panel
+brief:
+    title: Konga Panel - Detect
+    by: princechaddha
+    level: info
+    about: Konga panel was detected.
+    label:
+        - tech
+        - konga
+        - oss
+        - panel
+        - pantsel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Konga</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

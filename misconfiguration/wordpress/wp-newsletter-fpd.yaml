@@ -1,0 +1,18 @@
+id: wp-newsletter-fpd
+brief:
+    title: WordPress Plugin Newsletter - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Plugin Newsletter plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - debug
+        - wordpress
+        - fpd
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/newsletter/admin.php'
+        - '{{BaseURL}}/wp-content/plugins/newsletter/emails/blocks/footer/block.php'
+        - '{{BaseURL}}/wp-content/plugins/newsletter/emails/blocks/cta/block.php'
+      signs: []

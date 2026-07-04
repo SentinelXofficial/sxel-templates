@@ -1,0 +1,16 @@
+id: sauce-token
+brief:
+    title: Sauce Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - sauce
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

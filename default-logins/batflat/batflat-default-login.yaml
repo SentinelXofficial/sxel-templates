@@ -1,0 +1,18 @@
+id: batflat-default-login
+brief:
+    title: Batflat CMS - Default Login
+    by: r3Y3r53
+    level: high
+    about: Batflat CMS is vulnerable to default login vulnerability that most commonly affects devices having some pre-set (default) administrative credentials to access all configuration settings.
+    label:
+        - default-login
+        - batflat
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/admin/'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}&login=
+      signs: []

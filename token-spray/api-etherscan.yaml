@@ -1,0 +1,25 @@
+id: api-etherscan
+brief:
+    title: Etherscan API Test
+    by: daffainfo
+    level: info
+    about: Ethereum explorer API
+    label:
+        - token-spray
+        - etherscan
+moves:
+    - verb: GET
+      to:
+        - https://api.etherscan.io/api?module=account&action=balance&address=0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae&tag=latest&apikey={{token}}
+      signs:
+        - "on": word
+          has:
+            - Invalid API Key
+          in: body
+          need: all
+        - "on": word
+          has:
+            - '"status":'
+            - '"message":"OK"'
+          in: body
+          need: all

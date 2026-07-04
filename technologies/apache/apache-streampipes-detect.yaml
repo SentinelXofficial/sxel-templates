@@ -1,0 +1,19 @@
+id: apache-streampipes-detect
+brief:
+    title: Apache StreamPipes - Detect
+    by: Alessandro Albani - DEVisions
+    level: info
+    about: Checks for the presence of Apache StreamPipes by looking in the body or matching the favicon hash.
+    label:
+        - tech
+        - apache
+        - streampipes
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/streampipes-backend/api/openapi.json'
+        - '{{BaseURL}}/assets/img/favicon/favicon.ico'
+        - '{{BaseURL}}'
+      signs: []

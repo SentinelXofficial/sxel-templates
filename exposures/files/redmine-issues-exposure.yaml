@@ -1,0 +1,33 @@
+id: redmine-issues-exposure
+brief:
+    title: Redmine Issues - Exposure
+    by: theamanrawat
+    level: medium
+    about: Redmine instance exposed issues via the REST API without authentication. This could have leaked sensitive project information, issue details, and user data.
+    label:
+        - misconfig
+        - redmine
+        - exposure
+        - disclosure
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/issues.json'
+        - '{{BaseURL}}/issues.json?limit=25'
+      signs:
+        - "on": word
+          has:
+            - '"issues":'
+            - '"total_count":'
+            - '"project":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

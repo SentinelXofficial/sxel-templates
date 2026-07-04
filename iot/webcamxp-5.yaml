@@ -1,0 +1,23 @@
+id: webcamxp-5
+brief:
+    title: WebcamXP 5 Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: WebcamXP 5 login panel was detected.
+    label:
+        - iot
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/home.html'
+      signs:
+        - "on": word
+          has:
+            - <title>webcamXP 5</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

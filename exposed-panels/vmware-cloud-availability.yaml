@@ -1,0 +1,23 @@
+id: vmware-cloud-availability
+brief:
+    title: VMware Cloud Director Availability Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: VMware Cloud Director Availability login panel was detected.
+    label:
+        - panel
+        - vmware
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/login'
+      signs:
+        - "on": word
+          has:
+            - <title>VMware Cloud Director Availability</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

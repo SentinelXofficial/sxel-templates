@@ -1,0 +1,23 @@
+id: oracle-dbass-detect
+brief:
+    title: Oracle DBaaS Monitor Detect
+    by: pussycat0x
+    level: info
+    about: ""
+    label:
+        - oracle
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dbaas_monitor/login'
+      signs:
+        - "on": word
+          has:
+            - <title>DBaaS Monitor</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

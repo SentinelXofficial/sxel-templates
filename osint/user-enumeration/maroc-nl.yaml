@@ -1,0 +1,24 @@
+id: maroc-nl
+brief:
+    title: Maroc nl User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Maroc nl user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - maroc-nl
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.maroc.nl/forums/members/{{user}}.html
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'Bekijk Profiel:'
+          in: body
+          need: all

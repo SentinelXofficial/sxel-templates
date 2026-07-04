@@ -1,0 +1,15 @@
+id: default-glassfish-server-page
+brief:
+    title: GlassFish Server Default Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - glassfish
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

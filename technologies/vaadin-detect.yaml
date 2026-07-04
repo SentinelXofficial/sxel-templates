@@ -1,0 +1,16 @@
+id: vaadin-detect
+brief:
+    title: Vaadin Framework - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects Vaadin web framework used for building Java/TypeScript web applications.
+    label:
+        - tech
+        - discovery
+        - vaadin
+        - framework
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,24 @@
+id: netsus-server-login
+brief:
+    title: NetSUS Server Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: NetSUS Server login panel was detected.
+    label:
+        - panel
+        - netsus
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webadmin/'
+      signs:
+        - "on": word
+          has:
+            - <title>NetSUS Server Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: homeworks-illumination
+brief:
+    title: HomeWorks Illumination Web Keypad
+    by: geeknik
+    level: low
+    about: HomeWorks Illumination Web Keypad panel was detected.
+    label:
+        - misconfig
+        - iot
+        - homeworks
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - HomeWorks Illumination Web Keypad
+            - Lutron HomeWorks
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

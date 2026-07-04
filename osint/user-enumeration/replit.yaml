@@ -1,0 +1,30 @@
+id: replit
+brief:
+    title: Replit User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Replit user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - replit
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://replit.com/@{{user}}
+      signs:
+        - "on": word
+          has:
+            - '@{{user}}'
+            - CurrentUser
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Page not found
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

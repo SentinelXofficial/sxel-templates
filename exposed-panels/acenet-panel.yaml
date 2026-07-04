@@ -1,0 +1,26 @@
+id: acenet-panel
+brief:
+    title: AceNet AceReporter Report Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - panel
+        - login
+        - acenet
+        - acereporter
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Reporter
+            - Login @ Reporter
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

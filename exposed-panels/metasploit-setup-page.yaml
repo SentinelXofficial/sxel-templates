@@ -1,0 +1,22 @@
+id: metasploit-setup-page
+brief:
+    title: Metasploit Setup and Configuration Page - Detect
+    by: ritikchaddha
+    level: info
+    about: Metasploit setup and configuration page was detected.
+    label:
+        - panel
+        - metasploit
+        - setup
+        - rapid7
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/users/new'
+      signs:
+        - "on": word
+          has:
+            - Metasploit - Setup and Configuration
+          in: body
+          need: all

@@ -1,0 +1,31 @@
+id: unauth-wavink-panel
+brief:
+    title: Wavlink Panel - Unauthenticated Access
+    by: princechaddha
+    level: high
+    about: Wavlink Panel was able to be accessed with no authentication requirements in place.
+    label:
+        - exposure
+        - wavlink
+        - unauth
+        - misconfig
+        - router
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wifi_base.shtml'
+      signs:
+        - "on": word
+          has:
+            - <title>APP</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - var passphraseKey12="";
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

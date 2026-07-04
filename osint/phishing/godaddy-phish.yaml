@@ -1,0 +1,26 @@
+id: godaddy-phish
+brief:
+    title: GoDaddy phishing Detection
+    by: rxerium
+    level: info
+    about: A GoDaddy phishing website was detected
+    label:
+        - phishing
+        - godaddy
+        - domain
+        - hosting
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Domain Names, Websites, Hosting &amp; Online Marketing Tools - GoDaddy
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: kiali-panel
+brief:
+    title: Kiali - Detect
+    by: righettod
+    level: info
+    about: kiali panel was detected.
+    label:
+        - panel
+        - kiali
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/kiali/api/status'
+        - '{{BaseURL}}/kiali/'
+      signs: []

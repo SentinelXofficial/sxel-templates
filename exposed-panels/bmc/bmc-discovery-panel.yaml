@@ -1,0 +1,24 @@
+id: bmc-discovery-panel
+brief:
+    title: BMC Discovery Login Panel - Detect
+    by: daffainfo
+    level: info
+    about: BMC Discovery login panel was detected.
+    label:
+        - panel
+        - bmc
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/'
+      signs:
+        - "on": word
+          has:
+            - 'BMC Discovery:'
+            - <span class="logo-product">Discovery</span>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

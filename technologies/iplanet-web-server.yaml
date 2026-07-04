@@ -1,0 +1,23 @@
+id: iplanet-web-server
+brief:
+    title: Detect iPlanet Webserver Detection
+    by: pussycat0x
+    level: info
+    about: ""
+    label:
+        - tech
+        - webserver
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - iPlanet
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

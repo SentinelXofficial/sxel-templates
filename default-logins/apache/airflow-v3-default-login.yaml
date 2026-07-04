@@ -1,0 +1,28 @@
+id: airflow-v3-default-login
+brief:
+    title: Apache Airflow v3 Default Login
+    by: pdteam
+    level: high
+    about: Apache Airflow v3 default login credentials were discovered.
+    label:
+        - airflow
+        - default-login
+        - apache
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login/'
+      head:
+        Origin: '{{BaseURL}}'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/auth/login/'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{BaseURL}}'
+        Referer: '{{BaseURL}}/auth/login'
+      body: username={{username}}&password={{password}}&_csrf_token={{csrf_token}}
+      signs: []

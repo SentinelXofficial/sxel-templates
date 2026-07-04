@@ -1,0 +1,25 @@
+id: manageengine-apex-helpdesk
+brief:
+    title: ZOHO ManageEngine APEX IT Help-Desk Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: ZOHO MangageEngine APEX panel was detected.
+    label:
+        - panel
+        - zoho
+        - manageengine
+        - zohocorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jsp/index.jsp'
+      signs:
+        - "on": word
+          has:
+            - <title>APEX IT Help Desk</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

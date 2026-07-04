@@ -1,0 +1,27 @@
+id: hospital-management-panel
+brief:
+    title: Hospital Management System Login Panel - Detect
+    by: arafatansari
+    level: info
+    about: Hospital Management System login panel was detected.
+    label:
+        - panel
+        - hms
+        - cms
+        - hospital_management_system_project
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.html'
+      signs:
+        - "on": word
+          has:
+            - Hospital Management System
+            - Doctors Login
+            - Admin Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

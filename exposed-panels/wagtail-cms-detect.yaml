@@ -1,0 +1,25 @@
+id: wagtail-login
+brief:
+    title: Wagtail Login - Detect
+    by: kishore-hariram
+    level: info
+    about: The Wagtail panel has been detected.
+    label:
+        - panel
+        - wagtail
+        - torchbox
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/?next=/'
+        - '{{BaseURL}}/admin/login/?next=/admin/'
+      signs:
+        - "on": word
+          has:
+            - Wagtail - Sign in
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

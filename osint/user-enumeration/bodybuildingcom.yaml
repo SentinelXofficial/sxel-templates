@@ -1,0 +1,24 @@
+id: bodybuildingcom
+brief:
+    title: BodyBuilding.com User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: BodyBuilding.com user name information check was conducted.
+    label:
+        - osint
+        - osint-health
+        - bodybuildingcom
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://api.bodybuilding.com/api-proxy/bbc/get?slug={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - username
+          in: body
+          need: all

@@ -1,0 +1,23 @@
+id: api-netlify
+brief:
+    title: Netlify API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - netlify
+moves:
+    - verb: GET
+      to:
+        - https://api.netlify.com/api/v1/sites
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"id":'
+            - '"premium":'
+            - '"claimed":'
+          in: body
+          need: all

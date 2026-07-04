@@ -1,0 +1,30 @@
+id: pyproject-toml
+brief:
+    title: pyproject.toml Configuration - Detect
+    by: DhiyaneshDK
+    level: info
+    about: pyproject.toml configuration was detected.
+    label:
+        - exposure
+        - pyproject
+        - pip
+        - devops
+        - cicd
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pyproject.toml'
+      signs:
+        - "on": word
+          has:
+            - '[tool.black]'
+            - exclude =
+          in: body
+          need: all
+        - "on": word
+          has:
+            - '[tool.poetry]'
+            - name =
+          in: body
+          need: all

@@ -1,0 +1,27 @@
+id: infoblox-nios-panel
+brief:
+    title: Infoblox NIOS Login Panel - Detect
+    by: EgemenKochisarli
+    level: info
+    about: Infoblox NIOS login panel was detected.
+    label:
+        - panel
+        - infoblox
+        - nios
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/'
+      signs:
+        - "on": word
+          has:
+            - <title>Infoblox Grid
+            - <title>Infoblox System
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

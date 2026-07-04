@@ -1,0 +1,25 @@
+id: lean-value-listing
+brief:
+    title: LVS Lean Value Management System Business - Directory Listing
+    by: pussycat0x
+    level: low
+    about: Multiple systems of Hangzhou Jila Technology Co., Ltd. have been found to have directory traversal vulnerabilities. These vulnerabilities arise from the inadequate access controls implemented in th...
+    label:
+        - lean-value
+        - misconfig
+        - listing
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Business/'
+      signs:
+        - "on": word
+          has:
+            - /Business/
+            - AgencytaskList.aspx
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

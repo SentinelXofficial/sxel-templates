@@ -1,0 +1,22 @@
+id: deprecated-feature-policy
+brief:
+    title: Deprecated Feature-Policy Header - Detection
+    by: ritikchaddha
+    level: info
+    about: Detected the presence of the deprecated Feature-Policy HTTP response header. The Feature-Policy header has been deprecated and replaced by the Permissions-Policy header. While Feature-Policy is sti...
+    label:
+        - misc
+        - headers
+        - deprecated
+        - feature-policy
+        - permissions
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Feature-Policy:'
+          in: header
+          need: all

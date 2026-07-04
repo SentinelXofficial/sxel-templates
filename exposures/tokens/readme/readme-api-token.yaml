@@ -1,0 +1,16 @@
+id: readme-api-token
+brief:
+    title: Readme API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - readme
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,17 @@
+id: wordpress-debug-log
+brief:
+    title: WordPress Debug Log - Exposure
+    by: geraldino2
+    level: low
+    about: Exposed Wordpress debug log.
+    label:
+        - wp
+        - wordpress
+        - log
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{paths}}/debug.log'
+      signs: []

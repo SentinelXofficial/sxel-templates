@@ -1,0 +1,17 @@
+id: wordpress-wp-user-avatar
+brief:
+    title: Paid Membership Plugin, Ecommerce, Registration Form, Login Form, User Profile & Restrict Content – ProfilePress Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wp-user-avatar/readme.txt'
+      signs: []

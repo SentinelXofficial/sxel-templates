@@ -1,0 +1,23 @@
+id: jhipster-detect
+brief:
+    title: JHipster Detect
+    by: righettod
+    level: info
+    about: ""
+    label:
+        - tech
+        - jhipster
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/i18n/en.json'
+      signs:
+        - "on": word
+          has:
+            - JHipster
+            - '@jhipster'
+            - Welcome, Java Hipster!
+            - jhipster-error
+          in: body

@@ -1,0 +1,17 @@
+id: cpas-managment-sqli
+brief:
+    title: CPAS Management System - SQL Injection
+    by: s4e-io
+    level: high
+    about: The CPAS Audit Management System V4 has been identified with an SQL injection vulnerability in the getCurserIfAllowLogin endpoint. This flaw allows unauthenticated remote attackers to exploit the s...
+    label:
+        - cpas
+        - cms
+        - sqli
+        - time-based-sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cpasm4/login'
+      signs: []

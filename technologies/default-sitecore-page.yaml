@@ -1,0 +1,25 @@
+id: sitecore-default-page
+brief:
+    title: Sitecore Default Page - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Detect Sitecore Content Management System (CMS).
+    label:
+        - tech
+        - sitecore
+        - cms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Sitecore
+            - alt="Sitecore"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

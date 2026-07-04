@@ -1,0 +1,24 @@
+id: usa-life
+brief:
+    title: USA Life User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: USA Life user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - usa-life
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://usa.life/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Please log in to like, share and comment
+          in: body
+          need: all

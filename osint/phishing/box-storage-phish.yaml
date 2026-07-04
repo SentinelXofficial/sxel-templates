@@ -1,0 +1,24 @@
+id: box-phish
+brief:
+    title: box phishing Detection
+    by: rxerium
+    level: info
+    about: A box phishing website was detected
+    label:
+        - phishing
+        - box-storage
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Secure File Sharing, Storage, and Collaboration | Box
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

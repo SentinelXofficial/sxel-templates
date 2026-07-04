@@ -1,0 +1,17 @@
+id: s3-detect
+brief:
+    title: Detect Amazon-S3 Bucket
+    by: melbadry9
+    level: info
+    about: ""
+    label:
+        - aws
+        - s3
+        - bucket
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/%c0'
+      signs: []

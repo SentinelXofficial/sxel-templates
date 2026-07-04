@@ -1,0 +1,33 @@
+id: jhipster-default-login
+brief:
+    title: JHipster Platform - Default Login
+    by: ritikchaddha
+    level: high
+    about: Detects the presence of JHipster application dashboard or API endpoints that allow authentication using default credentials. JHipster applications by default are often configured with the username ...
+    label:
+        - jhipster
+        - default-login
+        - exposure
+        - misconfig
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/authenticate'
+      head:
+        Content-Type: application/json
+      body: '{"username":"{{username}}","password":"{{password}}","rememberMe":false}'
+      signs:
+        - "on": word
+          has:
+            - '{"id_token":"ey'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - 'Authorization: Bearer'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

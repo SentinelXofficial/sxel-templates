@@ -1,0 +1,33 @@
+id: exposed-nomad
+brief:
+    title: Nomad - Exposed Jobs
+    by: pdteam
+    level: medium
+    about: Nomad jobs were discovered.
+    label:
+        - nomad
+        - devops
+        - hashicorp
+        - panel
+        - misconfig
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/jobs'
+      signs:
+        - "on": word
+          has:
+            - Nomad
+            - nomad-ui
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

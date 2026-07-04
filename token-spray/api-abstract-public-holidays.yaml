@@ -1,0 +1,21 @@
+id: api-abstract-public-holidays
+brief:
+    title: Abstract Api Public Holidays Test
+    by: daffainfo
+    level: info
+    about: Data on national, regional, and religious holidays via API
+    label:
+        - token-spray
+        - abstractapi
+moves:
+    - verb: GET
+      to:
+        - https://holidays.abstractapi.com/v1/?api_key={{token}}&country=GB&year=2021&month=1&day=25
+      signs:
+        - "on": word
+          has:
+            - '"name_local":'
+            - '"location":'
+            - '"date_year":'
+          in: body
+          need: all

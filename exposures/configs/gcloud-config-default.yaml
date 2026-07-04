@@ -1,0 +1,27 @@
+id: gcloud-config-default
+brief:
+    title: Google Cloud Default Config - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Google Cloud default configuration was detected.
+    label:
+        - google
+        - cloud
+        - devops
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/configurations/config_default'
+        - '{{BaseURL}}/.config/gcloud/configurations/config_default'
+      signs:
+        - "on": word
+          has:
+            - '[core]'
+            - account
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

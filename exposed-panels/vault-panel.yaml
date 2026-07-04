@@ -1,0 +1,20 @@
+id: vault-panel
+brief:
+    title: Vault Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Vault login panel was detected.
+    label:
+        - panel
+        - vault
+        - detect
+        - hashicorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v1/sys/health'
+        - '{{BaseURL}}/ui/vault/auth'
+        - '{{BaseURL}}/ui/auth'
+        - '{{BaseURL}}/v1/sys/health?help=1'
+      signs: []

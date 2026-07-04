@@ -1,0 +1,25 @@
+id: apache-jspwiki-ip-userenum
+brief:
+    title: Apache JSPWiki - User IP Enumeration
+    by: icarot
+    level: low
+    about: Enumerates the IP Address and users that is currently accessing an Apache JSPWiki web application, leading open source WikiWiki engine, feature-rich and built around standard JEE components (Java, ...
+    label:
+        - jspwiki
+        - apache
+        - enumeration
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Wiki.jsp?page=SystemInfo'
+      signs:
+        - "on": word
+          has:
+            - <b>Active Wiki Users</b>
+            - Number of active sessions
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

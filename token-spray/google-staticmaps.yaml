@@ -1,0 +1,18 @@
+id: api-googlestaticmaps
+brief:
+    title: Google Static Maps API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - maps
+moves:
+    - verb: GET
+      to:
+        - https://maps.googleapis.com/maps/api/staticmap?center=45%2C10&zoom=7&size=400x400&key={{token}}
+      signs:
+        - "on": status
+          status:
+            - 200

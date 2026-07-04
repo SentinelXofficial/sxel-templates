@@ -1,0 +1,30 @@
+id: graphql-dianajl-detect
+brief:
+    title: Graphql Dianajl Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - graphql
+        - dianajl
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/graphql'
+        - '{{BaseURL}}/api/graphql'
+        - '{{BaseURL}}/query'
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: '{"query":"queryy { __typename }"}'
+      signs:
+        - "on": status
+          status:
+            - 200
+            - 400
+        - "on": word
+          has:
+            - Syntax Error GraphQL request (1:1) Unexpected Name "queryy"
+          in: body
+          need: all

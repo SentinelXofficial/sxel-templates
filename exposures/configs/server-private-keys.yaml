@@ -1,0 +1,30 @@
+id: server-private-keys
+brief:
+    title: SSL/SSH/TLS/JWT Keys - Detect
+    by: geeknik
+    level: high
+    about: Private SSL, SSH, TLS, and JWT keys were detected.
+    label:
+        - config
+        - exposure
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - BEGIN OPENSSH PRIVATE KEY
+            - BEGIN PRIVATE KEY
+            - BEGIN RSA PRIVATE KEY
+            - BEGIN DSA PRIVATE KEY
+            - BEGIN EC PRIVATE KEY
+            - BEGIN PGP PRIVATE KEY BLOCK
+            - BEGIN ENCRYPTED PRIVATE KEY
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

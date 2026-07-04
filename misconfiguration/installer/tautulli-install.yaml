@@ -1,0 +1,25 @@
+id: tautulli-install
+brief:
+    title: Tautulli - Exposed Installation
+    by: ritikchaddha
+    level: high
+    about: Tautulli is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - tautulli
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/welcome'
+      signs:
+        - "on": word
+          has:
+            - <title>Tautulli - Welcome
+            - Tautulli Setup Wizard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

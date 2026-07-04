@@ -1,0 +1,25 @@
+id: changedetection-unauth
+brief:
+    title: Changedetection.io Dashboard - Exposure
+    by: ritikchaddha
+    level: medium
+    about: Changedetection.io unauth panel detected.
+    label:
+        - changedetection
+        - unauth
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - SETTINGS</a>
+            - Change Detection
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

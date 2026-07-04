@@ -1,0 +1,24 @@
+id: kayak-phish
+brief:
+    title: kayak phishing Detection
+    by: rxerium
+    level: info
+    about: A kayak phishing website was detected
+    label:
+        - phishing
+        - kayak
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Search Flights, Hotels &amp; Car Hire | KAYAK
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

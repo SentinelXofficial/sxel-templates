@@ -1,0 +1,23 @@
+id: rosariosis-detect
+brief:
+    title: Rosariosis Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - rosariosis
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - RosarioSIS=
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

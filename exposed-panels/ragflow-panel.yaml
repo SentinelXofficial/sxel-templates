@@ -1,0 +1,27 @@
+id: ragflow-panel
+brief:
+    title: RAGFlow Panel - Detect
+    by: rxerium
+    level: info
+    about: RAGFlow is an open-source RAG (Retrieval-Augmented Generation) engine based on deep
+    label:
+        - panel
+        - ragflow
+        - llm
+        - ai
+        - rag
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - RAGFlow
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

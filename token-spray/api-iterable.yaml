@@ -1,0 +1,22 @@
+id: api-iterable
+brief:
+    title: Iterable API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - iterable
+moves:
+    - verb: GET
+      to:
+        - https://api.iterable.com/api/catalogs
+      head:
+        Api_Key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"name":'
+            - '"catalogNames":'
+          in: body
+          need: all

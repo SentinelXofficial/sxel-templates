@@ -1,0 +1,19 @@
+id: default-centos-test-page
+brief:
+    title: CentOs-WebPanel Test Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - centos
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>HTTP Server Test Page powered by CentOS-WebPanel.com</title>
+          in: body

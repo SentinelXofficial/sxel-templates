@@ -1,0 +1,33 @@
+id: sphinxsearch-config
+brief:
+    title: Sphinx Search Config - Exposure
+    by: gtrrnr
+    level: high
+    about: sphinx.conf file contains SQL credentials and is publicly accessible.
+    label:
+        - sphinx
+        - sphinxsearch
+        - exposure
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config/development.sphinx.conf'
+        - '{{BaseURL}}/config/production.sphinx.conf'
+        - '{{BaseURL}}/configs/sphinx.conf'
+        - '{{BaseURL}}/search/configs/sphinx.conf'
+        - '{{BaseURL}}/sphinx.conf'
+        - '{{BaseURL}}/sphinx/sphinx.conf'
+        - '{{BaseURL}}/sphinxsearch/sphinx.conf'
+      signs:
+        - "on": word
+          has:
+            - sql_user
+            - sql_pass
+            - indexer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

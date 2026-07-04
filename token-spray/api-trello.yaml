@@ -1,0 +1,18 @@
+id: api-trello
+brief:
+    title: Trello API Test
+    by: daffainfo
+    level: info
+    about: Boards, lists and cards to help you organize and prioritize your projects
+    label:
+        - token-spray
+        - trello
+moves:
+    - verb: GET
+      to:
+        - https://api.trello.com/1/members/me?key={{key}}&token={{token}}
+      signs:
+        - "on": word
+          has:
+            - invalid key
+          in: body

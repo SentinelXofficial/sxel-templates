@@ -1,0 +1,21 @@
+id: shiro-detect
+brief:
+    title: Detect Shiro Framework
+    by: AresX
+    level: info
+    about: ""
+    label:
+        - tech
+        - shiro
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      head:
+        Cookie: JSESSIONID={{randstr}};rememberMe=123;
+      signs:
+        - "on": word
+          has:
+            - rememberMe=deleteMe
+          in: header

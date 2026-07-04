@@ -1,0 +1,25 @@
+id: wayfair-phish
+brief:
+    title: Wayfair phishing Detection
+    by: rxerium
+    level: info
+    about: A Wayfair phishing website was detected
+    label:
+        - phishing
+        - wayfair
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - px-captcha
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

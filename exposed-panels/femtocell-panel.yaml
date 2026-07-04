@@ -1,0 +1,25 @@
+id: femtocell-panel
+brief:
+    title: Femtocell Access Point Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Femtocell Access Point panel was discovered.
+    label:
+        - femtocell
+        - network
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.html'
+      signs:
+        - "on": word
+          has:
+            - Femtocell Access Point
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: reddit-phish
+brief:
+    title: reddit phishing Detection
+    by: rxerium
+    level: info
+    about: A reddit phishing website was detected
+    label:
+        - phishing
+        - reddit
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Reddit - Dive into anything
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,15 @@
+id: redirect-pizza-takeover
+brief:
+    title: Redirect.pizza Subdomain Takeover Detection
+    by: Ranjan Kumar
+    level: high
+    about: Redirect.pizza subdomain takeover was detected.
+    label:
+        - takeover
+        - redirect-pizza
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,28 @@
+id: oracle-access-manager-detect
+brief:
+    title: Oracle Access Manager Detect
+    by: tess
+    level: info
+    about: ""
+    label:
+        - tech
+        - oracle
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/oamfed/idp/soap'
+      signs:
+        - "on": word
+          has:
+            - processing the SOAP Request
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/xml
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

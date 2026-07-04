@@ -1,0 +1,26 @@
+id: papercut-ng-panel
+brief:
+    title: PaperCut NG Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: PaperCut is a print management system. Log in to manage your print quotas, see your print history and configure your system.
+    label:
+        - panel
+        - papercut
+        - detect
+        - papercut-ng
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/user'
+      signs:
+        - "on": word
+          has:
+            - content="PaperCut
+            - <title>PaperCut Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

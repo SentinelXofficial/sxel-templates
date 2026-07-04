@@ -1,0 +1,23 @@
+id: database-error
+brief:
+    title: Database Error
+    by: dhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - database
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Database Error</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 500

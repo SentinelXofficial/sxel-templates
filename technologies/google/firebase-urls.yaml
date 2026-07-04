@@ -1,0 +1,16 @@
+id: firebase-urls
+brief:
+    title: Google Firebase DB URL Finder
+    by: panch0r3d
+    level: info
+    about: Find firebaseio urls to check for security permissions
+    label:
+        - tech
+        - firebase
+        - google
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

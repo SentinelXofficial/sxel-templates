@@ -1,0 +1,18 @@
+id: wp-sg-cachepress-fpd
+brief:
+    title: WordPress Plugin SG Optimizer - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Plugin SG Optimizer Plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - debug
+        - wordpress
+        - fpd
+        - vuln
+        - sg-cachepress
+        - wp-plugin
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/sg-cachepress/core/File_Cacher/File_Cacher.php'
+      signs: []

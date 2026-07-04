@@ -1,0 +1,22 @@
+id: sqwebmail-login-panel
+brief:
+    title: SqWebMail Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: SqWebMail login panel was detected.
+    label:
+        - webmail
+        - sqwebmail
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/sqwebmail'
+        - '{{BaseURL}}/cgi-bin/webmail'
+      signs:
+        - "on": word
+          has:
+            - SqWebMail - Copyright
+          in: body
+          need: all

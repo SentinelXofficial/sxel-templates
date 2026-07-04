@@ -1,0 +1,26 @@
+id: roam-research-phish
+brief:
+    title: Roam Research phishing Detection
+    by: rxerium
+    level: info
+    about: A Roam Research phishing website was detected
+    label:
+        - phishing
+        - roam-research
+        - notes
+        - productivity
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Roam Research – A note taking tool for networked thought.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

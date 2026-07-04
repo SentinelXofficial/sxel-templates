@@ -1,0 +1,26 @@
+id: siteomat-loader
+brief:
+    title: Orpak SiteOmat Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Orpak SiteOmat login panel was detected.
+    label:
+        - siteomat
+        - login
+        - edb
+        - panel
+        - orpak
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.htm'
+      signs:
+        - "on": word
+          has:
+            - <title>SiteOmat Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

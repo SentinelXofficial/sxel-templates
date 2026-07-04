@@ -1,0 +1,18 @@
+id: autobahn-python-detect
+brief:
+    title: Autobahn-Python Webserver Detect
+    by: pussycat0x
+    level: info
+    about: ""
+    label:
+        - tech
+        - webserver
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

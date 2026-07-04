@@ -1,0 +1,24 @@
+id: raspberrymatic-panel
+brief:
+    title: RaspberryMatic Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: RaspberryMatic login panel was detected.
+    label:
+        - panel
+        - raspberrymatic
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.htm'
+      signs:
+        - "on": word
+          has:
+            - <title>RaspberryMatic WebUI</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

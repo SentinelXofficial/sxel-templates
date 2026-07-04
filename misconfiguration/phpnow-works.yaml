@@ -1,0 +1,25 @@
+id: phpnow-works
+brief:
+    title: PHPnow works - Exposure
+    by: DhiyaneshDk
+    level: low
+    about: PHPnow works is exposed.
+    label:
+        - misconfig
+        - phpnow
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>PHPnow Works!</title>
+            - Server Information
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

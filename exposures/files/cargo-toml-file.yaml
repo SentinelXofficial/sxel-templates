@@ -1,0 +1,25 @@
+id: cargo-toml-file
+brief:
+    title: Cargo TOML File Disclosure
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - exposure
+        - files
+        - cargo
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Cargo.toml'
+      signs:
+        - "on": word
+          has:
+            - '[package]'
+            - '[dependencies]'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

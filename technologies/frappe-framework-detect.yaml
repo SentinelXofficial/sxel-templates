@@ -1,0 +1,17 @@
+id: frappe-framework-detect
+brief:
+    title: Frappe Framework - Detect
+    by: righettod
+    level: info
+    about: Frappe Framework products was detected.
+    label:
+        - panel
+        - frappe
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/about'
+      signs: []

@@ -1,0 +1,16 @@
+id: wordpress-hunk-companion
+brief:
+    title: Hunk Companion Detection
+    by: invisiblethreat
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/hunk-companion/readme.txt'
+      signs: []

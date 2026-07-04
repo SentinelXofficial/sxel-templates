@@ -1,0 +1,33 @@
+id: springboot-conditions
+brief:
+    title: Detect Springboot Conditions Actuator
+    by: DhiyaneshDK
+    level: low
+    about: Springboot Conditions Actuator is exposed.
+    label:
+        - misconfig
+        - springboot
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/conditions'
+        - '{{BaseURL}}/actuator/conditions'
+      signs:
+        - "on": word
+          has:
+            - '"positiveMatches":{'
+            - '"unconditionalClasses":['
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v1+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

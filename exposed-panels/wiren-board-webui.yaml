@@ -1,0 +1,31 @@
+id: wiren-board-webui
+brief:
+    title: Wiren Board WebUI Panel - Detect
+    by: tess
+    level: medium
+    about: Wiren Board WebUI panel was detected.
+    label:
+        - panel
+        - exposure
+        - wiren
+        - discovery
+    score: CVSS:6.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#!/dashboards'
+      signs:
+        - "on": word
+          has:
+            - Wiren Board Web UI
+            - accessLevel
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

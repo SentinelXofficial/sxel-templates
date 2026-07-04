@@ -1,0 +1,24 @@
+id: watchmyfeed
+brief:
+    title: Watchmyfeed User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Watchmyfeed user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - watchmyfeed
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://watchmyfeed.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - SEND ME A TIP
+          in: body
+          need: all

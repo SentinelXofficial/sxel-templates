@@ -1,0 +1,24 @@
+id: quora-phish
+brief:
+    title: quora phishing Detection
+    by: rxerium
+    level: info
+    about: A quora phishing website was detected
+    label:
+        - phishing
+        - quora
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Quora - A place to share knowledge and better understand the world
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

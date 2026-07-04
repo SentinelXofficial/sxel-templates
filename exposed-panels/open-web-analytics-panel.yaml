@@ -1,0 +1,24 @@
+id: open-web-analytics-panel
+brief:
+    title: Open Web Analytics Login - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Detects the presence of Open Web Analytics login page.
+    label:
+        - open-web-analytics
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?owa_do=base.loginForm'
+      signs:
+        - "on": word
+          has:
+            - OWA.config.main_url
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

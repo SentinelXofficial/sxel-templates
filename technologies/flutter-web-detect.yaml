@@ -1,0 +1,28 @@
+id: flutter-web-detect
+brief:
+    title: Flutter Web Application - Detect
+    by: incogbyte
+    level: info
+    about: Detect flutter web apps looking for flutter_bootstrap.js,main.dart.js and flutter_service_worker.js files.
+    label:
+        - tech
+        - detect
+        - flutter
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/flutter_service_worker.js'
+        - '{{BaseURL}}/main.dart.js'
+        - '{{BaseURL}}/flutter_bootstrap.js'
+      signs:
+        - "on": word
+          has:
+            - _flutter.loader.didCreateEngineInitializer
+            - _flutter.buildConfig
+            - flutter-app-manifest
+            - flutter-temp-cache
+            - flutter-app-cache
+            - ext.flutter.disassemble
+            - '#flutterweb-theme'
+          in: body

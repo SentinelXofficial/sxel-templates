@@ -1,0 +1,23 @@
+id: puppet-node-manager-detect
+brief:
+    title: Puppet Node Manager
+    by: pussycat0x
+    level: info
+    about: ""
+    label:
+        - node
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Puppet Node Manager</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

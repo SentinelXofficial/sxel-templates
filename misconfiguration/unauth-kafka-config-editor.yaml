@@ -1,0 +1,17 @@
+id: unauth-kafka-config-editor
+brief:
+    title: Kafka Config Editor - Unauthenticated Access
+    by: DhiyaneshDk
+    level: high
+    about: Kafka Config Editor was detected and appeared to be accessible without authentication.
+    label:
+        - kafka
+        - misconfig
+        - unauth
+        - dashboard
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

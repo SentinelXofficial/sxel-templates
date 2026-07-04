@@ -1,0 +1,23 @@
+id: kerio-connect-client
+brief:
+    title: Kerio Connect Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Kerio Connect login panel was detected.
+    label:
+        - panel
+        - kerio
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webmail/login/'
+      signs:
+        - "on": word
+          has:
+            - <title>Kerio Connect Client</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

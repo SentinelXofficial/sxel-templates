@@ -1,0 +1,24 @@
+id: avg-phish
+brief:
+    title: avg phishing Detection
+    by: rxerium
+    level: info
+    about: An avg phishing website was detected
+    label:
+        - phishing
+        - avg
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - AVG 2024 | FREE Antivirus, VPN & TuneUp for All Your Devices
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

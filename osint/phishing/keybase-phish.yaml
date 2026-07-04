@@ -1,0 +1,24 @@
+id: keybase-phish
+brief:
+    title: keybase phishing Detection
+    by: rxerium
+    level: info
+    about: A keybase phishing website was detected
+    label:
+        - phishing
+        - keybase
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Keybase is for keeping everyone's chats and files safe, from families to communities to companies. MacOS, Windows, Linux, iPhone, and Android.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

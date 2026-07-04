@@ -1,0 +1,25 @@
+id: user-registration
+brief:
+    title: WordPress User Registration & Membership Plugin Detection
+    by: omarkurt
+    level: info
+    about: Detected WordPress User Registration & Membership plugin and its version information.
+    label:
+        - wordpress
+        - wp-plugin
+        - user-registration
+        - tech
+        - wp
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/user-registration/readme.txt'
+      signs:
+        - "on": word
+          has:
+            - User Registration
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

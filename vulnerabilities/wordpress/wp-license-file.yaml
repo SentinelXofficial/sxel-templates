@@ -1,0 +1,22 @@
+id: wp-license-file
+brief:
+    title: WordPress license file disclosure
+    by: yashgoti
+    level: info
+    about: Leaked WordPress license file.
+    label:
+        - wordpress
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/license.txt'
+      signs:
+        - "on": word
+          has:
+            - WordPress - Web publishing software
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

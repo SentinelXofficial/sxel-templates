@@ -1,0 +1,24 @@
+id: avantfax-panel
+brief:
+    title: AvantFAX Login Panel
+    by: pikpikcu
+    level: info
+    about: An AvantFAX login panel was discovered.
+    label:
+        - panel
+        - avantfax
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>- AvantFAX - Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

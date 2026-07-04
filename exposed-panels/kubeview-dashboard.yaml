@@ -1,0 +1,28 @@
+id: kubeview-dashboard
+brief:
+    title: KubeView Dashboard - Detect
+    by: ja1sh
+    level: info
+    about: KubeView dashboard was detected.
+    label:
+        - exposure
+        - k8s
+        - kubernetes
+        - kubeview
+        - dashboard
+        - panel
+        - kubeview_project
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>KubeView</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

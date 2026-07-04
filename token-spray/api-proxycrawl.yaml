@@ -1,0 +1,21 @@
+id: api-proxycrawl
+brief:
+    title: ProxyCrawl API Test
+    by: daffainfo
+    level: info
+    about: Scraping and crawling anticaptcha service
+    label:
+        - token-spray
+        - proxycrawl
+moves:
+    - verb: GET
+      to:
+        - https://api.proxycrawl.com/leads?token={{token}}&domain=www.amazon.com
+      signs:
+        - "on": word
+          has:
+            - '"remaining_requests"'
+            - '"domain"'
+            - '"leads"'
+          in: body
+          need: all

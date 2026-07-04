@@ -1,0 +1,32 @@
+id: cheatsh-detect
+brief:
+    title: cheat.sh Instance - Detection
+    by: ritikchaddha
+    level: info
+    about: Detects exposed cheat.sh instances. cheat.sh is a community-driven cheat sheet service that provides quick command-line reference for programming languages and Unix commands. While designed to be p...
+    label:
+        - tech
+        - cheatsh
+        - detection
+        - devtools
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - cheat.sh
+            - curl cheat.sh
+          in: body
+          need: all
+        - "on": word
+          has:
+            - :firstpage
+            - cht.sh
+            - /files/style.css
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

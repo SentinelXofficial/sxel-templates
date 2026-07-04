@@ -1,0 +1,23 @@
+id: cache-poisoning
+brief:
+    title: Cache Poisoning Detection
+    by: melbadry9
+    level: low
+    about: This template detects Cache poisoning.
+    label:
+        - cache
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?{{cache_key}}=9'
+      head:
+        X-Forwarded-For: '{{cache_header}}.xff'
+        X-Forwarded-Host: '{{cache_header}}.xfh'
+        X-Forwarded-Prefix: '{{cache_header}}.xfp'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?{{cache_key}}=9'
+      signs: []

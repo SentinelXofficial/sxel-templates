@@ -1,0 +1,18 @@
+id: mitel-6000-default-login
+brief:
+    title: Mitel 6000 - Default Login
+    by: matejsmycka
+    level: high
+    about: This template detects the use of default credentials (admin:22222) on Mitel 6000 devices, which may allow unauthorized access to system information.
+    label:
+        - mitel
+        - mitel-6000
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sysinfo.html'
+      head:
+        Authorization: Basic {{base64('{{username}}:{{password}}')}}
+      signs: []

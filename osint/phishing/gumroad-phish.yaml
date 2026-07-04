@@ -1,0 +1,24 @@
+id: gumroad-phish
+brief:
+    title: Gumroad phishing Detection
+    by: rxerium
+    level: info
+    about: A Gumroad phishing website was detected
+    label:
+        - phishing
+        - gumroad
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Start selling what you know, see what sticks, and get paid. Simple and effective.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

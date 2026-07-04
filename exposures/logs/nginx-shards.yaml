@@ -1,0 +1,27 @@
+id: nginx-shards
+brief:
+    title: NGINX Shards Disclosure
+    by: DhiyaneshDK
+    level: medium
+    about: NGINX internal information, shards page exposed.
+    label:
+        - exposure
+        - shards
+        - nginx
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/static/shards.html'
+        - '{{BaseURL}}/static/shards/html'
+      signs:
+        - "on": word
+          has:
+            - Logs
+            - Database
+            - online shards only
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

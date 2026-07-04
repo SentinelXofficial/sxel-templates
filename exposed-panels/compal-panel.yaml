@@ -1,0 +1,19 @@
+id: compal-panel-detect
+brief:
+    title: Compal CH7465LG Login Panel - Detect
+    by: fabaff
+    level: info
+    about: Compal CH7465LG login panel was detected.
+    label:
+        - panel
+        - compal
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/common_page/login.html'
+      signs:
+        - "on": word
+          has:
+            - <!--for router status S-->
+          in: body

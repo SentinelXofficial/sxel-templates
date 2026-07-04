@@ -1,0 +1,26 @@
+id: eos-http-browser
+brief:
+    title: EOS HTTP Browser
+    by: DhiyaneshDk
+    level: medium
+    about: ""
+    label:
+        - exposure
+        - eos
+        - httpbrowser
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/eos/'
+      signs:
+        - "on": word
+          has:
+            - STAT TEST
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

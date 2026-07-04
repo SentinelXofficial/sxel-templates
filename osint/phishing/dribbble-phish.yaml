@@ -1,0 +1,25 @@
+id: dribbble-phish
+brief:
+    title: Dribbble phishing Detection
+    by: rxerium
+    level: info
+    about: A Dribbble phishing website was detected
+    label:
+        - phishing
+        - dribbble
+        - design
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Dribbble - Discover the World's Top Designers &amp; Creative Professionals
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

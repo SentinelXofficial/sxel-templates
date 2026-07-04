@@ -1,0 +1,24 @@
+id: vivino
+brief:
+    title: Vivino User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Vivino user name information check was conducted.
+    label:
+        - osint
+        - osint-video
+        - vivino
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.vivino.com/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <!-- User details -->
+          in: body
+          need: all

@@ -1,0 +1,17 @@
+id: webtransfer-client-panel
+brief:
+    title: Web Transfer Client Login Panel - Detect
+    by: righettod
+    level: info
+    about: Progress Web Transfer Client login panel was detected.
+    label:
+        - panel
+        - webtransferclient
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ThinClient/WTM/public/index.html'
+      signs: []

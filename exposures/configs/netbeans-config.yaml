@@ -1,0 +1,19 @@
+id: netbeans-config
+brief:
+    title: Netbeans Config - Detect
+    by: sbani
+    level: info
+    about: Netbeans configuration information was detected.
+    label:
+        - netbeans
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nbproject/project.properties'
+      signs:
+        - "on": status
+          status:
+            - 200

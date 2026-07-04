@@ -1,0 +1,20 @@
+id: smugmug-takeover
+brief:
+    title: Smugmug Takeover Detection
+    by: pdteam
+    level: high
+    about: Smugmug takeover was detected.
+    label:
+        - takeover
+        - smugmug
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '{"text":"Page Not Found"'
+          in: body
+          need: all

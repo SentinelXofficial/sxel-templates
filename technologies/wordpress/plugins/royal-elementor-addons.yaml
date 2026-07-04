@@ -1,0 +1,17 @@
+id: wordpress-royal-elementor-addons
+brief:
+    title: Royal Elementor Addons and Templates Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/royal-elementor-addons/readme.txt'
+      signs: []

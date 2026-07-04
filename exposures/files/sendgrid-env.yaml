@@ -1,0 +1,21 @@
+id: sendgrid-env
+brief:
+    title: SendGrid Env File Exposure
+    by: DhiyaneshDk
+    level: medium
+    about: SendGrid file is exposed containing environment variables.
+    label:
+        - exposure
+        - sendgrid
+        - key
+        - api
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sendgrid.env'
+      signs:
+        - "on": status
+          status:
+            - 429

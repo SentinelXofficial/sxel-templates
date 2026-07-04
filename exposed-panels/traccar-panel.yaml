@@ -1,0 +1,17 @@
+id: traccar-panel
+brief:
+    title: Traccar Panel - Detect
+    by: s4e-io
+    level: info
+    about: Traccar panel was discovered.
+    label:
+        - panel
+        - login
+        - traccar
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs: []

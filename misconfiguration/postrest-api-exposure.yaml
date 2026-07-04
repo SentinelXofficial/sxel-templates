@@ -1,0 +1,16 @@
+id: postrest-api-exposure
+brief:
+    title: PostgREST API Server  - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: PostgREST API Server was detected and appeared to be accessible without authentication.
+    label:
+        - postgrest
+        - misconfig
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

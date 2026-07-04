@@ -1,0 +1,19 @@
+id: totolink-installer
+brief:
+    title: TOTOLINK Installer - Exposure
+    by: ritikchaddha
+    level: high
+    about: Detects the presence of TOTOLINK router setup pages at /wizardset.htm and /easy_setup.htm.
+    label:
+        - totolink
+        - router
+        - setup
+        - exposure
+        - installer
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wizardset.htm'
+        - '{{BaseURL}}/easy_setup.htm'
+      signs: []

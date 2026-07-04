@@ -1,0 +1,33 @@
+id: tooljet-default-login
+brief:
+    title: ToolJet - Default Login
+    by: random-robbie
+    level: high
+    about: ToolJet contains a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - default-login
+        - tooljet
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/authenticate'
+      head:
+        Content-Type: application/json
+      body: '{"email":"{{username}}","password":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - '"auth_token":'
+            - '"organization_id":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 201

@@ -1,0 +1,18 @@
+id: clearml-panel
+brief:
+    title: ClearML Panel - Detect
+    by: rxerium
+    level: info
+    about: ClearML was detected. ClearML is an open-source MLOps platform for experiment tracking, model management, and pipeline orchestration. Exposed instances may allow access to ML experiments, models, a...
+    label:
+        - panel
+        - clearml
+        - mlops
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

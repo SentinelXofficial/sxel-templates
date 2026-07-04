@@ -1,0 +1,27 @@
+id: configuration-listing
+brief:
+    title: Sensitive Configuration Files Listing - Detect
+    by: j33n1k4
+    level: medium
+    about: Listing of sensitive configuration files containing items such as usernames, passwords, and IP addresses was detected.
+    label:
+        - config
+        - listing
+        - exposure
+        - edb
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config/'
+      signs:
+        - "on": word
+          has:
+            - Index of /config
+            - Parent Directory
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

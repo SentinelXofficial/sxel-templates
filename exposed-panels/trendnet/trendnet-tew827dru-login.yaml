@@ -1,0 +1,24 @@
+id: trendnet-tew827dru-login
+brief:
+    title: TRENDnet TEW-827DRU Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: TRENDnet TEW-827DRU login panel was detected.
+    label:
+        - panel
+        - router
+        - trendnet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - var model = "TEW-827DRU";
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

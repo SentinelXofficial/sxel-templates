@@ -1,0 +1,36 @@
+id: jellyfin-default-login
+brief:
+    title: Jellyfin Console - Default Login
+    by: thefoggiest
+    level: high
+    about: Weak Jellyfin credentials were discovered.
+    label:
+        - default-login
+        - jellyfin
+        - misconfig
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/Users/authenticatebyname'
+      head:
+        Content-Type: application/json
+        X-Emby-Authorization: MediaBrowser Client="Jellyfin Web", Device="Browser", DeviceId="DeviceID", Version="Version"
+      body: '{"Username":"{{username}}","Pw":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - User":{"Name
+            - '"LastLoginDate":'
+            - 'AccessToken":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

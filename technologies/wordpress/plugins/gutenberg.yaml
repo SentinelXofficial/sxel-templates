@@ -1,0 +1,17 @@
+id: wordpress-gutenberg
+brief:
+    title: Gutenberg Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/gutenberg/readme.txt'
+      signs: []

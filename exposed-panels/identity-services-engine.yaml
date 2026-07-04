@@ -1,0 +1,21 @@
+id: identity-services-engine
+brief:
+    title: Cisco Identity Services Engine Admin Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Cisco Identity Services Engine admin login panel was detected.
+    label:
+        - panel
+        - cisco
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/admin/'
+      signs:
+        - "on": word
+          has:
+            - <title>Identity Services Engine</title>
+          in: body
+          need: all

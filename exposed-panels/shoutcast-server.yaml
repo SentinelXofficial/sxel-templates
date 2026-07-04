@@ -1,0 +1,22 @@
+id: shoutcast-server
+brief:
+    title: SHOUTcast Server Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: SHOUTcast Server panel was detected.
+    label:
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.html'
+      signs:
+        - "on": word
+          has:
+            - <title>SHOUTcast Server</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

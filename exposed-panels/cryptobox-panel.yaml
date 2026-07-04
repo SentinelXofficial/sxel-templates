@@ -1,0 +1,25 @@
+id: cryptobox-panel
+brief:
+    title: Cryptobox Panel - Detect
+    by: righettod
+    level: info
+    about: Cryptobox was detected.
+    label:
+        - panel
+        - cryptobox
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Cryptobox</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

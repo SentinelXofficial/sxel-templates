@@ -1,0 +1,17 @@
+id: netalertx-panel
+brief:
+    title: NetAlert X Panel - Detect
+    by: s4e-io
+    level: info
+    about: NetAlert X panel was discovered.
+    label:
+        - panel
+        - login
+        - netalertx
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,24 @@
+id: firefox-phish
+brief:
+    title: firefox phishing Detection
+    by: rxerium
+    level: info
+    about: A firefox phishing website was detected
+    label:
+        - phishing
+        - firefox
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Download Firefox for Desktop — Mozilla
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

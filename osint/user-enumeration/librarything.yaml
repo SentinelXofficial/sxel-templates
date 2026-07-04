@@ -1,0 +1,24 @@
+id: librarything
+brief:
+    title: LibraryThing User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: LibraryThing user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - librarything
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.librarything.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Collections
+          in: body
+          need: all

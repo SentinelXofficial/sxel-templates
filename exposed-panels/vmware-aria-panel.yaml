@@ -1,0 +1,25 @@
+id: vmware-aria-panel
+brief:
+    title: VMware Aria Operations Login - Detect
+    by: rxerium
+    level: info
+    about: Detects VMware Aria Operations Panel.
+    label:
+        - panel
+        - aria
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/login.action'
+      signs:
+        - "on": word
+          has:
+            - <title>VMware Aria Operations</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

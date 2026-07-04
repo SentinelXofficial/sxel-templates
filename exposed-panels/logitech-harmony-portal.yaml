@@ -1,0 +1,25 @@
+id: logitech-harmony-portal
+brief:
+    title: Logitech Harmony Pro Installer Portal Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Logitech Harmony Pro Installer Portal login panel was detected.
+    label:
+        - panel
+        - logitech
+        - harmony
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/portal/login'
+      signs:
+        - "on": word
+          has:
+            - Logitech Harmony Pro Installer Portal
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

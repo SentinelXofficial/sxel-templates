@@ -1,0 +1,26 @@
+id: header-command-injection
+brief:
+    title: Header - Remote Command Injection
+    by: geeknik
+    level: critical
+    about: Headers were tested for remote command injection vulnerabilities.
+    label:
+        - fuzz
+        - rce
+        - fuzzing
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?{{header}}'
+      head:
+        '{{header}}': '{{payload}}'
+      signs:
+        - "on": word
+          has:
+            - uid=
+            - gid=
+            - groups=
+          in: body
+          need: all

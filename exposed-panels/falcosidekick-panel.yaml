@@ -1,0 +1,17 @@
+id: falcosidekick-panel
+brief:
+    title: Falcosidekick UI Login Panel - Detect
+    by: righettod
+    level: info
+    about: Falcosidekick UI login panel was detected.
+    label:
+        - panel
+        - falco
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/'
+      signs: []

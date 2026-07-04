@@ -1,0 +1,31 @@
+id: tracer-sc-login
+brief:
+    title: Tracer SC Login Panel - Detect
+    by: geeknik
+    level: info
+    about: Tracer SC login panel was detected.
+    label:
+        - tracer
+        - trane
+        - iot
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/hui/index.html'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Tracer SC</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

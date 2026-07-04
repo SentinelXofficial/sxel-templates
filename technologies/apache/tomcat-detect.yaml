@@ -1,0 +1,20 @@
+id: tomcat-detect
+brief:
+    title: Tomcat Detection
+    by: philippedelteil
+    level: info
+    about: If an Tomcat instance is deployed on the target URL, when we send a request for a non existent resource we receive a Tomcat error page with version.
+    label:
+        - tech
+        - tomcat
+        - apache
+        - intrusive
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/{{randstr}}'
+        - '{{BaseURL}}/docs/introduction.html'
+        - '{{BaseURL}}/\'
+      signs: []

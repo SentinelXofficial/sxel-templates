@@ -1,0 +1,27 @@
+id: veritas-netbackup-panel
+brief:
+    title: Veritas NetBackup OpsCenter Analytics Login - Detect
+    by: rxerium
+    level: info
+    about: A Veritas NetBackup OpsCenter Analytics page was detected.
+    label:
+        - panel
+        - veritas
+        - netbackup
+        - opscenter
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/opscenter/'
+      signs:
+        - "on": word
+          has:
+            - <title>Veritas NetBackup OpsCenter Analytics
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

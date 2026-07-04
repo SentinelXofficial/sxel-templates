@@ -1,0 +1,19 @@
+id: kubelet-metrics
+brief:
+    title: Kubelet Metrics
+    by: sharath
+    level: info
+    about: Kube Metrics Server was detected.
+    label:
+        - tech
+        - k8s
+        - kubernetes
+        - devops
+        - kubelet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+        - '{{BaseURL}}/metrics'
+      signs: []

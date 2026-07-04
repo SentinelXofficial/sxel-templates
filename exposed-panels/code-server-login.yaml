@@ -1,0 +1,26 @@
+id: code-server-login
+brief:
+    title: Code-Server Login Panel - Detect
+    by: tess
+    level: info
+    about: Code-Server login panel was detected.
+    label:
+        - panel
+        - detect
+        - misc
+        - coder
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Welcome to code-server
+            - Please log in below. Check the config file at ~/.config/code-server/config.yaml for the password.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

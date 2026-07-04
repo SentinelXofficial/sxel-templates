@@ -1,0 +1,25 @@
+id: redis-enterprise-panel
+brief:
+    title: Redis Enterprise - Detect
+    by: tess
+    level: info
+    about: ""
+    label:
+        - panel
+        - redis
+        - enterprise
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/login'
+      signs:
+        - "on": word
+          has:
+            - Enterprise-Class Redis for Developers
+            - cm/config/environment
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

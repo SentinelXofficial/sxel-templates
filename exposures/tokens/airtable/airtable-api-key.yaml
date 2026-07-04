@@ -1,0 +1,16 @@
+id: airtable-api-key
+brief:
+    title: Airtable API Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - airtable
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

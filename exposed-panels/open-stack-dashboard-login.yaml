@@ -1,0 +1,26 @@
+id: open-stack-dashboard-login
+brief:
+    title: OpenStack Dashboard Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: OpenStack Dashboard login panel was detected.
+    label:
+        - panel
+        - openstack
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard/auth/login/'
+        - '{{BaseURL}}/horizon/auth/login/?next=/horizon/'
+        - '{{BaseURL}}/auth/login/?next=/'
+      signs:
+        - "on": word
+          has:
+            - <title>Login - OpenStack Dashboard</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

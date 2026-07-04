@@ -1,0 +1,19 @@
+id: advantech-webaccess-panel
+brief:
+    title: Advantech WebAccess/SCADA - Panel
+    by: 0x_Akoko
+    level: info
+    about: Detected Advantech WebAccess/SCADA login panel, a web-browser-based HMI/SCADA software used in critical manufacturing, energy, and water systems.
+    label:
+        - panel
+        - ics
+        - scada
+        - hmi
+        - advantech
+        - webaccess
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/broadWeb/bwRoot.asp'
+      signs: []

@@ -1,0 +1,25 @@
+id: sap-cloud-analytics
+brief:
+    title: SAP Analytics Cloud Panel - Detect
+    by: righettod
+    level: info
+    about: SAP Analytics Cloud panel was detected.
+    label:
+        - panel
+        - sap
+        - cloudanalytics
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - SAP Analytics Cloud
+            - /approuter/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

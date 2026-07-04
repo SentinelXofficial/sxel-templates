@@ -1,0 +1,25 @@
+id: wmw-enterprise-panel
+brief:
+    title: WMW Enterprise Login Panel - Detect
+    by: Matt Galligan
+    level: info
+    about: WMW Enterprise login panel was detected.
+    label:
+        - panel
+        - wmw
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/en/login'
+      signs:
+        - "on": word
+          has:
+            - WMW Enterprise login
+            - Welcome to the WMW dashboard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

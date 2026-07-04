@@ -1,0 +1,17 @@
+id: sabnzbd-unauth-access
+brief:
+    title: SABnzbd - Unauthenticated Web Interface Access
+    by: 0x_Akoko
+    level: high
+    about: Detected SABnzbd found with the web interface accessible without authentication. The config page is exposed without login, leaking the API key, config file path, server parameters, and system infor...
+    label:
+        - sabnzbd
+        - unauth
+        - misconfig
+        - exposure
+        - iot
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config/'
+      signs: []

@@ -1,0 +1,29 @@
+id: filebrowser-unauth
+brief:
+    title: File Browser Dashboard - Unauthenticated Access
+    by: ritikchaddha
+    level: medium
+    about: File Browser dashboard is exposed.
+    label:
+        - misconfig
+        - filebrowser
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - File Browser</title>
+            - window.FileBrowser
+          in: body
+          need: all
+        - "on": word
+          has:
+            - LoginPage":false
+            - '"NoAuth":true'
+          in: body
+          need: all

@@ -1,0 +1,23 @@
+id: thinkific-redirect
+brief:
+    title: Thinkific - Open Redirect
+    by: Gal Nagli
+    level: medium
+    about: Thinkific contains an open redirect vulnerability via the http://interact.sh URL. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or ...
+    label:
+        - redirect
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/sso/v2/sso/jwt?error_url=http://interact.sh'
+      signs:
+        - "on": status
+          status:
+            - 302
+        - "on": word
+          has:
+            - <a href="http://interact.sh?kind=jwt&message=Nil+JSON+web+token"
+          in: body
+          need: all

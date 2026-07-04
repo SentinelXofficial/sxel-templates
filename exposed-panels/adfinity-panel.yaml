@@ -1,0 +1,16 @@
+id: adfinity-panel
+brief:
+    title: Adfinity Login Panel - Detect
+    by: righettod
+    level: info
+    about: Adfinity products was detected.
+    label:
+        - panel
+        - adfinity
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/adfinity/login'
+      signs: []

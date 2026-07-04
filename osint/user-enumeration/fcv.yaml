@@ -1,0 +1,24 @@
+id: fcv
+brief:
+    title: Fcv User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Fcv user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - fcv
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://fcv.if.ua/index.php/component/comprofiler/userprofile/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - сторінка профілю
+          in: body
+          need: all

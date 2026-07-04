@@ -1,0 +1,25 @@
+id: black-duck-panel
+brief:
+    title: Black Duck Login Panel - Detect
+    by: idealphase
+    level: info
+    about: Black Duck login panel was detected.
+    label:
+        - panel
+        - blackduck
+        - synopsys
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ProtexLoginPage
+            - CCLoginPage
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

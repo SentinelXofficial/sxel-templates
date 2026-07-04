@@ -1,0 +1,25 @@
+id: couchbase-sync-gateway
+brief:
+    title: Couchbase Sync Gateway
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - couchbase
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Couchbase Sync Gateway
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

@@ -1,0 +1,28 @@
+id: atlassian-bamboo-panel
+brief:
+    title: Atlassian Bamboo Login Panel - Detect
+    by: righettod
+    level: info
+    about: Atlassian Bamboo login panel was detected.
+    label:
+        - panel
+        - bamboo
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/userlogin!doDefault.action?os_destination=%2Fstart.action'
+      signs:
+        - "on": word
+          has:
+            - <title>Log in as a Bamboo user
+            - content="Bamboo
+            - atlassian.bamboo.plugins
+            - Atlassian Bamboo</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

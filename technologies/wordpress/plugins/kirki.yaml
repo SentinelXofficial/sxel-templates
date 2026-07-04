@@ -1,0 +1,17 @@
+id: wordpress-kirki
+brief:
+    title: Kirki Customizer Framework Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/kirki/readme.txt'
+      signs: []

@@ -1,0 +1,23 @@
+id: flightpath-panel
+brief:
+    title: FlightPath Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: FlightPath login panel was detected.
+    label:
+        - panel
+        - flightpath
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Login | FlightPath</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

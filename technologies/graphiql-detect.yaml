@@ -1,0 +1,24 @@
+id: graphiql-detect
+brief:
+    title: GraphiQL Detect
+    by: Adam Crosser
+    level: info
+    about: Detects the GraphiQL application
+    label:
+        - tech
+        - graphiql
+        - graphql
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>GraphiQL
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

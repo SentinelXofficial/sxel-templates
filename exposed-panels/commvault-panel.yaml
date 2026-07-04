@@ -1,0 +1,31 @@
+id: commvault-panel
+brief:
+    title: Commvault Web Console Panel - Detect
+    by: rxerium
+    level: info
+    about: Commvault web console login panel was detected.
+    label:
+        - panel
+        - commvault
+        - backup
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/commandcenter/login/preSso.jsp'
+      signs:
+        - "on": word
+          has:
+            - commandcenter/wcSSO.do
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Path=/commandcenter
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

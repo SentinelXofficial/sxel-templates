@@ -1,0 +1,30 @@
+id: jira-unauthenticated-resolutions
+brief:
+    title: Jira Unauthenticated Resolutions
+    by: TESS
+    level: info
+    about: ""
+    label:
+        - atlassian
+        - jira
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/rest/api/2/resolution'
+      signs:
+        - "on": word
+          has:
+            - self
+            - description
+            - name
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - atlassian.xsrf.token
+          in: header
+          need: all

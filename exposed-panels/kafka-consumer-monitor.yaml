@@ -1,0 +1,20 @@
+id: kafka-consumer-monitor
+brief:
+    title: Apache Kafka Consumer Offset Monitor Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Apache Kafka Consumer Offset Monitor panel was detected.
+    label:
+        - panel
+        - kafka
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Kafka Consumer Offset Monitor</title>
+          in: body

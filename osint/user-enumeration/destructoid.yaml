@@ -1,0 +1,24 @@
+id: destructoid
+brief:
+    title: Destructoid User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Destructoid user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - destructoid
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.destructoid.com/?name={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Follow
+          in: body
+          need: all

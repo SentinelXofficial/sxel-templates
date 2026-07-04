@@ -1,0 +1,16 @@
+id: sendbird-access-id
+brief:
+    title: SendBird Access ID
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - sendbird
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

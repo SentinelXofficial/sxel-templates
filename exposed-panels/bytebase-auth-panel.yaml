@@ -1,0 +1,16 @@
+id: bytebase-auth-panel
+brief:
+    title: Bytebase Auth - Panel Detect
+    by: Th3l0newolf
+    level: info
+    about: Bytebase authentication interface was discovered.
+    label:
+        - panel
+        - login
+        - bytebase
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth'
+      signs: []

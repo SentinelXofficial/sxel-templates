@@ -1,0 +1,47 @@
+id: jeedom-default-login
+brief:
+    title: Jeedom - Default Login
+    by: ritikchaddha
+    level: high
+    about: Jeedom default login has been detected.
+    label:
+        - jeedom
+        - default-login
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/core/ajax/user.ajax.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: action=login&username={{username}}&password={{password}}&twoFactorCode=&storeConnection=0
+      signs:
+        - "on": word
+          has:
+            - state":"ok
+            - 'result":'
+          in: body_1
+          need: all
+        - "on": word
+          has:
+            - logout=1
+            - Plugins</span>
+          in: body_2
+          need: all
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?v=d&p=dashboard'
+      signs:
+        - "on": word
+          has:
+            - state":"ok
+            - 'result":'
+          in: body_1
+          need: all
+        - "on": word
+          has:
+            - logout=1
+            - Plugins</span>
+          in: body_2
+          need: all

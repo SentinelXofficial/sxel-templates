@@ -1,0 +1,24 @@
+id: youpic
+brief:
+    title: Youpic User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Youpic user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - youpic
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://youpic.com/photographer/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- Photographer - YouPic'
+          in: body
+          need: all

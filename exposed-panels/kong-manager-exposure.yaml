@@ -1,0 +1,17 @@
+id: kong-manager-exposure
+brief:
+    title: Kong Manager OSS/Admin - Exposure
+    by: Krishna Jaishwal
+    level: medium
+    about: Exposed Kong Manager (OSS/Admin) interface accessible without authentication.
+    label:
+        - kong
+        - manager
+        - misconfig
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

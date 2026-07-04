@@ -1,0 +1,26 @@
+id: magnusbilling-default-login
+brief:
+    title: MagnusBilling - Default Login
+    by: DhiyaneshDk
+    level: high
+    about: MagnusBilling installs with a default administrative account using the credentials root / magnus. If unchanged, these credentials grant full access to the system, allowing attackers to manage billi...
+    label:
+        - mbilling
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/mbilling/index.php/authentication/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: user={{username}}&password={{password}}&key=
+      signs:
+        - "on": word
+          has:
+            - '"success":"root"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

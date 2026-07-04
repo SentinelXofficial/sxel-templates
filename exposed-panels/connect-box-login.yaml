@@ -1,0 +1,25 @@
+id: connectbox-panel
+brief:
+    title: Connect Box Login Panel - Detect
+    by: fabaff
+    level: info
+    about: Connect Box login panel was detected.
+    label:
+        - panel
+        - connectbox
+        - iot
+        - upc
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - NET-DK/1.0
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

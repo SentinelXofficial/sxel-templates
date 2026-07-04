@@ -1,0 +1,24 @@
+id: ko-fi
+brief:
+    title: Ko-Fi User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Ko-Fi user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - ko-fi
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://ko-fi.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '>  Buy a Coffee for'
+          in: body
+          need: all

@@ -1,0 +1,19 @@
+id: default-detect-generic
+brief:
+    title: Default Web Application Detection
+    by: andydoering
+    level: info
+    about: Catch-all for detecting default installations of web applications using common phrases found in default install pages
+    label:
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Default</title>
+            - <title>Welcome to</title>
+          in: body

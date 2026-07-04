@@ -1,0 +1,24 @@
+id: policja2009
+brief:
+    title: Policja2009 User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Policja2009 user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - policja2009
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://www.policja2009.fora.pl/search.php?search_author={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Znaleziono
+          in: body
+          need: all

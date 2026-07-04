@@ -1,0 +1,30 @@
+id: editor-exposure
+brief:
+    title: Editor Configuration File - Detect
+    by: DhiyaneshDk
+    level: low
+    about: Editor configuration file was detected.
+    label:
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.editorconfig'
+      signs:
+        - "on": word
+          has:
+            - = true
+            - indent_style
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

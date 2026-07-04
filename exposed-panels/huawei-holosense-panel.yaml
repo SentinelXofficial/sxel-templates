@@ -1,0 +1,30 @@
+id: huawei-holosense-panel
+brief:
+    title: Huawei HoloSens SDC - Panel
+    by: darses
+    level: info
+    about: Huawei HoloSens SDC Panel was discovered.
+    label:
+        - panel
+        - detect
+        - huawei
+        - holosens
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/cgi-bin/main.cgi'
+      body: |
+        action=LoginState&glToken=null&stChannelId=101&channelId=101&para=
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/cgi-bin/main.cgi'
+      body: |
+        action=WebTransterToRestLogout&url=GET+%2FSDCAPI%2FV1.0%2FCustomization%2FElement%0D%0A%0D%0A
+      signs: []

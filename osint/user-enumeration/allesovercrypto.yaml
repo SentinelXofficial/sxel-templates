@@ -1,0 +1,24 @@
+id: allesovercrypto
+brief:
+    title: Allesovercrypto User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Allesovercrypto user name information check was conducted.
+    label:
+        - osint
+        - osint-finance
+        - allesovercrypto
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://allesovercrypto.nl/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Favoriete coins
+          in: body
+          need: all

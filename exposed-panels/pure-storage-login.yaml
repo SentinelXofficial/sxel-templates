@@ -1,0 +1,23 @@
+id: pure-storage-login
+brief:
+    title: Pure Storage Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Pure Storage login panel was detected.
+    label:
+        - panel
+        - purestorage
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Pure Storage Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

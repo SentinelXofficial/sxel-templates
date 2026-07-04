@@ -1,0 +1,24 @@
+id: line
+brief:
+    title: LINE User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: LINE user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - line
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://line.me/R/ti/p/@{{user}}?from=page
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Add LINE Friends via QR Code
+          in: body
+          need: all

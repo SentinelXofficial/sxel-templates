@@ -1,0 +1,25 @@
+id: reverbnation
+brief:
+    title: ReverbNation User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: ReverbNation user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - reverbnation
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.reverbnation.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ReverbNation
+            - Other music, lyrics, and videos
+          in: body
+          need: all

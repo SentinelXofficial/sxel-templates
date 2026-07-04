@@ -1,0 +1,21 @@
+id: api-scraperapi
+brief:
+    title: ScraperAPI API Test
+    by: daffainfo
+    level: info
+    about: Easily build scalable web scrapers
+    label:
+        - token-spray
+        - scraperapi
+moves:
+    - verb: GET
+      to:
+        - http://api.scraperapi.com/account?api_key={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"concurrencyLimit"'
+            - '"concurrentRequests"'
+            - '"requestLimit"'
+          in: body
+          need: all

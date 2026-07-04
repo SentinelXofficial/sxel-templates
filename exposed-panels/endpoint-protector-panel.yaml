@@ -1,0 +1,26 @@
+id: endpoint-protector-panel
+brief:
+    title: Endpoint Protector Login Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Endpoint Protector - Reporting and Administration Tool login panel was detected.
+    label:
+        - panel
+        - endpoint
+        - login
+        - detect
+        - endpoint-protector
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Endpoint Protector - Reporting and Administration Tool
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: tiktok
+brief:
+    title: TikTok User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: TikTok user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - tiktok
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.tiktok.com/oembed?url=https://www.tiktok.com/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - author_url
+          in: body
+          need: all

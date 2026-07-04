@@ -1,0 +1,25 @@
+id: hoobs-panel
+brief:
+    title: HOOBS Panel - Detect
+    by: rxerium
+    level: info
+    about: HOOBS is a home automation platform that bridges HomeKit and non-HomeKit devices.
+    label:
+        - panel
+        - iot
+        - homekit
+        - hoobs
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login?url=%2F'
+      signs:
+        - "on": word
+          has:
+            - <title>HOOBS
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

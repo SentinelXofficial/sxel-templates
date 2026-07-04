@@ -1,0 +1,16 @@
+id: jboss-jmx-console-unauth
+brief:
+    title: JBoss JMX Console - Unauthenticated Access
+    by: 0x_Akoko
+    level: high
+    about: Detected JBoss JMX Console was accessible without authentication. The exposed console provided complete access to all MBeans, including MainDeployer, which enabled arbitrary WAR file deployment, le...
+    label:
+        - jboss
+        - unauth
+        - misconfig
+    score: CVSS:9.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jmx-console/HtmlAdaptor?action=displayMBeans'
+      signs: []

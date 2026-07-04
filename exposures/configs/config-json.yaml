@@ -1,0 +1,40 @@
+id: config-json
+brief:
+    title: Configuration File - Detect
+    by: geeknik
+    level: medium
+    about: Multiple configuration files were detected.
+    label:
+        - config
+        - exposure
+        - files
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config/default.json'
+        - '{{BaseURL}}/config.json'
+        - '{{BaseURL}}/config/config.json'
+        - '{{BaseURL}}/credentials/config.json'
+      signs:
+        - "on": word
+          has:
+            - '"api_keys":'
+            - '"aws":'
+            - '"server":'
+            - '"users":'
+            - '"password":'
+            - '"user"'
+            - '"path":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+            - text/javascript
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

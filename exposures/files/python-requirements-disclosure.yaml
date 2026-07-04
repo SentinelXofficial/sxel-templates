@@ -1,0 +1,20 @@
+id: python-requirements-disclosure
+brief:
+    title: Python Requirements File Disclosure
+    by: 0x_Akoko
+    level: low
+    about: Detected Python requirements.txt file. This file contains Python package dependencies and versions that could reveal technology stack, vulnerable package versions, and internal dependencies.
+    label:
+        - exposure
+        - python
+        - config
+        - misconfig
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/requirements.txt'
+        - '{{BaseURL}}/requirements/requirements.txt'
+        - '{{BaseURL}}/app/requirements.txt'
+        - '{{BaseURL}}/src/requirements.txt'
+      signs: []

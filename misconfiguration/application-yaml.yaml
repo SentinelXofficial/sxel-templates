@@ -1,0 +1,30 @@
+id: application-yaml
+brief:
+    title: application.yaml detection
+    by: Cristi vlad (@cristivlad25)
+    level: info
+    about: Finds Application YAML files which often contain sensitive information.
+    label:
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/app.yaml'
+        - '{{BaseURL}}/app.yml'
+        - '{{BaseURL}}/application.yaml'
+        - '{{BaseURL}}/application.yml'
+      signs:
+        - "on": word
+          has:
+            - 'runtime:'
+            - 'spring:'
+            - 'datasource:'
+            - 'platform:'
+            - 'server:'
+            - 'job:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

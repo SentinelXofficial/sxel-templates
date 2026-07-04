@@ -1,0 +1,28 @@
+id: exposed-kibana
+brief:
+    title: Exposed Kibana
+    by: Shine
+    level: medium
+    about: Kibana is exposed.
+    label:
+        - kibana
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/app/kibana'
+        - '{{BaseURL}}/app/kibana/'
+      signs:
+        - "on": word
+          has:
+            - kibanaWelcomeView
+            - kibanaWelcomeLogo
+            - kibanaWelcomeTitle
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

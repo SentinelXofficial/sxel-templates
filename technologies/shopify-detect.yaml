@@ -1,0 +1,34 @@
+id: shopify-detect
+brief:
+    title: Shopify Detection
+    by: Chirag Mistry
+    level: info
+    about: An instance running Shopify is detected by looking for specific HTTP headers, HTML tags, and known endpoints.
+    label:
+        - shopify
+        - detect
+        - tech
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/robots.txt'
+        - '{{BaseURL}}/sitemap.xml'
+        - '{{BaseURL}}/admin'
+        - '{{BaseURL}}/shopify_app'
+        - '{{BaseURL}}/shopify_api'
+        - '{{BaseURL}}/favicon.ico'
+      signs:
+        - "on": word
+          has:
+            - X-Shopify-Stage
+            - Powered by Shopify
+            - cdn.shopify.com
+            - Shopify Store
+            - Shopify Liquid
+          in: response
+          need: all
+        - "on": status
+          status:
+            - 200
+            - 403

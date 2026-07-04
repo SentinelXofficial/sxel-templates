@@ -1,0 +1,23 @@
+id: procfile-config
+brief:
+    title: Procfile Config - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Procfile configuration information was detected.
+    label:
+        - devops
+        - exposure
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Procfile'
+      signs:
+        - "on": word
+          has:
+            - 'web:'
+          in: body
+        - "on": status
+          status:
+            - 200

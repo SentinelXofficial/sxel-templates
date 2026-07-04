@@ -1,0 +1,30 @@
+id: smarterstats-setup
+brief:
+    title: SmarterStats Setup Exposure
+    by: tess
+    level: high
+    about: SmarterStats Setup is exposed.
+    label:
+        - misconfig
+        - smarterstats
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Admin/frmWelcome.aspx'
+      signs:
+        - "on": word
+          has:
+            - SmarterStats - SmarterStats
+            - Create System Administrator
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

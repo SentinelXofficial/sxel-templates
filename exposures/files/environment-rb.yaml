@@ -1,0 +1,27 @@
+id: environment-rb
+brief:
+    title: Environment Ruby File Disclosure
+    by: DhiyaneshDK
+    level: medium
+    about: Ruby environment file is exposed.
+    label:
+        - ruby
+        - devops
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/environment.rb'
+        - '{{BaseURL}}/config/environment.rb'
+        - '{{BaseURL}}/redmine/config/environment.rb'
+      signs:
+        - "on": word
+          has:
+            - '# Load the Rails application.'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

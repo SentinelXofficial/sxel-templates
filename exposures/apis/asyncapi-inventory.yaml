@@ -1,0 +1,26 @@
+id: asyncapi-inventory
+brief:
+    title: AsyncAPI Spec Inventory
+    by: hamzasahin61
+    level: info
+    about: Detected publicly accessible AsyncAPI specification files (YAML/JSON), which might have exposed message channels, server endpoints, and security schemes.
+    label:
+        - exposure
+        - asyncapi
+        - api
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/asyncapi'
+        - '{{BaseURL}}/asyncapi.yaml'
+        - '{{BaseURL}}/asyncapi.yml'
+        - '{{BaseURL}}/asyncapi.json'
+        - '{{BaseURL}}/api/asyncapi'
+        - '{{BaseURL}}/api/docs/asyncapi'
+        - '{{BaseURL}}/docs/asyncapi'
+      signs:
+        - "on": status
+          status:
+            - 200

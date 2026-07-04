@@ -1,0 +1,23 @@
+id: graphite-browser
+brief:
+    title: Graphite Browser Login Panel - Detect
+    by: 0x_Akoko
+    level: info
+    about: Graphite Browser login panel was detected.
+    label:
+        - graphite
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - <title>Graphite Browser</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

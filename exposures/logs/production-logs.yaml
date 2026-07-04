@@ -1,0 +1,32 @@
+id: production-logs
+brief:
+    title: Discover production log files
+    by: geeknik
+    level: info
+    about: Production log file was exposed.
+    label:
+        - exposure
+        - logs
+        - rails
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/log/production.log'
+        - '{{BaseURL}}/logs/production.log'
+        - '{{BaseURL}}/production.log'
+      signs:
+        - "on": word
+          has:
+            - Connecting to database specified by database.yml
+            - Started GET
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

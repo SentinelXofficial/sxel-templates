@@ -1,0 +1,23 @@
+id: payara-micro-detect
+brief:
+    title: Payara Micro Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - payara
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Payara Micro #badassfish - Error report'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

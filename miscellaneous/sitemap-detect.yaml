@@ -1,0 +1,32 @@
+id: sitemap-detect
+brief:
+    title: Sitemap Detection
+    by: houdinis
+    level: info
+    about: A sitemap is a file where you provide information about the pages, videos, and other files on your site, and the relationships between them.
+    label:
+        - miscellaneous
+        - misc
+        - generic
+        - sitemap
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sitemap.xml'
+        - '{{BaseURL}}/sitemap.xsl'
+        - '{{BaseURL}}/sitemap.xsd'
+      signs:
+        - "on": word
+          has:
+            - sitemap>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/xml
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

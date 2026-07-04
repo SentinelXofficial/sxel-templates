@@ -1,0 +1,24 @@
+id: bonga-cams
+brief:
+    title: Bonga cams User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Bonga cams user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - bonga-cams
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://pt.bongacams.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Chat público ao vivo de
+          in: body
+          need: all

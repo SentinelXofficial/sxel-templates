@@ -1,0 +1,24 @@
+id: meet-me
+brief:
+    title: Meet me User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Meet me user name information check was conducted.
+    label:
+        - osint
+        - osint-dating
+        - meet-me
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.meetme.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '<title>Meet people like '
+          in: body
+          need: all

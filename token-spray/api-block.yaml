@@ -1,0 +1,21 @@
+id: api-block
+brief:
+    title: block.io API Test
+    by: daffainfo
+    level: info
+    about: Bitcoin Payment, Wallet & Transaction Data
+    label:
+        - token-spray
+        - block
+moves:
+    - verb: GET
+      to:
+        - https://block.io/api/v2/get_balance/?api_key={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"network"'
+            - '"available_balance"'
+            - '"pending_received_balance"'
+          in: body
+          need: all

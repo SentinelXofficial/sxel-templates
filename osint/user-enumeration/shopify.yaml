@@ -1,0 +1,24 @@
+id: shopify
+brief:
+    title: Shopify User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Shopify user name information check was conducted.
+    label:
+        - osint
+        - osint-shopping
+        - shopify
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://{{user}}.myshopify.com
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - home
+          in: body
+          need: all

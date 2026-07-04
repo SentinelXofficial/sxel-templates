@@ -1,0 +1,54 @@
+id: minio-default-login
+brief:
+    title: Minio Default Login
+    by: pikpikcu
+    level: high
+    about: Minio default admin credentials were discovered.
+    label:
+        - default-login
+        - minio
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/minio/webrpc'
+      head:
+        Content-Type: application/json
+      body: '{"id":1,"jsonrpc":"2.0","params":{"username":"{{username}}","password":"{{password}}"},"method":"Web.Login"}'
+      signs:
+        - "on": word
+          has:
+            - 'Content-Type: application/json'
+          in: header
+          need: all
+        - "on": word
+          has:
+            - uiVersion
+            - token
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/minio/webrpc'
+      head:
+        Content-Type: application/json
+      body: '{"id":1,"jsonrpc":"2.0","params":{"username":"{{username}}","password":"{{password}}"},"method":"web.Login"}'
+      signs:
+        - "on": word
+          has:
+            - 'Content-Type: application/json'
+          in: header
+          need: all
+        - "on": word
+          has:
+            - uiVersion
+            - token
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,31 @@
+id: windows-communication-foundation-detect
+brief:
+    title: Windows Communication Foundation - Detect
+    by: r3naissance
+    level: info
+    about: ""
+    label:
+        - tech
+        - wcf
+        - windows
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Endpoint not found.
+            - class="heading1">Service
+            - This is a Windows&#169; Communication Foundation service.
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <title>Service</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

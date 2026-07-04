@@ -1,0 +1,16 @@
+id: linkedin-client-id
+brief:
+    title: LinkedIn Client ID
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - linkedin
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

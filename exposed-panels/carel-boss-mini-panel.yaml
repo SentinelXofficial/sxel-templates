@@ -1,0 +1,18 @@
+id: carel-boss-mini-panel
+brief:
+    title: CAREL Boss Mini - Login Panel Detected
+    by: Kazgangap
+    level: info
+    about: CAREL Boss Mini login panel was detected. Boss Mini is a local supervisor solution by CAREL used for monitoring and managing HVAC/R systems in commercial facilities. Exposed panels may indicate mis...
+    label:
+        - panel
+        - carel
+        - boss-mini
+        - ics
+        - login
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/boss/'
+      signs: []

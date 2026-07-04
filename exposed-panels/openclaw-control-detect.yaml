@@ -1,0 +1,24 @@
+id: openclaw-control-detect
+brief:
+    title: OpenClaw Control - Detect
+    by: pbuff07
+    level: info
+    about: Detected OpenClaw Control, a web-based control interface.
+    label:
+        - exposed-panel
+        - openclaw
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>OpenClaw Control
+            - <openclaw-app>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

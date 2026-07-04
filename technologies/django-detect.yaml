@@ -1,0 +1,35 @@
+id: django-detect
+brief:
+    title: Django Detection
+    by: Chirag Mistry
+    level: info
+    about: An instance running Django is detected by looking for specific HTTP headers, HTML tags, and known endpoints.
+    label:
+        - django
+        - detect
+        - tech
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/robots.txt'
+        - '{{BaseURL}}/sitemap.xml'
+        - '{{BaseURL}}/favicon.ico'
+        - '{{BaseURL}}/admin/'
+        - '{{BaseURL}}/static/'
+        - '{{BaseURL}}/media/'
+        - '{{BaseURL}}/index.php'
+        - '{{BaseURL}}/django-admin/'
+      signs:
+        - "on": word
+          has:
+            - Powered by Django
+            - django-project
+            - Django Software Foundation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+            - 403
+            - 404

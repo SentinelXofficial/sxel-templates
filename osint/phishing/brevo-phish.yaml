@@ -1,0 +1,26 @@
+id: brevo-phish
+brief:
+    title: Brevo phishing Detection
+    by: rxerium
+    level: info
+    about: A Brevo phishing website was detected
+    label:
+        - phishing
+        - brevo
+        - sendinblue
+        - email
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Brevo | All-in-one Marketing &amp; Sales Platform
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

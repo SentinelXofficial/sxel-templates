@@ -1,0 +1,25 @@
+id: versa-flexvnf-server
+brief:
+    title: Versa FlexVNF Server
+    by: c-sh0
+    level: info
+    about: Versa FlexVNF Server Detection (magic request params exposes Server signature/version)
+    label:
+        - tech
+        - versa
+        - flexvnf
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/&?=?'
+      signs:
+        - "on": word
+          has:
+            - 'Server: Versa'
+            - FlexVNF
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

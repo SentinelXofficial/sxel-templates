@@ -1,0 +1,24 @@
+id: datingru
+brief:
+    title: Dating.ru User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Dating.ru user name information check was conducted.
+    label:
+        - osint
+        - osint-dating
+        - datingru
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://dating.ru/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| dating.ru'
+          in: body
+          need: all

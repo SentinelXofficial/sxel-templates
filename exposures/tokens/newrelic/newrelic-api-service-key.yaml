@@ -1,0 +1,16 @@
+id: newrelic-api-service-key
+brief:
+    title: New Relic API Service Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - newrelic
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

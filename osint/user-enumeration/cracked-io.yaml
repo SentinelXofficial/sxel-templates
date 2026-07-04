@@ -1,0 +1,24 @@
+id: cracked-io
+brief:
+    title: Cracked io User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Cracked io user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - cracked-io
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://cracked.io/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Cracked.io - Profile of
+          in: body
+          need: all

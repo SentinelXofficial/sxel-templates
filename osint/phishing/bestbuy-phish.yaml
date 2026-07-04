@@ -1,0 +1,24 @@
+id: best-buy-phish
+brief:
+    title: best buy phishing Detection
+    by: rxerium
+    level: info
+    about: A best buy phishing website was detected
+    label:
+        - phishing
+        - bestbuy
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Best Buy | Official Online Store | Shop Now &amp; Save
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

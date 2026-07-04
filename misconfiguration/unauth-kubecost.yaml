@@ -1,0 +1,31 @@
+id: unauth-kubecost
+brief:
+    title: KubeCost - Unauthenticated Dashboard Exposure
+    by: pussycat0x
+    level: medium
+    about: KubeCost Dashboard is exposed to external users.
+    label:
+        - misconfig
+        - exposure
+        - unauth
+        - kubecost
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/overview.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Cluster Overview | Kubecost</title>
+            - <title>Kubecost</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,35 @@
+id: springboot-beans
+brief:
+    title: Detect Springboot Beans Actuator
+    by: ajaysenr
+    level: low
+    about: Displays a complete list of all the Spring beans in the application
+    label:
+        - springboot
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/beans'
+        - '{{BaseURL}}/actuator/beans'
+      signs:
+        - "on": word
+          has:
+            - '"type"'
+            - '"beans"'
+            - '"dependencies"'
+            - '"scope"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v1+json
+          in: header
+          need: all

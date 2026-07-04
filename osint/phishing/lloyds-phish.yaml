@@ -1,0 +1,25 @@
+id: lloyds-phish
+brief:
+    title: Lloyds Bank phishing Detection
+    by: rxerium
+    level: info
+    about: A Lloyds Bank phishing website was detected
+    label:
+        - phishing
+        - lloyds
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Lloyds Bank - Personal Banking, Personal Finances &amp; Bank Accounts
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

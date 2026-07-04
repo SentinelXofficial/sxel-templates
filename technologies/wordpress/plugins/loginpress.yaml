@@ -1,0 +1,17 @@
+id: wordpress-loginpress
+brief:
+    title: LoginPress | wp-login Custom Login Page Customizer Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/loginpress/readme.txt'
+      signs: []

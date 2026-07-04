@@ -1,0 +1,30 @@
+id: redash-installer
+brief:
+    title: Redash Installer Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Redash is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - redash
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup'
+      signs:
+        - "on": word
+          has:
+            - Redash Initial Setup
+            - Admin User
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

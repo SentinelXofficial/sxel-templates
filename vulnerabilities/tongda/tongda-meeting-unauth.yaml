@@ -1,0 +1,16 @@
+id: tongda-meeting-unauth
+brief:
+    title: Tongda OA Meeting - Unauthorized Access
+    by: SleepingBag945
+    level: medium
+    about: Tongda Meeting Unauthorized Access were Detected.
+    label:
+        - tongda
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/general/calendar/arrange/get_cal_list.php?starttime=1548058874&endtime=33165447106&view=agendaDay'
+      signs: []

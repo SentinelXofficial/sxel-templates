@@ -1,0 +1,24 @@
+id: symantec-dlp-login
+brief:
+    title: Symantec Data Loss Prevention Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Symantec Data Loss Prevention login panel was detected.
+    label:
+        - symantec
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ProtectManager/Logon'
+      signs:
+        - "on": word
+          has:
+            - <title>Symantec Data Loss Prevention</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,29 @@
+id: sonarr-dashboard-unauth
+brief:
+    title: Sonarr Dashboard - Unauthenticated
+    by: ProjectDiscoveryAI
+    level: medium
+    about: Exposure of Sonarr dashboard which can lead to sensitive information disclosure.
+    label:
+        - sonarr
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Sonarr</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Login - Sonarr
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

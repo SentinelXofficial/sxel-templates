@@ -1,0 +1,17 @@
+id: unauth-temporal-web-ui
+brief:
+    title: Temporal Web UI - Unauthenticated Access
+    by: ggranjus
+    level: high
+    about: Temporal Web UI was able to be accessed because no authentication was required
+    label:
+        - misconfig
+        - temporal
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/favicon.ico'
+        - '{{BaseURL}}/api/v1/namespaces/default/workflows?query='
+      signs: []

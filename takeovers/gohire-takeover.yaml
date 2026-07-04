@@ -1,0 +1,23 @@
+id: gohire-takeover
+brief:
+    title: GoHire Takeover Detection
+    by: philippedelteil
+    level: high
+    about: ""
+    label:
+        - takeover
+        - gohire
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - You may have followed an invalid link or the job you are looking for has been archived
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

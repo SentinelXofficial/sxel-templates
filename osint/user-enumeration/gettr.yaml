@@ -1,0 +1,24 @@
+id: gettr
+brief:
+    title: Gettr User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Gettr user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - gettr
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://api.gettr.com/s/user/{{user}}/exist
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - success":{
+          in: body
+          need: all

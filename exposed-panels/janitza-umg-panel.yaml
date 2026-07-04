@@ -1,0 +1,18 @@
+id: janitza-umg-panel
+brief:
+    title: Janitza UMG Power Meter - Login Panel
+    by: rxerium
+    level: info
+    about: Janitza UMG series power meters and energy analyzers expose a web interface for energy monitoring and power quality analysis.
+    label:
+        - panel
+        - ics
+        - janitza
+        - power-meter
+        - energy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

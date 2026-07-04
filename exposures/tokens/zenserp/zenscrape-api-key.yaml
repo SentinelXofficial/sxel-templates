@@ -1,0 +1,17 @@
+id: zenscrape-api-key
+brief:
+    title: Zenscrape API Key
+    by: ritikchaddha
+    level: high
+    about: ""
+    label:
+        - exposure
+        - token
+        - zenscrape
+        - apikey
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

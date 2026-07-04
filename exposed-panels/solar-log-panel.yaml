@@ -1,0 +1,30 @@
+id: solar-log-panel
+brief:
+    title: Solar-Log - Monitoring Panel
+    by: rxerium
+    level: info
+    about: Solar-Log is a solar plant monitoring system by Solare Datensysteme GmbH (Germany)
+    label:
+        - panel
+        - solar-log
+        - solar
+        - energy
+        - ics
+        - monitoring
+        - ot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Solar-Log
+            - solar-log.com
+            - Solar-Log™
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

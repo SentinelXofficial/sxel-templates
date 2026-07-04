@@ -1,0 +1,29 @@
+id: amr-printer-management-unauth
+brief:
+    title: AMR Printer Management Dashboard - Exposure
+    by: ritikchaddha
+    level: medium
+    about: Unauthorized access to the AMR Printer Management dashboard was possible, potentially exposing sensitive printer configuration and management interfaces without proper authentication.
+    label:
+        - network
+        - iot
+        - printer
+        - misconfig
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/amr'
+      signs:
+        - "on": word
+          has:
+            - AMR Printer Management
+            - <span>Basic Setup
+            - <span>Log
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

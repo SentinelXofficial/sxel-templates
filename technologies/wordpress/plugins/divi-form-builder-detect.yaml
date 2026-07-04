@@ -1,0 +1,25 @@
+id: divi-form-builder-detect
+brief:
+    title: Divi Form Builder - Detect
+    by: rxerium
+    level: info
+    about: Divi Form Builder is a premium WordPress form plugin by Divi Engine.
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - divi-form-builder
+        - divi
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - wp-content/plugins/divi-form-builder
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,27 @@
+id: dzzoffice-panel
+brief:
+    title: DzzOffice Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: DzzOffice login panel was detected.
+    label:
+        - dzzoffice
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/index.php'
+        - '{{BaseURL}}/user.php?mod=login'
+      signs:
+        - "on": word
+          has:
+            - content="DzzOffice
+            - DZZSCRIPT
+            - dzzoffice.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,30 @@
+id: zzzcms-info-disclosure
+brief:
+    title: Zzzcms 1.75 - Information Disclosure
+    by: ritikchaddha
+    level: low
+    about: There is a rather strange file that directly echoes some content belonging to the inaccessible zzz_config.php. The information leakage file is located in plugins\webuploader\js\webconfig.php, and t...
+    label:
+        - zzzcms
+        - info
+        - disclosure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/plugins/webuploader/js/webconfig.php'
+      signs:
+        - "on": word
+          has:
+            - var adminpath
+            - var imageMaxSize=
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

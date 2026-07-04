@@ -1,0 +1,25 @@
+id: digital-ocean-phish
+brief:
+    title: digital ocean phishing Detection
+    by: rxerium
+    level: info
+    about: A digital-ocean phishing website was detected
+    label:
+        - phishing
+        - digital-ocean
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - DigitalOcean | Cloud Infrastructure for Developers
+            - DigitalOcean
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

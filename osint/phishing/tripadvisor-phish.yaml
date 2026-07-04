@@ -1,0 +1,25 @@
+id: tripadvisor-phish
+brief:
+    title: TripAdvisor phishing Detection
+    by: rxerium
+    level: info
+    about: A TripAdvisor phishing website was detected
+    label:
+        - phishing
+        - tripadvisor
+        - travel
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - tripadvisor.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

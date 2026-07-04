@@ -1,0 +1,16 @@
+id: tenemos-t24-panel
+brief:
+    title: Tenemos T24 Login Panel - Detect
+    by: righettod
+    level: info
+    about: Tenemos T24 products was detected.
+    label:
+        - panel
+        - tenemos
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/servlet/BrowserServlet'
+      signs: []

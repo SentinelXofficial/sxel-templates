@@ -1,0 +1,23 @@
+id: sitecore-version
+brief:
+    title: Sitecore version detection
+    by: bernardofsr
+    level: info
+    about: ""
+    label:
+        - sitecore
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sitecore/shell/sitecore.version.xml'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Sitecore Corporation
+          in: body
+          need: all

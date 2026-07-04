@@ -1,0 +1,22 @@
+id: api-fastly
+brief:
+    title: Fastly API Test
+    by: Adam Crosser
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - fastly
+moves:
+    - verb: GET
+      to:
+        - https://api.fastly.com/current_user
+      head:
+        Fastly-Key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"created_at":'
+            - '"customer_id":'
+          in: body
+          need: all

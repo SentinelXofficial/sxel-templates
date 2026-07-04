@@ -1,0 +1,24 @@
+id: vibilagare
+brief:
+    title: Vibilagare User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Vibilagare user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - vibilagare
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.vibilagare.se/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Profil på vibilagare.se
+          in: body
+          need: all

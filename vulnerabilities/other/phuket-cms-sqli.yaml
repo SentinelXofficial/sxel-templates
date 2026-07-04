@@ -1,0 +1,20 @@
+id: phuket-cms-sqli
+brief:
+    title: Phuket Solution CMS - SQL Injection
+    by: r3Y3r53
+    level: high
+    about: Phuket Solutions CMS is vulnerable to sql injection in which an attacker is able to manipulate an SQL query through user input, causing the application to execute unintended SQL code.
+    label:
+        - phuket
+        - sqli
+        - phuket-cms
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/properties-list.php'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/properties-list.php?property-types=%27'
+      signs: []

@@ -1,0 +1,17 @@
+id: moodle-workplace-panel
+brief:
+    title: Moodle Workplace Login Panel - Detect
+    by: righettod
+    level: info
+    about: Moodle workplace login panel was detected.
+    label:
+        - panel
+        - moodle
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/index.php'
+      signs: []

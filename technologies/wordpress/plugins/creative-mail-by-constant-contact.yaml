@@ -1,0 +1,17 @@
+id: wordpress-creative-mail-by-constant-contact
+brief:
+    title: Creative Mail – Easier WordPress & WooCommerce Email Marketing Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/creative-mail-by-constant-contact/readme.txt'
+      signs: []

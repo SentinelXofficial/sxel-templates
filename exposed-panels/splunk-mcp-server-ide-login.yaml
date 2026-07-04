@@ -1,0 +1,27 @@
+id: splunk-mcp-server-ide-login
+brief:
+    title: Splunk MCP Server IDE Login - Detect
+    by: Th3l0newolf
+    level: info
+    about: Splunk MCP Server IDE login interface was discovered.
+    label:
+        - panel
+        - login
+        - splunk
+        - mcp
+        - ide
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Splunk MCP Server - IDE</title>
+            - <h1 class="main">Splunk MCP Server</h1>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

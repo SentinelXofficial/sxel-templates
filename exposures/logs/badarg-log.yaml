@@ -1,0 +1,27 @@
+id: badarg-log
+brief:
+    title: Badarg Log File Exposure
+    by: Hardik-Solanki
+    level: low
+    about: Badarg log file was exposed.
+    label:
+        - exposure
+        - badarg
+        - log
+        - debug
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.badarg.log'
+      signs:
+        - "on": word
+          has:
+            - 'Special kernel symbols:'
+            - 'Kernel executable memory footprint:'
+            - badarg
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

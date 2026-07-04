@@ -1,0 +1,29 @@
+id: gitea-public-signup
+brief:
+    title: Gitea Public Registration Enabled
+    by: edoardottt
+    level: high
+    about: A misconfiguration in Gitea allows arbitrary users to sign up and read code hosted on the service.
+    label:
+        - misconfig
+        - gitea
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/user/sign_up'
+      signs:
+        - "on": word
+          has:
+            - Powered by Gitea
+            - Register -
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Registration is disabled. Please contact your site administrator.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

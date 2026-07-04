@@ -1,0 +1,19 @@
+id: sdwebui-detect
+brief:
+    title: Stable Diffusion WebUI - Detect
+    by: rxerium
+    level: info
+    about: Detected AUTOMATIC1111 Stable Diffusion WebUI instance. SD WebUI was the mostpopular open-source interface for Stable Diffusion image generation. Exposed instancesmay allow unauthenticated access t...
+    label:
+        - tech
+        - stable-diffusion
+        - sdwebui
+        - ai
+        - image-generation
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

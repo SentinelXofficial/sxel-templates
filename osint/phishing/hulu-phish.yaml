@@ -1,0 +1,26 @@
+id: hulu-phish
+brief:
+    title: Hulu phishing Detection
+    by: rxerium
+    level: info
+    about: A Hulu phishing website was detected
+    label:
+        - phishing
+        - hulu
+        - streaming
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Hulu
+            - Stream TV and Movies Live and Online | Hulu"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

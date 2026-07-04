@@ -1,0 +1,27 @@
+id: turnkey-openvpn
+brief:
+    title: TurnKey OpenVPN Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: TurnKey OpenVPN panel was detected.
+    label:
+        - panel
+        - openvpn
+        - turnkey
+        - webshell
+        - vpn
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - TurnKey OpenVPN
+            - Web Shell
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

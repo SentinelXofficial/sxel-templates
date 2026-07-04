@@ -1,0 +1,20 @@
+id: api-abstract-website-screenshot
+brief:
+    title: Abstract Api Website Screenshot Test
+    by: daffainfo
+    level: info
+    about: Transform any URL into an image with Abstract's Website Screenshot API
+    label:
+        - token-spray
+        - abstractapi
+moves:
+    - verb: GET
+      to:
+        - https://screenshot.abstractapi.com/v1/?api_key={{token}}&url=https://test.test
+      signs:
+        - "on": word
+          has:
+            - '"code":"validation_error"'
+            - Reached error page
+          in: body
+          need: all

@@ -1,0 +1,29 @@
+id: contentkeeper-detect
+brief:
+    title: ContentKeeper Cloud Panel - Detect
+    by: geeknik
+    level: info
+    about: ContentKeeper Cloud panel was detected.
+    label:
+        - contentkeeper
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/ck/domenu.cgi'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ContentKeeper Technologies</div>
+            - ContentKeeper</span>.com
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

@@ -1,0 +1,23 @@
+id: open-mjpg-streamer
+brief:
+    title: open-mjpg-streamer
+    by: gboddin
+    level: medium
+    about: Open mjpg-streamer service sharing webcam/camera feed
+    label:
+        - iot
+        - webcam
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?action=stream'
+      signs:
+        - "on": word
+          has:
+            - MJPG-Streamer/0.2
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

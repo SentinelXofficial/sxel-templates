@@ -1,0 +1,28 @@
+id: xeams-admin-console
+brief:
+    title: Xeams Admin Console Login Panel - Detect
+    by: theamanrawat
+    level: info
+    about: Xeams Admin Console login panel was detected.
+    label:
+        - panel
+        - xeams
+        - admin
+        - console
+        - synametrics
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/FrontController'
+      signs:
+        - "on": word
+          has:
+            - <title>Xeams Admin Console
+            - eXtended Email And Messaging Server</span>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

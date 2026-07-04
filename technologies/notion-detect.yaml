@@ -1,0 +1,24 @@
+id: notion-detect
+brief:
+    title: Notion Detect
+    by: tess
+    level: info
+    about: ""
+    label:
+        - notion
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Notion – One workspace. Every team.
+            - Notion Labs, Inc.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

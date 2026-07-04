@@ -1,0 +1,24 @@
+id: tiktok-phish
+brief:
+    title: tiktok phishing Detection
+    by: rxerium
+    level: info
+    about: A tiktok phishing website was detected
+    label:
+        - phishing
+        - tiktok
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - TikTok - Make Your Day
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

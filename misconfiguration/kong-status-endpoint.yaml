@@ -1,0 +1,23 @@
+id: kong-status-endpoint
+brief:
+    title: Kong API Gateway - Internal Status Endpoint
+    by: Amjad Ali
+    level: info
+    about: Kong API Gateway's internal /status endpoint is publicly accessible either directly or via IP restriction bypass using spoofed headers. The endpoint exposes server metrics including active connecti...
+    label:
+        - kong
+        - misconfig
+        - exposure
+        - api-gateway
+        - konghq
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/status'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/status'
+      head:
+        '{{header}}': 127.0.0.1
+      signs: []

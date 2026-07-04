@@ -1,0 +1,17 @@
+id: magento-debug-log-exposure
+brief:
+    title: Magento Debug Log - Exposure
+    by: 0x_Akoko
+    level: medium
+    about: Detected Magento debug.log file was publicly accessible. This file contained sensitive debugging information including full server paths, stack traces, customer activity, internal code paths, cache...
+    label:
+        - magento
+        - exposure
+        - logs
+        - misconfig
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/var/log/debug.log'
+      signs: []

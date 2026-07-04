@@ -1,0 +1,20 @@
+id: ivanti-epm-detect
+brief:
+    title: Ivanti Endpoint Manager (EPM) - Detect
+    by: rxerium
+    level: info
+    about: An Ivanti Endpoint Manager was detected.
+    label:
+        - detect
+        - ivanti
+        - emm
+        - tech
+        - mobileiron
+        - epm
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/favicon.ico'
+        - '{{BaseURL}}/images/favicon.ico'
+      signs: []

@@ -1,0 +1,24 @@
+id: default-runcloud-page
+brief:
+    title: RunCloud Default Page
+    by: pussycat0x
+    level: info
+    about: ""
+    label:
+        - tech
+        - runcloud
+        - default-page
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome To RunCloud
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

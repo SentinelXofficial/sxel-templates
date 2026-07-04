@@ -1,0 +1,21 @@
+id: nginx-status-403-bypass
+brief:
+    title: Nginx Status Page - 403 Bypass
+    by: pussycat0x
+    level: low
+    about: Detected an NGINX status disclosure and a 403 bypass that allowed unauthorized access to the /nginx_status endpoint.
+    label:
+        - nginx
+        - status
+        - disclosure
+        - bypass
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nginx_status'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs: []

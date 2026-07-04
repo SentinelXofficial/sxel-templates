@@ -1,0 +1,25 @@
+id: utility-service-detect
+brief:
+    title: Utility Services Administration - Detect
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - tech
+        - avaya
+        - aura
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Utility Services Administration</title>
+            - '>Utility-Services'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

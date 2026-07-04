@@ -1,0 +1,25 @@
+id: fubo-phish
+brief:
+    title: FuboTV phishing Detection
+    by: rxerium
+    level: info
+    about: A FuboTV phishing website was detected
+    label:
+        - phishing
+        - fubo
+        - streaming
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Watch ABC, CBS, FOX, ESPN and other top channels live - without cable TV. On your phone, TV and more. No contract. DVR included.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

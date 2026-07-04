@@ -1,0 +1,24 @@
+id: anydesk-phish
+brief:
+    title: anydesk phishing Detection
+    by: rxerium
+    level: info
+    about: An anydesk phishing website was detected
+    label:
+        - phishing
+        - anydesk
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - The Fast Remote Desktop Application – AnyDesk
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

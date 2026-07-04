@@ -1,0 +1,18 @@
+id: ship-manager-dnv
+brief:
+    title: Ship Manager DNV - Panel
+    by: rxerium
+    level: info
+    about: Ship Manager DNV Login Panel was detected.
+    label:
+        - panel
+        - ship-manager
+        - dnv
+        - maritime
+        - login
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/signin'
+      signs: []

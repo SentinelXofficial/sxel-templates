@@ -1,0 +1,29 @@
+id: qvidium-management-system-exposed
+brief:
+    title: QVidium Management System Exposed
+    by: tess
+    level: medium
+    about: QVidium Management System is Exposed.
+    label:
+        - misconfig
+        - qvidium
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - QVidium Management
+            - src="/cgi-bin/banner.cgi
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

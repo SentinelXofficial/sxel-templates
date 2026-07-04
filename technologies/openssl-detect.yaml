@@ -1,0 +1,23 @@
+id: openssl-detect
+brief:
+    title: Openssl Detect
+    by: h4kux
+    level: info
+    about: ""
+    label:
+        - tech
+        - openssl
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - OpenSSL
+          in: server
+          need: all
+        - "on": status
+          status:
+            - 200

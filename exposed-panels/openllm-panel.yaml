@@ -1,0 +1,22 @@
+id: openllm-panel
+brief:
+    title: OpenLLM Panel - Detect
+    by: rxerium
+    level: info
+    about: OpenLLM is an open-source platform for running and deploying LLMs in production. It is built by BentoML
+    label:
+        - panel
+        - openllm
+        - bentoml
+        - llm
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

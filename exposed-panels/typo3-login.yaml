@@ -1,0 +1,25 @@
+id: typo3-login
+brief:
+    title: TYPO3 Login Panel - Detect
+    by: dadevel
+    level: info
+    about: TYPO3 login panel was detected.
+    label:
+        - panel
+        - typo3
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/typo3/'
+      signs:
+        - "on": word
+          has:
+            - TYPO3 CMS
+            - typo3-login-form
+            - 'TYPO3 SVN ID:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

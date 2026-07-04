@@ -1,0 +1,28 @@
+id: enviromuux-default-login
+brief:
+    title: Network Technologies Inc ENVIROMUX - Default Login
+    by: M.Sarmad Shafiq
+    level: high
+    about: The ENVIROMUX environment monitoring system from Network Technologies Inc was found to be using its default login credentials. This default configuration could have allowed unauthorized users to ga...
+    label:
+        - default-login
+        - networktechnologies
+        - enviromux
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/goform/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - '"success":"true"'
+            - '"cookie":"sessionId='
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

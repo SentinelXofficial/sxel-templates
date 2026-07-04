@@ -1,0 +1,23 @@
+id: wampserver-homepage
+brief:
+    title: WampServer Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: WampServer panel was detected.
+    label:
+        - panel
+        - wampserver
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>WAMPSERVER Homepage</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

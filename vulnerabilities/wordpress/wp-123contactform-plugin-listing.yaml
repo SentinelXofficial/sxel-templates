@@ -1,0 +1,26 @@
+id: wp-123contactform-plugin-listing
+brief:
+    title: WordPress 123ContactForm Plugin Directory Listing
+    by: pussycat0x
+    level: info
+    about: Searches for sensitive directories present in the 123contactform-for-wordpress plugin.
+    label:
+        - wordpress
+        - listing
+        - plugin
+        - edb
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/123contactform-for-wordpress/'
+      signs:
+        - "on": word
+          has:
+            - Index of
+            - /123contactform-for-wordpress
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

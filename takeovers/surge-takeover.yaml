@@ -1,0 +1,22 @@
+id: surge-takeover
+brief:
+    title: surge takeover detection
+    by: pdteam
+    level: high
+    about: surge takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - project not found
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

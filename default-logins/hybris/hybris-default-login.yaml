@@ -1,0 +1,56 @@
+id: hybris-default-login
+brief:
+    title: Hybris - Default Login
+    by: princechaddha
+    level: high
+    about: Hybris contains a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - default-login
+        - hybris
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{path}}login'
+      signs:
+        - "on": word
+          has:
+            - hybris administration console
+            - You're Administrator
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}{{path}}j_spring_security_check'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{BaseURL}}'
+        Referer: '{{BaseURL}}login'
+      body: j_username={{username}}&j_password={{password}}&_csrf={{csrftoken}}
+      signs:
+        - "on": word
+          has:
+            - hybris administration console
+            - You're Administrator
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{path}}'
+      signs:
+        - "on": word
+          has:
+            - hybris administration console
+            - You're Administrator
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

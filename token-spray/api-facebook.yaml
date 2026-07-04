@@ -1,0 +1,22 @@
+id: api-facebook
+brief:
+    title: Facebook API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - facebook
+moves:
+    - verb: GET
+      to:
+        - https://graph.facebook.com/me?access_token={{token}}
+      signs:
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

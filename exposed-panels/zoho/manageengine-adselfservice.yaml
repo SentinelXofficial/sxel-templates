@@ -1,0 +1,27 @@
+id: manageengine-adselfservice
+brief:
+    title: ZOHO ManageEngine ADSelfService Plus - Detect
+    by: dhiyaneshDK
+    level: info
+    about: ZOHO ManageEngine ADSelfService panel was detected.
+    label:
+        - panel
+        - zoho
+        - manageengine
+        - zohocorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/authorization.do'
+        - '{{BaseURL}}/servlet/GetProductVersion'
+      signs:
+        - "on": word
+          has:
+            - <title>ADSelfService Plus</title>
+            - '"PRODUCT_NAME":"ManageEngine ADSelfService'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,21 @@
+id: api-securitytrails
+brief:
+    title: SecurityTrails API Test
+    by: 0ri2N
+    level: info
+    about: ""
+    label:
+        - recon
+        - securitytrails
+        - token-spray
+moves:
+    - verb: GET
+      to:
+        - https://api.securitytrails.com/v1/ping
+      head:
+        APIKey: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - success
+          in: body

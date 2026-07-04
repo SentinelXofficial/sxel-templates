@@ -1,0 +1,40 @@
+id: fuelcms-default-login
+brief:
+    title: Fuel CMS - Default Admin Discovery
+    by: Adam Crosser
+    level: high
+    about: Fuel CMS default admin credentials were discovered.
+    label:
+        - fuelcms
+        - default-login
+        - oss
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/fuel/login'
+      signs:
+        - "on": word
+          has:
+            - /fuel/dashboard
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302
+    - verb: POST
+      to:
+        - '{{BaseURL}}/fuel/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: user_name={{username}}&password={{password}}&Login=Login&forward=&ci_csrf_token_FUEL={{csrftoken}}
+      signs:
+        - "on": word
+          has:
+            - /fuel/dashboard
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

@@ -1,0 +1,17 @@
+id: quest-panel
+brief:
+    title: Quest Modem Configuration Login - Panel
+    by: Splint3r7
+    level: info
+    about: Quest Modem Configuration login Panel was detected.
+    label:
+        - panel
+        - quest
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/webcm?getpage=../html/login.html'
+      signs: []

@@ -1,0 +1,22 @@
+id: start-element-manager-panel
+brief:
+    title: Start Element Manager Panel - Detect
+    by: princechaddha
+    level: info
+    about: Start Element Manager panel was detected.
+    label:
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Start Element Manager</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

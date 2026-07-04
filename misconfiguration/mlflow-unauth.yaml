@@ -1,0 +1,27 @@
+id: mlflow-unauth
+brief:
+    title: Mlflow - Unauthenticated Access
+    by: pussycat0x
+    level: high
+    about: Unauthenticated Access to MLflow dashboard.
+    label:
+        - unauth
+        - mlflow
+        - oss
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ajax-api/2.0/preview/mlflow/experiments/get?experiment_id=0'
+      signs:
+        - "on": word
+          has:
+            - experiment_id
+            - name
+            - artifact_location
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

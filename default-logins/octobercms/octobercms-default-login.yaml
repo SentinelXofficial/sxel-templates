@@ -1,0 +1,45 @@
+id: octobercms-default-login
+brief:
+    title: OctoberCMS - Default Admin Discovery
+    by: princechaddha
+    level: high
+    about: OctoberCMS default admin credentials were discovered.
+    label:
+        - octobercms
+        - default-login
+        - oss
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/backend/backend/auth/signin'
+      head:
+        Origin: '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - october_session=
+            - admin_auth=
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302
+    - verb: POST
+      to:
+        - '{{BaseURL}}/backend/backend/auth/signin'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{BaseURL}}'
+      body: _token={{token}}&postback=1&login={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - october_session=
+            - admin_auth=
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

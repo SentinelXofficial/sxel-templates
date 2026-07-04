@@ -1,0 +1,29 @@
+id: stackstorm-default-login
+brief:
+    title: StackStorm Default Login
+    by: PaperPen
+    level: high
+    about: A StackStorm default admin login was discovered.
+    label:
+        - stackstorm
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/auth/tokens'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+        Content-Type: application/json
+      signs:
+        - "on": word
+          has:
+            - '"user":'
+            - '"token":'
+            - '"expiry":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 201

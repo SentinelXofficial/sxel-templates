@@ -1,0 +1,26 @@
+id: stirling-pdf-detect
+brief:
+    title: Stirling PDF - Detect
+    by: s4e-io
+    level: info
+    about: Stirling PDF was detected.
+    label:
+        - tech
+        - stirling-pdf
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Stirling PDF
+            - <title>Stirling-PDF
+            - content="Stirling PDF
+            - window.stirlingPDF
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

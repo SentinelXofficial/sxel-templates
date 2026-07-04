@@ -1,0 +1,24 @@
+id: gitea-userenum
+brief:
+    title: Gitea - User Enumeration
+    by: icarot
+    level: low
+    about: Enumerates the users registered in the Gitea web application, a self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD.
+    label:
+        - tech
+        - gitea
+        - enumeration
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/explore/users/sitemap-1.xml'
+      signs:
+        - "on": word
+          has:
+            - /schemas/sitemap/
+            - lastmod
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

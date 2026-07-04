@@ -1,0 +1,24 @@
+id: metadata-service-openstack
+brief:
+    title: Openstack Metadata Service Check
+    by: sullo
+    level: critical
+    about: The Openstack host is configured as a proxy which allows access to the instance metadata service. This could allow significant access to the host/infrastructure.
+    label:
+        - exposure
+        - config
+        - openstack
+        - proxy
+        - misconfig
+        - metadata
+        - vuln
+    score: CVSS:9.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://{{hostval}}/openstack/latest'
+      signs:
+        - "on": word
+          has:
+            - vendor_data.json
+          in: body

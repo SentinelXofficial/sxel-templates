@@ -1,0 +1,58 @@
+id: xxljob-default-login
+brief:
+    title: XXL-JOB Default Login
+    by: pdteam
+    level: high
+    about: XXL-JOB default admin credentials were discovered.
+    label:
+        - default-login
+        - xxljob
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/xxl-job-admin/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: userName={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - '"code":200'
+            - '"msg"'
+            - '"content"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - XXL_JOB_LOGIN_IDENTITY
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: userName={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - '"code":200'
+            - '"msg"'
+            - '"content"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - XXL_JOB_LOGIN_IDENTITY
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

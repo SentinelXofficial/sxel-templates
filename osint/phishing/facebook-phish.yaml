@@ -1,0 +1,24 @@
+id: facebook-phish
+brief:
+    title: Facebook phishing Detection
+    by: rxerium
+    level: info
+    about: A Facebook phishing website was detected
+    label:
+        - phishing
+        - facebook
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Facebook – log in or sign up
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

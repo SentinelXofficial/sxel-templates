@@ -1,0 +1,30 @@
+id: unauth-mautic-upgrade
+brief:
+    title: Unauthenticated Mautic Upgrade.php Exposure
+    by: huowuzhao
+    level: high
+    about: Upgrade.php page in Mautic is exposed.
+    label:
+        - misconfig
+        - unauth
+        - mautic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/upgrade.php'
+      signs:
+        - "on": word
+          has:
+            - Upgrade Mautic
+            - Click here to start upgrade
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

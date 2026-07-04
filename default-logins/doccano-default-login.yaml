@@ -1,0 +1,32 @@
+id: doccano-default-login
+brief:
+    title: Doccano - Default Login
+    by: 0x_Akoko
+    level: high
+    about: Detected the Doccano data labeling platform was using default administrator credentials (admin:password). An attacker could have gained full administrative access.
+    label:
+        - doccano
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth'
+      head:
+        Accept: text/html
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/v1/auth-token'
+      head:
+        Accept: application/json
+        Content-Type: application/json
+      body: '{"username":"admin","password":"password"}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v1/me'
+      head:
+        Accept: application/json
+        Authorization: Token {{token}}
+      signs: []

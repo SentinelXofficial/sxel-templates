@@ -1,0 +1,31 @@
+id: avideo-install
+brief:
+    title: AVideo Installer - Detect
+    by: ritikchaddha
+    level: high
+    about: AVideo installer panel was detected.
+    label:
+        - panel
+        - install
+        - avideo
+        - misconfig
+        - vuln
+    score: CVSS:8.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/index.php'
+      signs:
+        - "on": word
+          has:
+            - <title>Install AVideo</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Your system is installed, remove the
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

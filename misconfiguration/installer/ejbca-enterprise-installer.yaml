@@ -1,0 +1,25 @@
+id: ejbca-enterprise-installer
+brief:
+    title: EJBCA Enterprise Cloud Configuration Wizard - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed EJBCA Enterprise Cloud Installation page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - ejbca
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - EJBCA Enterprise Cloud Configuration Wizard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

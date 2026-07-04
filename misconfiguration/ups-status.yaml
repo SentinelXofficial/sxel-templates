@@ -1,0 +1,26 @@
+id: ups-status
+brief:
+    title: APC UPC Multimon Status Page - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Multimon UPS status page was detected.
+    label:
+        - logs
+        - status
+        - edb
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/apcupsd/multimon.cgi'
+        - '{{BaseURL}}/cgi-bin/multimon.cgi'
+      signs:
+        - "on": word
+          has:
+            - 'Multimon: UPS Status Page'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

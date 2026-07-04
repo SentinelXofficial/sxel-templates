@@ -1,0 +1,25 @@
+id: qBittorrent-panel
+brief:
+    title: qBittorrent Web UI Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - qbittorrent
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - qBittorrent Web UI
+            - alt="qBittorrent
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

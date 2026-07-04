@@ -1,0 +1,21 @@
+id: smartjob-takeover
+brief:
+    title: Smartjob Takeover Detection
+    by: pdteam
+    level: high
+    about: Smartjob takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Job Board Is Unavailable
+            - This job board website is either expired
+            - This job board website is either expired or its domain name is invalid.
+          in: body
+          need: all

@@ -1,0 +1,23 @@
+id: baget-exposure
+brief:
+    title: BaGet - Exposure
+    by: DhiyaneshDk
+    level: medium
+    about: BaGet Package Manager is being exposed.
+    label:
+        - misconfig
+        - glitchtip
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - content="BaGet"
+            - BaGet.Web
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

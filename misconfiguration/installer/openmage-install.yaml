@@ -1,0 +1,25 @@
+id: openmage-install
+brief:
+    title: OpenMage Installation Wizard
+    by: DhiyaneshDk
+    level: high
+    about: OpenMage is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - openmage
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php/install/'
+      signs:
+        - "on": word
+          has:
+            - OpenMage Installation Wizard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

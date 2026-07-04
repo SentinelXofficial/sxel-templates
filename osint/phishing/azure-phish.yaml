@@ -1,0 +1,26 @@
+id: azure-phish
+brief:
+    title: Microsoft Azure phishing Detection
+    by: rxerium
+    level: info
+    about: A Microsoft Azure phishing website was detected
+    label:
+        - phishing
+        - azure
+        - microsoft
+        - cloud
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Invent with purpose, realize cost savings, and make your organization more efficient with Microsoft Azure’s open and flexible cloud computing platform.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

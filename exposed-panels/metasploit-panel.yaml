@@ -1,0 +1,25 @@
+id: metasploit-panel
+brief:
+    title: Metasploit Panel - Detect
+    by: lu4nx
+    level: info
+    about: Metasploit Web Panel is detected
+    label:
+        - panel
+        - metasploit
+        - login
+        - rapid7
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Metasploit</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

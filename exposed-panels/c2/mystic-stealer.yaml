@@ -1,0 +1,18 @@
+id: mystic-stealer
+brief:
+    title: Mystic Stealer Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Mystic Stealer panel were detected.
+    label:
+        - tech
+        - rat
+        - mystic-stealer
+        - c2
+        - panel
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

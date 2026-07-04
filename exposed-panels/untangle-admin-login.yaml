@@ -1,0 +1,26 @@
+id: untangle-admin-login
+brief:
+    title: Untangle Administrator Login Panel - Detect
+    by: irshad ahamed
+    level: info
+    about: Untangle Administrator is a centralized web-based management console that allows administrators to efficiently configure, monitor, and control various network security and filtering features provid...
+    label:
+        - panel
+        - untangle
+        - admin
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/auth/login'
+      signs:
+        - "on": word
+          has:
+            - Untangle Administrator Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

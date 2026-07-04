@@ -1,0 +1,26 @@
+id: tekton-dashboard
+brief:
+    title: Tekton Dashboard Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Tekton Dashboard panel was detected.
+    label:
+        - panel
+        - tekton
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/pipelines'
+      signs:
+        - "on": word
+          has:
+            - Tekton Dashboard
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

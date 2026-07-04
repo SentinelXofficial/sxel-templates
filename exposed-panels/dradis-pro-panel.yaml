@@ -1,0 +1,23 @@
+id: dradis-pro-panel
+brief:
+    title: Dradis Professional Edition Login Panel - Detect
+    by: righettod
+    level: info
+    about: Dradis Professional Edition login panel was detected.
+    label:
+        - panel
+        - dradis
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pro/login'
+      signs:
+        - "on": word
+          has:
+            - Dradis Professional Edition
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

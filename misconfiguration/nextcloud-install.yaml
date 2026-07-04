@@ -1,0 +1,26 @@
+id: nextcloud-install
+brief:
+    title: Nextcloud Exposed Installation
+    by: skeltavik
+    level: high
+    about: Nextcloud installation is exposed.
+    label:
+        - tech
+        - nextcloud
+        - storage
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <fieldset id="adminaccount"><legend>Create an <strong>admin account</strong></legend>
+            - <legend><a id="showAdvanced" tabindex="0" href="#">Storage &amp; database
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

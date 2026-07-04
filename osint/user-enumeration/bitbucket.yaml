@@ -1,0 +1,24 @@
+id: bitbucket
+brief:
+    title: Bitbucket User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Bitbucket user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - bitbucket
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://bitbucket.org/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Repositories
+          in: body
+          need: all

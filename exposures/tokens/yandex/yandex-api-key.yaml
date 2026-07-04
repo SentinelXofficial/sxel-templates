@@ -1,0 +1,16 @@
+id: yandex-api-key
+brief:
+    title: Yandex API Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - yandex
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

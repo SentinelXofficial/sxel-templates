@@ -1,0 +1,23 @@
+id: darktrace-threat-visualizer
+brief:
+    title: Darktrace Threat Visualizer Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Darktrace Threat Visualizer login panel was detected.
+    label:
+        - panel
+        - darktrace
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Login | Darktrace Threat Visualizer</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

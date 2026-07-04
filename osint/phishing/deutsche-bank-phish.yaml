@@ -1,0 +1,26 @@
+id: deutsche-bank-phish
+brief:
+    title: Deutsche Bank phishing Detection
+    by: rxerium
+    level: info
+    about: A Deutsche Bank phishing website was detected
+    label:
+        - phishing
+        - deutsche-bank
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Deutsche Bank
+            - Discover Deutsche Bank, one of the world’s leading financial services providers. News and Information about the bank and its products
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

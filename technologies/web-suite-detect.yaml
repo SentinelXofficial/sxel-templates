@@ -1,0 +1,26 @@
+id: web-suite-detect
+brief:
+    title: Web Suite Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - web-suite
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/ws2020/'
+        - '{{BaseURL}}/ws2021/'
+      signs:
+        - "on": word
+          has:
+            - www.bqe.com">BQE Software Inc.</a>
+            - Web Suite
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

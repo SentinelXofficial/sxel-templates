@@ -1,0 +1,17 @@
+id: aws-api-key
+brief:
+    title: AWS API Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - aws
+        - amazon
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

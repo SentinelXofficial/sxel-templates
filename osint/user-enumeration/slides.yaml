@@ -1,0 +1,24 @@
+id: slides
+brief:
+    title: Slides User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Slides user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - slides
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://slides.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Presentations by
+          in: body
+          need: all

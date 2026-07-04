@@ -1,0 +1,32 @@
+id: emcecom-default-login
+brief:
+    title: Dell EMC ECOM - Default Login
+    by: Techryptic (@Tech)
+    level: high
+    about: Dell EMC ECOM default login information "(admin:#1Password)" was discovered.
+    label:
+        - dell
+        - emc
+        - ecom
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: ECOMSecurity'
+          in: header
+          need: all
+        - "on": word
+          has:
+            - Welcome to ECOM
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

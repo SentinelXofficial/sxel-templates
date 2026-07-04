@@ -1,0 +1,23 @@
+id: unauthenticated-nginx-dashboard
+brief:
+    title: Nginx Dashboard
+    by: BibekSapkota (sar00n)
+    level: low
+    about: Nginx Dashboard is exposed.
+    label:
+        - misconfig
+        - nginx
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard.html'
+      signs:
+        - "on": word
+          has:
+            - Nginx+ Dashboard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

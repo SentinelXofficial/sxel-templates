@@ -1,0 +1,17 @@
+id: gotify-panel
+brief:
+    title: Gotify Login Panel - Detect
+    by: righettod
+    level: info
+    about: Gotify login panel was detected.
+    label:
+        - panel
+        - gotify
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

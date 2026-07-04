@@ -1,0 +1,23 @@
+id: exposed-service-now
+brief:
+    title: ITMS-Misconfigured
+    by: dhiyaneshDK
+    level: info
+    about: Detection of misconfigured ServiceNow ITSM instances.
+    label:
+        - misconfig
+        - servicenow
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/kb_view_customer.do?sysparm_article=KB00xxxx'
+      signs:
+        - "on": word
+          has:
+            - Unfortunately the article you are looking for could not be found.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

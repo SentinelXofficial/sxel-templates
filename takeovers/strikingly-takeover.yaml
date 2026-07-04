@@ -1,0 +1,21 @@
+id: strikingly-takeover
+brief:
+    title: Strikingly Takeover Detection
+    by: pdteam
+    level: high
+    about: Strikingly takeover was detected.
+    label:
+        - takeover
+        - strikingly
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - But if you're looking to build your own website
+            - you've come to the right place.
+          in: body
+          need: all

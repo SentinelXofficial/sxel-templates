@@ -1,0 +1,25 @@
+id: surfshark-phish
+brief:
+    title: Surfshark phishing Detection
+    by: rxerium
+    level: info
+    about: A Surfshark phishing website was detected
+    label:
+        - phishing
+        - surfshark
+        - vpn
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Surfshark VPN &amp; all-in-one cybersecurity suites - Official Site
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

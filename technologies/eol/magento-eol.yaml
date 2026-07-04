@@ -1,0 +1,16 @@
+id: magento-eol
+brief:
+    title: Magento End-of-life Detect
+    by: dogancanbakir
+    level: info
+    about: Magento end of life detection.
+    label:
+        - magento
+        - tech
+        - cms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

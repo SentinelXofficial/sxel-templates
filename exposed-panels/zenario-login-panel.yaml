@@ -1,0 +1,24 @@
+id: zenario-login-panel
+brief:
+    title: Zenario Admin Login Panel - Detect
+    by: __Fazal
+    level: info
+    about: Zenario admin login panel was detected.
+    label:
+        - panel
+        - zenario
+        - tribalsystems
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/zenario/admin/welcome.php'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Welcome to Zenario
+          in: body
+          need: all

@@ -1,0 +1,19 @@
+id: defectdojo-panel
+brief:
+    title: DefectDojo Login Panel - Detect
+    by: Adam Crosser
+    level: info
+    about: DefectDojo login panel was detected.
+    label:
+        - panel
+        - defectdojo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login?next='
+      signs:
+        - "on": word
+          has:
+            - <img src="/static/dojo/img/logo.png" alt="DefectDojo Logo
+          in: body

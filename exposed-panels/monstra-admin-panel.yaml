@@ -1,0 +1,23 @@
+id: monstra-admin-panel
+brief:
+    title: Monstra Admin Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Monstra admin panel was detected.
+    label:
+        - panel
+        - monstra
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/index.php'
+      signs:
+        - "on": word
+          has:
+            - content="Monstra Admin Area
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

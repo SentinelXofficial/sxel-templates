@@ -1,0 +1,24 @@
+id: messenger-phish
+brief:
+    title: messenger phishing Detection
+    by: rxerium
+    level: info
+    about: A messenger phishing website was detected
+    label:
+        - phishing
+        - messenger
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Hang out anytime, anywhere&#x2014;Messenger makes it easy and fun to stay close to your favorite people
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

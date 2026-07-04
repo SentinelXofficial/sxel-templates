@@ -1,0 +1,22 @@
+id: sangfor-ngaf-panel
+brief:
+    title: Sangfor Next-Generation Application Firewall (NGAF) - Login Panel
+    by: rxerium
+    level: info
+    about: Sangfor NGAF is a next-generation application firewall and SSL VPN gateway by
+    label:
+        - panel
+        - sangfor
+        - ngaf
+        - firewall
+        - vpn
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - SANGFOR | NGAF
+          in: body

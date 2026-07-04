@@ -1,0 +1,25 @@
+id: testrail-install
+brief:
+    title: TestRail Installation Wizard
+    by: DhiyaneshDk
+    level: high
+    about: TestRail is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - testrail
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?/installer'
+      signs:
+        - "on": word
+          has:
+            - TestRail Installation Wizard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

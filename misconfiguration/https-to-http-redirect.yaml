@@ -1,0 +1,16 @@
+id: https-to-http-redirect
+brief:
+    title: HTTPS to HTTP redirect Misconfiguration
+    by: kazet
+    level: info
+    about: Detects whether there is a redirect from https:// to http://
+    label:
+        - misconfig
+        - http
+        - https
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

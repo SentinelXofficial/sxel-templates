@@ -1,0 +1,25 @@
+id: movable-type-login
+brief:
+    title: Movable Type Pro Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Movable Type Pro login panel was detected.
+    label:
+        - panel
+        - movable
+        - sixapart
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mt/admin'
+        - '{{BaseURL}}/mt.cgi'
+      signs:
+        - "on": word
+          has:
+            - Movable Type Pro
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

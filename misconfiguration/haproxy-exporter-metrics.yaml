@@ -1,0 +1,31 @@
+id: haproxy-exporter-metrics
+brief:
+    title: Detect Haproxy Exporter
+    by: pussycat0x
+    level: low
+    about: Haproxy metrics is exposed.
+    label:
+        - haproxy
+        - exposure
+        - debug
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/metrics'
+      signs:
+        - "on": word
+          has:
+            - HELP haproxy_
+          in: body
+          need: all
+        - "on": word
+          has:
+            - haproxy_exporter
+            - haproxy_backend
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

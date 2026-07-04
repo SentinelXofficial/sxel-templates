@@ -1,0 +1,25 @@
+id: canva-phish
+brief:
+    title: Canva phishing Detection
+    by: rxerium
+    level: info
+    about: A Canva phishing website was detected
+    label:
+        - phishing
+        - canva
+        - design
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>Canva: Visual Suite for Everyone'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

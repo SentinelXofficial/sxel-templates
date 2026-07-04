@@ -1,0 +1,24 @@
+id: nuxeo-platform-panel
+brief:
+    title: Nuxeo Platform Login Panel - Detect
+    by: kishore-hariram
+    level: info
+    about: Nuxeo Platform login panel was detected.
+    label:
+        - panel
+        - nuxeo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nuxeo/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - Nuxeo Platform
+            - alt="Nuxeo"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

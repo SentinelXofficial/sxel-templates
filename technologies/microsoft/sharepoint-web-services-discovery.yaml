@@ -1,0 +1,31 @@
+id: sharepoint-web-services-discovery
+brief:
+    title: Microsoft SharePoint - Web Services Discovery
+    by: 0x_Akoko
+    level: info
+    about: Detected exposed SharePoint web services via /_vti_bin/spdisco.aspx endpoint
+    label:
+        - sharepoint
+        - iis
+        - microsoft
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_vti_bin/spdisco.aspx'
+      signs:
+        - "on": word
+          has:
+            - <discovery
+            - <contractRef
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/xml
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

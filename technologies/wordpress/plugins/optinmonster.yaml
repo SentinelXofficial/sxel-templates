@@ -1,0 +1,18 @@
+id: wordpress-optinmonster
+brief:
+    title: Popup Builder & Popup Maker for WordPress – OptinMonster Email Marketing and Lead Generation Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/optinmonster/readme.txt'
+      signs: []

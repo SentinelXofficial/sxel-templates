@@ -1,0 +1,16 @@
+id: drupal-login
+brief:
+    title: Drupal Login Panel - Detect
+    by: pathtaga
+    level: info
+    about: Drupal login panel was detected.
+    label:
+        - panel
+        - drupal
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/user/login'
+      signs: []

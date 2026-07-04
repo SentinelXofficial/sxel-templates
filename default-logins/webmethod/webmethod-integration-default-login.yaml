@@ -1,0 +1,34 @@
+id: webmethod-integration-default-login
+brief:
+    title: WebMethod Integration Server Default Login
+    by: ChristianPoeschl
+    level: high
+    about: ""
+    label:
+        - default-login
+        - webmethod
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/invoke/pub.file/getFile'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/invoke/pub.file/getFile'
+      head:
+        Authorization: '{{base64(username + '':'' + password)}}'
+        Cookie: ssnid=
+      signs:
+        - "on": word
+          has:
+            - com.wm.app.b2b.server
+            - No filename supplied
+          in: body
+          need: all
+        - "on": word
+          has:
+            - com.wm.app.b2b.server.AccessException
+            - Invalid credentials
+          in: body
+          need: all

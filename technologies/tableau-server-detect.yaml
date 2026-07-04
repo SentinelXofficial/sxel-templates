@@ -1,0 +1,27 @@
+id: tableau-server-detect
+brief:
+    title: Salesforce Tableau Server - Detect
+    by: TechbrunchFR
+    level: info
+    about: Detects Salesforce Tableau Server and extracts the buildid.
+    label:
+        - tech
+        - detect
+        - tableau
+        - salesforce
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'X-Tableau: Tableau Server'
+            - 'Server: Tableau'
+          in: header
+        - "on": word
+          has:
+            - VizPortalRun
+            - vizportal
+          in: body

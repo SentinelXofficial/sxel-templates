@@ -1,0 +1,21 @@
+id: api-pivotaltracker
+brief:
+    title: PivotalTracker API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - pivotaltracker
+moves:
+    - verb: GET
+      to:
+        - https://www.pivotaltracker.com/services/v5/me
+      head:
+        X-TrackerToken: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - invalid_authentication
+            - unauthenticated
+          in: body

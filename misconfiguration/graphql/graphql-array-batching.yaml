@@ -1,0 +1,47 @@
+id: graphql-array-batching
+brief:
+    title: GraphQL Array-based Batching
+    by: Dolev Farhi
+    level: info
+    about: Some GraphQL engines support batching of multiple queries into a single request. This allows users to request multiple objects or multiple instances of objects efficiently.
+    label:
+        - graphql
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/graphql'
+      head:
+        Content-Type: application/json
+      body: '[{"query":"query {\n __typename \n }"}, {"query":"mutation { \n __typename \n }"}]'
+      signs:
+        - "on": word
+          has:
+            - :"Query"
+            - :"Mutations"
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/graphql'
+      head:
+        Content-Type: application/json
+      body: '[{"query":"query {\n __typename \n }"}, {"query":"mutation { \n __typename \n }"}]'
+      signs:
+        - "on": word
+          has:
+            - :"Query"
+            - :"Mutations"
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

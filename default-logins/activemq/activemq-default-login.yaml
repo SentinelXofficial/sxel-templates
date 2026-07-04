@@ -1,0 +1,24 @@
+id: activemq-default-login
+brief:
+    title: Apache ActiveMQ Default Login
+    by: pdteam
+    level: high
+    about: Apache ActiveMQ default login credentials were discovered.
+    label:
+        - apache
+        - activemq
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+      signs:
+        - "on": word
+          has:
+            - Welcome to the Apache ActiveMQ Console of <b>
+            - <h2>Broker</h2>
+          in: body
+          need: all

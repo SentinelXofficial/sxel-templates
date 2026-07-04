@@ -1,0 +1,24 @@
+id: openerp-database
+brief:
+    title: Odoo OpenERP Database Selector Panel - Detect
+    by: impramodsargar
+    level: info
+    about: Odoo OpenERP database selector panel was detected.
+    label:
+        - openerp
+        - panel
+        - odoo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web/database/selector/'
+      signs:
+        - "on": word
+          has:
+            - <title>Odoo</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

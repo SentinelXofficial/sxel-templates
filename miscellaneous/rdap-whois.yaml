@@ -1,0 +1,21 @@
+id: rdap-whois
+brief:
+    title: RDAP WHOIS
+    by: ricardomaia
+    level: info
+    about: RDAP (Registration Data Access Protocol) is a standard defined by the IETF to replace the whois protocol
+    label:
+        - miscellaneous
+        - whois
+        - rdap
+        - osint
+        - misc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - https://www.rdap.net/domain/{{Host}}
+      signs:
+        - "on": status
+          status:
+            - 200

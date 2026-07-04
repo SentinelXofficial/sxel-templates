@@ -1,0 +1,40 @@
+id: graphql-hasura-detect
+brief:
+    title: Graphql Hasura Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - graphql
+        - hasura
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/graphql'
+        - '{{BaseURL}}/api/graphql'
+        - '{{BaseURL}}/query'
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: '{"query":"query {aa}"}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'field "aa" not found in type: ''query_root'''
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 'Content-Type: text/html'
+          in: header
+          need: all
+        - "on": word
+          has:
+            - <html
+            - <body
+          in: body
+          need: all

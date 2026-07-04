@@ -1,0 +1,30 @@
+id: wp-iwp-client-fpd
+brief:
+    title: WordPress Plugin InfiniteWP Client - Full Path Disclosure
+    by: ritikchaddha
+    level: low
+    about: WordPress InfiniteWP Client plugin is vulnerable to full path disclosure via direct access to plugin files.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - fpd
+        - iwp-client
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/iwp-client/lib/IWPClass.php'
+        - '{{BaseURL}}/wp-content/plugins/iwp-client/backup/backup.class.php'
+        - '{{BaseURL}}/wp-content/plugins/iwp-client/lib/phpseclib/Crypt/AES.php'
+      signs:
+        - "on": word
+          has:
+            - Fatal error
+            - iwp-client
+            - 'Uncaught Error:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

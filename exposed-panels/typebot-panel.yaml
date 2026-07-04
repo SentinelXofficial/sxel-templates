@@ -1,0 +1,26 @@
+id: typebot-panel
+brief:
+    title: Typebot Panel - Detect
+    by: rxerium
+    level: info
+    about: Typebot is an open-source chatbot builder that allows you to create advanced
+    label:
+        - panel
+        - typebot
+        - chatbot
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - typebot
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

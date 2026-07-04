@@ -1,0 +1,29 @@
+id: keycloak-openid-config
+brief:
+    title: Keycloak OpenID Configuration - Detect
+    by: rodnt
+    level: info
+    about: Keycloak Openid configuration information was detected.
+    label:
+        - keycloak
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.well-known/openid-configuration'
+        - '{{BaseURL}}/auth/realms/master/.well-known/openid-configuration'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - issuer
+            - authorization_endpoint
+            - token_endpoint
+            - userinfo_endpoint
+            - jwks_uri
+          in: body
+          need: all

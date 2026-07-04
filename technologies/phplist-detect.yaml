@@ -1,0 +1,22 @@
+id: phplist-detect
+brief:
+    title: phpList - Detect
+    by: ricardomaia
+    level: info
+    about: phpList is an open source newsletter manager.
+    label:
+        - tech
+        - phplist
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - content="phpList
+            - phpList Ltd
+            - phpList</a>
+          in: body

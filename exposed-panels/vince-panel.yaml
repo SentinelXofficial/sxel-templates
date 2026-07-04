@@ -1,0 +1,16 @@
+id: vince-panel
+brief:
+    title: Vince Login Panel - Detect
+    by: righettod
+    level: info
+    about: Vince products was detected.
+    label:
+        - panel
+        - vince
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs: []

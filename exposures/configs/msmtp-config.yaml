@@ -1,0 +1,33 @@
+id: msmtp-config
+brief:
+    title: Msmtp - Config Exposure
+    by: geeknik
+    level: high
+    about: Msmtp configuration was discovered.
+    label:
+        - exposure
+        - msmtp
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.msmtprc'
+      signs:
+        - "on": word
+          has:
+            - account
+            - host
+            - from
+            - auth
+            - tls
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+            - octet-stream
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

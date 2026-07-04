@@ -1,0 +1,24 @@
+id: Wikipedia-phish
+brief:
+    title: Wikipedia phishing Detection
+    by: rxerium
+    level: info
+    about: A Wikipedia phishing website was detected
+    label:
+        - phishing
+        - wikipedia
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Log in - Wikipedia
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

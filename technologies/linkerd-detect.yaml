@@ -1,0 +1,21 @@
+id: linkerd-badrule-detect
+brief:
+    title: Linkerd detection via bad rule
+    by: dudez
+    level: info
+    about: ""
+    label:
+        - tech
+        - linkerd
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      head:
+        l5d-dtab: /svc/*
+      signs:
+        - "on": word
+          has:
+            - expected but end of input found at
+          in: body

@@ -1,0 +1,22 @@
+id: attu-detect
+brief:
+    title: Attu - Detect
+    by: s4e-io
+    level: info
+    about: Attu was detected.
+    label:
+        - tech
+        - vector-database
+        - attu
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Attu</title>
+            - content="Attu
+          in: body

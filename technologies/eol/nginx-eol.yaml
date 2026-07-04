@@ -1,0 +1,15 @@
+id: nginx-eol
+brief:
+    title: Nginx End-of-Life - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected Nginx versions that have reached End-of-Life (EOL) and no longer receive security updates.
+    label:
+        - tech
+        - nginx
+        - eol
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

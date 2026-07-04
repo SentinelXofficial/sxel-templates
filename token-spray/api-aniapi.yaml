@@ -1,0 +1,22 @@
+id: api-aniapi
+brief:
+    title: AniAPI API Test
+    by: daffainfo
+    level: info
+    about: Anime discovery, streaming & syncing with trackers
+    label:
+        - token-spray
+        - aniapi
+moves:
+    - verb: GET
+      to:
+        - https://api.aniapi.com/v1/auth/me
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"username":'
+            - '"data":'
+          in: body
+          need: all

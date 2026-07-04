@@ -1,0 +1,30 @@
+id: gitea-open-redirect-bypass
+brief:
+    title: Gitea < 1.21.0 - Open Redirect
+    by: ritikchaddha
+    level: medium
+    about: Gitea before version 1.21.0 is affected by URL Redirection to Untrusted Site ('Open Redirect') via internal URLs. The vulnerability exists in the redirect_to parameter used on the login page (/user...
+    label:
+        - redirect
+        - gitea
+        - bypass
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/user/login'
+      signs:
+        - "on": status
+          status:
+            - 302
+    - verb: POST
+      to:
+        - '{{BaseURL}}/user/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Cookie: redirect_to={{redirect}}
+      body: _csrf={{csrf}}&user_name={{username}}&password={{url_encode(password)}}
+      signs:
+        - "on": status
+          status:
+            - 302

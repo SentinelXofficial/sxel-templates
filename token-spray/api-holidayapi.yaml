@@ -1,0 +1,21 @@
+id: api-holidayapi
+brief:
+    title: Holiday API Test
+    by: daffainfo
+    level: info
+    about: Historical data regarding holidays
+    label:
+        - token-spray
+        - holidayapi
+moves:
+    - verb: GET
+      to:
+        - https://holidayapi.com/v1/holidays?pretty&key={{token}}&country=US&year=2020&language=EN
+      signs:
+        - "on": word
+          has:
+            - '"holidays":'
+            - '"name":'
+            - '"date":'
+          in: body
+          need: all

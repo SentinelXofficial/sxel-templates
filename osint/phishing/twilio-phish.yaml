@@ -1,0 +1,25 @@
+id: twilio-phish
+brief:
+    title: Twilio phishing Detection
+    by: rxerium
+    level: info
+    about: A Twilio phishing website was detected
+    label:
+        - phishing
+        - twilio
+        - communication
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Communications APIs with AI and data for SMS, Voice, Email | Twilio
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

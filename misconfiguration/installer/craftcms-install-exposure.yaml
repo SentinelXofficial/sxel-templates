@@ -1,0 +1,17 @@
+id: craftcms-install-exposure
+brief:
+    title: Craft CMS Installation Wizard Exposure
+    by: 0x_Akoko
+    level: high
+    about: Detected Craft CMS installation wizard was exposed, allowing attackers to complete the installation process and gain administrative access to the CMS.
+    label:
+        - craftcms
+        - install
+        - exposure
+        - misconfig
+    score: CVSS:9.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/install'
+      signs: []

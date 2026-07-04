@@ -1,0 +1,17 @@
+id: symfony-fragment
+brief:
+    title: Symfony _fragment - Detect
+    by: Palanichamy_perumal
+    level: info
+    about: Symfony servers support a "/_fragment" command that allows clients to provide custom PHP commands and return the HTML output.
+    label:
+        - config
+        - exposure
+        - symfony
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_fragment'
+      signs: []

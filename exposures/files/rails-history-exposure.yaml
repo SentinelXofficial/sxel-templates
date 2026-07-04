@@ -1,0 +1,17 @@
+id: rails-history-exposure
+brief:
+    title: Rails/Ruby Console History - Exposure
+    by: theamanrawat
+    level: medium
+    about: Detects exposure of Ruby/Rails console history files (.irb_history and .pry_history) via HTTP. Leakage of these files may disclose sensitive code, credentials, or insight into application logic, in...
+    label:
+        - exposure
+        - rails
+        - ruby
+        - config
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.irb_history'
+        - '{{BaseURL}}/.pry_history'
+      signs: []

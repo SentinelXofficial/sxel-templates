@@ -1,0 +1,26 @@
+id: phpldapadmin-panel
+brief:
+    title: PHP LDAP Admin Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - php
+        - phpldapadmin
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/phpldapadmin'
+        - '{{BaseURL}}/htdocs/index.php'
+      signs:
+        - "on": word
+          has:
+            - phpLDAPadmin (
+            - /projects/phpldapadmin
+            - alt="phpLDAPadmin logo
+          in: body
+          need: all

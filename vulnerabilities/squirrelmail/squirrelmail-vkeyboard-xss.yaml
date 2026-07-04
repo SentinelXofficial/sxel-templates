@@ -1,0 +1,31 @@
+id: squirrelmail-vkeyboard-xss
+brief:
+    title: SquirrelMail Virtual Keyboard <=0.9.1 - Cross-Site Scripting
+    by: dhiyaneshDk
+    level: medium
+    about: SquirrelMail Virtual Keyboard plugin 0.9.1 and prior contains a cross-site scripting vulnerability via the vkeyboard.php parameter. It fails to properly sanitize user-supplied input, which allows a...
+    label:
+        - xss
+        - squirrelmail
+        - plugin
+        - edb
+        - vuln
+    score: CVSS:5.4
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/plugins/vkeyboard/vkeyboard.php?passformname={{url_encode(payload)}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - onclick="window.opener.document.forms[0].{{payload}}
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

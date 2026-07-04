@@ -1,0 +1,25 @@
+id: gogs-panel
+brief:
+    title: Gogs Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Gogs login panel was detected.
+    label:
+        - panel
+        - gogs
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/user/login'
+      signs:
+        - "on": word
+          has:
+            - <meta property="og:description" content="Gogs is a painless self-hosted Git service.">
+            - <meta name="description" content="Gogs is a painless self-hosted Git service" />
+            - <title>Sign In - Gogs</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

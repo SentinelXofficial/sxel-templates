@@ -1,0 +1,25 @@
+id: liferay-api
+brief:
+    title: Liferay /api/liferay - API Exposed
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - liferay
+        - exposure
+        - api
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/liferay'
+      signs:
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 404

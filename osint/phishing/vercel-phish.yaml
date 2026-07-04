@@ -1,0 +1,25 @@
+id: vercel-phish
+brief:
+    title: Vercel phishing Detection
+    by: rxerium
+    level: info
+    about: A Vercel phishing website was detected
+    label:
+        - phishing
+        - vercel
+        - hosting
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>Vercel: Build and deploy the best web experiences with the AI Cloud'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

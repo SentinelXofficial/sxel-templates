@@ -1,0 +1,24 @@
+id: teepublic-phish
+brief:
+    title: TeePublic phishing Detection
+    by: rxerium
+    level: info
+    about: A TeePublic phishing website was detected
+    label:
+        - phishing
+        - teepublic
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Artist-Made Apparel and Other Gift Ideas. BFCM Deals Up to 40% Off! | TeePublic
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

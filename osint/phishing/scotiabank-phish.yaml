@@ -1,0 +1,25 @@
+id: scotiabank-phish
+brief:
+    title: Scotiabank phishing Detection
+    by: rxerium
+    level: info
+    about: A Scotiabank phishing website was detected
+    label:
+        - phishing
+        - scotiabank
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Scotiabank Global Site
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

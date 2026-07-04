@@ -1,0 +1,27 @@
+id: zipline-installer
+brief:
+    title: Zipline - Installer
+    by: pussycat0x
+    level: critical
+    about: Zipline installer setup was detected.
+    label:
+        - misconfig
+        - setup
+        - zipline
+        - installer
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup'
+      signs:
+        - "on": word
+          has:
+            - Setup Zipline
+            - Configuration
+            - Create a super-admin account
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

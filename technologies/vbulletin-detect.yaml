@@ -1,0 +1,21 @@
+id: vbulletin-detect
+brief:
+    title: vBulletin Detect
+    by: ricardomaia
+    level: info
+    about: vBulletin is a proprietary forum and community publishing software written in PHP.
+    label:
+        - tech
+        - vbulletin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Powered By vBulletin
+            - content="vBulletin
+            - id="vbulletin_css
+          in: body

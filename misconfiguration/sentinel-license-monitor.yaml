@@ -1,0 +1,26 @@
+id: sentinel-license-monitor
+brief:
+    title: Sentinel License Monitor - Detect
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - sentinel
+        - license
+        - monitor
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/keyinfo.html'
+      signs:
+        - "on": word
+          has:
+            - Sentinel License Monitor
+            - Licenses-in-use
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

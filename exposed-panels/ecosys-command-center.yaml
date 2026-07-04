@@ -1,0 +1,25 @@
+id: ecosys-command-center
+brief:
+    title: ECOSYS Command Center RX Panel - Detect
+    by: princechaddha
+    level: info
+    about: ECOSYS Command Center RX panel was detected.
+    label:
+        - panel
+        - printer
+        - ecosys
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Command Center RX</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

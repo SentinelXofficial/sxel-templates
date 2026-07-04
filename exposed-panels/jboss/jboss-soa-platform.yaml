@@ -1,0 +1,28 @@
+id: jboss-soa-platform
+brief:
+    title: JBoss SOA Platform Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: JBoss SOA Platform login panel was detected.
+    label:
+        - panel
+        - jboss
+        - soa
+        - redhat
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/css/footer.js'
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to the JBoss SOA Platform
+            - 'JBoss Enterprise SOA Platform: Embedded ESB Server'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

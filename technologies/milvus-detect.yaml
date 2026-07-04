@@ -1,0 +1,25 @@
+id: milvus-detect
+brief:
+    title: Milvus - Detect
+    by: s4e-io
+    level: info
+    about: Milvus was detected.
+    label:
+        - tech
+        - vector-database
+        - milvus
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Milvus
+            - <title>Milvus Demo
+            - <title>Milvus Insight
+            - <title>Milvus Enterprise Manager
+          in: body
+          need: all

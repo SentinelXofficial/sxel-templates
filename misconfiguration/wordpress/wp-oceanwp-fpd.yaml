@@ -1,0 +1,20 @@
+id: wp-oceanwp-fpd
+brief:
+    title: WordPress OceanWP - Full Path Disclosure
+    by: ritikchaddha
+    level: low
+    about: WordPress OceanWP theme is vulnerable to full path disclosure via direct access to theme files.
+    label:
+        - wp
+        - wordpress
+        - wp-theme
+        - fpd
+        - oceanwp
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/themes/oceanwp/inc/helpers.php'
+        - '{{BaseURL}}/wp-content/themes/oceanwp/inc/customizer/customizer.php'
+        - '{{BaseURL}}/wp-content/themes/oceanwp/inc/walker/menu-walker.php'
+      signs: []

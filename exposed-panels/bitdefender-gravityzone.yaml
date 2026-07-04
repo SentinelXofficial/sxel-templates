@@ -1,0 +1,23 @@
+id: bitdefender-gravityzone
+brief:
+    title: Bitdefender GravityZone Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Bitdefender GravityZone panel was detected.
+    label:
+        - panel
+        - bitdefender
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Bitdefender GravityZone</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

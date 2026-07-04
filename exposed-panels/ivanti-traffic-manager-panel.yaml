@@ -1,0 +1,25 @@
+id: ivanti-traffic-manager-panel
+brief:
+    title: Ivanti Traffic Manager Panel - Detect
+    by: rxerium
+    level: info
+    about: An Ivanti Traffic Manager Login Panel was detected.
+    label:
+        - detect
+        - traffic-manager
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/apps/zxtm/login.cgi'
+      signs:
+        - "on": word
+          has:
+            - Login (Virtual Traffic Manager
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,44 @@
+id: vidyo-default-login
+brief:
+    title: Vidyo Default Login
+    by: izn0u
+    level: medium
+    about: Vidyo default credentials were discovered.
+    label:
+        - vidyo
+        - default-login
+        - vuln
+    score: CVSS:5.8
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/super/login.html?lang=en'
+      head:
+        Origin: '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - /super/index.html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302
+    - verb: POST
+      to:
+        - '{{BaseURL}}/super/super_security_check;jsessionid={{session}}?csrf_tkn={{csrf_tkn}}'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Cookie: JSESSIONID={{session}} ; VidyoPortalSuperLanguage=en
+        Origin: '{{BaseURL}}'
+        Referer: '{{RootURL}}/super/login.html?lang=en'
+      body: username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - /super/index.html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

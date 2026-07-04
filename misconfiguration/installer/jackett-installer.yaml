@@ -1,0 +1,25 @@
+id: jackett-installer
+brief:
+    title: Jackett - Installer
+    by: ritikchaddha
+    level: high
+    about: Jackett installer exposed.
+    label:
+        - install
+        - jackett
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/configure'
+      signs:
+        - "on": word
+          has:
+            - Jackett
+            - Install</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

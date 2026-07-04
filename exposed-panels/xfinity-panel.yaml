@@ -1,0 +1,24 @@
+id: xfinity-panel
+brief:
+    title: Xfinity Panel - Detect
+    by: Hardik-Solanki
+    level: info
+    about: Xfinity panel was detected.
+    label:
+        - panel
+        - xfinity
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - alt='XFINITY'
+            - title='XFINITY'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

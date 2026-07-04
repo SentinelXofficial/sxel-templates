@@ -1,0 +1,19 @@
+id: default-movable-page
+brief:
+    title: Movable Default Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - movable
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Welcome to Movable Type</title>
+          in: body

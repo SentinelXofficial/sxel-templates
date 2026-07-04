@@ -1,0 +1,24 @@
+id: oidc-detect
+brief:
+    title: Detect OpenID Connect provider
+    by: jarijaas
+    level: info
+    about: Detects OpenID Connect providers. See https://en.wikipedia.org/wiki/OpenID_Connect
+    label:
+        - tech
+        - oidc
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.well-known/openid-configuration'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - issuer
+            - authorization_endpoint
+          in: body
+          need: all

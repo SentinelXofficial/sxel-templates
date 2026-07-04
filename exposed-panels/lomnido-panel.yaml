@@ -1,0 +1,26 @@
+id: lomnido-panel
+brief:
+    title: Lomnido Panel - Detect
+    by: righettod
+    level: info
+    about: Lomnido was detected.
+    label:
+        - lomnido
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - <title>Lomnido Login</title>
+            - /lomnido/saml
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

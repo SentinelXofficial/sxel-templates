@@ -1,0 +1,26 @@
+id: gnuboard-detect
+brief:
+    title: Gnuboard CMS - Detect
+    by: gy741
+    level: info
+    about: Gnuboard CMS was detected.
+    label:
+        - tech
+        - gnuboard
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/LICENSE.txt'
+      signs:
+        - "on": word
+          has:
+            - GNU Board
+            - http://sir.kr
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all

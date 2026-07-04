@@ -1,0 +1,18 @@
+id: appcms-detect
+brief:
+    title: AppCms Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - appcms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

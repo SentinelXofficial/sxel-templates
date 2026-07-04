@@ -1,0 +1,28 @@
+id: opto22-groov-panel
+brief:
+    title: Opto 22 groov - Panel
+    by: rxerium
+    level: info
+    about: Opto 22 groov is an IIoT and industrial automation platform providing browser-based
+    label:
+        - panel
+        - ics
+        - iot
+        - opto22
+        - groov
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Loading - groov View
+            - groovVersion
+            - groov View
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: ourmgmt3-panel
+brief:
+    title: OurMGMT3 Admin Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: OurMGMT3 admin login panel was detected.
+    label:
+        - panel
+        - ourmgmt3
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/admin/login'
+      signs:
+        - "on": word
+          has:
+            - OurMGMT3 Debug client
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

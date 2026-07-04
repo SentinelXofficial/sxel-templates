@@ -1,0 +1,18 @@
+id: rustdesk-webclient-default-login
+brief:
+    title: RustDesk Web Client - Default login
+    by: 0x_Akoko
+    level: high
+    about: Detected RustDesk Web Client Admin Console was using default credentials.
+    label:
+        - default-login
+        - rustdesk
+        - remote-access
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/admin/login'
+      head:
+        Content-Type: application/json
+      body: '{"username":"{{username}}","password":"{{password}}","platform":"windows","captcha":"","captcha_id":""}'
+      signs: []

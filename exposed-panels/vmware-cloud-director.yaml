@@ -1,0 +1,23 @@
+id: vmware-cloud-director
+brief:
+    title: VMware Cloud Director Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: VMware Cloud Director login panel was detected.
+    label:
+        - panel
+        - vmware
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/'
+      signs:
+        - "on": word
+          has:
+            - <title>Welcome to VMware Cloud Director</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

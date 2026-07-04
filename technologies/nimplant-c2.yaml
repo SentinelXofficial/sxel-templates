@@ -1,0 +1,20 @@
+id: nimplant-c2
+brief:
+    title: NimPlant C2 Server - Detect
+    by: ja1sh
+    level: info
+    about: NimPlant is an open source light first-stage C2 implant written in Nim and Python. It is designed to be used as a starting point for those who want to develop their own custom C2 implants. NimPlant...
+    label:
+        - tech
+        - nimplant
+        - c2
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - NimPlant C2 Server
+          in: header

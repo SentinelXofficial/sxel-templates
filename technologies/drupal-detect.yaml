@@ -1,0 +1,28 @@
+id: drupal-detect
+brief:
+    title: Drupal - Detect
+    by: 1nf1n7y
+    level: info
+    about: ""
+    label:
+        - tech
+        - drupal
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/CHANGELOG.txt'
+        - '{{BaseURL}}/core/install.php'
+        - '{{BaseURL}}/user/login'
+      signs:
+        - "on": word
+          has:
+            - Initial release
+            - Drupal 1.0.0
+          in: body
+          need: all
+        - "on": word
+          has:
+            - content="Drupal
+          in: body

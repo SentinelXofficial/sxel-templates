@@ -1,0 +1,24 @@
+id: sugarcrm-panel
+brief:
+    title: SugarCRM Login Panel - Detect
+    by: johnk3r
+    level: info
+    about: SugarCRM login panel was detected.
+    label:
+        - sugarcrm
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/index.php?action=Login&module=Users'
+      signs:
+        - "on": word
+          has:
+            - <title>SugarCRM</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

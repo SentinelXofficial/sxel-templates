@@ -1,0 +1,26 @@
+id: asus-router-panel
+brief:
+    title: Asus Router Login Panel - Detect
+    by: arafatansari
+    level: info
+    about: Asus router login panel was detected.
+    label:
+        - panel
+        - asus
+        - router
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Main_Login.asp'
+      signs:
+        - "on": word
+          has:
+            - <title>ASUS Login</title>
+            - Sign in with your ASUS router account
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

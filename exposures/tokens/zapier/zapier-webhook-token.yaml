@@ -1,0 +1,15 @@
+id: zapier-webhook-token
+brief:
+    title: Zapier Webhook Disclosure
+    by: Ice3man
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

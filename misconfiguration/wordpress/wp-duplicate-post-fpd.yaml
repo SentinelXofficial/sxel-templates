@@ -1,0 +1,18 @@
+id: wp-duplicate-post-fpd
+brief:
+    title: Duplicate Post - Full Path Disclosure
+    by: theamanrawat
+    level: low
+    about: Duplicate Post WordPress plugin contains a full path disclosure vulnerability due to improper access restrictions in its source files, allowing unauthenticated attackers to retrieve full server pat...
+    label:
+        - debug
+        - wordpress
+        - wp
+        - wp-plugin
+        - duplicate-post
+        - fpd
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/duplicate-post/duplicate-post.php'
+      signs: []

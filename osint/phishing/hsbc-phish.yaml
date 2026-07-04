@@ -1,0 +1,25 @@
+id: hsbc-phish
+brief:
+    title: HSBC phishing Detection
+    by: rxerium
+    level: info
+    about: An HSBC phishing website was detected
+    label:
+        - phishing
+        - hsbc
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - HSBC, one of the largest banking and financial services institutions in the world, serves millions of customers through its four global businesses.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,33 @@
+id: silverstripe-detect
+brief:
+    title: SilverStripe Detection
+    by: Chirag Mistry
+    level: info
+    about: An instance running SilverStripe is detected by looking for specific HTTP headers, HTML tags, and known endpoints.
+    label:
+        - silverstripe
+        - detect
+        - tech
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/robots.txt'
+        - '{{BaseURL}}/sitemap.xml'
+        - '{{BaseURL}}/favicon.ico'
+        - '{{BaseURL}}/index.php'
+        - '{{BaseURL}}/assets/'
+        - '{{BaseURL}}/cms/'
+        - '{{BaseURL}}/admin/'
+        - '{{BaseURL}}/themes/'
+      signs:
+        - "on": word
+          has:
+            - Powered by SilverStripe
+            - X-Powered-By-SilverStripe
+          in: response
+          need: all
+        - "on": status
+          status:
+            - 200
+            - 403

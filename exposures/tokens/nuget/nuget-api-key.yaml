@@ -1,0 +1,16 @@
+id: nuget-api-key
+brief:
+    title: NuGet API Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - nuget
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,16 @@
+id: particle-access-token
+brief:
+    title: particle.io Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - particle
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

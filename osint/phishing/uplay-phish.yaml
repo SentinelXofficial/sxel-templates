@@ -1,0 +1,25 @@
+id: uplay-phish
+brief:
+    title: Uplay phishing Detection
+    by: rxerium
+    level: info
+    about: A Uplay phishing website was detected
+    label:
+        - phishing
+        - uplay
+        - ubisoft
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to the official website for Ubisoft, creator of Assassin's Creed, Just Dance, Tom Clancy's video game series, Rayman, Far Cry, Watch Dogs and many others. Learn more about our breathtaking games here!
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

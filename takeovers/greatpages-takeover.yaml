@@ -1,0 +1,20 @@
+id: greatpages-takeover
+brief:
+    title: GreatPages - Takeover Detection
+    by: juliosmelo
+    level: high
+    about: Detects potential subdomain takeover on GreatPages.com.br by identifying the default error message shown on unclaimed pages.
+    label:
+        - takeover
+        - greatpages
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Página não encontrada (Erro 404)
+          in: body
+          need: all

@@ -1,0 +1,27 @@
+id: aws-ec2-autoscale
+brief:
+    title: AWS EC2 Auto Scaling Lab
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - exposure
+        - ec2
+        - aws
+        - amazon
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - AWS EC2 Auto Scaling Lab
+            - EC2 Instance Metadata
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,27 @@
+id: accueil-wampserver
+brief:
+    title: Accueil WAMPSERVER Configuration Page - Detect
+    by: tess
+    level: medium
+    about: Accueil WAMPSERVER configuration page was detected.
+    label:
+        - exposure
+        - accueil
+        - wampserver
+        - config
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Accueil WAMPSERVER
+            - Configuration Serveur
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,27 @@
+id: cradlepoint-gateway-panel
+brief:
+    title: CradlePoint Gateway - Login Panel
+    by: rxerium
+    level: info
+    about: CradlePoint (an Ericsson company) produces cellular-connected SD-WAN and VPN
+    label:
+        - panel
+        - cradlepoint
+        - gateway
+        - vpn
+        - router
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - CradlePoint
+            - cradlepoint.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

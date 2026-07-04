@@ -1,0 +1,25 @@
+id: api-launchdarkly
+brief:
+    title: LaunchDarkly REST API
+    by: Luqmaan Hadia
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - launchdarkly
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://app.launchdarkly.com/api/v2/members'
+      head:
+        Authorization: '{{token}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"totalCount":'
+            - '"items":'
+          in: body
+          need: all

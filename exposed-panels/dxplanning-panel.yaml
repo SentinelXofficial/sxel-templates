@@ -1,0 +1,17 @@
+id: dxplanning-panel
+brief:
+    title: DXPlanning Panel - Detect
+    by: righettod
+    level: info
+    about: DXPlanning was detected.
+    label:
+        - panel
+        - dxplanning
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/DxPlanning/WebBooking/Version'
+      signs: []

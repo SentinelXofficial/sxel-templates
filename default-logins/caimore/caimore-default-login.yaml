@@ -1,0 +1,26 @@
+id: caimore-default-login
+brief:
+    title: CAIMORE Gateway  Default Login - Detect
+    by: pussycat0x
+    level: high
+    about: The gateway of Xiamen Caimao Communication Technology Co., Ltd. is designed with open software architecture. It is a metal shell design, with two Ethernet RJ45 interfaces, and an industrial design ...
+    label:
+        - ciamore-gateway
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.asp'
+      head:
+        Accept-Encoding: gzip, deflate
+        Authorization: Basic {{base64(username + ':' + password)}}
+      signs:
+        - "on": word
+          has:
+            - AR9344_GATEWAY
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

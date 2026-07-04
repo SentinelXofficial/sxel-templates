@@ -1,0 +1,24 @@
+id: public
+brief:
+    title: Public User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Public user name information check was conducted.
+    label:
+        - osint
+        - osint-finance
+        - public
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://public.com/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ) Investment Portfolio on Public
+          in: body
+          need: all

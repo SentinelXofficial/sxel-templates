@@ -1,0 +1,17 @@
+id: bmc-controlm-mft-panel
+brief:
+    title: BMC Control-M MFT Login Panel - Detect
+    by: righettod
+    level: info
+    about: BMC Control-M MFT products was detected.
+    label:
+        - panel
+        - bmc
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

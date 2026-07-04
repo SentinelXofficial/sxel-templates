@@ -1,0 +1,30 @@
+id: riseup-panel
+brief:
+    title: Rise Up Login Panel - Detect
+    by: righettod
+    level: info
+    about: Rise Up login panel was detected.
+    label:
+        - panel
+        - riseup
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Account/login'
+      signs:
+        - "on": word
+          has:
+            - cfg.envRiseUp
+            - imgresize.riseup.ai
+            - content.riseup.ai
+          in: body
+          need: all
+        - "on": word
+          has:
+            - login-page
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

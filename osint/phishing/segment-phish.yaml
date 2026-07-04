@@ -1,0 +1,25 @@
+id: segment-phish
+brief:
+    title: Segment phishing Detection
+    by: rxerium
+    level: info
+    about: A Segment phishing website was detected
+    label:
+        - phishing
+        - segment
+        - analytics
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Twilio Segment - Customer Data Platform | Twilio Segment
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

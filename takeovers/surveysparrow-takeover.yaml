@@ -1,0 +1,22 @@
+id: surveysparrow-takeover
+brief:
+    title: SurveySparrow takeover detection
+    by: philippedelteil
+    level: high
+    about: SurveySparrow takeover was detected.
+    label:
+        - takeover
+        - surveysparrow
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Account not found.
+            - ouch!
+            - SurveySparrow
+          in: body
+          need: all

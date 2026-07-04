@@ -1,0 +1,25 @@
+id: philo-phish
+brief:
+    title: Philo phishing Detection
+    by: rxerium
+    level: info
+    about: A Philo phishing website was detected
+    label:
+        - phishing
+        - philo
+        - streaming
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Why pay more for TV? Philo offers live TV and on-demand content for just $33/month. Stream your favorite shows, movies, and more across all your devices.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

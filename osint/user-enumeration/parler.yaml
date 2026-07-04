@@ -1,0 +1,24 @@
+id: parler
+brief:
+    title: Parler User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Parler user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - parler
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://parler.com/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - People to Follow
+          in: body
+          need: all

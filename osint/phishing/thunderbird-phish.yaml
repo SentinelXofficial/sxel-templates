@@ -1,0 +1,24 @@
+id: thunderbird-phish
+brief:
+    title: thunderbird phishing Detection
+    by: rxerium
+    level: info
+    about: A thunderbird phishing website was detected
+    label:
+        - phishing
+        - thunderbird
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Thunderbird — Free Your Inbox. — Thunderbird
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

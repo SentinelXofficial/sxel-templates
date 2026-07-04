@@ -1,0 +1,24 @@
+id: smule
+brief:
+    title: Smule User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Smule user name information check was conducted.
+    label:
+        - osint
+        - osint-music
+        - smule
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.smule.com/api/profile/?handle={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - account_id
+          in: body
+          need: all

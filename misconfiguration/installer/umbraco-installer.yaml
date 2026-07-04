@@ -1,0 +1,18 @@
+id: umbraco-installer
+brief:
+    title: Umbraco Install - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Umbraco is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - umbraco
+        - install
+        - oss
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install'
+        - '{{BaseURL}}/umbraco/management/api/v1/server/status'
+      signs: []

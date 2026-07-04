@@ -1,0 +1,26 @@
+id: manageengine-exchangereporter
+brief:
+    title: ZOHO ManageEngine Exchange Reporter Plus Panel - Detect
+    by: darses
+    level: info
+    about: ZOHO ManageEngine Exchange Reporter Plus panel was detected.
+    label:
+        - panel
+        - zoho
+        - manageengine
+        - zohocorp
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/exchange/index.html'
+      signs:
+        - "on": word
+          has:
+            - Exchange Reporter Plus
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

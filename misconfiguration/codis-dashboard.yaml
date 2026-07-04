@@ -1,0 +1,30 @@
+id: codis-dashboard
+brief:
+    title: Codis Dashboard Exposure
+    by: tess
+    level: low
+    about: Codis Dashboard is exposed.
+    label:
+        - misconfig
+        - exposure
+        - codis
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Codis • Dashboard
+            - Sessions
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

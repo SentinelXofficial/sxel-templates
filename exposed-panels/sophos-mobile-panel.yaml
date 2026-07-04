@@ -1,0 +1,19 @@
+id: sophos-mobile-panel
+brief:
+    title: Sophos Mobile Panel - Detect
+    by: Adam Crosser
+    level: info
+    about: Sophos Mobile panel was detected.
+    label:
+        - panel
+        - sophos
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.xhtml?faces-redirect=true'
+      signs:
+        - "on": word
+          has:
+            - <title>Sophos Mobile</title>
+          in: body

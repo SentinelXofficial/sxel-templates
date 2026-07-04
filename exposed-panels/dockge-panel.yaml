@@ -1,0 +1,24 @@
+id: dockge-panel
+brief:
+    title: Dockge Panel - Detect
+    by: rxerium
+    level: info
+    about: A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager
+    label:
+        - panel
+        - dockge
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Dockge</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

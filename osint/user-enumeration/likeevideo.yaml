@@ -1,0 +1,24 @@
+id: likeevideo
+brief:
+    title: Likeevideo User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Likeevideo user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - likeevideo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://likee.video/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - https://img.like.video/
+          in: body
+          need: all

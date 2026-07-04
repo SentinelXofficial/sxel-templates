@@ -1,0 +1,24 @@
+id: careerhabr
+brief:
+    title: Career.habr User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Career.habr user name information check was conducted.
+    label:
+        - osint
+        - osint-business
+        - careerhabr
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://career.habr.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - — Хабр Карьера</title>
+          in: body
+          need: all

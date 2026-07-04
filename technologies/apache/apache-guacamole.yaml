@@ -1,0 +1,25 @@
+id: apache-guacamole
+brief:
+    title: Apache Guacamole Login Page and version detection
+    by: r3dg33k
+    level: info
+    about: ""
+    label:
+        - apache
+        - guacamole
+        - tech
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/translations/en.json'
+      signs:
+        - "on": word
+          has:
+            - Apache Guacamole
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

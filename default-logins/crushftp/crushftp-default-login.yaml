@@ -1,0 +1,43 @@
+id: crushftp-default-login
+brief:
+    title: CrushFTP - Default Login
+    by: pussycat0x
+    level: high
+    about: CrushFTP default login credentials were discovered.
+    label:
+        - default-login
+        - crushftp
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/WebInterface/'
+      signs:
+        - "on": word
+          has:
+            - <response>success</response>
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - text/xml
+          in: header_2
+          need: all
+    - verb: POST
+      to:
+        - '{{BaseURL}}/WebInterface/function/'
+      head:
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/WebInterface/login.html'
+      body: command=login&username={{username}}&password={{password}}&encoded=true&language=en&random=0.34712915617878926
+      signs:
+        - "on": word
+          has:
+            - <response>success</response>
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - text/xml
+          in: header_2
+          need: all

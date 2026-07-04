@@ -1,0 +1,26 @@
+id: nike-phish
+brief:
+    title: Nike phishing Detection
+    by: rxerium
+    level: info
+    about: A Nike phishing website was detected
+    label:
+        - phishing
+        - nike
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Nike
+            - <title>Nike. Just Do It. Nike.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

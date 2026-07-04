@@ -1,0 +1,34 @@
+id: unify-hipath-default-login
+brief:
+    title: Unify HiPath Cordless IP - Default Login
+    by: FLX
+    level: high
+    about: Default login credentials on the Unify HiPath Cordless IP admin center were discovered.
+    label:
+        - default-login
+        - unify
+        - hipath
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - /html/wbm_login.html
+          in: body
+    - verb: POST
+      to:
+        - '{{BaseURL}}/cgi-bin/ikon_button.exe?page=1500&button=51&line=0&eventid=0&WbmSessionId=nosession&Username={{user}}&Password={{pass}}&CountryCode=en&NoSessionTimeout=false&SwitchLanguage=false'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '{"success":true'
+            - There is another user logged in
+          in: body
+          need: all

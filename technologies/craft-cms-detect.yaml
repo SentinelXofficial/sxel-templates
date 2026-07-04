@@ -1,0 +1,19 @@
+id: craft-cms-detect
+brief:
+    title: Craft CMS Detect
+    by: skeltavik
+    level: info
+    about: Detects Craft CMS
+    label:
+        - tech
+        - craftcms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'X-Powered-By: Craft CMS'
+          in: header

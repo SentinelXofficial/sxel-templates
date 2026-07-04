@@ -1,0 +1,16 @@
+id: figma-personal-token
+brief:
+    title: Figma Personal Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - figma
+        - exposure
+        - token
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

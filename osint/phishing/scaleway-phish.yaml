@@ -1,0 +1,26 @@
+id: scaleway-phish
+brief:
+    title: Scaleway phishing Detection
+    by: rxerium
+    level: info
+    about: A Scaleway phishing website was detected
+    label:
+        - phishing
+        - scaleway
+        - cloud
+        - hosting
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>European. Cloud. AI. | Scaleway
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

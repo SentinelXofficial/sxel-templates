@@ -1,0 +1,27 @@
+id: cognita-panel
+brief:
+    title: Cognita Panel - Detect
+    by: rxerium
+    level: info
+    about: Cognita is an open-source RAG framework by Truefoundry for building modular and
+    label:
+        - panel
+        - cognita
+        - llm
+        - ai
+        - rag
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Cognita
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

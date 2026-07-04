@@ -1,0 +1,24 @@
+id: bluesky
+brief:
+    title: Bluesky User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Bluesky user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - bluesky
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://bsky.app/profile/{{user}}.bsky.social
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - bsky.social on Bluesky
+          in: body
+          need: all

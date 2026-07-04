@@ -1,0 +1,31 @@
+id: gloo-unauth
+brief:
+    title: Unauthenticated Gloo UI
+    by: dhiyaneshDk
+    level: high
+    about: Gloo UI is exposed to external users.
+    label:
+        - unauth
+        - gloo
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/fed.rpc.solo.io.GlooInstanceApi/ListClusterDetails'
+      head:
+        Content-type: application/grpc-web+proto
+        Referer: '{{BaseURL}}/admin/'
+      signs:
+        - "on": word
+          has:
+            - gke-remote
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/grpc-web+proto
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

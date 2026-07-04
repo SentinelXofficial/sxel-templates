@@ -1,0 +1,19 @@
+id: smartstore-detect
+brief:
+    title: SmartStore Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - smartstore
+        - oss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

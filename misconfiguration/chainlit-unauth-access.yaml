@@ -1,0 +1,26 @@
+id: chainlit-unauth-access
+brief:
+    title: Chainlit - Unauthenticated Access
+    by: pussycat0x
+    level: low
+    about: Detects Chainlit AI chatbot instances with no authentication, leaving the entire app publicly accessible by default.
+    label:
+        - chainlit
+        - unauth
+        - misconfig
+        - ai
+        - llm
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Accept: application/json
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/project/settings'
+      head:
+        Accept: application/json
+      signs: []

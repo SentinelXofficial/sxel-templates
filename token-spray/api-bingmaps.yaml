@@ -1,0 +1,20 @@
+id: api-bingmaps
+brief:
+    title: Bing Maps API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - bing
+        - maps
+        - bingmaps
+moves:
+    - verb: GET
+      to:
+        - https://dev.virtualearth.net/REST/v1/Locations?CountryRegion=US&adminDistrict=WA&locality=Somewhere&postalCode=98001&addressLine=100%20Main%20St.&key={{token}}
+      signs:
+        - "on": word
+          has:
+            - ValidCredentials
+          in: body

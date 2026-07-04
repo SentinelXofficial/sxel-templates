@@ -1,0 +1,30 @@
+id: laravel-clockwork-exposure
+brief:
+    title: Laravel Clockwork - Sensitive Information Exposure
+    by: moamenbasel
+    level: medium
+    about: Laravel Clockwork (itsgoingd/clockwork) was detected as enabled and publicly accessible. When left active in production, it exposes SQL queries, request data, session variables, mail logs, and appl...
+    label:
+        - laravel
+        - clockwork
+        - misconfig
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/__clockwork'
+      signs:
+        - "on": word
+          has:
+            - '"__meta":'
+            - '"toolbar":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

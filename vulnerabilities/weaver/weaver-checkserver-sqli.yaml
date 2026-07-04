@@ -1,0 +1,16 @@
+id: weaver-checkserver-sqli
+brief:
+    title: Ecology OA CheckServer - SQL Injection
+    by: SleepingBag945
+    level: high
+    about: Ecology OA system improperly filters incoming data from users, resulting in a SQL injection vulnerability. Remote and unauthenticated attackers can use this vulnerability to conduct SQL injection a...
+    label:
+        - weaver
+        - ecology
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mobile/plugin/CheckServer.jsp?type=mobileSetting'
+      signs: []

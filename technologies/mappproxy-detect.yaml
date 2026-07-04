@@ -1,0 +1,28 @@
+id: mappproxy-detect
+brief:
+    title: Mapproxy - Detect
+    by: philippedelteil
+    level: info
+    about: Checks for a running MapProxy instance and obtain version number. Also checks if the demo page is enabled. MapProxy is an open source proxy for geospatial data. It caches, accelerates and transform...
+    label:
+        - tech
+        - mapproxy
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/demo'
+      signs:
+        - "on": word
+          has:
+            - Welcome to MapProxy
+            - MapProxy Demo
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

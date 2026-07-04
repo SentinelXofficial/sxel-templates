@@ -1,0 +1,23 @@
+id: api-coinapi
+brief:
+    title: CoinAPI API Test
+    by: daffainfo
+    level: info
+    about: All Currency Exchanges integrate under a single api
+    label:
+        - token-spray
+        - coinapi
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://rest.coinapi.io/v1/exchanges'
+      head:
+        X-CoinAPI-Key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"exchange_id":'
+            - '"website":'
+            - '"name":'
+          in: body
+          need: all

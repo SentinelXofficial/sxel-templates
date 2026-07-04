@@ -1,0 +1,19 @@
+id: activemq-panel
+brief:
+    title: Apache ActiveMQ Exposure
+    by: pdteam
+    level: info
+    about: An Apache ActiveMQ implementation was discovered.
+    label:
+        - panel
+        - activemq
+        - apache
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/'
+        - '{{BaseURL}}/demo/'
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,16 @@
+id: odbc-connection-string
+brief:
+    title: ODBC Connection String
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - odbc
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

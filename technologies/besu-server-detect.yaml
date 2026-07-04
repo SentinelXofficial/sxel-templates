@@ -1,0 +1,21 @@
+id: besu-server-detect
+brief:
+    title: Besu JSON-RPC HTTP Server - Detect
+    by: Nullfuzz
+    level: info
+    about: Besu is an open source Ethereum client developed under the Apache 2.0 license and written in Java. By default Besu runs a JSON-RPC HTTP server on port 8545/TCP
+    label:
+        - tech
+        - besu
+        - ethereum
+        - web3
+        - blockchain
+        - discovery
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: '{"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"}'
+      signs: []

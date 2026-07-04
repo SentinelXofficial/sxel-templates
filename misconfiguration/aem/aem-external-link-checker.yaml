@@ -1,0 +1,31 @@
+id: aem-external-link-checker
+brief:
+    title: Adobe AEM External Link Checker Exposure
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - aem
+        - adobe
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/etc/linkchecker.html'
+        - '{{BaseURL}}/var/linkchecker.html'
+      signs:
+        - "on": word
+          has:
+            - <title>External Link Checker</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: laravel-eol
+brief:
+    title: Laravel End-of-Life Detection
+    by: Shivam Kamboj
+    level: info
+    about: Detected Laravel framework versions that had reached End-of-Life (EOL) and no longer received security updates.
+    label:
+        - tech
+        - laravel
+        - eol
+        - framework
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/composer.json'
+        - '{{BaseURL}}/composer.lock'
+      signs: []

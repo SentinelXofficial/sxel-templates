@@ -1,0 +1,29 @@
+id: flir-default-login
+brief:
+    title: Flir Default Login
+    by: pikpikcu
+    level: medium
+    about: Flir default login credentials (admin/admin) were discovered.
+    label:
+        - default-login
+        - flir
+        - camera
+        - iot
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login/dologin'
+      head:
+        Accept: '*/*'
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: user_name={{username}}&user_password={{password}}
+      signs:
+        - "on": word
+          has:
+            - '"success"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

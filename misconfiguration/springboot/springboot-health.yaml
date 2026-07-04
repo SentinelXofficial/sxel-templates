@@ -1,0 +1,30 @@
+id: springboot-health
+brief:
+    title: Spring Boot Health Actuator Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Spring Boot Health Actuator panel was detected.
+    label:
+        - springboot
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/health'
+        - '{{BaseURL}}/actuator/health'
+      signs:
+        - "on": word
+          has:
+            - '"components"'
+            - '"diskSpace"'
+            - '"mongo"'
+            - '"jms"'
+            - '"ping"'
+            - '"db"'
+            - '"redis"'
+            - '"livenessState"'
+            - '"readinessState"'
+          in: body
+          need: all

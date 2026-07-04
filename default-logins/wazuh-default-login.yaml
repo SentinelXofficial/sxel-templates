@@ -1,0 +1,38 @@
+id: wazuh-default-login
+brief:
+    title: Wazuh - Default Login
+    by: theamanrawat
+    level: high
+    about: Wazuh contains default credentials. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - wazuh
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/app/login'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/auth/login'
+      head:
+        Content-Type: application/json
+        Osd-Version: '{{osd}}'
+        osd-xsrf: osd-fetch
+      body: '{"username":"{{username}}","password":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - '"username":'
+            - '"roles":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

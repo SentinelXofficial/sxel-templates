@@ -1,0 +1,24 @@
+id: Discord-phish
+brief:
+    title: Discord phishing Detection
+    by: rxerium
+    level: info
+    about: A Discord phishing website was detected
+    label:
+        - phishing
+        - discord
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Discord | Your Place to Talk and Hang Out
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: theguardian
+brief:
+    title: Theguardian User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Theguardian user name information check was conducted.
+    label:
+        - osint
+        - osint-news
+        - theguardian
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.theguardian.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - https://www.theguardian.com/profile/
+          in: body
+          need: all

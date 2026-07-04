@@ -1,0 +1,17 @@
+id: phoenix-contact-charx-api
+brief:
+    title: Phoenix Contact CHARX SEC-3XXX AC Charging Controller REST API - Detect
+    by: inokii
+    level: info
+    about: Phoenix Contact CHARX SEC-3XXX AC Charging Controller REST API was detected.
+    label:
+        - phoenix-contact
+        - charx
+        - ics
+        - api
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1.0/web/retained-data'
+      signs: []

@@ -1,0 +1,30 @@
+id: kubeflow-dashboard-unauth
+brief:
+    title: Kubeflow Unauth
+    by: dhiyaneshDk
+    level: high
+    about: Kubeflow internal data is exposed.
+    label:
+        - kubeflow
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pipeline/apis/v1beta1/runs?page_size=5&sort_by=created_at%20desc'
+      signs:
+        - "on": word
+          has:
+            - '{"runs":[{"id":'
+            - resource_references
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

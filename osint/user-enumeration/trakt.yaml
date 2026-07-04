@@ -1,0 +1,24 @@
+id: trakt
+brief:
+    title: Trakt User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Trakt user name information check was conducted.
+    label:
+        - osint
+        - osint-video
+        - trakt
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://trakt.tv/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s profile - Trakt
+          in: body
+          need: all

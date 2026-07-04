@@ -1,0 +1,28 @@
+id: apdisk-disclosure
+brief:
+    title: Apdisk - File Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: Apdisk internal file is exposed.
+    label:
+        - exposure
+        - files
+        - apdisk
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.apdisk'
+      signs:
+        - "on": word
+          has:
+            - <plist version=
+            - <key>
+            - <string>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/xml
+          in: header
+          need: all

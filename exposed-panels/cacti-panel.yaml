@@ -1,0 +1,23 @@
+id: cacti-panel
+brief:
+    title: Cacti Login Panel - Detect
+    by: geeknik
+    level: info
+    about: Cacti login panel was detected.
+    label:
+        - cacti
+        - login
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/cacti/'
+      signs:
+        - "on": word
+          has:
+            - <title>Login to Cacti</title>
+            - The Cacti Group
+          in: body

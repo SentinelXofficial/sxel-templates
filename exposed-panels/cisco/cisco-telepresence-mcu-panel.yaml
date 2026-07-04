@@ -1,0 +1,24 @@
+id: cisco-telepresence-mcu-panel
+brief:
+    title: Cisco TelePresence MCU Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Cisco TelePresence MCU login panel was detected.
+    label:
+        - panel
+        - cisco
+        - telepresence-mcu
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - 'Cisco TelePresence MCU - login:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

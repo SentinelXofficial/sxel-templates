@@ -1,0 +1,26 @@
+id: partsgeek-phish
+brief:
+    title: PartsGeek phishing Detection
+    by: rxerium
+    level: info
+    about: A PartsGeek phishing website was detected
+    label:
+        - phishing
+        - partsgeek
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - PartsGeek
+            - SHOP Partsgeek's online auto parts warehouse for original OEM & aftermarket replacement car parts. The dealer alternative store for quality discount auto parts and accessories.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

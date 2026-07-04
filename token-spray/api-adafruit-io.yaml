@@ -1,0 +1,22 @@
+id: api-adafruit-io
+brief:
+    title: Adafruit IO API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - adafruit
+moves:
+    - verb: GET
+      to:
+        - https://io.adafruit.com/api/v2/user
+      head:
+        X-AIO-Key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"username":'
+            - '"id":'
+          in: body
+          need: all

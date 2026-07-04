@@ -1,0 +1,24 @@
+id: patientslikeme
+brief:
+    title: PatientsLikeMe User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: PatientsLikeMe user name information check was conducted.
+    label:
+        - osint
+        - osint-health
+        - patientslikeme
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.patientslikeme.com/members/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s profile | PatientsLikeMe</title>
+          in: body
+          need: all

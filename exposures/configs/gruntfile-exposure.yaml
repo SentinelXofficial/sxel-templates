@@ -1,0 +1,25 @@
+id: gruntfile-exposure
+brief:
+    title: Gruntfile Config - Detect
+    by: sbani
+    level: info
+    about: Gruntfile configuration information was detected.
+    label:
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Gruntfile.js'
+        - '{{BaseURL}}/Gruntfile.coffee'
+      signs:
+        - "on": word
+          has:
+            - module.exports
+            - grunt
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

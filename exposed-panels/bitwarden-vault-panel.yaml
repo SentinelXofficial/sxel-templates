@@ -1,0 +1,26 @@
+id: bitwarden-vault-panel
+brief:
+    title: Bitwarden Web Vault Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - bitwarden
+        - vault
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Bitwarden Web Vault</title>
+            - alt="Bitwarden
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

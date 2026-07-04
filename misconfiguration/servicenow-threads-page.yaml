@@ -1,0 +1,15 @@
+id: servicenow-threads-page
+brief:
+    title: ServiceNow Threads Page - Detection
+    by: cham423
+    level: info
+    about: Detects exposed ServiceNow thread information pages (threads.do) that reveal cluster and system details.
+    label:
+        - servicenow
+        - exposure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/threads.do'
+      signs: []

@@ -1,0 +1,29 @@
+id: appsettings-file-disclosure
+brief:
+    title: Application Setting file disclosure
+    by: DhiyaneshDK
+    level: high
+    about: appsetting.json file discloses the DB connection strings containing sensitive information.
+    label:
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/appsettings.json'
+        - '{{BaseURL}}/appsettings.Production.json'
+      signs:
+        - "on": word
+          has:
+            - ConnectionStrings
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

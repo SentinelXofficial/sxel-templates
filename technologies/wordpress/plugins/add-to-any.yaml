@@ -1,0 +1,17 @@
+id: wordpress-add-to-any
+brief:
+    title: AddToAny Share Buttons Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/add-to-any/readme.txt'
+      signs: []

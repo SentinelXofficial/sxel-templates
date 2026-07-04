@@ -1,0 +1,17 @@
+id: wordpress-jeg-elementor-kit
+brief:
+    title: Jeg Elementor Kit Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/jeg-elementor-kit/readme.txt'
+      signs: []

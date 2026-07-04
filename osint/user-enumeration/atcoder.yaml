@@ -1,0 +1,24 @@
+id: atcoder
+brief:
+    title: AtCoder User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: AtCoder user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - atcoder
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://atcoder.jp/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - AtCoder is a programming contest site for anyone from beginners to experts. We hold weekly programming contests online.
+          in: body
+          need: all

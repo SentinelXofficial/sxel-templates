@@ -1,0 +1,24 @@
+id: cnet
+brief:
+    title: Cnet User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Cnet user name information check was conducted.
+    label:
+        - osint
+        - osint-news
+        - cnet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.cnet.com/profiles/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'Member Since:'
+          in: body
+          need: all

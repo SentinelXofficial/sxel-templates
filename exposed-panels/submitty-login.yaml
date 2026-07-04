@@ -1,0 +1,25 @@
+id: submitty-login
+brief:
+    title: Submitty Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Submitty login panel was detected.
+    label:
+        - panel
+        - submitty
+        - oss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/authentication/login'
+      signs:
+        - "on": word
+          has:
+            - submitty-banner
+            - https://submitty.org
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

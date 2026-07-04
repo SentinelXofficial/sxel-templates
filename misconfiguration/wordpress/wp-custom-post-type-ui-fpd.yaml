@@ -1,0 +1,18 @@
+id: wp-custom-post-type-ui-fpd
+brief:
+    title: WordPress Custom Post Type UI - Full Path Disclosure
+    by: 0x_Akoko
+    level: low
+    about: Detected WordPress Custom Post Type UI exposes internal file system path through direct file access.
+    label:
+        - wordpress
+        - fpd
+        - wp-plugin
+        - custom-post-type-ui
+        - exposure
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/custom-post-type-ui/custom-post-type-ui.php'
+      signs: []

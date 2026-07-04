@@ -1,0 +1,25 @@
+id: sevone-nms-network-manager
+brief:
+    title: SevOne NMS Network Manager
+    by: pussycat0x
+    level: info
+    about: ""
+    label:
+        - sevone
+        - manager
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#login'
+      signs:
+        - "on": word
+          has:
+            - SevOne NMS - Network Manager
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

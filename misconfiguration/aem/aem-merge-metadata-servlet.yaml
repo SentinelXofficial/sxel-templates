@@ -1,0 +1,23 @@
+id: aem-merge-metadata-servlet
+brief:
+    title: AEM MergeMetadataServlet
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - aem
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/libs/dam/merge/metadata.html?path=/etc&.ico'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - assetPaths
+          in: body
+          need: all

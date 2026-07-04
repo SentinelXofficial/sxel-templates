@@ -1,0 +1,88 @@
+id: openplc-default-login
+brief:
+    title: OpenPLC Webserver v3 - Default Login
+    by: machevalia
+    level: high
+    about: Identifies default credentials (openplc:openplc) on OpenPLC Webserver v3, allowing unauthorized access to the web interface.
+    label:
+        - openplc
+        - default-login
+        - iot
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - Dashboard
+            - Runtime Logs
+            - Logout</p>
+          in: body_3
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}&csrf_token={{csrf}}
+      signs:
+        - "on": word
+          has:
+            - Dashboard
+            - Runtime Logs
+            - Logout</p>
+          in: body_3
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard'
+      signs:
+        - "on": word
+          has:
+            - Dashboard
+            - Runtime Logs
+            - Logout</p>
+          in: body_3
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - Dashboard
+            - Runtime Logs
+            - Logout</p>
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard'
+      signs:
+        - "on": word
+          has:
+            - Dashboard
+            - Runtime Logs
+            - Logout</p>
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200

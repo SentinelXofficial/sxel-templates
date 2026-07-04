@@ -1,0 +1,26 @@
+id: sessionize
+brief:
+    title: Sessionize User Information - Detect
+    by: rxerium
+    level: info
+    about: Sessionize user profile information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - sessionize
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://sessionize.com/{{user}}
+      signs:
+        - "on": word
+          has:
+            - alt="Sessionize">
+            - profile
+            - Favorite</span>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

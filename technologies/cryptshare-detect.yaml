@@ -1,0 +1,24 @@
+id: cryptshare-detect
+brief:
+    title: Pointsharp Cryptshare - Detect
+    by: darses
+    level: info
+    about: Detects the presence of Pointsharp Cryptshare secure email and file sharing server.
+    label:
+        - detect
+        - tech
+        - cryptshare
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Start?0'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - name="generator" content="Cryptshare
+          in: body
+          need: all

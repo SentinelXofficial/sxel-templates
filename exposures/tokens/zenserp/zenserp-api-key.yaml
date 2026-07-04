@@ -1,0 +1,17 @@
+id: zenserp-api-key
+brief:
+    title: Zenserp Api Key
+    by: ritikchaddha
+    level: high
+    about: ""
+    label:
+        - exposure
+        - token
+        - zenserp
+        - apikey
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

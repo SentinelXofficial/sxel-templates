@@ -1,0 +1,24 @@
+id: sophos-phish
+brief:
+    title: sophos phishing Detection
+    by: rxerium
+    level: info
+    about: A sophos phishing website was detected
+    label:
+        - phishing
+        - sophos
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Cybersecurity as a Service Delivered | Sophos
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

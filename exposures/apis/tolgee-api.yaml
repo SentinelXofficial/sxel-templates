@@ -1,0 +1,30 @@
+id: tolgee-api
+brief:
+    title: Tolgee API - Detect
+    by: matejsmycka
+    level: info
+    about: Tolgee API was detected.
+    label:
+        - exposure
+        - api
+        - tolgee
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/public/configuration'
+      signs:
+        - "on": word
+          has:
+            - Tolgee
+            - version
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

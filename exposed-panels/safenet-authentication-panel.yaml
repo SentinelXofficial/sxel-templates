@@ -1,0 +1,18 @@
+id: safenet-authentication-panel
+brief:
+    title: SafeNet Authentication Login Panel - Detect
+    by: righettod
+    level: info
+    about: SafeNet Authentication Service Self Enrollment login panel was detected.
+    label:
+        - panel
+        - safenet
+        - thales
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/selfenrollment/Enrollment.aspx'
+      signs: []

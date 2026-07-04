@@ -1,0 +1,21 @@
+id: api-ipstack
+brief:
+    title: IPStack API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - ipstack
+moves:
+    - verb: GET
+      to:
+        - https://api.ipstack.com/8.8.8.8?access_key={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"ip":'
+            - '"hostname":'
+            - '"type":'
+          in: body
+          need: all

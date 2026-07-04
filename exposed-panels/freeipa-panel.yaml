@@ -1,0 +1,25 @@
+id: freeipa-panel
+brief:
+    title: FreeIPA Identity Management Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: FreeIPA Identity Management login panel was detected.
+    label:
+        - panel
+        - login
+        - freeipa
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/ipa/ui/'
+      signs:
+        - "on": word
+          has:
+            - '''freeipa/'''
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

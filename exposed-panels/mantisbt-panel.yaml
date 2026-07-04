@@ -1,0 +1,24 @@
+id: mantisbt-panel
+brief:
+    title: MantisBT Login Panel - Detect
+    by: makyotox
+    level: info
+    about: MantisBT login panel was detected.
+    label:
+        - panel
+        - mantisbt
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login_page.php'
+      signs:
+        - "on": word
+          has:
+            - 'title="MantisBT: Text Search"'
+            - 'title="MantisBT: Issue Id"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

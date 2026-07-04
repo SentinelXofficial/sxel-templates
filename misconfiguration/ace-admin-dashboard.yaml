@@ -1,0 +1,31 @@
+id: ace-admin-dashboard
+brief:
+    title: Ace Admin Dashboard - Detect
+    by: tess
+    level: medium
+    about: Ace Admin dashboard page was detected.
+    label:
+        - misconfig
+        - exposure
+        - aceadmin
+        - discovery
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Dashboard - Ace Admin
+            - overview & stats
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

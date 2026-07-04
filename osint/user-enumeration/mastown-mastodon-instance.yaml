@@ -1,0 +1,24 @@
+id: mastown-mastodon-instance
+brief:
+    title: Mas.town (Mastodon Instance) User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mas.town (Mastodon Instance) user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastown-mastodon-instance
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://mas.town/api/v1/accounts/lookup?acct={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - display_name
+          in: body
+          need: all

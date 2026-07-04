@@ -1,0 +1,45 @@
+id: sap-readlogfile-disclosure
+brief:
+    title: SAPControl ReadDeveloperTrace Log - Disclosure
+    by: LRVT
+    level: medium
+    about: Detected SAP systems where the SAP Start Service (sapstartsrv) SAPControl SOAP interface exposes the ReadDeveloperTrace web method without authentication.
+    label:
+        - misconfig
+        - sap
+        - sapcontrol
+        - soap
+        - log
+        - disclosure
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: text/xml; charset=UTF-8
+        SOAPAction: '''""'''
+      body: |-
+        <?xml version="1.0" encoding="utf-8"?>
+        <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+          <SOAP-ENV:Header>
+            <sapsess:Session xmlns:sapsess="http://www.sap.com/webas/630/soap/features/session/">
+              <enableSession>true</enableSession>
+            </sapsess:Session>
+          </SOAP-ENV:Header>
+          <SOAP-ENV:Body>
+            <ns1:ReadDeveloperTrace xmlns:ns1="urn:SAPControl">
+              <filename>sapstart.log</filename>
+            </ns1:ReadDeveloperTrace>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      signs:
+        - "on": word
+          has:
+            - ReadDeveloperTraceResponse
+            - <lines>
+            - <item>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

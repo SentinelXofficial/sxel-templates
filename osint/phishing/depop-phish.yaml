@@ -1,0 +1,26 @@
+id: depop-phish
+brief:
+    title: Depop phishing Detection
+    by: rxerium
+    level: info
+    about: A Depop phishing website was detected
+    label:
+        - phishing
+        - depop
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Depop
+            - Designer. Preloved. Vintage. Streetwear. Sneakers. Whatever your style. Find it on Depop.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

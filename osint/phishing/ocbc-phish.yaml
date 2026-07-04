@@ -1,0 +1,25 @@
+id: ocbc-phish
+brief:
+    title: OCBC Bank phishing Detection
+    by: rxerium
+    level: info
+    about: An OCBC Bank phishing website was detected
+    label:
+        - phishing
+        - ocbc
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Discover a world of financial services with OCBC, the best trusted and established Singapore bank. Explore our range of banking solutions today.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

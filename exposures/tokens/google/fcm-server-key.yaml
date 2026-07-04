@@ -1,0 +1,16 @@
+id: fcm-server-key
+brief:
+    title: FCM Server Key
+    by: absshax
+    level: high
+    about: FCM Server Key is leaked.
+    label:
+        - exposure
+        - token
+        - google
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,24 @@
+id: hikvision-detect
+brief:
+    title: Hikvision Panel
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - tech
+        - hikvision
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/favicon.ico'
+        - '{{BaseURL}}/doc/page/login.asp'
+      signs:
+        - "on": word
+          has:
+            - Hikvision Digital Technology
+          in: body
+        - "on": word
+          has:
+            - Hikvision-Webs
+          in: header

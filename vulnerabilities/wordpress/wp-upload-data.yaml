@@ -1,0 +1,28 @@
+id: wordpress-upload-data
+brief:
+    title: wordpress-upload-data
+    by: pussycat0x
+    level: medium
+    about: The remote WordPress installation contains a file 'data.txt' under the '/wp-content/uploads/' folder that has sensitive information inside it.
+    label:
+        - wordpress
+        - listing
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/uploads/data.txt'
+      signs:
+        - "on": word
+          has:
+            - 'admin:'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

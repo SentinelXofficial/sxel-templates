@@ -1,0 +1,25 @@
+id: vironeer-installer
+brief:
+    title: Vironeer Installer - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Vironeer is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - vironeer
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/information/database'
+      signs:
+        - "on": word
+          has:
+            - Vironeer Installer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

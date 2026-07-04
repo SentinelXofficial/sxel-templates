@@ -1,0 +1,24 @@
+id: bdsmlr
+brief:
+    title: BDSMLR User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: BDSMLR user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - bdsmlr
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://{{user}}.bdsmlr.com
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - login
+          in: body
+          need: all

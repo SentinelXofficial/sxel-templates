@@ -1,0 +1,17 @@
+id: finnhub-accesstoken
+brief:
+    title: finnhub Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - exposure
+        - finnhub
+        - file
+        - token
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

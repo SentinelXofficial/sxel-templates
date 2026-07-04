@@ -1,0 +1,24 @@
+id: wowhead
+brief:
+    title: Wowhead User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Wowhead user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - wowhead
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.wowhead.com/user={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' Profile - Wowhead'
+          in: body
+          need: all

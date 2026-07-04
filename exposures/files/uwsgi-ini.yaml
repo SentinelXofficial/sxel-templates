@@ -1,0 +1,24 @@
+id: uwsgi-ini
+brief:
+    title: uwsgi.ini File Exposure
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - exposure
+        - uwsgi
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/uwsgi.ini'
+      signs:
+        - "on": word
+          has:
+            - '[uwsgi]'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: elfiq-panel
+brief:
+    title: Elfiq Link Balancer - Login Panel
+    by: rxerium
+    level: info
+    about: Elfiq Link Balancer management login panel detected.
+    label:
+        - panel
+        - elfiq
+        - loadbalancer
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Elfiq Link Balancer Management
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

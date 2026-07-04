@@ -1,0 +1,26 @@
+id: deos-openview-panel
+brief:
+    title: DEOS OPENview Admin Panel Unauthenticated Access
+    by: sullo
+    level: high
+    about: The DEOS OPENview administrative panel is accessible without authentication.
+    label:
+        - openview
+        - disclosure
+        - panel
+        - misconfig
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/client/index.html'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>OPENview</title>
+          in: body
+          need: all

@@ -1,0 +1,25 @@
+id: oracle-fusion-detect
+brief:
+    title: Oracle Fusion Middleware - Detect
+    by: rxerium
+    level: info
+    about: Oracle Fusion Middleware was detected.
+    label:
+        - oracle
+        - middleware
+        - detect
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Welcome to Oracle Fusion Middleware
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,28 @@
+id: epson-access-detect
+brief:
+    title: Epson Device Unauthorized Access Detect
+    by: pussycat0x
+    level: info
+    about: A publicly available Epson device panel (printer, scanner, etc.) was detected.
+    label:
+        - iot
+        - printer
+        - panel
+        - unauth
+        - epson
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/PRESENTATION/EPSONCONNECT'
+      signs:
+        - "on": word
+          has:
+            - Epson Connect
+            - /IMAGE/EPSONLOGO.PNG
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

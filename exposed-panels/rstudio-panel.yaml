@@ -1,0 +1,24 @@
+id: rstudio-panel
+brief:
+    title: RStudio Sign In Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: RStudio Sign In panel was detected.
+    label:
+        - rstudio
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth-sign-in?appUri=%2F'
+      signs:
+        - "on": word
+          has:
+            - <title>RStudio Sign In</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: goodjob-dashboard
+brief:
+    title: goodjob-dashboard
+    by: hahwul
+    level: medium
+    about: Rails GoodJob Dashboard panel was detected.
+    label:
+        - unauth
+        - panel
+        - goodjob
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jobs'
+        - '{{BaseURL}}/good_job/jobs'
+      signs:
+        - "on": word
+          has:
+            - <title>Good Job Dashboard</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

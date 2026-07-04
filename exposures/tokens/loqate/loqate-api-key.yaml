@@ -1,0 +1,16 @@
+id: loqate-api-key
+brief:
+    title: Loqate API Key
+    by: realexp3rt
+    level: low
+    about: Loqate API Key is leaked.
+    label:
+        - exposure
+        - token
+        - loqate
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,25 @@
+id: php-prober-exposure
+brief:
+    title: PHP Prober - Exposure
+    by: ritikchaddha
+    level: medium
+    about: PHP Prober Server exposure was detected.
+    label:
+        - exposure
+        - php
+        - prober
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/prober.php'
+      signs:
+        - "on": word
+          has:
+            - Server Parameters
+            - PHP Prober
+            - Real-time Data
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

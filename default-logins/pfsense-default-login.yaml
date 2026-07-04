@@ -1,0 +1,27 @@
+id: pfsense-default-login
+brief:
+    title: pfSense - Default Admin Credentials
+    by: 0x_Akoko
+    level: high
+    about: Detected pfSense firewall was found using default administrator credentials (admin:pfsense). An attacker could have gained full administrative access to manage firewall rules, routing, and network ...
+    label:
+        - default-login
+        - pfsense
+        - firewall
+        - network
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php'
+      head:
+        Accept: text/html
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/index.php'
+      head:
+        Accept: text/html
+        Content-Type: application/x-www-form-urlencoded
+        Cookie: '{{phpsessid}}'
+      body: __csrf_magic={{csrf}}&usernamefld={{username}}&passwordfld={{password}}&login=Sign+In
+      signs: []

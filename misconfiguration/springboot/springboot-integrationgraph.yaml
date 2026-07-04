@@ -1,0 +1,35 @@
+id: springboot-integrationgraph
+brief:
+    title: Springboot Actuator integrationgraph
+    by: ELSFA7110
+    level: low
+    about: The integrationgraph endpoint exposes a graph containing all Spring Integration components.
+    label:
+        - misconfig
+        - springboot
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/integrationgraph'
+        - '{{BaseURL}}/actuator/integrationgraph'
+      signs:
+        - "on": word
+          has:
+            - provider
+            - integrationPatternType
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v1+json
+            - application/vnd.spring-boot.actuator.v2+json
+            - application/vnd.spring-boot.actuator.v3+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

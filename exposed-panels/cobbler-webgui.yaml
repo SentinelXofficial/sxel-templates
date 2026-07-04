@@ -1,0 +1,27 @@
+id: cobbler-webgui
+brief:
+    title: Cobbler WebGUI Login Panel - Detect
+    by: c-sh0
+    level: info
+    about: Cobbler WebGUI login panel was detected.
+    label:
+        - cobbler
+        - webserver
+        - panel
+        - cobblerd
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cobbler_web'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Cobbler Web Interface</title>
+            - /cobbler_webui_content/
+            - /cobbler_web/do_login
+          in: body
+          need: all

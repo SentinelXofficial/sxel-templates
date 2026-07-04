@@ -1,0 +1,26 @@
+id: fortirecorder-panel
+brief:
+    title: FortiRecorder Panel - Detect
+    by: rxerium
+    level: info
+    about: FortiRecorder Panel was discovered.
+    label:
+        - fortinet
+        - fortirecorder
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/'
+      signs:
+        - "on": word
+          has:
+            - FortiRecorder Admin
+            - Log In
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

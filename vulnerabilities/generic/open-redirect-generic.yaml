@@ -1,0 +1,22 @@
+id: open-redirect-generic
+brief:
+    title: Open Redirect - Detection
+    by: afaq
+    level: medium
+    about: An open redirect vulnerability was detected. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - redirect
+        - generic
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{RootURL}}/{{redirect}}'
+      signs:
+        - "on": status
+          status:
+            - 301
+            - 302
+            - 307
+            - 308

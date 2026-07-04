@@ -1,0 +1,33 @@
+id: yealink-default-login
+brief:
+    title: Yealink CTP18 - Default Login
+    by: parzival
+    level: high
+    about: Yealink CTP18 Default Administrator Credentials Discovered.
+    label:
+        - default-login
+        - yealink
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/auth/login?p=Login&t=1'
+      head:
+        Accept: application/json, text/plain, */*
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&pwd={{password}}
+      signs:
+        - "on": word
+          has:
+            - '{"ret":"ok","data":true}'
+            - '{"ret":"ok","data":"ok"}'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

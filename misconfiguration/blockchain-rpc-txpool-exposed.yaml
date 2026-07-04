@@ -1,0 +1,38 @@
+id: blockchain-rpc-txpool-exposed
+brief:
+    title: Blockchain RPC - txpool_content Exposed
+    by: 0xBassia
+    level: high
+    about: The blockchain RPC endpoint exposes the txpool_content method, which returns all pending (unmined) transactions in the mempool including sender addresses, transaction data, gas prices, and values. ...
+    label:
+        - misconfig
+        - blockchain
+        - rpc
+        - txpool
+        - mev
+        - web3
+    score: CVSS:7.5
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: '{"jsonrpc":"2.0","method":"txpool_content","params":[],"id":1}'
+      signs:
+        - "on": word
+          has:
+            - '"jsonrpc"'
+            - '"result"'
+            - '"pending"'
+            - '"queued"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

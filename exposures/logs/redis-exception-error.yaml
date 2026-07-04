@@ -1,0 +1,29 @@
+id: redis-exception-error
+brief:
+    title: Redis Exception Connection Error Page
+    by: DhiyaneshDk
+    level: low
+    about: Redis exception connection error page detected.
+    label:
+        - exposure
+        - redis
+        - logs
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - redis.exceptions.ConnectionError
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 500

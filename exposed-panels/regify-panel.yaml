@@ -1,0 +1,27 @@
+id: regify-panel
+brief:
+    title: Regify Login Panel - Detect
+    by: righettod
+    level: info
+    about: Regify Login Panel was detected.
+    label:
+        - panel
+        - regify
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/phpLogin.php'
+      signs:
+        - "on": word
+          has:
+            - regify
+            - regibill
+            - regify_default.css
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

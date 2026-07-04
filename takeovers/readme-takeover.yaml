@@ -1,0 +1,20 @@
+id: readme-takeover
+brief:
+    title: Readme.io Takeover Detection
+    by: pdteam
+    level: high
+    about: Readme.io takeover was detected.
+    label:
+        - takeover
+        - readme
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Project doesnt exist... yet!
+          in: body
+          need: all

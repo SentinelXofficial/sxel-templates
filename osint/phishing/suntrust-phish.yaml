@@ -1,0 +1,26 @@
+id: suntrust-phish
+brief:
+    title: SunTrust phishing Detection
+    by: rxerium
+    level: info
+    about: A SunTrust phishing website was detected
+    label:
+        - phishing
+        - suntrust
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - SunTrust
+            - Sign On
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

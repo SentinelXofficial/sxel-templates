@@ -1,0 +1,24 @@
+id: japandict
+brief:
+    title: Japandict User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Japandict user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - japandict
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://forum.japandict.com/u/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Mentions
+          in: body
+          need: all

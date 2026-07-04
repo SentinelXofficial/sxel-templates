@@ -1,0 +1,23 @@
+id: laravel-debug-error
+brief:
+    title: Larvel Debug Method Enabled
+    by: dhiyaneshDK
+    level: medium
+    about: Larvel Debug method is enabled.
+    label:
+        - debug
+        - laravel
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}///////this-should-not-exist,.<>!@#$%^&*()_+'
+        - '{{BaseURL}}/%00'
+      signs:
+        - "on": word
+          has:
+            - <title>Whoops! There was an error
+          in: body
+          need: all

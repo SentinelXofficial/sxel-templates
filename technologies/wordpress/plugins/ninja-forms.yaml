@@ -1,0 +1,18 @@
+id: wordpress-ninja-forms
+brief:
+    title: Ninja Forms – The Contact Form Builder That Grows With You Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/ninja-forms/readme.txt'
+      signs: []

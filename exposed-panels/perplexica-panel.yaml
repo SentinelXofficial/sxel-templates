@@ -1,0 +1,27 @@
+id: perplexica-panel
+brief:
+    title: Perplexica Panel - Detect
+    by: rxerium
+    level: info
+    about: Perplexica is an open-source AI-powered search engine that uses SearXNG to search
+    label:
+        - panel
+        - perplexica
+        - ai
+        - search
+        - llm
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Perplexica
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

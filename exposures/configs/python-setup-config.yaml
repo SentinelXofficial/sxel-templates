@@ -1,0 +1,32 @@
+id: python-setup-config
+brief:
+    title: Python Setup Configuration - Exposure
+    by: DhiyaneshDk
+    level: low
+    about: Python Setup Configuration "setup.py" File was exposed.
+    label:
+        - python
+        - py
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup.py'
+      signs:
+        - "on": word
+          has:
+            - import os
+            - find_packages
+            - setup(
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+            - text/x-python
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

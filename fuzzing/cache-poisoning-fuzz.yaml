@@ -1,0 +1,25 @@
+id: cache-poisoning-fuzz
+brief:
+    title: Cache Poison Fuzzing
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - fuzz
+        - cache
+        - fuzzing
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?{{md5(headers)}}=1'
+      head:
+        '{{headers}}': '{{randstr}}.tld'
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?{{md5(headers)}}=1'
+      head:
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0
+      signs: []

@@ -1,0 +1,30 @@
+id: bookstack-panel
+brief:
+    title: BookStack Login Panel - Detect
+    by: cyllective
+    level: info
+    about: Bookstack login panel was detected.
+    label:
+        - panel
+        - bookstack
+        - bookstackapp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>BookStack</title>
+            - <span class="logo-text">BookStack</span>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 'Set-Cookie: bookstack_session'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

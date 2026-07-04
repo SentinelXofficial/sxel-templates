@@ -1,0 +1,23 @@
+id: aem-querybuilder-feed-servlet
+brief:
+    title: AEM QueryBuilder Feed Servlet
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - aem
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/bin/querybuilder.feed'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - CQ Feed
+          in: body
+          need: all

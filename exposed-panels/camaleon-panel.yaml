@@ -1,0 +1,25 @@
+id: camaleon-panel
+brief:
+    title: Camaleon CMS Login - Panel
+    by: DhiyaneshDK
+    level: info
+    about: Camaleon CMS admin login panel was discovered.
+    label:
+        - camaleon
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login'
+      signs:
+        - "on": word
+          has:
+            - camaleon_cms
+            - Forgot your password
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

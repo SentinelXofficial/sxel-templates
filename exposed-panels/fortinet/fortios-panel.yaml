@@ -1,0 +1,29 @@
+id: fortios-panel
+brief:
+    title: FortiOS Admin Login Panel - Detect
+    by: canberbamber
+    level: info
+    about: FortiOS admin login panel was detected.
+    label:
+        - panel
+        - fortinet
+        - fortios
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v2/cmdb/system/admin/admin'
+      signs:
+        - "on": word
+          has:
+            - /remote/login
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 'Server: xxxxxxxx-xxxxx'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 403

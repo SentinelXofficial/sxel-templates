@@ -1,0 +1,16 @@
+id: icinga-dashboard-exposure
+brief:
+    title: Icinga Exposed Dashboard
+    by: DhiyaneshDk
+    level: medium
+    about: Icinga Dashboard was exposed.
+    label:
+        - exposure
+        - icinga
+        - statistics
+        - oos
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/icinga2'
+      signs: []

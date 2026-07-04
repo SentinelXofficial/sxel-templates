@@ -1,0 +1,18 @@
+id: postman-key
+brief:
+    title: Postman API Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - postman
+        - keys
+        - token
+        - api
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

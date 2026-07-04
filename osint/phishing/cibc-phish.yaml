@@ -1,0 +1,26 @@
+id: cibc-phish
+brief:
+    title: CIBC phishing Detection
+    by: rxerium
+    level: info
+    about: A CIBC phishing website was detected
+    label:
+        - phishing
+        - cibc
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - CIBC
+            - CIBC U.S. provides tailored commercial and personal banking services, private wealth management and small business financial solutions from coast to coast. We invest in businesses, people and communities, striving to build trusting and enduring relationships by putting our clients at the center of all we do.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

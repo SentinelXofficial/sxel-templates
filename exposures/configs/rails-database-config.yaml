@@ -1,0 +1,27 @@
+id: rails-database-config
+brief:
+    title: Ruby on Rails Database Configuration File - Detect
+    by: pdteam
+    level: high
+    about: Ruby on Rails database configuration file was detected, which may contain database credentials.
+    label:
+        - config
+        - exposure
+        - rails
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config/database.yml'
+      signs:
+        - "on": word
+          has:
+            - 'adapter:'
+            - 'database:'
+            - 'production:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

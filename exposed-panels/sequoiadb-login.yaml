@@ -1,0 +1,26 @@
+id: sequoiadb-login
+brief:
+    title: SequoiaDB Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: SequoiaDB login panel was detected.
+    label:
+        - sequoiadb
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html#/'
+      signs:
+        - "on": word
+          has:
+            - <title>SequoiaDB</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

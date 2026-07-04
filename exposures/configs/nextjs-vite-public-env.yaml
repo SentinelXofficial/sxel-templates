@@ -1,0 +1,21 @@
+id: nextjs-vite-public-env
+brief:
+    title: Next.js / Vite Public ENV Exposure
+    by: Hamza Sahin
+    level: medium
+    about: Identified public environment variables exposed to the client in Next.js (__NEXT_DATA__.env) and Vite applications through runtime configurations.
+    label:
+        - exposure
+        - env
+        - nextjs
+        - vite
+        - supabase
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

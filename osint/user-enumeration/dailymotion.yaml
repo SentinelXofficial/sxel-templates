@@ -1,0 +1,24 @@
+id: dailymotion
+brief:
+    title: Dailymotion User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Dailymotion user name information check was conducted.
+    label:
+        - osint
+        - osint-video
+        - dailymotion
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.dailymotion.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - og:url
+          in: body
+          need: all

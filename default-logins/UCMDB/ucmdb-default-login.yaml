@@ -1,0 +1,25 @@
+id: ucmdb-default-login
+brief:
+    title: Micro Focus Universal CMDB Default Login
+    by: dwisiswant0
+    level: high
+    about: Micro Focus Universal CMDB default login credentials were discovered for diagnostics/admin. Note there is potential for this to be chained together with other vulnerabilities as with CVE-2020-11853...
+    label:
+        - ucmdb
+        - default-login
+        - packetstorm
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/ucmdb-ui/cms/loginRequest.do;'
+      body: customerID=1&isEncoded=false&userName={{username}}&password={{base64(password)}}&ldapServerName=UCMDB
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - LWSSO_COOKIE_KEY
+          in: header
+          need: all

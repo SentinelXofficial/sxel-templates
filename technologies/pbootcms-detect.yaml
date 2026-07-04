@@ -1,0 +1,19 @@
+id: pbootcms-detect
+brief:
+    title: PbootCMS Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - pbootcms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - content="PbootCMS
+          in: body

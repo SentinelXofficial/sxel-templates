@@ -1,0 +1,24 @@
+id: streamelements
+brief:
+    title: StreamElements User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: StreamElements user name information check was conducted.
+    label:
+        - osint
+        - osint-finance
+        - streamelements
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://api.streamelements.com/kappa/v2/channels/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"providerId"'
+          in: body
+          need: all

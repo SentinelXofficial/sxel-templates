@@ -1,0 +1,27 @@
+id: misconfigured-docker
+brief:
+    title: Docker Container - Misconfiguration Exposure
+    by: dhiyaneshDK
+    level: critical
+    about: A Docker container misconfiguration was discovered. The Docker daemon can listen for Docker Engine API requests via three different types of Socket - unix, tcp, and fd. With tcp enabled, the defaul...
+    label:
+        - misconfig
+        - docker
+        - unauth
+        - devops
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/images/json'
+      signs:
+        - "on": word
+          has:
+            - '"ParentId":'
+            - '"Containers":'
+            - '"Labels":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: fifth-third-bank-phish
+brief:
+    title: Fifth Third Bank phishing Detection
+    by: rxerium
+    level: info
+    about: A Fifth Third Bank phishing website was detected
+    label:
+        - phishing
+        - fifth-third-bank
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Personal Banking | Fifth Third Bank
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

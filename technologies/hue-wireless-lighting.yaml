@@ -1,0 +1,21 @@
+id: hue-wireless-lighting
+brief:
+    title: Hue Personal Wireless Lighting - Detect
+    by: ProjectDiscoveryAI
+    level: info
+    about: This template detects the presence of Hue Personal Wireless Lighting systems by looking for specific welcome messages in the response.
+    label:
+        - tech
+        - hue
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - hue personal wireless lighting
+            - Welcome to hue
+          in: body

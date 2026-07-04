@@ -1,0 +1,16 @@
+id: beszel-unfinished-installation
+brief:
+    title: Beszel Unfinished Installation
+    by: 0x_Akoko
+    level: high
+    about: Detected Beszel server monitoring hub had an unfinished installation with no admin account configured, allowing attackers to create an admin account and gain full control.
+    label:
+        - beszel
+        - misconfig
+        - install
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/beszel/first-run'
+      signs: []

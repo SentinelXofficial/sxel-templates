@@ -1,0 +1,15 @@
+id: openvz-web-login
+brief:
+    title: OpenVZ Web Panel Login Panel - Detect
+    by: nullfuzz
+    level: info
+    about: OpenVZ Web Panel login panel was detected.
+    label:
+        - panel
+        - openvz
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

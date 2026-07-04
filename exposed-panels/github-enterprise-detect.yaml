@@ -1,0 +1,19 @@
+id: github-enterprise-detect
+brief:
+    title: Github Enterprise Login Panel - Detect
+    by: ehsahil
+    level: info
+    about: Github Enterprise login panel was detected.
+    label:
+        - panel
+        - github
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - GitHub · Enterprise
+          in: body

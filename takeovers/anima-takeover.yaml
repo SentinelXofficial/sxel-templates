@@ -1,0 +1,19 @@
+id: anima-takeover
+brief:
+    title: Anima Takeover Detection
+    by: pdteam
+    level: high
+    about: Anima takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - If this is your website and you've just created it, try refreshing in a minute
+          in: body
+          need: all

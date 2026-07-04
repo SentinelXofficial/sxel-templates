@@ -1,0 +1,23 @@
+id: etl3100-default-login
+brief:
+    title: EuroTel ETL3100 - Default Login
+    by: r3Y3r53
+    level: high
+    about: The TV and FM transmitter uses a weak set of default administrative credentials that can be guessed in remote password attacks and gain full control of the system.
+    label:
+        - misconfig
+        - default-login
+        - eurotel
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/index.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: txtUserId={{username}}&txtPassword={{password}}&btnLogin=Login
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/exciter.php'
+      signs: []

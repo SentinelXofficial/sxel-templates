@@ -1,0 +1,23 @@
+id: aircube-dashboard-panel
+brief:
+    title: airCube Dashboard Login Panel - Detect
+    by: theamanrawat
+    level: info
+    about: airCube Dashboard login panel was detected.
+    label:
+        - panel
+        - aircube
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - AirCube Dashboard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

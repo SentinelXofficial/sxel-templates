@@ -1,0 +1,25 @@
+id: baserow-login-panel
+brief:
+    title: Baserow Login - Panel Detect
+    by: Th3l0newolf
+    level: info
+    about: Baserow login interface was discovered.
+    label:
+        - panel
+        - login
+        - baserow
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Login // Baserow</title>
+            - BASEROW_DISABLE_PUBLIC_URL_CHECK
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

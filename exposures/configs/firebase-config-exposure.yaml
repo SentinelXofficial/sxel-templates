@@ -1,0 +1,30 @@
+id: firebase-config-exposure
+brief:
+    title: Firebase Configuration File - Detect
+    by: geeknik
+    level: medium
+    about: Firebase configuration file was detected.
+    label:
+        - firebase
+        - exposure
+        - config
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/public/config.js'
+        - '{{BaseURL}}/config.js'
+      signs:
+        - "on": word
+          has:
+            - 'apiKey:'
+            - 'authDomain:'
+            - 'databaseURL:'
+            - 'storageBucket:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

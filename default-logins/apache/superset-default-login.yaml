@@ -1,0 +1,24 @@
+id: superset-default-login
+brief:
+    title: Apache Superset - Default Login
+    by: theamanrawat
+    level: high
+    about: Apache Superset instance discovered using weak default credentials, allows the attacker to gain admin privilege.
+    label:
+        - default-login
+        - apache
+        - superset
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/v1/security/login'
+      head:
+        Content-Type: application/json
+      body: '{"username":"{{username}}","password":"{{password}}","provider":"db","refresh":true}'
+      signs: []

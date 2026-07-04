@@ -1,0 +1,24 @@
+id: evernote-phish
+brief:
+    title: evernote phishing Detection
+    by: rxerium
+    level: info
+    about: A evernote phishing website was detected
+    label:
+        - phishing
+        - evernote
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Best Note Taking App - Organize Your Notes with Evernote
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

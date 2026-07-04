@@ -1,0 +1,30 @@
+id: rdweb-panel
+brief:
+    title: RD Web Access Panel - Detect
+    by: rxerium
+    level: info
+    about: RD web access panel was discovered.
+    label:
+        - panel
+        - login
+        - rdp
+        - web-access
+        - Microsoft
+        - detect
+        - microsoft
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/RDWeb/'
+      signs:
+        - "on": word
+          has:
+            - TSWAFeatureCheckCookie=true; path=/RDWeb/
+          in: header
+        - "on": word
+          has:
+            - <rdp-client-top-view>
+            - Microsoft Remote Desktop
+          in: response
+          need: all

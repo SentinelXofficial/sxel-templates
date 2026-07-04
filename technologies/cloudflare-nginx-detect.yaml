@@ -1,0 +1,24 @@
+id: cloudflare-nginx-detect
+brief:
+    title: Cloudflare Nginx Detect
+    by: idealphase
+    level: info
+    about: ""
+    label:
+        - cloudflare
+        - nginx
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Server: cloudflare-nginx'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

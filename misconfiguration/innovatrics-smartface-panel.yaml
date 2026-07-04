@@ -1,0 +1,24 @@
+id: unauth-innovatrics-smartface-panel
+brief:
+    title: Unauthenticated SmartFace Panel - Detect
+    by: matejsmycka
+    level: medium
+    about: An unauthenticated SmartFace login was detected. The panel, used for facial recognition from video streams, allowed attackers to extract camera connection strings and other sensitive information
+    label:
+        - panel
+        - smartface
+        - login
+        - detect
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/-/graphql'
+      head:
+        Content-Type: application/json
+      body: '{"query":"query getIsCollectingData {\n  isCollectingData\n}","operationName":"getIsCollectingData","variables":{}}'
+      signs: []

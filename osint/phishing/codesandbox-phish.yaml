@@ -1,0 +1,25 @@
+id: codesandbox-phish
+brief:
+    title: CodeSandbox phishing Detection
+    by: rxerium
+    level: info
+    about: A CodeSandbox phishing website was detected
+    label:
+        - phishing
+        - codesandbox
+        - developer
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>CodeSandbox: Instant Cloud Development Environments'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

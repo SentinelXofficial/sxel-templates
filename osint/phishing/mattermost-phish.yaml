@@ -1,0 +1,25 @@
+id: mattermost-phish
+brief:
+    title: Mattermost phishing Detection
+    by: rxerium
+    level: info
+    about: A Mattermost phishing website was detected
+    label:
+        - phishing
+        - mattermost
+        - communication
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Mattermost | Collaboration Platform for Mission Critical Work
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

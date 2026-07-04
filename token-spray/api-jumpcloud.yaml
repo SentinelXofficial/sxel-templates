@@ -1,0 +1,22 @@
+id: api-jumpcloud
+brief:
+    title: JumpCloud API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - jumpcloud
+moves:
+    - verb: GET
+      to:
+        - https://console.jumpcloud.com/api/systems
+      head:
+        X-Api-Key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"_id":'
+            - '"agentServer":'
+          in: body
+          need: all

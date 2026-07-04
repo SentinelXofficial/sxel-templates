@@ -1,0 +1,33 @@
+id: sendmail-forward-exposure
+brief:
+    title: Sendmail .forward File - Exposure
+    by: ritikchaddha
+    level: low
+    about: Sendmail .forward file is publicly accessible. This file is used to configure email forwarding and can expose sensitive information including email addresses, forwarding rules, and potentially exec...
+    label:
+        - exposure
+        - sendmail
+        - config
+        - mail
+        - mta
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.forward'
+      signs:
+        - "on": word
+          has:
+            - text/plain
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <html
+            - <!DOCTYPE
+            - <HTML
+          in: body
+          need: all

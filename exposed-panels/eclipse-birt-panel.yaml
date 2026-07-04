@@ -1,0 +1,28 @@
+id: eclipse-birt-panel
+brief:
+    title: Eclipse BIRT Panel - Detect
+    by: Shiva (Strobes Security)
+    level: info
+    about: Eclipse BIRT (Business Intelligence Reporting Tool) detected
+    label:
+        - panel
+        - eclipsebirt
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/reportviewer/'
+        - '{{BaseURL}}/birt/'
+        - '{{BaseURL}}/birt-viewer/'
+      signs:
+        - "on": word
+          has:
+            - alt="Eclipse Logo
+            - Eclipse BIRT Home
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

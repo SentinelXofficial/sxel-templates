@@ -1,0 +1,23 @@
+id: wordpress-passive-detection
+brief:
+    title: WordPress Passive Detection - Plugins & Themes
+    by: princechaddha
+    level: info
+    about: Passively enumerates WordPress plugins and themes through REST API discovery and HTML source analysis without brute-forcing, based on wpprobe methodology.
+    label:
+        - tech
+        - wordpress
+        - cms
+        - wp
+        - plugin
+        - theme
+        - discovery
+        - passive
+        - enum
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?rest_route=/'
+        - '{{BaseURL}}/wp-json/'
+        - '{{BaseURL}}'
+      signs: []

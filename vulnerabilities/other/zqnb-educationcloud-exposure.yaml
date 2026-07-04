@@ -1,0 +1,30 @@
+id: zqnb-educationcloud-exposure
+brief:
+    title: ZhongQing Education Cloud Platform - Information Exposure
+    by: ritikchaddha
+    level: high
+    about: Zhongqing Naboo Education Cloud Platform is a deep application supporting teaching and research. Information leakage and unauthorized access exist in the cloud platform system. The password can be ...
+    label:
+        - exposure
+        - zqnb
+        - education
+        - cloud
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/TeacherQuery/SearchTeacherInSiteWithPagerRecords'
+      signs:
+        - "on": word
+          has:
+            - LoginName
+            - UserAvatar
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

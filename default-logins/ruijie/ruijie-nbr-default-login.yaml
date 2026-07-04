@@ -1,0 +1,23 @@
+id: ruijie-nbr-default-login
+brief:
+    title: Ruijie NBR Series Routers - Default Login
+    by: pussycat0x
+    level: high
+    about: Ruijie NBR Series Routers Default Login username and password was discovered.
+    label:
+        - default-login
+        - ruijie-nbr
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login.cgi'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/login.html'
+      body: user={{username}}&password={{password}}
+      signs:
+        - "on": status
+          status:
+            - 200

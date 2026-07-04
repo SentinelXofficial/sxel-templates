@@ -1,0 +1,32 @@
+id: osticket-installer
+brief:
+    title: osTicket Installer Panel - Detect
+    by: ritikchaddha
+    level: high
+    about: osTicket installer panel was detected.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - osticket
+        - vuln
+    score: CVSS:9.4
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/upload/setup/install.php'
+        - '{{BaseURL}}/setup/install.php'
+      signs:
+        - "on": word
+          has:
+            - <title>osTicket Installer
+          in: body
+          need: all
+        - "on": word
+          has:
+            - already installed
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

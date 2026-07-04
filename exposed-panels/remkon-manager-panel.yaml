@@ -1,0 +1,24 @@
+id: remkon-manager-panel
+brief:
+    title: RemKon Device Manager Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: RemKon Device Manager login panel was detected.
+    label:
+        - panel
+        - remkon
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.php'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Remkon Device Manager</title>
+          in: body
+          need: all

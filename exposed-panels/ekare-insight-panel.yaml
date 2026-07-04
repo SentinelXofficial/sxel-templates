@@ -1,0 +1,17 @@
+id: ekare-insight-panel
+brief:
+    title: eKare inSight Panel - Detect
+    by: s4e-io
+    level: info
+    about: eKare inSight panel was discovered.
+    label:
+        - panel
+        - login
+        - ekare
+        - insight
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

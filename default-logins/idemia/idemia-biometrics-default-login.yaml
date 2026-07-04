@@ -1,0 +1,32 @@
+id: idemia-biometrics-default-login
+brief:
+    title: IDEMIA BIOMetrics - Default Login
+    by: Techryptic (@Tech)
+    level: medium
+    about: IDEMIA BIOMetrics application  default login credentials were discovered.
+    label:
+        - idemia
+        - biometrics
+        - default-login
+        - vuln
+    score: CVSS:5.8
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/cgi-bin/login.cgi'
+      body: password={{password}}
+      signs:
+        - "on": word
+          has:
+            - document.cookie ="session_id
+            - MA5G_general_configurations.htm
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Invalid Password
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

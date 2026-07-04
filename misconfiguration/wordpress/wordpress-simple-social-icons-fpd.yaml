@@ -1,0 +1,18 @@
+id: wordpress-simple-social-icons-fpd
+brief:
+    title: WordPress Simple Social Icons - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Plugin Simple Social Icons files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - fpd
+        - simple-social-icons
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/simple-social-icons/simple-social-icons.php'
+      signs: []

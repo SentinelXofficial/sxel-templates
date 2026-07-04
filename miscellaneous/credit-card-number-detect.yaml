@@ -1,0 +1,46 @@
+id: credit-card-number-detect
+brief:
+    title: Credit and Debit Card Number - Detection
+    by: spiderSilk
+    level: medium
+    about: This template is designed to identify the presence of credit or debit card numbers exposed within web pages, APIs, or other application responses. It searches for patterns matching card numbers usi...
+    label:
+        - credit
+        - debit
+        - card
+        - payment
+        - security
+        - pci
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - expiry
+            - expiration
+            - valid thru
+            - card type
+            - card brand
+            - visa
+            - mastercard
+            - amex
+            - discover
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Access Denied
+            - 403 Forbidden
+            - 401 Unauthorized
+            - 404 Not Found
+            - 500 Internal Server Error
+            - 502 Bad Gateway
+            - 503 Service Unavailable
+          in: body
+          need: all

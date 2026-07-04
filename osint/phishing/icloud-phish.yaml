@@ -1,0 +1,24 @@
+id: iCloud-phish
+brief:
+    title: iCloud phishing Detection
+    by: rxerium
+    level: info
+    about: A iCloud phishing website was detected
+    label:
+        - phishing
+        - icloud
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Log in to iCloud to access your photos, mail, notes, documents and more. Sign in with your Apple&nbsp;ID or create a new account to start using Apple services.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

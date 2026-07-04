@@ -1,0 +1,27 @@
+id: wpconfig-aws-keys
+brief:
+    title: AWS S3 keys Leak
+    by: r12w4n
+    level: high
+    about: AWS S3 keys are exposed.
+    label:
+        - aws
+        - s3
+        - wordpress
+        - disclosure
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-config.php-backup'
+        - '{{BaseURL}}/%c0'
+      signs:
+        - "on": word
+          has:
+            - access-key-id
+            - secret-access-key
+            - DB_NAME
+            - DB_PASSWORD
+          in: body
+          need: all

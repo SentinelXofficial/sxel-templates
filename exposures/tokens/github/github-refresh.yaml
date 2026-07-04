@@ -1,0 +1,17 @@
+id: github-refresh
+brief:
+    title: GitHub Refresh Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - github
+        - refresh
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

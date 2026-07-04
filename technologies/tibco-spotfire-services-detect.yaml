@@ -1,0 +1,19 @@
+id: tibco-spotfire-services-detect
+brief:
+    title: TIBCO Spotfire Statistics Services - Detect
+    by: righettod
+    level: info
+    about: TIBCO Spotfire Statistics Services was detected.
+    label:
+        - tech
+        - tibco
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/SplusServer/'
+        - '{{BaseURL}}/RServer/'
+        - '{{BaseURL}}/TERR/'
+        - '{{BaseURL}}'
+      signs: []

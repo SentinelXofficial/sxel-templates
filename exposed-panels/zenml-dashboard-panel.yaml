@@ -1,0 +1,24 @@
+id: zenml-dashboard-panel
+brief:
+    title: ZenML Dashboard Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - zenml
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login?route=%2Fworkspaces%2Fdefault%3F'
+      signs:
+        - "on": word
+          has:
+            - ZenML - Dashboard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

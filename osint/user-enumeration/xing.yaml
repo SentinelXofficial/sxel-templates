@@ -1,0 +1,24 @@
+id: xing
+brief:
+    title: Xing User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Xing user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - xing
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.xing.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' | XING</title>'
+          in: body
+          need: all

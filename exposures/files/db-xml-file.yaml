@@ -1,0 +1,28 @@
+id: db-xml-file
+brief:
+    title: db.xml File - Detect
+    by: tess
+    level: medium
+    about: db.xml file was detected.
+    label:
+        - misconfig
+        - db
+        - files
+        - exposure
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/db.xml'
+      signs:
+        - "on": word
+          has:
+            - <ServerName>
+            - <DBPASS>
+            - <DBtype>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

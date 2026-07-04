@@ -1,0 +1,17 @@
+id: api-dribbble
+brief:
+    title: Dribbble API Test
+    by: daffainfo
+    level: info
+    about: Dribbble is a self-promotion and social networking platform for digital designers and creatives
+    label:
+        - token-spray
+        - dribbble
+moves:
+    - verb: GET
+      to:
+        - https://api.dribbble.com/v2/user?access_token={{token}}
+      signs:
+        - "on": status
+          status:
+            - 200

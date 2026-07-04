@@ -1,0 +1,29 @@
+id: ibm-mqseries-default-login
+brief:
+    title: IBM MQSeries Web Console Default Login
+    by: righettod
+    level: high
+    about: IBM MQ and REST API default admin credentials were discovered. An unauthenticated, remote attacker can exploit this gain privileged or administrator access to the system.
+    label:
+        - ibm
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/ibmmq/console/j_security_check'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/ibmmq/console/login.html'
+      body: j_username={{username}}&j_password={{password}}
+      signs:
+        - "on": word
+          has:
+            - LtpaToken2_
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

@@ -1,0 +1,24 @@
+id: fatpipe-ipvpn-panel
+brief:
+    title: FatPipe IPVPN® Panel - Detect
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - panel
+        - ipvpn
+        - fatpipe
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/fpui/jsp/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - <title>FatPipe IPVPN&nbsp;| Log in</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

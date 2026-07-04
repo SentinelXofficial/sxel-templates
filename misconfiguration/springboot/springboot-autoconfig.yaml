@@ -1,0 +1,27 @@
+id: springboot-autoconfig
+brief:
+    title: Detect Springboot autoconfig Actuator
+    by: pussycat0x
+    level: low
+    about: Displays an auto-configuration report showing all auto-configuration candidates and the reason why they 'were' or 'were not' applied.
+    label:
+        - springboot
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/autoconfig'
+        - '{{BaseURL}}/actuator/autoconfig'
+      signs:
+        - "on": word
+          has:
+            - positiveMatches
+            - AuditAutoConfiguration#auditListener
+            - EndpointAutoConfiguration#beansEndpoint
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

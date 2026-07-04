@@ -1,0 +1,17 @@
+id: usermin-panel
+brief:
+    title: Usermin Panel - Detect
+    by: s4e-io
+    level: info
+    about: Usermin panel was discovered.
+    label:
+        - panel
+        - login
+        - usermin
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

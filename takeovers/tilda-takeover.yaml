@@ -1,0 +1,24 @@
+id: tilda-takeover
+brief:
+    title: tilda takeover detection
+    by: pdteam
+    level: high
+    about: Tilda takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Please go to the site settings and put the domain name in the Domain tab.
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <title>Please renew your subscription</title>
+          in: body
+          need: all

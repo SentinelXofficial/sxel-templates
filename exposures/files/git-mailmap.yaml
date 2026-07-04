@@ -1,0 +1,31 @@
+id: git-mailmap
+brief:
+    title: Git Mailmap File Disclosure
+    by: geeknik
+    level: low
+    about: Git Mailmap file is exposed.
+    label:
+        - config
+        - exposure
+        - git
+        - mailmap
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.mailmap'
+      signs:
+        - "on": word
+          has:
+            - application/octet-stream
+          in: header
+          need: all
+        - "on": word
+          has:
+            - '# Theresa O''Connor:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

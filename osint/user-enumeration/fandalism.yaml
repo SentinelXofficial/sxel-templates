@@ -1,0 +1,24 @@
+id: fandalism
+brief:
+    title: Fandalism User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Fandalism user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - fandalism
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://fandalism.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - fandalism_:user
+          in: body
+          need: all

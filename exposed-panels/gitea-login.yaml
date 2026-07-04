@@ -1,0 +1,23 @@
+id: gitea-login
+brief:
+    title: Gitea Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Gitea login panel was detected.
+    label:
+        - gitea
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/user/login'
+      signs:
+        - "on": word
+          has:
+            - Powered by Gitea
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

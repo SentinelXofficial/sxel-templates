@@ -1,0 +1,22 @@
+id: lazy-file-manager
+brief:
+    title: Lazy File Manager
+    by: amsda
+    level: medium
+    about: lfm.php file in exposed in Lazy File Manager.
+    label:
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/lfm.php'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Lazy File Manager
+          in: body
+          need: all

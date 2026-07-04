@@ -1,0 +1,23 @@
+id: adminset-panel
+brief:
+    title: Adminset Login Panel
+    by: ffffffff0x
+    level: info
+    about: An Adminset login panel was detected.
+    label:
+        - adminset
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>AdminSet Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

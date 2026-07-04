@@ -1,0 +1,28 @@
+id: openvpn-admin
+brief:
+    title: OpenVPN Admin Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: OpenVPN Admin login panel was detected.
+    label:
+        - panel
+        - openvpn
+        - admin
+        - config
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login'
+        - '{{BaseURL}}/index.php'
+      signs:
+        - "on": word
+          has:
+            - <title>OpenVPN-Admin
+            - <title>OpenVPN Admin
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,29 @@
+id: tongda-session-disclosure
+brief:
+    title: Tongda User Session Disclosure
+    by: ritikchaddha
+    level: medium
+    about: Tongda User session exposed.
+    label:
+        - tongda
+        - disclosure
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/general/userinfo.php?UID=1'
+      signs:
+        - "on": word
+          has:
+            - '"dept_name":"'
+            - '"online_flag":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

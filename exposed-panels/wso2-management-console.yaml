@@ -1,0 +1,25 @@
+id: wso2-management-console
+brief:
+    title: WSO2 Management Console Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: WSO2 Management Console login panel was detected.
+    label:
+        - panel
+        - wso2
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/carbon/admin/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - <title>WSO2 Management Console</title>
+            - WSO2 Carbon Server
+          in: response
+          need: all
+        - "on": status
+          status:
+            - 200

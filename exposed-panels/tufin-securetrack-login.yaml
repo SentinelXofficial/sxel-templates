@@ -1,0 +1,24 @@
+id: tufin-securetrack-login
+brief:
+    title: Tufin SecureTrack Login Panel - Detect
+    by: idealphase
+    level: info
+    about: Tufin SecureTrack login panel was detected.
+    label:
+        - panel
+        - tufin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>SecureTrack - Tufin Technologies</title>
+            - document.title = 'SecureTrack - Tufin Technologies';
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

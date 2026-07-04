@@ -1,0 +1,27 @@
+id: node-ecstatic-listing
+brief:
+    title: Node ecstatic Directory Listing
+    by: DhiyaneshDK
+    level: low
+    about: Directiory listing enabled in Node ecstatic.
+    label:
+        - node
+        - js
+        - listing
+        - ecstatic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/img/'
+      head:
+        Range: "10000"
+      signs:
+        - "on": word
+          has:
+            - <title>Index of /img/</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: cisco-ucm-selfcare-portal
+brief:
+    title: Cisco Unified Communications Self-Service User Portal - Detection
+    by: Morgan Robertson
+    level: info
+    about: Detected the presence of the Cisco Unified Communications User Management Panel.
+    label:
+        - detect
+        - cisco
+        - ucm
+        - panel
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ucmuser/'
+      signs:
+        - "on": word
+          has:
+            - 'webAppName: "ucmuser"'
+            - webAppName="ucmuser"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

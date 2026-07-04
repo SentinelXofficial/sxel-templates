@@ -1,0 +1,24 @@
+id: blue-iris-login
+brief:
+    title: Blue Iris Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Blue Iris login panel was detected.
+    label:
+        - panel
+        - blueiris
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.htm'
+      signs:
+        - "on": word
+          has:
+            - <title>Blue Iris Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: smelsy
+brief:
+    title: Smelsy User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Smelsy user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - smelsy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.smelsy.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Smelsy -
+          in: body
+          need: all

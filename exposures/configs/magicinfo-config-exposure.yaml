@@ -1,0 +1,16 @@
+id: magicinfo-config-file
+brief:
+    title: Samsung MagicINFO Configuration File
+    by: s4e-io
+    level: info
+    about: Detects exposure of Samsung MagicINFO configuration file (/MagicInfo/config.js),and extracts magicInfoFrontEndVersion.
+    label:
+        - config
+        - exposure
+        - magicinfo
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/MagicInfo/config.js'
+      signs: []

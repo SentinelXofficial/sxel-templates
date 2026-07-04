@@ -1,0 +1,18 @@
+id: unauth-munin
+brief:
+    title: Munin Monitoring Dashboard - Exposure
+    by: 0x_Akoko
+    level: medium
+    about: Detected Munin monitoring dashboard, exposing system metrics and server statistics.
+    label:
+        - exposure
+        - munin
+        - monitoring
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/munin/'
+      signs: []

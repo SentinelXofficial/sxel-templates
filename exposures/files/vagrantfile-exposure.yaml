@@ -1,0 +1,33 @@
+id: vagrantfile-exposure
+brief:
+    title: Vagrantfile Exposure
+    by: DhiyaneshDk
+    level: low
+    about: Vagrantfile is exposed to external users.
+    label:
+        - config
+        - exposure
+        - vagrant
+        - oss
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Vagrantfile'
+      signs:
+        - "on": word
+          has:
+            - ./vagrant/config/vagrant-local.yml
+            - ./vagrant/config/vagrant-local.example.yml
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

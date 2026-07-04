@@ -1,0 +1,28 @@
+id: ampps-dirlisting
+brief:
+    title: AMPPS by Softaculous Panel - Directory Listing - Detect
+    by: deFr0ggy
+    level: info
+    about: AMPPS by Softaculous panel directory listing was detected.
+    label:
+        - panel
+        - ampps
+        - softaculous
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/client/'
+        - '{{BaseURL}}/files/'
+        - '{{BaseURL}}/icons/'
+      signs:
+        - "on": word
+          has:
+            - <title>[AMPPS] - Web Local</title>
+            - Powered by AMPPS
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

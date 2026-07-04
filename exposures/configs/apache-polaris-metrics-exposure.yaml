@@ -1,0 +1,26 @@
+id: apache-polaris-metrics-exposure
+brief:
+    title: Apache Polaris - Information Disclosure
+    by: icarot
+    level: medium
+    about: Detects a Apache Polaris server, the interoperable, open source catalog for Apache Iceberg.
+    label:
+        - apache
+        - polaris
+        - exposure
+        - metrics
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/q/metrics'
+      signs:
+        - "on": word
+          has:
+            - application="Polaris"
+            - org.apache.polaris
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

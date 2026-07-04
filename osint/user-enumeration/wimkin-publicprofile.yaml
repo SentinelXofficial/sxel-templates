@@ -1,0 +1,24 @@
+id: wimkin-publicprofile
+brief:
+    title: Wimkin-PublicProfile User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Wimkin-PublicProfile user name information check was conducted.
+    label:
+        - osint
+        - osint-political
+        - wimkin-publicprofile
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://wimkin.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - is on WIMKIN
+          in: body
+          need: all

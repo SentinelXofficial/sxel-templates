@@ -1,0 +1,32 @@
+id: jenkins-openuser-register
+brief:
+    title: Jenkins Open User registration
+    by: DhiyaneshDk
+    level: medium
+    about: The Jenkins allows registering a new user and accessing the dashboard.
+    label:
+        - misconfig
+        - jenkins
+        - apache
+        - tomcat
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/signup'
+      signs:
+        - "on": word
+          has:
+            - Create an account! [Jenkins]
+            - Register [Jenkins]
+            - Register - Jenkins
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

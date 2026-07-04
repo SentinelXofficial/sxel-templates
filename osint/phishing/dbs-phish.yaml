@@ -1,0 +1,26 @@
+id: dbs-phish
+brief:
+    title: DBS Bank phishing Detection
+    by: rxerium
+    level: info
+    about: A DBS Bank phishing website was detected
+    label:
+        - phishing
+        - dbs
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - DBS Bank
+            - '<title>DBS: Trusted as the World’s Best Bank | DBS Bank'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

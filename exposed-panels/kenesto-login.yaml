@@ -1,0 +1,25 @@
+id: kenesto-login
+brief:
+    title: Kenesto - Login Detect
+    by: pussycat0x
+    level: info
+    about: Kenesto login panel was discovered.
+    label:
+        - login
+        - tech
+        - kenesto
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Kenesto/Account/LogOn?ReturnUrl=%2fkenesto'
+      signs:
+        - "on": word
+          has:
+            - <title>Welcome To Kenesto&reg;</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,22 @@
+id: api-googlebooks
+brief:
+    title: Google Books API Test
+    by: daffainfo
+    level: info
+    about: Google Books
+    label:
+        - token-spray
+        - google
+        - books
+moves:
+    - verb: GET
+      to:
+        - https://www.googleapis.com/books/v1/volumes/zyTCAlFPjgYC?key={{token}}
+      signs:
+        - "on": word
+          has:
+            - kind
+            - id
+            - etag
+          in: body
+          need: all

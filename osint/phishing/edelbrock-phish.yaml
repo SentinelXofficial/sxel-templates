@@ -1,0 +1,26 @@
+id: edelbrock-phish
+brief:
+    title: Edelbrock phishing Detection
+    by: rxerium
+    level: info
+    about: An Edelbrock phishing website was detected
+    label:
+        - phishing
+        - edelbrock
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Edelbrock
+            - Edelbrock is the most respected name in performance! Since 1938, Edelbrock has manufactured its core products in the USA for quality and performance.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

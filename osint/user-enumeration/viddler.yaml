@@ -1,0 +1,24 @@
+id: viddler
+brief:
+    title: Viddler User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Viddler user name information check was conducted.
+    label:
+        - osint
+        - osint-video
+        - viddler
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.viddler.com/channel/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - profile-details
+          in: body
+          need: all

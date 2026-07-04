@@ -1,0 +1,19 @@
+id: mobileiron-sentry
+brief:
+    title: MobileIron Sentry Panel - Detect
+    by: pdteam
+    level: info
+    about: MobileIron Sentry panel was detected.
+    label:
+        - panel
+        - mobileiron
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mics/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - MobileIron System Manager
+          in: body

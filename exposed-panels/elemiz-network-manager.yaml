@@ -1,0 +1,25 @@
+id: elemiz-network-manager
+brief:
+    title: Elemiz Network Manager Login Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Elemiz Network Manager login panel was detected.
+    label:
+        - elemiz
+        - manager
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login/'
+      signs:
+        - "on": word
+          has:
+            - Elemiz Network Manager
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

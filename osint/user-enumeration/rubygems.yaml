@@ -1,0 +1,25 @@
+id: rubygems
+brief:
+    title: RubyGems User Name Information - Detect
+    by: cheesymoon
+    level: info
+    about: RubyGems.org user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - rubygems
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://rubygems.org/profiles/{{user}}
+      signs:
+        - "on": word
+          has:
+            - Total gems
+            - RubyGems
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

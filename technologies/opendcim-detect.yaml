@@ -1,0 +1,24 @@
+id: opendcim-detect
+brief:
+    title: openDCIM - Detect
+    by: rxerium
+    level: info
+    about: openDCIM is a web-based data centre infrastructure management application.
+    label:
+        - tech
+        - opendcim
+        - dcim
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>openDCIM Data Center Inventory
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

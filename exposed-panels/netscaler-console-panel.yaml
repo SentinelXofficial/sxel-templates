@@ -1,0 +1,25 @@
+id: netscaler-console-panel
+brief:
+    title: NetScaler Console - Panel
+    by: DhiyaneshDk
+    level: info
+    about: NetScaler Console login panel was discovered.
+    label:
+        - netscaler
+        - console
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin_ui/mas/ent/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>NetScaler Console</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

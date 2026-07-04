@@ -1,0 +1,17 @@
+id: unauth-hawkeye-dashboard
+brief:
+    title: Unauth Hawkeye Dashboard - Detect
+    by: DhiyaneshDk
+    level: high
+    about: Hawkeye Dashboard was detected and appeared to be accessible without authentication.
+    label:
+        - hawkeye
+        - misconfig
+        - unauth
+        - dashboard
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard'
+      signs: []

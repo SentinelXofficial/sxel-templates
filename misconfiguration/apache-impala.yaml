@@ -1,0 +1,25 @@
+id: apache-impala
+brief:
+    title: Apache Impala - Exposure
+    by: DhiyaneshDk
+    level: medium
+    about: Apache Impala is exposed.
+    label:
+        - misconfig
+        - apache
+        - impala
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Apache Impala
+            - Process Info
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

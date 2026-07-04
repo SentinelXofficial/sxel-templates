@@ -1,0 +1,25 @@
+id: squarespace-phish
+brief:
+    title: Squarespace phishing Detection
+    by: rxerium
+    level: info
+    about: A Squarespace phishing website was detected
+    label:
+        - phishing
+        - squarespace
+        - website-builder
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Website Builder &mdash; Easily Create Your Own Website &mdash; Squarespace
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,19 @@
+id: intelbras-panel
+brief:
+    title: Intelbras Router Panel - Detect
+    by: pikpikcu
+    level: info
+    about: Intelbras router panel was detected.
+    label:
+        - panel
+        - intelbras
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Intelbras
+          in: body

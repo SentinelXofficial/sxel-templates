@@ -1,0 +1,24 @@
+id: svnserve-config
+brief:
+    title: Svnserve Configuration File - Detect
+    by: sheikhrishad
+    level: info
+    about: Svnserve configuration file was detected.
+    label:
+        - config
+        - exposure
+        - svnserve
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/svnserve.conf'
+      signs:
+        - "on": word
+          has:
+            - This file controls the configuration of the svnserve daemon
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,35 @@
+id: gitlab-weak-login
+brief:
+    title: Gitlab Default Login
+    by: Suman_Kar
+    level: high
+    about: Gitlab default login credentials were discovered.
+    label:
+        - gitlab
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/oauth/token'
+      head:
+        Accept: application/json, text/plain, */*
+        Referer: '{{BaseURL}}'
+        content-type: application/json
+      body: '{"grant_type":"password","username":"{{username}}","password":"{{password}}"}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": word
+          has:
+            - '"access_token":'
+            - '"token_type":'
+            - '"refresh_token":'
+          in: body
+          need: all

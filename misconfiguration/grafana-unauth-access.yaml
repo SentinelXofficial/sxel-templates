@@ -1,0 +1,24 @@
+id: grafana-unauth-access
+brief:
+    title: Grafana Unauthenticated Access
+    by: ritikchaddha
+    level: high
+    about: Detects Grafana instances configured with anonymous access enabled, allowing unauthenticated users to access dashboards, data sources, organization info, and potentially sensitive monitoring data w...
+    label:
+        - grafana
+        - misconfig
+        - unauth
+        - exposure
+        - dashboard
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/search?type=dash-db'
+        - '{{BaseURL}}/api/dashboards/home'
+        - '{{BaseURL}}/dashboard'
+        - '{{BaseURL}}/api/org'
+        - '{{BaseURL}}/api/users'
+        - '{{BaseURL}}/api/datasources'
+        - '{{BaseURL}}/api/frontend/settings'
+      signs: []

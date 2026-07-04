@@ -1,0 +1,34 @@
+id: teampass-ldap
+brief:
+    title: Teampass LDAP Debug Config - Detect
+    by: josecosta
+    level: medium
+    about: Teampass ldap.debug.txt config was detected. This file is generated on "/files/ldap.debug.txt" for versions earlier than 3.0.0.0 when utilizing the "Test current configuration" in LDAP settings.
+    label:
+        - exposure
+        - teampass
+        - ldap
+        - logs
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/files/ldap.debug.txt'
+      signs:
+        - "on": word
+          has:
+            - base_dn
+            - search_base
+            - bind_dn
+            - bind_passwd
+          in: header
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: aqua-enterprise-detect
+brief:
+    title: Aqua Enterprise Detect
+    by: daffainfo
+    level: info
+    about: ""
+    label:
+        - tech
+        - aqua
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api'
+      signs:
+        - "on": word
+          has:
+            - '"version"'
+            - '"enable_sso"'
+            - '"num_protected_kube_nodes"'
+          in: body
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: shanii-writes
+brief:
+    title: Shanii Writes User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Shanii Writes user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - shanii-writes
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://forum.shanniiwrites.com/u/{{user}}/summary.json
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - topics
+          in: body
+          need: all

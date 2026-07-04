@@ -1,0 +1,24 @@
+id: tabletoptournament
+brief:
+    title: Tabletoptournament User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Tabletoptournament user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - tabletoptournament
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.tabletoptournaments.net/eu/player/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- Player Profile | T³ - TableTop Tournaments'
+          in: body
+          need: all

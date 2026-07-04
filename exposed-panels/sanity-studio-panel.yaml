@@ -1,0 +1,17 @@
+id: sanity-studio-panel
+brief:
+    title: Sanity Studio Panel - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Sanity Studio panel was detected. Sanity is a headless CMS platform.
+    label:
+        - panel
+        - sanity
+        - tech
+        - discovery
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

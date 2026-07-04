@@ -1,0 +1,24 @@
+id: tagged
+brief:
+    title: Tagged User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Tagged user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - tagged
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://secure.tagged.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s Profile</title>
+          in: body
+          need: all

@@ -1,0 +1,25 @@
+id: mailchimp-phish
+brief:
+    title: Mailchimp phishing Detection
+    by: rxerium
+    level: info
+    about: A Mailchimp phishing website was detected
+    label:
+        - phishing
+        - mailchimp
+        - marketing
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Use real-time behavior data and AI to convert more customers with Mailchimp&#039;s marketing, automation &amp; email marketing platform. Easy to use - start for free!
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

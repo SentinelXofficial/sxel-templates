@@ -1,0 +1,48 @@
+id: javascript-env
+brief:
+    title: JavaScript Environment Configuration - Detect
+    by: pdp
+    level: low
+    about: Multiple common JavaScript environment configuration files were detected.
+    label:
+        - javascript
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/env.js'
+        - '{{BaseURL}}/env.development.js'
+        - '{{BaseURL}}/env.production.js'
+        - '{{BaseURL}}/env.test.js'
+        - '{{BaseURL}}/env.dev.js'
+        - '{{BaseURL}}/env.prod.js'
+        - '{{BaseURL}}/__ENV.js'
+        - '{{BaseURL}}/env-config.js'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - module.exports
+            - const audience
+            - const domain
+            - NODE_ENV
+            - LOG_LEVEL
+            - TOKEN
+            - KEY
+            - PASSWORD
+            - VERSION
+            - window.__ENV =
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Bootstrap
+            - jQuery
+            - CSS TRANSITION SUPPORT
+            - is_ad_blocked
+          in: body
+          need: all

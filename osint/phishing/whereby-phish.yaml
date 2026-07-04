@@ -1,0 +1,26 @@
+id: whereby-phish
+brief:
+    title: Whereby phishing Detection
+    by: rxerium
+    level: info
+    about: A Whereby phishing website was detected
+    label:
+        - phishing
+        - whereby
+        - video
+        - communication
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Secure, customizable &amp; reliable WebRTC Video Calls| Whereby
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

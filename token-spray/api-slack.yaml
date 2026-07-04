@@ -1,0 +1,23 @@
+id: api-slack
+brief:
+    title: Slack API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - slack
+moves:
+    - verb: POST
+      to:
+        - https://slack.com/api/auth.test
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"url":'
+            - '"team_id":'
+            - '"user_id":'
+          in: body
+          need: all

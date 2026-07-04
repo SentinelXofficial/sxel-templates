@@ -1,0 +1,24 @@
+id: artica-web-proxy-detect
+brief:
+    title: Artica Web Proxy Detect
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - tech
+        - artica
+        - proxy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/fw.login.php'
+      signs:
+        - "on": word
+          has:
+            - Welcome to the Artica Web Administration Interface
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: myportfolio
+brief:
+    title: Myportfolio User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Myportfolio user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - myportfolio
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://{{user}}.myportfolio.com/work
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - class="page-title
+          in: body
+          need: all

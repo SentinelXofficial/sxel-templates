@@ -1,0 +1,18 @@
+id: fastly-debug-headers
+brief:
+    title: Fastly CDN Debug Headers Exposure
+    by: pussycat0x
+    level: info
+    about: Detected Fastly CDN debug headers being exposed when the Fastly-Debug header was sent in a request.This exposure disclosed sensitive debugging information such as cache paths, TTL values, content d...
+    label:
+        - fastly
+        - cdn
+        - exposure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      head:
+        Fastly-Debug: "1"
+      signs: []

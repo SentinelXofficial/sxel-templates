@@ -1,0 +1,22 @@
+id: wasabi-bucket-takeover
+brief:
+    title: wasabi Bucket Takeover - Detection
+    by: philippedelteil
+    level: high
+    about: wasabi Bucket takeover was detected.
+    label:
+        - takeover
+        - wasabi
+        - bucket
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - The specified bucket does not exist
+            - BucketName
+          in: body
+          need: all

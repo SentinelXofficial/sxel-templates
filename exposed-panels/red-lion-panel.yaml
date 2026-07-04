@@ -1,0 +1,22 @@
+id: red-lion-panel
+brief:
+    title: Red Lion Control Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - redlion
+        - detect
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Red Lion</a>
+            - Red Lion Controls</a>
+          in: body

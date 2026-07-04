@@ -1,0 +1,17 @@
+id: livehelperchat-detect
+brief:
+    title: Live Helper Chat Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - livehelperchat
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/doc/CHANGELOG.txt'
+        - '{{BaseURL}}/doc/README.txt'
+      signs: []

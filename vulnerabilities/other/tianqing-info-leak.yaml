@@ -1,0 +1,30 @@
+id: tianqing-info-leak
+brief:
+    title: Tianqing Info Leak
+    by: ritikchaddha
+    level: medium
+    about: Information exposed in Tianqing.
+    label:
+        - tianqing
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/dbstat/gettablessize'
+      signs:
+        - "on": word
+          has:
+            - schema_name
+            - table_name
+            - table_size
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

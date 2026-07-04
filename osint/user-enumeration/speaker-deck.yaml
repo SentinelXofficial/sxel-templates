@@ -1,0 +1,24 @@
+id: speaker-deck
+brief:
+    title: Speaker Deck User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Speaker Deck user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - speaker-deck
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://speakerdeck.com/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ) on Speaker Deck</title>
+          in: body
+          need: all

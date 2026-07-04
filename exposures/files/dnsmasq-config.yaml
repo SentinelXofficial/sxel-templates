@@ -1,0 +1,17 @@
+id: dnsmasq-config
+brief:
+    title: Dnsmasq Config - File Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: Dnsmasq Config file is exposed.
+    label:
+        - exposure
+        - dnsmasq
+        - files
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dnsmasq.conf'
+      signs: []

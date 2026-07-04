@@ -1,0 +1,24 @@
+id: voicescom
+brief:
+    title: Voices.com User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Voices.com user name information check was conducted.
+    label:
+        - osint
+        - osint-business
+        - voicescom
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.voices.com/profile/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Last Online</h3>
+          in: body
+          need: all

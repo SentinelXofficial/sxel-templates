@@ -1,0 +1,25 @@
+id: espeasy-installer
+brief:
+    title: ESPEasy Installation Exposure
+    by: ritikchaddha
+    level: medium
+    about: ESPEasy is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - espeasy
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ESPEasy'
+      signs:
+        - "on": word
+          has:
+            - Install ESPEasy
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

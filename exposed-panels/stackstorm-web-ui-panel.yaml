@@ -1,0 +1,16 @@
+id: stackstorm-web-ui-panel
+brief:
+    title: StackStorm Web UI - Panel Detect
+    by: Th3l0newolf
+    level: info
+    about: StackStorm Web UI interface was discovered.
+    label:
+        - panel
+        - stackstorm
+        - webui
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

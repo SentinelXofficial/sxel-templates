@@ -1,0 +1,24 @@
+id: flowcode
+brief:
+    title: Flowcode User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Flowcode user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - flowcode
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.flowcode.com/page/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ;s Flowpage
+          in: body
+          need: all

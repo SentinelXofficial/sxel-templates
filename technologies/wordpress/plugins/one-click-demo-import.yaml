@@ -1,0 +1,18 @@
+id: wordpress-one-click-demo-import
+brief:
+    title: One Click Demo Import Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/one-click-demo-import/readme.txt'
+      signs: []

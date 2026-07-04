@@ -1,0 +1,25 @@
+id: liferay-axis
+brief:
+    title: Liferay /api/axis - API Exposed
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - exposure
+        - liferay
+        - api
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/axis'
+      signs:
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

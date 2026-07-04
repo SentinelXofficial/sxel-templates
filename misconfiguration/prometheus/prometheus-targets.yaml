@@ -1,0 +1,30 @@
+id: prometheus-targets
+brief:
+    title: Prometheus targets API endpoint
+    by: geeknik
+    level: info
+    about: The targets endpoint exposes services belonging to the infrastructure, including their roles and labels. In addition to showing the target machine addresses, the endpoint also exposes metadata labe...
+    label:
+        - prometheus
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/targets'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"status": "success"'
+            - '"data":'
+            - '"labels":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

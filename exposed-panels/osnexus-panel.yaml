@@ -1,0 +1,24 @@
+id: osnexus-panel
+brief:
+    title: OSNEXUS QuantaStor Manager Panel - Detect
+    by: Charles D.
+    level: info
+    about: OSNEXUS QuantaStor Manager login panel was detected.
+    label:
+        - panel
+        - osnexus
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>OSNEXUS QuantaStor Manager</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

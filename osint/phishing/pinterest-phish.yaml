@@ -1,0 +1,25 @@
+id: pinterest-phish
+brief:
+    title: Pinterest phishing Detection
+    by: rxerium
+    level: info
+    about: A Pinterest phishing website was detected
+    label:
+        - phishing
+        - pinterest
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Log in to Pinterest
+            - Pinterest
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

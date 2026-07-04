@@ -1,0 +1,19 @@
+id: teltonika-login
+brief:
+    title: Teltonika Login Panel - Detect
+    by: idealphase
+    level: info
+    about: Teltonika login panel was detected.
+    label:
+        - panel
+        - teltonika
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/luci'
+      signs:
+        - "on": status
+          status:
+            - 200

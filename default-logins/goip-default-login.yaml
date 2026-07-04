@@ -1,0 +1,30 @@
+id: goip-default-login
+brief:
+    title: GoIP GSM VoIP Gateway - Default Password
+    by: drfabiocastro
+    level: high
+    about: GoIP GSM VoIP Gateway Default Password, Allows attackers to send, receive sms and calls.
+    label:
+        - default-login
+        - goip
+        - gsm
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/default/en_US/status.html'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+      signs:
+        - "on": word
+          has:
+            - Status
+            - GoIP
+            - Summary
+            - Logout
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

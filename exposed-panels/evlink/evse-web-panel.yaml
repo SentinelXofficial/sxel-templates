@@ -1,0 +1,29 @@
+id: evse-web-panel
+brief:
+    title: EVSE Web Interface Panel - Detection
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - evlink
+        - evse
+        - login
+        - detect
+        - schneider-electric
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/cgi-bin/cgiServer?worker=LoginForm'
+      signs:
+        - "on": word
+          has:
+            - EVSE Web Interface</title>
+            - Charging station</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

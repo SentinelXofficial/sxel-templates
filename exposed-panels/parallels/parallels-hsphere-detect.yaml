@@ -1,0 +1,25 @@
+id: parallels-hsphere-detect
+brief:
+    title: Parallels H-Sphere Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Parallels H-Sphere login panel was detected.
+    label:
+        - panel
+        - parallels
+        - hsphere
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Parallels H-Sphere</title>
+            - <TITLE>H-SPHERE</TITLE>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

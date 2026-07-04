@@ -1,0 +1,24 @@
+id: spip-detect
+brief:
+    title: SPIP - Detect
+    by: s4e-io
+    level: info
+    about: Detects a SPIP and SPIP version.
+    label:
+        - spip
+        - tech
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Composed-By: SPIP'
+            - 'X-Spip-Cache:'
+          in: header
+        - "on": status
+          status:
+            - 200

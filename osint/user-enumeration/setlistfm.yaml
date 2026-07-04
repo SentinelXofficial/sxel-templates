@@ -1,0 +1,24 @@
+id: setlistfm
+brief:
+    title: Setlist.fm User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Setlist.fm user name information check was conducted.
+    label:
+        - osint
+        - osint-music
+        - setlistfm
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.setlist.fm/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s setlist.fm | setlist.fm</title>
+          in: body
+          need: all

@@ -1,0 +1,15 @@
+id: kafka-api-cluster
+brief:
+    title: Kafka Operation API - Cluster
+    by: DhiyaneshDk
+    level: high
+    about: Kafka Operation API Cluster page was detected and appeared to be accessible without authentication.
+    label:
+        - kafka
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/kafka/clusters'
+      signs: []

@@ -1,0 +1,24 @@
+id: younow
+brief:
+    title: YouNow User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: YouNow user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - younow
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.younow.com/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>YouNow
+          in: body
+          need: all

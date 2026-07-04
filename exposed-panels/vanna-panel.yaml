@@ -1,0 +1,27 @@
+id: vanna-panel
+brief:
+    title: Vanna AI Panel - Detect
+    by: rxerium
+    level: info
+    about: Vanna AI is a chat interface for text-to-SQL generation using natural language. This template detects the presence of a Vanna AI chat panel.
+    label:
+        - panel
+        - vanna
+        - ai
+        - sql
+        - chat
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - vanna-
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

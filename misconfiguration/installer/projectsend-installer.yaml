@@ -1,0 +1,26 @@
+id: projectsend-installer
+brief:
+    title: ProjectSend Installation Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed ProjectSend installation page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - projectsend
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/index.php'
+        - '{{BaseURL}}/install/make-config.php'
+      signs:
+        - "on": word
+          has:
+            - Install &raquo; ProjectSend
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

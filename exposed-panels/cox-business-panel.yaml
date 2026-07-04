@@ -1,0 +1,25 @@
+id: cox-business-panel
+brief:
+    title: Cox Business Dominion Gateway Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Cox Business Dominion Gateway Login page was discovered.
+    label:
+        - cox
+        - gateway
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Cox Business Dominion Gateway - Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

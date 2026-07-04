@@ -1,0 +1,24 @@
+id: wetransfer-phish
+brief:
+    title: wetransfer phishing Detection
+    by: rxerium
+    level: info
+    about: A wetransfer phishing website was detected
+    label:
+        - phishing
+        - wetransfer
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - WeTransfer - Send Large Files &amp; Share Photos Online
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

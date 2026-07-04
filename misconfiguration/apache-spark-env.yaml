@@ -1,0 +1,19 @@
+id: apache-spark-env
+brief:
+    title: Apache Spark Environment - Exposure
+    by: 0x_Akoko
+    level: medium
+    about: Detected Apache Spark Web UI exposed environment variables and application information without authentication, potentially revealing sensitive configuration details.
+    label:
+        - apache
+        - spark
+        - missconfig
+        - environment
+        - bigdata
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/applications'
+        - '{{BaseURL}}/environment/'
+      signs: []

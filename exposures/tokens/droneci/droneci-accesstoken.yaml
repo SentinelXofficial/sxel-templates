@@ -1,0 +1,16 @@
+id: droneci-accesstoken
+brief:
+    title: Droneci Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - droneci
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,18 @@
+id: network-camera-detect
+brief:
+    title: Various Online Devices Detection (Network Camera)
+    by: iamthefrogy
+    level: info
+    about: Network camera panel was detected.
+    label:
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/CgiStart?page=Single'
+      signs:
+        - "on": word
+          has:
+            - <TITLE>Network Camera</TITLE>
+          in: body

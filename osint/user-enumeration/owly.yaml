@@ -1,0 +1,24 @@
+id: owly
+brief:
+    title: Ow.ly User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Ow.ly user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - owly
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://ow.ly/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Images
+          in: body
+          need: all

@@ -1,0 +1,23 @@
+id: api-newrelic
+brief:
+    title: New Relic Rest API
+    by: 0xpugal
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - newrelic
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://api.newrelic.com/v2/applications.json'
+      head:
+        Api-Key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"applications":'
+            - '"application.servers":'
+            - '"application.application_hosts":'
+          in: body
+          need: all

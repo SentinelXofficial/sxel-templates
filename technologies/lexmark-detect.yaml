@@ -1,0 +1,19 @@
+id: lexmark-detect
+brief:
+    title: Lexmark Device Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - airtame
+        - printer
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

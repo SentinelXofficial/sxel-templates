@@ -1,0 +1,29 @@
+id: weaviate-exposure
+brief:
+    title: Weaviate - Exposure
+    by: DhiyaneshDk
+    level: low
+    about: Detected an exposed Weaviate instance by accessing its API endpoints. Verified exposure by identifying meta information, schema details, and specific endpoint references in the response, confirming...
+    label:
+        - weaviate
+        - exposure
+        - api
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v1/'
+      signs:
+        - "on": word
+          has:
+            - Meta information about this instance/cluster
+            - view complete schema
+          in: body
+          need: all
+        - "on": word
+          has:
+            - '"href":"/v1/schema"'
+          in: body
+        - "on": status
+          status:
+            - 200

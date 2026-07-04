@@ -1,0 +1,21 @@
+id: api-ipfind
+brief:
+    title: IPFind API Test
+    by: daffainfo
+    level: info
+    about: Geographic location of an IP address or any domain name along with some other useful information
+    label:
+        - token-spray
+        - ipfind
+moves:
+    - verb: GET
+      to:
+        - https://app.ipfind.io/api/iplocation?apikey={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"continent"'
+            - '"country"'
+            - '"zipCode"'
+          in: body
+          need: all

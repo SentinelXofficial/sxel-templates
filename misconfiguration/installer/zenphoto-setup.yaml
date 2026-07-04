@@ -1,0 +1,26 @@
+id: zenphoto-setup
+brief:
+    title: Zenphoto <1.5 Installer - Detect
+    by: pdteam
+    level: critical
+    about: Zenphoto setup page before version 1.5 is susceptible to sensitive information disclosure due to misconfiguration.
+    label:
+        - misconfig
+        - panel
+        - zenphoto
+        - setup
+        - installer
+        - vuln
+    score: CVSS:9.4
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/zp-core/setup/index.php'
+        - '{{BaseURL}}/zp/zp-core/setup/index.php'
+        - '{{BaseURL}}/gallery/zp-core/setup/index.php'
+        - '{{BaseURL}}/zenphoto/zp-core/setup/index.php'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Zenphoto! This page will set up Zenphoto
+          in: body

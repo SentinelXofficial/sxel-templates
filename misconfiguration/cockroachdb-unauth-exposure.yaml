@@ -1,0 +1,20 @@
+id: cockroachdb-unauth-exposure
+brief:
+    title: CockroachDB Unauthenticated Console Exposure
+    by: pussycat0x
+    level: high
+    about: Unauthenticated access to the CockroachDB console allows viewing the cluster nodes and server version.
+    label:
+        - cockroachdb
+        - exposure
+        - misconfig
+        - unauth
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_status/nodes'
+      signs: []

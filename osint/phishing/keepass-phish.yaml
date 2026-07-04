@@ -1,0 +1,24 @@
+id: keepass-phish
+brief:
+    title: keepass phishing Detection
+    by: rxerium
+    level: info
+    about: A keepass phishing website was detected
+    label:
+        - phishing
+        - keepass
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - KeePass is a free open source password manager. Passwords can be stored in an encrypted database, which can be unlocked with one master key.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

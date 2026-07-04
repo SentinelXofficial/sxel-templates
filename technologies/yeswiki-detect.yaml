@@ -1,0 +1,25 @@
+id: yeswiki-detect
+brief:
+    title: YesWiki Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: YesWiki panel was detected.
+    label:
+        - yeswiki
+        - panel
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - yeswiki-search
+            - yeswiki-base
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

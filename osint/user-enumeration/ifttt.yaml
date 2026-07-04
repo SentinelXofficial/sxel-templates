@@ -1,0 +1,24 @@
+id: ifttt
+brief:
+    title: IFTTT User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: IFTTT user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - ifttt
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://ifttt.com/p/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Joined
+          in: body
+          need: all

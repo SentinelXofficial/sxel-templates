@@ -1,0 +1,30 @@
+id: milesight-system-log
+brief:
+    title: Milesight Industrial Cellular Routers - Information Disclosure
+    by: ritikchaddha
+    level: high
+    about: A critical security vulnerability has been identified in Milesight Industrial Cellular Routers, compromising the security discovered that it was publicly disclosing system logs, which included inte...
+    label:
+        - milesight
+        - log
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/lang/log/system.log'
+      signs:
+        - "on": word
+          has:
+            - daemon.info
+            - authpriv.info
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

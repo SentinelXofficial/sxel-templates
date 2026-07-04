@@ -1,0 +1,25 @@
+id: delphi-mvc-exception
+brief:
+    title: Delphi MVC Exception - Page
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - error
+        - dmvc
+        - log
+        - delphi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      head:
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+      signs:
+        - "on": word
+          has:
+            - DMVCFramework Exception
+            - DelphiMVCFramework
+          in: body
+          need: all

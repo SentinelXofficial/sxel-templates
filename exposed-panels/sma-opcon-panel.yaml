@@ -1,0 +1,17 @@
+id: sma-opcon-panel
+brief:
+    title: SMA OpCon Panel - Detect
+    by: righettod
+    level: info
+    about: SMA OpCon was detected — a workload automation and orchestration software.
+    label:
+        - panel
+        - sma
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/version'
+        - '{{BaseURL}}/login'
+      signs: []

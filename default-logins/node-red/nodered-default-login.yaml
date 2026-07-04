@@ -1,0 +1,34 @@
+id: nodered-default-login
+brief:
+    title: Node-Red - Default Login
+    by: savik
+    level: critical
+    about: Allows attacker to log in and execute RCE on the Node-Red panel using the default credentials.
+    label:
+        - default-login
+        - node-red
+        - dashboard
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/auth/token'
+      head:
+        Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+      body: client_id=node-red-editor&grant_type=password&scope=&username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - 'access_token":'
+            - 'expires_in":'
+            - 'token_type":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

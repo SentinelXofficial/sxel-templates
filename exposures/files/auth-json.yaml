@@ -1,0 +1,38 @@
+id: auth-json
+brief:
+    title: Auth.json File - Disclosure
+    by: DhiyaneshDk
+    level: high
+    about: auth.json file is exposed.
+    label:
+        - devops
+        - exposure
+        - files
+        - auth
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth.json'
+      signs:
+        - "on": word
+          has:
+            - '"http-basic": {'
+            - '"username":'
+            - '"password":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - '"github-oauth": {'
+            - '"github.com":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - '"bitbucket-oauth":'
+            - '"consumer-key":'
+            - '"consumer-secret":'
+          in: body
+          need: all

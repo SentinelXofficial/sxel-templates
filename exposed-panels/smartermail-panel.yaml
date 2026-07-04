@@ -1,0 +1,26 @@
+id: smartermail-panel
+brief:
+    title: SmarterMail Login Panel - Detect
+    by: rxerium
+    level: info
+    about: SmarterMail login panel was detected.
+    label:
+        - panel
+        - smartermail
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Login.aspx'
+      signs:
+        - "on": word
+          has:
+            - Login to SmarterMail
+            - SmarterTools Inc.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

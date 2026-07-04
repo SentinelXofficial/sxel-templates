@@ -1,0 +1,23 @@
+id: api-coinranking
+brief:
+    title: Coinranking API Test
+    by: daffainfo
+    level: info
+    about: Live Cryptocurrency data
+    label:
+        - token-spray
+        - coinranking
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://api.coinranking.com/v2/exchanges'
+      head:
+        x-access-token: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"exchanges"'
+            - '"coinrankingUrl"'
+            - '"uuid"'
+          in: body
+          need: all

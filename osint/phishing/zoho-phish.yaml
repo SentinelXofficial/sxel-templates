@@ -1,0 +1,25 @@
+id: zoho-phish
+brief:
+    title: Zoho phishing Detection
+    by: rxerium
+    level: info
+    about: A Zoho phishing website was detected
+    label:
+        - phishing
+        - zoho
+        - business
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Zoho - Cloud Software Suite and SaaS Applications for Businesses
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

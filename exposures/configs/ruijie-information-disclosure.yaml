@@ -1,0 +1,20 @@
+id: ruijie-information-disclosure
+brief:
+    title: Ruijie Login Panel - Detect
+    by: pikpikcu
+    level: high
+    about: Ruijie login panel was detected and leaks authentication credentials.
+    label:
+        - ruijie
+        - config
+        - exposure
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.php'
+      signs:
+        - "on": status
+          status:
+            - 200

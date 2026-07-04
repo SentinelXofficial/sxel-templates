@@ -1,0 +1,24 @@
+id: booth
+brief:
+    title: Booth User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Booth user name information check was conducted.
+    label:
+        - osint
+        - osint-shopping
+        - booth
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://{{user}}.booth.pm/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- BOOTH</title>'
+          in: body
+          need: all

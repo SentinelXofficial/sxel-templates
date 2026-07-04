@@ -1,0 +1,28 @@
+id: hivequeue-agent
+brief:
+    title: HiveQueue Agent
+    by: DhiyaneshDk
+    level: low
+    about: HiveQueue Agent is exposed.
+    label:
+        - misconfig
+        - hivequeue
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/monitoring'
+      signs:
+        - "on": word
+          has:
+            - <title>HiveQueue Agent</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

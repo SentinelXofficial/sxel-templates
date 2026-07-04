@@ -1,0 +1,20 @@
+id: pear-registry-exposed
+brief:
+    title: PEAR Registry Files Exposed
+    by: pussycat0x
+    level: low
+    about: Detected exposed PEAR registry files (.reg) containing serialized PHP metadata, including package versions and local paths. This exposure facilitated supply-chain reconnaissance by revealing instal...
+    label:
+        - misconfig
+        - pear
+        - php
+        - registry
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.registry/pear.reg.ber'
+        - '{{BaseURL}}/.registry/pear.reg'
+        - '{{BaseURL}}/PEAR/.registry/pear.reg.ber'
+        - '{{BaseURL}}/PEAR/.registry/pear.reg'
+      signs: []

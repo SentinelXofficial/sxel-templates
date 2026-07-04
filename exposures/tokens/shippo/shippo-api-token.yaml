@@ -1,0 +1,16 @@
+id: shippo-api-token
+brief:
+    title: Shippo API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - shippo
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

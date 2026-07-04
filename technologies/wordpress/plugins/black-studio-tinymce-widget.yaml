@@ -1,0 +1,17 @@
+id: wordpress-black-studio-tinymce-widget
+brief:
+    title: Black Studio TinyMCE Widget Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/black-studio-tinymce-widget/readme.txt'
+      signs: []

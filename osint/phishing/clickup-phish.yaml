@@ -1,0 +1,25 @@
+id: clickup-phish
+brief:
+    title: ClickUp phishing Detection
+    by: rxerium
+    level: info
+    about: A ClickUp phishing website was detected
+    label:
+        - phishing
+        - clickup
+        - productivity
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ClickUp™ | Maximize productivity • Software, AI, and humans converge
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,32 @@
+id: grandstream-grp-panel
+brief:
+    title: Grandstream GRP Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Detected the presence of a Grandstream GRP web management login panel. The React-based SPA loads characteristic JavaScript modules including tl.account.ucm.js and webpack chunks for UCM modules.
+    label:
+        - panel
+        - grandstream
+        - grp
+        - iot
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - tl.account.ucm.js
+            - tl.phoneSettings.js
+          in: body
+          need: all
+        - "on": word
+          has:
+            - tl.maintenance.js
+            - tl.sysSettings.js
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,30 @@
+id: morningstar-prostar-mppt-detect
+brief:
+    title: Morningstar ProStar MPPT Solar Charge Controller - Detect
+    by: rxerium
+    level: info
+    about: Morningstar ProStar MPPT is a solar charge controller with a built-in web server providing
+    label:
+        - tech
+        - panel
+        - morningstar
+        - ics
+        - solar
+        - energy
+        - scada
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Prostar MPPT - Live Data</title>
+            - ProstarMPPTLive
+            - morningstarcorp.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

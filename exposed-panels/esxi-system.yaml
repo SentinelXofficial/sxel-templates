@@ -1,0 +1,24 @@
+id: esxi-system
+brief:
+    title: ESXi System Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: ESXi System login panel was detected.
+    label:
+        - panel
+        - esxi
+        - vmware
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/#/login'
+      signs:
+        - "on": word
+          has:
+            - ng-app="esxUiApp"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

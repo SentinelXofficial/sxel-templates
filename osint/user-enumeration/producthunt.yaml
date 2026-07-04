@@ -1,0 +1,24 @@
+id: producthunt
+brief:
+    title: Producthunt User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Producthunt user name information check was conducted.
+    label:
+        - osint
+        - osint-business
+        - producthunt
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.producthunt.com/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s profile on Product Hunt
+          in: body
+          need: all

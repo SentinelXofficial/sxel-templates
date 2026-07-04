@@ -1,0 +1,16 @@
+id: newrelic-license-key
+brief:
+    title: New Relic License Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - newrelic
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

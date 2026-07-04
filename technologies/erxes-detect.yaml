@@ -1,0 +1,18 @@
+id: erxes-detect
+brief:
+    title: Erxes Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - erxes
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

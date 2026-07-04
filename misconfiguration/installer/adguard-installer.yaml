@@ -1,0 +1,24 @@
+id: adguard-installer
+brief:
+    title: AdGuard - Installation
+    by: ritikchaddha
+    level: high
+    about: AdGuard Installation panel has been exposed.
+    label:
+        - adguard
+        - misconfig
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install.html'
+      signs:
+        - "on": word
+          has:
+            - Setup AdGuard Home
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

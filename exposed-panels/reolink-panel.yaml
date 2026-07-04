@@ -1,0 +1,17 @@
+id: reolink-panel
+brief:
+    title: Reolink Panel - Detect
+    by: s4e-io
+    level: info
+    about: Reolink panel was discovered.
+    label:
+        - panel
+        - login
+        - reolink
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

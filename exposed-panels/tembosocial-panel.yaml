@@ -1,0 +1,23 @@
+id: tembosocial-panel
+brief:
+    title: TemboSocial Admin Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: TemboSocial Admin panel was detected.
+    label:
+        - panel
+        - tembosocial
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin.php'
+      signs:
+        - "on": word
+          has:
+            - <title>TemboSocial Administration</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

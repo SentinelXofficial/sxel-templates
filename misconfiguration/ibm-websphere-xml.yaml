@@ -1,0 +1,26 @@
+id: ibm-websphere-xml
+brief:
+    title: IBM WebSphere Application - Source File Exposure
+    by: r3nz0
+    level: medium
+    about: Disclose application specific files contained within the war file, including files under the web-inf and meta-inf directories.
+    label:
+        - ibm
+        - websphere
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/iojs/%2e/WEB-INF/web.xml'
+      signs:
+        - "on": word
+          has:
+            - </web-app>
+            - <servlet>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

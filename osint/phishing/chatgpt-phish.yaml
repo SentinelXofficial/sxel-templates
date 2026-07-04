@@ -1,0 +1,27 @@
+id: chatgpt-phish
+brief:
+    title: ChatGPT phishing Detection
+    by: rxerium
+    level: info
+    about: A ChatGPT phishing website was detected
+    label:
+        - phishing
+        - chatgpt
+        - openai
+        - ai
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ChatGPT
+            - ChatGPT helps you get answers, find inspiration, and be more productive.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,19 @@
+id: api-googleautocomplete
+brief:
+    title: Google Autocomplete API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - autocomplete
+moves:
+    - verb: GET
+      to:
+        - https://maps.googleapis.com/maps/api/place/autocomplete/json?input=Bingh&types=%28cities%29&key={{token}}
+      signs:
+        - "on": word
+          has:
+            - error_message
+          in: body

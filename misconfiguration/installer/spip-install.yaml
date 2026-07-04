@@ -1,0 +1,26 @@
+id: spip-install
+brief:
+    title: SPIP Install - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: SPIP is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - exposure
+        - spip
+        - install
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ecrire/?exec=install'
+      signs:
+        - "on": word
+          has:
+            - Installing publication system...
+            - SPIP
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,29 @@
+id: cakephp-config
+brief:
+    title: CakePHP Configuration File - Detect
+    by: DhiyaneshDk
+    level: medium
+    about: CakePHP configuration file was detected.
+    label:
+        - files
+        - exposure
+        - config
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/phinx.yml'
+        - '{{BaseURL}}/phinx.yaml'
+      signs:
+        - "on": word
+          has:
+            - 'host:'
+            - 'name:'
+            - 'pass:'
+            - 'adapter:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

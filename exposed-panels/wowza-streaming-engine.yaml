@@ -1,0 +1,23 @@
+id: wowza-streaming-engine
+brief:
+    title: Wowza Streaming Engine Manager Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Wowza Streaming Engine Manager panel was detected.
+    label:
+        - panel
+        - wowza
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/enginemanager/ftu/welcome.htm'
+      signs:
+        - "on": word
+          has:
+            - <title>Wowza Streaming Engine Manager</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

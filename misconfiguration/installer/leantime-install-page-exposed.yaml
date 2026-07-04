@@ -1,0 +1,16 @@
+id: leantime-install-page-exposed
+brief:
+    title: Leantime - Unfinished Installation
+    by: 0x_Akoko
+    level: high
+    about: Detected a Leantime instance identified with the setup installation page accessible at /install, enabling unauthenticated users to create the first administrator account and configure the database.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - leantime
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install'
+      signs: []

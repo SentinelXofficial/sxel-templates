@@ -1,0 +1,16 @@
+id: heroku-oauth2-token
+brief:
+    title: Heroku OAuth2 Token
+    by: Chemo850
+    level: info
+    about: ""
+    label:
+        - heroku
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

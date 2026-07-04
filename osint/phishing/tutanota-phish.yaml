@@ -1,0 +1,25 @@
+id: tutanota-phish
+brief:
+    title: Tutanota phishing Detection
+    by: rxerium
+    level: info
+    about: A Tutanota phishing website was detected
+    label:
+        - phishing
+        - tutanota
+        - email
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>Tuta: Turn ON privacy for free with secure emails, calendars &amp; contacts | Tuta'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

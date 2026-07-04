@@ -1,0 +1,18 @@
+id: wordpress-wordfence
+brief:
+    title: Wordfence Security – Firewall, Malware Scan, and Login Security Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wordfence/readme.txt'
+      signs: []

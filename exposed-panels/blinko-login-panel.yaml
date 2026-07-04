@@ -1,0 +1,16 @@
+id: blinko-login-panel
+brief:
+    title: Blinko - Login Panel Detection
+    by: 0x_Akoko
+    level: info
+    about: Detected A Blinko self-hosted personal note application login panel.
+    label:
+        - panel
+        - blinko
+        - login
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/signin'
+      signs: []

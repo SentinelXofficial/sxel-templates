@@ -1,0 +1,20 @@
+id: piwigo-installer
+brief:
+    title: Piwigo Installation Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Piwigo is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - exposure
+        - install
+        - piwigo
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install.php'
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: minecraft-list
+brief:
+    title: Minecraft List User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Minecraft List user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - minecraft-list
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://minecraftlist.com/players/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - -->was seen on<!--
+          in: body
+          need: all

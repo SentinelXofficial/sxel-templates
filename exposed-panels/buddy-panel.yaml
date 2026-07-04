@@ -1,0 +1,25 @@
+id: buddy-panel
+brief:
+    title: Buddy Panel - Detect
+    by: thardt-praetorian
+    level: info
+    about: Buddy panel was detected.
+    label:
+        - panel
+        - buddy
+        - cicd
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <meta name="application-name" content="Buddy">
+            - Buddy App
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

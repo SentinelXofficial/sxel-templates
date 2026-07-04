@@ -1,0 +1,18 @@
+id: aws-session-token
+brief:
+    title: AWS Session Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - aws
+        - amazon
+        - token
+        - exposure
+        - session
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

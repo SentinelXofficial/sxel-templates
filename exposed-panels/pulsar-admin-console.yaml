@@ -1,0 +1,26 @@
+id: pulsar-admin-console
+brief:
+    title: Pulsar Admin Console Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Pulsar admin console panel was detected.
+    label:
+        - panel
+        - pulsar
+        - console
+        - admin
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/admin/dashboard'
+      signs:
+        - "on": word
+          has:
+            - <title>Pulsar Admin Console
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

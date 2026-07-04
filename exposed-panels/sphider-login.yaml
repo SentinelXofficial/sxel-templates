@@ -1,0 +1,26 @@
+id: sphider-login
+brief:
+    title: Sphider Admin Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Sphider admin login panel was detected.
+    label:
+        - edb
+        - panel
+        - sphider
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/spider.php'
+        - '{{BaseURL}}/sphider/admin/admin.php'
+        - '{{BaseURL}}/search/admin/admin.php'
+      signs:
+        - "on": word
+          has:
+            - <title>Sphider Admin Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

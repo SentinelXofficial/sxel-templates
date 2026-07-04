@@ -1,0 +1,17 @@
+id: python-history-disclosure
+brief:
+    title: Python History File Disclosure
+    by: pussycat0x
+    level: low
+    about: Detected exposed .python_history files on web servers.These files contained Python REPL command history that could have leaked sensitive information such as credentials, API keys, internal paths, d...
+    label:
+        - exposure
+        - python
+        - config
+        - misconfig
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.python_history'
+      signs: []

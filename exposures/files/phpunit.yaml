@@ -1,0 +1,24 @@
+id: phpunit
+brief:
+    title: phpunit.xml File Disclosure
+    by: pikpikcu
+    level: info
+    about: Phpunit.xml was created by Romain Bourdon for the development of WampServer 3.1. Phpunit.xml is packaged with WampServer 3.1.9 and XAMPP 5.6.40.
+    label:
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/phpunit.xml'
+      signs:
+        - "on": word
+          has:
+            - <phpunit
+            - </phpunit>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: biolink
+brief:
+    title: Biolink User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Biolink user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - biolink
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://bio.link/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - profile:username
+          in: body
+          need: all

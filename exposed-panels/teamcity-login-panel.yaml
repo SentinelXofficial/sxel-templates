@@ -1,0 +1,25 @@
+id: teamcity-login-panel
+brief:
+    title: TeamCity Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: TeamCity login panel was detected.
+    label:
+        - panel
+        - teamcity
+        - jetbrains
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Log in to TeamCity &mdash; TeamCity</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

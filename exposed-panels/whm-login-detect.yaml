@@ -1,0 +1,26 @@
+id: whm-login-detect
+brief:
+    title: WHM Login Panel - Detect
+    by: pussycat0x
+    level: info
+    about: WHM login panel was detected.
+    label:
+        - edb
+        - whm
+        - panel
+        - login
+        - cpanel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - <title>WHM Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

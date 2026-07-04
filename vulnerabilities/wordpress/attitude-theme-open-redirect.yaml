@@ -1,0 +1,17 @@
+id: attitude-theme-open-redirect
+brief:
+    title: WordPress Attitude 1.1.1 - Open Redirect
+    by: 0x_Akoko
+    level: medium
+    about: WordPress Attitude theme 1.1.1 contains an open redirect vulnerability via the goto.php endpoint. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modi...
+    label:
+        - wordpress
+        - wp-theme
+        - redirect
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/themes/Attitude/go.php?https://interact.sh/'
+      signs: []

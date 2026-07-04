@@ -1,0 +1,15 @@
+id: newrelic-admin-api-key
+brief:
+    title: Admin API Key Disclosure
+    by: Ice3man
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

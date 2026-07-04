@@ -1,0 +1,26 @@
+id: cobbler-exposed-directory
+brief:
+    title: Exposed Cobbler Directories
+    by: c-sh0
+    level: medium
+    about: Searches for exposed Cobbler Directories
+    label:
+        - cobbler
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cobbler/'
+        - '{{BaseURL}}/cblr/'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Index of /cobbler
+            - Index of /cblr
+          in: body
+          need: all

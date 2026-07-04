@@ -1,0 +1,15 @@
+id: websphere-detect
+brief:
+    title: IBM WebSphere Application Server
+    by: Shivam Kamboj
+    level: info
+    about: Detects servers running IBM WebSphere Application Server via the Server header.
+    label:
+        - tech
+        - websphere
+        - ibm
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

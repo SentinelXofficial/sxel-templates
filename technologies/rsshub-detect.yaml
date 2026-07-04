@@ -1,0 +1,15 @@
+id: rsshub-detect
+brief:
+    title: RSSHub Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - rsshub
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/favicon.ico'
+      signs: []

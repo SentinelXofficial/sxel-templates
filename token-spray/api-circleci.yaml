@@ -1,0 +1,20 @@
+id: api-circleci
+brief:
+    title: CircleCI API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - circleci
+moves:
+    - verb: GET
+      to:
+        - https://circleci.com/api/v1.1/me?circle-token={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"admin"'
+            - '"login"'
+          in: body
+          need: all

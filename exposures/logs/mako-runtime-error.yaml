@@ -1,0 +1,22 @@
+id: mako-runtime-error
+brief:
+    title: Mako Runtime Error - Page
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - error
+        - mako
+        - log
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Mako Runtime Error
+            - TopLevelLookupException
+          in: body
+          need: all

@@ -1,0 +1,28 @@
+id: watershed-panel
+brief:
+    title: Watershed Login Panel - Detect
+    by: tess
+    level: info
+    about: Watershed login panel was detected.
+    label:
+        - panel
+        - watershed
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/app/outside.html#/signin'
+      signs:
+        - "on": word
+          has:
+            - Watershed LRS
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

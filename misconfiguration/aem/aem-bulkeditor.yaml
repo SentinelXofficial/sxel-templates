@@ -1,0 +1,25 @@
+id: aem-bulkeditor
+brief:
+    title: AEM BulkEditor
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - aem
+        - adobe
+        - editor
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/etc/importers/bulkeditor.html'
+      signs:
+        - "on": word
+          has:
+            - <title>AEM BulkEditor</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

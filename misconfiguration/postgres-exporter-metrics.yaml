@@ -1,0 +1,26 @@
+id: postgres-exporter-metrics
+brief:
+    title: Postgres Exporter Metrics
+    by: DhiyaneshDk
+    level: low
+    about: Postgres Exporter Metrics is exposed.
+    label:
+        - postgres
+        - exposure
+        - debug
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/metrics'
+      signs:
+        - "on": word
+          has:
+            - postgres
+            - '# HELP'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

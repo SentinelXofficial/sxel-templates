@@ -1,0 +1,25 @@
+id: hackenproof
+brief:
+    title: Hackenproof User Name Information - Detect
+    by: philippedelteil
+    level: info
+    about: Hackenproof user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - hackenproof
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://hackenproof.com/hackers/{{user}}
+      signs:
+        - "on": word
+          has:
+            - Check out {{user}} on HackenProof
+            - Member since
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

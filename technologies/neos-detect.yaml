@@ -1,0 +1,20 @@
+id: neos-detect
+brief:
+    title: Neos CMS detection
+    by: k11h-de
+    level: info
+    about: Neos CMS was detected.
+    label:
+        - tech
+        - neos
+        - cms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - This website is powered by Neos
+          in: body

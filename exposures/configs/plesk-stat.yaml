@@ -1,0 +1,34 @@
+id: plesk-stat
+brief:
+    title: Webalizer Log Analyzer Configuration - Detect
+    by: th3.d1p4k
+    level: medium
+    about: Webalizer log analyzer configuration was detected.
+    label:
+        - config
+        - exposure
+        - plesk
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/plesk-stat/'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Index of /plesk-stat
+            - Parent Directory
+          in: body
+          need: all
+        - "on": word
+          has:
+            - anon_ftpstat
+            - ftpstat
+            - webstat-ssl
+            - webstat
+          in: body
+          need: all

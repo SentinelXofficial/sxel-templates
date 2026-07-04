@@ -1,0 +1,18 @@
+id: apache-server-status
+brief:
+    title: Apache Server Status Disclosure
+    by: thabisocn
+    level: low
+    about: Apache /server-status displays information about your Apache status. If you are not using this feature, disable it.
+    label:
+        - misconfig
+        - exposure
+        - apache
+        - debug
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/server-info'
+        - '{{BaseURL}}/server-status'
+      signs: []

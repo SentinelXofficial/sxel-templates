@@ -1,0 +1,24 @@
+id: roundcube-webmail-portal
+brief:
+    title: Roundcube webmail
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - roundcube
+        - portal
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/webmail/'
+      signs:
+        - "on": word
+          has:
+            - '"rcversion":dddd'
+          in: body
+        - "on": status
+          status:
+            - 200

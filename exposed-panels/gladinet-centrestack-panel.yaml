@@ -1,0 +1,25 @@
+id: gladinet-centrestack-panel
+brief:
+    title: CentreStack Login Panel - Detect
+    by: rxerium
+    level: info
+    about: Gladinet CentreStack login panel was detected.
+    label:
+        - panel
+        - centrestack
+        - login
+        - gladinet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/portal/loginpage.aspx'
+      signs:
+        - "on": word
+          has:
+            - CentreStack - Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

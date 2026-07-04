@@ -1,0 +1,24 @@
+id: http-trace
+brief:
+    title: HTTP TRACE method enabled
+    by: nodauf
+    level: info
+    about: ""
+    label:
+        - miscellaneous
+        - misc
+        - generic
+        - vuln
+moves:
+    - verb: TRACE
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - TRACE / HTTP
+          in: body
+    - verb: OPTIONS
+      to:
+        - '{{BaseURL}}'
+      signs: []

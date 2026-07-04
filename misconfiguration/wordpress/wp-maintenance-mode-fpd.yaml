@@ -1,0 +1,30 @@
+id: wp-maintenance-mode-fpd
+brief:
+    title: WordPress WP Maintenance Mode - Full Path Disclosure
+    by: ritikchaddha
+    level: low
+    about: WordPress WP Maintenance Mode plugin is vulnerable to full path disclosure via direct access to plugin files.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - fpd
+        - maintenance-mode
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wp-maintenance-mode/includes/classes/class-wp-maintenance-mode.php'
+        - '{{BaseURL}}/wp-content/plugins/wp-maintenance-mode/includes/classes/class-wp-maintenance-mode-admin.php'
+        - '{{BaseURL}}/wp-content/plugins/wp-maintenance-mode/views/maintenance.php'
+      signs:
+        - "on": word
+          has:
+            - Fatal error
+            - wp-maintenance-mode
+            - 'Uncaught Error:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,34 @@
+id: unauthenticated-duplicator-disclosure
+brief:
+    title: WordPress Duplicator Plugin - Information disclosure
+    by: tess
+    level: medium
+    about: Unauthenticated Information disclosure of Duplicator WordPress plugin sensitive files.
+    label:
+        - wordpress
+        - wp
+        - wp-plugin
+        - misconfig
+        - disclosure
+        - unauth
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/backups-dup-lite/tmp/'
+        - '{{BaseURL}}/wp-content/backups-dup-lite'
+      signs:
+        - "on": word
+          has:
+            - Index of /wp-content/backups-dup-lite/
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

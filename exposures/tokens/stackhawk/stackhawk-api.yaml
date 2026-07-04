@@ -1,0 +1,16 @@
+id: stackhawk-api
+brief:
+    title: StackHawk API Key
+    by: DhiyaneshDK
+    level: high
+    about: ""
+    label:
+        - stackhawk
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

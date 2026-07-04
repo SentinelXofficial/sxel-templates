@@ -1,0 +1,25 @@
+id: permissions-installer
+brief:
+    title: Permissions Installer Exposure
+    by: pussycat0x
+    level: high
+    about: Permissions Installer is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - permissions
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title> Permissions | Installer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

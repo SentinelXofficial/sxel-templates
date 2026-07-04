@@ -1,0 +1,23 @@
+id: connectwise-control-detect
+brief:
+    title: ConnectWise Control  Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - connectwise
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ConnectWise Control Remote Support Software
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

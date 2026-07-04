@@ -1,0 +1,29 @@
+id: rancher-panel
+brief:
+    title: Rancher Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Rancher login panel was detected.
+    label:
+        - panel
+        - rancher
+        - kubernetes
+        - devops
+        - cloud
+        - login
+        - suse
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Loading
+            - ember-basic-dropdown-wormhole
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

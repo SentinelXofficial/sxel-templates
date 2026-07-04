@@ -1,0 +1,17 @@
+id: wordpress-templately
+brief:
+    title: Templately – Elementor & Gutenberg Template Library' 5500+ Free & Pro Ready Templates And Cloud! Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/templately/readme.txt'
+      signs: []

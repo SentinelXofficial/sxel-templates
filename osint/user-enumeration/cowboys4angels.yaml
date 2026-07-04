@@ -1,0 +1,24 @@
+id: cowboys4angels
+brief:
+    title: Cowboys4angels User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Cowboys4angels user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - cowboys4angels
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://cowboys4angels.com/cowboy/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' | Cowboys 4 Angels |'
+          in: body
+          need: all

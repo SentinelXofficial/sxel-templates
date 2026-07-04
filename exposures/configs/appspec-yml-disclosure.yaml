@@ -1,0 +1,32 @@
+id: appspec-yml-disclosure
+brief:
+    title: Appspec YML/YAML - Detect
+    by: dhiyaneshDk
+    level: medium
+    about: Appspec YML and YAML files are susceptible to information disclosure.
+    label:
+        - exposure
+        - config
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/appspec.yml'
+        - '{{BaseURL}}/appspec.yaml'
+      signs:
+        - "on": word
+          has:
+            - 'version:'
+            - 'os:'
+            - 'files:'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

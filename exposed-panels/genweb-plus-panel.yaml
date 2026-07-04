@@ -1,0 +1,23 @@
+id: gemweb-plus-panel
+brief:
+    title: GEMweb Plus 500 Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: GEMweb Plus 500 login panel was detected.
+    label:
+        - panel
+        - gemweb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>GEMweb Plus 500</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

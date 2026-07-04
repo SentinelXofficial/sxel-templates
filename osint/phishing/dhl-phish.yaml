@@ -1,0 +1,26 @@
+id: dhl-phish
+brief:
+    title: DHL phishing Detection
+    by: rxerium
+    level: info
+    about: A DHL phishing website was detected
+    label:
+        - phishing
+        - dhl
+        - shipping
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - DHL
+            - DHL is the global leader in the logistics industry. Specializing in international shipping, courier services and transportation.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

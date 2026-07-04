@@ -1,0 +1,23 @@
+id: devdojo-voyager-default-login
+brief:
+    title: DevDojo Voyager - Default login
+    by: iamnoooob
+    level: high
+    about: DevDojo Voyager contains default credentials when run with dummy data. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized oper...
+    label:
+        - default-login
+        - voyager
+        - devdojo
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/admin/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: _token={{csrf}}&email={{username}}&password={{password}}&
+      signs: []

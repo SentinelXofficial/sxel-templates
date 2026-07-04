@@ -1,0 +1,32 @@
+id: emoncms-panel
+brief:
+    title: OpenEnergyMonitor emonCMS - Login Panel
+    by: rxerium
+    level: info
+    about: emonCMS is an open-source energy monitoring web application by OpenEnergyMonitor,
+    label:
+        - panel
+        - emoncms
+        - energy
+        - iot
+        - ics
+        - monitoring
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Emoncms - user login
+          in: body
+          need: all
+        - "on": word
+          has:
+            - EMONCMS_SESSID
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

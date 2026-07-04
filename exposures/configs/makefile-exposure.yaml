@@ -1,0 +1,16 @@
+id: makefile-exposure
+brief:
+    title: Makefile - Exposure
+    by: 0x_Akoko
+    level: low
+    about: Detected Makefile configuration file was identified, which potentially exposed build process details, author information, and directory structure
+    label:
+        - exposure
+        - config
+        - makefile
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Makefile'
+        - '{{BaseURL}}/makefile'
+      signs: []

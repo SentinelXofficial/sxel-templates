@@ -1,0 +1,25 @@
+id: wordpress-super-forms
+brief:
+    title: WordPress super-forms Plugin Directory Listing
+    by: pussycat0x
+    level: low
+    about: Searches for sensitive directories present in the super-forms plugin.
+    label:
+        - listing
+        - plugin
+        - edb
+        - wordpress
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/super-forms/'
+      signs:
+        - "on": word
+          has:
+            - Index of /wp-content/plugins/super-forms/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

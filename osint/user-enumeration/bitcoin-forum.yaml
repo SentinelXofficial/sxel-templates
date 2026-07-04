@@ -1,0 +1,24 @@
+id: bitcoin-forum
+brief:
+    title: Bitcoin forum User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Bitcoin forum user name information check was conducted.
+    label:
+        - osint
+        - osint-finance
+        - bitcoin-forum
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://bitcoinforum.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Profile of
+          in: body
+          need: all

@@ -1,0 +1,25 @@
+id: chromecast-detect
+brief:
+    title: Google Chromecast - Detect
+    by: LucianNitescu
+    level: info
+    about: Searches for Google Chromecast via their eureka_info route.
+    label:
+        - google
+        - chromecast
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup/eureka_info'
+      signs:
+        - "on": word
+          has:
+            - '"cast_build_revision":'
+            - '"ssdp_udn":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

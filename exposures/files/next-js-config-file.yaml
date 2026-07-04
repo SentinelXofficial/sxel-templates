@@ -1,0 +1,25 @@
+id: next-js-config-file
+brief:
+    title: Next JS Config - File Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: Next JS Config file is exposed.
+    label:
+        - exposure
+        - files
+        - nextjs
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/next.config.js'
+      signs:
+        - "on": word
+          has:
+            - nextConfig
+            - module.exports =
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

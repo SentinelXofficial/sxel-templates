@@ -1,0 +1,31 @@
+id: syncthru-web-service
+brief:
+    title: SyncThru Web Service Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: SyncThru Web Service panel was detected.
+    label:
+        - edb
+        - panel
+        - syncthru
+        - printer
+        - samsung
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sws/index.sws'
+      signs:
+        - "on": word
+          has:
+            - <title>SyncThru Web Service</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

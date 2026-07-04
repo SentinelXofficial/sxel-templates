@@ -1,0 +1,24 @@
+id: npmjs
+brief:
+    title: NPMjs User Name Information - Detect
+    by: olearycrew
+    level: info
+    about: NPMjs user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - npmjs
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.npmjs.com/~{{user}}
+      signs:
+        - "on": word
+          has:
+            - Your profile picture
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

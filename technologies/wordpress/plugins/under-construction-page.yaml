@@ -1,0 +1,18 @@
+id: wordpress-under-construction-page
+brief:
+    title: Under Construction Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/under-construction-page/readme.txt'
+      signs: []

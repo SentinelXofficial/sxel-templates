@@ -1,0 +1,24 @@
+id: joe-monster
+brief:
+    title: Joe Monster User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Joe Monster user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - joe-monster
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://joemonster.org/bojownik/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - jest prywatny
+          in: body
+          need: all

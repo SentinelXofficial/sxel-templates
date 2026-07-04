@@ -1,0 +1,37 @@
+id: redmine-config
+brief:
+    title: Redmine Configuration File - Detect
+    by: DhiyaneshDK
+    level: high
+    about: Redmine configuration file was detected.
+    label:
+        - exposure
+        - redmine
+        - devops
+        - edb
+        - files
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/configuration.yml'
+        - '{{BaseURL}}/config/configuration.yml'
+        - '{{BaseURL}}/redmine/config/configuration.yml'
+      signs:
+        - "on": word
+          has:
+            - user_name
+            - password
+            - Redmine
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: wp-twentyfifteen-fpd
+brief:
+    title: WordPress Twenty Fifteen Theme - Full Path Disclosure
+    by: 0x_Akoko
+    level: info
+    about: WordPress theme twentyfifteen internal file system path of a WordPress installation is exposed or disclosed to unauthorized users.
+    label:
+        - debug
+        - wordpress
+        - fpd
+        - vuln
+        - twentyfifteen
+        - wp-themes
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/themes/twentyfifteen/functions.php'
+      signs: []

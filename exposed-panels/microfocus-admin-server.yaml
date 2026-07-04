@@ -1,0 +1,20 @@
+id: microfocus-admin-server
+brief:
+    title: Micro Focus Enterprise Server Admin Panel - Detect
+    by: theabhinavgaur
+    level: info
+    about: Micro Focus Enterprise Server Admin panel was detected.
+    label:
+        - panel
+        - microfocus
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/nps/servlet/portalservice'
+        - '{{BaseURL}}/nds'
+        - '{{BaseURL}}/_LOGIN_SERVER_'
+      signs: []

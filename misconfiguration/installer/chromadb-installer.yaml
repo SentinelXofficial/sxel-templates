@@ -1,0 +1,16 @@
+id: chromadb-installer
+brief:
+    title: ChromaDB Installer - Detected
+    by: pussycat0x
+    level: info
+    about: Detects the presence of the ChromaDB admin interface.The endpoint reveals connection details and authentication type.
+    label:
+        - admin
+        - chromadb
+        - ai
+        - ml
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup'
+      signs: []

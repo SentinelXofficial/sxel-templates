@@ -1,0 +1,23 @@
+id: residential-gateway-login
+brief:
+    title: Residential Gateway Login Panel - Detect
+    by: idealphase
+    level: info
+    about: Residential Gateway login panel was detected.
+    label:
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/cgi-bin/wwwctrl.cgi?action=home'
+      signs:
+        - "on": word
+          has:
+            - <title>Login - Residential Gateway</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

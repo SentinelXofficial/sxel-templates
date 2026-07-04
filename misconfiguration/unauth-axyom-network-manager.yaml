@@ -1,0 +1,25 @@
+id: unauth-axyom-network-manager
+brief:
+    title: Unauthenticated Axyom Network Manager
+    by: pussycat0x
+    level: high
+    about: Axyom Network Manager exposed.
+    label:
+        - misconfig
+        - axyom
+        - exposure
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/home'
+      signs:
+        - "on": word
+          has:
+            - Axyom Network Manager
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

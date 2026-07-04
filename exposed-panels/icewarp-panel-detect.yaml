@@ -1,0 +1,23 @@
+id: icewarp-panel-detect
+brief:
+    title: IceWarp Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: IceWarp login panel was detected.
+    label:
+        - icewarp
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webmail/'
+      signs:
+        - "on": word
+          has:
+            - IceWarp
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

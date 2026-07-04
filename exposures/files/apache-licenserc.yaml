@@ -1,0 +1,26 @@
+id: apache-licenserc
+brief:
+    title: Apache License File
+    by: DhiyaneshDk
+    level: low
+    about: Apache License file is exposed.
+    label:
+        - exposure
+        - file
+        - apache
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.licenserc.yaml'
+      signs:
+        - "on": word
+          has:
+            - 'header:'
+            - 'license:'
+            - 'copyright-owner:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

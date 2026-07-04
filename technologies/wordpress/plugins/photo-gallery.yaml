@@ -1,0 +1,17 @@
+id: wordpress-photo-gallery
+brief:
+    title: Photo Gallery by 10Web – Mobile-Friendly Image Gallery Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/photo-gallery/readme.txt'
+      signs: []

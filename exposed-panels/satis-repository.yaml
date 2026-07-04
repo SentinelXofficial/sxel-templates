@@ -1,0 +1,26 @@
+id: satis-repository
+brief:
+    title: Satis Composer Repository - Detect
+    by: FlorianMaak
+    level: info
+    about: Satis composer repository was detected
+    label:
+        - panel
+        - exposure
+        - composer
+        - satis
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - This is a private repository
+            - https://github.com/composer/satis
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

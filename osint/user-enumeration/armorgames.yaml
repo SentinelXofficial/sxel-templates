@@ -1,0 +1,24 @@
+id: armorgames
+brief:
+    title: ArmorGames User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: ArmorGames user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - armorgames
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://armorgames.com/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - about
+          in: body
+          need: all

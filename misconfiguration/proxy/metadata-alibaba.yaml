@@ -1,0 +1,26 @@
+id: metadata-service-alibaba
+brief:
+    title: Alibaba Metadata Service Check
+    by: sullo
+    level: critical
+    about: The Alibaba host is configured as a proxy which allows access to the metadata service. This could allow significant access to the host/infrastructure.
+    label:
+        - exposure
+        - config
+        - alibaba
+        - proxy
+        - misconfig
+        - metadata
+        - vuln
+    score: CVSS:9.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://{{hostval}}/{{path}}'
+      signs:
+        - "on": word
+          has:
+            - '"serial-number"'
+            - '"zone-id":"'
+          in: body
+          need: all

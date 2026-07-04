@@ -1,0 +1,25 @@
+id: airflow-detect
+brief:
+    title: Apache Airflow
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - tech
+        - apache
+        - airflow
+        - intrusive
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{randstr}}'
+      signs:
+        - "on": word
+          has:
+            - Airflow 404
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

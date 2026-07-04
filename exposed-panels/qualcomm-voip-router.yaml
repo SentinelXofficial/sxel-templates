@@ -1,0 +1,26 @@
+id: qualcomm-voip-router
+brief:
+    title: Qualcomm 4G LTE WiFi VoIP Router Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Qualcomm 4G LTE Wifi VoIP router panel was detected.
+    label:
+        - panel
+        - qualcomm
+        - iot
+        - router
+        - voip
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>4G LTE WiFi VoIP Router</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: llamacpp-detect
+brief:
+    title: llama.cpp - Detect
+    by: rxerium
+    level: info
+    about: Detected llama.cpp, a lightweight C/C++ inference engine for running GGUF-format large language models locally. Exposed instances serve an OpenAI-compatible REST API and a built-in web chat interfa...
+    label:
+        - tech
+        - llamacpp
+        - llm
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/health'
+      signs:
+        - "on": word
+          has:
+            - '"status":"ok"'
+          in: body
+          need: all

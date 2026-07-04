@@ -1,0 +1,24 @@
+id: trend-micro-phish
+brief:
+    title: trend micro phishing Detection
+    by: rxerium
+    level: info
+    about: A trend micro phishing website was detected
+    label:
+        - phishing
+        - trend-micro
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Trend Micro (UK) | Internet Security Antivirus - PC &amp; Mac
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

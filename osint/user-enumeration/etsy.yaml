@@ -1,0 +1,24 @@
+id: etsy
+brief:
+    title: Etsy User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Etsy user name information check was conducted.
+    label:
+        - osint
+        - osint-shopping
+        - etsy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.etsy.com/people/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' on Etsy</title>'
+          in: body
+          need: all

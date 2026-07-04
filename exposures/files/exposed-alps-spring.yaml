@@ -1,0 +1,33 @@
+id: exposed-alps-spring
+brief:
+    title: Exposed Spring Data REST Application-Level Profile Semantics (ALPS)
+    by: dwisiswant0
+    level: medium
+    about: Exposed Spring Data profile semantics is exposed.
+    label:
+        - exposure
+        - spring
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/profile'
+        - '{{BaseURL}}/api/profile'
+        - '{{BaseURL}}/alps/profile'
+      signs:
+        - "on": word
+          has:
+            - _links
+            - /alps/
+            - profile
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/hal+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

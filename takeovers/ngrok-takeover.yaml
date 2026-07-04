@@ -1,0 +1,21 @@
+id: ngrok-takeover
+brief:
+    title: Ngrok Takeover Detection
+    by: pdteam
+    level: high
+    about: Ngrok takeover was detected.
+    label:
+        - takeover
+        - ngrok
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ngrok.io not found
+            - Tunnel *.ngrok.io not found
+          in: body
+          need: all

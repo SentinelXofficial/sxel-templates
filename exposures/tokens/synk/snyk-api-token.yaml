@@ -1,0 +1,16 @@
+id: snyk-api-token
+brief:
+    title: Snyk API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - snyk
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

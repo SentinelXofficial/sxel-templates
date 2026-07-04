@@ -1,0 +1,20 @@
+id: zipkin-exposure
+brief:
+    title: Zipkin Login Panel - Detect
+    by: pdteam
+    level: info
+    about: Zipkin login panel was detected.
+    label:
+        - panel
+        - zipkin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/zipkin/'
+      signs:
+        - "on": word
+          has:
+            - webpackJsonpzipkin-lens
+          in: body

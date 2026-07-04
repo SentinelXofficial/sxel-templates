@@ -1,0 +1,23 @@
+id: luci-login-detection
+brief:
+    title: LuCi Login Panel - Detect
+    by: aashiq
+    level: info
+    about: LuCi login panel was detected.
+    label:
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/luci'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Authorization Required
+          in: body
+          need: all

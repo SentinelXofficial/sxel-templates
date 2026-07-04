@@ -1,0 +1,19 @@
+id: ibm-api-connect-panel
+brief:
+    title: IBM API Connect Panel - Detect
+    by: righettod
+    level: info
+    about: IBM API Connect login panel was detected.
+    label:
+        - panel
+        - ibm
+        - api
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/manager/sign-in/'
+        - '{{BaseURL}}'
+      signs: []

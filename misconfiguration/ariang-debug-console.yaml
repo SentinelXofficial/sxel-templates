@@ -1,0 +1,24 @@
+id: ariang-debug-console
+brief:
+    title: AriaNg Debug Console - Exposure
+    by: DhiyaneshDk
+    level: medium
+    about: Detects the presence of AriaNg Debug Console exposure
+    label:
+        - exposure
+        - ariang
+        - debug
+        - console
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - AriaNg Debug Console
+            - '''Downloading'''
+          in: body
+          need: all

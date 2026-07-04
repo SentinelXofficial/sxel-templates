@@ -1,0 +1,27 @@
+id: confluence-oauth-admin
+brief:
+    title: Confluence OAuth Administration Endpoint
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - jira
+        - confluence
+        - atlassian
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/plugins/servlet/oauth/view-consumer-info'
+        - '{{BaseURL}}/confluence/plugins/servlet/oauth/view-consumer-info'
+      signs:
+        - "on": word
+          has:
+            - <title>OAuth Consumer Information
+            - OAuth Administration
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,20 @@
+id: ms-adcs-detect
+brief:
+    title: Microsoft Active Directory Certificate Services Panel - Detect
+    by: divya_mudgal
+    level: info
+    about: Microsoft Active Directory Certificate Services panel was detected.
+    label:
+        - microsoft
+        - ad
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 302
+            - 301

@@ -1,0 +1,25 @@
+id: salesforce-phish
+brief:
+    title: Salesforce phishing Detection
+    by: rxerium
+    level: info
+    about: A Salesforce phishing website was detected
+    label:
+        - phishing
+        - salesforce
+        - crm
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Salesforce is the #1 AI CRM, helping companies become Agentic Enterprises where humans and agents drive success together through a unified AI, data, and Customer 360 platform.'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

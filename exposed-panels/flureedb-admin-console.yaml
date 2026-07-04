@@ -1,0 +1,23 @@
+id: flureedb-admin-console
+brief:
+    title: FlureeDB Admin Console Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: FlureeDB Admin Console login panel was detected.
+    label:
+        - panel
+        - flureedb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>FlureeDB Admin Console | Flur.ee</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

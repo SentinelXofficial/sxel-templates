@@ -1,0 +1,23 @@
+id: zblogphp-panel
+brief:
+    title: Z-BlogPHP Panel - Detect
+    by: princechaddha
+    level: info
+    about: Z-BlogPHP panel was detected.
+    label:
+        - panel
+        - zblogphp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <meta name="generator" content="Z-BlogPHP
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

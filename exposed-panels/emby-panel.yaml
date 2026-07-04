@@ -1,0 +1,24 @@
+id: emby-panel
+brief:
+    title: Emby Login Panel - Detect
+    by: idealphase
+    level: info
+    about: Emby login panel was detected.
+    label:
+        - panel
+        - emby
+        - oss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Emby</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

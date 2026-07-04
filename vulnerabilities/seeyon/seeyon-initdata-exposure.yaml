@@ -1,0 +1,25 @@
+id: seeyon-initdata-exposure
+brief:
+    title: Seeyon OA A6 initDataAssess.jsp - Information Disclosure
+    by: SleepingBag945
+    level: medium
+    about: Seeyon OA A6 initDataAssess.jsp has leaked user sensitive information, attacker can use the obtained username to blast the user's password to enter the background for further attacks.
+    label:
+        - seeyon
+        - oa
+        - info-leak
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/yyoa/assess/js/initDataAssess.jsp'
+      signs:
+        - "on": word
+          has:
+            - personList
+            - personHash.Add
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

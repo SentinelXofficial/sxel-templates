@@ -1,0 +1,23 @@
+id: kong-detect
+brief:
+    title: Detect Kong
+    by: geeknik
+    level: info
+    about: The Cloud-Native API Gateway
+    label:
+        - tech
+        - kong
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'server: kong'
+            - x-kong-response-latency
+            - x-kong-upstream-latency
+            - x-kong-proxy-latency
+            - x-kong-admin-request-id
+          in: header

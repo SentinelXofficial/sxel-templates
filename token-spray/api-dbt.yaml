@@ -1,0 +1,23 @@
+id: api-dbt
+brief:
+    title: dbt Cloud API - Test
+    by: dwisiswant0
+    level: info
+    about: dbt Cloud API test was conducted.
+    label:
+        - token-spray
+        - dbt
+moves:
+    - verb: GET
+      to:
+        - https://cloud.getdbt.com/api/v2/accounts/
+      head:
+        Authorization: Token {{token}}
+        Content-Type: application/json
+      signs:
+        - "on": word
+          has:
+            - Invalid token
+            - Authentication credentials were not provided.
+            - User API Keys are deprecated
+          in: body

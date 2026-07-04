@@ -1,0 +1,24 @@
+id: fossbilling-panel
+brief:
+    title: FOSSBilling Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: FOSSBilling panel has been detected.
+    label:
+        - fossbilling
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>FOSSBilling
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,16 @@
+id: maxforwards-headers-detect
+brief:
+    title: Max-Forwards Header - Detect
+    by: righettod
+    level: info
+    about: Max-Forwards response header is specified.
+    label:
+        - miscellaneous
+        - misc
+        - max-forwards
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

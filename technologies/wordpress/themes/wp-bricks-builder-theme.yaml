@@ -1,0 +1,26 @@
+id: wp-bricks-builder-theme
+brief:
+    title: WordPress Bricks Builder Theme Version
+    by: Anonymous
+    level: info
+    about: '- Checks for Bricks Builder Theme versions.'
+    label:
+        - wordpress
+        - theme
+        - wp-theme
+        - wp
+        - bricks
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/themes/bricks/readme.txt'
+      signs:
+        - "on": word
+          has:
+            - Bricks - Visual Website Builder
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: knowledgetree-installer
+brief:
+    title: KnowledgeTree Installer Exposure
+    by: ritikchaddha
+    level: high
+    about: KnowledgeTree is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - knowledgetree
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup/wizard/'
+      signs:
+        - "on": word
+          has:
+            - <title>KnowledgeTree Installer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: reblogme
+brief:
+    title: ReblogMe User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: ReblogMe user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - reblogme
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://{{user}}.reblogme.com
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - blogbody
+          in: body
+          need: all

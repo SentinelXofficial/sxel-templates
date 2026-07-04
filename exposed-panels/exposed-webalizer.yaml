@@ -1,0 +1,25 @@
+id: exposed-webalizer
+brief:
+    title: Webalizer Panel - Detect
+    by: pdteam
+    level: info
+    about: Webalizer panel was detected.
+    label:
+        - panel
+        - webalizer
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webalizer/'
+      signs:
+        - "on": word
+          has:
+            - Webalizer Version
+            - Usage statistics for
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

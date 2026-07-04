@@ -1,0 +1,26 @@
+id: jboss-web-console
+brief:
+    title: JBoss Management Console Server Information Page - Detect
+    by: dhiyaneshDK
+    level: info
+    about: JBoss Management Console server information page was detected.
+    label:
+        - jboss
+        - unauth
+        - edb
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web-console/ServerInfo.jsp'
+      signs:
+        - "on": word
+          has:
+            - Application Server
+            - Management Console
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: lancom-router-panel
+brief:
+    title: Lancom Router Login Panel - Detect
+    by: __Fazal
+    level: info
+    about: Lancom router login panel was detected.
+    label:
+        - panel
+        - lancom
+        - router
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - alt="LANCOM Systems GmbH"
+            - class="outside_device_string_common">LANCOM
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

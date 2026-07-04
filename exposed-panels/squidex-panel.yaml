@@ -1,0 +1,22 @@
+id: squidex-panel
+brief:
+    title: Squidex Headless CMS Panel - Detect
+    by: johnk3r
+    level: info
+    about: Squidex is an open source headless CMS and content management hub.
+    label:
+        - panel
+        - squidex
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/favicon.ico'
+      signs:
+        - "on": word
+          has:
+            - <title>Squidex Headless CMS</title>
+            - <div>Loading Squidex</div>
+          in: body

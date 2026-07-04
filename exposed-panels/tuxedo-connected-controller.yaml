@@ -1,0 +1,24 @@
+id: tuxedo-connected-controller
+brief:
+    title: Tuxedo Connected Controller Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Tuxedo Connected Controller login panel was detected.
+    label:
+        - panel
+        - tuxedo
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Tuxedo Connected Controller</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

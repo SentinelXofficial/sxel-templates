@@ -1,0 +1,24 @@
+id: wordpress-db-backup
+brief:
+    title: WordPress DB Backup
+    by: dwisiswant0
+    level: medium
+    about: This template checks for exposed database in wordpress.
+    label:
+        - wordpress
+        - backups
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/backup-db/'
+      signs:
+        - "on": word
+          has:
+            - Index of /
+            - .sql">
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

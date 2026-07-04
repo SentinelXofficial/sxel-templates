@@ -1,0 +1,26 @@
+id: etsy-phish
+brief:
+    title: Etsy phishing Detection
+    by: rxerium
+    level: info
+    about: An Etsy phishing website was detected
+    label:
+        - phishing
+        - etsy
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - etsy.com
+            - Shop for handmade, vintage, custom, and unique gifts
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

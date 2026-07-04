@@ -1,0 +1,17 @@
+id: aapanel-linux-panel
+brief:
+    title: aaPanel Linux Panel - Detect
+    by: Th3l0newolf
+    level: info
+    about: Detected aaPanel Linux management panel login interface.
+    label:
+        - panel
+        - aapanel
+        - linux
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+        - '{{BaseURL}}/login'
+      signs: []

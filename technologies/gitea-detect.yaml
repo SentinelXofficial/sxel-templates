@@ -1,0 +1,24 @@
+id: gitea-detect
+brief:
+    title: Gitea Detect
+    by: pikpikcu
+    level: info
+    about: Gitea was detected.
+    label:
+        - tech
+        - gitea
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/user/login'
+      signs:
+        - "on": word
+          has:
+            - Powered by Gitea
+            - content="Gitea
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

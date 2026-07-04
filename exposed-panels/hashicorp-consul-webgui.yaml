@@ -1,0 +1,26 @@
+id: hashicorp-consul-webgui
+brief:
+    title: HashiCorp Consul Web UI Login Panel - Detect
+    by: c-sh0
+    level: info
+    about: HashiCorp Consul Web UI login panel was detected,
+    label:
+        - consul
+        - webserver
+        - panel
+        - hashicorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Consul by HashiCorp</title>
+            - '%22%2C%22CONSUL_COPYRIGHT_URL%22%3A%22https%3A%2F%2Fwww.hashicorp.com%22'
+          in: body
+          need: all

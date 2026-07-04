@@ -1,0 +1,27 @@
+id: airflow-admin-login-panel
+brief:
+    title: Apache Airflow Admin Login Panel
+    by: pdteam
+    level: info
+    about: An Apache Airflow admin login panel was discovered.
+    label:
+        - panel
+        - apache
+        - airflow
+        - admin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/'
+        - '{{BaseURL}}/admin/airflow/login'
+      signs:
+        - "on": word
+          has:
+            - Airflow - Login
+            - Sign In - Airflow
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: wp-admin-menu-editor-fpd
+brief:
+    title: Admin Menu Editor - Full Path Disclosure
+    by: theamanrawat
+    level: low
+    about: Admin Menu Editor WordPress plugin contains a full path disclosure vulnerability due to improper access restrictions in its source files, allowing unauthenticated attackers to retrieve full server ...
+    label:
+        - debug
+        - wordpress
+        - wp
+        - wp-plugin
+        - admin-menu-editor
+        - fpd
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/admin-menu-editor/menu-editor.php'
+      signs: []

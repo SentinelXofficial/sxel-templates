@@ -1,0 +1,25 @@
+id: api-charity
+brief:
+    title: Charity Search API Test
+    by: daffainfo
+    level: info
+    about: Non-profit charity data
+    label:
+        - token-spray
+        - charity
+        - search
+moves:
+    - verb: GET
+      to:
+        - http://data.orghunter.com/v1/charitybasic?user_key={{token}}&ein=590774235
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"ein":'
+            - '"name":'
+            - '"inCareOfName"'
+          in: body
+          need: all

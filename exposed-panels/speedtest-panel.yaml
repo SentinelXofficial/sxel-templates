@@ -1,0 +1,25 @@
+id: speedtest-panel
+brief:
+    title: Speedtest Panel - Detection
+    by: rxerium
+    level: info
+    about: Speedtest panel was discovered
+    label:
+        - speedtest
+        - tracker
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login'
+      signs:
+        - "on": word
+          has:
+            - Login -  Speedtest Tracker
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

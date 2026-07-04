@@ -1,0 +1,33 @@
+id: config-json-exposure-fuzz
+brief:
+    title: Exposed JSON Configuration Files
+    by: geeknik
+    level: critical
+    about: Detects exposed JSON configuration files containing sensitive information including API keys, access tokens, AWS credentials, database configurations, base URLs, file paths, and application setting...
+    label:
+        - config
+        - exposure
+        - files
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{path}}'
+      signs:
+        - "on": word
+          has:
+            - application/json
+            - text/json
+            - text/plain
+          in: header
+          need: all
+        - "on": word
+          has:
+            - text/html
+            - text/php
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

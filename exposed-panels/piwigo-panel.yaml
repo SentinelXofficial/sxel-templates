@@ -1,0 +1,27 @@
+id: piwigo-panel
+brief:
+    title: Piwigo Login Panel - Detect
+    by: daffainfo
+    level: info
+    about: Piwigo login panel was detected.
+    label:
+        - panel
+        - piwigo
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/identification.php'
+      signs:
+        - "on": word
+          has:
+            - content="Piwigo
+            - '>Piwigo</a>'
+            - <body id=theIdentificationPage>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

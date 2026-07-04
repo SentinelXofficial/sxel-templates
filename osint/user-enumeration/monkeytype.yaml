@@ -1,0 +1,24 @@
+id: monkeytype
+brief:
+    title: Monkeytype User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Monkeytype user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - monkeytype
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://monkeytype.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Monkeytype | A minimalistic, customizable typing test
+          in: body
+          need: all

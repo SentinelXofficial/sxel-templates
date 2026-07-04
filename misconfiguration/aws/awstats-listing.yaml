@@ -1,0 +1,28 @@
+id: awstats-listing
+brief:
+    title: AWStats Listing
+    by: tess
+    level: low
+    about: Searches for exposed awstats Internal Information.
+    label:
+        - misconfig
+        - aws
+        - exposure
+        - amazon
+        - awstats
+        - oss
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/awstats/data'
+      signs:
+        - "on": word
+          has:
+            - Index of /awstats/data/
+            - '">awstats'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

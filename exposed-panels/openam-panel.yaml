@@ -1,0 +1,31 @@
+id: openam-panel
+brief:
+    title: OpenAM Login Panel - Detect
+    by: philippedelteil
+    level: info
+    about: OpenAM login panel was detected.
+    label:
+        - panel
+        - openam
+        - opensso
+        - login
+        - forgerock
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - 'urlArgs: "v='
+            - Sign in to OpenAM
+            - ForgeRock
+            - forgerock
+            - FRForgotUsername
+            - successfulUserRegistrationDestination
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: rustfs-detect
+brief:
+    title: Rustfs - Detect
+    by: icarot
+    level: info
+    about: Detects a Rustfs server, a high-performance, distributed object storage system built in Rust.
+    label:
+        - tech
+        - rustfs
+        - rustfs
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/rustfs/console/auth/login'
+      signs:
+        - "on": word
+          has:
+            - <title>RustFS</title>
+            - title":"RustFS
+            - /rustfs/console/_nuxt
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

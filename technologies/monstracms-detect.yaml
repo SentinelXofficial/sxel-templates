@@ -1,0 +1,24 @@
+id: monstracms-detect
+brief:
+    title: MonstraCMS Detection
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - monstra
+        - monstracms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - content="Powered by Monstra
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

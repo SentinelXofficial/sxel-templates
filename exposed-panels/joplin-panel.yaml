@@ -1,0 +1,24 @@
+id: joplin-panel
+brief:
+    title: Joplin Server Login - Panel
+    by: pussycat0x
+    level: info
+    about: Joplin Server login panel detected.
+    label:
+        - panel
+        - joplin
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Joplin Server - Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

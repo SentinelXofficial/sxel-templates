@@ -1,0 +1,23 @@
+id: orbit-telephone-detect
+brief:
+    title: Orbit Telephone System - Detect
+    by: HeeresS
+    level: info
+    about: Orbit Telephone System was detected.
+    label:
+        - tech
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.html'
+      signs:
+        - "on": word
+          has:
+            - '<title>Orbit Telephone System: Administration</title>'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

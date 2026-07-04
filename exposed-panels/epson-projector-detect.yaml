@@ -1,0 +1,27 @@
+id: epson-projector-detect
+brief:
+    title: Epson Projector Login Panel - Detect
+    by: gy741
+    level: info
+    about: Epson Projector login panel was detected.
+    label:
+        - iot
+        - projector
+        - panel
+        - unauth
+        - epson
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - cgi-bin/webconf.exe?page=1
+            - <title>Web Control</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

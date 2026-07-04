@@ -1,0 +1,34 @@
+id: keycloak-admin-console-config
+brief:
+    title: Keycloak Admin Console Configuration Disclosure
+    by: 0x_Akoko
+    level: low
+    about: Detected Keycloak admin console configuration was exposing realm name, client ID, SSL requirements, and authentication server URL enabling reconnaissance and targeted authentication attacks.
+    label:
+        - keycloak
+        - config
+        - exposure
+        - disclosure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/master/console/config'
+        - '{{BaseURL}}/admin/main/console/config'
+        - '{{BaseURL}}/auth/admin/master/console/config'
+        - '{{BaseURL}}/auth/admin/main/console/config'
+      signs:
+        - "on": word
+          has:
+            - '"realm":'
+            - '"resource":'
+            - '"auth-server-url":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

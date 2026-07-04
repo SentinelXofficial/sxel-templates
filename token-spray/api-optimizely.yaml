@@ -1,0 +1,25 @@
+id: api-optimizely
+brief:
+    title: Optimizely API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - optimizely
+moves:
+    - verb: GET
+      to:
+        - https://api.optimizely.com/v2/projects
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"account_id":'
+            - '"confidence_threshold":'
+          in: body
+          need: all

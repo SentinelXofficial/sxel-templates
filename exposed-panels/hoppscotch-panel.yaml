@@ -1,0 +1,17 @@
+id: hoppscotch-panel
+brief:
+    title: Hoppscotch Panel - Detect
+    by: s4e-io
+    level: info
+    about: Hoppscotch panel was discovered.
+    label:
+        - panel
+        - login
+        - hoppscotch
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

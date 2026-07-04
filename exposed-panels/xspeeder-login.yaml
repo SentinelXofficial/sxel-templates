@@ -1,0 +1,25 @@
+id: xspeeder-login
+brief:
+    title: XSpeeder Login - Detect
+    by: rxerium
+    level: info
+    about: Detects the presence of XSpeeder router login panels.
+    label:
+        - panel
+        - xspeeder
+        - router
+        - login
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/?nLang=1'
+      signs:
+        - "on": word
+          has:
+            - <title>神行者路由
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

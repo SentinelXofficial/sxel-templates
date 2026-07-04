@@ -1,0 +1,33 @@
+id: mfp-unauth-exposure
+brief:
+    title: Multi-function Printer - Unauthorized Access
+    by: matejsmycka
+    level: medium
+    about: Unauthorized access to MFP (Multi-function printer) using eSCL protocol allows attackers to scan documents left physically in the printer and send them to an arbitrary location. Furthermore, exposu...
+    label:
+        - network
+        - iot
+        - printer
+        - misconfig
+        - escl
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/eSCL/ScannerCapabilities'
+      signs:
+        - "on": word
+          has:
+            - xmlns:pwg=
+            - <scan:ScannerCapabilities
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/xml
+            - text/xml
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

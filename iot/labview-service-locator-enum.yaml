@@ -1,0 +1,26 @@
+id: labview-service-locator-enum
+brief:
+    title: LabVIEW/NI Service Locator
+    by: matejsmycka
+    level: info
+    about: National Instruments (LabVIEW) Service Locator detected and enumerated. This services leaks a list of all services provided by the device, hardware capabilities and possibly versions. These hardwar...
+    label:
+        - detect
+        - labview
+        - panel
+        - enumeration
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dumpinfo'
+      signs:
+        - "on": word
+          has:
+            - Service Locator URL Mappings
+            - National Instruments
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

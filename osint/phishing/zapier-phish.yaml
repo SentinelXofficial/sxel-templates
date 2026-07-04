@@ -1,0 +1,25 @@
+id: zapier-phish
+brief:
+    title: Zapier phishing Detection
+    by: rxerium
+    level: info
+    about: A Zapier phishing website was detected
+    label:
+        - phishing
+        - zapier
+        - automation
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Zapier: Automate AI Workflows, Agents, and Apps'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

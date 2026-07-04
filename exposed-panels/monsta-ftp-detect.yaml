@@ -1,0 +1,25 @@
+id: monsta-ftp-detect
+brief:
+    title: Monsta FTP - Detect
+    by: rxerium
+    level: info
+    about: Detects Monsta FTP web-based file manager interface.
+    label:
+        - tech
+        - monsta
+        - ftp
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ng-app="MonstaFTP"
+            - <title>Monsta FTP
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,20 @@
+id: tinyproxy-detect
+brief:
+    title: Tinyproxy - Detect
+    by: bhutch
+    level: info
+    about: Lightweight HTTP/HTTPS proxy daemon for POSIX operating systems
+    label:
+        - tech
+        - proxy
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'server: tinyproxy'
+          in: header

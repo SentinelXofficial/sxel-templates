@@ -1,0 +1,26 @@
+id: scribble-diffusion-panel
+brief:
+    title: Scribble Diffusion Panel - Detect
+    by: rxerium
+    level: info
+    about: A tool to turn your rough sketch into a refined image using AI.
+    label:
+        - panel
+        - scribble
+        - detect
+        - discovery
+        - ai
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Scribble Diffusion
+            - content="Scribble Diffusion
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

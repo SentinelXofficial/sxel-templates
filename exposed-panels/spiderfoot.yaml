@@ -1,0 +1,26 @@
+id: spiderfoot
+brief:
+    title: SpiderFoot Login Panel - Detect
+    by: geeknik
+    level: info
+    about: SpiderFoot login panel was detected.
+    label:
+        - panel
+        - login
+        - tech
+        - spiderfoot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>SpiderFoot
+            - support@spiderfoot.net
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

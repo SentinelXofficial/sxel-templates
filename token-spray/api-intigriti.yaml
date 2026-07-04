@@ -1,0 +1,35 @@
+id: api-intigriti-researcher
+brief:
+    title: Intigriti-Researcher API Test
+    by: 0xpugal
+    level: info
+    about: The Intigriti researcher API can be used to query information about Programs you have access to via our platform and Program activities you have access to via our platform
+    label:
+        - token-spray
+        - intigriti
+moves:
+    - verb: GET
+      to:
+        - https://api.intigriti.com/external/researcher/v1/programs
+      head:
+        Authorization: Bearer {{token}}
+        Content-Type: application/json
+      signs:
+        - "on": word
+          has:
+            - '"records"'
+            - '"webLinks"'
+            - '"detail"'
+            - '"handle"'
+            - '"value"'
+            - '"status"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

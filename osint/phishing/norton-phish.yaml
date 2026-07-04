@@ -1,0 +1,24 @@
+id: norton-phish
+brief:
+    title: norton phishing Detection
+    by: rxerium
+    level: info
+    about: A norton phishing website was detected
+    label:
+        - phishing
+        - norton
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Official Site | Norton™ - Antivirus &amp; Anti-Malware Software
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,28 @@
+id: wp-altair-listing
+brief:
+    title: Altair WordPress theme v4.8 - Directory Listing
+    by: pussycat0x
+    level: info
+    about: Searches for directories listing in the altair theme.
+    label:
+        - wordpress
+        - listing
+        - wp-theme
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/themes/altair/modules/'
+        - '{{BaseURL}}/wp-content/themes/altair/functions/'
+        - '{{BaseURL}}/wp-content/themes/altair/images/flip/'
+        - '{{BaseURL}}/wp-content/themes/altair/images/'
+      signs:
+        - "on": word
+          has:
+            - Index of
+            - wp-content/themes/altair
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

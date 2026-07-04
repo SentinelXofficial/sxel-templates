@@ -1,0 +1,24 @@
+id: omniampx-panel
+brief:
+    title: Omnia MPX Node Login Panel - Detect
+    by: arafatansari
+    level: info
+    about: Omnia MPX Node login panel was detected.
+    label:
+        - panel
+        - omnia
+        - omniampx
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Omnia MPX Node | Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,38 @@
+id: drupal-directory-listing
+brief:
+    title: Drupal Directory Listing
+    by: ritikchaddha
+    level: low
+    about: Detects enabled directory listing on Drupal installations that may expose sensitive files and directory structures.
+    label:
+        - drupal
+        - directory-listing
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sites/'
+        - '{{BaseURL}}/modules/'
+        - '{{BaseURL}}/themes/'
+        - '{{BaseURL}}/profiles/'
+        - '{{BaseURL}}/includes/'
+        - '{{BaseURL}}/misc/'
+        - '{{BaseURL}}/scripts/'
+        - '{{BaseURL}}/core/'
+        - '{{BaseURL}}/vendor/'
+        - '{{BaseURL}}/libraries/'
+      signs:
+        - "on": word
+          has:
+            - Index of /
+            - Last modified
+            - Parent Directory
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

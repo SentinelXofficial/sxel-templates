@@ -1,0 +1,29 @@
+id: ilo-detect
+brief:
+    title: HP iLO
+    by: milo2012
+    level: info
+    about: Version of HP iLO
+    label:
+        - tech
+        - ilo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/xmldata?item=all'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - text/xml
+          in: header
+          need: all
+        - "on": word
+          has:
+            - <RIMP>
+            - <HSI>
+          in: body
+          need: all

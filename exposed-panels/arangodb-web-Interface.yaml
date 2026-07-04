@@ -1,0 +1,24 @@
+id: arangodb-web-interface
+brief:
+    title: ArangoDB Web Interface - Detect
+    by: pussycat0x
+    level: info
+    about: ArangoDB Web Interface was detected.
+    label:
+        - panel
+        - arangodb
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_db/_system/_admin/aardvark/index.html'
+      signs:
+        - "on": word
+          has:
+            - <title>ArangoDB Web Interface</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

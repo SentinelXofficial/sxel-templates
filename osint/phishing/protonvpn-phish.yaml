@@ -1,0 +1,25 @@
+id: protonvpn-phish
+brief:
+    title: ProtonVPN phishing Detection
+    by: rxerium
+    level: info
+    about: A ProtonVPN phishing website was detected
+    label:
+        - phishing
+        - protonvpn
+        - vpn
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>The best VPN for speed and security
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

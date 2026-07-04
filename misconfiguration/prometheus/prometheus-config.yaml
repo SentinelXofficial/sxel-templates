@@ -1,0 +1,31 @@
+id: prometheus-config
+brief:
+    title: Prometheus Config API Endpoint Discovery
+    by: geeknik
+    level: info
+    about: A Prometheus config API endpoint was discovered. The config endpoint returns the loaded Prometheus configuration file along with the addresses of targets and alerting/discovery services alongside t...
+    label:
+        - prometheus
+        - config
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/status/config'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"status": "success":'
+            - '"data":'
+            - '"yaml":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

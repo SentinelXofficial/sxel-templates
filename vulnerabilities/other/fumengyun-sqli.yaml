@@ -1,0 +1,17 @@
+id: fumengyun-sqli
+brief:
+    title: Fumeng - SQL Injection
+    by: ritikchaddha
+    level: critical
+    about: The Fumeng AjaxMethod.ashx file has an SQL injection vulnerability. Attackers can use this vulnerability to obtain server data.
+    label:
+        - time-based-sqli
+        - fumasoft
+        - sqli
+        - vuln
+    score: CVSS:9.8
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

@@ -1,0 +1,25 @@
+id: oracle-access-management
+brief:
+    title: Oracle Access Management Login Panel - Detect
+    by: righettod
+    level: info
+    about: Oracle Access Management login panel was detected.
+    label:
+        - panel
+        - oracle
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/oam/pages/login.jsp'
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Login - Oracle Access Management
+            - /oam/pages/images
+            - /oam/server/
+          in: body
+          need: all

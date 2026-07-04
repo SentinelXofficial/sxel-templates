@@ -1,0 +1,25 @@
+id: sketch-phish
+brief:
+    title: Sketch phishing Detection
+    by: rxerium
+    level: info
+    about: A Sketch phishing website was detected
+    label:
+        - phishing
+        - sketch
+        - design
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Sketch · Design, prototype, collaborate and handoff
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

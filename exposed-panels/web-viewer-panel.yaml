@@ -1,0 +1,25 @@
+id: web-viewer-panel
+brief:
+    title: Web Viewer for Samsung DVR - Detect
+    by: JustaAcat
+    level: info
+    about: ""
+    label:
+        - panel
+        - web-viewer
+        - detect
+        - samsung
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Web Viewer for Samsung DVR</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

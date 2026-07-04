@@ -1,0 +1,29 @@
+id: arl-default-login
+brief:
+    title: ARL Default Admin Login
+    by: pikpikcu
+    level: high
+    about: An ARL default admin login was discovered.
+    label:
+        - arl
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/user/login'
+      head:
+        Content-Type: application/json; charset=UTF-8
+      body: '{"username":"{{username}}","password":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - '"message": "success"'
+            - '"username": "admin"'
+            - '"type": "login"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

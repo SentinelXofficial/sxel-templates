@@ -1,0 +1,23 @@
+id: api-coinmarketcap
+brief:
+    title: CoinMarketCap API Test
+    by: daffainfo
+    level: info
+    about: Cryptocurrencies Prices
+    label:
+        - token-spray
+        - coinmarketcap
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
+      head:
+        X-CMC_PRO_API_KEY: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"name"'
+            - '"symbol"'
+            - '"cmc_rank"'
+          in: body
+          need: all

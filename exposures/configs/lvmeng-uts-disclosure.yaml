@@ -1,0 +1,32 @@
+id: lvmeng-uts-disclosure
+brief:
+    title: Lvmeng - UTS Disclosure
+    by: pikpikcu
+    level: high
+    about: Lvmeng UTS was discovered.
+    label:
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webapi/v1/system/accountmanage/account'
+      head:
+        Content-Type: application/json
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": word
+          has:
+            - password
+            - nsfocus_uts
+            - MANAGER_IP
+          in: body
+          need: all

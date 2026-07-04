@@ -1,0 +1,25 @@
+id: secure-login-panel
+brief:
+    title: Secure Login Service Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Secure Login Service login panel was detected.
+    label:
+        - panel
+        - sls
+        - login
+        - service
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/sls/auth'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Secure Login Service</title>
+          in: body
+          need: all

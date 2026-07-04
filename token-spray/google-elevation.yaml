@@ -1,0 +1,19 @@
+id: api-googleelevation
+brief:
+    title: Google Elevation API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - elevation
+moves:
+    - verb: GET
+      to:
+        - https://maps.googleapis.com/maps/api/elevation/json?locations=39.7391536,-104.9847034&key={{token}}
+      signs:
+        - "on": word
+          has:
+            - error_message
+          in: body

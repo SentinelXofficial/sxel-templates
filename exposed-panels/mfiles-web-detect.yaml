@@ -1,0 +1,21 @@
+id: mfiles-web-detect
+brief:
+    title: M-Files Web Login Panel - Detect
+    by: Nodauf
+    level: info
+    about: M-Files Web login panel was detected.
+    label:
+        - panel
+        - m-files
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/Login.aspx'
+      signs:
+        - "on": word
+          has:
+            - M-Files user
+            - M-Files authentication
+          in: body

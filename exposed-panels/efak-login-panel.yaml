@@ -1,0 +1,28 @@
+id: efak-login-panel
+brief:
+    title: Eagle For Apache Kakfa Login - Detect
+    by: irshad ahamed
+    level: info
+    about: EFAK is a visualization and management software that allows one to query, visualize, alert on, and explore their metrics wherever they were stored.
+    label:
+        - panel
+        - efak
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/account/signin?/'
+      signs:
+        - "on": word
+          has:
+            - <title>Login - EFAK</title>
+            - Eagle For Apache Kafka
+            - <h1>EFAK</h1>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

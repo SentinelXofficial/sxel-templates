@@ -1,0 +1,25 @@
+id: checkpoint-mobile-detect
+brief:
+    title: Check Point Mobile SSL VPN - Detect
+    by: righettod
+    level: info
+    about: Check Point Mobile SSL VPN was detected.
+    label:
+        - panel
+        - checkpoint
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sslvpn/Login'
+      signs:
+        - "on": word
+          has:
+            - Check Point Mobile
+            - Check Point Software Technologies
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 403

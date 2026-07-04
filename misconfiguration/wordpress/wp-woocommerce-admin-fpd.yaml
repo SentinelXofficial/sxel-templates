@@ -1,0 +1,17 @@
+id: wp-woocommerce-admin-fpd
+brief:
+    title: WordPress Plugin WooCommerce Admin (woocommerce-admin) Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Plugin WooCommerce Admin plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - debug
+        - wordpress
+        - fpd
+        - woocommerce-admin
+        - wp-plugin
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/woocommerce-admin/src/Loader.php'
+      signs: []

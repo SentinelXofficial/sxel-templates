@@ -1,0 +1,25 @@
+id: xerox-workcentre-detect
+brief:
+    title: Xerox Workcentre Detect
+    by: pussycat0x
+    level: info
+    about: ""
+    label:
+        - tech
+        - xerox
+        - workcentre
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.dhtml'
+      signs:
+        - "on": word
+          has:
+            - XEROX WORKCENTRE
+            - /header.php?tab=status
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

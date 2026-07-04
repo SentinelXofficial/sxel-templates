@@ -1,0 +1,24 @@
+id: sonarqube-login
+brief:
+    title: SonarQube Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: SonarQube panel was detected.
+    label:
+        - panel
+        - sonarqube
+        - sonarsource
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sessions/new'
+      signs:
+        - "on": word
+          has:
+            - SonarQube
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: chime-phish
+brief:
+    title: Chime phishing Detection
+    by: rxerium
+    level: info
+    about: A Chime phishing website was detected
+    label:
+        - phishing
+        - chime
+        - fintech
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Chime
+            - No monthly fees. 60k+ ATMs. Build credit. Get fee-free overdraft up to $200.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

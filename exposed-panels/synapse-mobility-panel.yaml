@@ -1,0 +1,23 @@
+id: synapse-mobility-panel
+brief:
+    title: Synapse Mobility Login Panel - Detect
+    by: idealphase
+    level: info
+    about: Synapse Mobility login panel was detected.
+    label:
+        - panel
+        - synapse
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pureweb/server/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - <title>Synapse Mobility Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

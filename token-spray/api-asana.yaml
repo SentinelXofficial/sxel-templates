@@ -1,0 +1,23 @@
+id: api-asana
+brief:
+    title: Asana API Test
+    by: zzeitlin
+    level: info
+    about: Programmatic access to all data in your asana system
+    label:
+        - token-spray
+        - asana
+moves:
+    - verb: GET
+      to:
+        - https://app.asana.com/api/1.0/users/me
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - 'data:'
+            - email
+            - name
+          in: body
+          need: all

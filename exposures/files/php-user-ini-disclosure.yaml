@@ -1,0 +1,30 @@
+id: php-user-ini-disclosure
+brief:
+    title: Php User.ini Disclosure
+    by: dhiyaneshDk
+    level: medium
+    about: PHP user.ini file is exposed.
+    label:
+        - exposure
+        - config
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/user.ini'
+        - '{{BaseURL}}/.user.ini'
+      signs:
+        - "on": word
+          has:
+            - assert
+            - highlight
+            - opcache
+            - mssql
+            - oci8
+            - agent
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

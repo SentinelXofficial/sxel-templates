@@ -1,0 +1,17 @@
+id: easyvista-panel
+brief:
+    title: EasyVista Login Panel - Detect
+    by: righettod
+    level: info
+    about: EasyVista login panel was detected.
+    label:
+        - panel
+        - easyvista
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php'
+      signs: []

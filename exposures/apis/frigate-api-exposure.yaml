@@ -1,0 +1,18 @@
+id: frigate-api-exposure
+brief:
+    title: Frigate NVR - API Exposure
+    by: 0x_Akoko
+    level: medium
+    about: Detected an exposed Frigate NVR API, potentially allowing unauthorized access to camera feeds, internal network configuration, and MQTT credentials.
+    label:
+        - frigate
+        - nvr
+        - iot
+        - exposure
+        - camera
+        - config
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/config'
+      signs: []

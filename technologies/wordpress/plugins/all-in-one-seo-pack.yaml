@@ -1,0 +1,18 @@
+id: wordpress-all-in-one-seo-pack
+brief:
+    title: All in One SEO – Powerful SEO Plugin to Boost SEO Rankings & Increase Traffic Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/all-in-one-seo-pack/readme.txt'
+      signs: []

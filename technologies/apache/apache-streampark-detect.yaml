@@ -1,0 +1,25 @@
+id: apache-streampark-detect
+brief:
+    title: Apache Streampark - Detect
+    by: icarot
+    level: info
+    about: Detects a Apache Streampark server, a easy-to-use streaming application development framework and operation platform.
+    label:
+        - tech
+        - apache
+        - streampark
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - <title>Apache StreamPark</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

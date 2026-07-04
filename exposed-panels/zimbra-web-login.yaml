@@ -1,0 +1,26 @@
+id: zimbra-web-login
+brief:
+    title: Zimbra Collaboration Suite Login Panel - Detect
+    by: powerexploit
+    level: info
+    about: Zimbra Collaboration Suite panel was detected. Zimbra Collaboration Suite simplifies the communication environment, connects people over multiple channels, and provides a single place to manage col...
+    label:
+        - panel
+        - zimbra
+        - synacor
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Zimbra Collaboration Suite Log In
+            - Zimbra Web Client Sign In
+            - Zimbra Web Client Log In
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,22 @@
+id: api-taiga
+brief:
+    title: Taiga API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - taiga
+moves:
+    - verb: GET
+      to:
+        - https://api.taiga.io/api/v1/application-tokens
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"auth_code":'
+            - '"state":'
+          in: body
+          need: all

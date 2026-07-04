@@ -1,0 +1,27 @@
+id: navicat-server-panel
+brief:
+    title: Navicat On-Prem Server Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Navicat On-Prem Server is an on-premise solution that provides you with the option to host a cloud environment for storing Navicat objects internally at your location. In our On-Prem environment, y...
+    label:
+        - panel
+        - navicat
+        - on-prem
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Navicat On-Prem Server</title>
+            - content="Navicat On-Prem Server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

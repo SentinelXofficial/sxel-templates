@@ -1,0 +1,23 @@
+id: okiok-sfiler-portal
+brief:
+    title: OKIOK S-Filer Portal Login Panel - Detect
+    by: johnk3r
+    level: info
+    about: OKIOK S-Filer Portal login panel was detected.
+    label:
+        - okiok
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sfiler/Login.action'
+      signs:
+        - "on": word
+          has:
+            - <title>S-Filer Portal - Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

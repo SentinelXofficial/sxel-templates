@@ -1,0 +1,23 @@
+id: apple-httpserver
+brief:
+    title: Apple HttpServer Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - apple
+        - httpserver
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - X-Apple-Jingle-Correlation-Key
+            - AppleHttpServer
+            - X-Apple-Request-UUID
+          in: header
+          need: all

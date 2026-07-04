@@ -1,0 +1,20 @@
+id: meduza-stealer
+brief:
+    title: Meduza Stealer Panel - Detect
+    by: dwisiswant0
+    level: info
+    about: Meduza Stealer panel were detected.
+    label:
+        - rat
+        - meduza-stealer
+        - c2
+        - panel
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

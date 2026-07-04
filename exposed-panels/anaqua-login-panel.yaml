@@ -1,0 +1,24 @@
+id: anaqua-login-panel
+brief:
+    title: Anaqua Login - Panel
+    by: Ep1cSage
+    level: info
+    about: Checks for the presence of Anaqua login page
+    label:
+        - anaqua
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/anaqua/Public/Login.aspx?ReturnUrl=%2fanaqua%2f'
+      signs:
+        - "on": word
+          has:
+            - Anaqua User Sign On
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

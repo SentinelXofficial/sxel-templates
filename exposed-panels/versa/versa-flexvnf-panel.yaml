@@ -1,0 +1,24 @@
+id: versa-flexvnf-panel
+brief:
+    title: Versa FlexVNF Panel - Detect
+    by: c-sh0
+    level: info
+    about: Versa FlexVNF panel was detected.
+    label:
+        - panel
+        - versa
+        - flexvnf
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Flex VNF Web-UI
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

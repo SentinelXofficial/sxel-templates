@@ -1,0 +1,21 @@
+id: api-orbintelligence
+brief:
+    title: ORB Intelligence API Test
+    by: daffainfo
+    level: info
+    about: Company lookup
+    label:
+        - token-spray
+        - orbintelligence
+moves:
+    - verb: GET
+      to:
+        - https://api.orb-intelligence.com/3/fetch/1/?api_key={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"entity_type":'
+            - '"company_status":'
+            - '"orb_num":'
+          in: body
+          need: all

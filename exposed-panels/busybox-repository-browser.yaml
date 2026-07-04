@@ -1,0 +1,26 @@
+id: busybox-repository-browser
+brief:
+    title: Busybox Repository Browser - Detect
+    by: ritikchaddha
+    level: info
+    about: Busybox Repository Browser was detected.
+    label:
+        - detect
+        - busybox
+        - oss
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Busybox Repository Browser
+            - index</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

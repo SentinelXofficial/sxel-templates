@@ -1,0 +1,24 @@
+id: codecademy
+brief:
+    title: Codecademy User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Codecademy user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - codecademy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://discuss.codecademy.com/u/{{user}}/summary
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '<title>  Profile - '
+          in: body
+          need: all

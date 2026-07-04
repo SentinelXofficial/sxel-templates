@@ -1,0 +1,24 @@
+id: mastodon-mastodon
+brief:
+    title: Mastodon-mastodon User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mastodon-mastodon user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastodon-mastodon
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://mastodon.social/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - profile:username
+          in: body
+          need: all

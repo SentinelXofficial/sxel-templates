@@ -1,0 +1,24 @@
+id: fodors-forum
+brief:
+    title: Fodors Forum User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Fodors Forum user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - fodors-forum
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.fodors.com/community/profile/{{user}}/forum-activity
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Member since
+          in: body
+          need: all

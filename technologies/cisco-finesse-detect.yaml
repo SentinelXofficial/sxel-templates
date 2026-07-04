@@ -1,0 +1,17 @@
+id: cisco-finesse-detect
+brief:
+    title: Cisco Finesse - Detect
+    by: 0x_Akoko
+    level: info
+    about: Detected Cisco Finesse application and extracted version information from multiple sources.
+    label:
+        - tech
+        - cisco
+        - finesse
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/desktop/assets/js/finesse.js'
+      signs: []

@@ -1,0 +1,16 @@
+id: opentext-contentserver-panel
+brief:
+    title: OpenText Content Server Login Panel - Detect
+    by: righettod
+    level: info
+    about: OpenText Content Server products was detected.
+    label:
+        - panel
+        - opentext
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

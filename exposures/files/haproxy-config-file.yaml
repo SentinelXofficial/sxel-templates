@@ -1,0 +1,27 @@
+id: haproxy-config-file
+brief:
+    title: Haproxy Config - File Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: Haproxy Config file is exposed.
+    label:
+        - exposure
+        - files
+        - haproxy
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/haproxy.cfg'
+      signs:
+        - "on": word
+          has:
+            - /var/run/haproxy.pid
+            - pidfile
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: content_type
+          need: all

@@ -1,0 +1,15 @@
+id: rseenet-detect
+brief:
+    title: Advantech R-SeeNet Detection
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - tech
+        - rseenet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

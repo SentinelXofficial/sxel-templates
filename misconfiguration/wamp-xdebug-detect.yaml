@@ -1,0 +1,21 @@
+id: wamp-xdebug-detect
+brief:
+    title: WAMP Xdebug - Detect
+    by: e_schultze_
+    level: info
+    about: WAMP Xdebug was detected.
+    label:
+        - debug
+        - config
+        - wamp
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?phpinfo=-1'
+      signs:
+        - "on": word
+          has:
+            - xdebug.remote_connect_back</td><td class="v">On</td><td class="v">On</td>
+          in: body

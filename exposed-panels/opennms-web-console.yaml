@@ -1,0 +1,25 @@
+id: opennms-web-console
+brief:
+    title: OpenNMS Web Console Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: OpenNMS Web Console login panel was detected.
+    label:
+        - panel
+        - login
+        - edb
+        - opennms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/opennms/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - OpenNMS Web Console
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,22 @@
+id: sql-server-dump
+brief:
+    title: SQL Server - Dump Files
+    by: userdehghani
+    level: medium
+    about: A SQL Server dump file was found
+    label:
+        - exposure
+        - backup
+        - sql-server
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      head:
+        Range: bytes=0-500
+      signs:
+        - "on": status
+          status:
+            - 200

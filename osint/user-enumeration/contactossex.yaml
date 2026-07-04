@@ -1,0 +1,24 @@
+id: contactossex
+brief:
+    title: Contactos.sex User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Contactos.sex user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - contactossex
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.contactossex.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Información Personal
+          in: body
+          need: all

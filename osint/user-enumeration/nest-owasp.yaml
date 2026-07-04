@@ -1,0 +1,26 @@
+id: nest-owasp
+brief:
+    title: OWASP NEST User Name Information - Detect
+    by: rxerium
+    level: info
+    about: OWASP NEST user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - owasp
+        - nest
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://nest.owasp.org/members/{{user}}
+      signs:
+        - "on": word
+          has:
+            - userInteractionCount
+            - dateCreated
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

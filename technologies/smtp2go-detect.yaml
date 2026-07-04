@@ -1,0 +1,26 @@
+id: smtp2go-detect
+brief:
+    title: SMTP2GO Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - smtp2go
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>SMTP2GO</title>
+            - 2022 &copy; SMTP2GO.
+            - mailto:ticket@smtp2go.com
+            - href="https://www.smtp2go.com/"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

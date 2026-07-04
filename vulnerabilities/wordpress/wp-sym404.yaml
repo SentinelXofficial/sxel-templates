@@ -1,0 +1,20 @@
+id: wp-sym404
+brief:
+    title: Wordpress sym404 directory
+    by: pussycat0x
+    level: high
+    about: Searches for sensitive directories present in the sym404.
+    label:
+        - wordpress
+        - listing
+        - wp
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-includes/sym404/root/etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

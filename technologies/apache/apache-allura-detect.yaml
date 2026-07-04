@@ -1,0 +1,26 @@
+id: apache-allura-detect
+brief:
+    title: Apache Allura - Detection
+    by: icarot
+    level: info
+    about: Detects a Apache Allura server, a open source implementation of a software "forge".
+    label:
+        - tech
+        - allura
+        - apache
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/neighborhood'
+      signs:
+        - "on": word
+          has:
+            - <title>All Neighborhoods</title>
+            - '>Apache Allura</a>'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

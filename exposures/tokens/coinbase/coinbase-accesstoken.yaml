@@ -1,0 +1,16 @@
+id: coinbase-accesstoken
+brief:
+    title: Coinbase Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - coinbase
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

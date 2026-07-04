@@ -1,0 +1,27 @@
+id: metadata-service-gcp
+brief:
+    title: Google GCP Metadata Service Check
+    by: sullo
+    level: critical
+    about: The Google cloud (GCP) host is configured as a proxy which allows access to the instance metadata service. This could allow significant access to the host/infrastructure.
+    label:
+        - exposure
+        - config
+        - google
+        - gcp
+        - proxy
+        - misconfig
+        - metadata
+        - vuln
+    score: CVSS:9.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://{{hostval}}/computeMetadata/v1/project/'
+      head:
+        Metadata-Flavor: Google
+      signs:
+        - "on": word
+          has:
+            - attributes/
+          in: body

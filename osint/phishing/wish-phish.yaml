@@ -1,0 +1,26 @@
+id: wish-phish
+brief:
+    title: Wish phishing Detection
+    by: rxerium
+    level: info
+    about: A Wish phishing website was detected
+    label:
+        - phishing
+        - wish
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Wish
+            - <title>Wish | Shop and Save
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

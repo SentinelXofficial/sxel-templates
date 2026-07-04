@@ -1,0 +1,25 @@
+id: pia-phish
+brief:
+    title: Private Internet Access phishing Detection
+    by: rxerium
+    level: info
+    about: A Private Internet Access phishing website was detected
+    label:
+        - phishing
+        - pia
+        - vpn
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>Private Internet Access: The Best VPN Service For 10+ Years'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

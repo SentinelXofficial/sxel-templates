@@ -1,0 +1,16 @@
+id: identity-server-v3-detect
+brief:
+    title: Identity Server V3 - Detect
+    by: righettod
+    level: info
+    about: Identity Server V3 technology was detected.
+    label:
+        - tech
+        - identityserver
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

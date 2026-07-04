@@ -1,0 +1,21 @@
+id: cx-cloud-upload-detect
+brief:
+    title: CX Cloud Unauthenticated Upload - Detect
+    by: dhiyaneshDk
+    level: info
+    about: CX Cloud unauthenticated upload was detected.
+    label:
+        - fileupload
+        - misconfig
+        - intrusive
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/upload.jsp'
+      signs:
+        - "on": word
+          has:
+            - <HEAD><TITLE>Display file upload form to the user</TITLE></HEAD>
+          in: body
+          need: all

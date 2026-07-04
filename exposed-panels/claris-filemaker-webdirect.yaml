@@ -1,0 +1,28 @@
+id: claris-filemaker-webdirect
+brief:
+    title: Claris FileMaker WebDirect Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Claris FileMaker WebDirect panel was detected.
+    label:
+        - panel
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/fmi/webd/'
+      signs:
+        - "on": word
+          has:
+            - <title>Claris FileMaker WebDirect</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

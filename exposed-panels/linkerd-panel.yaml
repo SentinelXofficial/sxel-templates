@@ -1,0 +1,31 @@
+id: linkerd-panel
+brief:
+    title: Linkerd Panel - Detect
+    by: tess
+    level: info
+    about: Linkerd panel was detected.
+    label:
+        - panel
+        - misconfig
+        - linkerd
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/namespaces'
+      signs:
+        - "on": word
+          has:
+            - <title>Linkerd</title>
+            - data-controller-namespace="linkerd
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

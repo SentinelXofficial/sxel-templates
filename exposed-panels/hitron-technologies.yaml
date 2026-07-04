@@ -1,0 +1,25 @@
+id: hitron-technologies-detect
+brief:
+    title: Hitron Technologies Router Login Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Hitron Technologies router login panel was detected.
+    label:
+        - panel
+        - edb
+        - router
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - hitron
+            - $.hitron.languages.lang_init();
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

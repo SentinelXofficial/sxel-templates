@@ -1,0 +1,26 @@
+id: connectwise-setup
+brief:
+    title: ConnectWise Setup Wizard - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: ""
+    label:
+        - misconfig
+        - exposure
+        - install
+        - connectwise
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/SetupWizard.aspx'
+      signs:
+        - "on": word
+          has:
+            - SetupWizardPage
+            - ContentPanel SetupWizard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

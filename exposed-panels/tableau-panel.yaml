@@ -1,0 +1,24 @@
+id: tableau-panel
+brief:
+    title: Tableau Python Server Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Tableau Python Server panel was detected.
+    label:
+        - tableau
+        - panel
+        - python
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Tableau Python Server</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: librechat-login-panel
+brief:
+    title: LibreChat Login Panel - Detection
+    by: Kazgangap
+    level: info
+    about: Detected LibreChat login panel. LibreChat is an open-source, self-hosted AI chat interface.
+    label:
+        - panel
+        - librechat
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>LibreChat</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

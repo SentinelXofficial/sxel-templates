@@ -1,0 +1,27 @@
+id: craftcms-log-disclosure
+brief:
+    title: Craft CMS - Log File Disclosure
+    by: pussycat0x
+    level: medium
+    about: Detected exposed Craft CMS log files due to misconfiguration, allowing unauthenticated access to sensitive information including error messages, stack traces, database queries, and potentially cred...
+    label:
+        - craftcms
+        - cms
+        - exposure
+        - logs
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/storage/logs/web.log'
+      signs:
+        - "on": word
+          has:
+            - craft_cms
+            - UrlManager
+            - schemaVersion
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

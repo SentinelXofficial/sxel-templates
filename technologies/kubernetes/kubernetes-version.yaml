@@ -1,0 +1,24 @@
+id: kubernetes-version
+brief:
+    title: Kubernetes Version Exposure
+    by: raesene
+    level: info
+    about: Searches for exposed Kubernetes API servers which return version information unauthenticated. For Google Kubernetes Engine (GKE) and Amazon Elastic Kubernetes Service (EKS) this template will extra...
+    label:
+        - tech
+        - k8s
+        - kubernetes
+        - devops
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/version'
+      signs:
+        - "on": word
+          has:
+            - gitVersion
+            - goVersion
+            - platform
+          in: body
+          need: all

@@ -1,0 +1,27 @@
+id: cisco-asa-detect
+brief:
+    title: Cisco ASA - Detect
+    by: sdcampbell
+    level: info
+    about: ""
+    label:
+        - tech
+        - cisco
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        X-Aggregate-Auth: "1"
+      body: TESTME
+      signs:
+        - "on": word
+          has:
+            - config-auth client="vpn"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,31 @@
+id: magnolia-installer
+brief:
+    title: Magnolia CMS Installer
+    by: pussycat0x
+    level: info
+    about: Magnolia CMS is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - magnolia
+        - exposure
+        - installer
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Magnolia Installation
+            - Welcome to Magnolia
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: harbor-detect
+brief:
+    title: Harbor Detect
+    by: pikpikcu
+    level: info
+    about: Harbor is an open source trusted cloud native registry project that stores, signs, and scans content.
+    label:
+        - tech
+        - harbor
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v2.0/systeminfo'
+      signs:
+        - "on": word
+          has:
+            - '"auth_mode"'
+            - '"harbor_version"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

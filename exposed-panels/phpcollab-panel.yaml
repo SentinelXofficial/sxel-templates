@@ -1,0 +1,24 @@
+id: phpcollab-panel
+brief:
+    title: phpCollab Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: phpCollab login panel was detected.
+    label:
+        - panel
+        - phpcollab
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/general/login.php'
+      signs:
+        - "on": word
+          has:
+            - <title>PhpCollab</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

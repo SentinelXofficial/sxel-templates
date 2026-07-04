@@ -1,0 +1,21 @@
+id: api-mapbox
+brief:
+    title: Mapbox API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - mapbox
+moves:
+    - verb: GET
+      to:
+        - https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token={{token}}
+      signs:
+        - "on": word
+          has:
+            - type
+            - query
+            - features
+          in: body
+          need: all

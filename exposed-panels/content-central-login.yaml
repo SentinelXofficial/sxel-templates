@@ -1,0 +1,24 @@
+id: content-central-login
+brief:
+    title: Content Central Login Panel - Detect
+    by: theabhinavgaur
+    level: info
+    about: Content Central login panel was detected.
+    label:
+        - panel
+        - content-central
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.aspx'
+        - '{{BaseURL}}/ContentCentral/login.aspx/'
+      signs:
+        - "on": word
+          has:
+            - Content Central Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

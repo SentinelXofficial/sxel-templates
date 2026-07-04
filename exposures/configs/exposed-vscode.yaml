@@ -1,0 +1,20 @@
+id: exposed-vscode
+brief:
+    title: Visual Studio Code Directories - Detect
+    by: aashiq
+    level: medium
+    about: Visual Studio Code directories were detected.
+    label:
+        - vscode
+        - exposure
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.vscode/'
+      signs:
+        - "on": word
+          has:
+            - Index of /.vscode
+          in: body

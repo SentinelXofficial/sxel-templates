@@ -1,0 +1,27 @@
+id: nextchat-detect
+brief:
+    title: NextChat - Detect
+    by: s4e-io
+    level: info
+    about: NextChat was detected.
+    label:
+        - tech
+        - chatgpt
+        - nextchat
+        - detect
+        - discovery
+        - ai
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>NextChat
+            - content="NextChat"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

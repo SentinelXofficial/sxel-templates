@@ -1,0 +1,24 @@
+id: trello
+brief:
+    title: Trello User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Trello user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - trello
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://trello.com/1/Members/{{user}}?fields=activityBlocked%2CavatarUrl%2Cbio%2CbioData%2Cconfirmed%2CfullName%2CidEnterprise%2CidMemberReferrer%2Cinitials%2CmemberType%2CnonPublic%2Cproducts%2Curl%2Cusername
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - avatarUrl
+          in: body
+          need: all

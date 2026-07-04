@@ -1,0 +1,26 @@
+id: skillshare
+brief:
+    title: Skill Share User Name Information - Detect
+    by: olearycrew
+    level: info
+    about: Skill Share user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - skillshare
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.skillshare.com/en/user/{{user}}
+      signs:
+        - "on": word
+          has:
+            - '"username":'
+            - '"email":'
+            - '"isTopTeacher":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

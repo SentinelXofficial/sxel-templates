@@ -1,0 +1,17 @@
+id: gradle-develocity-panel
+brief:
+    title: Gradle Develocity Build Cache Node Login Panel - Detect
+    by: righettod
+    level: info
+    about: Gradle Develocity Build Cache Node login panel was detected.
+    label:
+        - panel
+        - gradle
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

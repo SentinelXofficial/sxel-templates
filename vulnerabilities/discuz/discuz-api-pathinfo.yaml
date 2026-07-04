@@ -1,0 +1,30 @@
+id: discuz-api-pathinfo
+brief:
+    title: Discuz! X2.5 - Path Disclosure
+    by: ritikchaddha
+    level: low
+    about: Discuz! X2.5 api.php path disclosure vulnerability
+    label:
+        - discuz
+        - info
+        - disclosure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api.php?mod[]=auto'
+      signs:
+        - "on": word
+          has:
+            - .php</b> on line
+            - function.array
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

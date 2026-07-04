@@ -1,0 +1,23 @@
+id: hp-laserjet-detect
+brief:
+    title: HP LaserJet Professional Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: HP LaserJet Professional panel was detected.
+    label:
+        - iot
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/SSI/index.htm'
+      signs:
+        - "on": word
+          has:
+            - HP LaserJet Professional
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

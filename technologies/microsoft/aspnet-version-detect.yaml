@@ -1,0 +1,17 @@
+id: aspnet-version-detect
+brief:
+    title: AspNet Version Disclosure - Detect
+    by: lucky0x0d
+    level: info
+    about: Detects version disclosed via 'X-AspNet-Version' header.
+    label:
+        - tech
+        - detect
+        - aspnet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/%3f'
+      signs: []

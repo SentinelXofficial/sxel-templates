@@ -1,0 +1,20 @@
+id: kronos-workforce-central
+brief:
+    title: Kronos Workforce Central Login Panel - Detect
+    by: emadshanab
+    level: info
+    about: Kronos Workforce Central login panel was detected.
+    label:
+        - panel
+        - kronos
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wfc/portal'
+        - '{{BaseURL}}/wfc/logon'
+      signs:
+        - "on": word
+          has:
+            - Kronos
+          in: body

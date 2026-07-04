@@ -1,0 +1,25 @@
+id: glpi-project_glpi
+brief:
+    title: GLPI Panel - Detect
+    by: dogasantos
+    level: info
+    about: GLPI panel was detected.
+    label:
+        - glpi
+        - edb
+        - panel
+        - glpi-project
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/CHANGELOG.md'
+        - '{{BaseURL}}/glpi/'
+      signs:
+        - "on": word
+          has:
+            - GLPI
+            - glpi-project.org
+          in: body
+          need: all

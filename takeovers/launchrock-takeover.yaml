@@ -1,0 +1,19 @@
+id: launchrock-takeover
+brief:
+    title: Launchrock Takeover Detection
+    by: pdteam
+    level: high
+    about: Launchrock takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - It looks like you may have taken a wrong turn somewhere. Don't worry...it happens to all of us.
+          in: body
+          need: all

@@ -1,0 +1,25 @@
+id: hudsonrock
+brief:
+    title: HudsonRock User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: HudsonRock user name information check was conducted.
+    label:
+        - osint
+        - osint-security
+        - hudsonrock
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://cavalier.hudsonrock.com/api/json/v2/osint-tools/search-by-username?username={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - This username is associated with a computer that was infected by an info-stealer
+            - hudsonrock.com
+          in: body
+          need: all

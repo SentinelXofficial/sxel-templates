@@ -1,0 +1,31 @@
+id: aem-sling-userinfo
+brief:
+    title: Adobe AEM Sling User Info Servlet Exposure
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - aem
+        - adobe
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/system/sling/info.sessionInfo.json'
+        - '{{BaseURL}}/system/sling/info.sessionInfo.txt'
+      signs:
+        - "on": word
+          has:
+            - 'userID:'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

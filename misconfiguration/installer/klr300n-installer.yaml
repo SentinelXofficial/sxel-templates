@@ -1,0 +1,29 @@
+id: klr300n-install
+brief:
+    title: KLR 300N Router - Exposed Installation
+    by: andreluna
+    level: high
+    about: Home router wireless KLR 300N setup page were Detected.
+    label:
+        - keo
+        - klr300n
+        - misconfig
+        - exposure
+        - iot
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Roteador Wireless KLR 300N</title>
+            - def_wirelesspassword
+            - Installation assitance
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

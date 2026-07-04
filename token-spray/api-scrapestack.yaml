@@ -1,0 +1,18 @@
+id: api-scrapestack
+brief:
+    title: Scrapestack API Test
+    by: daffainfo
+    level: info
+    about: Real-time, Scalable Proxy & Web Scraping REST API
+    label:
+        - token-spray
+        - scrapestack
+moves:
+    - verb: GET
+      to:
+        - https://api.scrapestack.com/scrape?access_key={{token}}&url=https://oast.me
+      signs:
+        - "on": word
+          has:
+            - <h1> Interactsh Server </h1>
+          in: body

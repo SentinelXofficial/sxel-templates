@@ -1,0 +1,16 @@
+id: pronote-panel
+brief:
+    title: PRONOTE Login Panel - Detect
+    by: righettod
+    level: info
+    about: PRONOTE products was detected.
+    label:
+        - panel
+        - pronote
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

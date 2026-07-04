@@ -1,0 +1,49 @@
+id: graphql-alias-batching
+brief:
+    title: GraphQL Alias-based Batching
+    by: Dolev Farhi
+    level: info
+    about: GraphQL supports aliasing of multiple sub-queries into a single queries. This allows users to request multiple objects or multiple instances of objects efficiently.
+    label:
+        - graphql
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/graphql'
+      head:
+        Content-Type: application/json
+      body: '{"query":"query {\n {{str}}1:__typename \n {{str}}2:__typename \n {{str}}3:__typename \n {{str}}4:__typename \n {{str}}5:__typename \n {{str}}6:__typename \n }"}'
+      signs:
+        - "on": word
+          has:
+            - '"data":'
+            - '"{{str}}1":'
+            - '"{{str}}6":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/graphql'
+      head:
+        Content-Type: application/json
+      body: '{"query":"query {\n {{str}}1:__typename \n {{str}}2:__typename \n {{str}}3:__typename \n {{str}}4:__typename \n {{str}}5:__typename \n {{str}}6:__typename \n }"}'
+      signs:
+        - "on": word
+          has:
+            - '"data":'
+            - '"{{str}}1":'
+            - '"{{str}}6":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

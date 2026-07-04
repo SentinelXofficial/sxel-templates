@@ -1,0 +1,16 @@
+id: aws-cloudfront-service
+brief:
+    title: AWS Cloudfront service detection
+    by: jiheon-dev
+    level: info
+    about: Detect websites using AWS cloudfront service
+    label:
+        - aws
+        - tech
+        - service
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

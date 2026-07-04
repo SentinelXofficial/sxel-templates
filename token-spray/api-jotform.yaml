@@ -1,0 +1,27 @@
+id: api-jotform
+brief:
+    title: Jotform API Test
+    by: 0xpugal
+    level: info
+    about: Jotform is a powerful online form builder that makes it easy to create robust forms and collect important data.
+    label:
+        - token-spray
+        - jotform
+moves:
+    - verb: GET
+      to:
+        - https://api.jotform.com/user?apiKey={{token}}
+      signs:
+        - "on": word
+          has:
+            - email":"
+            - updated_at":"
+            - username":"
+            - responseCode":200
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all

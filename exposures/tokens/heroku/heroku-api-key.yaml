@@ -1,0 +1,16 @@
+id: heroku-api-key
+brief:
+    title: Heroku API Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - heroku
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

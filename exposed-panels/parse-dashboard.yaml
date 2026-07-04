@@ -1,0 +1,26 @@
+id: parse-dashboard
+brief:
+    title: Parse Dashboard Login Panel - Detect
+    by: tess
+    level: info
+    about: Parse Dashboard login panel was detected.
+    label:
+        - panel
+        - parse
+        - exposure
+        - parseplatform
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Parse Dashboard
+            - PARSE_DASHBOARD_PATH
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

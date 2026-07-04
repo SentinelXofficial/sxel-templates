@@ -1,0 +1,24 @@
+id: mastodon-mstdnio
+brief:
+    title: Mastodon-mstdn.io User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mastodon-mstdn.io user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastodon-mstdnio
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://mstdn.io/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '@mstdn.io) - Mastodon'
+          in: body
+          need: all

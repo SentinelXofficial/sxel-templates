@@ -1,0 +1,16 @@
+id: kentico-login
+brief:
+    title: Kentico Login Panel - Detect
+    by: d4vy
+    level: info
+    about: Kentico login panel was detected.
+    label:
+        - panel
+        - login
+        - kentico
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/CMSPages/logon.aspx'
+      signs: []

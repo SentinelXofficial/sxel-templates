@@ -1,0 +1,42 @@
+id: bash-config-exposure
+brief:
+    title: Bash Configuration - Exposure
+    by: theamanrawat
+    level: low
+    about: Detected exposed bash configuration on web servers that could have contained sensitive information such as credentials, API keys, database connection strings, or internal paths.
+    label:
+        - exposure
+        - config
+        - misconfig
+        - bash
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.bashrc'
+        - '{{BaseURL}}/.bash_profile'
+        - '{{BaseURL}}/.profile'
+        - '{{BaseURL}}/.zshrc'
+      signs:
+        - "on": word
+          has:
+            - 'export '
+            - 'source '
+            - if [
+            - then
+            - 'echo '
+            - 'for '
+            - do
+            - done
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <html
+            - <!DOCTYPE
+            - "404"
+            - Not Found
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

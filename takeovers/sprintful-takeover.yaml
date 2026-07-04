@@ -1,0 +1,30 @@
+id: sprintful-takeover
+brief:
+    title: Sprintful Takeover
+    by: Mhdsamx
+    level: high
+    about: Sprintful takeover was detected.
+    label:
+        - takeover
+        - sprintful
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - The user account associated with this calendar has been deactivated.
+            - Please contact the owner of this calendar directly in order to book a meeting.
+            - This domain name does not have a default page configured.
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Sprintful
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

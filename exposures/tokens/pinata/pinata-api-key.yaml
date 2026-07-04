@@ -1,0 +1,26 @@
+id: pinata-api-key
+brief:
+    title: Pinata API Key - Expose
+    by: 0xpugal
+    level: info
+    about: ""
+    label:
+        - pinata
+        - exposure
+        - api-keys
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - pinata_api_key
+            - pinata_api_secret
+            - pinataKey
+            - pinataSecret
+            - pinata-key
+            - pinata_secret
+          in: body

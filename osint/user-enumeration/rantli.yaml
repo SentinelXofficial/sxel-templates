@@ -1,0 +1,24 @@
+id: rantli
+brief:
+    title: Rant.li User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Rant.li user name information check was conducted.
+    label:
+        - osint
+        - osint-blog
+        - rantli
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.rant.li/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - blog-title
+          in: body
+          need: all

@@ -1,0 +1,26 @@
+id: namedprocess-exporter-metrics
+brief:
+    title: Named Process Exporter
+    by: DhiyaneshDk
+    level: low
+    about: Named process exporter is exposed.
+    label:
+        - namedprocess
+        - exposure
+        - debug
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/metrics'
+      signs:
+        - "on": word
+          has:
+            - namedprocess
+            - '# HELP'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

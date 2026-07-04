@@ -1,0 +1,24 @@
+id: kfm-login-panel
+brief:
+    title: Kae's File Manager Admin Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Kae's File Manager admin login panel was detected.
+    label:
+        - panel
+        - kfm
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/kfm/admin/'
+      signs:
+        - "on": word
+          has:
+            - KFM Login
+            - password
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

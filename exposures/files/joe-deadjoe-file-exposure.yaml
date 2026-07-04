@@ -1,0 +1,16 @@
+id: joe-deadjoe-file-exposure
+brief:
+    title: Joe Editor DEADJOE File - Exposure
+    by: 0x_Akoko
+    level: low
+    about: Detected Deadjoe file,this file was created by Joe's Own Editor when a session terminated abnormally. It contained the full contents of the file being edited at the time of the crash, potentially e...
+    label:
+        - exposure
+        - deadjoe
+        - misconfig
+        - files
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/DEADJOE'
+      signs: []

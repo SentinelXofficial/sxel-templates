@@ -1,0 +1,25 @@
+id: apache-storm-unauth
+brief:
+    title: Apache Storm Unauth
+    by: pikpikcu
+    level: medium
+    about: Apache Storm instance is exposed.
+    label:
+        - apache
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/cluster/summary'
+      signs:
+        - "on": word
+          has:
+            - '"totalMem":'
+            - '"stormVersion":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

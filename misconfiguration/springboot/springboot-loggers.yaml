@@ -1,0 +1,24 @@
+id: springboot-loggers
+brief:
+    title: Springboot Loggers - Exposure
+    by: that_juan_
+    level: low
+    about: Springboot Loggers is exposed.
+    label:
+        - springboot
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/loggers'
+        - '{{BaseURL}}/actuator/loggers'
+      signs:
+        - "on": word
+          has:
+            - '"levels"'
+            - '"configuredLevel"'
+            - '"effectiveLevel"'
+          in: body
+          need: all

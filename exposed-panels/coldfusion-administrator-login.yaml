@@ -1,0 +1,24 @@
+id: coldfusion-administrator-login
+brief:
+    title: ColdFusion Administrator Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: ColdFusion Administrator login panel was detected.
+    label:
+        - panel
+        - coldfusion
+        - adobe
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ColdFusion Administrator Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

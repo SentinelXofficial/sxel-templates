@@ -1,0 +1,26 @@
+id: cwp-webpanel
+brief:
+    title: Control Web Panel Login Panel - Detect
+    by: ffffffff0x
+    level: info
+    about: Control Web Panel login panel was detected.
+    label:
+        - panel
+        - centos
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Login | CentOS WebPanel
+            - CWP |用户
+            - http://centos-webpanel.com
+            - CentOS WebPanel
+          in: body
+        - "on": word
+          has:
+            - cwpsrv
+          in: header

@@ -1,0 +1,26 @@
+id: anythingllm-panel
+brief:
+    title: AnythingLLM Panel - Detect
+    by: rxerium
+    level: info
+    about: Detects the AnythingLLM web interface.
+    label:
+        - panel
+        - anythingllm
+        - detect
+        - discovery
+        - ai
+        - llm
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - AnythingLLM | Your personal LLM trained on anything
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

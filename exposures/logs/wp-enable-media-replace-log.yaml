@@ -1,0 +1,18 @@
+id: wp-enable-media-replace-log
+brief:
+    title: WordPress Plugin Enable Media Replace - Log File Exposure
+    by: DhiyaneshDk
+    level: medium
+    about: The WordPress plugin "Enable Media Replace" (enable-media-replace) bundles a ShortPixel-based logger that writes a plugin-specific log file into the WordPress uploads directory, typically as `wp-co...
+    label:
+        - wordpress
+        - wp
+        - wp-plugin
+        - enable-media-replace
+        - log
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/uploads/EnableMediaReplace.log'
+      signs: []

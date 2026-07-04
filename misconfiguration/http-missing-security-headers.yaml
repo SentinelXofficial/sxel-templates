@@ -1,0 +1,16 @@
+id: http-missing-security-headers
+brief:
+    title: HTTP Missing Security Headers
+    by: socketz
+    level: info
+    about: This template searches for missing HTTP security headers. The impact of these missing headers can vary.
+    label:
+        - misconfig
+        - headers
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

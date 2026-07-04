@@ -1,0 +1,30 @@
+id: wp-astra-sites-fpd
+brief:
+    title: WordPress Astra Sites - Full Path Disclosure
+    by: ritikchaddha
+    level: low
+    about: WordPress Starter Templates plugin is vulnerable to full path disclosure via direct access to plugin files.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - fpd
+        - astra-sites
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/astra-sites/inc/classes/class-astra-sites.php'
+        - '{{BaseURL}}/wp-content/plugins/astra-sites/inc/classes/class-astra-sites-importer.php'
+        - '{{BaseURL}}/wp-content/plugins/astra-sites/inc/lib/starter-templates-importer/starter-templates-importer.php'
+      signs:
+        - "on": word
+          has:
+            - Fatal error
+            - plugins/astra-sites
+            - 'Uncaught Error:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

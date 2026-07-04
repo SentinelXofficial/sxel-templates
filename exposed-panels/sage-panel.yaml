@@ -1,0 +1,25 @@
+id: sage-panel
+brief:
+    title: Sage X3 Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: Sage X3 login panel was detected.
+    label:
+        - panel
+        - sage
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login/page'
+      signs:
+        - "on": word
+          has:
+            - <title>Sage  X3</title>
+            - '''/auth/sage-id/registerStart'''
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

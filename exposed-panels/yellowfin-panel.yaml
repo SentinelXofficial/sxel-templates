@@ -1,0 +1,25 @@
+id: yellowfin-panel
+brief:
+    title: Yellowfin Information Collaboration - Detect
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - yellowfin
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Yellowfin Information Collaboration</title>
+            - alt="Yellowfin"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

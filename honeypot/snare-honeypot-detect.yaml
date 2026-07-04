@@ -1,0 +1,27 @@
+id: snare-honeypot-detect
+brief:
+    title: Snare Honeypot - Detect
+    by: UnaPibaGeek
+    level: info
+    about: Snare honeypot has been identified.
+    label:
+        - snare
+        - honeypot
+        - ir
+        - cti
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - Python/3.10 aiohttp/3.8.3
+          in: header
+          need: all
+        - "on": word
+          has:
+            - Bad status line 'Expected dot'
+          in: body
+          need: all

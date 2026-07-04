@@ -1,0 +1,24 @@
+id: giant-bomb
+brief:
+    title: Giant Bomb User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Giant Bomb user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - giant-bomb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.giantbomb.com/profile/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - The largest video game database online
+          in: body
+          need: all

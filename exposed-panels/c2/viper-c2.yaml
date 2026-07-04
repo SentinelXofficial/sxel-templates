@@ -1,0 +1,19 @@
+id: viper-c2
+brief:
+    title: Viper C2 - Detect
+    by: pussycat0x
+    level: info
+    about: Viper is a graphical intranet penetration tool, which modularizes and weaponizes the tactics and technologies commonly used in the process of Intranet penetration.
+    label:
+        - tech
+        - viper
+        - c2
+        - malware
+        - ir
+        - panel
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

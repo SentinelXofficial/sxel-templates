@@ -1,0 +1,16 @@
+id: wiki-js-detect
+brief:
+    title: Wiki.js - Detect
+    by: righettod
+    level: info
+    about: Wiki.js was detected.
+    label:
+        - tech
+        - wiki-js
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_assets/js/app.js'
+      signs: []

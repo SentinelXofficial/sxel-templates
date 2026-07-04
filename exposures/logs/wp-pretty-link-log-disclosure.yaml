@@ -1,0 +1,17 @@
+id: wp-pretty-link-log-disclosure
+brief:
+    title: WordPress Pretty Link - Error Log Disclosure
+    by: 0x_Akoko
+    level: low
+    about: Detected WordPress Pretty Link plugin debug log file, potentially revealing file paths, errors, and sensitive information.
+    label:
+        - wordpress
+        - wp-plugin
+        - exposure
+        - pretty-link
+        - logs
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/pretty-link/error_log'
+      signs: []

@@ -1,0 +1,25 @@
+id: apache-kyuubi-detect
+brief:
+    title: Apache Kyuubi - Detect
+    by: icarot
+    level: info
+    about: Detects a Apache Kyuubi server, a distributed and multi-tenant gateway to provide serverless SQL on data warehouses and lakehouses.
+    label:
+        - tech
+        - kyuubi
+        - apache
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/'
+      signs:
+        - "on": word
+          has:
+            - <title>Apache Kyuubi Dashboard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

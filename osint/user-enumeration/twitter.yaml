@@ -1,0 +1,24 @@
+id: twitter
+brief:
+    title: Twitter User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Twitter user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - twitter
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://nitter.net/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| nitter</title>'
+          in: body
+          need: all

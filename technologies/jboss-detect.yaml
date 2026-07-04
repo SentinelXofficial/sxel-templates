@@ -1,0 +1,19 @@
+id: jboss-detect
+brief:
+    title: JBoss detected
+    by: daffainfo
+    level: info
+    about: ""
+    label:
+        - tech
+        - jboss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - JBoss EAP 7
+          in: body

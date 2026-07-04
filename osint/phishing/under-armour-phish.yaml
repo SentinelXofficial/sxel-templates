@@ -1,0 +1,25 @@
+id: under-armour-phish
+brief:
+    title: Under Armour phishing Detection
+    by: rxerium
+    level: info
+    about: An Under Armour phishing website was detected
+    label:
+        - phishing
+        - under-armour
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Under Armour builds game-changing sportswear, athletic shirts, shoes and more. FREE SHIPPING available and FREE returns on workout clothes, shoes, and gear.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

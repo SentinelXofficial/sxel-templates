@@ -1,0 +1,25 @@
+id: accellion-detect
+brief:
+    title: Accellion - Detect
+    by: rxerium
+    level: info
+    about: Dectection of Accellion File Transfer Appliance.
+    label:
+        - accellion
+        - tech
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cfadmin/'
+      signs:
+        - "on": word
+          has:
+            - /cfadmin/img/accellion-logo.png
+            - secured by accellion
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

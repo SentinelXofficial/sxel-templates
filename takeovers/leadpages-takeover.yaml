@@ -1,0 +1,22 @@
+id: leadpages-takeover
+brief:
+    title: Leadpages takeover detection
+    by: philippedelteil
+    level: high
+    about: Leadpages takeover was detected.
+    label:
+        - takeover
+        - leadpages
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <h2 class="lp-headline text-align-center subhead">This page couldn't be found, so let's get you turned around!</h2>
+            - The page you're looking for may have moved.
+            - Double check that you have the right web address and give it another go!
+          in: body
+          need: all

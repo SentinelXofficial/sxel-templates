@@ -1,0 +1,24 @@
+id: cgi-test-page
+brief:
+    title: CGI Test page
+    by: YASH ANAND @yashanand155
+    level: info
+    about: ""
+    label:
+        - cgi
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/test/test.cgi'
+      signs:
+        - "on": word
+          has:
+            - HTTP_ACCEPT
+            - HTTP_ACCEPT_ENCODING
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

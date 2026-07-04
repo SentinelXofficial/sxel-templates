@@ -1,0 +1,17 @@
+id: wordpress-leadin
+brief:
+    title: HubSpot – CRM, Email Marketing, Live Chat, Forms & Analytics Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/leadin/readme.txt'
+      signs: []

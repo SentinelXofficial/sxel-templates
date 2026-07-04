@@ -1,0 +1,32 @@
+id: phpcs-config
+brief:
+    title: PHP_CodeSniffer Configuration Exposure - Detect
+    by: DhiyaneshDK
+    level: info
+    about: PHP_CodeSniffer configuration file was detected.
+    label:
+        - devops
+        - exposure
+        - php
+        - phpcs
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/phpcs.xml'
+      signs:
+        - "on": word
+          has:
+            - ruleset name
+            - rule ref=
+            - <file>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/xml
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

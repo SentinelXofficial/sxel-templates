@@ -1,0 +1,20 @@
+id: wingftp-panel
+brief:
+    title: Wing FTP Server Login Panel - Detect
+    by: pdteam
+    level: info
+    about: Detects the presence of Wing FTP Server web interface
+    label:
+        - panel
+        - login
+        - wingftp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - Wing FTP Server
+          in: response

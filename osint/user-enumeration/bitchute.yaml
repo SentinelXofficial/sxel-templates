@@ -1,0 +1,24 @@
+id: bitchute
+brief:
+    title: Bitchute User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Bitchute user name information check was conducted.
+    label:
+        - osint
+        - osint-political
+        - bitchute
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.bitchute.com/channel/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - subscribers
+          in: body
+          need: all

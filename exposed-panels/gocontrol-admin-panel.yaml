@@ -1,0 +1,26 @@
+id: gocontrol-event-admin-panel
+brief:
+    title: Go.Control Event Administration Panel - Detect
+    by: Mys7ic
+    level: info
+    about: Detects the presence of the Go.Control Event Administration login panel.
+    label:
+        - panel
+        - gocontrol
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/'
+        - '{{BaseURL}}/admin/index.php'
+      signs:
+        - "on": word
+          has:
+            - <title>Event Administration | Superuser Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

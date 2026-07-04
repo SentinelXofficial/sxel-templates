@@ -1,0 +1,24 @@
+id: synopsys-coverity-panel
+brief:
+    title: Synopsys Coverity Panel
+    by: idealphase
+    level: info
+    about: Coverity® is a fast, accurate, and highly scalable static analysis (SAST) solution that helps development and security teams address security and quality defects early in the software development ...
+    label:
+        - panel
+        - coverity
+        - synopsys
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>Coverity&reg; :: Sign in</title>'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

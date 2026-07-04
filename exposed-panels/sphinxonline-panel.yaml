@@ -1,0 +1,26 @@
+id: sphinxonline-panel
+brief:
+    title: SphinxOnline Panel - Detect
+    by: righettod
+    level: info
+    about: SphinxOnline Login Panel was detected.
+    label:
+        - panel
+        - sphinxonline
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/SphinxAuth/Account/Login'
+      signs:
+        - "on": word
+          has:
+            - <title>Connection - SphinxOnline</title>
+            - SphinxOnline</span>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,19 @@
+id: bloofoxcms-default-login
+brief:
+    title: bloofoxCMS - Default Login
+    by: theamanrawat
+    level: high
+    about: bloofoxCMS contains default credentials. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - bloofox
+        - cms
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/admin/index.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}&action=login
+      signs: []

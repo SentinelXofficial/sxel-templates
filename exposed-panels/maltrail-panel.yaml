@@ -1,0 +1,26 @@
+id: maltrail-panel
+brief:
+    title: Maltrail Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Maltrail is a malicious traffic detection system, utilizing publicly available (black)lists containing malicious and/or generally suspicious trails, along with static trails compiled from various A...
+    label:
+        - panel
+        - maltrail
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Maltrail</title>
+            - /stamparm/maltrail/wiki
+            - <b>M</b>altrail
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

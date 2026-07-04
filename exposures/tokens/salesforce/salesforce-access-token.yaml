@@ -1,0 +1,16 @@
+id: salesforce-access-token
+brief:
+    title: Salesforce Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - salesforce
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

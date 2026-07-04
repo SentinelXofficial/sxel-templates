@@ -1,0 +1,24 @@
+id: arduino
+brief:
+    title: Arduino User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Arduino user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - arduino
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://create.arduino.cc/projecthub/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- Arduino Project Hub'
+          in: body
+          need: all

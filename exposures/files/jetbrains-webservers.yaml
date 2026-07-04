@@ -1,0 +1,36 @@
+id: jetbrains-webservers
+brief:
+    title: JetBrains WebServers File - Detect
+    by: geeknik
+    level: info
+    about: JetBrains webservers file was detected. The file contains webserver credentials with encoded passwords.
+    label:
+        - jetbrains
+        - config
+        - edb
+        - files
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.idea/WebServers.xml'
+        - '{{BaseURL}}/.idea/webServers.xml'
+        - '{{BaseURL}}/.idea/webservers.xml'
+      signs:
+        - "on": word
+          has:
+            - <?xml
+            - WebServers
+            - </project>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/xml
+            - text/xml
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

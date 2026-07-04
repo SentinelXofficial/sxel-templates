@@ -1,0 +1,22 @@
+id: devexpress-detect
+brief:
+    title: DevExpress - Detect
+    by: CravateRouge
+    level: info
+    about: Detect DevExpress based on the existence of its HTTP handler for serving images, scripts, and other resources to the client side.
+    label:
+        - devexpress
+        - iis
+        - microsoft
+        - asp
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - DXR.axd
+          in: body

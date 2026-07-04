@@ -1,0 +1,30 @@
+id: wordpress-total-upkeep-backup-download
+brief:
+    title: WordPress Total Upkeep Database and Files Backup Download
+    by: princechaddha
+    level: high
+    about: Exposed sensitive file in WordPress Total Upkeep wordpress plugin feature used.
+    label:
+        - wordpress
+        - wp-plugin
+        - edb
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/boldgrid-backup/cron/restore-info.json'
+      signs:
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": word
+          has:
+            - '"filepath"'
+            - /wp-content/boldgrid_backup_
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

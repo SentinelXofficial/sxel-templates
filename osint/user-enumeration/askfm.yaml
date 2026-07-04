@@ -1,0 +1,24 @@
+id: askfm
+brief:
+    title: Ask.fm User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Ask.fm user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - askfm
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://ask.fm/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - answers,
+          in: body
+          need: all

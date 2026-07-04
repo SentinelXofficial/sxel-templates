@@ -1,0 +1,19 @@
+id: phoronix-panel
+brief:
+    title: Phoronix Test Suite Panel - Detect
+    by: pikpikcu
+    level: info
+    about: Phoronix Test Suite panel was detected.
+    label:
+        - panel
+        - phoronix
+        - phoronix-media
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

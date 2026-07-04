@@ -1,0 +1,31 @@
+id: gargoyle-router
+brief:
+    title: Gargoyle Router Management Utility Admin Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Gargoyle Router Management Utility admin login panel was detected.
+    label:
+        - panel
+        - iot
+        - gargoyle
+        - router
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.sh'
+      signs:
+        - "on": word
+          has:
+            - <title>Gargoyle Router Management Utility</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

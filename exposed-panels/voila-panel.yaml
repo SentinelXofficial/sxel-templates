@@ -1,0 +1,27 @@
+id: voila-panel
+brief:
+    title: Voilà Panel - Detect
+    by: rxerium
+    level: info
+    about: Voilà is an open-source tool that turns Jupyter Notebooks into standalone web applications.
+    label:
+        - panel
+        - voila
+        - jupyter
+        - notebook
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - voila-notebooks
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

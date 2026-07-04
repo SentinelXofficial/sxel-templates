@@ -1,0 +1,24 @@
+id: cisco-secure-desktop
+brief:
+    title: Cisco Secure Desktop Installation Panel - Detect
+    by: pdteam
+    level: info
+    about: Cisco Secure Desktop installation panel was detected.
+    label:
+        - cisco
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/CACHE/sdesktop/install/start.htm'
+      signs:
+        - "on": word
+          has:
+            - Installation
+            - WebLaunch
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

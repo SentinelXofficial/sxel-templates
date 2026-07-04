@@ -1,0 +1,24 @@
+id: mapmytracks
+brief:
+    title: MapMyTracks User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: MapMyTracks user name information check was conducted.
+    label:
+        - osint
+        - osint-health
+        - mapmytracks
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.mapmytracks.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Daily distance this week
+          in: body
+          need: all

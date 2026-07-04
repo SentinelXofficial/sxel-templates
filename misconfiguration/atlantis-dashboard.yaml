@@ -1,0 +1,27 @@
+id: atlantis-dashboard
+brief:
+    title: Atlantis Dashboard - Exposure
+    by: DhiyaneshDK
+    level: medium
+    about: Atlantis Dashboard was discovered.
+    label:
+        - misconfig
+        - atlantis
+        - runatlantis
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <span>Repository</span>
+            - <span>Project</span>
+            - <span>Workspace</span>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

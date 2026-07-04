@@ -1,0 +1,24 @@
+id: hybris-administration-console
+brief:
+    title: Hybris Administration Console Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Hybris Administration Console login panel was detected.
+    label:
+        - panel
+        - hybris
+        - sap
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - hybris administration console
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

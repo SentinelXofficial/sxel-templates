@@ -1,0 +1,28 @@
+id: websheets-config
+brief:
+    title: Websheets Configuration File - Detect
+    by: geeknik
+    level: high
+    about: Websheets configuration file was detected.
+    label:
+        - websheets
+        - config
+        - exposure
+        - files
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ws-config.json'
+        - '{{BaseURL}}/ws-config.example.json'
+      signs:
+        - "on": word
+          has:
+            - '"db-password":'
+            - '"db-database":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

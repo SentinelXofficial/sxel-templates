@@ -1,0 +1,28 @@
+id: servicedesk-login-panel
+brief:
+    title: Jira Service Desk Login Panel - Detect
+    by: aashiq
+    level: info
+    about: Jira Service Desk login panel was detected.
+    label:
+        - servicedesk
+        - confluence
+        - jira
+        - panel
+        - login
+        - atlassian
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/servicedesk/customer/user/login'
+        - '{{BaseURL}}/servicedesk/customer/portal/10/user/login'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - https://confluence.atlassian.com
+          in: body
+          need: all

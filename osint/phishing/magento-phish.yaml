@@ -1,0 +1,25 @@
+id: magento-phish
+brief:
+    title: Magento phishing Detection
+    by: rxerium
+    level: info
+    about: A Magento phishing website was detected
+    label:
+        - phishing
+        - magento
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Adobe Commerce (Magento) | Ecommerce Platform
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

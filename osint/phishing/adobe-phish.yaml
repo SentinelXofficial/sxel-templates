@@ -1,0 +1,24 @@
+id: adobe-phish
+brief:
+    title: adobe phishing Detection
+    by: rxerium
+    level: info
+    about: An adobe phishing website was detected
+    label:
+        - phishing
+        - adobe
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Adobe: Creative, marketing and document management solutions'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

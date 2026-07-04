@@ -1,0 +1,26 @@
+id: wp-email-subscribers-listing
+brief:
+    title: WordPress Plugin Email Subscribers Listing
+    by: pussycat0x
+    level: low
+    about: Searches for sensitive directories present in the email-subscribers plugin.
+    label:
+        - wordpress
+        - listing
+        - plugin
+        - edb
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/email-subscribers'
+      signs:
+        - "on": word
+          has:
+            - Index of
+            - wp-content/plugins/email-subscribers
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

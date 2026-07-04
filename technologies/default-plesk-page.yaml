@@ -1,0 +1,19 @@
+id: default-plesk-page
+brief:
+    title: Plesk Default Test Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - plesk
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Web Server's Default Page</title>
+          in: body

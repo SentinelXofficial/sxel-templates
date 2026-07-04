@@ -1,0 +1,16 @@
+id: braintree-access-token
+brief:
+    title: PayPal Braintree Access Token Disclosure
+    by: Ice3man
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - paypal
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

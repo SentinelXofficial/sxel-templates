@@ -1,0 +1,19 @@
+id: jakefile-disclosure
+brief:
+    title: Jakefile Build Configuration - Disclosure
+    by: 0x_Akoko
+    level: info
+    about: Detected Jakefile build configuration was found to be exposed, potentially having contained sensitive information including database credentials, API keys, and server configurations.
+    label:
+        - exposure
+        - devops
+        - jakefile
+        - nodejs
+        - config
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Jakefile'
+        - '{{BaseURL}}/Jakefile.js'
+      signs: []

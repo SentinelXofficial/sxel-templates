@@ -1,0 +1,28 @@
+id: basercms-install
+brief:
+    title: baserCMS Installation - Exposure
+    by: ritikchaddha
+    level: critical
+    about: baserCMS installation panel was detected. This indicates an incomplete installation that could be exploited by unauthorized users to set up the CMS with attacker-controlled parameters.
+    label:
+        - misconfig
+        - install
+        - basercms
+        - cms
+        - exposure
+        - vuln
+    score: CVSS:9.4
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - basercms
+            - <form action="/installations/step
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

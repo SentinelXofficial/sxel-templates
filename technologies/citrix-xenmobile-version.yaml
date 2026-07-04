@@ -1,0 +1,25 @@
+id: citrix-xenmobile-version
+brief:
+    title: Citrix XenMobile Version - Detect
+    by: Puben
+    level: info
+    about: Template for XenMobile-detection (even if login-page is deactivated) and the specific version and rolling patch from js/app/init.js endpoint
+    label:
+        - tech
+        - edb
+        - citrix
+        - version
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/js/app/init.js'
+      signs:
+        - "on": status
+          status:
+            - 200

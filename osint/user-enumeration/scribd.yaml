@@ -1,0 +1,25 @@
+id: scribd
+brief:
+    title: Scribd User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Scribd user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - scribd
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.scribd.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Scribd
+            - user-profile
+          in: body
+          need: all

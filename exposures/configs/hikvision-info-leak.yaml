@@ -1,0 +1,28 @@
+id: hikvision-info-leak
+brief:
+    title: Hikvision Configuration File - Detect
+    by: pikpikcu
+    level: medium
+    about: Hikvision configuration file was detected.
+    label:
+        - exposure
+        - config
+        - hikvision
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config/user.xml'
+      signs:
+        - "on": word
+          has:
+            - <user name=
+            - password=
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/xml
+          in: header
+          need: all

@@ -1,0 +1,19 @@
+id: call-break-cms
+brief:
+    title: Call Break CMS Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Call Break CMS panel was detected.
+    label:
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Call Break CMS</title>
+          in: body
+          need: all

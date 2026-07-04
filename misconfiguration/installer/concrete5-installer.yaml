@@ -1,0 +1,26 @@
+id: concrete5-installer
+brief:
+    title: Concrete5 - Installer Page Exposure
+    by: osamahamad
+    level: high
+    about: Detects exposed Concrete5 Installation page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - concrete5
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php/install'
+        - '{{BaseURL}}/concrete5/index.php/install'
+      signs:
+        - "on": word
+          has:
+            - <title>Install concrete5</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

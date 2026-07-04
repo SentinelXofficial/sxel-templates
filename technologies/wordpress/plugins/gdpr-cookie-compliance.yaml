@@ -1,0 +1,17 @@
+id: wordpress-gdpr-cookie-compliance
+brief:
+    title: GDPR Cookie Compliance – Cookie Banner, Cookie Consent, Cookie Notice – CCPA, DSGVO, RGPD Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/gdpr-cookie-compliance/readme.txt'
+      signs: []

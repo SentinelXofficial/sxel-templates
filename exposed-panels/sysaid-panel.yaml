@@ -1,0 +1,19 @@
+id: sysaid-panel
+brief:
+    title: SysAid Login Panel - Detect
+    by: pdteam
+    level: info
+    about: Detects the presence of a SysAid Help Desk Software login panel by identifying characteristic login pages, favicon hash, and system-specific content.
+    label:
+        - panel
+        - sysaid
+        - helpdesk
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Login.jsp'
+        - '{{BaseURL}}/InvalidAccount.jsp'
+        - '{{BaseURL}}/favicon.ico'
+      signs: []

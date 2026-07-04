@@ -1,0 +1,23 @@
+id: racksnet-login
+brief:
+    title: Racksnet Login Panel - Detect
+    by: idealphase
+    level: info
+    about: Racksnet login panel was detected.
+    label:
+        - panel
+        - racksnet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - My Datacenter - Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

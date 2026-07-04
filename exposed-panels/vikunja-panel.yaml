@@ -1,0 +1,30 @@
+id: vikunja-panel
+brief:
+    title: Vikunja Login Panel - Detect
+    by: matheusalbarello
+    level: info
+    about: Vikunja login panel was detected. Vikunja is a self-hosted to-do and project management application.
+    label:
+        - panel
+        - vikunja
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Server: Vikunja'
+          in: header
+          need: all
+        - "on": word
+          has:
+            - <title>Vikunja</title>
+            - The to-do app to organize your life
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

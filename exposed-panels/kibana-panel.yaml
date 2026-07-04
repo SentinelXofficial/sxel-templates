@@ -1,0 +1,24 @@
+id: kibana-panel
+brief:
+    title: Kibana Login Panel - Detect
+    by: petruknisme
+    level: info
+    about: Kibana login panel was detected.
+    label:
+        - panel
+        - kibana
+        - elastic
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login'
+        - '{{BaseURL}}/app/kibana'
+      signs:
+        - "on": word
+          has:
+            - <title>Kibana</title>
+            - <title>Elastic</title>
+            - <title>Kibana Login</title>
+          in: body

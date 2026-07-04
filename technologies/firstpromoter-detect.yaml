@@ -1,0 +1,16 @@
+id: firstpromoter-detect
+brief:
+    title: FirstPromoter - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects FirstPromoter affiliate and referral tracking artifacts.
+    label:
+        - tech
+        - discovery
+        - affiliate
+        - firstpromoter
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

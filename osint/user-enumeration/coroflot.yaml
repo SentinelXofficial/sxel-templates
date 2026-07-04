@@ -1,0 +1,24 @@
+id: coroflot
+brief:
+    title: Coroflot User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Coroflot user name information check was conducted.
+    label:
+        - osint
+        - osint-art
+        - coroflot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.coroflot.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - portfolio
+          in: body
+          need: all

@@ -1,0 +1,25 @@
+id: metube-detect
+brief:
+    title: MeTube Instance Detected
+    by: rxerium
+    level: info
+    about: A MeTube instance was detected.
+    label:
+        - metube
+        - detect
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>MeTube</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: wp-idx-broker-platinum-listing
+brief:
+    title: WordPress Plugin Idx Broker Platinum Listing
+    by: pussycat0x
+    level: info
+    about: Searches for sensitive directories present in the idx-broker-platinum plugin.
+    label:
+        - plugin
+        - edb
+        - wordpress
+        - listing
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/idx-broker-platinum/'
+      signs:
+        - "on": word
+          has:
+            - Index of
+            - wp-content/plugins/idx-broker-platinum/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

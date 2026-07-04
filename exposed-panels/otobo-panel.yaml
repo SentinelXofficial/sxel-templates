@@ -1,0 +1,18 @@
+id: otobo-panel
+brief:
+    title: OTOBO Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: OTOBO login panel was detected.
+    label:
+        - panel
+        - otobo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/otobo/index.pl'
+      signs:
+        - "on": status
+          status:
+            - 200

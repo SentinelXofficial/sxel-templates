@@ -1,0 +1,24 @@
+id: pastebin
+brief:
+    title: Pastebin User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Pastebin user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - pastebin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://pastebin.com/u/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '''s Pastebin'
+          in: body
+          need: all

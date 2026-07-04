@@ -1,0 +1,25 @@
+id: wowonder-installer
+brief:
+    title: WoWonder Installation Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed WoWonder installation page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - wowonder
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/'
+      signs:
+        - "on": word
+          has:
+            - WoWonder | Installation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

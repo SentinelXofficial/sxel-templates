@@ -1,0 +1,24 @@
+id: playstation-network
+brief:
+    title: Playstation Network User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Playstation Network user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - playstation-network
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://psnprofiles.com/xhr/search/users?q={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <div class="progress-bar small level">
+          in: body
+          need: all

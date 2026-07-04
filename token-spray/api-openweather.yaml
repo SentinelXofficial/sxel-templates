@@ -1,0 +1,22 @@
+id: api-openweather
+brief:
+    title: OpenWeather API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - weather
+        - openweather
+moves:
+    - verb: GET
+      to:
+        - https://api.openweathermap.org/data/2.5/weather?q=Chicago&appid={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"coord":'
+            - '"weather":'
+            - '"base":'
+          in: body
+          need: all

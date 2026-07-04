@@ -1,0 +1,26 @@
+id: fortinet-panel
+brief:
+    title: Fortinet Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: Fortinet login panel was detected.
+    label:
+        - panel
+        - fortinet
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - FORTINET LOGIN</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

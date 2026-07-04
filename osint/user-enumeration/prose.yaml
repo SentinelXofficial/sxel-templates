@@ -1,0 +1,24 @@
+id: prose
+brief:
+    title: Prose User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Prose user name information check was conducted.
+    label:
+        - osint
+        - osint-blog
+        - prose
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://prose.astral.camp/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - blog-title
+          in: body
+          need: all

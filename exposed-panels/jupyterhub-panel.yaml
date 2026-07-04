@@ -1,0 +1,22 @@
+id: jupyterhub-panel
+brief:
+    title: JupyterHub Panel - Detect
+    by: rxerium
+    level: info
+    about: JupyterHub is a multi-user server for Jupyter notebooks
+    label:
+        - panel
+        - jupyterhub
+        - jupyter
+        - ml
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/hub/login'
+      signs:
+        - "on": status
+          status:
+            - 200

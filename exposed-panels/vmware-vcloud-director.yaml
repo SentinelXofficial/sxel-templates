@@ -1,0 +1,24 @@
+id: vmware-vcloud-director
+brief:
+    title: VMware vCloud Director Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: VMware vCloud Director panel was detected.
+    label:
+        - panel
+        - vmware
+        - vcloud
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cloud/'
+      signs:
+        - "on": word
+          has:
+            - <title>VMware vCloud Director</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

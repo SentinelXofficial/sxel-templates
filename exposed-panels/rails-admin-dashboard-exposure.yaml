@@ -1,0 +1,18 @@
+id: rails-admin-dashboard-exposure
+brief:
+    title: RailsAdmin Dashboard Exposure
+    by: 0x_Akoko
+    level: high
+    about: Detected RailsAdmin dashboard was exposed without proper authentication, allowing unauthorized access to data management interface.
+    label:
+        - rails
+        - admin
+        - exposure
+        - misconfig
+        - panel
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin'
+        - '{{BaseURL}}/rails_admin'
+      signs: []

@@ -1,0 +1,16 @@
+id: hyperdx-panel
+brief:
+    title: HyperDX Panel - Detect
+    by: righettod
+    level: info
+    about: HyperDX panel was discovered.
+    label:
+        - panel
+        - hyperdx
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/search'
+      signs: []

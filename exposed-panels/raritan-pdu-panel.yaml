@@ -1,0 +1,28 @@
+id: raritan-pdu-panel
+brief:
+    title: Raritan PDU - Login Panel
+    by: rxerium
+    level: info
+    about: Raritan intelligent PDU web interface panel has been detected.
+    label:
+        - panel
+        - raritan
+        - pdu
+        - ics
+        - power
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Product: Raritan PDU'
+            - PDU G2
+            - responsive-gui
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

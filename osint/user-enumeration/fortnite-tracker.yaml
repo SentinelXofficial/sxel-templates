@@ -1,0 +1,24 @@
+id: fortnite-tracker
+brief:
+    title: Fortnite Tracker User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Fortnite Tracker user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - fortnite-tracker
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://fortnitetracker.com/profile/all/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s Fortnite Stats - Fortnite Tracker
+          in: body
+          need: all

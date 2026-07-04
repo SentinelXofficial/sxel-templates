@@ -1,0 +1,28 @@
+id: kafka-center-default-login
+brief:
+    title: Apache Kafka Center Default Login
+    by: dhiyaneshDK
+    level: high
+    about: Apache Kafka Center default admin credentials were discovered.
+    label:
+        - kafka
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login/system'
+      head:
+        Content-Type: application/json
+      body: '{"name":"{{username}}","password":"{{password}}","checkbox":false}'
+      signs:
+        - "on": word
+          has:
+            - '"code":200'
+            - '"name":"admin"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: amc-plus-phish
+brief:
+    title: AMC+ phishing Detection
+    by: rxerium
+    level: info
+    about: An AMC+ phishing website was detected
+    label:
+        - phishing
+        - amc-plus
+        - streaming
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - AMC+ features world-class originals, award-winning series, and exclusive movies. Includes Shudder &amp; Sundance Now. AMC+ is entertainment uncompromised. Start your free trial!
+            - <title>AMC+ | Premium Streaming Bundle | Watch TV Shows &amp; Movies
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

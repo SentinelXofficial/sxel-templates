@@ -1,0 +1,27 @@
+id: servicenow-panel
+brief:
+    title: ServiceNow Login Panel - Detect
+    by: righettod
+    level: info
+    about: ServiceNow Login Panel was detected.
+    label:
+        - panel
+        - servicenow
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.do'
+      signs:
+        - "on": word
+          has:
+            - ServiceNow
+            - window.NOW.
+            - NOW.user.userID
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

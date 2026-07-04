@@ -1,0 +1,25 @@
+id: webflow-phish
+brief:
+    title: Webflow phishing Detection
+    by: rxerium
+    level: info
+    about: A Webflow phishing website was detected
+    label:
+        - phishing
+        - webflow
+        - website-builder
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>Webflow: Create a custom website | Visual website builder'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

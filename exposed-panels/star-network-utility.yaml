@@ -1,0 +1,24 @@
+id: star-network-utility
+brief:
+    title: Star Micronics Network Utility Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Star Micronics Network Utility panel was detected.
+    label:
+        - panel
+        - utility
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Star Micronics
+            - Network Utility
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

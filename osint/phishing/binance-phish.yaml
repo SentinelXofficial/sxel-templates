@@ -1,0 +1,26 @@
+id: binance-phish
+brief:
+    title: Binance phishing Detection
+    by: rxerium
+    level: info
+    about: A Binance phishing website was detected
+    label:
+        - phishing
+        - binance
+        - crypto
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Binance
+            - 'Binance: The World’s Most Trusted Cryptocurrency Exchange to Buy, Trade &amp; Invest in Crypto'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

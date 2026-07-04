@@ -1,0 +1,24 @@
+id: wolni-slowianie
+brief:
+    title: Wolni Słowianie User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Wolni Słowianie user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - wolni-slowianie
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://wolnislowianie.pl/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Oś czasu
+          in: body
+          need: all

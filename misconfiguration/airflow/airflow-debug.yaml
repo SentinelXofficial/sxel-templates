@@ -1,0 +1,26 @@
+id: airflow-debug
+brief:
+    title: Airflow Debug Trace
+    by: pdteam
+    level: low
+    about: Airflow Debug Trace enabled.
+    label:
+        - apache
+        - airflow
+        - fpd
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/airflow/login'
+      signs:
+        - "on": word
+          has:
+            - <h1> Ooops. </h1>
+            - Traceback (most recent call last)
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 500

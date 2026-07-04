@@ -1,0 +1,25 @@
+id: fuelcms-panel
+brief:
+    title: Fuel CMS Login Panel - Detect
+    by: Adam Crosser
+    level: info
+    about: Fuel CMS login panel was detected.
+    label:
+        - panel
+        - fuelcms
+        - oss
+        - daylightstudio
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/fuel/login'
+      signs:
+        - "on": word
+          has:
+            - <title>FUEL CMS</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

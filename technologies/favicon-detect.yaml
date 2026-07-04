@@ -1,0 +1,16 @@
+id: favicon-detect
+brief:
+    title: favicon-detection
+    by: un-fmunozs
+    level: info
+    about: ""
+    label:
+        - tech
+        - favicon
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/favicon.ico'
+        - '{{BaseURL}}/images/favicon.ico'
+      signs: []

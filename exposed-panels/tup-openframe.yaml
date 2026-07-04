@@ -1,0 +1,31 @@
+id: tup-openframe
+brief:
+    title: T-Up OpenFrame
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - exposure
+        - login
+        - tup
+        - openframe
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - T-Up OpenFrame
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

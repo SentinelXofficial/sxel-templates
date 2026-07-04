@@ -1,0 +1,17 @@
+id: netsweeper-open-redirect
+brief:
+    title: Netsweeper 4.0.9 - Open Redirect
+    by: daffainfo
+    level: medium
+    about: Netsweeper 4.0.9 contains an open redirect vulnerability. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized ope...
+    label:
+        - netsweeper
+        - redirect
+        - packetstorm
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webadmin/authportal/bounce.php?url=https://interact.sh/'
+      signs: []

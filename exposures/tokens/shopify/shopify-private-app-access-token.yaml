@@ -1,0 +1,16 @@
+id: shopify-private-app-access-token
+brief:
+    title: Shopify Private App Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - shopify
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

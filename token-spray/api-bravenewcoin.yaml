@@ -1,0 +1,25 @@
+id: api-bravenewcoin
+brief:
+    title: Brave New Coin API Test
+    by: daffainfo
+    level: info
+    about: Real-time and historic crypto data from more than 200+ exchanges
+    label:
+        - token-spray
+        - bravenewcoin
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://bravenewcoin.p.rapidapi.com/market'
+      head:
+        X-Rapidapi-Host: bravenewcoin.p.rapidapi.com
+        X-Rapidapi-Key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"content":'
+            - '"id":'
+            - '"baseAssetId":'
+            - '"quoteAssetId":'
+          in: body
+          need: all

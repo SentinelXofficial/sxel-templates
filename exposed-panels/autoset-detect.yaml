@@ -1,0 +1,28 @@
+id: autoset-detect
+brief:
+    title: AutoSet Page - Detect
+    by: MaStErCho
+    level: info
+    about: ""
+    label:
+        - tech
+        - php
+        - autoset
+        - apache
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>AutoSet
+            - alt">AutoSet
+            - logo-map logo-autoset
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

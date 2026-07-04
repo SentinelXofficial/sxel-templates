@@ -1,0 +1,28 @@
+id: vercel-config-file
+brief:
+    title: Vercel Config File - File Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: Vercel Config file is exposed.
+    label:
+        - exposure
+        - files
+        - vercel
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/vercel.json'
+      signs:
+        - "on": word
+          has:
+            - '"builds": ['
+            - '"routes": ['
+            - '"use": "@vercel'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all

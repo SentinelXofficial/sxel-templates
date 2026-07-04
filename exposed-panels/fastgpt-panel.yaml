@@ -1,0 +1,27 @@
+id: fastgpt-panel
+brief:
+    title: FastGPT Panel - Detect
+    by: rxerium
+    level: info
+    about: FastGPT is a knowledge-based platform built on the LLM, offering out-of-the-box
+    label:
+        - panel
+        - fastgpt
+        - llm
+        - ai
+        - rag
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - FastGPT
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

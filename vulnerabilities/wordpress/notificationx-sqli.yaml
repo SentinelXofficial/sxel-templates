@@ -1,0 +1,20 @@
+id: notificationx-sqli
+brief:
+    title: NotificationX < 2.3.12 - SQL Injection
+    by: theamanrawat
+    level: high
+    about: The plugin does not validate and escape the id parameter in its notificationx/v1/notification REST endpoint before using it in a SQL statement, which could allow unauthenticated attackers to perfor...
+    label:
+        - time-based-sqli
+        - wpscan
+        - sqli
+        - wp
+        - wp-plugin
+        - wordpress
+        - notificationx-sql-injection
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-json/'
+      signs: []

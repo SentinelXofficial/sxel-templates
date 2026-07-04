@@ -1,0 +1,23 @@
+id: casemanager-panel
+brief:
+    title: CaseManager Login Panel - Detect
+    by: ffffffff0x
+    level: info
+    about: CaseManager login panel was detected.
+    label:
+        - casemanager
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>CaseManager</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

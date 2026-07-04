@@ -1,0 +1,25 @@
+id: steam-phish
+brief:
+    title: steam phishing Detection
+    by: rxerium
+    level: info
+    about: A steam phishing website was detected
+    label:
+        - phishing
+        - steam
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Steam
+            - Steam is the ultimate destination for playing, discussing, and creating games.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: api-lob
+brief:
+    title: Lob API Test
+    by: daffainfo
+    level: info
+    about: US Address Verification
+    label:
+        - token-spray
+        - lob
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://api.lob.com/v1/addresses'
+      head:
+        Authorization: Basic {{base64(token + ':')}}
+      signs:
+        - "on": word
+          has:
+            - '"id"'
+            - '"description"'
+            - '"name"'
+          in: body
+          need: all

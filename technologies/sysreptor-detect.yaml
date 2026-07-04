@@ -1,0 +1,32 @@
+id: sysreptor-detect
+brief:
+    title: Sysreptor - Detection
+    by: icarot
+    level: info
+    about: Detects a Sysreptor server, a customizable and powerful penetration testing reporting platform for offensive security professionals.
+    label:
+        - tech
+        - syslifters
+        - sysreptor
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{nuxjs}}'
+      head:
+        Content-type: text/javascript; charset="utf-8"
+      signs:
+        - "on": word
+          has:
+            - SysReptor
+            - sysreptor
+            - Syslifters
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: owncloud-status-page
+brief:
+    title: Owncloud StatusPage detection
+    by: myztique
+    level: info
+    about: ""
+    label:
+        - tech
+        - owncloud
+        - status
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/status.php'
+      signs:
+        - "on": word
+          has:
+            - '"versionstring":'
+            - '"installed":'
+            - '"edition":'
+          in: body
+          need: all

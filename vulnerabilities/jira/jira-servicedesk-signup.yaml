@@ -1,0 +1,60 @@
+id: jira-servicedesk-signup
+brief:
+    title: Atlassian Jira Service Desk Signup
+    by: TechbrunchFR
+    level: medium
+    about: This instance of Atlassian JIRA is misconfigured to allow an attacker to sign up (create a new account) just by navigating to the signup page that is accessible at the URL /servicedesk/customer/use...
+    label:
+        - atlassian
+        - servicedesk
+        - jira
+        - confluence
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/servicedesk/customer/user/signup'
+      signs:
+        - "on": word
+          has:
+            - signup.validation.errors
+            - signup-username-error
+          in: body
+    - verb: POST
+      to:
+        - '{{BaseURL}}/servicedesk/customer/user/signup'
+      head:
+        Content-Type: application/json
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/servicedesk/customer/user/signup'
+      body: '{"email":"","fullname":"{{randstr}}","password":"","captcha":"","secondaryEmail":""}'
+      signs:
+        - "on": word
+          has:
+            - signup.validation.errors
+            - signup-username-error
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/secure/Signup!default.jspa'
+      signs:
+        - "on": word
+          has:
+            - signup.validation.errors
+            - signup-username-error
+          in: body
+    - verb: POST
+      to:
+        - '{{BaseURL}}/secure/Signup.jspa'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/secure/Signup.jspa'
+      body: email=&fullname={{randstr}}&username=&password=&Signup=Sign+up
+      signs:
+        - "on": word
+          has:
+            - signup.validation.errors
+            - signup-username-error
+          in: body

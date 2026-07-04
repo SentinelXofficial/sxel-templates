@@ -1,0 +1,27 @@
+id: gradle-libs
+brief:
+    title: Gradle Library Version Disclosure
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - file
+        - gradle
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/gradle/libs.versions.toml'
+        - '{{BaseURL}}/libs.versions.toml'
+      signs:
+        - "on": word
+          has:
+            - '[versions]'
+            - '[libraries]'
+            - '[bundles]'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

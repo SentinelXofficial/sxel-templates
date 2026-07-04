@@ -1,0 +1,25 @@
+id: tmdb
+brief:
+    title: TMDB User Name Information - Detect
+    by: olearycrew
+    level: info
+    about: TMDB user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - tmdb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.themoviedb.org/u/{{user}}
+      signs:
+        - "on": word
+          has:
+            - Total Edits
+            - Stats
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

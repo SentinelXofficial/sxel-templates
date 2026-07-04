@@ -1,0 +1,24 @@
+id: cisco-prime-infrastructure
+brief:
+    title: Cisco Prime Infrastructure Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: A Cisco Prime Infrastructure login panel was discovered.
+    label:
+        - panel
+        - cisco
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webacs/pages/common/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - productName = "Prime Infrastructure"
+            - Cisco&nbsp;
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

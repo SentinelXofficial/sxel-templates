@@ -1,0 +1,32 @@
+id: server-monitor-installer
+brief:
+    title: Server Monitor Installer
+    by: tess
+    level: high
+    about: Server Monitor is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - monitor
+        - exposure
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install.php'
+      signs:
+        - "on": word
+          has:
+            - <title>SERVER MONITOR - Install</title>
+            - PHP Server Monitor - Install
+            - install.php?action=config
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: linkerd-service-detect
+brief:
+    title: Linkerd Service detection
+    by: dudez
+    level: info
+    about: ""
+    label:
+        - tech
+        - linkerd
+        - service
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      head:
+        l5d-dtab: /svc/* => /$/inet/interact.sh/443
+      signs: []

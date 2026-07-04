@@ -1,0 +1,24 @@
+id: mail-archive
+brief:
+    title: The Mail Archive Information
+    by: lu4nx
+    level: info
+    about: Mail-archive information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - maillist
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.mail-archive.com/search?l=all&q={{user}}
+      signs:
+        - "on": word
+          has:
+            - <h3>No matches were found for <i></i>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

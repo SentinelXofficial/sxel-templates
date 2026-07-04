@@ -1,0 +1,26 @@
+id: vrbo-phish
+brief:
+    title: VRBO phishing Detection
+    by: rxerium
+    level: info
+    about: A VRBO phishing website was detected
+    label:
+        - phishing
+        - vrbo
+        - travel
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - VRBO
+            - '<title>Vrbo | Book Your Vacation Home Rentals: Beach Houses, Cabins, Condos &amp; More'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

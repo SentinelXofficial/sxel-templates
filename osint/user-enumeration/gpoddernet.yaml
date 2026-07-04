@@ -1,0 +1,24 @@
+id: gpoddernet
+brief:
+    title: Gpodder.net User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Gpodder.net user name information check was conducted.
+    label:
+        - osint
+        - osint-music
+        - gpoddernet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://gpodder.net/user/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - mdash; gpodder.net
+          in: body
+          need: all

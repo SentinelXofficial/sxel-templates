@@ -1,0 +1,27 @@
+id: taskingai-panel
+brief:
+    title: TaskingAI Panel - Detect
+    by: rxerium
+    level: info
+    about: TaskingAI is an open-source platform for building and deploying LLM-based agents
+    label:
+        - panel
+        - taskingai
+        - llm
+        - ai
+        - agents
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - TaskingAI
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

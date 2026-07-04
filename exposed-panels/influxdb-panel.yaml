@@ -1,0 +1,24 @@
+id: influxdb-panel
+brief:
+    title: InfluxDB Admin Interface Panel - Detect
+    by: pikpikcu
+    level: info
+    about: InfluxDB admin interface panel was detected.
+    label:
+        - panel
+        - influxdb
+        - influxdata
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>InfluxDB - Admin Interface</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

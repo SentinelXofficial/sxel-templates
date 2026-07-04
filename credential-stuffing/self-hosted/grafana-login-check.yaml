@@ -1,0 +1,38 @@
+id: grafana-login-check
+brief:
+    title: Grafana Login Check
+    by: parthmalhotra
+    level: critical
+    about: Checks for a valid login on self hosted Grafana instance.
+    label:
+        - self-hosted
+        - creds-stuffing
+        - login-check
+        - grafana
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Cookie: redirect_to=%2F
+        DNT: "1"
+        Origin: '{{BaseURL}}'
+        Referer: '{{BaseURL}}/login'
+        accept: application/json, text/plain, */*
+        content-type: application/json
+      body: '{"user":"{{username}}","password":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - Logged in
+          in: body
+          need: all
+        - "on": word
+          has:
+            - grafana_session
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

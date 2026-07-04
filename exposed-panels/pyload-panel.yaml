@@ -1,0 +1,26 @@
+id: pyload-panel
+brief:
+    title: PyLoad Login - Panel
+    by: DhiyaneshDk
+    level: info
+    about: A Pyload Login was detected.
+    label:
+        - panel
+        - pyload
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Login - pyLoad
+            - alt="Pyload
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,22 @@
+id: api-thecatapi
+brief:
+    title: TheCatApi API Test
+    by: daffainfo
+    level: info
+    about: Pictures of cats from Tumblr
+    label:
+        - token-spray
+        - thecatapi
+moves:
+    - verb: GET
+      to:
+        - https://api.thecatapi.com/v1/votes
+      head:
+        x-api-key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"country_code":'
+            - '"created_at":'
+          in: body
+          need: all

@@ -1,0 +1,26 @@
+id: akhq-panel
+brief:
+    title: AKHQ Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: AKHQ Panel was discovered.
+    label:
+        - akhq
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/login'
+      signs:
+        - "on": word
+          has:
+            - <title>AKHQ</title>
+            - AKHQ_PREFIX_UI
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

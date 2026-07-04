@@ -1,0 +1,16 @@
+id: agent-zero-detect
+brief:
+    title: Agent-Zero Application - Detect
+    by: 0x_Akoko
+    level: info
+    about: Detected Agent-Zero AI agent framework installation.
+    label:
+        - agent-zero
+        - detect
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

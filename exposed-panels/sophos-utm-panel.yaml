@@ -1,0 +1,25 @@
+id: sophos-utm-panel
+brief:
+    title: Sophos UTM User Portal - Login Panel
+    by: rxerium
+    level: info
+    about: Sophos UTM (Unified Threat Management) exposes a User Portal interface on ports 8443/5443 for SSL VPN client access and self-service.
+    label:
+        - panel
+        - vpn
+        - sophos
+        - ssl-vpn
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>User Portal</title>
+            - /themes/lite1/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

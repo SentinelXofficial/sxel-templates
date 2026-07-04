@@ -1,0 +1,19 @@
+id: nginx-proxy-manager-default-login
+brief:
+    title: Nginx Proxy Manager - Default Login
+    by: barttran2000
+    level: high
+    about: Default Nginx Proxy Manager credentials was discovered.
+    label:
+        - nginx
+        - proxy-manager
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/tokens'
+      head:
+        Content-Type: application/json
+      body: '{"identity": "admin@example.com","secret": "changeme"}'
+      signs: []

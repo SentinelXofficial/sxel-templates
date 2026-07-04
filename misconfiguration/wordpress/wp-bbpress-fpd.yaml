@@ -1,0 +1,18 @@
+id: wp-bbpress-fpd
+brief:
+    title: WordPress bbPress Plugin - Full Path Disclosure
+    by: 0x_Akoko
+    level: info
+    about: WordPress plugin bbPress internal file system path was disclosed through direct access to the plugin's main PHP file.
+    label:
+        - debug
+        - wordpress
+        - fpd
+        - vuln
+        - bbpress
+        - wp-plugin
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/bbpress/templates/default/extras/single-forum.php'
+      signs: []

@@ -1,0 +1,27 @@
+id: gunicorn-config-file
+brief:
+    title: Gunicorn Config File - File Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: Gunicorn Config file is exposed.
+    label:
+        - exposure
+        - files
+        - gunicorn
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/gunicorn.conf.py'
+      signs:
+        - "on": word
+          has:
+            - bind =
+            - workers =
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/x-python
+          in: content_type
+          need: all

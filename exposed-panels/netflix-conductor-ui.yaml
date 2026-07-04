@@ -1,0 +1,26 @@
+id: netflix-conductor-ui
+brief:
+    title: Netflix Conductor UI Panel - Detect
+    by: c-sh0
+    level: info
+    about: Netflix Conductor UI panel was detected.
+    label:
+        - webserver
+        - netflix
+        - conductor
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Conductor UI</title>
+            - <title>Workflow UI</title>
+          in: body
+          need: all

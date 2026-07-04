@@ -1,0 +1,24 @@
+id: bigip-icontrol-rest
+brief:
+    title: F5 BIG-IP iControl REST Panel - Detect
+    by: MrCl0wnLab
+    level: info
+    about: F5 BIG-IP iControl REST API discovered and may be vulnerable to an authentication bypass (not tested).
+    label:
+        - panel
+        - bigip
+        - f5
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mgmt/shared/authn/login'
+      signs:
+        - "on": word
+          has:
+            - resterrorresponse
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 401

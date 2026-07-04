@@ -1,0 +1,26 @@
+id: spotweb-login-panel
+brief:
+    title: SpotWeb Login Panel - Detect
+    by: theamanrawat
+    level: info
+    about: ""
+    label:
+        - panel
+        - spotweb
+        - detect
+        - spotweb_project
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - SpotWeb - overview
+            - initSpotwebJs
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

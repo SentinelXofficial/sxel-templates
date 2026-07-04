@@ -1,0 +1,24 @@
+id: nagios-status-page
+brief:
+    title: Nagios Current Status Page - Detect
+    by: dhiyaneshDk
+    level: medium
+    about: Nagios current status page was detected.
+    label:
+        - exposure
+        - nagios
+        - status
+        - edb
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nagios/cgi-bin/status.cgi'
+        - '{{BaseURL}}/cgi-bin/nagios4/status.cgi'
+        - '{{BaseURL}}/cgi-bin/nagios3/status.cgi'
+      signs:
+        - "on": word
+          has:
+            - Current Network Status
+          in: body

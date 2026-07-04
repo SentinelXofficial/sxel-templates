@@ -1,0 +1,24 @@
+id: fastapi-docs
+brief:
+    title: FastAPI Docs Panel - Detect
+    by: github.com/its0x08
+    level: info
+    about: FastAPI Docs panel was detected.
+    label:
+        - fastapi
+        - tech
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/docs'
+        - '{{BaseURL}}/redoc'
+        - '{{BaseURL}}/openapi.json'
+      signs:
+        - "on": word
+          has:
+            - <title>FastAPI - Swagger UI</title>
+            - <title>FastAPI - ReDoc</title>
+            - '{"title":"FastAPI"'
+          in: body

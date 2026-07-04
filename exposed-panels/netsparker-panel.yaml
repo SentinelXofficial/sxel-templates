@@ -1,0 +1,24 @@
+id: netsparker-panel
+brief:
+    title: Netsparker Login Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Netsparker login panel was detected.
+    label:
+        - panel
+        - netsparker
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/account/signin?ReturnUrl=%2f'
+      signs:
+        - "on": word
+          has:
+            - Netsparker Ltd
+            - Netsparker Enterprise
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,21 @@
+id: api-alchemy
+brief:
+    title: Alchemy API Test
+    by: daffainfo
+    level: info
+    about: Ethereum Node-as-a-Service Provider
+    label:
+        - token-spray
+        - alchemy
+moves:
+    - verb: POST
+      to:
+        - https://eth-mainnet.alchemyapi.io/v2/{{token}}
+      body: '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":0}'
+      signs:
+        - "on": word
+          has:
+            - '"id":'
+            - '"result":'
+          in: body
+          need: all

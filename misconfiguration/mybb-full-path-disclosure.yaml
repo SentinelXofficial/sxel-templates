@@ -1,0 +1,15 @@
+id: mybb-full-path-disclosure
+brief:
+    title: MyBB - Full Path Disclosure
+    by: 0x_Akoko
+    level: low
+    about: Detected MyBB forum software exposed the server's full filesystem path through PHP fatal errors when files that implemented interfaces were accessed without dependencies.
+    label:
+        - mybb
+        - misconfig
+        - fpd
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/inc/cachehandlers/disk.php'
+      signs: []

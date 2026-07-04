@@ -1,0 +1,24 @@
+id: ymhome-detect
+brief:
+    title: Ymhome-detect
+    by: ffffffff0x
+    level: info
+    about: ""
+    label:
+        - ymhome
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - yimioa.apk
+            - 'isSavePwd:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

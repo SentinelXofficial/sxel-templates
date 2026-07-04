@@ -1,0 +1,24 @@
+id: ebay-phish
+brief:
+    title: ebay phishing Detection
+    by: rxerium
+    level: info
+    about: A ebay phishing website was detected
+    label:
+        - phishing
+        - ebay
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Electronics, Cars, Fashion, Collectibles &amp; More | eBay
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

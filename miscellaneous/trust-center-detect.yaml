@@ -1,0 +1,33 @@
+id: trust-center-detect
+brief:
+    title: Trust Center Page - Detect
+    by: ajdumanhug
+    level: info
+    about: Detected the presence of Trust Center pages or subdomains provided by Safebase, Vanta, or TrustCloud.
+    label:
+        - misc
+        - trust
+        - center
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/trust'
+        - '{{BaseURL}}/trust-center'
+        - '{{BaseURL}}/trust-center.html'
+        - '{{BaseURL}}/security'
+        - '{{BaseURL}}/compliance'
+      signs:
+        - "on": word
+          has:
+            - Trust Center
+            - Powered by Safebase
+            - TrustShare Overview
+            - static.vanta.com/static/entry-trust-report.js
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

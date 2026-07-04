@@ -1,0 +1,24 @@
+id: jetbrains-datasource
+brief:
+    title: Jetbrains IDE DataSources Config - Detect
+    by: FlorianMaak
+    level: info
+    about: Jetbrains IDE DataSources configuration information was detected.
+    label:
+        - config
+        - exposure
+        - jetbrains
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.idea/dataSources.xml'
+      signs:
+        - "on": word
+          has:
+            - DataSourceManagerImpl
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

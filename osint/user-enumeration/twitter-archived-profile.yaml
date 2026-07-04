@@ -1,0 +1,24 @@
+id: twitter-archived-profile
+brief:
+    title: Twitter archived profile User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Twitter archived profile user name information check was conducted.
+    label:
+        - osint
+        - osint-archived
+        - twitter-archived-profile
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://archive.org/wayback/available?url=https://twitter.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"archived_snapshots": {"closest"'
+          in: body
+          need: all

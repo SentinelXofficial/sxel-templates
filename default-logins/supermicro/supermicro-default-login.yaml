@@ -1,0 +1,27 @@
+id: supermicro-default-login
+brief:
+    title: Supermicro Ipmi - Default Admin Login
+    by: For3stCo1d
+    level: high
+    about: Supermicro Ipmi default admin login credentials were successful.
+    label:
+        - supermicro
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/cgi/login.cgi'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: name={{user}}&pwd={{pass}}
+      signs:
+        - "on": word
+          has:
+            - self.location=
+            - /cgi/url_redirect.cgi?url_name=mainmenu
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

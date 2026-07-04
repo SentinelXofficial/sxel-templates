@@ -1,0 +1,25 @@
+id: geeksforgeeks
+brief:
+    title: GeeksforGeeks User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: GeeksforGeeks user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - geeksforgeeks
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.geeksforgeeks.org/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - geeksforgeeks.org
+            - '| GeeksforGeeks Profile'
+          in: body
+          need: all

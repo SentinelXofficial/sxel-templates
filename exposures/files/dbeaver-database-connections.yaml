@@ -1,0 +1,26 @@
+id: dbeaver-database-connections
+brief:
+    title: DBeaver Database Connections - Detect
+    by: geeknik
+    level: info
+    about: DBeaver database connections were detected.
+    label:
+        - dbeaver
+        - files
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.dbeaver/data-sources.json'
+      signs:
+        - "on": word
+          has:
+            - '"folders": {'
+            - '"connection-types": {'
+            - '"connections": {'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

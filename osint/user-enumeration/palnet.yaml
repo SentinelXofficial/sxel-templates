@@ -1,0 +1,24 @@
+id: palnet
+brief:
+    title: Palnet User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Palnet user name information check was conducted.
+    label:
+        - osint
+        - osint-finance
+        - palnet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.palnet.io/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' - PALnet'
+          in: body
+          need: all

@@ -1,0 +1,23 @@
+id: zabbix-server-login
+brief:
+    title: Zabbix Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Zabbix login panel was detected.
+    label:
+        - panel
+        - zabbix
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>zabbix-server: Zabbix</title>'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

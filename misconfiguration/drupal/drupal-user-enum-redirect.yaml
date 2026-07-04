@@ -1,0 +1,21 @@
+id: drupal-user-enum-redirect
+brief:
+    title: Drupal User Enumeration [Redirect]
+    by: 0w4ys
+    level: info
+    about: ""
+    label:
+        - drupal
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/user/0'
+        - '{{BaseURL}}/user/1'
+        - '{{BaseURL}}/user/2'
+        - '{{BaseURL}}/user/3'
+      signs:
+        - "on": status
+          status:
+            - 301

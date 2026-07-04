@@ -1,0 +1,20 @@
+id: s3-username-disclosure
+brief:
+    title: x-amz-meta-s3cmd-attrs Header Username Disclosure
+    by: DhiyaneshDK
+    level: low
+    about: Detected exposure of the x-amz-meta-s3cmd-attrs header in S3 objects, which can disclose sensitive information including the username (uname), user ID (uid), group name (gname), and group ID (gid) ...
+    label:
+        - s3
+        - aws
+        - exposure
+        - misconfig
+        - header
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

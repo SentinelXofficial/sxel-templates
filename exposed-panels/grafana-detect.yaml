@@ -1,0 +1,21 @@
+id: grafana-detect
+brief:
+    title: Grafana Login Panel - Detect
+    by: organiccrap
+    level: info
+    about: Grafana login panel was detected.
+    label:
+        - panel
+        - grafana
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+        - '{{BaseURL}}/graph/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Grafana</title>
+          in: body

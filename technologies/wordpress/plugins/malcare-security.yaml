@@ -1,0 +1,17 @@
+id: wordpress-malcare-security
+brief:
+    title: MalCare WordPress Security Plugin – Malware Scanner, Cleaner, Security Firewall Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/malcare-security/readme.txt'
+      signs: []

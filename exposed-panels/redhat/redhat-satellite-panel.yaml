@@ -1,0 +1,26 @@
+id: redhat-satellite-panel
+brief:
+    title: Red Hat Satellite Panel - Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - redhat
+        - satellite
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/users/login'
+      signs:
+        - "on": word
+          has:
+            - Satellite
+            - redhat
+            - LoginPage
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

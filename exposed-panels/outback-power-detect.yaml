@@ -1,0 +1,30 @@
+id: outback-power-detect
+brief:
+    title: OutBack Power Mate3s Gateway - Detect
+    by: rxerium
+    level: info
+    about: OutBack Power Mate3s is a system hub and gateway for OutBack FX-series inverter-chargers
+    label:
+        - tech
+        - panel
+        - outback
+        - ics
+        - solar
+        - energy
+        - scada
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Outback Power</title>
+            - status_tab
+            - meters_tab
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

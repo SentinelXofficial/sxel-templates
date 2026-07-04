@@ -1,0 +1,23 @@
+id: telerik-server-login
+brief:
+    title: Telerik Report Server Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Telerik Report Server login panel was detected.
+    label:
+        - telerik
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Account/Login'
+      signs:
+        - "on": word
+          has:
+            - Telerik Report Server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

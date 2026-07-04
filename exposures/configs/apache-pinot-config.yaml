@@ -1,0 +1,32 @@
+id: apache-pinot-config
+brief:
+    title: Apache Pinot - Exposure
+    by: icarot
+    level: medium
+    about: Detects if path Appconfigs of Apache Pinot web application is exposed, getting internal information about the configuration made.
+    label:
+        - config
+        - exposure
+        - pinot
+        - apache
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/appconfigs'
+      signs:
+        - "on": word
+          has:
+            - '"systemConfig"'
+            - '"pinotConfig"'
+            - '"jvmConfig"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

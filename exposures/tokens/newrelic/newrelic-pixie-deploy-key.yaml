@@ -1,0 +1,17 @@
+id: newrelic-pixie-deploy-key
+brief:
+    title: New Relic Pixie Deploy Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - newrelic
+        - pixie
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

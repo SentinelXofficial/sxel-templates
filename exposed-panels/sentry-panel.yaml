@@ -1,0 +1,16 @@
+id: sentry-panel
+brief:
+    title: Sentry Login Panel
+    by: righettod
+    level: info
+    about: Sentry login panel was detected.
+    label:
+        - panel
+        - sentry
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

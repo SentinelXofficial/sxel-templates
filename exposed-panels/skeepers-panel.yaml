@@ -1,0 +1,18 @@
+id: skeepers-panel
+brief:
+    title: Skeepers Login Panel - Detect
+    by: righettod
+    level: info
+    about: Skeepers login panel was detected.
+    label:
+        - panel
+        - skeepers
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/backend/login'
+        - '{{BaseURL}}'
+      signs: []

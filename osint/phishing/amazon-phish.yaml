@@ -1,0 +1,25 @@
+id: amazon-phish
+brief:
+    title: Amazon phishing Detection
+    by: rxerium
+    level: info
+    about: An amazon phishing website was detected
+    label:
+        - phishing
+        - amazon
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Amazon Sign In
+            - Amazon Sign-In
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

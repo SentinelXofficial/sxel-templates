@@ -1,0 +1,24 @@
+id: babepedia
+brief:
+    title: Babepedia User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Babepedia user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - babepedia
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.babepedia.com/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '''s Page</title>'
+          in: body
+          need: all

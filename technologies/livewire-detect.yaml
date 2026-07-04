@@ -1,0 +1,24 @@
+id: livewire-detect
+brief:
+    title: Laravel Livewire - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects the presence of Laravel Livewire, a full-stack framework for Laravel that builds dynamic interfaces.
+    label:
+        - tech
+        - discovery
+        - livewire
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - wire:id=
+            - wire:initial-data=
+            - window.livewire_app_url
+            - window.livewire_token
+            - livewire.js
+            - livewire.min.js
+          in: body

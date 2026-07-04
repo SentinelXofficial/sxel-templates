@@ -1,0 +1,22 @@
+id: supabase-studio-exposure
+brief:
+    title: Supabase Studio - Exposure
+    by: theamanrawat
+    level: high
+    about: Supabase Studio (the official self-hosted Supabase admin dashboard) was detected exposed without authentication.
+    label:
+        - misconfig
+        - supabase
+        - supabase-studio
+        - exposure
+        - panel
+        - unauth
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/project/default'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/platform/profile'
+      signs: []

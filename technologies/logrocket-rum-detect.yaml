@@ -1,0 +1,16 @@
+id: logrocket-rum-detect
+brief:
+    title: LogRocket RUM - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects LogRocket Session Replay & Frontend Monitoring artifacts.
+    label:
+        - tech
+        - detect
+        - rum
+        - logrocket
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

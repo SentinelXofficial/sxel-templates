@@ -1,0 +1,25 @@
+id: wp-plugin-1-flashgallery-listing
+brief:
+    title: WordPress 1 flash gallery listing
+    by: pussycat0x
+    level: info
+    about: Searches for sensitive directories present in the 1-flash-gallery plugin.
+    label:
+        - wordpress
+        - listing
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/1-flash-gallery/'
+        - '{{BaseURL}}/blog/wp-content/plugins/1-flash-gallery/'
+      signs:
+        - "on": word
+          has:
+            - Index of
+            - /wp-content/plugins/1-flash-gallery
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,19 @@
+id: intercom
+brief:
+    title: Intercom widget detection
+    by: tess
+    level: info
+    about: ""
+    label:
+        - intercom
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - intercom
+          in: body

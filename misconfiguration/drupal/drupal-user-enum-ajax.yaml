@@ -1,0 +1,32 @@
+id: drupal-user-enum-ajax
+brief:
+    title: Drupal User Enumration [Ajax]
+    by: 0w4ys
+    level: info
+    about: ""
+    label:
+        - drupal
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/views/ajax/autocomplete/user/a'
+        - '{{BaseURL}}/views/ajax/autocomplete/user/a'
+        - '{{BaseURL}}/?q=admin/views/ajax/autocomplete/user/a'
+        - '{{BaseURL}}/?q=views/ajax/autocomplete/user/a'
+      signs:
+        - "on": word
+          has:
+            - '":"a.'
+            - '":"A.'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

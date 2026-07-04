@@ -1,0 +1,23 @@
+id: kkfileview-panel
+brief:
+    title: kkFileView Panel - Detect
+    by: arafatansari
+    level: info
+    about: kkFileView panel was detected.
+    label:
+        - panel
+        - kkfileview
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index'
+      signs:
+        - "on": word
+          has:
+            - <title>kkFileView演示首页</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

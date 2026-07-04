@@ -1,0 +1,23 @@
+id: api-pendo
+brief:
+    title: Pendo API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - pendo
+moves:
+    - verb: GET
+      to:
+        - https://app.pendo.io/api/v1/feature
+      head:
+        Content-Type: application/json
+        X-Pendo-Integration-Key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"createdByUser":'
+            - '"id":'
+          in: body
+          need: all

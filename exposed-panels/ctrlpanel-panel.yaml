@@ -1,0 +1,24 @@
+id: ctrlpanel-panel
+brief:
+    title: CtrlPanel Login Panel - Detect
+    by: theamanrawat
+    level: info
+    about: CtrlPanel login panel was detected.
+    label:
+        - panel
+        - ctrlpanel
+        - login
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>CtrlPanel</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

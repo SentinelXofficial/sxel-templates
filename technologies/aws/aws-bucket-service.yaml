@@ -1,0 +1,16 @@
+id: aws-bucket-service
+brief:
+    title: Detect websites using AWS bucket storage
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - aws
+        - tech
+        - bucket
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

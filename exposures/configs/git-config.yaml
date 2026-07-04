@@ -1,0 +1,26 @@
+id: git-config
+brief:
+    title: Git Configuration - Detect
+    by: pdteam
+    level: medium
+    about: Git configuration was detected via the pattern /.git/config and log file on passed URLs.
+    label:
+        - config
+        - git
+        - exposure
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.git/config'
+      signs:
+        - "on": word
+          has:
+            - '[credentials]'
+            - '[core]'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

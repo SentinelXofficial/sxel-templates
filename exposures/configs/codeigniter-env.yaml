@@ -1,0 +1,19 @@
+id: codeigniter-env
+brief:
+    title: Codeigniter - .env File Discovery
+    by: emenalf
+    level: high
+    about: Codeigniter .env file was discovered.
+    label:
+        - config
+        - exposure
+        - codeigniter
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: zblog-admin-panel
+brief:
+    title: Z-BlogPHP Admin Login Panel - Detect
+    by: Aayush Vishnoi
+    level: info
+    about: Z-BlogPHP admin login panel was detected.
+    label:
+        - zblog
+        - panel
+        - zblogcn
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/zb_system/login.php'
+      signs:
+        - "on": word
+          has:
+            - <title>Z-Blog</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

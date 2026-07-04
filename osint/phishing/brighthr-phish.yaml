@@ -1,0 +1,24 @@
+id: brighthr-phish
+brief:
+    title: brighthr phishing Detection
+    by: rxerium
+    level: info
+    about: A brighthr phishing website was detected
+    label:
+        - phishing
+        - brighthr
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - HR Software For SMEs | Human Resources Software | BrightHR
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

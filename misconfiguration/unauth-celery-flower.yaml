@@ -1,0 +1,27 @@
+id: unauth-celery-flower
+brief:
+    title: Celery Flower - Unauthenticated Access
+    by: DhiyaneshDK
+    level: high
+    about: Celery Flower was able to be accessed with no authentication requirements in place.
+    label:
+        - celery
+        - flower
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard'
+      signs:
+        - "on": word
+          has:
+            - /dashboard
+            - /tasks
+            - github.com/mher/flower
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

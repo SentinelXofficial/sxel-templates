@@ -1,0 +1,27 @@
+id: spring-eureka
+brief:
+    title: Spring Eureka Exposure
+    by: tess
+    level: low
+    about: Spring Eureka is exposed.
+    label:
+        - misconfig
+        - springboot
+        - exposure
+        - eureka
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Eureka
+            - Toggle navigation
+            - Last 1000 since startup
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

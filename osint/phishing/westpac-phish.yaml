@@ -1,0 +1,25 @@
+id: westpac-phish
+brief:
+    title: Westpac phishing Detection
+    by: rxerium
+    level: info
+    about: A Westpac phishing website was detected
+    label:
+        - phishing
+        - westpac
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - From to-do to done, it takes a little Westpac. Westpac offers a range of smart solutions to support your personal, business and corporate banking needs.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

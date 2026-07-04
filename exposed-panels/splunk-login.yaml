@@ -1,0 +1,23 @@
+id: splunk-login
+brief:
+    title: Splunk SOAR Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Splunk SOAR login panel was detected.
+    label:
+        - panel
+        - splunk
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login?next=/'
+      signs:
+        - "on": word
+          has:
+            - <title>Splunk SOAR</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

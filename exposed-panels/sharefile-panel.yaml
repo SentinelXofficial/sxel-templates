@@ -1,0 +1,27 @@
+id: sharefile-panel
+brief:
+    title: Sharefile Login - Panel
+    by: irshad ahamed
+    level: info
+    about: ShareFile is a cloud-based file sharing and collaboration platform that provides secure access to files from anywhere.
+    label:
+        - sharefile
+        - login
+        - panel
+        - detect
+        - citrix
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Authentication/Login'
+      signs:
+        - "on": word
+          has:
+            - ShareFile Login
+            - password
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

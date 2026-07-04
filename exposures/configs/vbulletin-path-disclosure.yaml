@@ -1,0 +1,48 @@
+id: vbulletin-path-disclosure
+brief:
+    title: vBulletin - Full Path Disclosure
+    by: MaStErChO
+    level: info
+    about: ""
+    label:
+        - config
+        - exposure
+        - fpd
+        - vbulletin
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - vBulletin
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/forumdisplay.php?do[]=[test.dll]'
+        - '{{BaseURL}}/calendar.php?do[]=[test.dll]'
+        - '{{BaseURL}}/search.php?do[]=[test.dll]'
+        - '{{BaseURL}}/forumrunner/include/album.php'
+        - '{{BaseURL}}/core/vb5/route/channel.php'
+        - '{{BaseURL}}/core/vb5/route/conversation.php'
+        - '{{BaseURL}}/includes/api/interface/noncollapsed.php'
+        - '{{BaseURL}}/includes/api/interface/collapsed.php'
+        - '{{BaseURL}}/vbseo_sitemap/addons/vbseo_sm_vba.php'
+        - '{{BaseURL}}/vbseo_sitemap/addons/vbseo_sm_vba_links.php'
+      signs:
+        - "on": word
+          has:
+            - '<strong>Warning</strong>:'
+            - Cannot modify header information
+            - /strong> on line
+            - trim() expects parameter
+            - class_core.php
+            - header already sent
+            - Fatal error
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

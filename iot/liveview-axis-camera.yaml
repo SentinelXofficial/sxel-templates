@@ -1,0 +1,17 @@
+id: liveview-axis-camera
+brief:
+    title: AXIS Network Camera Live View - Detect
+    by: dhiyaneshDK
+    level: info
+    about: AXIS Network Camera live view was detected.
+    label:
+        - axis
+        - edb
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/view/viewer_index.shtml'
+        - '{{BaseURL}}/pics/logo_70x29px.gif'
+      signs: []

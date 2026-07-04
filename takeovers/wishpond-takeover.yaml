@@ -1,0 +1,21 @@
+id: wishpond-takeover
+brief:
+    title: Wishpond Takeover Detection
+    by: pdteam
+    level: high
+    about: Wishpond takeover was detected.
+    label:
+        - takeover
+        - wishpond
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - https://www.wishpond.com/404?campaign=true
+            - Oops! There isn’t a Wishpond Campaign published to this page.
+          in: body
+          need: all

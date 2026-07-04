@@ -1,0 +1,26 @@
+id: fusionauth-admin-setup
+brief:
+    title: FusionAuth Exposed Admin Setup
+    by: ritikchaddha
+    level: high
+    about: FusionAuth Admin Setup is exposed.
+    label:
+        - misconfig
+        - fusionauth
+        - admin
+        - setup
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/setup-wizard'
+      signs:
+        - "on": word
+          has:
+            - <title>FusionAuth Setup Wizard
+            - FusionAuth is now installed and running
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

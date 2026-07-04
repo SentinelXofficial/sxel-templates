@@ -1,0 +1,32 @@
+id: codeigniter-errorpage
+brief:
+    title: CodeIgniter - Error Page
+    by: j4vaovo
+    level: low
+    about: CodeIgniter error debug are enabled.
+    label:
+        - codeigniter
+        - misconfig
+        - error
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Error</title>
+            - <title>ErrorException</title>
+            - <title>Database Error</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - CodeIgniter
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+            - 500

@@ -1,0 +1,32 @@
+id: fortinet-fortisandbox-panel
+brief:
+    title: Fortinet FortiSandbox Panel - Detect
+    by: Umut ÖZEN
+    level: info
+    about: Fortinet FortiSandbox login panel was discovered.
+    label:
+        - panel
+        - fortinet
+        - fortisandbox
+        - tech
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/fsa/login'
+        - '{{BaseURL}}/ng/login?returnUrl=%2F'
+      signs:
+        - "on": word
+          has:
+            - <title>FortiSandbox</title>
+            - <span>FortiSandbox
+            - fsa_login_logo
+            - /images/fsa_logo
+            - FortiSandbox
+          in: body
+        - "on": word
+          has:
+            - 'Set-Cookie: FSA_SESSION_ID='
+          in: header

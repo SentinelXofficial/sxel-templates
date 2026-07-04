@@ -1,0 +1,25 @@
+id: ametys-admin-login
+brief:
+    title: Ametys Admin Login Panel
+    by: pathtaga
+    level: info
+    about: An Ametys admin login panel was discovered.
+    label:
+        - panel
+        - ametys
+        - cms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_admin/index.html'
+      signs:
+        - "on": word
+          has:
+            - Ametys - Log in
+            - <span class="ametys-version">
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

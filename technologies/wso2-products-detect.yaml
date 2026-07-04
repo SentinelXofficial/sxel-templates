@@ -1,0 +1,23 @@
+id: wso2-products-detect
+brief:
+    title: WSO2 Products - Detect
+    by: righettod
+    level: info
+    about: Try to detect the presence of a WSO2 products instance via the version endpoint
+    label:
+        - tech
+        - wso2
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/services/Version'
+      signs:
+        - "on": word
+          has:
+            - version.services.core.carbon.wso2.org
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

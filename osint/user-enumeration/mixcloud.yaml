@@ -1,0 +1,24 @@
+id: mixcloud
+brief:
+    title: Mixcloud User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Mixcloud user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mixcloud
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.mixcloud.com/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Mixcloud
+          in: body
+          need: all

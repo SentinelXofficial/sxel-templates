@@ -1,0 +1,23 @@
+id: cisco-secure-cn
+brief:
+    title: Cisco Secure CN Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Cisco Secure CN login panel was detected.
+    label:
+        - panel
+        - cisco
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Cisco Secure CN</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

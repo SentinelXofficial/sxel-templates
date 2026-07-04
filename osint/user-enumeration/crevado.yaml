@@ -1,0 +1,24 @@
+id: crevado
+brief:
+    title: Crevado User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Crevado user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - crevado
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://{{user}}.crevado.com/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Portfolio
+          in: body
+          need: all

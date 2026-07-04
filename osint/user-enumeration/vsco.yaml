@@ -1,0 +1,24 @@
+id: vsco
+brief:
+    title: Vsco User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Vsco user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - vsco
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://vsco.co/{{user}}/gallery
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| VSCO'
+          in: body
+          need: all

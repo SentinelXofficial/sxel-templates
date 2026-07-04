@@ -1,0 +1,20 @@
+id: digital-watchdog-panel
+brief:
+    title: Digital Watchdog - Detect
+    by: ritikchaddha
+    level: info
+    about: Digital Watchdog panel was detected.
+    label:
+        - digital-watchdog
+        - panel
+        - detect
+        - login
+        - dw
+        - spectrum
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/static/images/favicon.ico'
+        - '{{BaseURL}}/static/customization/favicon.ico'
+      signs: []

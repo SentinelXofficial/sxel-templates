@@ -1,0 +1,19 @@
+id: api-googlemapsembedadvanced
+brief:
+    title: Google Maps Embed (Advanced) API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - maps
+        - embed
+moves:
+    - verb: GET
+      to:
+        - https://www.google.com/maps/embed/v1/search?q=record+stores+in+Seattle&key={{token}}
+      signs:
+        - "on": status
+          status:
+            - 200

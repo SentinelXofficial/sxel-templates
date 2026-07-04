@@ -1,0 +1,28 @@
+id: command-api-explorer
+brief:
+    title: Command API Explorer Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Command API Explorer panel was detected.
+    label:
+        - panel
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/explorer.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Command API Explorer</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

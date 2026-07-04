@@ -1,0 +1,24 @@
+id: audiojungle
+brief:
+    title: Audiojungle User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Audiojungle user name information check was conducted.
+    label:
+        - osint
+        - osint-music
+        - audiojungle
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://audiojungle.net/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s profile on AudioJungle
+          in: body
+          need: all

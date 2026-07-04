@@ -1,0 +1,17 @@
+id: danswer-panel
+brief:
+    title: Danswer Panel - Detect
+    by: s4e-io
+    level: info
+    about: Danswer panel was discovered.
+    label:
+        - panel
+        - login
+        - danswer
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+      signs: []

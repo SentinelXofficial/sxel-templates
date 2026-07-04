@@ -1,0 +1,21 @@
+id: wp-cookie-law-info-fpd
+brief:
+    title: WordPress Plugin GDPR Cookie Consent - Full Path Disclosure
+    by: ritikchaddha
+    level: low
+    about: WordPress GDPR Cookie Consent (cookie-law-info) plugin is vulnerable to full path disclosure via direct access to plugin files.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - fpd
+        - gdpr
+        - cookie
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/cookie-law-info/includes/class-cookie-law-info.php'
+        - '{{BaseURL}}/wp-content/plugins/cookie-law-info/admin/class-cookie-law-info-admin.php'
+        - '{{BaseURL}}/wp-content/plugins/cookie-law-info/legacy/class-cookie-law-info.php'
+      signs: []

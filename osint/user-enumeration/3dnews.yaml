@@ -1,0 +1,24 @@
+id: 3dnews
+brief:
+    title: 3DNews User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: 3DNews user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - 3dnews
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://forum.3dnews.ru/member.php?username={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '<title>Форум 3DNews - Просмотр профиля:'
+          in: body
+          need: all

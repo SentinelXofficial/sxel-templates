@@ -1,0 +1,22 @@
+id: camaleon-default-login
+brief:
+    title: Camaleon CMS - Default Login
+    by: DhiyaneshDK
+    level: high
+    about: Camaleon CMS default login credentials was discovered.
+    label:
+        - camaleon
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/admin/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: authenticity_token={{nonce}}&user%5Busername%5D={{username}}&user%5Bpassword%5D={{password}}
+      signs: []

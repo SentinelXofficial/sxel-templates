@@ -1,0 +1,25 @@
+id: smokeping-grapher
+brief:
+    title: SmokePing Latency Page for Network Latency Grapher
+    by: DhiyaneshDk
+    level: low
+    about: SmokePing Latency Page is exposed.
+    label:
+        - misconfig
+        - smokeping
+        - latency
+        - grapher
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/smokeping/'
+      signs:
+        - "on": word
+          has:
+            - SmokePing Latency Page for
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

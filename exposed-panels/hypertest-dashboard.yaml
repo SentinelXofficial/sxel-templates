@@ -1,0 +1,28 @@
+id: hypertest-dashboard
+brief:
+    title: HyperTest Common Dashboard - Detect
+    by: DhiyaneshDk
+    level: info
+    about: HyperTest Common Dashboard was detected.
+    label:
+        - panel
+        - exposure
+        - hypertest
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard/'
+      signs:
+        - "on": word
+          has:
+            - <title>HyperTest | Common Dashboard</title>
+            - HyperTest | Dashboard
+            - HyperTest doesn't work
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

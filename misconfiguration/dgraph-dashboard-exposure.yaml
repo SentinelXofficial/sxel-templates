@@ -1,0 +1,28 @@
+id: dgraph-dashboard-exposure
+brief:
+    title: Dgraph Ratel Dashboard Exposure Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Dgraph Ratel Dashboard Exposure panel was detected.
+    label:
+        - exposure
+        - unauth
+        - panel
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?dev'
+      signs:
+        - "on": word
+          has:
+            - Choose a version of the Ratel interface
+            - <title>Dgraph Ratel Dashboard</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

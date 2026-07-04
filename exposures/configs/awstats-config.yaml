@@ -1,0 +1,29 @@
+id: awstats-config
+brief:
+    title: AWStats Config - Detect
+    by: sheikhrishad
+    level: info
+    about: AWStats configuration information was detected.
+    label:
+        - config
+        - exposure
+        - awstats
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/awstats/'
+        - '{{BaseURL}}/awstats.conf'
+      signs:
+        - "on": word
+          has:
+            - AWSTATS CONFIGURE
+            - MAIN SETUP SECTION
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Index of /awstats
+            - Parent Directory
+          in: body
+          need: all

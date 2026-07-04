@@ -1,0 +1,35 @@
+id: awstats-script
+brief:
+    title: AWStats Script Config - Detect
+    by: sheikhrishad
+    level: info
+    about: AWStats configuration information was detected.
+    label:
+        - config
+        - exposure
+        - awstats
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/awstats.pl'
+        - '{{BaseURL}}/cgi-bin/awstats.pl'
+        - '{{BaseURL}}/logs/awstats.pl'
+        - '{{BaseURL}}/webstats/awstats.pl'
+        - '{{BaseURL}}/awstats/awstats.pl'
+        - '{{BaseURL}}/cgi-bin/awstats/awstats.pl'
+        - '{{BaseURL}}/awstats/awstats.pl?config='
+      signs:
+        - "on": word
+          has:
+            - Do not remove this line
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/x-perl
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

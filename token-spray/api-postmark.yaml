@@ -1,0 +1,24 @@
+id: api-postmark
+brief:
+    title: PostMark API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - postmark
+moves:
+    - verb: GET
+      to:
+        - https://api.postmarkapp.com/server
+      head:
+        Accept: application/json
+        X-Postmark-Server-Token: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"ID":'
+            - '"Name":'
+            - '"ApiTokens":'
+          in: body
+          need: all

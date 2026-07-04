@@ -1,0 +1,32 @@
+id: oqtane-cms-db
+brief:
+    title: Oqtane CMS Database - Detect
+    by: Masoud Abdaal
+    level: info
+    about: Detect which database distribution the target oqtane cms use.
+    label:
+        - detect
+        - tech
+        - api
+        - cms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/database'
+      signs:
+        - "on": word
+          has:
+            - controlType"
+            - Oqtane
+            - dbType"
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

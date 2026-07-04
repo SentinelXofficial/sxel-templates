@@ -1,0 +1,25 @@
+id: cyberghost-phish
+brief:
+    title: CyberGhost phishing Detection
+    by: rxerium
+    level: info
+    about: A CyberGhost phishing website was detected
+    label:
+        - phishing
+        - cyberghost
+        - vpn
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Fast, Secure, &amp; Private VPN Service | CyberGhost VPN
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: couchsurfing
+brief:
+    title: Couchsurfing User Name Information - Detect
+    by: philippedelteil
+    level: info
+    about: Couchsurfing user name information check was conducted. This OSINT template looks for information about a user name in Couchsurfing.CouchSurfing is a hospitality exchange service by which users can...
+    label:
+        - osint
+        - osint-social
+        - couchsurfing
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.couchsurfing.com/people/{{user}}
+      signs:
+        - "on": word
+          has:
+            - is on Couchsurfing!
+            - profile_page
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

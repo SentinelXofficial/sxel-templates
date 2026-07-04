@@ -1,0 +1,25 @@
+id: snapchat-phish
+brief:
+    title: Snapchat phishing Detection
+    by: rxerium
+    level: info
+    about: A Snapchat phishing website was detected
+    label:
+        - phishing
+        - snapchat
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Snapchat - Say It In A Snap
+            - Snapchat
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

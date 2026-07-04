@@ -1,0 +1,24 @@
+id: tableau-service-manager
+brief:
+    title: Tableau Services Manager Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Tableau Services Manager login panel was detected.
+    label:
+        - panel
+        - tableau
+        - tableausoftware
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Login - Tableau Services Manager</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

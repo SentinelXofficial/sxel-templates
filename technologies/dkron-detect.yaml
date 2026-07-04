@@ -1,0 +1,24 @@
+id: dkron-detect
+brief:
+    title: Dkron - Detect
+    by: icarot
+    level: info
+    about: detected a Dkron server, a distributed and fault-tolerant job scheduling system for cloud-native environments.
+    label:
+        - tech
+        - dkron
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/'
+      signs:
+        - "on": word
+          has:
+            - <title>Dkron</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

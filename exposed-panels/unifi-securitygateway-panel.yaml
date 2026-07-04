@@ -1,0 +1,24 @@
+id: unifi-securitygateway-panel
+brief:
+    title: Ubiquiti UniFi Security Gateway - Login Panel
+    by: rxerium
+    level: info
+    about: Ubiquiti UniFi Security Gateway management panel detected.
+    label:
+        - panel
+        - ubiquiti
+        - unifi
+        - securitygateway
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - UniFi Security Gateway
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

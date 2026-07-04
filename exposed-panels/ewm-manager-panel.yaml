@@ -1,0 +1,25 @@
+id: ewm-manager-panel
+brief:
+    title: EWM Manager Login Panel - Detect
+    by: pussycat0x
+    level: info
+    about: EWM Manager login panel was detected.
+    label:
+        - ewm
+        - manager
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wfc/'
+      signs:
+        - "on": word
+          has:
+            - <TITLE>EWM Manager
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

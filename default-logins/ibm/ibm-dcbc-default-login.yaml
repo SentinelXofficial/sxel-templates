@@ -1,0 +1,28 @@
+id: ibm-dcbc-default-login
+brief:
+    title: IBM Decision Center Business Console - Default Login
+    by: DhiyaneshDK
+    level: high
+    about: ""
+    label:
+        - ibm
+        - default-login
+        - decision-center
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/decisioncenter/j_security_check'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: j_username={{username}}&j_password={{password}}
+      signs:
+        - "on": word
+          has:
+            - 'userName: ''odmAdmin'''
+            - Log out
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

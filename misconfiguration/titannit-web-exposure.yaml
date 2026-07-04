@@ -1,0 +1,26 @@
+id: titannit-web-exposure
+brief:
+    title: TitanNit Web Control - Exposure
+    by: DhiyaneshDk
+    level: medium
+    about: ""
+    label:
+        - misconfig
+        - titannit
+        - webcontrol
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>TitanNit Web Control
+            - System</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

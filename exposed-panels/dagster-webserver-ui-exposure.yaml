@@ -1,0 +1,17 @@
+id: dagster-webserver-ui-exposure
+brief:
+    title: Dagster - Webserver UI Exposure
+    by: 0x_Akoko
+    level: medium
+    about: Detected an exposed Dagster data orchestration webserver UI, potentially allowing unauthorized access to data pipelines, job configurations, and execution history.
+    label:
+        - dagster
+        - data
+        - exposure
+        - panel
+    score: CVSS:6.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

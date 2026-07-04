@@ -1,0 +1,27 @@
+id: f5-admin-interface
+brief:
+    title: F5 Admin Interface - Detect
+    by: drewvravick
+    level: info
+    about: Detects F5 Admin Interfaces.
+    label:
+        - f5
+        - admin
+        - detect
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/tmui/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - Configuration Utility
+            - F5 Networks
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

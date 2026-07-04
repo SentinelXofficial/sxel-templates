@@ -1,0 +1,26 @@
+id: openbmcs-detect
+brief:
+    title: OpenBMCS Login Panel - Detect
+    by: ffffffff0x
+    level: info
+    about: OpenBCMS login panel was detected.
+    label:
+        - panel
+        - openbmcs
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - BMS - Login
+            - Copyright all rights reserved by Open BMCS
+            - OpenBMCS does not support Internet Explorer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,17 @@
+id: txadmin-panel
+brief:
+    title: txAdmin Panel - Detect
+    by: s4e-io
+    level: info
+    about: txAdmin panel was discovered.
+    label:
+        - panel
+        - login
+        - txadmin
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth'
+      signs: []

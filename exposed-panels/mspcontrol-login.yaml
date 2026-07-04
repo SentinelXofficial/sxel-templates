@@ -1,0 +1,26 @@
+id: mspcontrol-login
+brief:
+    title: MSPControl Login Panel - Detect
+    by: idealphase
+    level: info
+    about: MSPControl login panel was detected.
+    label:
+        - panel
+        - mspcontrol
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Default.aspx?pid=Login'
+      head:
+        Cookie: UserCulture=en-US
+      signs:
+        - "on": word
+          has:
+            - MSPControl - Sign In
+            - Sign In to Control Panel
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

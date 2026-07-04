@@ -1,0 +1,20 @@
+id: workerman-websocket-detect
+brief:
+    title: Workerman Websocket Detection
+    by: geeknik
+    level: info
+    about: ""
+    label:
+        - tech
+        - workerman
+        - websocket
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - workerman/
+          in: header

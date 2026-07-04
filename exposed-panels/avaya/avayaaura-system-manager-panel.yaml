@@ -1,0 +1,24 @@
+id: avayaaura-system-manager-panel
+brief:
+    title: Avaya Aura System Manager Login - Panel Detect
+    by: princechaddha
+    level: info
+    about: Avaya Aura System Manager login panel was detected.
+    label:
+        - panel
+        - avaya
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/network-login/'
+      signs:
+        - "on": word
+          has:
+            - Avaya Aura
+            - System Manager
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

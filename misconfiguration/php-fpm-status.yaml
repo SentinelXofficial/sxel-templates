@@ -1,0 +1,26 @@
+id: php-fpm-status
+brief:
+    title: PHP-FPM Status
+    by: geeknik
+    level: info
+    about: ""
+    label:
+        - config
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/status?full'
+      signs:
+        - "on": word
+          has:
+            - 'pool:'
+            - 'process manager:'
+            - 'start time:'
+            - 'pid:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

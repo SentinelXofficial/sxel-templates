@@ -1,0 +1,23 @@
+id: mobotix-guest-camera
+brief:
+    title: MOBOTIX Guest Camera Live View - Detect
+    by: dhiyaneshDK
+    level: info
+    about: MOBOTIX Guest Camera live view was detected.
+    label:
+        - iot
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/guestimage.html'
+      signs:
+        - "on": word
+          has:
+            - MOBOTIX
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

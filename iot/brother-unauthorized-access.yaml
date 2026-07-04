@@ -1,0 +1,26 @@
+id: brother-unauthorized-access
+brief:
+    title: Brother Printer
+    by: pussycat0x
+    level: medium
+    about: Brother Printer unauthorized access was detected.
+    label:
+        - iot
+        - printer
+        - unauth
+        - vuln
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/net/net/net.html'
+      signs:
+        - "on": word
+          has:
+            - Brother Industries
+            - Network Status
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

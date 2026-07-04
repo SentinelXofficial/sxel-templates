@@ -1,0 +1,25 @@
+id: generic-windows-lfi
+brief:
+    title: Windows - Local File Inclusion
+    by: mesaglio
+    level: high
+    about: Windows is vulnerable to local file inclusion because of searches for /windows/win.ini on passed URLs.
+    label:
+        - azure
+        - windows
+        - lfi
+        - generic
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - bit app support
+            - fonts
+            - extensions
+          in: body
+          need: all

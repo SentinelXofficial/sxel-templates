@@ -1,0 +1,16 @@
+id: imgproxy-detect
+brief:
+    title: Imgproxy Detect
+    by: userdehghani
+    level: info
+    about: imgproxy is a fast and secure standalone server for resizing, processing, and converting images.
+    label:
+        - imgproxy
+        - tech
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

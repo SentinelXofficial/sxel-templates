@@ -1,0 +1,18 @@
+id: wordpress-ultimate-addons-for-gutenberg
+brief:
+    title: Spectra Gutenberg Blocks – Website Builder for the Block Editor Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/ultimate-addons-for-gutenberg/readme.txt'
+      signs: []

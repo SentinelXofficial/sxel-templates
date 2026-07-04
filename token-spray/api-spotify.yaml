@@ -1,0 +1,23 @@
+id: api-spotify
+brief:
+    title: Spotify API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - spotify
+moves:
+    - verb: GET
+      to:
+        - https://api.spotify.com/v1/me/player/devices
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"devices":'
+            - '"id":'
+            - '"is_active":'
+          in: body
+          need: all

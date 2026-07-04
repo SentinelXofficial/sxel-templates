@@ -1,0 +1,23 @@
+id: meshcentral-login
+brief:
+    title: MeshCentral Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: MeshCentral login panel was detected.
+    label:
+        - panel
+        - meshcentral
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>MeshCentral - Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
