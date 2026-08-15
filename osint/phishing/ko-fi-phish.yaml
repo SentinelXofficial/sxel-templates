@@ -1,0 +1,25 @@
+id: ko-fi-phish
+brief:
+    title: Ko-fi phishing Detection
+    by: rxerium
+    level: info
+    about: A Ko-fi phishing website was detected
+    label:
+        - phishing
+        - ko-fi
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Ko-fi
+            - <title>Ko-fi | Make money doing what you love
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

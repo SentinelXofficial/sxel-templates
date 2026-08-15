@@ -1,0 +1,24 @@
+id: powerlogic-ion
+brief:
+    title: PowerLogic ION Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: PowerLogic ION panel was detected.
+    label:
+        - panel
+        - edb
+        - schneider-electric
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - PowerLogic ION
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

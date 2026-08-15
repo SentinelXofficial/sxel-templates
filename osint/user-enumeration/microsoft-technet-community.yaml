@@ -1,0 +1,24 @@
+id: microsoft-technet-community
+brief:
+    title: Microsoft Technet Community User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Microsoft Technet Community user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - microsoft-technet-community
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://social.technet.microsoft.com/profile/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s Profile</title>
+          in: body
+          need: all

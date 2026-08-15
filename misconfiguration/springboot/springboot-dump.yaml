@@ -1,0 +1,30 @@
+id: springboot-dump
+brief:
+    title: Detect Springboot Dump Actuator
+    by: pussycat0x
+    level: low
+    about: Performs a thread dump
+    label:
+        - springboot
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dump'
+        - '{{BaseURL}}/actuator/dump'
+      signs:
+        - "on": word
+          has:
+            - threadName
+            - threadId
+            - waitedTime
+            - lockName
+            - stackTrace
+            - methodName
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

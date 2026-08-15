@@ -1,0 +1,30 @@
+id: pinpoint-unauth
+brief:
+    title: PinPoint Unauth
+    by: dhiyaneshDk
+    level: high
+    about: PinPoint is exposed.
+    label:
+        - pippoint
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/applications.pinpoint'
+      signs:
+        - "on": word
+          has:
+            - applicationName
+            - serviceType
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: horde-login-panel
+brief:
+    title: Horde Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Horde login panel was detected.
+    label:
+        - horde
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/horde/login.php'
+        - '{{BaseURL}}/login.php'
+      signs:
+        - "on": word
+          has:
+            - HordeLogin.user
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: jira-unauthenticated-installed-gadgets
+brief:
+    title: Jira Unauthenticated Installed gadgets
+    by: philippedelteil
+    level: info
+    about: Some Jira instances allow to read the installed gadgets (sometimes it's also possible to read config xml file for some gadgets)
+    label:
+        - atlassian
+        - jira
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/rest/config/1.0/directory'
+      signs:
+        - "on": word
+          has:
+            - jaxbDirectoryContents
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

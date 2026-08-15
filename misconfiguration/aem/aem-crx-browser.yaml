@@ -1,0 +1,30 @@
+id: aem-crx-browser
+brief:
+    title: Adobe AEM CRX Browser Exposure
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - aem
+        - adobe
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/crx/explorer/browser/index.jsp'
+      signs:
+        - "on": word
+          has:
+            - '<title>Content Explorer - UserID: anonymous | Workspace: crx.default</title>'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

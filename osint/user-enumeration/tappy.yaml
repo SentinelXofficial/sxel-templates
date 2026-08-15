@@ -1,0 +1,24 @@
+id: tappy
+brief:
+    title: Tappy User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Tappy user name information check was conducted.
+    label:
+        - osint
+        - osint-business
+        - tappy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://api.tappy.tech/api/profile/username/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - user_id
+          in: body
+          need: all

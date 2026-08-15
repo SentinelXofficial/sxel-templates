@@ -1,0 +1,19 @@
+id: photoprism-default-login
+brief:
+    title: PhotoPrism - Default Login
+    by: ritikchaddha
+    level: high
+    about: PhotoPrism is an AI-powered photos app for the decentralized web. This template detects instances using default credentials (admin:admin321).
+    label:
+        - photoprism
+        - default-login
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/v1/session'
+      head:
+        Content-Type: application/json
+      body: '{"username":"{{username}}","password":"{{password}}","code":""}'
+      signs: []

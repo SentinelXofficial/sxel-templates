@@ -1,0 +1,31 @@
+id: zenphoto-sensitive-info
+brief:
+    title: Zenphoto Installation Sensitive Information
+    by: qlkwej
+    level: medium
+    about: Misconfiguration on Zenphoto version < 1.5.X which lead to sensitive information disclosure
+    label:
+        - misconfig
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/zenphoto/zp-core/setup/index.php'
+        - '{{BaseURL}}/zp/zp-core/setup/index.php'
+        - '{{BaseURL}}/gallery/zp-core/setup/index.php'
+        - '{{BaseURL}}/zp-core/setup/index.php'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Zenphoto! This page will set up Zenphoto
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

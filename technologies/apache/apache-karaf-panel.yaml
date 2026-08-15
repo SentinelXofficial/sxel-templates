@@ -1,0 +1,20 @@
+id: apache-karaf-panel
+brief:
+    title: Apache Karaf Detect
+    by: s0obi
+    level: info
+    about: ""
+    label:
+        - tech
+        - apache
+        - karaf
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/system/console'
+      signs:
+        - "on": word
+          has:
+            - realm="karaf
+          in: header

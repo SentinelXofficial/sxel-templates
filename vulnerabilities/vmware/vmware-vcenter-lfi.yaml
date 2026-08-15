@@ -1,0 +1,20 @@
+id: vmware-vcenter-lfi
+brief:
+    title: VMware vCenter - Local File Inclusion
+    by: dwisiswant0
+    level: high
+    about: VMware vCenter is vulnerable to local file inclusion.
+    label:
+        - vmware
+        - lfi
+        - vcenter
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/eam/vib?id={{path}}\vcdb.properties'
+      signs:
+        - "on": status
+          status:
+            - 200

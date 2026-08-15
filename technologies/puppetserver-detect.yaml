@@ -1,0 +1,30 @@
+id: puppetserver-detect
+brief:
+    title: Puppetserver Detection
+    by: c-sh0
+    level: info
+    about: ""
+    label:
+        - tech
+        - puppet
+        - exposure
+        - intrusive
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/puppet-ca/v1/certificate_request/{{randstr}}'
+      signs:
+        - "on": status
+          status:
+            - 404
+        - "on": word
+          has:
+            - x-puppet-version
+          in: header
+          need: all
+        - "on": word
+          has:
+            - '{{randstr}}'
+          in: body
+          need: all

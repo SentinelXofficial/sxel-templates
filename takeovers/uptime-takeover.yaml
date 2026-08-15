@@ -1,0 +1,23 @@
+id: uptime-takeover
+brief:
+    title: Uptime Takeover Detection
+    by: philippedelteil
+    level: high
+    about: ""
+    label:
+        - takeover
+        - uptime
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <html><body>You are being <a href="https://uptime.betterstack.com">redirected</a>.</body></html>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 302

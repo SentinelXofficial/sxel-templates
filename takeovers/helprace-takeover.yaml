@@ -1,0 +1,21 @@
+id: helprace-takeover
+brief:
+    title: Helprace Takeover Detection
+    by: pdteam
+    level: high
+    about: Helprace takeover was detected.
+    label:
+        - takeover
+        - helprace
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Alias not configured!
+            - Admin of this Helprace account needs to set up domain alias
+          in: body
+          need: all

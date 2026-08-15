@@ -1,0 +1,24 @@
+id: paypal
+brief:
+    title: Paypal User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Paypal user name information check was conducted.
+    label:
+        - osint
+        - osint-finance
+        - paypal
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.paypal.com/paypalme/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - userInfo
+          in: body
+          need: all

@@ -1,0 +1,25 @@
+id: misp-panel
+brief:
+    title: MISP Threat Intelligence Sharing Platform Panel - Detect
+    by: johnk3r
+    level: info
+    about: ""
+    label:
+        - panel
+        - misp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/users/login'
+      signs:
+        - "on": word
+          has:
+            - https://github.com/MISP/MISP
+            - <title>Users - MISP</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+            - 500

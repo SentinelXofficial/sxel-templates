@@ -1,0 +1,25 @@
+id: sophos-fw-version-detect
+brief:
+    title: Sophos Firewall Login Panel - Detect
+    by: organiccrap
+    level: info
+    about: Sophos Firewall login panel was detected.
+    label:
+        - panel
+        - sophos
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webconsole/webpages/login.jsp'
+        - '{{BaseURL}}/userportal/webpages/myaccount/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - <title>Sophos</title>
+            - uiLangToHTMLLangAttributeValueMapping
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

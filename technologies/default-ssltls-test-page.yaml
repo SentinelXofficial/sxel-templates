@@ -1,0 +1,19 @@
+id: default-ssltls-test-page
+brief:
+    title: SSL/TLS-aware Test Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - ssltls
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <TITLE>Test Page for the SSL/TLS-aware Apache Installation on Web Site</TITLE>
+          in: body

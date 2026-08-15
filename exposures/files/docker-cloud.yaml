@@ -1,0 +1,27 @@
+id: docker-cloud
+brief:
+    title: Docker Cloud Yaml - File Disclosure
+    by: DhiyaneshDK
+    level: medium
+    about: Docker cloud internal yaml file is exposed.
+    label:
+        - exposure
+        - cloud
+        - devops
+        - docker
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/docker-cloud.yml'
+      signs:
+        - "on": word
+          has:
+            - application/json
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

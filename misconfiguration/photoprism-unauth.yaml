@@ -1,0 +1,16 @@
+id: photoprism-unauth
+brief:
+    title: PhotoPrism - Unauth Access
+    by: ritikchaddha
+    level: high
+    about: PhotoPrism is an AI-powered photos app for the decentralized web. This template detects instances that are accessible without authentication, potentially exposing sensitive user data and photos.
+    label:
+        - photoprism
+        - misconfig
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/config'
+      signs: []

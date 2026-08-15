@@ -1,0 +1,15 @@
+id: expect-ct-misconfigured
+brief:
+    title: Expect-CT Header - Misconfigured
+    by: theamanrawat
+    level: info
+    about: 'Detected misconfigured Expect-CT headers: max-age is 0 (ineffective) and enforce directive is missing'
+    label:
+        - headers
+        - expect-ct
+        - misconfiguration
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

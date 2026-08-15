@@ -1,0 +1,27 @@
+id: vercel-source-exposure
+brief:
+    title: Vercel Source Code Exposure
+    by: hlop
+    level: medium
+    about: The Vercel Source Code Exposure misconfiguration allows an attacker to access sensitive source code files on the Vercel platform.
+    label:
+        - vercel
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_src'
+      signs:
+        - "on": word
+          has:
+            - Deployment Source</title>
+            - Deployment Source – Dashboard – Vercel
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <title>Login – Vercel</title>
+          in: body
+          need: all

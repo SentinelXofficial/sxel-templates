@@ -1,0 +1,28 @@
+id: cups-detect
+brief:
+    title: CUPS - Detect
+    by: rxerium
+    level: info
+    about: An instance running CUPS was detected.
+    label:
+        - cups
+        - tech
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Web Interface is Disabled - CUPS
+            - Forbidden - CUPS
+            - 'Server: CUPS'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+            - 404
+            - 403

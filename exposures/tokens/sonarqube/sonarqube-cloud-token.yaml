@@ -1,0 +1,16 @@
+id: sonarqube-cloud-token
+brief:
+    title: SonarQube Cloud Token Disclosure
+    by: DhiyaneshDk
+    level: high
+    about: ""
+    label:
+        - exposure
+        - token
+        - sonarqube
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

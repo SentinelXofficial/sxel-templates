@@ -1,0 +1,18 @@
+id: headlamp-panel
+brief:
+    title: Headlamp Kubernetes UI Panel - Detect
+    by: shamo0
+    level: medium
+    about: Detected Headlamp Kubernetes Web UI panel exposed, which could lead to unauthorized access to Kubernetes cluster management if not properly secured.
+    label:
+        - panel
+        - headlamp
+        - kubernetes
+        - exposure
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/settings/plugins'
+        - '{{BaseURL}}/settings/cluster'
+      signs: []

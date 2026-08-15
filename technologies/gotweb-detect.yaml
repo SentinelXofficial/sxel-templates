@@ -1,0 +1,24 @@
+id: gotweb-detect
+brief:
+    title: GotWeb Detect
+    by: lu4nx
+    level: info
+    about: Game of Trees (Got) is a version control system which prioritizes ease of use and simplicity over flexibility.
+    label:
+        - tech
+        - got
+        - gotweb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <link rel="stylesheet" type="text/css" href="/gotweb.css" />
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

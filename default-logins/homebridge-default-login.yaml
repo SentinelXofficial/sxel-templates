@@ -1,0 +1,24 @@
+id: homebridge-default-login
+brief:
+    title: Homebridge - Default Admin Credentials
+    by: 0x_Akoko
+    level: high
+    about: Detected Homebridge UI was found using default administrator credentials (admin:admin). An attacker could have gained full access to manage HomeKit accessories, plugins, and server configuration.
+    label:
+        - default-login
+        - homebridge
+        - iot
+        - vuln
+    score: CVSS:9.8
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/auth/login'
+      head:
+        Content-Type: application/json
+      body: '{"username":"{{username}}","password":"{{password}}"}'
+      signs: []

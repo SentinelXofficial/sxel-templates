@@ -1,0 +1,25 @@
+id: manageengine-analytics
+brief:
+    title: ZOHO ManageEngine Analytics Plus Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: ZOHO ManageEngine analytics plus panel was detected.
+    label:
+        - panel
+        - zoho
+        - manageengine
+        - zohocorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/iam/login'
+      signs:
+        - "on": word
+          has:
+            - <title>ManageEngine Analytics Plus</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

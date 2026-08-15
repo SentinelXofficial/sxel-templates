@@ -1,0 +1,35 @@
+id: grafana-public-signup
+brief:
+    title: Grafana Public Signup
+    by: pdteam
+    level: medium
+    about: Public Signup is enabled on Grafana.
+    label:
+        - grafana
+        - intrusive
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/user/signup/step2'
+      head:
+        Origin: '{{BaseURL}}'
+        Referer: '{{BaseURL}}'
+        content-type: application/json
+      body: '{"username":"{{randstr}}","password":"{{randstr_1}}"}'
+      signs:
+        - "on": word
+          has:
+            - User sign up completed successfully
+          in: body
+          need: all
+        - "on": word
+          has:
+            - grafana_sess
+            - grafana_user
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: sceditor-detect
+brief:
+    title: SCEditor Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - sceditor
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Ticket BBCode editor - SCEditor</title>
+            - title="SCEditor"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

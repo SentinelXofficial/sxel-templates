@@ -1,0 +1,31 @@
+id: nginx-config
+brief:
+    title: Nginx Config - Detect
+    by: sheikhrishad
+    level: info
+    about: Nginx configuration information was detected.
+    label:
+        - config
+        - exposure
+        - nginx
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nginx.conf'
+      signs:
+        - "on": word
+          has:
+            - html>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - server
+            - listen
+            - server_name
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

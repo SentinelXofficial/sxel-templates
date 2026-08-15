@@ -1,0 +1,21 @@
+id: concourse-ci-panel
+brief:
+    title: Concourse CI Login Panel - Detect
+    by: praetorian-thendrickson
+    level: info
+    about: Concourse CI login panel was detected.
+    label:
+        - panel
+        - concourse
+        - oss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Concourse</title>
+            - login to Concourse
+          in: body

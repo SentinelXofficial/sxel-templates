@@ -1,0 +1,31 @@
+id: openstack-config
+brief:
+    title: Openstack - Infomation Disclosure
+    by: MayankPandey01
+    level: low
+    about: Openstack exposing Configuration or settings related to the Swift object storage system.
+    label:
+        - exposure
+        - misconfig
+        - openstack
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/info'
+        - '{{BaseURL}}/v1/info'
+      signs:
+        - "on": word
+          has:
+            - '{"formpost"'
+            - '"bulk_'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

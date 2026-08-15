@@ -1,0 +1,24 @@
+id: wordpress-themes-detect
+brief:
+    title: WordPress Theme Detection
+    by: 0xcrypto
+    level: info
+    about: ""
+    label:
+        - fuzz
+        - wordpress
+        - fuzzing
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/themes/{{themeSlug}}/readme.txt'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - == Description ==
+          in: body
+          need: all

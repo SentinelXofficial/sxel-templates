@@ -1,0 +1,28 @@
+id: cpanel-api-codes
+brief:
+    title: cPanel API Codes Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: cPanel API Codes panel was detected.
+    label:
+        - panel
+        - cpanel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>CPanel - API Codes</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

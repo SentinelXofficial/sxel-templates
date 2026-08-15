@@ -1,0 +1,17 @@
+id: fastcgi-config
+brief:
+    title: FastCGI Configuration - File Disclosure
+    by: DhiyaneshDk
+    level: medium
+    about: FastCGI configuration file is exposed and accessible, potentially leading to sensitive information disclosure.
+    label:
+        - fastcgi
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/fastcgi.conf'
+        - '{{BaseURL}}/config/fastcgi.conf'
+      signs: []

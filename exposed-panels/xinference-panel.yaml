@@ -1,0 +1,27 @@
+id: xinference-panel
+brief:
+    title: Xinference Panel - Detect
+    by: rxerium
+    level: info
+    about: Xinference (Xorbits Inference) is a powerful and versatile library designed to
+    label:
+        - panel
+        - xinference
+        - llm
+        - ai
+        - inference
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Xinference
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

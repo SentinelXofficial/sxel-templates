@@ -1,0 +1,26 @@
+id: lacie-panel
+brief:
+    title: LaCie Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: LaCie login panel was detected.
+    label:
+        - panel
+        - lacie
+        - login
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/dashboard/'
+      signs:
+        - "on": word
+          has:
+            - id_LaCie
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

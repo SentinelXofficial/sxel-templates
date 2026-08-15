@@ -1,0 +1,37 @@
+id: browserless-swagger-detect
+brief:
+    title: Browserless API Swagger - Detect
+    by: theamanrawat
+    level: info
+    about: Detects exposed Browserless API Swagger UI interface. Browserless is a headless browser automation service that provides REST APIs for Chrome/Chromium-based browser operations including screenshots...
+    label:
+        - tech
+        - browserless
+        - swagger
+        - api
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/docs/swagger-ui-init.js'
+      signs:
+        - "on": word
+          has:
+            - browserless/chrome API
+            - browserless Swagger documentation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/docs'
+      signs:
+        - "on": word
+          has:
+            - <title>Swagger UI
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

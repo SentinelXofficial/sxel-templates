@@ -1,0 +1,26 @@
+id: microweber-install
+brief:
+    title: Microweber Exposed Installation - Detected
+    by: pussycat0x
+    level: high
+    about: Microweber Installation page was exposed.
+    label:
+        - misconfig
+        - microweber
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Installation</title>
+            - Database Server
+            - Login Information
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

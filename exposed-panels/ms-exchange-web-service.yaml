@@ -1,0 +1,23 @@
+id: ms-exchange-web-service
+brief:
+    title: Microsoft Exchange Web Service - Detect
+    by: bhutch
+    level: info
+    about: Microsoft Exchange Web Services was detected.
+    label:
+        - ms
+        - microsoft
+        - exchange
+        - tech
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/EWS/Exchange.asmx'
+        - '{{BaseURL}}/owa/service.svc'
+      signs:
+        - "on": status
+          status:
+            - 401
+            - 302

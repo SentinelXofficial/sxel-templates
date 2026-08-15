@@ -1,0 +1,28 @@
+id: oracle-test-cgi
+brief:
+    title: Oracle Application Server test-cgi Page
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - oracle
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/test-cgi'
+      signs:
+        - "on": word
+          has:
+            - SERVER_SOFTWARE =
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

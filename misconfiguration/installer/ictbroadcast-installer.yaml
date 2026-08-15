@@ -1,0 +1,30 @@
+id: ictbroadcast-installer
+brief:
+    title: ICTBroadcast Installation Wizard
+    by: DhiyaneshDK
+    level: high
+    about: ICTBroadcast is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - exposure
+        - install
+        - ictbroadcast
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install.php'
+      signs:
+        - "on": word
+          has:
+            - 'ICTBroadcast[ICTBroadcast :: Installation]'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

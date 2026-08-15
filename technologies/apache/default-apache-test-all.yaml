@@ -1,0 +1,15 @@
+id: default-apache-test-all
+brief:
+    title: Apache HTTP Server Test Page
+    by: andydoering
+    level: info
+    about: Detects default installations of apache (not just apache2 or installations on CentOS)
+    label:
+        - tech
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

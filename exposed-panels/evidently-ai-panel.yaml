@@ -1,0 +1,23 @@
+id: evidently-ai-panel
+brief:
+    title: Evidently AI Panel - Detect
+    by: rxerium
+    level: info
+    about: Evidently AI is an ML/LLM observability platform for monitoring data drift and model performance.
+    label:
+        - panel
+        - evidently
+        - ai
+        - ml
+        - monitoring
+        - observability
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

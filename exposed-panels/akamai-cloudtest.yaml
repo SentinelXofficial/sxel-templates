@@ -1,0 +1,24 @@
+id: akamai-cloudtest
+brief:
+    title: Akamai CloudTest Panel
+    by: emadshanab
+    level: info
+    about: An Akamai CloudTest panel was discovered.
+    label:
+        - panel
+        - akamai
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/concerto/Login?goto=Central'
+      signs:
+        - "on": word
+          has:
+            - Akamai Inc. All rights reserved
+            - Akamai CloudTest
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

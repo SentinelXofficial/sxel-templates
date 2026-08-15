@@ -1,0 +1,27 @@
+id: exposed-sharepoint-list
+brief:
+    title: Sharepoint List - Detect
+    by: ELSFA7110
+    level: medium
+    about: Sharepoint list was detected because of improper configuration. An anonymous user can access SharePoint Web Services.
+    label:
+        - hackerone
+        - config
+        - exposure
+        - sharepoint
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_vti_bin/lists.asmx?WSDL'
+      signs:
+        - "on": word
+          has:
+            - GetListResponse
+            - GetList
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

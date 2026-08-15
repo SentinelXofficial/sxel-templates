@@ -1,0 +1,23 @@
+id: api-instagramgraph
+brief:
+    title: Instagram Graph API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - instagram
+        - graph
+        - facebook
+moves:
+    - verb: GET
+      to:
+        - https://graph.facebook.com/v12.0/me/accounts?access_token={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"data":'
+            - '"access_token":'
+            - '"name":'
+          in: body
+          need: all

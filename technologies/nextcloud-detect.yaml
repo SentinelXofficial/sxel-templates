@@ -1,0 +1,28 @@
+id: nextcloud-detect
+brief:
+    title: Nextcloud Detect
+    by: skeltavik
+    level: info
+    about: Nextcloud is a suite of client-server software for creating and using file hosting services
+    label:
+        - tech
+        - nextcloud
+        - storage
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login'
+        - '{{BaseURL}}/nextcloud/login'
+        - '{{BaseURL}}/nextcloud/index.php/login'
+      signs:
+        - "on": word
+          has:
+            - var nc_lastLogin
+            - var nc_pageLoad
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

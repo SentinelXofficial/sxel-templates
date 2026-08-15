@@ -1,0 +1,40 @@
+id: glpi-default-login
+brief:
+    title: GLPI Default Login
+    by: andysvints
+    level: high
+    about: GLPI default login credentials were discovered. GLPI is an ITSM software tool that helps you plan and manage IT changes. This template checks if a default super admin account (glpi/glpi) is enabled.
+    label:
+        - glpi
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - <title>GLPI - Standard Interface</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/front/login.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{BaseURL}}'
+        Referer: '{{BaseURL}}'
+      body: '{{name}}={{user}}&{{password}}={{pass}}&auth=local&submit=Submit&_glpi_csrf_token={{token}}'
+      signs:
+        - "on": word
+          has:
+            - <title>GLPI - Standard Interface</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

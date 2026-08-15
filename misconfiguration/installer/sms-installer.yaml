@@ -1,0 +1,24 @@
+id: sms-installer
+brief:
+    title: SMS Gateway Installation
+    by: ritikchaddha
+    level: high
+    about: SMS Gateway is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - sms
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/index.php'
+      signs:
+        - "on": word
+          has:
+            - SMS Gateway | Installation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

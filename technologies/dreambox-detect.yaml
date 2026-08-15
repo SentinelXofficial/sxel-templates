@@ -1,0 +1,23 @@
+id: dreambox-detect
+brief:
+    title: DreamBox Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - dreambox
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Dreambox WebControl</title>
+          in: body
+          need: all

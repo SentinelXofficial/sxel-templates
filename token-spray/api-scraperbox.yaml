@@ -1,0 +1,22 @@
+id: api-scraperbox
+brief:
+    title: ScraperBox API Test
+    by: daffainfo
+    level: info
+    about: Undetectable web scraping API
+    label:
+        - token-spray
+        - scraperbox
+moves:
+    - verb: GET
+      to:
+        - https://api.scraperbox.com/scrape?token={{token}}&url=https://oast.me
+      signs:
+        - "on": status
+          status:
+            - 304
+        - "on": word
+          has:
+            - <h1> Interactsh Server </h1>
+          in: body
+          need: all

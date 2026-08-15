@@ -1,0 +1,30 @@
+id: airnotifier-panel
+brief:
+    title: AirNotifier Login Panel - Detect
+    by: tess
+    level: info
+    about: AirNotifier login panel was detected.
+    label:
+        - panel
+        - airnotifier
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+      signs:
+        - "on": word
+          has:
+            - AirNotifier
+            - Stats
+            - Server Info
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

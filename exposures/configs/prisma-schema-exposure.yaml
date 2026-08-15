@@ -1,0 +1,32 @@
+id: prisma-schema-exposure
+brief:
+    title: Exposed Prisma Database Schema - Exposure
+    by: Umut ÖZEN
+    level: medium
+    about: Prisma is a modern ORM extremely popular in the Node.js and TypeScript (Next.js/Express) ecosystems. Developers often accidentally expose the `prisma/` folder in web directories during deployments ...
+    label:
+        - exposure
+        - prisma
+        - database
+        - config
+        - custom
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/schema.prisma'
+        - '{{BaseURL}}/prisma/schema.prisma'
+        - '{{BaseURL}}/src/prisma/schema.prisma'
+        - '{{BaseURL}}/db/schema.prisma'
+        - '{{BaseURL}}/.prisma/schema.prisma'
+      signs:
+        - "on": word
+          has:
+            - generator
+            - 'datasource '
+            - provider =
+            - 'model '
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

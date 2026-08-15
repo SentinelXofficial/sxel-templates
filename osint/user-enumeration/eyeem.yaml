@@ -1,0 +1,24 @@
+id: eyeem
+brief:
+    title: Eyeem User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Eyeem user name information check was conducted.
+    label:
+        - osint
+        - osint-art
+        - eyeem
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.eyeem.com/u/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| EyeEm Photographer'
+          in: body
+          need: all

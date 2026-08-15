@@ -1,0 +1,24 @@
+id: kongregate
+brief:
+    title: Kongregate User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Kongregate user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - kongregate
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.kongregate.com/accounts/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Member Since
+          in: body
+          need: all

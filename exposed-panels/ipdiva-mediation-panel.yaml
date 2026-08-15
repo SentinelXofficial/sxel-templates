@@ -1,0 +1,26 @@
+id: ipdiva-mediation-panel
+brief:
+    title: IPdiva Mediation Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: IPdiva Mediation login panel was detected.
+    label:
+        - panel
+        - ipdiva
+        - mediation
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/mediation/domains'
+        - '{{BaseURL}}/mediation/authenticate'
+      signs:
+        - "on": word
+          has:
+            - IPdiva mediation
+          in: header
+        - "on": word
+          has:
+            - IPdiva Secure
+          in: body

@@ -1,0 +1,22 @@
+id: wp-hostinger-fpd
+brief:
+    title: WordPress Hostinger Tools - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Plugin Hostinger Tools files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - fpd
+        - hostinger
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/hostinger/vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php'
+        - '{{BaseURL}}/wp-content/plugins/hostinger/vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php'
+        - '{{BaseURL}}/wp-content/plugins/hostinger/vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Abstract_QueueRunner.php'
+        - '{{BaseURL}}/wp-content/plugins/hostinger/vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Store.php'
+        - '{{BaseURL}}/wp-content/plugins/hostinger/vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php'
+      signs: []

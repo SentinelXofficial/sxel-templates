@@ -1,0 +1,26 @@
+id: e-mobile-panel
+brief:
+    title: E-mobile Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: E-mobile panel was detected.
+    label:
+        - panel
+        - e-mobile
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.do?'
+        - '{{BaseURL}}/login/login.do?'
+        - '{{BaseURL}}/manager/login.do?'
+      signs:
+        - "on": word
+          has:
+            - E-Mobile&nbsp;
+            - Weaver E-Mobile
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: hugging-face
+brief:
+    title: Hugging face User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Hugging face user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - hugging-face
+        - discovery
+        - ai
+moves:
+    - verb: GET
+      to:
+        - https://huggingface.co/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - thumbnails.huggingface.co/social-thumbnails/
+          in: body
+          need: all

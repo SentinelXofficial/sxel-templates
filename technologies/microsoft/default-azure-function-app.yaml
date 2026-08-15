@@ -1,0 +1,24 @@
+id: default-azure-function-app
+brief:
+    title: Azure Function App - Default Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - azure
+        - microsoft
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Your Azure Function App is up and running.</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

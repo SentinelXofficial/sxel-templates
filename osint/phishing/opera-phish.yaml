@@ -1,0 +1,24 @@
+id: opera-phish
+brief:
+    title: opera phishing Detection
+    by: rxerium
+    level: info
+    about: A opera phishing website was detected
+    label:
+        - phishing
+        - opera
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Opera Web Browser | Faster, Safer, Smarter | Oper
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

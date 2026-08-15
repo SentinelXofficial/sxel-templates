@@ -1,0 +1,28 @@
+id: bofamet-stealer-panel
+brief:
+    title: Bofamet Stealer C2 Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Bofamet Stealer C2 Login Panel was discovered
+    label:
+        - c2
+        - bofamet
+        - stealer
+        - panel
+        - cti
+        - login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>BOFAMET
+            - Powered by BOFAMET.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

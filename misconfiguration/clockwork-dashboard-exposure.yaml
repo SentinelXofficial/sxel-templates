@@ -1,0 +1,30 @@
+id: clockwork-dashboard-exposure
+brief:
+    title: Clockwork Dashboard Exposure
+    by: dhiyaneshDk
+    level: high
+    about: Clockwork Dashboard is exposed.
+    label:
+        - exposure
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/__clockwork/latest'
+      signs:
+        - "on": word
+          has:
+            - '"id":'
+            - '"version":'
+            - '"method":'
+            - '"url":'
+            - '"time":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

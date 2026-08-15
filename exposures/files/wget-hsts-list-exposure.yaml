@@ -1,0 +1,25 @@
+id: wget-hsts-list-exposure
+brief:
+    title: WGET HSTS List Exposure
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - devops
+        - exposure
+        - wget
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.wget-hsts'
+      signs:
+        - "on": word
+          has:
+            - HSTS 1.0 Known Hosts database for GNU Wget
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

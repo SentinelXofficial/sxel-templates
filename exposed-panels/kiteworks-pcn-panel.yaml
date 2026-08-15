@@ -1,0 +1,32 @@
+id: kiteworks-pcn-panel
+brief:
+    title: Kiteworks PCN Panel - Detect
+    by: righettod
+    level: info
+    about: Kiteworks PCN Login Panel was detected.
+    label:
+        - panel
+        - kiteworks
+        - login
+        - detect
+        - accellion
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/locales/login_en.json'
+      signs:
+        - "on": word
+          has:
+            - Secured by Kiteworks
+            - Return to sign in
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

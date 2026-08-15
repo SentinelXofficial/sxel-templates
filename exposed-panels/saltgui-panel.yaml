@@ -1,0 +1,23 @@
+id: saltgui-panel
+brief:
+    title: SaltGUI Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: SaltGUI login panel was detected.
+    label:
+        - panel
+        - saltgui
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>SaltGUI</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

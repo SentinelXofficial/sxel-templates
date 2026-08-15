@@ -1,0 +1,25 @@
+id: tikiwiki-cms
+brief:
+    title: Tiki Wiki CMS Groupware Login Panel - Detect
+    by: chron0x
+    level: info
+    about: Tiki Wiki CMS Groupware login panel was detected.
+    label:
+        - panel
+        - tikiwiki
+        - tiki
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/tiki-login_scr.php'
+        - '{{BaseURL}}/tiki-login.php'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Tiki Wiki CMS Groupware
+          in: body
+          need: all

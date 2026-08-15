@@ -1,0 +1,24 @@
+id: jsfiddle
+brief:
+    title: JSFiddle User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: JSFiddle user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - jsfiddle
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://jsfiddle.net/user/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Settings - JSFiddle - Code Playground
+          in: body
+          need: all

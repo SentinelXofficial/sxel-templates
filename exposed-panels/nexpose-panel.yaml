@@ -1,0 +1,17 @@
+id: nexpose-panel
+brief:
+    title: Rapid7 Nexpose VM Security Console - Detect
+    by: johnk3r
+    level: info
+    about: Rapid7 Nexpose VM Security Console login panel was detected.
+    label:
+        - nexpose
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.jsp'
+      signs: []

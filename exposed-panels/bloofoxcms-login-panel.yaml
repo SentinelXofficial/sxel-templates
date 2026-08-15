@@ -1,0 +1,31 @@
+id: bloofoxcms-login-panel
+brief:
+    title: bloofoxCMS Login Panel - Detect
+    by: theamanrawat
+    level: info
+    about: ""
+    label:
+        - panel
+        - bloofox
+        - cms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/admin/index.php'
+      signs:
+        - "on": word
+          has:
+            - bloofoxCMS - Home
+            - E-Mail / Username
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,21 @@
+id: sap-netweaver-webgui
+brief:
+    title: SAP NetWeaver WebGUI Detection
+    by: randomstr1ng
+    level: info
+    about: Detection of SAP NetWeaver ABAP Webserver WebGUI
+    label:
+        - sap
+        - webserver
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sap/bc/gui/sap/its/webgui'
+      signs:
+        - "on": word
+          has:
+            - sap-system-login
+            - <title>Logon</title>
+          in: body

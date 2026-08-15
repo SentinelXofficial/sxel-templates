@@ -1,0 +1,26 @@
+id: workspace-one-uem-ssp
+brief:
+    title: VMware Workspace ONE UEM Airwatch Self-Service Portal - Detect
+    by: KoratSec
+    level: info
+    about: VMware Workspace ONE UEM Airwatch Self-Service Portal (SSP) login panel was detected.
+    label:
+        - panel
+        - workspaceone
+        - vmware
+        - airwatch
+        - ssp
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/MyDevice/Login'
+      signs:
+        - "on": word
+          has:
+            - Self-Service Portal
+            - AirWatch
+          in: body
+          need: all

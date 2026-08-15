@@ -1,0 +1,31 @@
+id: pagespeed-global-admin
+brief:
+    title: Pagespeed Global Admin - Detect
+    by: geeknik
+    level: info
+    about: Pagespeed Global Admin panel was detected.
+    label:
+        - pagespeed
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pagespeed-global-admin/'
+      head:
+        X-Client-IP: 127.0.0.1
+        X-Forwarded-For: 127.0.0.1
+        X-Forwarded-Host: 127.0.0.1
+        X-Host: 127.0.0.1
+        X-Originating-IP: 127.0.0.1
+        X-Remote-Addr: 127.0.0.1
+        X-Remote-IP: 127.0.0.1
+      signs:
+        - "on": word
+          has:
+            - X-Mod-Pagespeed
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

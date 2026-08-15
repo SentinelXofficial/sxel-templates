@@ -1,0 +1,19 @@
+id: langfuse-panel
+brief:
+    title: Langfuse Panel - Detect
+    by: ChrisJr404
+    level: info
+    about: Langfuse panel was detected. Langfuse is an open-source LLM engineering platform for observability, evaluations, prompt management and analytics. Exposed instances may reveal LLM prompts, traces, e...
+    label:
+        - panel
+        - langfuse
+        - llm
+        - ai
+        - detect
+        - login
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/api/public/health'
+      signs: []

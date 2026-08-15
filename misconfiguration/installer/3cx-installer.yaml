@@ -1,0 +1,28 @@
+id: 3cx-installer
+brief:
+    title: 3CX Phone System - Installer Page Exposure
+    by: DhiyaneshDk
+    level: high
+    about: A 3CX Phone System installer or setup wizard page is publicly accessible. This web-based configuration tool is used for initial PBX setup including admin credential creation, SIP trunk configuratio...
+    label:
+        - 3cx
+        - voip
+        - exposure
+        - misconfig
+        - installer
+        - panel
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 3CX Configuration Tool
+            - 3CX Initial Setup
+            - Welcome to the 3CX Management Console
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

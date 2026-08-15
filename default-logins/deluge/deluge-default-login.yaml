@@ -1,0 +1,34 @@
+id: deluge-default-login
+brief:
+    title: Deluge - Default Login
+    by: ritikchaddha
+    level: high
+    about: Deluge Default login credentials were discovered.
+    label:
+        - deluge
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/json'
+      head:
+        Content-Type: application/json
+      body: '{"method":"auth.login","params":["{{password}}"],"id":51}'
+      signs:
+        - "on": word
+          has:
+            - 'result": true'
+            - 'error": null'
+            - 'id": 51'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - _session_id=
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

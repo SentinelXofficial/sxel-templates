@@ -1,0 +1,31 @@
+id: putty-private-key-disclosure
+brief:
+    title: Putty Private Key Disclosure
+    by: DhiyaneshDk
+    level: medium
+    about: Putty internal user key file is exposed.
+    label:
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/my.ppk'
+        - '{{BaseURL}}/putty.ppk'
+        - '{{BaseURL}}/{{Hostname}}.ppk'
+        - '{{BaseURL}}/.ssh/putty.ppk'
+        - '{{BaseURL}}/.ssh/{{Hostname}}.ppk'
+        - '{{BaseURL}}/.putty/my.ppk'
+        - '{{BaseURL}}/.putty/putty.ppk'
+        - '{{BaseURL}}/.putty/{{Hostname}}.ppk'
+      signs:
+        - "on": word
+          has:
+            - PuTTY-User-Key-File
+            - 'Encryption:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

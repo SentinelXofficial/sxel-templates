@@ -1,0 +1,24 @@
+id: ea-phish
+brief:
+    title: EA phishing Detection
+    by: rxerium
+    level: info
+    about: An EA phishing website was detected
+    label:
+        - phishing
+        - ea
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - We exist to inspire the world through Play. Electronic Arts is a leading publisher of games on Console, PC and Mobile.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

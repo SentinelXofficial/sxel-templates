@@ -1,0 +1,30 @@
+id: pgadmin-exposure
+brief:
+    title: PostgreSQL pgAdmin Dashboard Panel - Detect
+    by: princechaddha
+    level: info
+    about: PostgreSQL pgAdmin Dashboard panel was detected.
+    label:
+        - unauth
+        - pgadmin
+        - postgres
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/browser/'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - PGADMIN_LANGUAGE=
+          in: header
+          need: all
+        - "on": word
+          has:
+            - <title>pgAdmin
+          in: body
+          need: all

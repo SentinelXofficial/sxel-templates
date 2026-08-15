@@ -1,0 +1,25 @@
+id: laravel-telescope
+brief:
+    title: Laravel Telescope Disclosure
+    by: geeknik
+    level: medium
+    about: Telescope provides insight into the requests coming into your application, exceptions, log entries, database queries, queued jobs, mail, notifications, cache operations, scheduled tasks, variable d...
+    label:
+        - laravel
+        - disclosure
+        - logs
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/telescope/requests'
+      signs:
+        - "on": word
+          has:
+            - <title>Telescope</title>
+            - Requests
+            - Commands
+            - Schedule
+          in: body
+          need: all

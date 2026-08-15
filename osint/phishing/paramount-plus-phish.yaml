@@ -1,0 +1,27 @@
+id: paramount-plus-phish
+brief:
+    title: Paramount+ phishing Detection
+    by: rxerium
+    level: info
+    about: A Paramount+ phishing website was detected
+    label:
+        - phishing
+        - paramount-plus
+        - streaming
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Paramount+
+            - Sign in
+            - Paramount+ Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

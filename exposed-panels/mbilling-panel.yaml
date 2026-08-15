@@ -1,0 +1,26 @@
+id: mbilling-panel
+brief:
+    title: MagnusBilling - Login Panel
+    by: DhiyaneshDK
+    level: info
+    about: Identified an exposed MagnusBilling login panel.
+    label:
+        - mbilling
+        - login
+        - panel
+        - magnusbilling
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mbilling/'
+      signs:
+        - "on": word
+          has:
+            - MagnusBilling
+            - Voip System
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

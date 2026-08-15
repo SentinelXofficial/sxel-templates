@@ -1,0 +1,24 @@
+id: wego
+brief:
+    title: Wego User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Wego user name information check was conducted.
+    label:
+        - osint
+        - osint-political
+        - wego
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://wego.social/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Following</span>
+          in: body
+          need: all

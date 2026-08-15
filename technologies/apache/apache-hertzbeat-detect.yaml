@@ -1,0 +1,26 @@
+id: apache-hertzbeat-detect
+brief:
+    title: Apache Hertzbeat - Detect
+    by: icarot
+    level: info
+    about: Detects a Apache Hertzbeat web application is in use, that is a real-time monitoring system with agentless, performance cluster, prometheus-compatible, custom monitoring and status page building ca...
+    label:
+        - tech
+        - hertzbeat
+        - apache
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/assets/app-data.json'
+      signs:
+        - "on": word
+          has:
+            - '"name": "HertzBeat"'
+            - hertzbeat.apache.org
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

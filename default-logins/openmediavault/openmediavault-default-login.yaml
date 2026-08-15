@@ -1,0 +1,33 @@
+id: openmediavault-default-login
+brief:
+    title: OpenMediaVault - Default Login
+    by: DhiyaneshDK
+    level: high
+    about: ""
+    label:
+        - default-login
+        - openmediavault
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/rpc.php'
+      head:
+        Content-Type: application/json
+      body: '{"service":"Session","method":"login","params":{"username":"{{username}}","password":"{{password}}"},"options":null}'
+      signs:
+        - "on": word
+          has:
+            - '"authenticated":true'
+            - '"permissions":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

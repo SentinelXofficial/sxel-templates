@@ -1,0 +1,25 @@
+id: zelle-phish
+brief:
+    title: Zelle phishing Detection
+    by: rxerium
+    level: info
+    about: A Zelle phishing website was detected
+    label:
+        - phishing
+        - zelle
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Zelle® is a direct and fast way to send and receive money with enrolled friends, family and others you trust. Look for Zelle® in your banking app to get started.
+            - Send money with Zelle
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

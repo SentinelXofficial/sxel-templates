@@ -1,0 +1,24 @@
+id: artstation
+brief:
+    title: ArtStation User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: ArtStation user name information check was conducted.
+    label:
+        - osint
+        - osint-art
+        - artstation
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.artstation.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Portfolio
+          in: body
+          need: all

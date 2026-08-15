@@ -1,0 +1,24 @@
+id: researchgate
+brief:
+    title: Researchgate User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Researchgate user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - researchgate
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.researchgate.net/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' | '
+          in: body
+          need: all

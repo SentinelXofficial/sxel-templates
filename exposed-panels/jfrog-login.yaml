@@ -1,0 +1,19 @@
+id: jfrog-login
+brief:
+    title: JFrog Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: JFrog login panel was detected.
+    label:
+        - panel
+        - jfrog
+        - edb
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/login/'
+        - '{{BaseURL}}/ui/favicon.ico'
+      signs: []

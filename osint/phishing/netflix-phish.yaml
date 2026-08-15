@@ -1,0 +1,24 @@
+id: netflix-phish
+brief:
+    title: netflix phishing Detection
+    by: rxerium
+    level: info
+    about: A netflix phishing website was detected
+    label:
+        - phishing
+        - netflix
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Watch Netflix films &amp; TV programmes online or stream right to your smart TV, game console, PC, Mac, mobile, tablet and more.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

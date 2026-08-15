@@ -1,0 +1,31 @@
+id: qdpm-login-panel
+brief:
+    title: qdPM Login Panel
+    by: theamanrawat
+    level: info
+    about: ""
+    label:
+        - panel
+        - qdpm
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/index.php/login'
+      signs:
+        - "on": word
+          has:
+            - qdPM
+            - /index.php/login/restorePassword
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,19 @@
+id: default-fastcgi-page
+brief:
+    title: Fastcgi Default Test Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - fastcgi
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>TurnKey NGINX PHP FastCGI Server</title>
+          in: body

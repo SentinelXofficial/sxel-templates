@@ -1,0 +1,26 @@
+id: seq-dashboard-unauth
+brief:
+    title: Seq Dashboard - Unauthenticated
+    by: DhiyaneshDK
+    level: high
+    about: Seq is exposed without authentication
+    label:
+        - misconfig
+        - exposure
+        - seq
+        - dashboard
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/dashboards'
+      signs:
+        - "on": word
+          has:
+            - Log out
+            - dashboards</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

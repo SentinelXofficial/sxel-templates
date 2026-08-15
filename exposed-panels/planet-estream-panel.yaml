@@ -1,0 +1,27 @@
+id: planet-estream-panel
+brief:
+    title: Planet eStream Login Panel - Detect
+    by: arafatansari
+    level: info
+    about: Planet eStream login panel was detected.
+    label:
+        - panel
+        - planet
+        - estream
+        - planetestream
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Login.aspx'
+      signs:
+        - "on": word
+          has:
+            - Login - Planet eStream
+            - Powered by Planet eStream
+            - aria-label="Planet eStream Website
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

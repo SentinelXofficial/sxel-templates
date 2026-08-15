@@ -1,0 +1,16 @@
+id: databricks-token
+brief:
+    title: Databricks API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - databricks
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

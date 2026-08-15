@@ -1,0 +1,28 @@
+id: artifactory-anonymous-deploy
+brief:
+    title: Artifactory anonymous deploy
+    by: panch0r3d
+    level: high
+    about: Artifactory anonymous repo is exposed.
+    label:
+        - artifactory
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/artifactory/ui/repodata?deploy=true'
+      signs:
+        - "on": word
+          has:
+            - '"repoKey"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

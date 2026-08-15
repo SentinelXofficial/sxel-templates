@@ -1,0 +1,22 @@
+id: kaco-new-energy-detect
+brief:
+    title: KACO New Energy Solar Inverter - Detect
+    by: rxerium
+    level: info
+    about: KACO new energy is a solar inverter manufacturer. Their inverters include a built-in web server
+    label:
+        - tech
+        - panel
+        - kaco
+        - ics
+        - solar
+        - energy
+        - inverter
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      head:
+        Accept-Encoding: gzip
+      signs: []

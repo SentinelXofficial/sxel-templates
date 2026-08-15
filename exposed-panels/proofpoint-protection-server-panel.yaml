@@ -1,0 +1,28 @@
+id: proofpoint-protection-server-panel
+brief:
+    title: Proofpoint Protection Server Panel - Detect
+    by: johnk3r
+    level: info
+    about: Proofpoint Protection Server panel was detected.
+    label:
+        - panel
+        - proofpoint
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/euweb/login'
+      signs:
+        - "on": word
+          has:
+            - <TITLE>Proofpoint Protection Server
+            - Proofpoint End User Application.
+            - Powered by Proofpoint
+          in: body
+        - "on": word
+          has:
+            - PPSAUTH=
+          in: header

@@ -1,0 +1,23 @@
+id: redmine-default-login
+brief:
+    title: Redmine - Default Admin Credentials
+    by: 0x_Akoko
+    level: high
+    about: Detected Redmine project management application was found to have been using the default administrator credentials (admin:admin). An attacker could have gained full administrative access to manage ...
+    label:
+        - redmine
+        - default-login
+        - aut
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Cookie: '{{session}}'
+      body: authenticity_token={{url_encode(csrf_token)}}&username={{username}}&password={{password}}&login=Login
+      signs: []

@@ -1,0 +1,24 @@
+id: teamtreehouse
+brief:
+    title: Teamtreehouse User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Teamtreehouse user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - teamtreehouse
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://teamtreehouse.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Member Since
+          in: body
+          need: all

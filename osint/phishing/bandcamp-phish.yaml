@@ -1,0 +1,26 @@
+id: bandcamp-phish
+brief:
+    title: Bandcamp phishing Detection
+    by: rxerium
+    level: info
+    about: A Bandcamp phishing website was detected
+    label:
+        - phishing
+        - bandcamp
+        - streaming
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Bandcamp
+            - Discover amazing music and directly support the artists who make it.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

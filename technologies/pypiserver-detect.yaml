@@ -1,0 +1,23 @@
+id: pypiserver-detect
+brief:
+    title: PyPI Server Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - pypiserver
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to pypiserver
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

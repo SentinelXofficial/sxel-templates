@@ -1,0 +1,26 @@
+id: ace-hardware-phish
+brief:
+    title: Ace Hardware phishing Detection
+    by: rxerium
+    level: info
+    about: An Ace Hardware phishing website was detected
+    label:
+        - phishing
+        - ace-hardware
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Ace Hardware
+            - Shop Ace Hardware for grills, hardware, home improvement, lawn and garden, and tools. Buy online &amp; pickup today!
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: musictraveler
+brief:
+    title: Musictraveler User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Musictraveler user name information check was conducted.
+    label:
+        - osint
+        - osint-music
+        - musictraveler
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.musictraveler.com/en/users/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - on Music Traveler</title>
+          in: body
+          need: all

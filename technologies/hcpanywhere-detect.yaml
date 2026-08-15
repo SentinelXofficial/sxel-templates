@@ -1,0 +1,15 @@
+id: hcpanywhere-detect
+brief:
+    title: HCP Anywhere - Detect
+    by: righettod
+    level: info
+    about: HCP Anywhere was detected.
+    label:
+        - tech
+        - hcpanywhere
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/userportal/documentation/mapping.json'
+      signs: []

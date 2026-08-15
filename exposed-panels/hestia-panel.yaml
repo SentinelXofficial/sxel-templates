@@ -1,0 +1,26 @@
+id: hestia-panel
+brief:
+    title: Hestia Control Panel Login - Detect
+    by: JustaAcat
+    level: info
+    about: Hestia Control Panel login was detected.
+    label:
+        - panel
+        - hestia
+        - detect
+        - hestiacp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/'
+      signs:
+        - "on": word
+          has:
+            - Hestia Control Panel
+            - Welcome to Hestia Control
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

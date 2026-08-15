@@ -1,0 +1,23 @@
+id: sitecore-login
+brief:
+    title: Sitecore Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Sitecore login panel was detected.
+    label:
+        - panel
+        - sitecore
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sitecore/login/default.aspx'
+      signs:
+        - "on": word
+          has:
+            - /sitecore/shell/Themes/Standard/Default/Login.css
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

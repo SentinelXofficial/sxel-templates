@@ -1,0 +1,19 @@
+id: bmc-panel-detect
+brief:
+    title: BMC Discovery Outpost Admin Panel - Detect
+    by: pikpikcu
+    level: info
+    about: BMC Discovery Outpost admin panel was detected.
+    label:
+        - panel
+        - bmc
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/adminlogin'
+      signs:
+        - "on": word
+          has:
+            - '<title>BMC Discovery Outpost: Login</title>'
+          in: body

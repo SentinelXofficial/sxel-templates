@@ -1,0 +1,25 @@
+id: ambari-default-login
+brief:
+    title: Apache Ambari Default Login
+    by: pdteam
+    level: high
+    about: An Apache Ambari default admin login was discovered.
+    label:
+        - ambari
+        - default-login
+        - apache
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/users/admin?fields=*,privileges/PrivilegeInfo/cluster_name,privileges/PrivilegeInfo/permission_name'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+      signs:
+        - "on": word
+          has:
+            - '"Users" : {'
+            - AMBARI.
+          in: body
+          need: all

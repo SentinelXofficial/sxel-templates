@@ -1,0 +1,32 @@
+id: hp-ilo-5
+brief:
+    title: Hewlett Packard Integrated Lights Out 5 Login Panel - Detect
+    by: geeknik
+    level: info
+    about: Hewlett Packard Integrated Lights Out 5 login panel was detected.
+    label:
+        - hp
+        - ilo
+        - panel
+        - hpe
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/html/login.html'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - titleHeading>iLO 5
+            - titleFwver>Firmware
+            - 2002-2018 Hewlett Packard Enterprise Development LP
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

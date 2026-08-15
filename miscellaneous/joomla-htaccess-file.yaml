@@ -1,0 +1,30 @@
+id: joomla-htaccess-file
+brief:
+    title: Joomla! htaccess file disclosure
+    by: oppsec
+    level: info
+    about: Joomla!  has an htaccess file to store configurations about HTTP config, directory listing, etc.
+    label:
+        - miscellaneous
+        - misc
+        - joomla
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/htaccess.txt'
+      signs:
+        - "on": word
+          has:
+            - Joomla
+            - Open Source Matters. All rights reserved
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

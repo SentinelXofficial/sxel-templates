@@ -1,0 +1,24 @@
+id: kaggle
+brief:
+    title: Kaggle User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Kaggle user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - kaggle
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.kaggle.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| Kaggle'
+          in: body
+          need: all

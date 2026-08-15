@@ -1,0 +1,17 @@
+id: jotty-page-login-panel
+brief:
+    title: jotty·page Login - Panel Detect
+    by: Th3l0newolf
+    level: info
+    about: jotty·page login interface was discovered.
+    label:
+        - panel
+        - login
+        - jotty
+        - page
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+      signs: []

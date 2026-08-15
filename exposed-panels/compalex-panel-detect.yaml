@@ -1,0 +1,28 @@
+id: compalex-panel-detect
+brief:
+    title: Compalex Panel - Detect
+    by: MaStErCho
+    level: medium
+    about: ""
+    label:
+        - tech
+        - php
+        - compalex
+        - sql
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/{{paths}}/'
+      signs:
+        - "on": word
+          has:
+            - <title>COMPALEX
+            - <h1>Compalex
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

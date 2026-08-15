@@ -1,0 +1,26 @@
+id: menards-phish
+brief:
+    title: Menards phishing Detection
+    by: rxerium
+    level: info
+    about: A Menards phishing website was detected
+    label:
+        - phishing
+        - menards
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Menards
+            - title>Home at Menards&#174;
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

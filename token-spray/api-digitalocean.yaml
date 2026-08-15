@@ -1,0 +1,22 @@
+id: api-digitalocean
+brief:
+    title: DigitalOcean API Test
+    by: geeknik
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - digitalocean
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://api.digitalocean.com/v2/droplets'
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"droplets":'
+            - '"meta":'
+          in: body
+          need: all

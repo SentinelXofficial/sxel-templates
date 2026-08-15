@@ -1,0 +1,23 @@
+id: zeroshell-login
+brief:
+    title: ZeroShell Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: ZeroShell panel was detected.
+    label:
+        - panel
+        - zeroshell
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ZeroShell</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

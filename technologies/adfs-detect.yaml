@@ -1,0 +1,20 @@
+id: adfs-detect
+brief:
+    title: ADFS Detect
+    by: Adam Crosser
+    level: info
+    about: Detects ADFS with forms-based authentication enabled.
+    label:
+        - tech
+        - adfs
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/adfs/ls/idpinitiatedsignon.aspx'
+      signs:
+        - "on": word
+          has:
+            - /adfs/portal/css/style.css
+          in: body
+          need: all

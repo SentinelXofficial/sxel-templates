@@ -1,0 +1,24 @@
+id: plusnet-phish
+brief:
+    title: plusnet phishing Detection
+    by: rxerium
+    level: info
+    about: A plusnet phishing website was detected
+    label:
+        - phishing
+        - plusnet
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Multi-Award Winner with Even Faster UK Broadband | Plusnet
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

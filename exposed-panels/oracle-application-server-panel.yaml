@@ -1,0 +1,19 @@
+id: oracle-application-server-panel
+brief:
+    title: Oracle Application Server Panel - Detect
+    by: righettod
+    level: info
+    about: Oracle Application Server login panel was detected.
+    label:
+        - panel
+        - oracle
+        - containers
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/em/console/ias/oc4j/home'
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,25 @@
+id: clientaccesspolicy
+brief:
+    title: Silverlight cross-domain policy
+    by: emadshanab
+    level: info
+    about: ""
+    label:
+        - miscellaneous
+        - misc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/clientaccesspolicy.xml'
+      signs:
+        - "on": word
+          has:
+            - <access-policy>
+            - <cross-domain-access>
+            - domain uri=
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

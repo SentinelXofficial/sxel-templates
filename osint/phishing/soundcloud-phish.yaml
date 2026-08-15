@@ -1,0 +1,25 @@
+id: soundcloud-phish
+brief:
+    title: SoundCloud phishing Detection
+    by: rxerium
+    level: info
+    about: A SoundCloud phishing website was detected
+    label:
+        - phishing
+        - soundcloud
+        - streaming
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Stream and listen to music online for free with SoundCloud
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

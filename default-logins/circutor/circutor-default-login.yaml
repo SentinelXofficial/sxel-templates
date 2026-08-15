@@ -1,0 +1,28 @@
+id: circutor-default-login
+brief:
+    title: Circutor Line-TCPRS1 - Default Login
+    by: s4e-io
+    level: high
+    about: A default login was discovered on a Circutor Line-TCPRS1 device. An attacker can obtain access to user accounts, access sensitive information, modify data, and execute unauthorized operations.
+    label:
+        - circutor
+        - iot
+        - tcprs1
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/v1/login'
+      head:
+        Content-Type: application/json;charset=UTF-8
+      body: '{"Username":"{{username}}","Password":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

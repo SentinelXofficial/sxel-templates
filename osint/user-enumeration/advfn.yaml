@@ -1,0 +1,24 @@
+id: advfn
+brief:
+    title: ADVFN User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: ADVFN user name information check was conducted.
+    label:
+        - osint
+        - osint-finance
+        - advfn
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://uk.advfn.com/forum/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Profile | ADVFN
+          in: body
+          need: all

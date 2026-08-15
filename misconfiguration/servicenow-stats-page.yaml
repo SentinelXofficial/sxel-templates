@@ -1,0 +1,15 @@
+id: servicenow-stats-page
+brief:
+    title: ServiceNow Stats Page - Detection
+    by: cham423
+    level: info
+    about: Detects exposed ServiceNow statistics pages (stats.do) that reveal system information.
+    label:
+        - servicenow
+        - exposure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/stats.do'
+      signs: []

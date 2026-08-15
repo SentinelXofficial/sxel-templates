@@ -1,0 +1,17 @@
+id: wordpress-wp-sitemap-page
+brief:
+    title: WP Sitemap Page Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wp-sitemap-page/readme.txt'
+      signs: []

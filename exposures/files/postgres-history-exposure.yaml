@@ -1,0 +1,19 @@
+id: postgres-history-exposure
+brief:
+    title: PostgreSQL History - Exposure
+    by: theamanrawat
+    level: low
+    about: Exposed PostgreSQL history files (.psql_history) were detected. These files contain a record of executed SQL commands and may disclose sensitive information like passwords, database schemas, and qu...
+    label:
+        - postgres
+        - exposure
+        - config
+        - history
+        - database
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.psql_history'
+        - '{{BaseURL}}/psql_history'
+        - '{{BaseURL}}/.postgresql_history'
+      signs: []

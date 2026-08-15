@@ -1,0 +1,25 @@
+id: grammarly-phish
+brief:
+    title: Grammarly phishing Detection
+    by: rxerium
+    level: info
+    about: A Grammarly phishing website was detected
+    label:
+        - phishing
+        - grammarly
+        - writing
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>Grammarly: Free AI Writing Assistant'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

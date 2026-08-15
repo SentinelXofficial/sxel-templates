@@ -1,0 +1,30 @@
+id: dolibarr-installer
+brief:
+    title: Dolibarr Installer
+    by: pussycat0x
+    level: high
+    about: Dolibarr is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - exposure
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/index.php'
+      signs:
+        - "on": word
+          has:
+            - Dolibarr install or upgrade
+            - browser language
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

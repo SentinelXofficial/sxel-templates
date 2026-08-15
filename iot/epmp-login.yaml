@@ -1,0 +1,24 @@
+id: epmp-login
+brief:
+    title: ePMP 2000 Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: ePMP 2000 login panel was detected.
+    label:
+        - panel
+        - edb
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ePMP</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

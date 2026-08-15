@@ -1,0 +1,31 @@
+id: aem-groovyconsole
+brief:
+    title: AEM Groovy Console Discovery
+    by: Dheerajmadhukar
+    level: critical
+    about: An Adobe Experience Manager Groovy console was discovered. This can possibly lead to remote code execution.
+    label:
+        - aem
+        - adobe
+        - hackerone
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/groovyconsole'
+        - '{{BaseURL}}/etc/groovyconsole.html'
+      head:
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+        Accept-Language: en-US,en;q=0.9,hi;q=0.8
+      signs:
+        - "on": word
+          has:
+            - <title>Groovy Console</title>
+            - Run Script
+            - Groovy Web Console
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

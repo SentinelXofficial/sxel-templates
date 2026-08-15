@@ -1,0 +1,20 @@
+id: default-windows-server-page
+brief:
+    title: IIS Windows Server Default Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - windows
+        - iis
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>IIS Windows Server</title>
+          in: body

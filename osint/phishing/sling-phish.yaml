@@ -1,0 +1,25 @@
+id: sling-phish
+brief:
+    title: Sling TV phishing Detection
+    by: rxerium
+    level: info
+    about: A Sling TV phishing website was detected
+    label:
+        - phishing
+        - sling
+        - streaming
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Ditch cable & stream live TV for the best price with Sling. Watch live news, sports, movies, and entertainment + top channels like ESPN, TNT, TBS and more.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

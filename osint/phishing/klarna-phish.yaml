@@ -1,0 +1,25 @@
+id: klarna-phish
+brief:
+    title: Klarna phishing Detection
+    by: rxerium
+    level: info
+    about: A Klarna phishing website was detected
+    label:
+        - phishing
+        - klarna
+        - payment
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Klarna | Buy now, pay later | Online shopping made simple
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

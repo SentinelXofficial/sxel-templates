@@ -1,0 +1,20 @@
+id: shibboleth-open-redirect
+brief:
+    title: Shibboleth SSO - Open Redirect
+    by: aushack
+    level: medium
+    about: Shibboleth SSO contains an open redirect vulnerability. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized opera...
+    label:
+        - redirect
+        - shibboleth
+        - misconfig
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Shibboleth.sso/Logout?return=https://{{randstr}}.interact.sh'
+      signs:
+        - "on": status
+          status:
+            - 302

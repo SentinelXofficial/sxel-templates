@@ -1,0 +1,16 @@
+id: dufs-detect
+brief:
+    title: DUFS - Detect
+    by: righettod
+    level: info
+    about: DUFS software was detected.
+    label:
+        - tech
+        - dufs
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

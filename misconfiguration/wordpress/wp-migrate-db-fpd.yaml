@@ -1,0 +1,18 @@
+id: wp-migrate-db-fpd
+brief:
+    title: WordPress WP Migrate DB - Full Path Disclosure
+    by: pussycat0x
+    level: low
+    about: The WP Migrate DB (WP Migrate Lite - WordPress Migration Made Easy) plugin for WordPress was detected to be vulnerable to Full Path Disclosure, allowing unauthenticated attackers to obtain the full...
+    label:
+        - wordpress
+        - wp
+        - wp-plugin
+        - fpd
+        - wp-migrate-db
+        - wpmdb
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wp-migrate-db/wp-migrate-db.php'
+      signs: []

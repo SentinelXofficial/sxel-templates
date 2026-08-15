@@ -1,0 +1,27 @@
+id: zipline-panel
+brief:
+    title: Diced Zipline - Detect
+    by: icarot
+    level: info
+    about: Zipline panel was detected.
+    label:
+        - diced
+        - zipline
+        - login
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+      signs:
+        - "on": word
+          has:
+            - '"title":"Zipline"'
+            - Zipline – Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

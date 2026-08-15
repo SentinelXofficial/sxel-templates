@@ -1,0 +1,20 @@
+id: jolokia-config-exposure
+brief:
+    title: Jolokia Configuration - Exposure
+    by: theamanrawat
+    level: medium
+    about: Detected exposed Jolokia configuration files (jolokia-agent.properties and jolokia-access.xml). Exposure of these files could have revealed sensitive agent configuration, authentication credentials...
+    label:
+        - config
+        - exposure
+        - jolokia
+        - jmx
+        - devops
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jolokia-agent.properties'
+        - '{{BaseURL}}/jolokia-access.xml'
+        - '{{BaseURL}}/WEB-INF/classes/jolokia-agent.properties'
+        - '{{BaseURL}}/WEB-INF/classes/jolokia-access.xml'
+      signs: []

@@ -1,0 +1,26 @@
+id: ioncube-loader-wizard
+brief:
+    title: ioncube Loader Wizard Disclosure
+    by: Mubassirpatel
+    level: medium
+    about: An ioncube Loader Wizard was discovered.
+    label:
+        - ioncube
+        - disclosure
+        - exposure
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ioncube/loader-wizard.php'
+        - '{{BaseURL}}/loader-wizard.php'
+      signs:
+        - "on": word
+          has:
+            - ionCube Loader Wizard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

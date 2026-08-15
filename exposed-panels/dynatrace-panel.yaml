@@ -1,0 +1,24 @@
+id: dynatrace-login
+brief:
+    title: Dynatrace Login Panel - Detect
+    by: ja1sh
+    level: info
+    about: Dynatrace login panel was detected.
+    label:
+        - dynatrace
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Login - Dynatrace
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

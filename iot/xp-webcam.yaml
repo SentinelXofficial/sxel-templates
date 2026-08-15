@@ -1,0 +1,25 @@
+id: xp-webcam
+brief:
+    title: XP Webcam Viewer Page
+    by: aashiq
+    level: medium
+    about: Searches for exposed webcams by querying the /mobile.html endpoint and the existence of webcamXP in the body.
+    label:
+        - webcam
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mobile.html'
+      signs:
+        - "on": word
+          has:
+            - webcams and ip cameras server for windows
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Please provide a valid username/password to access this server.
+          in: body
+          need: all

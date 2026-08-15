@@ -1,0 +1,20 @@
+id: pollbot-redirect
+brief:
+    title: Mozilla Pollbot - Open Redirect
+    by: Evan Rubinstien
+    level: medium
+    about: Mozilla Pollbot contains an open redirect vulnerability. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized oper...
+    label:
+        - redirect
+        - mozilla
+        - pollbot
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/%0A/interact.sh/'
+      signs:
+        - "on": status
+          status:
+            - 301

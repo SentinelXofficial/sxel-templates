@@ -1,0 +1,23 @@
+id: open-virtualization-manager-detect
+brief:
+    title: Open Virtualization Manager Detection
+    by: idealphase
+    level: info
+    about: Open Virtualization Manager was detected. Open Virtualization Manager is an open-source distributed virtualization solution designed to manage enterprise infrastructure. oVirt uses the trusted KVM ...
+    label:
+        - tech
+        - ovirt
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ovirt-engine/'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Open Virtualization Manager
+            - <title>Ovirt-Engine</title>
+            - <title>oVirt Engine</title>
+            - <title>oVirt Engine Error</title>
+          in: body
+          need: all

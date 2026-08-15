@@ -1,0 +1,25 @@
+id: hotjar-phish
+brief:
+    title: Hotjar phishing Detection
+    by: rxerium
+    level: info
+    about: A Hotjar phishing website was detected
+    label:
+        - phishing
+        - hotjar
+        - analytics
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>Hotjar: Website Heatmaps &amp; Behavior Analytics Tools'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,20 @@
+id: directus-detect
+brief:
+    title: Directus - Detect
+    by: ricardomaia
+    level: info
+    about: Directus is a content manager with dynamic access API generation and transparent integration with the main databases.
+    label:
+        - tech
+        - directus
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'X-Powered-By: Directus'
+          in: header

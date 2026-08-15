@@ -1,0 +1,25 @@
+id: apache-shenyu-detect
+brief:
+    title: Apache Shenyu Gateway Management System - Detect
+    by: icarot
+    level: info
+    about: Detects a Apache Shenyu Gateway Management System, a Java native API Gateway for service proxy, protocol conversion and API governance.
+    label:
+        - tech
+        - shenyu
+        - apache
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Apache ShenYu Gateway</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

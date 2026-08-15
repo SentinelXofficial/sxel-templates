@@ -1,0 +1,19 @@
+id: wsdl-api
+brief:
+    title: WSDL API - Detect
+    by: jarijaas
+    level: info
+    about: WSDL API was detected.
+    label:
+        - exposure
+        - api
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?wsdl'
+      signs:
+        - "on": word
+          has:
+            - wsdl:definitions
+          in: body

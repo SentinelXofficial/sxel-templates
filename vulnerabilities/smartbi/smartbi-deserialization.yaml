@@ -1,0 +1,31 @@
+id: smartbi-deserialization
+brief:
+    title: Smartbi windowunloading Interface - Deserialization
+    by: SleepingBag945
+    level: high
+    about: The Smartbi big data analysis platform has a remote command execution vulnerability. An unauthenticated remote attacker can use the stub interface to construct a request to bypass patch restriction...
+    label:
+        - smartbi
+        - deserialization
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}{{path}}'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: className=UserService&methodName=isLogged&params=[]
+      signs:
+        - "on": word
+          has:
+            - '"H~CxOm~"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

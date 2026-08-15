@@ -1,0 +1,27 @@
+id: appdynamics-rum-detect
+brief:
+    title: AppDynamics (Cisco) RUM - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects AppDynamics (Cisco) End User Monitoring (EUM) artifacts.
+    label:
+        - tech
+        - discovery
+        - rum
+        - appdynamics
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - adrum-config
+            - adrum-start-time
+            - adrumExtUrlHttp
+            - adrumExtUrlHttps
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

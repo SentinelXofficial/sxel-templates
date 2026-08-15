@@ -1,0 +1,28 @@
+id: joomla-file-listing
+brief:
+    title: Joomla! Database File List
+    by: iampritam
+    level: medium
+    about: A Joomla! database directory /libraries/joomla/database/ was found exposed and has directory indexing enabled.
+    label:
+        - exposure
+        - joomla
+        - listing
+        - database
+        - edb
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/libraries/joomla/database/'
+      signs:
+        - "on": word
+          has:
+            - Index of /libraries/joomla/database
+            - Parent Directory
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

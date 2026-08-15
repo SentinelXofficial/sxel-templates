@@ -1,0 +1,26 @@
+id: untangle-admin-setup
+brief:
+    title: Untangle Exposed Admin Signup
+    by: ritikchaddha
+    level: medium
+    about: Untangle Exposed Admin Signup is exposed publicly.
+    label:
+        - misconfig
+        - untangle
+        - admin
+        - setup
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup/setup.do'
+      signs:
+        - "on": word
+          has:
+            - <title>Setup Wizard</title>
+            - java.untangle.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

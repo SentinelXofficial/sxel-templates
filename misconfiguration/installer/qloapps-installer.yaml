@@ -1,0 +1,25 @@
+id: qloapps-installer
+brief:
+    title: QloApps - Installation
+    by: ritikchaddha
+    level: high
+    about: QloApps Installation Assistant panel exposure.
+    label:
+        - install
+        - qloapps
+        - misconfig
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/'
+      signs:
+        - "on": word
+          has:
+            - <title>QloApps Installation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

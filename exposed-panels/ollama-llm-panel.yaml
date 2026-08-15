@@ -1,0 +1,26 @@
+id: ollama-llm-panel
+brief:
+    title: Ollama LLM Panel - Detect
+    by: pbuff07
+    level: info
+    about: Ollama LLM Panel was detected
+    label:
+        - panel
+        - ollama
+        - llm
+        - detect
+        - discovery
+        - ai
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Ollama is running
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

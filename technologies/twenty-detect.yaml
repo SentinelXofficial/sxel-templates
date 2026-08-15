@@ -1,0 +1,16 @@
+id: twenty-detect
+brief:
+    title: Twenty - Detect
+    by: righettod
+    level: info
+    about: Twenty products was detected.
+    label:
+        - tech
+        - twenty
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/welcome'
+      signs: []

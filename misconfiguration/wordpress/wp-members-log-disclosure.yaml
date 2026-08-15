@@ -1,0 +1,25 @@
+id: wp-members-log-disclosure
+brief:
+    title: WordPress Members Plugin - Debug/Error Log Disclosure
+    by: ritikchaddha
+    level: low
+    about: The WordPress Members plugin exposes error/debug log files that may contain sensitive information.
+    label:
+        - wordpress
+        - wp-plugin
+        - members
+        - exposure
+        - logs
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - /members
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/debug.log'
+      signs: []

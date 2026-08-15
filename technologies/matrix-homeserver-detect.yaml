@@ -1,0 +1,28 @@
+id: matrix-homeserver-detect
+brief:
+    title: Matrix Homeserver - Version Detection
+    by: davidegirardi
+    level: info
+    about: Extract the Matrix homeserver name and version
+    label:
+        - tech
+        - matrix
+        - synapse
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_matrix/federation/v1/version'
+      signs:
+        - "on": word
+          has:
+            - '"server":'
+            - '"name":'
+            - '"version":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all

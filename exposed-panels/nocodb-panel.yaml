@@ -1,0 +1,22 @@
+id: nocodb-panel
+brief:
+    title: NocoDB Panel - Detect
+    by: userdehghani
+    level: info
+    about: NocoDB Login panel was discovered.
+    label:
+        - panel
+        - nocodb
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard/#/signin'
+        - '{{BaseURL}}/dashboard/favicon.ico'
+      signs:
+        - "on": word
+          has:
+            - content="NocoDB
+          in: body

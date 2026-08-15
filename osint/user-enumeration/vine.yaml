@@ -1,0 +1,24 @@
+id: vine
+brief:
+    title: Vine User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Vine user name information check was conducted.
+    label:
+        - osint
+        - osint-video
+        - vine
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://vine.co/api/users/profiles/vanity/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - userId
+          in: body
+          need: all

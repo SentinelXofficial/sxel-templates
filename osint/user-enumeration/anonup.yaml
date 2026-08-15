@@ -1,0 +1,24 @@
+id: anonup
+brief:
+    title: Anonup User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Anonup user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - anonup
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://anonup.com/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Show followings
+          in: body
+          need: all

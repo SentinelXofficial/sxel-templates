@@ -1,0 +1,24 @@
+id: droners
+brief:
+    title: Droners User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Droners user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - droners
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://droners.io/accounts/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- Professional Drone Pilot'
+          in: body
+          need: all

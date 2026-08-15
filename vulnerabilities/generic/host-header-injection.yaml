@@ -1,0 +1,25 @@
+id: host-header-injection
+brief:
+    title: Host Header Injection
+    by: princechaddha
+    level: info
+    about: HTTP header injection is a general class of web application security vulnerability which occurs when Hypertext Transfer Protocol headers are dynamically generated based on user input.
+    label:
+        - hostheader-injection
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      head:
+        Host: '{{randstr}}.tld'
+      signs:
+        - "on": word
+          has:
+            - '{{randstr}}.tld'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

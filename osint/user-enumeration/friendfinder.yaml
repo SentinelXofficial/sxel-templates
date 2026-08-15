@@ -1,0 +1,24 @@
+id: friendfinder
+brief:
+    title: FriendFinder User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: FriendFinder user name information check was conducted.
+    label:
+        - osint
+        - osint-dating
+        - friendfinder
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://friendfinder.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'Last Visit:'
+          in: body
+          need: all

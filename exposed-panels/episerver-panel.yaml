@@ -1,0 +1,19 @@
+id: episerver-panel
+brief:
+    title: Episerver Login Panel
+    by: William Söderberg @ WithSecure
+    level: info
+    about: Episerver login panel was detected.
+    label:
+        - panel
+        - optimizely
+        - episerver
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/episerver/cms'
+      signs:
+        - "on": status
+          status:
+            - 302

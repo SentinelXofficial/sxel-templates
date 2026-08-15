@@ -1,0 +1,27 @@
+id: xampp-phpinfo-detect
+brief:
+    title: XAMPP PHP info Page - Detect
+    by: pussycat0x
+    level: low
+    about: XAMPPHPinfo page was detected. The output of the phpinfo() command can reveal sensitive and detailed PHP environment information.
+    label:
+        - config
+        - exposure
+        - phpinfo
+        - vuln
+        - xampp
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - PHP Extension
+            - PHP Version
+            - xampp
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

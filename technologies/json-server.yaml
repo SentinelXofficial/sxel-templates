@@ -1,0 +1,24 @@
+id: json-server
+brief:
+    title: Json Server
+    by: DhiyaneshDK
+    level: low
+    about: ""
+    label:
+        - exposure
+        - devops
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>JSON Server</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

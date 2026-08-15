@@ -1,0 +1,24 @@
+id: pinterest
+brief:
+    title: Pinterest User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Pinterest user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - pinterest
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.pinterest.com/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' - Profile | Pinterest'
+          in: body
+          need: all

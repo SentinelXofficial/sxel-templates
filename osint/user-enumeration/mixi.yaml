@@ -1,0 +1,24 @@
+id: mixi
+brief:
+    title: Mixi User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mixi user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mixi
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://mixi.jp/view_community.pl?id={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| mixiコミュニティ</title>'
+          in: body
+          need: all

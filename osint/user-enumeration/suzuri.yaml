@@ -1,0 +1,24 @@
+id: suzuri
+brief:
+    title: Suzuri User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Suzuri user name information check was conducted.
+    label:
+        - osint
+        - osint-business
+        - suzuri
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://suzuri.jp/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Items
+          in: body
+          need: all

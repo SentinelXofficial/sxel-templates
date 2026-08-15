@@ -1,0 +1,16 @@
+id: itflow-unfinished-installation
+brief:
+    title: ITFlow Unfinished Installation
+    by: 0x_Akoko
+    level: high
+    about: Detected ITFlow setup wizard was exposed with an unfinished installation, allowing attackers to configure the database and create an admin account.
+    label:
+        - itflow
+        - misconfig
+        - install
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup/index.php'
+      signs: []

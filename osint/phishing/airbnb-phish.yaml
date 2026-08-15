@@ -1,0 +1,26 @@
+id: airbnb-phish
+brief:
+    title: Airbnb phishing Detection
+    by: rxerium
+    level: info
+    about: An Airbnb phishing website was detected
+    label:
+        - phishing
+        - airbnb
+        - travel
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - https://a0.muscache.com/airbnb/static/
+            - Airbnb
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

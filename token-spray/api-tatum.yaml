@@ -1,0 +1,33 @@
+id: api-tatum
+brief:
+    title: Tatum API Test
+    by: 0ri2N
+    level: info
+    about: ""
+    label:
+        - defi
+        - dapp
+        - token-spray
+        - blockchain
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://api.tatum.io/v3/tatum/version'
+      head:
+        x-api-key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"baseCommit":'
+            - '"planName":'
+            - '"creditLimit":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

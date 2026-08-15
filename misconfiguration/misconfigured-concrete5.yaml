@@ -1,0 +1,20 @@
+id: misconfigured-concrete5
+brief:
+    title: Misconfigured Concrete5
+    by: pdteam
+    level: low
+    about: Concrete5 CMS is misconfigured.
+    label:
+        - misconfig
+        - concrete
+        - cms
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - concrete5 has encountered an issue
+          in: body

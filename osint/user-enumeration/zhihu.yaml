@@ -1,0 +1,24 @@
+id: zhihu
+brief:
+    title: Zhihu User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Zhihu user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - zhihu
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.zhihu.com/people/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - zhihu:voteupCount
+          in: body
+          need: all

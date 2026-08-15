@@ -1,0 +1,23 @@
+id: cloudflare-access-panel
+brief:
+    title: Cloudflare Access - Login Panel Detection
+    by: rxerium
+    level: info
+    about: Detected exposed Cloudflare Access login pages.
+    label:
+        - cloudflare
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Sign in ・ Cloudflare Access
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

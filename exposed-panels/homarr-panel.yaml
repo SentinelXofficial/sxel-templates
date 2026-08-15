@@ -1,0 +1,28 @@
+id: homarr-panel
+brief:
+    title: Homarr Dashboard - Detect
+    by: potato-20
+    level: info
+    about: Homarr dashboard panel was detected. Homarr is a self-hosted dashboard for managing homelab and *arr-stack services.
+    label:
+        - panel
+        - homarr
+        - dashboard
+        - oss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Homarr</title>
+            - content="Homarr
+            - homarr.locale
+            - alt="Homarr
+          in: response
+          need: all
+        - "on": status
+          status:
+            - 200

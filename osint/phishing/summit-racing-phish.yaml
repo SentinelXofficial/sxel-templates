@@ -1,0 +1,26 @@
+id: summit-racing-phish
+brief:
+    title: Summit Racing phishing Detection
+    by: rxerium
+    level: info
+    about: A Summit Racing phishing website was detected
+    label:
+        - phishing
+        - summit-racing
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Summit Racing
+            - <title>Summit Racing | Aftermarket Parts &amp; Accessories, Performance Parts, OEM Auto Parts
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

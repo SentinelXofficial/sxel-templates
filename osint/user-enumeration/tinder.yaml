@@ -1,0 +1,24 @@
+id: tinder
+brief:
+    title: Tinder User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Tinder user name information check was conducted.
+    label:
+        - osint
+        - osint-dating
+        - tinder
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://tinder.com/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ) | Tinder</title><meta
+          in: body
+          need: all

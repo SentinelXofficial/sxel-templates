@@ -1,0 +1,29 @@
+id: bottle-debug
+brief:
+    title: Bottle debug mode enabled
+    by: viondexd
+    level: info
+    about: ""
+    label:
+        - bottle
+        - exposure
+        - debug
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Sorry, the requested URL '
+            - ' caused an error:'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <tt>&#039;{{BaseURL}}&#039;</tt>
+            - <tt>&#039;{{BaseURL}}/&#039;</tt>
+          in: body
+          need: all

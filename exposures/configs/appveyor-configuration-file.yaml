@@ -1,0 +1,27 @@
+id: appveyor-configuration-file
+brief:
+    title: AppVeyor Configuration Page - Detect
+    by: DhiyaneshDk
+    level: medium
+    about: AppVeyor configuration page was detected.
+    label:
+        - config
+        - exposure
+        - devops
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.appveyor.yml'
+        - '{{BaseURL}}/appveyor.yml'
+      signs:
+        - "on": word
+          has:
+            - 'install:'
+            - 'test_script:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

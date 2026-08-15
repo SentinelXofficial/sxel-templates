@@ -1,0 +1,27 @@
+id: graylog-default-login
+brief:
+    title: Graylog - Default Login
+    by: 0x_Akoko
+    level: high
+    about: Graylog instance is accessible with default admin credentials (admin/admin). This provides full administrative access to the log management platform, including the ability to read all ingested logs...
+    label:
+        - default-login
+        - graylog
+        - logging
+    score: CVSS:9.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/'
+      head:
+        Accept: application/json
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/system/sessions'
+      head:
+        Accept: application/json
+        Content-Type: application/json
+        X-Requested-By: nuclei
+      body: '{"username":"{{username}}","password":"{{password}}","host":""}'
+      signs: []

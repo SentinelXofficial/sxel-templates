@@ -1,0 +1,24 @@
+id: api-notolytix
+brief:
+    title: Notolytix API Test
+    by: 0xPugal
+    level: info
+    about: ""
+    label:
+        - notolytix
+        - token-spray
+moves:
+    - verb: GET
+      to:
+        - https://api.notolytix.com/1.0/deviceid
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - 'realIp":'
+            - 'route":'
+            - 'deviceId":'
+            - 'personaId":'
+          in: body
+          need: all

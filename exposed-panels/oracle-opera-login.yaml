@@ -1,0 +1,27 @@
+id: oracle-opera-login
+brief:
+    title: Oracle Opera Login - Detect
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - panel
+        - opera
+        - oracle
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/OperaLogin/Welcome.do'
+      signs:
+        - "on": word
+          has:
+            - <title>Oracle, OPERA</title>
+            - <title>OPERA Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

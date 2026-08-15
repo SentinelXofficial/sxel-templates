@@ -1,0 +1,17 @@
+id: enigma-nms-detect
+brief:
+    title: Enigma NMS - Detection
+    by: 0x_Akoko
+    level: info
+    about: ""
+    label:
+        - tech
+        - enigma
+        - nms
+        - detection
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/protected/main.cgi'
+      signs: []

@@ -1,0 +1,19 @@
+id: php-debugbar-exposure
+brief:
+    title: Php Debug Bar - Exposure
+    by: ritikchaddha
+    level: high
+    about: The DebugBar integrates easily into projects and can display profiling data from any part of your application.This template detects exposed PHP Debug Bars by looking for known response bodies and t...
+    label:
+        - misconfig
+        - php
+        - phpdebug
+        - exposure
+        - debug
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/_debugbar/open'
+      signs: []

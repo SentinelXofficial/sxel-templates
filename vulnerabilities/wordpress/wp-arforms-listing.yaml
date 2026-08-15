@@ -1,0 +1,26 @@
+id: wp-arforms-listing
+brief:
+    title: WordPress Plugin Arforms Listing
+    by: pussycat0x
+    level: info
+    about: Searches for sensitive directories present in the arforms plugin.
+    label:
+        - listing
+        - plugin
+        - edb
+        - wordpress
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/arforms/'
+      signs:
+        - "on": word
+          has:
+            - Index of
+            - wp-content/plugins/arforms/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

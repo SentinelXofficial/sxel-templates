@@ -1,0 +1,18 @@
+id: phppgadmin-version
+brief:
+    title: PhpPgAdmin Version Information - Detect
+    by: dr0pd34d
+    level: info
+    about: PhpPgAdmin version information was detected via the intro.php file.
+    label:
+        - tech
+        - phppgadmin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/phppgadmin/intro.php'
+      signs:
+        - "on": status
+          status:
+            - 200

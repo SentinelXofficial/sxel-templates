@@ -1,0 +1,37 @@
+id: apollo-default-login
+brief:
+    title: Apollo Default Login
+    by: PaperPen
+    level: high
+    about: An Apollo default login was discovered.
+    label:
+        - apollo
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/signin'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{BaseURL}}'
+        Referer: '{{BaseURL}}/signin?'
+      body: username={{user}}&password={{pass}}&login-submit=Login
+      signs:
+        - "on": word
+          has:
+            - '"userId":'
+            - '"email":'
+          in: body_2
+          need: all
+    - verb: GET
+      to:
+        - '{{BaseURL}}/user'
+      signs:
+        - "on": word
+          has:
+            - '"userId":'
+            - '"email":'
+          in: body_2
+          need: all

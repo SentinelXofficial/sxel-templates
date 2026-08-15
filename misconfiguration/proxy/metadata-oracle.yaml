@@ -1,0 +1,26 @@
+id: metadata-service-oracle
+brief:
+    title: Oracle Cloud Metadata Service Check
+    by: sullo
+    level: critical
+    about: The Oracle cloud host is configured as a proxy which allows access to the instance metadata IMDSv1 service. This could allow significant access to the host/infrastructure.
+    label:
+        - exposure
+        - config
+        - oracle
+        - proxy
+        - misconfig
+        - metadata
+        - vuln
+    score: CVSS:9.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://{{hostval}}/opc/v1/instance'
+      head:
+        Metadata: "true"
+      signs:
+        - "on": word
+          has:
+            - availabilityDomain
+          in: body

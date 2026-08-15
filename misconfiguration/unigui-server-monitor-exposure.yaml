@@ -1,0 +1,16 @@
+id: unigui-server-monitor-exposure
+brief:
+    title: UniGUI Server Monitor Panel - Exposure
+    by: serrapa
+    level: low
+    about: Detects exposed UniGUI Server Monitor Panels which could reveal sensitive server statistics, users sessions, licensing information and others data.
+    label:
+        - exposure
+        - unigui
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/server'
+      signs: []

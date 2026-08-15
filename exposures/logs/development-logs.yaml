@@ -1,0 +1,38 @@
+id: development-logs
+brief:
+    title: Discover development log files
+    by: geeknik
+    level: info
+    about: Development log file was exposed.
+    label:
+        - logs
+        - exposure
+        - rails
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/log/development.log'
+        - '{{BaseURL}}/logs/development.log'
+        - '{{BaseURL}}/development.log'
+      signs:
+        - "on": word
+          has:
+            - Connecting to database specified by database.yml
+            - Started GET
+          in: body
+          need: all
+        - "on": word
+          has:
+            - DEPRECATION WARNING
+            - CREATE TABLE
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

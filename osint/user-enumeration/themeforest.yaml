@@ -1,0 +1,24 @@
+id: themeforest
+brief:
+    title: Themeforest User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Themeforest user name information check was conducted.
+    label:
+        - osint
+        - osint-art
+        - themeforest
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://themeforest.net/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s profile on ThemeForest
+          in: body
+          need: all

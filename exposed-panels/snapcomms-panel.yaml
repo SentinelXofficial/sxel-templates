@@ -1,0 +1,25 @@
+id: snapcomms-panel
+brief:
+    title: SnapComms Content Manager Panel - Detect
+    by: righettod
+    level: info
+    about: SnapComms Content Manager was detected.
+    label:
+        - panel
+        - snapcomms
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Manager/'
+      signs:
+        - "on": word
+          has:
+            - <title>SnapComms Content Manager</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

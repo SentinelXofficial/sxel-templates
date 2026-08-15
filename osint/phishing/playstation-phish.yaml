@@ -1,0 +1,25 @@
+id: playstation-phish
+brief:
+    title: PlayStation phishing Detection
+    by: rxerium
+    level: info
+    about: A PlayStation phishing website was detected
+    label:
+        - phishing
+        - playstation
+        - sony
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Explore the new generation PlayStation 4 and PS5 consoles - experience immersive gaming with thousands of hit games in every genre to rewrite the rules for what a PlayStation console can do.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

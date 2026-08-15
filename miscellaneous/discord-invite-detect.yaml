@@ -1,0 +1,17 @@
+id: discord-invite-detect
+brief:
+    title: Discord Invites for Users, Bots & Servers - Detect
+    by: rxerium
+    level: info
+    about: Detect Discord Invites for users, bots and servers
+    label:
+        - discord
+        - info
+        - osint
+        - misc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

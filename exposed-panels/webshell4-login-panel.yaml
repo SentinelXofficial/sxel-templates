@@ -1,0 +1,24 @@
+id: webshell4-login-panel
+brief:
+    title: WebShell4 Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: WebShell4 login panel was detected.
+    label:
+        - webshell4
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webshell4/login.php'
+      signs:
+        - "on": word
+          has:
+            - /webshell4/index2.php
+            - enter login name
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

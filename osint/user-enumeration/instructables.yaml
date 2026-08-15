@@ -1,0 +1,24 @@
+id: instructables
+brief:
+    title: Instructables User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Instructables user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - instructables
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.instructables.com/member/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '>Joined'
+          in: body
+          need: all

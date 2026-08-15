@@ -1,0 +1,25 @@
+id: wasabi-phish
+brief:
+    title: Wasabi phishing Detection
+    by: rxerium
+    level: info
+    about: A Wasabi phishing website was detected
+    label:
+        - phishing
+        - wasabi
+        - storage
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Store More and Do More with Your Data | Wasabi
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

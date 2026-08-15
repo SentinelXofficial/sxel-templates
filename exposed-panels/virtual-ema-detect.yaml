@@ -1,0 +1,23 @@
+id: virtual-ema-detect
+brief:
+    title: Virtual EMS Login Panel - Detect
+    by: iamthefrogy
+    level: info
+    about: Virtual EMS login panel was detected.
+    label:
+        - panel
+        - ems
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/virtualems/Login.aspx'
+        - '{{BaseURL}}/VirtualEms/Login.aspx'
+      signs:
+        - "on": word
+          has:
+            - Login
+            - Browse
+            - Welcome Guest
+          in: body
+          need: all

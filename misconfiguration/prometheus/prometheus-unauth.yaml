@@ -1,0 +1,27 @@
+id: prometheus-unauth
+brief:
+    title: Prometheus Monitoring System - Unauthenticated
+    by: pussycat0x
+    level: high
+    about: Detects unauthenticated access to Prometheus Time Series Collection and Processing Server by checking for specific elements in the response from the `/graph` endpoint.
+    label:
+        - unauth
+        - prometheus
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config'
+        - '{{BaseURL}}/api/v1/status/config'
+      signs:
+        - "on": word
+          has:
+            - 'global:'
+            - 'scrape_configs:'
+            - scrape_interval
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

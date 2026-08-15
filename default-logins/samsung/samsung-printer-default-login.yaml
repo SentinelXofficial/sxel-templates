@@ -1,0 +1,33 @@
+id: samsung-printer-default-login
+brief:
+    title: Samsung Printer - Default Login
+    by: gy741
+    level: high
+    about: Samsung printers contain a default admin login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - default-login
+        - iot
+        - samsung
+        - printer
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/sws/app/gnb/login/login.jsp'
+      body: Authentication=Basic {{base64(username + ':' + password)}}
+      signs:
+        - "on": word
+          has:
+            - 'success: true'
+            - passwordExpiration
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

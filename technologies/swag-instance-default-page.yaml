@@ -1,0 +1,28 @@
+id: swag-instance-default-page
+brief:
+    title: Swag Instance Default Page Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Swag Instance Default Page panel was detected.
+    label:
+        - panel
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Welcome to your SWAG instance</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: ameblo
+brief:
+    title: Ameblo User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Ameblo user name information check was conducted.
+    label:
+        - osint
+        - osint-blog
+        - ameblo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://ameblo.jp/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 画像一覧
+          in: body
+          need: all

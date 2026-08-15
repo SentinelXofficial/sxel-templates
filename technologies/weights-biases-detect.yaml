@@ -1,0 +1,27 @@
+id: weights-biases-detect
+brief:
+    title: Weights & Biases - Detect
+    by: rxerium
+    level: info
+    about: Weights & Biases (W&B) instance was detected. W&B is a popular MLOps platform for experiment tracking, model versioning, and collaborative ML development. Self-hosted deployments expose the full ex...
+    label:
+        - tech
+        - weights-biases
+        - wandb
+        - mlops
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Weights & Biases
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: ibm-spectrum-detect
+brief:
+    title: IBM Spectrum - Detect
+    by: righettod
+    level: info
+    about: IBM Spectrum products was detected.
+    label:
+        - tech
+        - ibm
+        - spectrum
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+        - '{{BaseURL}}/BACLIENT'
+        - '{{BaseURL}}/JNLP'
+      signs: []

@@ -1,0 +1,24 @@
+id: chamsko
+brief:
+    title: Chamsko User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Chamsko user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - chamsko
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.chamsko.pl/profil/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - W serwisie od
+          in: body
+          need: all

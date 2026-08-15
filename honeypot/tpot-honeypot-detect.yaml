@@ -1,0 +1,25 @@
+id: tpot-honeypot-detect
+brief:
+    title: T-Pot Honeypot - Detect
+    by: rxerium
+    level: info
+    about: A tpot dashboard has been detected
+    label:
+        - tpot
+        - honeypot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>T-Pot</title>
+            - T-Pot @ Github
+            - T-Pot ReadMe
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,16 @@
+id: shopify-legacy-token
+brief:
+    title: Shopify Access Token (Legacy Private App)
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - shopify
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

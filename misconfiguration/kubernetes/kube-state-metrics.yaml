@@ -1,0 +1,27 @@
+id: kube-state-metrics
+brief:
+    title: Kube State Metrics Exposure
+    by: ja1sh
+    level: low
+    about: An attacker can detect the public instance of a Kube-State-Metrics metrics. The Kubernetes API server exposes data about the count, health, and availability of pods, nodes, and other Kubernetes obj...
+    label:
+        - misconfig
+        - exposure
+        - kube-state-metrics
+        - k8s
+        - kubernetes
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/metrics'
+      signs:
+        - "on": word
+          has:
+            - kube-state-metrics
+            - go_goroutines
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

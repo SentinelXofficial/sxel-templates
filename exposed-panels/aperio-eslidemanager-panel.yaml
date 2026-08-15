@@ -1,0 +1,25 @@
+id: aperio-eslidemanager-panel
+brief:
+    title: Aperio eSlideManager - Panel
+    by: Th3l0newolf
+    level: info
+    about: Aperio eSlideManager Login Panel was discovered.
+    label:
+        - aperio
+        - eslidemanager
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.php'
+      signs:
+        - "on": word
+          has:
+            - <TITLE>eSlideManager - Login</TITLE>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

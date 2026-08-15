@@ -1,0 +1,21 @@
+id: api-mac-address-lookup
+brief:
+    title: MAC Address Lookup API Test
+    by: daffainfo
+    level: info
+    about: Retrieve vendor details and other information regarding a given MAC address or an OUI
+    label:
+        - token-spray
+        - macaddresslookup
+moves:
+    - verb: GET
+      to:
+        - https://api.macaddress.io/v1?apiKey={{token}}&output=json&search=44:38:39:ff:ef:57
+      signs:
+        - "on": word
+          has:
+            - '"vendorDetails"'
+            - '"companyName"'
+            - '"companyAddress"'
+          in: body
+          need: all

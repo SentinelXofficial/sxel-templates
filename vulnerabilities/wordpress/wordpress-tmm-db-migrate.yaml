@@ -1,0 +1,24 @@
+id: wordpress-tmm-db-migrate
+brief:
+    title: WordPress ThemeMarkers DB Migration File
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - wordpress
+        - wp-plugin
+        - backup
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/uploads/tmm_db_migrate/tmm_db_migrate.zip'
+      signs:
+        - "on": word
+          has:
+            - application/zip
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

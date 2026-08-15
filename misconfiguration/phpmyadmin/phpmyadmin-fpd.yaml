@@ -1,0 +1,22 @@
+id: phpmyadmin-fpd
+brief:
+    title: phpMyAdmin - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: Detected potential Full Path Disclosure (FPD) via directly accessible phpMyAdmin files that may throw PHP errors revealing filesystem paths when error display is enabled.
+    label:
+        - exposure
+        - fpd
+        - phpmyadmin
+        - php
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/phpmyadmin/libraries/advisory_rules_generic.php'
+        - '{{BaseURL}}/phpmyadmin/libraries/phpseclib/Crypt/AES.php'
+        - '{{BaseURL}}/phpmyadmin/libraries/phpseclib/Crypt/Rijndael.php'
+      signs: []

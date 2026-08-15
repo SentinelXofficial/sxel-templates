@@ -1,0 +1,23 @@
+id: cisco-edge-340
+brief:
+    title: Cisco Edge 340 Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Cisco Edge 340 panel was detected.
+    label:
+        - panel
+        - cisco
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/?next=%2F'
+      signs:
+        - "on": word
+          has:
+            - <title>Cisco Edge 340</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: exposed-authentication-asmx
+brief:
+    title: Authentication.asmx - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Authentication Web Service authentication.asmx file was detected.
+    label:
+        - config
+        - exposure
+        - edb
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_vti_bin/Authentication.asmx?op=Mode'
+      signs:
+        - "on": word
+          has:
+            - Authentication Web Service
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

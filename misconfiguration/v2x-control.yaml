@@ -1,0 +1,26 @@
+id: v2x-control
+brief:
+    title: V2X Control - Dashboard Exposure
+    by: DhiyaneshDk
+    level: low
+    about: V2X Control Dashboard is exposed.
+    label:
+        - misconfig
+        - exposure
+        - v2x
+        - control
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>V2X control</title>
+            - Chemtronics
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

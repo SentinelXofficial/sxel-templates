@@ -1,0 +1,25 @@
+id: fanruanoa2012-detect
+brief:
+    title: FanRuanOA2012-detect
+    by: YanYun
+    level: info
+    about: ""
+    label:
+        - oa
+        - java
+        - fanruan
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - down.download?FM_SYS_ID
+          in: body
+          need: all

@@ -1,0 +1,20 @@
+id: windmill-panel
+brief:
+    title: Windmill Panel - Detect
+    by: ChrisJr404
+    level: info
+    about: Windmill panel was detected. Windmill (windmill.dev) is an open-source developer platform for workflows, scripts and internal apps, often self-hosted as a Postgres-backed UI. Exposed instances may ...
+    label:
+        - panel
+        - windmill
+        - workflow
+        - automation
+        - detect
+        - discovery
+        - login
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/api/version'
+      signs: []

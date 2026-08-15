@@ -1,0 +1,24 @@
+id: royalevent-management-panel
+brief:
+    title: Royal Event Management System Admin Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Royal Event Management System admin panel was detected.
+    label:
+        - royalevent
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/royal_event/'
+      signs:
+        - "on": word
+          has:
+            - Royal Event Management Software
+            - Welcome Administrator
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

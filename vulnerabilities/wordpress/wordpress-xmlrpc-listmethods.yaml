@@ -1,0 +1,25 @@
+id: wordpress-xmlrpc-listmethods
+brief:
+    title: Wordpress XML-RPC List System Methods
+    by: 0ut0fb4nd
+    level: info
+    about: ""
+    label:
+        - wordpress
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/xmlrpc.php'
+      body: <?xml version="1.0" encoding="utf-8"?><methodCall><methodName>system.listMethods</methodName><params></params></methodCall>
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - system.multicall
+            - system.listMethods
+            - demo.sayHello
+          in: body
+          need: all

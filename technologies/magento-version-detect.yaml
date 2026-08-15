@@ -1,0 +1,76 @@
+id: magento-version-detect
+brief:
+    title: Magento Version Detect
+    by: sullo
+    level: info
+    about: Magento version detection via version module and copyright text.
+    label:
+        - tech
+        - magento
+        - cms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/magento_version'
+      signs:
+        - "on": word
+          has:
+            - Copyright (c) 2014 Magento Inc.
+          in: body
+        - "on": word
+          has:
+            - Copyright (c) 2013 Magento Inc.
+          in: body
+        - "on": word
+          has:
+            - Copyright (c) 2012 Magento Inc.
+          in: body
+        - "on": word
+          has:
+            - Copyright (c) 2011 Magento Inc.
+          in: body
+        - "on": word
+          has:
+            - Copyright (c) 2010 Magento Inc.
+          in: body
+        - "on": word
+          has:
+            - Copyright (c) 2009 Irubin Consulting Inc.
+          in: body
+        - "on": word
+          has:
+            - Copyright (c) 2008 Irubin Consulting Inc.
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/skin/frontend/default/default/css/styles.css'
+      signs:
+        - "on": word
+          has:
+            - Copyright (c) 2014 Magento Inc.
+          in: body
+        - "on": word
+          has:
+            - Copyright (c) 2013 Magento Inc.
+          in: body
+        - "on": word
+          has:
+            - Copyright (c) 2012 Magento Inc.
+          in: body
+        - "on": word
+          has:
+            - Copyright (c) 2011 Magento Inc.
+          in: body
+        - "on": word
+          has:
+            - Copyright (c) 2010 Magento Inc.
+          in: body
+        - "on": word
+          has:
+            - Copyright (c) 2009 Irubin Consulting Inc.
+          in: body
+        - "on": word
+          has:
+            - Copyright (c) 2008 Irubin Consulting Inc.
+          in: body

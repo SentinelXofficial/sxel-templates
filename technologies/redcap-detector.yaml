@@ -1,0 +1,24 @@
+id: redcap-detector
+brief:
+    title: REDCap detector
+    by: philippedelteil
+    level: info
+    about: ""
+    label:
+        - redcap
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - REDCap
+            - Vanderbilt University
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

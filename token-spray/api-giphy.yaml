@@ -1,0 +1,20 @@
+id: api-giphy
+brief:
+    title: Giphy API Test
+    by: geeknik
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - giphy
+moves:
+    - verb: GET
+      to:
+        - https://api.giphy.com/v1/gifs/trending?api_key={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"data":'
+            - '"type":"gif"'
+          in: body
+          need: all

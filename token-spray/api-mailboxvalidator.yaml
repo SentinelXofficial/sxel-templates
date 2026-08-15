@@ -1,0 +1,21 @@
+id: api-mailboxvalidator
+brief:
+    title: MailboxValidator API Test
+    by: daffainfo
+    level: info
+    about: Validate email address to improve deliverability
+    label:
+        - token-spray
+        - mailboxvalidator
+moves:
+    - verb: GET
+      to:
+        - https://api.mailboxvalidator.com/v1/email/free?email=test@test.com&key={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"email_address":"test@test.com"'
+            - '"error_code":""'
+            - '"error_message":""'
+          in: body
+          need: all

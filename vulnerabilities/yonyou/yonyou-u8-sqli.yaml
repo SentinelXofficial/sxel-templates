@@ -1,0 +1,21 @@
+id: yonyou-u8-sqli
+brief:
+    title: Yonyou U8 bx_historyDataCheck - SQL Injection
+    by: xianke
+    level: high
+    about: Yonyou U8 Grp contains a SQL injection vulnerability.
+    label:
+        - time-based-sqli
+        - yonyou
+        - grp
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - GRP-U8
+          in: body

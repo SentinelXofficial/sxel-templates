@@ -1,0 +1,24 @@
+id: calendy
+brief:
+    title: Calendy User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Calendy user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - calendy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://calendly.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - og:author
+          in: body
+          need: all

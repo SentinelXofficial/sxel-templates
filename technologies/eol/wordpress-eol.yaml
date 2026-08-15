@@ -1,0 +1,15 @@
+id: wordpress-eol
+brief:
+    title: WordPress End-of-Life - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected WordPress versions that have reached End-of-Life (EOL) and no longer receive security updates.
+    label:
+        - tech
+        - wordpress
+        - eol
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

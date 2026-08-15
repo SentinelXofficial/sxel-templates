@@ -1,0 +1,25 @@
+id: git-exposure
+brief:
+    title: Git Metadata Directory Exposure
+    by: tess
+    level: medium
+    about: Git Metadata Directory exposed.
+    label:
+        - logs
+        - git
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.git/'
+      signs:
+        - "on": word
+          has:
+            - 403 Forbidden
+            - You do not have permission to access /.git/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 403

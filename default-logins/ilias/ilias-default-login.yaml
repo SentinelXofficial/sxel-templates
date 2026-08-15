@@ -1,0 +1,23 @@
+id: ilias-default-login
+brief:
+    title: ILIAS LMS - Default Admin Credentials
+    by: 0x_Akoko
+    level: high
+    about: The ILIAS learning management system was found to be using default administrator credentials (root:homer). An attacker was able to gain full administrative access to manage courses, users, and syst...
+    label:
+        - ilias
+        - default-login
+        - auth
+        - lms
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.php'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/ilias.php?baseClass=ilStartUpGUI&cmd=post&fallbackCmd=doStandardAuthentication&client_id={{client_id}}'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}&cmd%5BdoStandardAuthentication%5D=Login
+      signs: []

@@ -1,0 +1,16 @@
+id: sendinblue-api-token
+brief:
+    title: Sendinblue API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - sendinblue
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

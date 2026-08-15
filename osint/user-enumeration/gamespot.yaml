@@ -1,0 +1,24 @@
+id: gamespot
+brief:
+    title: Gamespot User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Gamespot user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - gamespot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.gamespot.com/profile/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '''s Profile - GameSpot</title>'
+          in: body
+          need: all

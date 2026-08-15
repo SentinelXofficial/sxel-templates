@@ -1,0 +1,25 @@
+id: seized-site
+brief:
+    title: Seized Site
+    by: rxerium
+    level: info
+    about: This website has been seized by law enforcement
+    label:
+        - seized
+        - miscellaneous
+        - misc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - THIS WEBSITE HAS BEEN SEIZED
+            - This domain has been seized by the Federal Bureau of Investigation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

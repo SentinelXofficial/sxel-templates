@@ -1,0 +1,24 @@
+id: easyscripts-installer
+brief:
+    title: Easyscripts Installer
+    by: theamanrawat
+    level: high
+    about: Easyscripts is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - easyscripts
+        - installer
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Installer - Easyscripts
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

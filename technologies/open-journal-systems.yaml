@@ -1,0 +1,18 @@
+id: open-journal-systems
+brief:
+    title: Open Journal Systems Detect
+    by: ricardomaia
+    level: info
+    about: Open Journal Systems, also known as OJS, is a free software for the management of peer-reviewed academic journals, created by the Public Knowledge Project.
+    label:
+        - tech
+        - ojs
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

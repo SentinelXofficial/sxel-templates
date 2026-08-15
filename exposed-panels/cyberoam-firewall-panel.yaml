@@ -1,0 +1,24 @@
+id: cyberoam-firewall-panel
+brief:
+    title: Cyberoam Firewall - Login Panel
+    by: rxerium
+    level: info
+    about: Cyberoam UTM firewall login panel detected.
+    label:
+        - panel
+        - cyberoam
+        - firewall
+        - utm
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Cyberoam</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

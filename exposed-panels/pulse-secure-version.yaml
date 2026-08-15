@@ -1,0 +1,22 @@
+id: pulse-secure-version
+brief:
+    title: Pulse Secure Version
+    by: dadevel
+    level: info
+    about: ""
+    label:
+        - pulse
+        - panel
+        - pulsesecure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dana-na/nc/nc_gina_ver.txt'
+        - '{{BaseURL}}/dana-cached/hc/HostCheckerInstaller.osx'
+      signs:
+        - "on": word
+          has:
+            - NAME="ProductVersion"
+            - <key>version</key>
+          in: body

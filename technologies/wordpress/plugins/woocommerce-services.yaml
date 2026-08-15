@@ -1,0 +1,18 @@
+id: wordpress-woocommerce-services
+brief:
+    title: WooCommerce Tax (formerly WooCommerce Shipping & Tax) Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/woocommerce-services/readme.txt'
+      signs: []

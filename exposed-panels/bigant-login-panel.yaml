@@ -1,0 +1,23 @@
+id: bigant-login-panel
+brief:
+    title: BigAnt Admin Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: BigAnt admin login panel was detected.
+    label:
+        - panel
+        - bigant
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php/Home/login/index.html'
+      signs:
+        - "on": word
+          has:
+            - <title>BigAnt Admin </title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

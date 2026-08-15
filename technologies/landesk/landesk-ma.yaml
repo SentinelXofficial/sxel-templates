@@ -1,0 +1,21 @@
+id: landesk-ma
+brief:
+    title: LANDESK(R) Management Agent Detect
+    by: 0xNirvana
+    level: info
+    about: ""
+    label:
+        - tech
+        - landesk
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - LANDesk(R)
+            - Management Agent
+          in: body
+          need: all

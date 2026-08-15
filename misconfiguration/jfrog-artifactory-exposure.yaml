@@ -1,0 +1,31 @@
+id: jfrog-artifactory-exposure
+brief:
+    title: JFrog Artifactory Artifacts Exposure
+    by: DhiyaneshDk
+    level: low
+    about: JFrog Artifactory Artifact repository was exposed.
+    label:
+        - artifactory
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/artifactory/api/repositories'
+      signs:
+        - "on": word
+          has:
+            - '"key" :'
+            - '"type" :'
+            - '"url" :'
+            - '"packageType" :'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/vnd.org.jfrog.artifactory
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

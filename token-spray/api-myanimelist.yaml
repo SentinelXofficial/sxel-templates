@@ -1,0 +1,23 @@
+id: api-myanimelist
+brief:
+    title: MyAnimeList API Test
+    by: daffainfo
+    level: info
+    about: Anime and Manga Database and Community
+    label:
+        - token-spray
+        - myanimelist
+moves:
+    - verb: GET
+      to:
+        - https://api.myanimelist.net/v2/anime?q=one&limit=4
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"data":'
+            - '"paging":'
+            - '"next":'
+          in: body
+          need: all

@@ -1,0 +1,27 @@
+id: elfinder-version
+brief:
+    title: elFinder 2.1.58 - Remote Code Execution
+    by: idealphase
+    level: critical
+    about: elFinder 2.1.58 is vulnerable to remote code execution. This can allow an attacker to execute arbitrary code and commands on the server hosting the elFinder PHP connector, even with minimal configu...
+    label:
+        - tech
+        - elfinder
+        - oss
+        - discovery
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/js/elfinder.min.js'
+        - '{{BaseURL}}/js/elFinder.version.js'
+      signs:
+        - "on": word
+          has:
+            - elFinder - file manager for web
+            - elFinder.prototype.version =
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

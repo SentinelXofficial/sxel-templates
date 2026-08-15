@@ -1,0 +1,24 @@
+id: gitlab
+brief:
+    title: GitLab User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: GitLab user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - gitlab
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://gitlab.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Member since
+          in: body
+          need: all

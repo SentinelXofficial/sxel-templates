@@ -1,0 +1,17 @@
+id: bittrex-accesskey
+brief:
+    title: Bittrex Access Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - bittrex
+        - exposure
+        - tokens
+        - accesskey
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

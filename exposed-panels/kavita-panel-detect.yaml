@@ -1,0 +1,23 @@
+id: kavita-panel-detect
+brief:
+    title: Kavita Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Kavita login panel was detected.
+    label:
+        - panel
+        - kavita
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Kavita
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

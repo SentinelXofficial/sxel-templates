@@ -1,0 +1,25 @@
+id: shiro-deserialization-detection
+brief:
+    title: Shiro <= 1.2.4 Deserialization Detection
+    by: hotpot
+    level: info
+    about: This template is designed to detect the Shiro framework's default key vulnerabilities. It leverages 51 built-in Shiro keys to probe for potential vulnerabilities.
+    label:
+        - shiro
+        - deserialization
+        - rce
+        - apache
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Cookie: JSESSIONID={{randstr}};rememberMe=123;
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Cookie: JSESSIONID={{randstr}};rememberMe={{key}};
+      signs: []

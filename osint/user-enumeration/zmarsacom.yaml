@@ -1,0 +1,24 @@
+id: zmarsacom
+brief:
+    title: Zmarsa.com User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Zmarsa.com user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - zmarsacom
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://zmarsa.com/uzytkownik/{{user}}/glowna/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Galeria użytkownika
+          in: body
+          need: all

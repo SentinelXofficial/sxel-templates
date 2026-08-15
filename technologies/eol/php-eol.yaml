@@ -1,0 +1,15 @@
+id: php-eol
+brief:
+    title: PHP End-of-Life - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected PHP versions that have reached End-of-Life (EOL) and no longer receive security updates.
+    label:
+        - tech
+        - php
+        - eol
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

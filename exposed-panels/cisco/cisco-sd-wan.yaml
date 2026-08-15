@@ -1,0 +1,23 @@
+id: cisco-sd-wan
+brief:
+    title: Cisco SD-WAN Login Panel - Detect
+    by: z3bd
+    level: info
+    about: Cisco SD-WAN login panel was detected.
+    label:
+        - panel
+        - cisco
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - SD-Wan Center
+          in: body
+          need: all

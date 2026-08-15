@@ -1,0 +1,23 @@
+id: zoneminder-login
+brief:
+    title: ZoneMinder Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: ZoneMinder panel was detected.
+    label:
+        - panel
+        - zoneminder
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ZM - Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

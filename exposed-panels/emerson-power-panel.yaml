@@ -1,0 +1,24 @@
+id: emerson-power-panel
+brief:
+    title: Emerson Network Power IntelliSlot Web Card Panel - Detect
+    by: princechaddha
+    level: info
+    about: Emerson Network Power IntelliSlot Web Card panel was detected.
+    label:
+        - panel
+        - intellislot
+        - emerson
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Emerson Network Power IntelliSlot Web Card</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

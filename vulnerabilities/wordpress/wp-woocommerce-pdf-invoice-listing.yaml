@@ -1,0 +1,28 @@
+id: wp-woocommerce-pdf-invoice-listing
+brief:
+    title: Woocommerce - PDF Invoice Exposure
+    by: mohammedsaneem
+    level: medium
+    about: A vulnerability in Woocommerce allows remote unauthenticated attackers to access company invoices and other sensitive information.
+    label:
+        - wordpress
+        - listing
+        - exposure
+        - woocommerce
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/uploads/pdf-invoices/'
+      signs:
+        - "on": word
+          has:
+            - Index of /wp-content/uploads/pdf-invoices
+            - Parent Directory
+            - .pdf
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

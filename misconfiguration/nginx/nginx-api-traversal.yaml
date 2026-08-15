@@ -1,0 +1,33 @@
+id: nginx-api-traversal
+brief:
+    title: Nginx Plus Rest API - Traversal
+    by: encodedguy
+    level: high
+    about: Access to Nginx Plus Rest API was discovered.
+    label:
+        - nginx
+        - fuzz
+        - misconfig
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - version
+            - build
+            - address
+            - load_timestamp
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

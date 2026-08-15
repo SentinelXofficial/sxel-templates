@@ -1,0 +1,24 @@
+id: adultism
+brief:
+    title: Adultism User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Adultism user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - adultism
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.adultism.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - static/r-1OqQ4o/css/www/main.css
+          in: body
+          need: all

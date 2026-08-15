@@ -1,0 +1,27 @@
+id: cvat-panel
+brief:
+    title: CVAT Computer Vision Annotation Tool - Detect
+    by: rxerium
+    level: info
+    about: CVAT (Computer Vision Annotation Tool) was detected. CVAT is a widely used open-source annotation platform for labelling images, video, and 3D point clouds used to train AI/ML computer vision models.
+    label:
+        - panel
+        - cvat
+        - annotation
+        - ml
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Computer Vision Annotation Tool</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

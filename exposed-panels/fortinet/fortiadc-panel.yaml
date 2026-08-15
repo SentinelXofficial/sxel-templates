@@ -1,0 +1,28 @@
+id: fortiadc-panel
+brief:
+    title: FortiADC Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: FortiADC login panel was detected.
+    label:
+        - panel
+        - fortinet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/#navigate/Login'
+      signs:
+        - "on": word
+          has:
+            - <title>FortiADC</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

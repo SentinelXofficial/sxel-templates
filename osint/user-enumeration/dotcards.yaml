@@ -1,0 +1,29 @@
+id: dotcards
+brief:
+    title: Dot.cards User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Dot.cards user name information check was conducted.
+    label:
+        - osint
+        - osint-business
+        - dotcards
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://dot.cards/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '&#x27;s dot.Profile</title>'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - '"message":"The username does not exist"'
+          in: body
+          need: all

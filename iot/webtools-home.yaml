@@ -1,0 +1,22 @@
+id: webtools-home
+brief:
+    title: Webtools Home
+    by: dhiyaneshDK
+    level: info
+    about: Webtools panel was detected.
+    label:
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wt2parser.cgi?home_en'
+      signs:
+        - "on": word
+          has:
+            - <title>WebTools | Home</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

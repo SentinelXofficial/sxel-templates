@@ -1,0 +1,24 @@
+id: searxng-detect
+brief:
+    title: SearXNG - Detect
+    by: rxerium
+    level: info
+    about: A SearXNG search engine was detected.
+    label:
+        - searxng
+        - search-engine
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>SearXNG</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

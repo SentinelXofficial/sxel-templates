@@ -1,0 +1,17 @@
+id: tiny-rss-panel
+brief:
+    title: Tiny RSS Panel - Detect
+    by: userdehghani
+    level: info
+    about: Tiny Tiny RSS is a free RSS feed reader
+    label:
+        - panel
+        - tiny-rss
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

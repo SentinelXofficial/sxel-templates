@@ -1,0 +1,18 @@
+id: cortex-xsoar-login
+brief:
+    title: Cortex XSOAR Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Cortex XSOAR login panel was detected.
+    label:
+        - panel
+        - soar
+        - login
+        - paloaltonetworks
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/login'
+      signs: []

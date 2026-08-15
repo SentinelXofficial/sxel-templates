@@ -1,0 +1,16 @@
+id: forgejo-eol
+brief:
+    title: Forgejo End-of-Life - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected Forgejo versions that have reached End-of-Life (EOL) and no longer receive security updates.
+    label:
+        - tech
+        - forgejo
+        - eol
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/api/v1/version'
+      signs: []

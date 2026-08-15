@@ -1,0 +1,18 @@
+id: nextjs-middleware-cache
+brief:
+    title: Next.js - Cache Poisoning
+    by: DhiyaneshDk
+    level: high
+    about: Next.js is vulnerable to Cache Poisoning using X-Middleware-Prefetch.
+    label:
+        - nextjs
+        - cache
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?cb={{rand}}'
+      head:
+        Priority: u=1
+        X-Middleware-Prefetch: "1"
+      signs: []

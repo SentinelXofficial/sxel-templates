@@ -1,0 +1,25 @@
+id: ing-phish
+brief:
+    title: ING phishing Detection
+    by: rxerium
+    level: info
+    about: An ING phishing website was detected
+    label:
+        - phishing
+        - ing
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Corporate site of ING, a global financial institution of Dutch origin, providing news, investor relations and general information
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

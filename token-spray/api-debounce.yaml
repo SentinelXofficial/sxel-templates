@@ -1,0 +1,21 @@
+id: api-debounce
+brief:
+    title: DeBounce API Test
+    by: 0ri2N
+    level: info
+    about: ""
+    label:
+        - debounce
+        - token-spray
+moves:
+    - verb: GET
+      to:
+        - https://api.debounce.io/v1/?api={{token}}&email=test@interact.sh
+      signs:
+        - "on": word
+          has:
+            - '"balance":'
+            - '"success":'
+            - '"debounce":'
+          in: body
+          need: all

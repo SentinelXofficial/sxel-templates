@@ -1,0 +1,25 @@
+id: ibm-decision-runner
+brief:
+    title: IBM Decision Runner - Detect
+    by: DhiyaneshDK
+    level: info
+    about: IBM Decision Runner Service was detected.
+    label:
+        - ibm
+        - detect
+        - tech
+        - ibm-decision-runner
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/DecisionRunner/'
+      signs:
+        - "on": word
+          has:
+            - <title>Decision Runner</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

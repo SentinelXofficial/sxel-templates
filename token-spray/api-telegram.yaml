@@ -1,0 +1,22 @@
+id: api-telegram
+brief:
+    title: Telegram API Test
+    by: 0xpugal
+    level: info
+    about: Telegram bot API token
+    label:
+        - token-spray
+        - telegram
+moves:
+    - verb: GET
+      to:
+        - https://api.telegram.org/bot{{token}}/getMe
+      signs:
+        - "on": word
+          has:
+            - '"id"'
+            - '"is_bot"'
+            - '"first_name:"'
+            - '"username"'
+          in: body
+          need: all

@@ -1,0 +1,21 @@
+id: apache-tapestry-detect
+brief:
+    title: Apache Tapestry Framework detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - apache
+        - tapestry
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - content="Apache Tapestry Framework
+            - content="Tapestry Application Framework
+          in: body

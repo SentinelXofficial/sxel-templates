@@ -1,0 +1,23 @@
+id: ixcache-panel
+brief:
+    title: iXCache Login Panel - Detect
+    by: ffffffff0x
+    level: info
+    about: iXCache login panel was detected.
+    label:
+        - ixcache
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>iXCache</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 302

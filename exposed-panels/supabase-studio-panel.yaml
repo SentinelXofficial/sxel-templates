@@ -1,0 +1,19 @@
+id: supabase-studio-panel
+brief:
+    title: Supabase Studio Panel - Detect
+    by: ChrisJr404
+    level: info
+    about: Supabase Studio login panel was detected. The admin dashboard shipped with Supabase, the popular open-source Firebase alternative (Postgres + auth + realtime + storage + edge functions).
+    label:
+        - panel
+        - supabase
+        - studio
+        - detect
+        - discovery
+        - login
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/_login'
+      signs: []

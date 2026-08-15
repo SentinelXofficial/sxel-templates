@@ -1,0 +1,16 @@
+id: stripe-restricted-key
+brief:
+    title: Stripe Restricted Key Disclosure
+    by: Ice3man
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - stripe
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,18 @@
+id: wordpress-essential-addons-for-elementor-lite
+brief:
+    title: Essential Addons for Elementor – Popular Elementor Templates & Widgets Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/essential-addons-for-elementor-lite/readme.txt'
+      signs: []

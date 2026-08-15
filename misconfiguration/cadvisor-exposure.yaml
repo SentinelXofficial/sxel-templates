@@ -1,0 +1,30 @@
+id: cadvisor-exposure
+brief:
+    title: cAdvisor - Detect
+    by: DhiyaneshDk
+    level: medium
+    about: cAdvisor page was detected.
+    label:
+        - exposure
+        - misconfig
+        - dashboard
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/containers/'
+      signs:
+        - "on": word
+          has:
+            - <title>cAdvisor - /</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

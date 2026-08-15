@@ -1,0 +1,27 @@
+id: google-iap-detect
+brief:
+    title: Google Identity-Aware Proxy (IAP) - Detect
+    by: davidfegyver
+    level: info
+    about: Detected whether the target was protected by Google's Identity-Aware Proxy (IAP). IAP provided application-level access control for services running on Google Cloud. When IAP intercepted an unauthe...
+    label:
+        - tech
+        - google
+        - iap
+        - cloud
+        - identity
+        - proxy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - X-Goog-Iap-Generated-Response
+          in: header

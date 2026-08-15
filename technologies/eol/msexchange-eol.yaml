@@ -1,0 +1,16 @@
+id: msexchange-eol
+brief:
+    title: Microsoft Exchange Server End-of-Life - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected Microsoft Exchange Server versions that have reached End-of-Life (EOL) and no longer receive security updates.
+    label:
+        - tech
+        - msexchange
+        - eol
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/owa/'
+        - '{{BaseURL}}/owa/auth/logon.aspx'
+      signs: []

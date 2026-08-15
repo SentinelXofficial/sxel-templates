@@ -1,0 +1,23 @@
+id: exposed-file-upload-form
+brief:
+    title: Exposed File Upload Form
+    by: geeknik
+    level: info
+    about: ""
+    label:
+        - miscellaneous
+        - exposure
+        - upload
+        - form
+        - misc
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - id="file"
+          in: body

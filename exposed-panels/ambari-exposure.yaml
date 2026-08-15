@@ -1,0 +1,23 @@
+id: ambari-exposure
+brief:
+    title: Apache Ambari Exposure Admin Login Panel
+    by: pdteam
+    level: info
+    about: An Apache Ambari panel was discovered.
+    label:
+        - panel
+        - apache
+        - ambari
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Ambari</title>
+            - href="http://www.apache.org/licenses/LICENSE-2.0"
+          in: body
+          need: all

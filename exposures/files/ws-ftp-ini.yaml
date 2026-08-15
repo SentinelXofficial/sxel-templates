@@ -1,0 +1,26 @@
+id: ws-ftp-ini
+brief:
+    title: WS FTP File Disclosure
+    by: DhiyaneshDK
+    level: low
+    about: WS FTP file is disclosed.
+    label:
+        - exposure
+        - ftp
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ws_ftp.ini'
+      signs:
+        - "on": word
+          has:
+            - HOST=
+            - UID=
+            - DIR=
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

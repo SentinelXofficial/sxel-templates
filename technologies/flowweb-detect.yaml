@@ -1,0 +1,14 @@
+id: flowweb-detect
+brief:
+    title: FlowWeb Web Server - Detection
+    by: Shivam Kamboj
+    level: info
+    about: Detected servers running the FlowWeb web server via the Server header.
+    label:
+        - tech
+        - flowweb
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

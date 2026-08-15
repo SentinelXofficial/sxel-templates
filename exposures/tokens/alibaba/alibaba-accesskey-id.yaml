@@ -1,0 +1,16 @@
+id: alibaba-accesskey-id
+brief:
+    title: Alibaba Access Key ID
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - alibaba
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

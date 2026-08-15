@@ -1,0 +1,26 @@
+id: poshmark-phish
+brief:
+    title: Poshmark phishing Detection
+    by: rxerium
+    level: info
+    about: A Poshmark phishing website was detected
+    label:
+        - phishing
+        - poshmark
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Poshmark
+            - '<title>Poshmark: Buy and sell fashion, home decor, beauty &amp; more'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

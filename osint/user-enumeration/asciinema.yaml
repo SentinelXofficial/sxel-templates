@@ -1,0 +1,24 @@
+id: asciinema
+brief:
+    title: Asciinema User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Asciinema user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - asciinema
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://asciinema.org/~{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s profile - asciinema
+          in: body
+          need: all

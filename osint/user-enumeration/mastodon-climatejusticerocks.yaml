@@ -1,0 +1,24 @@
+id: mastodon-climatejusticerocks
+brief:
+    title: Mastodon-climatejustice.rocks User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mastodon-climatejustice.rocks user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastodon-climatejusticerocks
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://climatejustice.rocks/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '@climatejustice.rocks) - Mastodon</title>'
+          in: body
+          need: all

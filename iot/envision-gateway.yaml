@@ -1,0 +1,23 @@
+id: envision-gateway
+brief:
+    title: EnvisionGateway Scheduler Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: EnvisionGateway scheduler panel was detected.
+    label:
+        - iot
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#'
+      signs:
+        - "on": word
+          has:
+            - <title>EnvisionGateway</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

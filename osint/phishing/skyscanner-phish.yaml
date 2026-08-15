@@ -1,0 +1,24 @@
+id: skyscanner-phish
+brief:
+    title: skyscanner phishing Detection
+    by: rxerium
+    level: info
+    about: A skyscanner phishing website was detected
+    label:
+        - phishing
+        - skyscanner
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Compare Cheap Flights &amp; Book Airline Tickets to Everywhere | Skyscanner
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

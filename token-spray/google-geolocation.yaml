@@ -1,0 +1,23 @@
+id: api-googlegeolocation
+brief:
+    title: Google Geolocation API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - geolocation
+moves:
+    - verb: GET
+      to:
+        - https://www.googleapis.com/geolocation/v1/geolocate?key={{token}}
+      signs:
+        - "on": word
+          has:
+            - error
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

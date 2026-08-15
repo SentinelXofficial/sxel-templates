@@ -1,0 +1,31 @@
+id: grafana-metrics-exposure
+brief:
+    title: Grafana Metrics Endpoint - Information Disclosure
+    by: 0x_Akoko
+    level: low
+    about: Detected Grafana metrics endpoint exposed without authentication revealed sensitive infrastructure information, including version, edition, user counts, dashboard statistics, datasources, and datab...
+    label:
+        - grafana
+        - exposure
+        - metrics
+        - misconfig
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/metrics'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - grafana_build_info
+            - '# TYPE grafana_'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all

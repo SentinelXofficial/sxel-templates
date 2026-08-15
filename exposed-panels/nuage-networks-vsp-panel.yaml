@@ -1,0 +1,28 @@
+id: nuage-networks-vsp-panel
+brief:
+    title: Nokia Nuage Networks VSP - Dashboard Panel
+    by: rxerium
+    level: info
+    about: Nokia Nuage Networks VSP (Virtualized Services Platform) is a software-defined
+    label:
+        - panel
+        - nuage
+        - nokia
+        - vsp
+        - sdn
+        - vpn
+        - network
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Nuage Networks
+            - Nuage Network
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

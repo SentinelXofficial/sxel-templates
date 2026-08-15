@@ -1,0 +1,27 @@
+id: getsimple-installation
+brief:
+    title: GetSimple CMS - Installer
+    by: princechaddha
+    level: critical
+    about: GetSimple CMS installer was found.
+    label:
+        - getsimple
+        - exposure
+        - installer
+        - misconfig
+        - vuln
+    score: CVSS:9.4
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/install.php'
+      signs:
+        - "on": word
+          has:
+            - <title>GetSimple &raquo; Installation</title>
+            - PHP Version
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

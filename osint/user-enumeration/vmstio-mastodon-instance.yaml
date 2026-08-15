@@ -1,0 +1,24 @@
+id: vmstio-mastodon-instance
+brief:
+    title: Vmst.io (Mastodon Instance) User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Vmst.io (Mastodon Instance) user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - vmstio-mastodon-instance
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://vmst.io/api/v1/accounts/lookup?acct={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - display_name
+          in: body
+          need: all

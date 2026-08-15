@@ -1,0 +1,25 @@
+id: instagram
+brief:
+    title: Instagram User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Instagram user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - instagram
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.instagram.com/{{user}}
+      signs:
+        - "on": word
+          has:
+            - '{"username":"{{user}}"}'
+            - Instagram photos and videos from
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

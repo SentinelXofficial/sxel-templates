@@ -1,0 +1,30 @@
+id: tekon-info-leak
+brief:
+    title: Tekon - Unauthenticated Log Leak
+    by: gy741
+    level: low
+    about: A vulnerability in Tekon allows remote unauthenticated users to disclose the Log of the remote device
+    label:
+        - tekon
+        - exposure
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/log.cgi'
+      signs:
+        - "on": word
+          has:
+            - -- Logs begin at
+            - end at
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

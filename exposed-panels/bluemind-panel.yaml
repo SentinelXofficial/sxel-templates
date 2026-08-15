@@ -1,0 +1,26 @@
+id: bluemind-panel
+brief:
+    title: Bluemind Panel - Detect
+    by: Tigibus
+    level: info
+    about: Bluemind application panel was discovered.
+    label:
+        - bluemind
+        - login
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/native'
+      signs:
+        - "on": word
+          has:
+            - alt="BlueMind"
+            - window.bmExtensions
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

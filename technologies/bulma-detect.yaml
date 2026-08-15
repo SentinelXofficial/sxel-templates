@@ -1,0 +1,15 @@
+id: bulma-detect
+brief:
+    title: Bulma CSS Framework - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects the presence of the Bulma CSS Framework.
+    label:
+        - tech
+        - discovery
+        - bulma
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

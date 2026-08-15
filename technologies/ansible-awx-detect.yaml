@@ -1,0 +1,24 @@
+id: ansible-awx-detect
+brief:
+    title: Ansible AWX Detection
+    by: Adam Crosser
+    level: info
+    about: Detects Ansible AWX Instance
+    label:
+        - tech
+        - ansible
+        - awx
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/'
+      signs:
+        - "on": word
+          has:
+            - '"description":"AWX REST API"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

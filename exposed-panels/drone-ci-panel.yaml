@@ -1,0 +1,25 @@
+id: drone-ci-panel
+brief:
+    title: Drone CI Login Panel - Detect
+    by: Yuzhe-zhang-0
+    level: info
+    about: Drone CI login panel was detected.
+    label:
+        - panel
+        - droneci
+        - cicd
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/welcome'
+      signs:
+        - "on": word
+          has:
+            - <title>Drone CI</title>
+            - <title>Drone | Continuous Integration</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

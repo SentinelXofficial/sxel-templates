@@ -1,0 +1,24 @@
+id: lichess
+brief:
+    title: Lichess User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Lichess user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - lichess
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://lichess.org/@/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Activity
+          in: body
+          need: all

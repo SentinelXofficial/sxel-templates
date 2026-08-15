@@ -1,0 +1,26 @@
+id: comerica-phish
+brief:
+    title: Comerica Bank phishing Detection
+    by: rxerium
+    level: info
+    about: A Comerica Bank phishing website was detected
+    label:
+        - phishing
+        - comerica
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Comerica
+            - Your partner for personal finance, business banking, and wealth management with a legacy of excellence and industry recognition.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

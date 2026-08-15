@@ -1,0 +1,23 @@
+id: api-todoist
+brief:
+    title: Todoist API Test
+    by: daffainfo
+    level: info
+    about: Todo Lists
+    label:
+        - token-spray
+        - todoist
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://api.todoist.com/rest/v1/projects'
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - id
+            - color
+            - name
+          in: body
+          need: all

@@ -1,0 +1,21 @@
+id: zentao-detect
+brief:
+    title: Zentao Panel - Detect
+    by: pikpikcu
+    level: info
+    about: Zentao panel was detected.
+    label:
+        - panel
+        - easycorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/zentao/index.php?mode=getconfig'
+      signs:
+        - "on": word
+          has:
+            - '"sessionName":"zentaosid"'
+            - '{"version":"'
+          in: body
+          need: all

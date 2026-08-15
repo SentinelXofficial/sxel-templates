@@ -1,0 +1,19 @@
+id: wamp-server-configuration
+brief:
+    title: default-wamp-server-page
+    by: pussycat0x
+    level: medium
+    about: Wamp default page will expose sensitive configuration and vhosts.
+    label:
+        - wamp
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

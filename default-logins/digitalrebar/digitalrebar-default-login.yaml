@@ -1,0 +1,28 @@
+id: digitalrebar-default-login
+brief:
+    title: RackN Digital Rebar Default Login
+    by: c-sh0
+    level: high
+    about: A RackN Digital Rebar default login was discovered.
+    label:
+        - rackn
+        - digitalrebar
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v3/users'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Name
+            - Secret
+          in: body
+          need: all

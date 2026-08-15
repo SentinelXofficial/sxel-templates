@@ -1,0 +1,26 @@
+id: pupyc2
+brief:
+    title: PupyC2 - Detect
+    by: pussycat0x
+    level: info
+    about: Pupy is a cross-platform, multi function RAT and post-exploitation tool mainly written in python. It features an all-in-memory execution guideline and leaves a very low footprint. Pupy can communic...
+    label:
+        - c2
+        - ir
+        - osint
+        - pupyc2
+        - panel
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Etag: "aa3939fc357723135870d5036b12a67097b03309"'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

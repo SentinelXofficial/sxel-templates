@@ -1,0 +1,25 @@
+id: mpix-phish
+brief:
+    title: MPIX phishing Detection
+    by: rxerium
+    level: info
+    about: An MPIX phishing website was detected
+    label:
+        - phishing
+        - mpix
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Mpix
+            - <title>Mpix Photo Lab | Create Custom Photo Products
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

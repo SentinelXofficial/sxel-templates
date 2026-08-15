@@ -1,0 +1,24 @@
+id: jenkins-api-panel
+brief:
+    title: Jenkins API Panel - Detect
+    by: righettod
+    level: info
+    about: Jenkins API panel was detected.
+    label:
+        - panel
+        - api
+        - jenkins
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/xml'
+      signs:
+        - "on": word
+          has:
+            - hudson.model.Hudson
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

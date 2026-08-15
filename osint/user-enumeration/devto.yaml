@@ -1,0 +1,24 @@
+id: devto
+brief:
+    title: Dev.to User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Dev.to user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - devto
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://dev.to/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- DEV'
+          in: body
+          need: all

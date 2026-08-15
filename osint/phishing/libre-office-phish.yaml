@@ -1,0 +1,24 @@
+id: libre-office-phish
+brief:
+    title: libre office phishing Detection
+    by: rxerium
+    level: info
+    about: A libre office phishing website was detected
+    label:
+        - phishing
+        - libre-office
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Home | LibreOffice - Free Office Suite - Based on OpenOffice - Compatible with Microsoft
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

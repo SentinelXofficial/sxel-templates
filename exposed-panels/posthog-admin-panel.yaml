@@ -1,0 +1,25 @@
+id: posthog-admin-panel
+brief:
+    title: PostHog Login Panel - Detect
+    by: theabhinavgaur
+    level: info
+    about: PostHog login panel was detected.
+    label:
+        - panel
+        - posthog
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login?next=/'
+      signs:
+        - "on": word
+          has:
+            - <title>PostHog</title>
+            - content="PostHog
+            - POSTHOG_HOST
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

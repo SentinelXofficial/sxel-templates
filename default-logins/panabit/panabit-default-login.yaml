@@ -1,0 +1,47 @@
+id: panabit-default-login
+brief:
+    title: Panabit Gateway - Default Login
+    by: pikpikcu
+    level: critical
+    about: Panabit Gateway default credentials were discovered.
+    label:
+        - panabit
+        - default-login
+        - intrusive
+        - vuln
+    score: CVSS:9.8
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login/userverify.cgi'
+      head:
+        Accept-Encoding: gzip, deflate
+        Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryAjZMsILtbrBp8VbC
+        Origin: '{{BaseURL}}'
+        Referer: '{{BaseURL}}/login/login.htm'
+      body: |-
+        ------WebKitFormBoundaryAjZMsILtbrBp8VbC
+        Content-Disposition: form-data; name="username"
+
+        {{username}}
+        ------WebKitFormBoundaryAjZMsILtbrBp8VbC
+        Content-Disposition: form-data; name="password"
+
+        {{password}}
+        ------WebKitFormBoundaryAjZMsILtbrBp8VbC--
+      signs:
+        - "on": word
+          has:
+            - <META HTTP-EQUIV=REFRESH CONTENT="0;URL=/index.htm">
+            - urn:schemas-microsoft-com:vml
+          in: body
+          need: all
+        - "on": word
+          has:
+            - paonline_admin
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

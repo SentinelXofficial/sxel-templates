@@ -1,0 +1,20 @@
+id: opensearch-dashboard-default-login
+brief:
+    title: OpenSearch Dashboard - Default Login
+    by: ritikchaddha
+    level: high
+    about: OpenSearch Dashboard is a community-driven, open source search and analytics suite. This template detects instances using default credentials (admin:admin).
+    label:
+        - opensearch
+        - default-login
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/auth/login'
+      head:
+        Content-Type: application/json
+        osd-xsrf: osd-fetch
+      body: '{"username":"{{username}}","password":"{{password}}"}'
+      signs: []

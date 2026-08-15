@@ -1,0 +1,27 @@
+id: twitter-phish
+brief:
+    title: Twitter/X phishing Detection
+    by: rxerium
+    level: info
+    about: A Twitter/X phishing website was detected
+    label:
+        - phishing
+        - twitter
+        - x
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Sign in to X
+            - Happening now
+            - Join today
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

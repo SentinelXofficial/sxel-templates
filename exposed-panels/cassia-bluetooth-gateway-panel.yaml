@@ -1,0 +1,25 @@
+id: cassia-bluetooth-gateway-panel
+brief:
+    title: Cassia Bluetooth Gateway Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Cassia Bluetooth Gateway Management Platform login page was discovered.
+    label:
+        - cassia
+        - gateway
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cassia/login'
+      signs:
+        - "on": word
+          has:
+            - Cassia Bluetooth Gateway Management Platform
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

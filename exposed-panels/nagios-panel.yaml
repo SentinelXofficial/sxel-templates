@@ -1,0 +1,24 @@
+id: nagios-panel
+brief:
+    title: Nagios Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Nagios login panel was detected.
+    label:
+        - panel
+        - nagios
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nagios'
+        - '{{BaseURL}}/nagios3'
+      signs:
+        - "on": word
+          has:
+            - Nagios Access
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 401

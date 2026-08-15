@@ -1,0 +1,24 @@
+id: avast-phish
+brief:
+    title: avast phishing Detection
+    by: rxerium
+    level: info
+    about: An avast phishing website was detected
+    label:
+        - phishing
+        - avast
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Avast | Download Free Antivirus &amp; VPN | 100% Free &amp; Easy
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

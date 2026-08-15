@@ -1,0 +1,24 @@
+id: bonita-portal-panel
+brief:
+    title: Bonita Portal Login - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Detects the presence of Bonita Portal login page.
+    label:
+        - bonita
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/bonita/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - Bonita Portal
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

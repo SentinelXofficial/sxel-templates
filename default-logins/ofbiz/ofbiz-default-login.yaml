@@ -1,0 +1,26 @@
+id: ofbiz-default-login
+brief:
+    title: Apache OfBiz Default Login
+    by: pdteam
+    level: high
+    about: Apache OfBiz default admin credentials were discovered.
+    label:
+        - ofbiz
+        - default-login
+        - apache
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/control/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: USERNAME={{username}}&PASSWORD={{password}}&FTOKEN=&JavaScriptEnabled=Y
+      signs:
+        - "on": word
+          has:
+            - ofbiz-pagination-template
+            - <span>Powered by OFBiz</span>
+          in: body
+          need: all

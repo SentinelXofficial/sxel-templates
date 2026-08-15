@@ -1,0 +1,35 @@
+id: springboot-liquidbase
+brief:
+    title: Springboot Liquidbase API
+    by: ELSFA7110
+    level: low
+    about: This liquibase endpoint provides information about database changes
+    label:
+        - misconfig
+        - springboot
+        - exposure
+        - liquibase
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/liquibase'
+        - '{{BaseURL}}/actuator/liquibase'
+      signs:
+        - "on": word
+          has:
+            - liquibase
+            - '"FILENAME":"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v1+json
+            - application/vnd.spring-boot.actuator.v2+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

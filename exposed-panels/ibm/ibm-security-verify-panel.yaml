@@ -1,0 +1,25 @@
+id: ibm-security-verify-panel
+brief:
+    title: IBM Security Verify Access Login - Panel
+    by: johnk3r
+    level: info
+    about: IBM Security Verify Access login panel was detected.
+    label:
+        - panel
+        - ibm
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>IBM Security Verify Access</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

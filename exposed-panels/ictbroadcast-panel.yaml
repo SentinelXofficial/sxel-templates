@@ -1,0 +1,17 @@
+id: ictbroadcast-panel
+brief:
+    title: ICTBroadcast Login Panel - Detect
+    by: rxerium
+    level: info
+    about: ICTBroadcast login panel was detected.
+    label:
+        - panel
+        - ictbroadcast
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login.php'
+      signs: []

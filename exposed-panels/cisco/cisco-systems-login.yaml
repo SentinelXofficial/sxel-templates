@@ -1,0 +1,23 @@
+id: cisco-systems-login
+brief:
+    title: Cisco Systems Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Cisco Systems login panel was detected.
+    label:
+        - panel
+        - cisco
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Cisco Systems Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

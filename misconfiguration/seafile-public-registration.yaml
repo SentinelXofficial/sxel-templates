@@ -1,0 +1,16 @@
+id: seafile-public-registration
+brief:
+    title: Seafile - Public Registration Enabled
+    by: theamanrawat
+    level: info
+    about: Detected public user registration is enabled on a Seafile instance.
+    label:
+        - misconfig
+        - seafile
+        - registration
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/accounts/register/'
+      signs: []

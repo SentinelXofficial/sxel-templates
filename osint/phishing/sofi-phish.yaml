@@ -1,0 +1,26 @@
+id: sofi-phish
+brief:
+    title: SoFi phishing Detection
+    by: rxerium
+    level: info
+    about: A SoFi phishing website was detected
+    label:
+        - phishing
+        - sofi
+        - fintech
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - SoFi
+            - '<title>SoFi: Banking, Loans, Invest, Credit Card, &amp; Mortgages'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

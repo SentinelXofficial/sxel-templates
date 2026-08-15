@@ -1,0 +1,18 @@
+id: pieregister-open-redirect
+brief:
+    title: WordPress Pie Register < 3.7.2.4 - Open Redirect
+    by: 0x_Akoko
+    level: low
+    about: WordPress Pie Register < 3.7.2.4 is susceptible to an open redirect vulnerability because the plugin passes unvalidated user input to the wp_redirect() function.
+    label:
+        - redirect
+        - wp-plugin
+        - pieregister
+        - wpscan
+        - wordpress
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?piereg_logout_url=true&redirect_to=https://interact.sh'
+      signs: []

@@ -1,0 +1,21 @@
+id: api-intercom
+brief:
+    title: Intercom API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - intercom
+moves:
+    - verb: GET
+      to:
+        - https://api.intercom.io/users
+      head:
+        Accept: application/json
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - Access Token Invalid
+          in: body

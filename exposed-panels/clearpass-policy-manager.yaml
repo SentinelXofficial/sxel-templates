@@ -1,0 +1,24 @@
+id: clearpass-policy-manager
+brief:
+    title: ClearPass Policy Manager Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: ClearPass Policy Manager login panel was detected.
+    label:
+        - panel
+        - aruba
+        - arubanetworks
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/tips/tipsLogin.action'
+      signs:
+        - "on": word
+          has:
+            - <title>ClearPass Policy Manager - Aruba Networks</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: api-appveyor
+brief:
+    title: AppVeyor API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - appveyor
+moves:
+    - verb: GET
+      to:
+        - https://ci.appveyor.com/api/roles
+      head:
+        Authorization: Bearer {{token}}
+        Content-Type: application/json
+      signs:
+        - "on": word
+          has:
+            - '"roleId":'
+            - '"created":'
+          in: body
+          need: all

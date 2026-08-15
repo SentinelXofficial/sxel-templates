@@ -1,0 +1,20 @@
+id: cyberpanel-panel
+brief:
+    title: Cyberpanel Login Panel - Detect
+    by: mailler
+    level: info
+    about: Cyberpanel login panel was detected.
+    label:
+        - cyberpanel
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

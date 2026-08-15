@@ -1,0 +1,27 @@
+id: detect-dns-over-https
+brief:
+    title: Detect DNS over HTTPS
+    by: geeknik
+    level: info
+    about: With DNS over HTTPS (DoH), DNS queries and responses are encrypted and sent via the HTTP or HTTP/2 protocols. DoH ensures that attackers cannot forge or alter DNS traffic. DoH uses port 443, which ...
+    label:
+        - miscellaneous
+        - dns
+        - doh
+        - misc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dns-query?dns=q80BAAABAAAAAAAAA3d3dwdleGFtcGxlA2NvbQAAAQAB'
+      head:
+        Accept: application/dns-message
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - application/dns-message
+          in: header
+          need: all

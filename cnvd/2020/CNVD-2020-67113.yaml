@@ -1,0 +1,40 @@
+id: CNVD-2020-67113
+brief:
+    title: H5S CONSOLE - Unauthorized Access
+    by: ritikchaddha
+    level: medium
+    about: H5S CONSOLE is susceptible to an unauthorized access vulnerability.
+    label:
+        - cnvd
+        - cnvd2020
+        - h5s
+        - unauth
+        - h5sconsole
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/GetSrc'
+        - '{{BaseURL}}/api/v1/GetDevice'
+      signs:
+        - "on": word
+          has:
+            - strUser
+            - strPasswd
+          in: body
+          need: all
+        - "on": word
+          has:
+            - H5_AUTO
+            - H5_DEV
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

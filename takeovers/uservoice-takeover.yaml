@@ -1,0 +1,21 @@
+id: uservoice-takeover
+brief:
+    title: Uservoice Takeover Detection
+    by: MiryangJung
+    level: high
+    about: Uservoice takeover was detected.
+    label:
+        - takeover
+        - uservoice
+        - hackerone
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - This UserVoice subdomain is currently available!
+          in: body
+          need: all

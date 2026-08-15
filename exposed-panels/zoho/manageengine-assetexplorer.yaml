@@ -1,0 +1,25 @@
+id: manageengine-assetexplorer
+brief:
+    title: ZOHO ManageEngine AssetExplorer Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: ZOHO ManageEngine AssetExplorer panel was detected.
+    label:
+        - panel
+        - zoho
+        - manageengine
+        - zohocorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ManageEngine AssetExplorer</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

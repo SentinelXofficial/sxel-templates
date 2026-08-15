@@ -1,0 +1,24 @@
+id: symantec-ewep-login
+brief:
+    title: Symantec Encryption Server Login Panel - Detect
+    by: johnk3r
+    level: info
+    about: Symantec Encryption Server login panel was detected.
+    label:
+        - panel
+        - symantec
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/b/l.e'
+      signs:
+        - "on": word
+          has:
+            - '<TITLE>Symantec Encryption Server: Web Email Protection - Login</TITLE>'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

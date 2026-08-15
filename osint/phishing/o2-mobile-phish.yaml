@@ -1,0 +1,24 @@
+id: o2-mobile-phish
+brief:
+    title: o2 phishing Detection
+    by: rxerium
+    level: info
+    about: A o2 phishing website was detected
+    label:
+        - phishing
+        - o2
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - O2 | Phone, SIM &amp; Tech Deals - See What You Can Do
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

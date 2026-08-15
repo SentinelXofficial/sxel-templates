@@ -1,0 +1,26 @@
+id: tomcat-cookie-exposed
+brief:
+    title: Tomcat Cookie Exposed
+    by: tess
+    level: low
+    about: Tomcat Cookie is exposed.
+    label:
+        - misconfig
+        - apache
+        - tomcat
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/examples/servlets/servlet/CookieExample'
+      signs:
+        - "on": word
+          has:
+            - Cookies Example
+            - 'Your browser is sending the following cookies:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

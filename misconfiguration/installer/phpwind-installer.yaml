@@ -1,0 +1,32 @@
+id: phpwind-installer
+brief:
+    title: phpwind Installer Exposure
+    by: tess
+    level: high
+    about: phpwind is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - phpwind
+        - exposure
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install.php?a=check'
+      signs:
+        - "on": word
+          has:
+            - Powered by phpwind</title>
+            - 安装
+          in: body
+          need: all
+        - "on": word
+          has:
+            - You have installed. To reinstall, you need to clear the data/install.lock file
+            - 您已经安装过，需要重新安装请先删除data/install.lock文件
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

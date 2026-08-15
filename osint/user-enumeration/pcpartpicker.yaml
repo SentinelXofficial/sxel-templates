@@ -1,0 +1,24 @@
+id: pcpartpicker
+brief:
+    title: PCPartPicker User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: PCPartPicker user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - pcpartpicker
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://pcpartpicker.com/user/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - class="active"
+          in: body
+          need: all

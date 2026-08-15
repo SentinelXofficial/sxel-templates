@@ -1,0 +1,17 @@
+id: redfish-api
+brief:
+    title: Redfish API - Detect
+    by: righettod
+    level: info
+    about: Redfish API was detected.
+    label:
+        - config
+        - exposure
+        - redfish
+        - api
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/redfish/v1/'
+      signs: []

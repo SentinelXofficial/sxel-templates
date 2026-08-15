@@ -1,0 +1,26 @@
+id: snipe-it-installer
+brief:
+    title: Snipe-IT Setup Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed Snipe-IT Setup page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - snipe-it
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup'
+      signs:
+        - "on": word
+          has:
+            - Snipe-IT Setup
+            - Create Admin User
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

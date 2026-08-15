@@ -1,0 +1,24 @@
+id: keepersecurity-phish
+brief:
+    title: keepersecurity phishing Detection
+    by: rxerium
+    level: info
+    about: A keepersecurity phishing website was detected
+    label:
+        - phishing
+        - keepersecurity
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Password and Secrets Management - Keeper Security
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

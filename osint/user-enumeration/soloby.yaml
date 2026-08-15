@@ -1,0 +1,24 @@
+id: soloby
+brief:
+    title: Soloby User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Soloby user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - soloby
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://www.soloby.ru/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- Универ soloBY'
+          in: body
+          need: all

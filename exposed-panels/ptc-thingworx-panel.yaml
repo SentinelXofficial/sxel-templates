@@ -1,0 +1,28 @@
+id: ptc-thingworx-panel
+brief:
+    title: PTC ThingWorx - Panel
+    by: rxerium
+    level: info
+    about: PTC ThingWorx is an Industrial IoT (IIoT) platform for building and deploying
+    label:
+        - panel
+        - ics
+        - iot
+        - ptc
+        - thingworx
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Thingworx</title>
+            - /Thingworx/Home
+            - thingworx.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

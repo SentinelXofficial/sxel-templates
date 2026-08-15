@@ -1,0 +1,25 @@
+id: looker-panel
+brief:
+    title: Looker Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Looker login panel was detected.
+    label:
+        - panel
+        - login
+        - looker
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - lookerVersion
+            - lookerLocation.title
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

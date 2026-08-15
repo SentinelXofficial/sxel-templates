@@ -1,0 +1,22 @@
+id: mealie-panel
+brief:
+    title: Mealie Panel - Detect
+    by: ChrisJr404
+    level: info
+    about: Detected Mealie was a self-hosted recipe manager and meal planner with a Vue/Nuxt frontend and FastAPI backend.
+    label:
+        - panel
+        - mealie
+        - recipe
+        - selfhosted
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/app/about'
+      signs: []

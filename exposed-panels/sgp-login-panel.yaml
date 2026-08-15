@@ -1,0 +1,23 @@
+id: sgp-login-panel
+brief:
+    title: SGP Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: SGP login panel was detected.
+    label:
+        - panel
+        - sgp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/accounts/login?next=/admin/'
+      signs:
+        - "on": word
+          has:
+            - <title>SGP</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

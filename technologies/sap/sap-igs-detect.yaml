@@ -1,0 +1,30 @@
+id: sap-igs-detect
+brief:
+    title: SAP Internet Graphics Server (IGS) Detection
+    by: _generic_human_
+    level: info
+    about: Detection of SAP Internet Graphics Server (IGS)
+    label:
+        - sap
+        - tech
+        - igs
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - SAP IGS
+            - is running
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - SAP Internet Graphics Server
+          in: header
+          need: all

@@ -1,0 +1,25 @@
+id: solarview-compact-panel
+brief:
+    title: SolarView Compact Panel - Detect
+    by: princechaddha
+    level: info
+    about: SolarView Compact panel was detected.
+    label:
+        - panel
+        - solarview
+        - iot
+        - contec
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Solar_Menu.php'
+      signs:
+        - "on": word
+          has:
+            - SolarViewCompact
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

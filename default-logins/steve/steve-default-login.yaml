@@ -1,0 +1,41 @@
+id: steve-default-login
+brief:
+    title: SteVe Login Panel - Detect
+    by: clem9669
+    level: info
+    about: SteVe login panel was detected.
+    label:
+        - panel
+        - default-login
+        - steve
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/steve/manager/signin'
+      signs:
+        - "on": word
+          has:
+            - <a>DATA MANAGEMENT
+            - SIGN OUT</a>
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/steve/manager/signin'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}&_csrf={{csrf}}
+      signs:
+        - "on": word
+          has:
+            - <a>DATA MANAGEMENT
+            - SIGN OUT</a>
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200

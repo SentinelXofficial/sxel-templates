@@ -1,0 +1,25 @@
+id: getsimple-cms-detect
+brief:
+    title: GetSimple CMS Detection
+    by: pikpikcu
+    level: info
+    about: Template to detect a running GetSimple CMS instance
+    label:
+        - tech
+        - getsimple
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/readme.txt'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Powered by  GetSimple
+            - GetSimple CMS is a flatfile CMS
+          in: body
+          need: all

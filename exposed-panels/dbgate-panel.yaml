@@ -1,0 +1,23 @@
+id: dbgate-panel
+brief:
+    title: DbGate Web Client Management - Panel Detect
+    by: h0j3n
+    level: info
+    about: The DbGate Web Client Management Panel is detected on the target system.
+    label:
+        - panel
+        - dbgate
+        - oss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>DbGate</title>
+            - starting_dbgate_zero
+            - Loading DbGate App
+            - DbGate - web based opensource database administration tool for MS SQL, MySQL, Postgre SQL
+          in: body

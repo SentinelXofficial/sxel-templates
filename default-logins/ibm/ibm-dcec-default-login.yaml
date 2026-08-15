@@ -1,0 +1,28 @@
+id: ibm-dcec-default-login
+brief:
+    title: IBM Decision Center Enterprise Console - Default Login
+    by: DhiyaneshDK
+    level: high
+    about: ""
+    label:
+        - ibm
+        - default-login
+        - decision-center
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/teamserver/j_security_check'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: j_username={{username}}&j_password={{password}}
+      signs:
+        - "on": word
+          has:
+            - 'Current action:'
+            - Sign Out
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

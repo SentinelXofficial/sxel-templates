@@ -1,0 +1,17 @@
+id: wordpress-pretty-link
+brief:
+    title: PrettyLinks – Affiliate Links, Link Branding, Link Tracking, Marketing and Stripe Payments Plugin Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/pretty-link/readme.txt'
+      signs: []

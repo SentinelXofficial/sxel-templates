@@ -1,0 +1,25 @@
+id: fortinet-fortiddos-panel
+brief:
+    title: Fortinet FortiDDoS Panel
+    by: johnk3r
+    level: info
+    about: Fortinet FortiDDoS panel was detected.
+    label:
+        - panel
+        - fortinet
+        - fortiddos
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>FortiDDoS</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

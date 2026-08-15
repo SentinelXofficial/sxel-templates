@@ -1,0 +1,27 @@
+id: circleci-ssh-config
+brief:
+    title: CircleCI SSH Configuration - Detect
+    by: geeknik
+    level: medium
+    about: CircleCI ssh-config file was detected.
+    label:
+        - config
+        - exposure
+        - circleci
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.circleci/ssh-config'
+      signs:
+        - "on": word
+          has:
+            - Host
+            - HostName
+            - IdentityFile
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

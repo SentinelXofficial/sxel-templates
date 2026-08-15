@@ -1,0 +1,25 @@
+id: amazon-web-services-phish
+brief:
+    title: amazon web services phishing Detection
+    by: rxerium
+    level: info
+    about: An amazon-web-services phishing website was detected
+    label:
+        - phishing
+        - amazon-web-services
+        - aws
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Amazon Web Services Sign-In
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

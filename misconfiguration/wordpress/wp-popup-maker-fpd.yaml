@@ -1,0 +1,18 @@
+id: wp-popup-maker-fpd
+brief:
+    title: Popup Maker - Full Path Disclosure
+    by: theamanrawat
+    level: low
+    about: Popup Maker WordPress plugin contains a full path disclosure vulnerability due to improper access restrictions in its source files, allowing unauthenticated attackers to retrieve full server paths ...
+    label:
+        - debug
+        - wordpress
+        - wp
+        - wp-plugin
+        - popup-maker
+        - fpd
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/popup-maker/classes/Activator.php'
+      signs: []

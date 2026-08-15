@@ -1,0 +1,39 @@
+id: piwik-unauthenticated-access
+brief:
+    title: Piwik/Matomo - Unauthenticated Access
+    by: 0x_Akoko
+    level: high
+    about: Detected Piwik/Matomo instances exposing analytics data without authentication. When anonymous access was enabled, the API returned visitor statistics, page views, and other sensitive analytics dat...
+    label:
+        - piwik
+        - matomo
+        - unauth
+        - exposure
+        - misconfig
+        - analytics
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?module=API&method=VisitsSummary.get&idSite=1&period=day&date=today&format=json&token_auth=anonymous'
+        - '{{BaseURL}}/matomo/index.php?module=API&method=VisitsSummary.get&idSite=1&period=day&date=today&format=json&token_auth=anonymous'
+        - '{{BaseURL}}/piwik/index.php?module=API&method=VisitsSummary.get&idSite=1&period=day&date=today&format=json&token_auth=anonymous'
+        - '{{BaseURL}}/index.php?module=API&method=SitesManager.getAllSites&format=json&token_auth=anonymous'
+        - '{{BaseURL}}/matomo/index.php?module=API&method=SitesManager.getAllSites&format=json&token_auth=anonymous'
+      signs:
+        - "on": word
+          has:
+            - nb_visits
+            - nb_uniq_visitors
+            - nb_actions
+            - idsite
+            - main_url
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

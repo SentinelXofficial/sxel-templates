@@ -1,0 +1,23 @@
+id: alienVault-usm
+brief:
+    title: AlienVault USM Login Panel
+    by: dhiyaneshDK
+    level: info
+    about: An AlienVault USM login panel was detected.
+    label:
+        - panel
+        - alienvault
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ossim/session/login.php'
+      signs:
+        - "on": word
+          has:
+            - <title>AlienVault USM
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: fastmail-phish
+brief:
+    title: Fastmail phishing Detection
+    by: rxerium
+    level: info
+    about: A Fastmail phishing website was detected
+    label:
+        - phishing
+        - fastmail
+        - email
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Email and calendar made better | Fastmail
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

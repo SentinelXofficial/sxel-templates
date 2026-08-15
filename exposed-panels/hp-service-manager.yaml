@@ -1,0 +1,20 @@
+id: hp-service-manager
+brief:
+    title: HP Service Manager Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: HP Service Manager login panel was detected.
+    label:
+        - panel
+        - hp
+        - service
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sm935/index.do'
+        - '{{BaseURL}}/sm/ess.do'
+      signs:
+        - "on": status
+          status:
+            - 200

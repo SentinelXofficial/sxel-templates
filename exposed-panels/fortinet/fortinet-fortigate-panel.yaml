@@ -1,0 +1,16 @@
+id: fortinet-fortigate-panel
+brief:
+    title: Fortinet FortiGate SSL VPN Login Panel - Detect
+    by: bsysop
+    level: info
+    about: Detect FortiGate SSL VPN login and extract release date.
+    label:
+        - panel
+        - fortigate
+        - vpn
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

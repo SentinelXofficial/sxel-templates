@@ -1,0 +1,32 @@
+id: dzzoffice-installer
+brief:
+    title: DzzOffice - Installer Page Exposure
+    by: ritikchaddha
+    level: high
+    about: Detects exposed DzzOffice Installation page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - dzzoffice
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/index.php'
+      signs:
+        - "on": word
+          has:
+            - DzzOffice
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 简体中文 UTF8 版
+            - Simplified Chinese UTF8 version
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

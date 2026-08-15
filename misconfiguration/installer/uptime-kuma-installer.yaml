@@ -1,0 +1,16 @@
+id: uptime-kuma-installer
+brief:
+    title: Uptime Kuma - Installer
+    by: 0x_Akoko
+    level: high
+    about: Detected Uptime Kuma setup page is publicly accessible with needSetup enabled, allowing unauthenticated users to complete installation and gain full admin access by access /setup-database.
+    label:
+        - exposure
+        - setup
+        - installer
+        - uptime-kuma
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup-database-info'
+      signs: []

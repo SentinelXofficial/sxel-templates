@@ -1,0 +1,29 @@
+id: parameters-config
+brief:
+    title: Parameters.yml - File Discovery
+    by: DhiyaneshDK
+    level: high
+    about: Parameters.yml was discovered.
+    label:
+        - exposure
+        - cloud
+        - devops
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/parameters.yml'
+        - '{{BaseURL}}/app/config/parameters.yml'
+        - '{{BaseURL}}/parameters.yml.dist'
+        - '{{BaseURL}}/app/config/parameters.yml.dist'
+      signs:
+        - "on": word
+          has:
+            - 'parameters:'
+            - database_user
+            - database_password
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

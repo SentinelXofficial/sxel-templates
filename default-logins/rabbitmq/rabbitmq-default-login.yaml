@@ -1,0 +1,32 @@
+id: rabbitmq-default-login
+brief:
+    title: RabbitMQ Default Login
+    by: fyoorer
+    level: high
+    about: RabbitMQ default admin credentials were discovered.
+    label:
+        - rabbitmq
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/whoami'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+        Content-Type: application/x-www-form-urlencoded
+      signs:
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": word
+          has:
+            - '{"name":"guest"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

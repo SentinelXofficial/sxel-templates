@@ -1,0 +1,23 @@
+id: hpe-system-management-anonymous-access
+brief:
+    title: HPE System Management Anonymous Access
+    by: divya_mudgal
+    level: low
+    about: HPE system management anonymous access is enabled.
+    label:
+        - hp
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/chpstrt.php?chppath=Home'
+      signs:
+        - "on": word
+          has:
+            - username = "hpsmh_anonymous";
+            - var host_addr = '
+            - var ip_addr   = '
+          in: body
+          need: all

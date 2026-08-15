@@ -1,0 +1,24 @@
+id: exposed-mysql-initial
+brief:
+    title: mysql.initial Config - Detect
+    by: ELSFA7110
+    level: info
+    about: mysql.initial configuration file was detected.
+    label:
+        - config
+        - exposure
+        - hackerone
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mysql.initial.sql'
+      signs:
+        - "on": word
+          has:
+            - Roundcube Webmail initial database structure
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

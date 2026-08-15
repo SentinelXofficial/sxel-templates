@@ -1,0 +1,24 @@
+id: faktopedia
+brief:
+    title: Faktopedia User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Faktopedia user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - faktopedia
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://faktopedia.pl/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'Zamieszcza fakty od:'
+          in: body
+          need: all

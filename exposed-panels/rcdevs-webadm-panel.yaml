@@ -1,0 +1,31 @@
+id: rcdevs-webadm-panel
+brief:
+    title: RCDevs WebADM Panel - Detect
+    by: righettod
+    level: info
+    about: RCDevs WebADM Login Panel was detected.
+    label:
+        - panel
+        - rcdevs
+        - webadm
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/webapps/index.php'
+        - '{{BaseURL}}/websrvs/index.php'
+        - '{{BaseURL}}/admin/login_uid.php'
+      signs:
+        - "on": word
+          has:
+            - WebADM
+            - RCDevs Security
+            - www.rcdevs.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

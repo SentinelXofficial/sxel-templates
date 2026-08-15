@@ -1,0 +1,23 @@
+id: api-pinata
+brief:
+    title: Pinata API Test
+    by: daffainfo
+    level: info
+    about: IPFS Pinning Services API
+    label:
+        - token-spray
+        - pinata
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://api.pinata.cloud/data/pinList?status=pinned'
+      head:
+        pinata_api_key: '{{token}}'
+        pinata_secret_api_key: '{{secret}}'
+      signs:
+        - "on": word
+          has:
+            - '"id"'
+            - '"ipfs_pin_hash"'
+          in: body
+          need: all

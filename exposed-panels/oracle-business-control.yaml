@@ -1,0 +1,27 @@
+id: oracle-business-control
+brief:
+    title: Oracle Commerce Business Control Center Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Oracle Commerce Business Control Center login panel was detected.
+    label:
+        - oracle
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/atg/bcc'
+        - '{{BaseURL}}/atg/user/html/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - <title>Oracle Commerce Business Control Center</title>
+            - /atg/userprofiling/InternalProfileFormHandler.loginSuccessURL
+            - /atg/userprofiling/InternalProfileFormHandler.loginErrorURL
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

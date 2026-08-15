@@ -1,0 +1,42 @@
+id: django-variables-exposed
+brief:
+    title: Django Config - Detect
+    by: nobody
+    level: info
+    about: Django configuration information was detected, which could reveal web application framework exceptions that could indicate exploitation attempts.
+    label:
+        - exposure
+        - config
+        - django
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - seeing this error because you have <code>DEBUG = True</code>
+            - SuspiciousOperation
+            - DisallowedHost
+            - DisallowedModelAdminLookup
+            - DisallowedModelAdminToField
+            - DisallowedRedirect
+            - InvalidSessionKey
+            - RequestDataTooBig
+            - SuspiciousFileOperation
+            - SuspiciousMultipartForm
+            - SuspiciousSession
+            - TooManyFieldsSent
+            - PermissionDenied
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 400
+            - 500

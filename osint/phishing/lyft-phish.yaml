@@ -1,0 +1,25 @@
+id: lyft-phish
+brief:
+    title: Lyft phishing Detection
+    by: rxerium
+    level: info
+    about: A Lyft phishing website was detected
+    label:
+        - phishing
+        - lyft
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Ride or drive with Lyft
+            - Lyft
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

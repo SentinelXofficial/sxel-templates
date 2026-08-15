@@ -1,0 +1,24 @@
+id: fullstory-rum-detect
+brief:
+    title: FullStory RUM - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects FullStory Session Replay & Digital Experience Intelligence artifacts.
+    label:
+        - tech
+        - discovery
+        - rum
+        - fullstory
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - _fs_org
+            - _fs_host
+            - _fs_script
+            - _fs_namespace
+          in: body
+          need: all

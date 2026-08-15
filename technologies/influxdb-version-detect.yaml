@@ -1,0 +1,21 @@
+id: influxdb-version-detect
+brief:
+    title: InfluxDB Version Information - Detect
+    by: c-sh0
+    level: info
+    about: InfluxDB version information check was conducted.
+    label:
+        - tech
+        - influxdb
+        - api
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - X-Influxdb-
+          in: header
+          need: all

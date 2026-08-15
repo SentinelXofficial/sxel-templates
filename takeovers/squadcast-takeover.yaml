@@ -1,0 +1,24 @@
+id: squadcast-takeover
+brief:
+    title: Squadcast Takeover Detection
+    by: philippedelteil
+    level: high
+    about: ""
+    label:
+        - takeover
+        - squadcast
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - There doesn’t seem to be an active status page associated with this URL.
+            - Please check the URL and try again.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

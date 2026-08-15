@@ -1,0 +1,24 @@
+id: airliners
+brief:
+    title: Airliners User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Airliners user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - airliners
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.airliners.net/user/{{user}}/profile
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '''s Profile | Airliners Members | Airliners.net'
+          in: body
+          need: all

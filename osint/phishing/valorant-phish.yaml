@@ -1,0 +1,25 @@
+id: valorant-phish
+brief:
+    title: VALORANT phishing Detection
+    by: rxerium
+    level: info
+    about: A VALORANT phishing website was detected
+    label:
+        - phishing
+        - valorant
+        - riot-games
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Riot Games presents VALORANT: a 5v5 character-based tactical FPS where precise gunplay meets unique agent abilities. Learn about VALORANT and its stylish cast'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: franklin-fueling-default-login
+brief:
+    title: Franklin Fueling System - Default Login
+    by: r3Y3r53
+    level: high
+    about: A default password vulnerability refers to a security flaw that arises when a system or device is shipped or set up with a pre-configured, default password that is commonly known or easily guessable.
+    label:
+        - default-login
+        - franklin
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/21408623/cgi-bin/tsaws.cgi'
+      head:
+        Content-Type: text/xml
+      body: <TSA_REQUEST_LIST PASSWORD="{{password}}"><TSA_REQUEST COMMAND="cmdWebCheckRole" ROLE="{{username}}"/></TSA_REQUEST_LIST>
+      signs: []

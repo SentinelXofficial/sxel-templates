@@ -1,0 +1,24 @@
+id: biggerpockets
+brief:
+    title: BiggerPockets User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: BiggerPockets user name information check was conducted.
+    label:
+        - osint
+        - osint-finance
+        - biggerpockets
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.biggerpockets.com/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| BiggerPockets</title>'
+          in: body
+          need: all

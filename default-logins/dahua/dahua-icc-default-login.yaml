@@ -1,0 +1,28 @@
+id: dahua-icc-default-login
+brief:
+    title: Dahua ICC Default Login
+    by: DhiyaneshDk
+    level: high
+    about: Dahua ICC Intelligent IoT Integrated Management Platform contains default credentials. An attacker can authenticate to the platform using known default username and password combinations and obtain...
+    label:
+        - dahua
+        - icc
+        - default-login
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/evo-apigw/evo-oauth/oauth/token'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}&grant_type=password&client_id=web_client&client_secret=web_client&public_key=
+      signs:
+        - "on": word
+          has:
+            - '"success":'
+            - '"access_token":'
+            - '"token_type":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

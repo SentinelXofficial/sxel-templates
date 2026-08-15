@@ -1,0 +1,24 @@
+id: api-urlscan
+brief:
+    title: URLScan API Test
+    by: daffainfo
+    level: info
+    about: Scan and Analyse URLs
+    label:
+        - token-spray
+        - urlscan
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://urlscan.io/user/quotas/'
+      head:
+        API-Key: '{{token}}'
+        Content-Type: application/json
+      signs:
+        - "on": word
+          has:
+            - 'X-Rate-Limit-Scope:'
+            - 'X-Rate-Limit-Limit:'
+            - 'X-Rate-Limit-Remaining:'
+          in: body
+          need: all

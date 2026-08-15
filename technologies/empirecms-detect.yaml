@@ -1,0 +1,15 @@
+id: empirecms-detect
+brief:
+    title: EmpireCMS Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - empirecms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

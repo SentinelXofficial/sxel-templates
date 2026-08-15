@@ -1,0 +1,31 @@
+id: ms-front-page-misconfig
+brief:
+    title: Microsoft FrontPage Configuration - Exposure
+    by: JTeles
+    level: low
+    about: Microsoft FrontPage Server Extensions configuration files were accessible, exposing version details, directory paths, and other configurations. This was a common misconfiguration on old (2000s) IIS...
+    label:
+        - misconfig
+        - exposure
+        - frontpage
+        - microsoft
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_vti_inf.html'
+        - '{{BaseURL}}/_vti_pvt/service.cnf'
+        - '{{BaseURL}}/_vti_pvt/access.cnf'
+        - '{{BaseURL}}/_vti_txt/default.wti/All.cat'
+      signs:
+        - "on": word
+          has:
+            - 'vti_extenderversion:'
+            - FPVersion=
+            - 'PasswordDir:'
+            - 'Catalog for database:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

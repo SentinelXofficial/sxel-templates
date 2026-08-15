@@ -1,0 +1,25 @@
+id: topdesk-detect
+brief:
+    title: TOPdesk - Detect
+    by: darses
+    level: info
+    about: Detects the use of TOPdesk, a web-based IT service management (ITSM) and helpdesk platform. Identification is based on unique page titles, HTML patterns.
+    label:
+        - topdesk
+        - tech
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - href="/tas/
+            - topdeskidploginforwardurl
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

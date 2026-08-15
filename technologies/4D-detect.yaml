@@ -1,0 +1,28 @@
+id: 4D-detect
+brief:
+    title: 4D Detection
+    by: righettod
+    level: info
+    about: 4D technology was detected.
+    label:
+        - 4D
+        - detect
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - /4DACTION/
+            - /4DSTATS
+            - /4DHTMLSTATS
+            - /4DCACHECLEAR
+            - /4DWEBTEST
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

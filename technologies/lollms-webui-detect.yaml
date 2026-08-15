@@ -1,0 +1,17 @@
+id: lollms-webui-detect
+brief:
+    title: LoLLMS WebUI - Detect
+    by: s4e-io
+    level: info
+    about: An instance running LoLLMS WebUI was detected.
+    label:
+        - lollms-webui
+        - tech
+        - detect
+        - discovery
+        - ai
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

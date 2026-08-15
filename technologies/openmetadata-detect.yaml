@@ -1,0 +1,27 @@
+id: openmetadata-detect
+brief:
+    title: OpenMetadata - Detect
+    by: icarot
+    level: info
+    about: Detects a OpenMetadata server, a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column level lineage, and s...
+    label:
+        - tech
+        - openmetadata
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>OpenMetadata
+            - content="OpenMetadata
+            - /openmetadata.bundle
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+            - 404

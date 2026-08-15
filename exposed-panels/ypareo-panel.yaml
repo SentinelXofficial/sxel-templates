@@ -1,0 +1,20 @@
+id: ypareo-panel
+brief:
+    title: YPAREO Panel - Detect
+    by: righettod
+    level: info
+    about: YPAREO was detected — an Enterprise Resource Planning system.
+    label:
+        - panel
+        - ymag
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php'
+        - '{{BaseURL}}/net-ypareo/index.php'
+        - '{{BaseURL}}/netypareo/index.php'
+        - '{{BaseURL}}/index.html'
+      signs: []

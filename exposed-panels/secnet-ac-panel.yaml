@@ -1,0 +1,23 @@
+id: secnet-ac-panel
+brief:
+    title: SecNet Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: SecNet login panel was detected.
+    label:
+        - secnet-ac
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>安网科技-智能路由系统</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

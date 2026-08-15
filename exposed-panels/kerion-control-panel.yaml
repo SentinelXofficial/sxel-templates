@@ -1,0 +1,23 @@
+id: kerion-control-panel
+brief:
+    title: Kerio Controle Panel - Detect
+    by: johnk3r
+    level: info
+    about: Protect your network from viruses, malware and malicious activity with GFI KerioControl, the easy-to-administer yet powerful all-in-one security solution.
+    label:
+        - panel
+        - kerio
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Kerio Control Embedded Web Server
+          in: header
+        - "on": status
+          status:
+            - 302

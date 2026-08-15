@@ -1,0 +1,22 @@
+id: generic-env
+brief:
+    title: Generic Env File Disclosure
+    by: kazet
+    level: high
+    about: A .env file was discovered containing sensitive information like database credentials and tokens. It should not be publicly accessible.
+    label:
+        - config
+        - exposure
+        - env
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - <html
+          in: body
+          need: all

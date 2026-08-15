@@ -1,0 +1,24 @@
+id: stackoverflow
+brief:
+    title: StackOverflow User Name Information - Detect
+    by: lu4nx
+    level: info
+    about: StackOverflow user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - stackoverflow
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://stackoverflow.com/users/filter?search={{user}}
+      signs:
+        - "on": word
+          has:
+            - <p>No users matched your search.</p>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

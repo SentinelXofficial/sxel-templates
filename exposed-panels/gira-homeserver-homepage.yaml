@@ -1,0 +1,29 @@
+id: gira-homeserver-homepage
+brief:
+    title: Gira HomeServer 4 Login Panel - Detect
+    by: tess
+    level: info
+    about: Gira HomeServer 4 login panel was detected.
+    label:
+        - panel
+        - gira
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Gira HomeServer 4
+            - Home page
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

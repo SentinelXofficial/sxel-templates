@@ -1,0 +1,24 @@
+id: ilovegrowingmarijuana
+brief:
+    title: Ilovegrowingmarijuana User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Ilovegrowingmarijuana user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - ilovegrowingmarijuana
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://support.ilovegrowingmarijuana.com/u/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '<title>  Profile - '
+          in: body
+          need: all

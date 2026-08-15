@@ -1,0 +1,16 @@
+id: microsoft-teams-webhook
+brief:
+    title: Microsoft Teams Webhook Disclosure
+    by: Ice3man
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - microsoft
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

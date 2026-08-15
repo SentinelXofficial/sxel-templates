@@ -1,0 +1,24 @@
+id: budibase-login-detect
+brief:
+    title: Budibase Login Panel - Detect
+    by: theamanrawat
+    level: info
+    about: Budibase login panel was detected.
+    label:
+        - budibase
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/builder/auth/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Budibase</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

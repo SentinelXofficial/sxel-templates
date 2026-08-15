@@ -1,0 +1,25 @@
+id: webalizer-xtended-stats
+brief:
+    title: Webalizer Xtended Statistics Exposed
+    by: ritikchaddha
+    level: low
+    about: Webalizer Xtended Statistics is exposed.
+    label:
+        - exposure
+        - stats
+        - webalizer
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/usage/'
+      signs:
+        - "on": word
+          has:
+            - <TITLE>Webalizer</TITLE>
+            - SRC=menu.html
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

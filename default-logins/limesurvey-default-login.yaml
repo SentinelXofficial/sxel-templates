@@ -1,0 +1,23 @@
+id: limesurvey-default-login
+brief:
+    title: LimeSurvey - Default Admin Credentials
+    by: 0x_Akoko
+    level: high
+    about: Detected the LimeSurvey survey management platform was found to be using default administrator credentials (admin:password). An attacker was able to gain full administrative access to manage survey...
+    label:
+        - limesurvey
+        - default-login
+        - auth
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php/admin/authentication/sa/login'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/index.php/admin/authentication/sa/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Cookie: YII_CSRF_TOKEN={{csrf_token}}
+      body: user={{username}}&password={{password}}&YII_CSRF_TOKEN={{csrf_token}}&login_submit=login
+      signs: []

@@ -1,0 +1,23 @@
+id: icecast-server-detect
+brief:
+    title: Icecast Streaming Media Server Detection
+    by: theamanrawat
+    level: info
+    about: ""
+    label:
+        - tech
+        - icecast
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Icecast
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

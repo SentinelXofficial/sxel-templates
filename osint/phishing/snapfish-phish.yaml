@@ -1,0 +1,24 @@
+id: snapfish-phish
+brief:
+    title: Snapfish phishing Detection
+    by: rxerium
+    level: info
+    about: A Snapfish phishing website was detected
+    label:
+        - phishing
+        - snapfish
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Design and send the best personalized gifts, cards, home decor, photo books, and prints with Snapfish.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

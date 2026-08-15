@@ -1,0 +1,26 @@
+id: credit-agricole-phish
+brief:
+    title: Crédit Agricole phishing Detection
+    by: rxerium
+    level: info
+    about: A Crédit Agricole phishing website was detected
+    label:
+        - phishing
+        - credit-agricole
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Crédit Agricole
+            - Crédit Agricole 1re banque de l&#039;habitat, de l&#039;agriculture, des entreprises, des pros, des collectivites territoriales
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

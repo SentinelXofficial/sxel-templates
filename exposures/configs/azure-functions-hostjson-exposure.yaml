@@ -1,0 +1,36 @@
+id: azure-functions-hostjson-exposure
+brief:
+    title: Azure Functions host.json Configuration Exposure
+    by: pussycat0x
+    level: medium
+    about: Detected exposed Azure Functions host.json configuration files. The exposed metadata revealed sensitive runtime, logging, extension, and infrastructure settings that could aid attackers in understa...
+    label:
+        - azure
+        - config
+        - exposure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/host.json'
+      signs:
+        - "on": word
+          has:
+            - '"version"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - '"extensionBundle"'
+            - '"functionTimeout"'
+            - '"logging"'
+            - '"extensions"'
+            - '"healthMonitor"'
+            - '"singleton"'
+            - '"concurrency"'
+            - '"Microsoft.Azure.Functions.ExtensionBundle"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

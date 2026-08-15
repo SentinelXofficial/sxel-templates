@@ -1,0 +1,23 @@
+id: api-nerdgraph
+brief:
+    title: New Relic NerdGraph API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - newrelic
+        - nerdgraph
+moves:
+    - verb: POST
+      to:
+        - https://api.newrelic.com/graphql
+      head:
+        API-Key: '{{token}}'
+        Content-Type: application/json
+      body: '{ "query":  "{ requestContext { userId apiKey }}" }'
+      signs:
+        - "on": word
+          has:
+            - errors
+          in: body

@@ -1,0 +1,24 @@
+id: wordpress-plugins-detect
+brief:
+    title: WordPress Plugins Detection
+    by: 0xcrypto
+    level: info
+    about: ""
+    label:
+        - fuzz
+        - wordpress
+        - fuzzing
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/{{pluginSlug}}/readme.txt'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - == Description ==
+          in: body
+          need: all

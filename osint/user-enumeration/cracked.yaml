@@ -1,0 +1,24 @@
+id: cracked
+brief:
+    title: Cracked User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Cracked user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - cracked
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.cracked.com/members/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Member Since
+          in: body
+          need: all

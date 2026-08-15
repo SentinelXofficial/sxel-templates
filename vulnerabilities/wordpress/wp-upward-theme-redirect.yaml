@@ -1,0 +1,18 @@
+id: wp-upward-theme-redirect
+brief:
+    title: WordPress Upward Themes <1.5 - Open Redirect
+    by: r3Y3r53
+    level: medium
+    about: WordPress Upward Themes 1.5 accepts a user-controlled input that specifies a link to an external site, and uses that link in a Redirect. This simplifies phishing attacks. An http parameter may cont...
+    label:
+        - wordpress
+        - wp-theme
+        - wp
+        - upward
+        - redirect
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/themes/Upward/go.php?https://interact.sh'
+      signs: []

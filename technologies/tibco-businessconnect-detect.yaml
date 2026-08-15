@@ -1,0 +1,16 @@
+id: tibco-businessconnect-detect
+brief:
+    title: TIBCO BusinessConnect - Detect
+    by: righettod
+    level: info
+    about: TIBCO BusinessConnect technology was detected.
+    label:
+        - tibco
+        - detect
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

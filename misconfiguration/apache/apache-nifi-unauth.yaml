@@ -1,0 +1,31 @@
+id: apache-nifi-unauth
+brief:
+    title: Apache NiFi - Unauthenticated Access
+    by: pwnhxl
+    level: high
+    about: Apache NiFi server was able to be accessed because no authentication was required.
+    label:
+        - misconfig
+        - apache
+        - nifi
+        - unauth
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nifi-api/access/config'
+      signs:
+        - "on": word
+          has:
+            - '"supportsLogin":false}'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

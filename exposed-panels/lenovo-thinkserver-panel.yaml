@@ -1,0 +1,24 @@
+id: lenovo-thinkserver-panel
+brief:
+    title: Lenovo ThinkServer System Manager Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Lenovo ThinkServer System Manager login panel was detected.
+    label:
+        - panel
+        - thinkserver
+        - lenovo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Lenovo ThinkServer System Manager - Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

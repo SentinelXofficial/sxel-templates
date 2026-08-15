@@ -1,0 +1,25 @@
+id: lucy-admin-panel
+brief:
+    title: Lucy Security Admin Panel
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - lucy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/admin/login'
+      signs:
+        - "on": word
+          has:
+            - title="Lucy"
+            - aria-label="Lucy
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: lucee-default-login
+brief:
+    title: Lucee - Default Login
+    by: jpg0mez
+    level: high
+    about: Lucee admin panel using the default login password was discovered.
+    label:
+        - lucee
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}{{path}}'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: login_passwordweb={{password}}&lang=en&rememberMe=s&submit=submit
+      signs: []

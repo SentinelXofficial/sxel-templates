@@ -1,0 +1,23 @@
+id: typo3-detect
+brief:
+    title: TYPO3 Detection
+    by: dadevel
+    level: info
+    about: ""
+    label:
+        - tech
+        - typo3
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'X-TYPO3-Parsetime:'
+          in: header
+        - "on": word
+          has:
+            - <meta name="generator" content="TYPO3
+          in: body

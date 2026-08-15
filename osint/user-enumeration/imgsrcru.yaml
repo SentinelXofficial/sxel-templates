@@ -1,0 +1,24 @@
+id: imgsrcru
+brief:
+    title: IMGSRC.RU User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: IMGSRC.RU user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - imgsrcru
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://imgsrc.ru/main/user.php?lang=ru&user={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Присоединился
+          in: body
+          need: all

@@ -1,0 +1,24 @@
+id: loaded-phish
+brief:
+    title: Loaded phishing Detection
+    by: rxerium
+    level: info
+    about: A Loaded phishing website was detected
+    label:
+        - phishing
+        - loaded
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Enjoy instant delivery, exclusive discounts, and the same unbeatable prices on PC, Xbox, PlayStation & Nintendo.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

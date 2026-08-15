@@ -1,0 +1,17 @@
+id: powerbi-report-server-detect
+brief:
+    title: PowerBI Report Server - Detect
+    by: righettod
+    level: info
+    about: PowerBI Report Server was detected.
+    label:
+        - panel
+        - powerbi
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/reports/api/v2.0/System'
+        - '{{BaseURL}}/reports/browse'
+      signs: []

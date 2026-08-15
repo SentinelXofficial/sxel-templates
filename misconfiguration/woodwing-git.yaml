@@ -1,0 +1,18 @@
+id: woodwing-git
+brief:
+    title: Woodwing Studio Server - Git Config
+    by: pdteam
+    level: medium
+    about: Woodwing Studio Server .git/config file exposed.
+    label:
+        - misconfig
+        - woodwing
+        - git
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Server/.git/config'
+        - '{{BaseURL}}/StudioServer/.git/config'
+      signs: []

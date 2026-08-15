@@ -1,0 +1,23 @@
+id: vmware-nsx-login
+brief:
+    title: VMware NSX Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: VMware NSX login panel was detected.
+    label:
+        - panel
+        - vmware
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - <title>VMware Appliance Management</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

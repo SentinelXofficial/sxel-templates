@@ -1,0 +1,16 @@
+id: grafana-cloud-token
+brief:
+    title: Grafana Cloud API Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - grafana
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

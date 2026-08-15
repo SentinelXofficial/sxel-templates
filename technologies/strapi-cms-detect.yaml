@@ -1,0 +1,26 @@
+id: strapi-cms-detect
+brief:
+    title: Strapi CMS detect
+    by: cyllective
+    level: info
+    about: Open source Node.js Headless CMS to easily build customisable APIs
+    label:
+        - tech
+        - strapi
+        - cms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/init'
+      signs:
+        - "on": word
+          has:
+            - '"data"'
+            - '"uuid"'
+            - '"hasAdmin"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

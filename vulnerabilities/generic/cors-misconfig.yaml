@@ -1,0 +1,18 @@
+id: cors-misconfig
+brief:
+    title: CORS Misconfiguration
+    by: nadino
+    level: info
+    about: ""
+    label:
+        - cors
+        - generic
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      head:
+        Origin: '{{cors_origin}}'
+      signs: []

@@ -1,0 +1,29 @@
+id: pbootcms-database-file-download
+brief:
+    title: PbootCMS 2.0.7 - SQL Injection
+    by: ritikchaddha
+    level: critical
+    about: PbootCMS 2.0.7 contains a SQL injection vulnerability via pbootcms.db.  An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative o...
+    label:
+        - pbootcms
+        - db
+        - exposure
+        - database
+        - sqlite
+        - sqli
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/data/pbootcms.db'
+      signs:
+        - "on": word
+          has:
+            - PbootCMS
+            - SQLite format 3
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: easy-wi-installer
+brief:
+    title: Easy-WI Installation Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Easy-WI is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - exposure
+        - install
+        - easy-wi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/install.php'
+      signs:
+        - "on": word
+          has:
+            - Welcome to the Easy-WI installer!
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

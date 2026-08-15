@@ -1,0 +1,24 @@
+id: girlfriendsmeet
+brief:
+    title: Girlfriendsmeet User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Girlfriendsmeet user name information check was conducted.
+    label:
+        - osint
+        - osint-dating
+        - girlfriendsmeet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://www.girlfriendsmeet.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - online dating profile
+          in: body
+          need: all

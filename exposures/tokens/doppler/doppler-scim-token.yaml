@@ -1,0 +1,16 @@
+id: doppler-scim-token
+brief:
+    title: Doppler SCIM Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - doppler
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

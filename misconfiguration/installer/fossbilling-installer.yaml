@@ -1,0 +1,25 @@
+id: fossbilling-installer
+brief:
+    title: FOSSBilling - Installation
+    by: ritikchaddha
+    level: high
+    about: FOSSBilling installation dashboard has been detected.
+    label:
+        - fossbilling
+        - install
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/install.php'
+      signs:
+        - "on": word
+          has:
+            - <title>FOSSBilling setup
+            - <title>FOSSBilling Installation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

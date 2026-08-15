@@ -1,0 +1,35 @@
+id: adminer-default-login
+brief:
+    title: Adminer Default Login - Detect
+    by: j4vaovo
+    level: high
+    about: Adminer contains a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - default-login
+        - adminer
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/index.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: auth[driver]=server&auth[server]=&auth[username]={{username}}&auth[password]={{password}}&auth[db]=
+      signs:
+        - "on": word
+          has:
+            - Create database
+            - Privileges
+            - Process list
+            - Adminer
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

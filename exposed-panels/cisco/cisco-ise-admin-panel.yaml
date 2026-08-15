@@ -1,0 +1,19 @@
+id: cisco-ise-admin-panel
+brief:
+    title: Cisco ISE Admin Login Panel - Detect
+    by: bhutch
+    level: info
+    about: Cisco Identity Services Engine (ISE) admin login panel was discovered.
+    label:
+        - cisco
+        - ise
+        - admin
+        - login
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login.jsp'
+      signs: []

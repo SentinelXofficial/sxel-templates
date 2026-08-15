@@ -1,0 +1,30 @@
+id: wd-mycloud-panel
+brief:
+    title: WD My Cloud Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - panel
+        - login
+        - mycloud
+        - wd
+        - detect
+        - western_digital
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - WDMyCloud
+            - Cloud_Connection_StatusID
+            - my_cloud_os
+            - WD Privacy Statement
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

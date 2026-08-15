@@ -1,0 +1,32 @@
+id: cisco-firepower-panel
+brief:
+    title: Cisco Secure Firewall Management Center - Panel
+    by: Charles D
+    level: info
+    about: Cisco Secure Firewall Management Center login panel was detected. Secure Firewall Management Center was formerly known as Firepower Management Center.
+    label:
+        - login
+        - cisco
+        - panel
+        - console
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/login'
+      signs:
+        - "on": word
+          has:
+            - Login
+            - /img/cisco-icon.svg
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Cisco Firepower Management Center
+            - Secure Firewall Management Center
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

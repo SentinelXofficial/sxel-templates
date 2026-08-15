@@ -1,0 +1,19 @@
+id: emqx-default-login
+brief:
+    title: Emqx Default Admin Login
+    by: For3stCo1d
+    level: high
+    about: Emqx default admin credentials were discovered.
+    label:
+        - emqx
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}{{path}}'
+      head:
+        Content-Type: application/json
+      body: '{"username":"{{username}}","password":"{{password}}"}'
+      signs: []

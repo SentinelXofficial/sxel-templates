@@ -1,0 +1,16 @@
+id: gradle-cache-node-detect
+brief:
+    title: Gradle Enterprise Build Cache Node Login Panel - Detect
+    by: Adam Crosser
+    level: info
+    about: Gradle Enterprise Build Cache Node login panel was detected.
+    label:
+        - panel
+        - gradle
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

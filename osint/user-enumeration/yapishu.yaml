@@ -1,0 +1,24 @@
+id: yapishu
+brief:
+    title: Yapishu User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Yapishu user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - yapishu
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://yapishu.net/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - for_profile
+          in: body
+          need: all

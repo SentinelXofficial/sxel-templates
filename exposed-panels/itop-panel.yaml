@@ -1,0 +1,26 @@
+id: itop-panel
+brief:
+    title: Combodo iTop Login Panel - Detect
+    by: righettod
+    level: info
+    about: Combodo iTop login panel was detected.
+    label:
+        - panel
+        - itop
+        - combodo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pages/UI.php'
+        - '{{BaseURL}}/simple/pages/UI.php'
+      signs:
+        - "on": word
+          has:
+            - Welcome to iTop
+            - iTop login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

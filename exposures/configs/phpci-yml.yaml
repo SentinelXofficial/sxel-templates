@@ -1,0 +1,34 @@
+id: phpci-yml
+brief:
+    title: PHPCI Configuration Exposure "phpci.yml" Exposure
+    by: DhiyaneshDk
+    level: info
+    about: PHPCI Configuration "phpci.yml" File was exposed.
+    label:
+        - phpci
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/phpci.yml'
+        - '{{BaseURL}}/ci/phpci.yml'
+      signs:
+        - "on": word
+          has:
+            - 'build_settings:'
+            - 'setup:'
+            - 'php_unit:'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+            - application/x-yaml
+            - text/yaml
+            - text/plain
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

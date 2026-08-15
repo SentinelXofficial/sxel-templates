@@ -1,0 +1,19 @@
+id: kiwitcms-login
+brief:
+    title: Kiwi TCMS Login Panel - Detect
+    by: pdteam
+    level: info
+    about: Kiwi TCMS login panel was detected.
+    label:
+        - kiwitcms
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/accounts/login/'
+      signs:
+        - "on": word
+          has:
+            - Kiwi TCMS
+          in: body

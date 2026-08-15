@@ -1,0 +1,26 @@
+id: sabnzbd-installer
+brief:
+    title: SABnzbd Quick-Start Wizard - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Default installation wizard page of SABnzbd was discovered.
+    label:
+        - sabnzbd
+        - wizard
+        - installer
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sabnzbd/wizard/'
+        - '{{BaseURL}}/wizard/'
+      signs:
+        - "on": word
+          has:
+            - SABnzbd Quick-Start Wizard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

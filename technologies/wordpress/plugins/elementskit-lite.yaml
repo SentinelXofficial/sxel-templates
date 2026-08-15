@@ -1,0 +1,18 @@
+id: wordpress-elementskit-lite
+brief:
+    title: ElementsKit Elementor Addons and Templates Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/elementskit-lite/readme.txt'
+      signs: []

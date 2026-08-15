@@ -1,0 +1,23 @@
+id: jspxcms-detect
+brief:
+    title: Jspxcms Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - jspxcms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Jspxcms
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

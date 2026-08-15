@@ -1,0 +1,24 @@
+id: blogipl
+brief:
+    title: Blogi.pl User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Blogi.pl user name information check was conducted.
+    label:
+        - osint
+        - osint-blog
+        - blogipl
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.blogi.pl/osoba,{{user}}.html
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Informacje ogólne
+          in: body
+          need: all

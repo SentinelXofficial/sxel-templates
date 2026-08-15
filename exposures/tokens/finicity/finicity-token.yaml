@@ -1,0 +1,17 @@
+id: finicity-token
+brief:
+    title: Finicity API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - exposure
+        - finicity
+        - file
+        - token
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

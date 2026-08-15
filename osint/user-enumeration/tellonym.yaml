@@ -1,0 +1,24 @@
+id: tellonym
+brief:
+    title: Tellonym User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Tellonym user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - tellonym
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://tellonym.me/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - on Tellonym
+          in: body
+          need: all

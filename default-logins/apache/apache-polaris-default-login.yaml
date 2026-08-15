@@ -1,0 +1,19 @@
+id: apache-polaris-default-login
+brief:
+    title: Apache Polaris - Default Login
+    by: icarot
+    level: high
+    about: The Apache Polaris server is configured with default administrative credentials, allowing an attacker to perform unauthorized operations. This template verifies the use of the default username root...
+    label:
+        - apache
+        - polaris
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/catalog/v1/oauth/tokens'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: grant_type=client_credentials&client_id={{username}}&client_secret={{password}}&scope=PRINCIPAL_ROLE:ALL
+      signs: []

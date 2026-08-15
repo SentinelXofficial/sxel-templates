@@ -1,0 +1,26 @@
+id: spacelogic-cbus-panel
+brief:
+    title: SpaceLogic C-Bus Home Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - spacelogic
+        - login
+        - schneider-electric
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>SpaceLogic C-Bus Home</title>
+            - content="SpaceLogic C-Bus Home
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

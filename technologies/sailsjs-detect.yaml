@@ -1,0 +1,20 @@
+id: sailsjs-detect
+brief:
+    title: Sails.js Framework - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects the presence of the Sails.js, a realtime MVC framework for Node.js.
+    label:
+        - tech
+        - discovery
+        - sailsjs
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'X-Powered-By: Sails'
+          in: header
+          need: all

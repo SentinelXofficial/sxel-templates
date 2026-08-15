@@ -1,0 +1,26 @@
+id: uptimerobot-takeover
+brief:
+    title: uptimerobot takeover detection
+    by: pdteam
+    level: low
+    about: uptimerobot takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - page not found
+          in: body
+        - "on": word
+          has:
+            - 'Server: Caddy'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 404

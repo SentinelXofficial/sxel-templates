@@ -1,0 +1,25 @@
+id: administrate-dashboard
+brief:
+    title: Administrate Dashboard Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Administrate Dashboard was exposed.
+    label:
+        - exposure
+        - administrate
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin'
+      signs:
+        - "on": word
+          has:
+            - Search Customers
+            - Administrate
+            - New customer</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

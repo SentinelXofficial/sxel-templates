@@ -1,0 +1,19 @@
+id: sharepoint-site-metadata-disclosure
+brief:
+    title: Microsoft SharePoint - Site Metadata Disclosure
+    by: 0x_Akoko
+    level: low
+    about: Detected exposed SharePoint site metadata endpoints.
+    label:
+        - sharepoint
+        - microsoft
+        - exposure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_api/site'
+        - '{{BaseURL}}/_api/web'
+      head:
+        Accept: application/json;odata=verbose
+      signs: []

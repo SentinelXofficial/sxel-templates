@@ -1,0 +1,19 @@
+id: hashicorp-boundary-detect
+brief:
+    title: HashiCorp Boundary Detect
+    by: codexlynx
+    level: info
+    about: Detects HashiCorp Boundary
+    label:
+        - tech
+        - hashicorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - HashiCorp Boundary
+          in: body

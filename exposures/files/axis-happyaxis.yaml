@@ -1,0 +1,34 @@
+id: axis-happyaxis
+brief:
+    title: Axis Happyaxis Exposure
+    by: dogasantos
+    level: info
+    about: ""
+    label:
+        - axis
+        - axis2
+        - middleware
+        - exposure
+        - apache
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/axis2/axis2-web/HappyAxis.jsp'
+        - '{{BaseURL}}/axis/happyaxis.jsp'
+        - '{{BaseURL}}/axis2-web/HappyAxis.jsp'
+        - '{{BaseURL}}/happyaxis.jsp'
+      signs:
+        - "on": word
+          has:
+            - Axis Happiness Page
+            - Axis2 Happiness Page
+            - Examining Application Server
+            - Examining Version Service
+            - Examining System Properties
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

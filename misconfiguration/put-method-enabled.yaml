@@ -1,0 +1,25 @@
+id: put-method-enabled
+brief:
+    title: PUT Method Enabled
+    by: xElkomy
+    level: high
+    about: The HTTP PUT method is normally used to upload data that is saved on the server at a user-supplied URL. If enabled, an attacker may be able to place arbitrary, and potentially malicious, content in...
+    label:
+        - injection
+        - misconfig
+        - intrusive
+        - vuln
+moves:
+    - verb: PUT
+      to:
+        - '{{BaseURL}}/testing-put.txt'
+      head:
+        Content-Type: text/plain
+      body: '{{randstr}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/testing-put.txt'
+      head:
+        Content-Type: text/plain
+      signs: []

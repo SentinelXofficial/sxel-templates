@@ -1,0 +1,26 @@
+id: hetzner-phish
+brief:
+    title: Hetzner phishing Detection
+    by: rxerium
+    level: info
+    about: A Hetzner phishing website was detected
+    label:
+        - phishing
+        - hetzner
+        - cloud
+        - hosting
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Affordable dedicated servers, cloud &amp; hosting from Germany
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

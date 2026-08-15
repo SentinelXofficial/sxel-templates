@@ -1,0 +1,17 @@
+id: jsf-detect
+brief:
+    title: JavaServer Faces Detection
+    by: brenocss
+    level: info
+    about: Searches for JavaServer Faces content on a URL.
+    label:
+        - jsf
+        - tech
+        - primefaces
+        - richfaces
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

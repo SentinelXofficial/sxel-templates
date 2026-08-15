@@ -1,0 +1,16 @@
+id: google-bucket-service
+brief:
+    title: Detect websites using Google bucket storage
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - google
+        - tech
+        - bucket
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

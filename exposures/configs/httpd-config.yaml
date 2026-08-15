@@ -1,0 +1,25 @@
+id: httpd-config
+brief:
+    title: Apache httpd Config File - Detect
+    by: sheikhrishad
+    level: info
+    about: Apache httpd configuration information was detected.
+    label:
+        - config
+        - exposure
+        - httpd
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/httpd.conf'
+      signs:
+        - "on": word
+          has:
+            - LoadModule
+            - '# LoadModule'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

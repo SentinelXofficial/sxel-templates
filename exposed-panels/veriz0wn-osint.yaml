@@ -1,0 +1,23 @@
+id: veriz0wn-osint
+brief:
+    title: Veriz0wn OSINT - Detect
+    by: pussycat0x
+    level: info
+    about: ""
+    label:
+        - veriz0wn
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Veriz0wn : OSINT'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

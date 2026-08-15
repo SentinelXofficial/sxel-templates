@@ -1,0 +1,24 @@
+id: mcafee-phish
+brief:
+    title: mcafee phishing Detection
+    by: rxerium
+    level: info
+    about: A mcafee phishing website was detected
+    label:
+        - phishing
+        - mcafee
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Antivirus, VPN, Identity &amp; Privacy Protection | McAfee
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

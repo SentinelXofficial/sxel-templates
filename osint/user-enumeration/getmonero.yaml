@@ -1,0 +1,24 @@
+id: getmonero
+brief:
+    title: Getmonero User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Getmonero user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - getmonero
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://forum.getmonero.org/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Monero | User
+          in: body
+          need: all

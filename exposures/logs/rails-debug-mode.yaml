@@ -1,0 +1,23 @@
+id: rails-debug-mode
+brief:
+    title: Rails Debug Mode
+    by: pdteam
+    level: medium
+    about: Rails debug mode is enabled.
+    label:
+        - debug
+        - rails
+        - exposure
+        - intrusive
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{randstr}}'
+      signs:
+        - "on": word
+          has:
+            - 'Rails.root:'
+            - 'Action Controller: Exception caught'
+          in: body
+          need: all

@@ -1,0 +1,26 @@
+id: tor-socks-proxy
+brief:
+    title: Detect tor SOCKS proxy
+    by: geeknik
+    level: info
+    about: ""
+    label:
+        - tech
+        - tor
+        - proxy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - This is a SOCKS Proxy
+            - HTTPTunnelPort
+            - SOCKSPort
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 501

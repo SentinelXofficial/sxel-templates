@@ -1,0 +1,24 @@
+id: bimpos
+brief:
+    title: Bimpos User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Bimpos user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - bimpos
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://ask.bimpos.com/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '<title>User '
+          in: body
+          need: all

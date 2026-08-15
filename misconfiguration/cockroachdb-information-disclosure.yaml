@@ -1,0 +1,19 @@
+id: cockroachdb-information-disclosure
+brief:
+    title: CockroachDB Information Disclosure
+    by: pussycat0x
+    level: medium
+    about: CockroachDB exposed the Statements Admin UI page and the HTTP endpoint /_status/statements in ways that let non-admin users (and in some builds, unauthenticated callers) see SQL text executed acros...
+    label:
+        - cockroachdb
+        - exposure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_status/statements'
+      signs: []

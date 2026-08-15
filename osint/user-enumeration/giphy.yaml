@@ -1,0 +1,24 @@
+id: giphy
+brief:
+    title: Giphy User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Giphy user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - giphy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://giphy.com/channel/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Share on GIPHY</title>
+          in: body
+          need: all

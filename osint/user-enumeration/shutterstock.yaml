@@ -1,0 +1,24 @@
+id: shutterstock
+brief:
+    title: Shutterstock User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Shutterstock user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - shutterstock
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.shutterstock.com/g/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| Shutterstock'
+          in: body
+          need: all

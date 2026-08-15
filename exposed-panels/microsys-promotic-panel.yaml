@@ -1,0 +1,32 @@
+id: microsys-promotic-panel
+brief:
+    title: Microsys Promotic SCADA - Login Panel
+    by: rxerium
+    level: info
+    about: Microsys Promotic is a SCADA/HMI software platform widely deployed in central European
+    label:
+        - panel
+        - microsys
+        - promotic
+        - scada
+        - ics
+        - ot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>PROMOTIC Redirection</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 'Server: Promotic'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

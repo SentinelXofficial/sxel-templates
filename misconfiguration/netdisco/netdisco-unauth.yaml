@@ -1,0 +1,16 @@
+id: netdisco-unauth
+brief:
+    title: Netdisco - Unauth Access
+    by: ritikchaddha
+    level: critical
+    about: Detects an unauth dashboard access of Netdisco.
+    label:
+        - netdisco
+        - misconfig
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/inventory'
+      signs: []

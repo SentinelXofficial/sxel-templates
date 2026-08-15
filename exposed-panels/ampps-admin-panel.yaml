@@ -1,0 +1,26 @@
+id: ampps-admin-panel
+brief:
+    title: AMPPS Admin Login Panel
+    by: deFr0ggy
+    level: info
+    about: An AMPPS Admin login panel was detected.
+    label:
+        - panel
+        - ampps
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ampps-admin/index.php?act=login'
+      signs:
+        - "on": word
+          has:
+            - <a href="http://www.ampps.com">
+            - <title>Login</title>
+            - enduser/themes/default/js/universal.js
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,21 @@
+id: aspcms-backend-panel
+brief:
+    title: Aspcms Backend Panel - Detect
+    by: SleepingBag945
+    level: info
+    about: ASPcms /plug/oem/AspCms_OEMFun.asp leak backend url.
+    label:
+        - panel
+        - login
+        - aspcms
+        - admin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/plug/oem/AspCms_OEMFun.asp'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{path}}'
+      signs: []

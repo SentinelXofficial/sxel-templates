@@ -1,0 +1,24 @@
+id: steve-login-panel
+brief:
+    title: SteVe Login Panel - Detect
+    by: clem9669
+    level: info
+    about: SteVe login panel was detected.
+    label:
+        - panel
+        - steve
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/manager/signin'
+        - '{{BaseURL}}/steve/manager/signin'
+      signs:
+        - "on": word
+          has:
+            - SteVe - Steckdosenverwaltung
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

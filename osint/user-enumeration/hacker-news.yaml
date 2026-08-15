@@ -1,0 +1,24 @@
+id: hacker-news
+brief:
+    title: Hacker News User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Hacker News user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - hacker-news
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://news.ycombinator.com/user?id={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'created:'
+          in: body
+          need: all

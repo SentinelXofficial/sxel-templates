@@ -1,0 +1,25 @@
+id: pcoweb-panel
+brief:
+    title: pCOWeb Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - pcoweb
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/http/index.html'
+      signs:
+        - "on": word
+          has:
+            - pCOWeb</h2>
+          in: body
+        - "on": status
+          status:
+            - 200

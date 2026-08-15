@@ -1,0 +1,52 @@
+id: rconfig-default-login
+brief:
+    title: rConfig - Default Login
+    by: theamanrawat
+    level: high
+    about: rConfig contains default credentials. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - rconfig
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.php'
+      signs:
+        - "on": word
+          has:
+            - Logged in as
+            - rConfig - Configuration Management
+            - dashboadFieldSet
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header_2
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/lib/crud/userprocess.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: user={{username}}&pass={{password}}&sublogin=1
+      signs:
+        - "on": word
+          has:
+            - Logged in as
+            - rConfig - Configuration Management
+            - dashboadFieldSet
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header_2
+          need: all
+        - "on": status
+          status:
+            - 200

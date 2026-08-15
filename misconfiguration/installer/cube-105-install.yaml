@@ -1,0 +1,26 @@
+id: cube-105-install
+brief:
+    title: Cube-105 - Exposed Installation
+    by: ritikchaddha
+    level: high
+    about: Cube-105 is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - cube
+        - cube105
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wizard/wizard.cs'
+      signs:
+        - "on": word
+          has:
+            - Cube-105 Setup Wizard
+            - initial setup
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

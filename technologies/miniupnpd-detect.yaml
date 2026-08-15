@@ -1,0 +1,18 @@
+id: miniupnpd-detect
+brief:
+    title: MiniUPnPd - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected servers using the MiniUPnPd service through the Server header.
+    label:
+        - tech
+        - miniupnpd
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - MiniUPnPd
+          in: header

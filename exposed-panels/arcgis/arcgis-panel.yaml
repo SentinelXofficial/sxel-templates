@@ -1,0 +1,27 @@
+id: arcgis-panel
+brief:
+    title: ArcGIS Enterprise Panel
+    by: Podalirius
+    level: info
+    about: An ArcGIS instance was discovered.
+    label:
+        - docs
+        - arcgis
+        - cms
+        - panel
+        - esri
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/portal/portalhelp/en/'
+      signs:
+        - "on": word
+          has:
+            - ArcGIS Enterprise
+            - Installation and Deployment
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

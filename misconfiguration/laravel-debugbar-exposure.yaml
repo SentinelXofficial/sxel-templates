@@ -1,0 +1,29 @@
+id: laravel-debugbar-exposure
+brief:
+    title: Laravel Debugbar - Sensitive Information Exposure
+    by: moamenbasel
+    level: medium
+    about: Laravel Debugbar (barryvdh/laravel-debugbar) was detected as enabled and publicly accessible. When left active in production, it exposes SQL queries, request data, session variables, mail logs, and...
+    label:
+        - laravel
+        - debugbar
+        - misconfig
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_debugbar/open'
+      signs:
+        - "on": word
+          has:
+            - debugbar
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

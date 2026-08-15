@@ -1,0 +1,29 @@
+id: pubspec-config
+brief:
+    title: Pubspec YAML Configuration File - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Pubspec YAML configuration file was detected.
+    label:
+        - exposure
+        - devops
+        - pubsec
+        - config
+        - cicd
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pubspec.yaml'
+        - '{{BaseURL}}/assets/pubspec.yaml'
+      signs:
+        - "on": word
+          has:
+            - 'version:'
+            - 'environment:'
+            - 'dependencies:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

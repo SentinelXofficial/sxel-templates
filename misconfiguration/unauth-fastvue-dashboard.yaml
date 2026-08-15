@@ -1,0 +1,32 @@
+id: unauth-fastvue-dashboard
+brief:
+    title: Fastvue Dashboard Panel - Unauthenticated Detect
+    by: DhiyaneshDK
+    level: medium
+    about: Fastvue Dashboard panel was detected without authentication.
+    label:
+        - panel
+        - fastvue
+        - unauth
+        - misconfig
+        - discovery
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard.aspx'
+      signs:
+        - "on": word
+          has:
+            - <title>Fastvue Sophos Reporter</title>
+            - <title>Fastvue Reporter for SonicWall</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Dashboard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

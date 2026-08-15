@@ -1,0 +1,25 @@
+id: khoj-detect
+brief:
+    title: Khoj - Detect
+    by: s4e-io
+    level: info
+    about: Khoj was detected.
+    label:
+        - tech
+        - khoj
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Khoj AI
+            - content="Khoj AI
+            - khoj.dev
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

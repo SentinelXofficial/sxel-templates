@@ -1,0 +1,20 @@
+id: hadoop-exposure
+brief:
+    title: Apache Hadoop Panel - Detect
+    by: pdteam
+    level: info
+    about: Apache Hadoop panel was detected.
+    label:
+        - panel
+        - apache
+        - hadoop
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dfshealth.html'
+      signs:
+        - "on": word
+          has:
+            - <div class="navbar-brand">Hadoop</div>
+          in: body

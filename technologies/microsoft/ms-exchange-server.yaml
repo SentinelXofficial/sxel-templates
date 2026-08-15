@@ -1,0 +1,21 @@
+id: ms-exchange-server
+brief:
+    title: Microsoft Exchange Server Detect
+    by: pikpikcu
+    level: info
+    about: Check for presence of Exchange Server using Outlook Web App path data.
+    label:
+        - microsoft
+        - exchange
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/owa/auth/logon.aspx'
+      signs:
+        - "on": word
+          has:
+            - <title>Exchange Log In</title>
+            - <title>Microsoft Exchange - Outlook Web Access</title>
+          in: body

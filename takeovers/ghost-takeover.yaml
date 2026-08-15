@@ -1,0 +1,24 @@
+id: ghost-takeover
+brief:
+    title: ghost takeover detection
+    by: pdteam
+    level: high
+    about: ghost takeover was detected.
+    label:
+        - takeover
+        - ghost
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - error.ghost.org
+            - offline.ghost.org
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

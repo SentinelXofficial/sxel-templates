@@ -1,0 +1,23 @@
+id: api-thedogapi
+brief:
+    title: TheDogApi API Test
+    by: daffainfo
+    level: info
+    about: Pictures of dogs from Tumblr
+    label:
+        - token-spray
+        - thedogapi
+moves:
+    - verb: GET
+      to:
+        - https://api.thedogapi.com/v1/votes
+      head:
+        x-api-key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - 'id":'
+            - 'image_id":'
+            - 'sub_id":'
+          in: body
+          need: all

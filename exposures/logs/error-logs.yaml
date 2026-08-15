@@ -1,0 +1,29 @@
+id: error-logs
+brief:
+    title: Common Error Log Files
+    by: geeknik
+    level: low
+    about: Error log files were exposed.
+    label:
+        - logs
+        - exposure
+        - error
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - Segmentation Fault
+            - coredump
+            - Broken pipe
+            - FastCGI sent in stderr
+            - 'Fatal error:'
+            - 'Stack trace:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

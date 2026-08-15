@@ -1,0 +1,24 @@
+id: coderwall
+brief:
+    title: Coderwall User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Coderwall user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - coderwall
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://coderwall.com/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s profile |
+          in: body
+          need: all

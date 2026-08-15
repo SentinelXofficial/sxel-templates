@@ -1,0 +1,25 @@
+id: easy-viserlabs-installer
+brief:
+    title: Easy Installer by ViserLab - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Checks for the presence of a Easy Installer by ViserLab.
+    label:
+        - install
+        - easy
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/'
+      signs:
+        - "on": word
+          has:
+            - <title>Easy Installer by ViserLab</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

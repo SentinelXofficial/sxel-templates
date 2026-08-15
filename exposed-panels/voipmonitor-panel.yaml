@@ -1,0 +1,25 @@
+id: voipmonitor-panel
+brief:
+    title: VoIPmonitor Login Panel - Detect
+    by: Yanyun
+    level: info
+    about: VoIPmonitor login panel was detected.
+    label:
+        - panel
+        - voipmonitor
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - appShareUrl = 'share.voipmonitor.org'
+            - VoIPmonitor
+          in: body
+          need: all

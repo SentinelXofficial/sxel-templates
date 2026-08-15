@@ -1,0 +1,19 @@
+id: default-apache2-page
+brief:
+    title: Apache2 Default Test Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>Apache2 Debian Default Page: It works</title>'
+          in: body

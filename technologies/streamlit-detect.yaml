@@ -1,0 +1,16 @@
+id: streamlit-detect
+brief:
+    title: Streamlit - Detect
+    by: s4e-io
+    level: info
+    about: Streamlit service was detected.
+    label:
+        - tech
+        - streamlit
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

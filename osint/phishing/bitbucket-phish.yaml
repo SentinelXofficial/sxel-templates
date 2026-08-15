@@ -1,0 +1,26 @@
+id: bitbucket-phish
+brief:
+    title: Bitbucket phishing Detection
+    by: rxerium
+    level: info
+    about: A Bitbucket phishing website was detected
+    label:
+        - phishing
+        - bitbucket
+        - atlassian
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Bitbucket
+            - <title> Bitbucket | Git solution for teams using Jira
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

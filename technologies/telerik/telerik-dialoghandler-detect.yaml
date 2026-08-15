@@ -1,0 +1,24 @@
+id: telerik-dialoghandler-detect
+brief:
+    title: Detect Telerik Web UI Dialog Handler
+    by: organiccrap
+    level: info
+    about: This template detects the Telerik Web UI Dialog Handler.
+    label:
+        - tech
+        - telerik
+        - asp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Invalid length for a Base-64 char array
+          in: body
+          need: all

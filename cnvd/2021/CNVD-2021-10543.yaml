@@ -1,0 +1,21 @@
+id: CNVD-2021-10543
+brief:
+    title: EEA - Information Disclosure
+    by: pikpikcu
+    level: high
+    about: EEA is susceptible to information disclosure including the username and password.
+    label:
+        - cnvd
+        - cnvd2021
+        - config
+        - exposure
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/authenticationserverservlet'
+      signs:
+        - "on": status
+          status:
+            - 200

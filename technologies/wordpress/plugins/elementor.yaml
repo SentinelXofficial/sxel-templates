@@ -1,0 +1,18 @@
+id: wordpress-elementor
+brief:
+    title: Elementor Website Builder – More Than Just a Page Builder Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/elementor/readme.txt'
+      signs: []

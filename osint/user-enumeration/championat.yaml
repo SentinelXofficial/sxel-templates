@@ -1,0 +1,24 @@
+id: championat
+brief:
+    title: Championat User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Championat user name information check was conducted.
+    label:
+        - osint
+        - osint-news
+        - championat
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.championat.com/user/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Личный профил
+          in: body
+          need: all

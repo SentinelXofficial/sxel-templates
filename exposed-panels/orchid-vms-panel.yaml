@@ -1,0 +1,24 @@
+id: orchid-vms-panel
+brief:
+    title: Orchid Core VMS Panel - Detect
+    by: princechaddha
+    level: info
+    about: Orchid Core VMS panel was detected.
+    label:
+        - panel
+        - orchid
+        - ipconfigure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Orchid Core VMS - IPConfigure, Inc.</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

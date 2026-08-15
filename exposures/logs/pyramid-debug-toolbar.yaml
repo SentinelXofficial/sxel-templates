@@ -1,0 +1,25 @@
+id: pyramid-debug-toolbar
+brief:
+    title: Pyramid Debug Toolbar
+    by: geeknik
+    level: medium
+    about: Pyramid Debug Toolbar provides a debug toolbar useful while you are developing your Pyramid application.
+    label:
+        - pyramid
+        - logs
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_debug_toolbar/'
+      signs:
+        - "on": word
+          has:
+            - <title>Pyramid Debug Toolbar</title>
+            - Pyramid DebugToolbar</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

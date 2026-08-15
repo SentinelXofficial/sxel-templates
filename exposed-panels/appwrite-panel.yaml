@@ -1,0 +1,17 @@
+id: appwrite-panel
+brief:
+    title: Appwrite Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Appwrite login panel was detected.
+    label:
+        - panel
+        - appwrite
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/images/favicon.png'
+        - '{{BaseURL}}/favicon.png'
+      signs: []

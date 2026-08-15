@@ -1,0 +1,16 @@
+id: adafruit-api-key
+brief:
+    title: Adafruit API Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - adafruit
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

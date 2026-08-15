@@ -1,0 +1,27 @@
+id: tautulli-unauth
+brief:
+    title: Tautulli Panel - Unauthenticated Access
+    by: ritikchaddha
+    level: medium
+    about: ""
+    label:
+        - panel
+        - misconfig
+        - tautulli
+        - unauth
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/home'
+      signs:
+        - "on": word
+          has:
+            - Tautulli - Home
+            - Libraries</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

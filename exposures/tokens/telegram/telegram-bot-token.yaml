@@ -1,0 +1,16 @@
+id: telegram-bot-token
+brief:
+    title: Telegram Bot Token
+    by: DhiyaneshDK
+    level: high
+    about: ""
+    label:
+        - telegram
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

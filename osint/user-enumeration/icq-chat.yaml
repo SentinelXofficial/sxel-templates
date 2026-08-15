@@ -1,0 +1,24 @@
+id: icq-chat
+brief:
+    title: Icq-chat User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Icq-chat user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - icq-chat
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://icq.icqchat.co/members/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ICQ chat
+          in: body
+          need: all

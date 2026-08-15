@@ -1,0 +1,27 @@
+id: avideo-detect
+brief:
+    title: Avideo Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - avideo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - AVideo Analytics
+          in: body
+        - "on": word
+          has:
+            - /install/index.php
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

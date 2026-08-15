@@ -1,0 +1,19 @@
+id: wp-widget-logic-fpd
+brief:
+    title: WordPress Widget Logic - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Widget Logic plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - debug
+        - wordpress
+        - fpd
+        - vuln
+        - widget-logic
+        - wp-plugin
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/widget-logic/widget_logic_admin_options.php'
+        - '{{BaseURL}}/wp-content/plugins/widget-logic/widget-logic.php'
+      signs: []

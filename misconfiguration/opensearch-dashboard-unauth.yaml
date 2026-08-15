@@ -1,0 +1,27 @@
+id: opensearch-dashboard-unauth
+brief:
+    title: OpenSearch Dashboard - Unauth Access
+    by: ritikchaddha
+    level: high
+    about: OpenSearch Dashboard is a visualization and management tool for OpenSearch. This template detects instances that are accessible without authentication, potentially exposing sensitive data and syste...
+    label:
+        - opensearch
+        - dashboard
+        - misconfig
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/app/home#/'
+      signs:
+        - "on": word
+          has:
+            - /ui/fonts/source_sans_3/SourceSans3
+            - 'font-family: ''Source Code Pro'
+            - OpenSearch
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

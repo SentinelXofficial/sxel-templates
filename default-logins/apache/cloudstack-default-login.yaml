@@ -1,0 +1,20 @@
+id: cloudstack-default-login
+brief:
+    title: Apache CloudStack - Default Login
+    by: DhiyaneshDK
+    level: high
+    about: CloudStack instance discovered using weak default credentials, allows the attacker to gain admin privilege.
+    label:
+        - default-login
+        - apache
+        - cloudstack
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/client/api/'
+      head:
+        Accept: application/json, text/plain, */*
+        Content-Type: application/x-www-form-urlencoded
+      body: command=login&username={{username}}&password={{password}}&domain=%2F&response=json
+      signs: []

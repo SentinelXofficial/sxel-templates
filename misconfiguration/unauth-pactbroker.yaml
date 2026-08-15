@@ -1,0 +1,19 @@
+id: unauth-pact-broker
+brief:
+    title: Unauth Pact Broker - Detect
+    by: pdteam
+    level: medium
+    about: Unauthenticated access to Pact Broker, a repository for consumer-driven contracts and verification results.
+    label:
+        - pactbroker
+        - misconfig
+        - unauth
+        - pacts
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/pacts'
+        - '{{BaseURL}}/ui/relationships'
+      signs: []

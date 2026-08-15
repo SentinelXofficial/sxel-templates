@@ -1,0 +1,20 @@
+id: gemfury-takeover
+brief:
+    title: Gemfury Takeover Detection
+    by: pdteam
+    level: high
+    about: Gemfury takeover was detected.
+    label:
+        - takeover
+        - gemfury
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Location: https://gemfury.com/404'
+          in: header
+          need: all

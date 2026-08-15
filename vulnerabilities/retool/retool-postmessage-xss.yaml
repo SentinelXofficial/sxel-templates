@@ -1,0 +1,20 @@
+id: retool-postmessage-xss
+brief:
+    title: Retool Self-Hosted - postMessage XSS via Custom Component Collections
+    by: DhiyaneshDk
+    level: high
+    about: Retool Self-Hosted versions 3.284.0 through 3.284.11 contain a cross-site scripting (XSS) vulnerability in the custom component collections iframe handler. The postMessage event listener in custom-...
+    label:
+        - retool
+        - xss
+        - postmessage
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/custom-component-collections.html'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{js-bundle}}'
+      signs: []

@@ -1,0 +1,27 @@
+id: symfony-security-config
+brief:
+    title: Symfony Security Configuration File - Detect
+    by: dahse89
+    level: info
+    about: Symfony security configuration file was detected.
+    label:
+        - config
+        - exposure
+        - symfony
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config/packages/security.yaml'
+        - '{{BaseURL}}/app/config/security.yml'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'security:'
+            - 'firewalls:'
+            - 'access_control:'
+          in: body
+          need: all

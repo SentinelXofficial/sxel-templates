@@ -1,0 +1,19 @@
+id: wp-super-cache-fpd
+brief:
+    title: WordPress WP Super Cache - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress WP Super Cache plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - debug
+        - wordpress
+        - fpd
+        - vuln
+        - wp-super-cache
+        - wp-plugin
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wp-super-cache/ossdl-cdn.php'
+        - '{{BaseURL}}/wp-content/plugins/wp-super-cache/rest/load.php'
+      signs: []

@@ -1,0 +1,27 @@
+id: axway-securetransport-panel
+brief:
+    title: Axway SecureTransport Login Panel - Detect
+    by: righettod
+    level: info
+    about: AXWAY SecureTransport login panel was detected.
+    label:
+        - panel
+        - axway
+        - securetransport
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Axway SecureTransport
+            - alt="Axway SecureTransport"
+            - Welcome to SecureTransport
+            - PrintServerInfo("SecureTransport
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

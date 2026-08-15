@@ -1,0 +1,24 @@
+id: geo-webserver-detect
+brief:
+    title: GeoWebServer Detector Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: GeoWebServer Detector panel was detected.
+    label:
+        - panel
+        - geowebserver
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <TITLE>GeoWebServer</TITLE>
+          in: body
+          need: all

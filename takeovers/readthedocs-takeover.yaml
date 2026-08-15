@@ -1,0 +1,20 @@
+id: readthedocs-takeover
+brief:
+    title: Read the Docs Takeover Detection
+    by: pdteam
+    level: high
+    about: Read the Docs takeover was detected.
+    label:
+        - takeover
+        - readthedocs
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - unknown to Read the Docs
+          in: body
+          need: all

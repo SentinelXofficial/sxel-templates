@@ -1,0 +1,24 @@
+id: dwr-index-detect
+brief:
+    title: DWR detect test page detection
+    by: pussycat0x
+    level: low
+    about: The index contains the list of exposed Java classes. From here one can navigate to the test page of each class where every callable method is described and can be easily tested. This is a great way...
+    label:
+        - tech
+        - misconfig
+        - dwr
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dwr/index.html'
+      signs:
+        - "on": word
+          has:
+            - <title>DWR Test Index</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

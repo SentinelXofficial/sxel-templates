@@ -1,0 +1,18 @@
+id: ritecms-default-login
+brief:
+    title: RiteCMS - Default Login
+    by: 0x_Akoko
+    level: high
+    about: RiteCMS Default Credentials were discovered.
+    label:
+        - ritecms
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}{{path}}admin.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&userpw={{password}}
+      signs: []

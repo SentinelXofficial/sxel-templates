@@ -1,0 +1,16 @@
+id: gocardless-token
+brief:
+    title: Gocardless API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - gocardless
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

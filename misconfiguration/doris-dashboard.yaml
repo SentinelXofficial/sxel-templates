@@ -1,0 +1,28 @@
+id: doris-dashboard
+brief:
+    title: Doris Dashboard - Exposed
+    by: ritikchaddha
+    level: medium
+    about: Unauthorized access to the Doris Dashboard.
+    label:
+        - doris
+        - exposure
+        - unauth
+        - logs
+        - misconfig
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Doris</title>
+            - CPU Profile</a>
+            - Heap Profile</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

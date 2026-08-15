@@ -1,0 +1,21 @@
+id: api-wordnik
+brief:
+    title: Wordnik API Test
+    by: daffainfo
+    level: info
+    about: Dictionary Data
+    label:
+        - token-spray
+        - wordnik
+moves:
+    - verb: GET
+      to:
+        - https://api.wordnik.com/v4/word.json/hedgehog/topExample?useCanonical=false&api_key={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"provider"'
+            - '"year"'
+            - '"rating"'
+          in: body
+          need: all

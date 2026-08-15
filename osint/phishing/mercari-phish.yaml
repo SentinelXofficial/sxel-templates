@@ -1,0 +1,26 @@
+id: mercari-phish
+brief:
+    title: Mercari phishing Detection
+    by: rxerium
+    level: info
+    about: A Mercari phishing website was detected
+    label:
+        - phishing
+        - mercari
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Mercari
+            - Your Go-to Marketplace for Deals on Used &amp; Secondhand Items | Mercari
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

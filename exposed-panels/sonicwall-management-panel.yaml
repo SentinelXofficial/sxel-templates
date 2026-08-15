@@ -1,0 +1,20 @@
+id: sonicwall-management-panel
+brief:
+    title: SonicWall Management Admin Login Panel - Detect
+    by: PR3R00T
+    level: info
+    about: SonicWall Management admin login panel was detected.
+    label:
+        - panel
+        - sonicwall
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth.html'
+      signs:
+        - "on": word
+          has:
+            - <title>SonicWall - Authentication</title>
+            - SonicWall Administrator
+          in: body

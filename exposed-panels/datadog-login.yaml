@@ -1,0 +1,23 @@
+id: datadog-login
+brief:
+    title: Datadog Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Datadog login panel was detected.
+    label:
+        - panel
+        - datadog
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/account/login'
+      signs:
+        - "on": word
+          has:
+            - '<title>Datadog: Log In</title>'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

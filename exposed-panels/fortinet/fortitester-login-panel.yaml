@@ -1,0 +1,29 @@
+id: fortitester-login-panel
+brief:
+    title: Fortinet FortiTester Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Fortinet FortiTester login panel was detected.
+    label:
+        - panel
+        - fortinet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+        - '{{BaseURL}}/index.html'
+      signs:
+        - "on": word
+          has:
+            - <title>FortiTester</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

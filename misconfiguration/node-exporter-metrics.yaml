@@ -1,0 +1,29 @@
+id: node-exporter-metrics
+brief:
+    title: Detect Node Exporter Metrics
+    by: pussycat0x
+    level: low
+    about: Information Disclosure of Garbage Collection
+    label:
+        - node
+        - exposure
+        - debug
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/metrics'
+      signs:
+        - "on": word
+          has:
+            - node_cooling_device_cur_state{name=
+            - node_network_carrier{device=
+            - node_network_flags{device=
+            - node_cpu_seconds_total{cpu=
+            - node_filesystem_files{device=
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

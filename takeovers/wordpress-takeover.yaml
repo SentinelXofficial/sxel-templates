@@ -1,0 +1,27 @@
+id: wordpress-takeover
+brief:
+    title: WordPress takeover detection
+    by: pdteam
+    level: high
+    about: Bigcartel takeover was detected.
+    label:
+        - takeover
+        - wordpress
+        - hackerone
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Do you want to register
+            - .wordpress.com</em> doesn&#8217;t&nbsp;exist
+          in: body
+          need: all
+        - "on": word
+          has:
+            - cannot be registered
+          in: body
+          need: all

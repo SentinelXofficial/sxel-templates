@@ -1,0 +1,24 @@
+id: bitdefender-phish
+brief:
+    title: bitdefender phishing Detection
+    by: rxerium
+    level: info
+    about: A bitdefender phishing website was detected
+    label:
+        - phishing
+        - bitdefender
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Bitdefender - Global Leader in Cybersecurity Software
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

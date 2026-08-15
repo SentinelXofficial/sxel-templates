@@ -1,0 +1,25 @@
+id: gog-phish
+brief:
+    title: GOG phishing Detection
+    by: rxerium
+    level: info
+    about: A GOG phishing website was detected
+    label:
+        - phishing
+        - gog
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Welcome to GOG.com | best PC games DRM-free
+            - GOG
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

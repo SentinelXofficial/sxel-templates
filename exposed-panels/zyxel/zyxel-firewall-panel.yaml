@@ -1,0 +1,28 @@
+id: zyxel-firewall-panel
+brief:
+    title: Zyxel Firewall Panel - Detect
+    by: 0x240x23elu
+    level: info
+    about: Zyxel Firewall panel was detected.
+    label:
+        - panel
+        - xyxel
+        - firewall
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - /lib/mode_ana
+          in: body
+          need: all
+        - "on": word
+          has:
+            - VPN
+            - USG
+            - ATP
+          in: body
+          need: all

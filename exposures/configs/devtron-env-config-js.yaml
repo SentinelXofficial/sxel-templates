@@ -1,0 +1,16 @@
+id: devtron-env-config-js
+brief:
+    title: Devtron JavaScript Environment Configuration - Exposure
+    by: johnk3r
+    level: low
+    about: Devtron JavaScript environment configuration file was identified at /dashboard/env-config.js, exposing internal API endpoints and feature flag settings.
+    label:
+        - javascript
+        - config
+        - exposure
+        - devtron
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard/env-config.js'
+      signs: []

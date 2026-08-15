@@ -1,0 +1,26 @@
+id: kafka-manager-unauth
+brief:
+    title: Kafka Manager Panel - Unauthorized Access
+    by: Paper-Pen
+    level: low
+    about: A kafka manager unauthorized access was discovered.
+    label:
+        - misconfig
+        - apache
+        - kafka
+        - unauth
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Kafka Manager</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

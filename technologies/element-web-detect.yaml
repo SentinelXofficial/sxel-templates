@@ -1,0 +1,18 @@
+id: element-web-detect
+brief:
+    title: Element Web - Detect
+    by: davidegirardi
+    level: info
+    about: Identify if a web application is vanilla Element Web and return the version
+    label:
+        - tech
+        - matrix
+        - element
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/manifest.json'
+        - '{{BaseURL}}/version'
+      signs: []

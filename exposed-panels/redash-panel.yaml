@@ -1,0 +1,24 @@
+id: redash-panel
+brief:
+    title: Redash Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Redash login panel was detected.
+    label:
+        - panel
+        - redash
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Login to Redash</title>
+            - <title>Login | Redash</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

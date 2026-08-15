@@ -1,0 +1,24 @@
+id: earcu-panel
+brief:
+    title: eArcu Panel - Detect
+    by: righettod
+    level: info
+    about: eArcu was detected.
+    label:
+        - panel
+        - earcu
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - content="eArcu
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

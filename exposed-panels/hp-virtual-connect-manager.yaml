@@ -1,0 +1,23 @@
+id: hp-virtual-connect-manager
+brief:
+    title: HP Virtual Connect Manager Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: HP Virtual Connect Manager login panel was detected.
+    label:
+        - panel
+        - hp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/html/index.html'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>HP Virtual Connect Manager</title>
+          in: body
+          need: all

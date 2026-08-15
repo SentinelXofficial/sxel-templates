@@ -1,0 +1,22 @@
+id: api-pastebin
+brief:
+    title: Pastebin API Test
+    by: daffainfo
+    level: info
+    about: Plain Text Storage
+    label:
+        - token-spray
+        - pastebin
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}https://pastebin.com/api/api_post.php'
+      head:
+        Content-Length: "81"
+        Content-Type: application/x-www-form-urlencoded
+      body: api_dev_key={{token}}&api_paste_code=test&api_option=paste
+      signs:
+        - "on": word
+          has:
+            - https://pastebin.com/
+          in: body

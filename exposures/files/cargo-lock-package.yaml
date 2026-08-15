@@ -1,0 +1,25 @@
+id: cargo-lock-package
+brief:
+    title: Cargo Lock Packages Disclosure
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - exposure
+        - files
+        - cargo
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Cargo.lock'
+      signs:
+        - "on": word
+          has:
+            - '[[package]]'
+            - dependencies = [
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: paramountplus-phish
+brief:
+    title: paramountplus phishing Detection
+    by: rxerium
+    level: info
+    about: A paramountplus phishing website was detected
+    label:
+        - phishing
+        - paramountplus
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Paramount+ United Kingdom - Stream Blockbusters, New Originals and Hit Shows
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: casdoor-login
+brief:
+    title: Casdoor Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Casdoor login panel was detected.
+    label:
+        - panel
+        - casdoor
+        - casbin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Casdoor</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

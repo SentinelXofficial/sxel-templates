@@ -1,0 +1,23 @@
+id: devtron-panel
+brief:
+    title: Devtron Panel Login Panel - Detect
+    by: johnk3r
+    level: info
+    about: Devtron Panel login panel was detected.
+    label:
+        - panel
+        - devtron
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Devtron</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

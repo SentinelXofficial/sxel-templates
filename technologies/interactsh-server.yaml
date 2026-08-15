@@ -1,0 +1,23 @@
+id: interactsh-server
+brief:
+    title: Interactsh Server
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - tech
+        - interactsh
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Interactsh Server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

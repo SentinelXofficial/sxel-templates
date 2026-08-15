@@ -1,0 +1,23 @@
+id: chromadb-detect
+brief:
+    title: ChromaDB Vector Database - Detect
+    by: rxerium
+    level: info
+    about: Detected ChromaDB vector database instance publicly exposed. ChromaDB is an open-source AI-native vector database. Unauthenticated instances expose stored embeddings, collections, and metadata to u...
+    label:
+        - chromadb
+        - vector-database
+        - ai
+        - exposure
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/heartbeat'
+      signs:
+        - "on": word
+          has:
+            - nanosecond heartbeat
+          in: body
+          need: all

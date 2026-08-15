@@ -1,0 +1,20 @@
+id: glpi-directory-listing
+brief:
+    title: GLPI - Directory Listing and Session Exposure
+    by: RedTeamBrasil
+    level: medium
+    about: Detected GLPI directory listing exposed sensitive files and PHP session data, potentially allowing session hijacking or information disclosure.
+    label:
+        - glpi
+        - misconfig
+        - exposure
+        - session
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/glpi/files/'
+        - '{{BaseURL}}/glpi/files/_sessions/'
+        - '{{BaseURL}}/files/_sessions/'
+        - '{{BaseURL}}/glpi/'
+      signs: []

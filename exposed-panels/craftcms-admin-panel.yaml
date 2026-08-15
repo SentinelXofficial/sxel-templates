@@ -1,0 +1,24 @@
+id: craftcms-admin-panel
+brief:
+    title: Craft CMS Admin Login Panel - Detect
+    by: Supr4s
+    level: info
+    about: Craft CMS admin login panel was detected.
+    label:
+        - panel
+        - craftcms
+        - nystudio107
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login'
+      signs:
+        - "on": word
+          has:
+            - title="Powered by Craft CMS"
+          in: body
+        - "on": word
+          has:
+            - <a id=\"poweredby\" href=\"http:\/\/craftcms.com\/\"
+          in: body

@@ -1,0 +1,26 @@
+id: veeam-backup-manager-login
+brief:
+    title: Veeam Backup Enterprise Manager Login - Detect
+    by: Charles D
+    level: info
+    about: Veeam Backup Enterprise Manager Login
+    label:
+        - veeam
+        - panel
+        - enterprise-manager
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.aspx'
+      signs:
+        - "on": word
+          has:
+            - 'Veeam Backup Enterprise Manager : Login'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

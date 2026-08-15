@@ -1,0 +1,31 @@
+id: hfs-exposure
+brief:
+    title: HFS Panel - Exposure
+    by: tess
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - hfs
+        - exposure
+        - panel
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - HFS =
+            - 'Build-time:'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

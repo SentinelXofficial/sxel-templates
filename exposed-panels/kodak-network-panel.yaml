@@ -1,0 +1,25 @@
+id: kedacom-network-panel
+brief:
+    title: Kedacom Network Keyboard Console Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: A Kedacom network keyboard console panel was detected.
+    label:
+        - panel
+        - login
+        - kedacom
+        - network
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - 网络键盘控制台
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

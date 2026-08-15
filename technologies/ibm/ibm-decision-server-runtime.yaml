@@ -1,0 +1,25 @@
+id: ibm-decision-server-runtime
+brief:
+    title: IBM Decision Server Runtime Panel- Detect
+    by: DhiyaneshDK
+    level: info
+    about: IBM Decision Server Runtime was detected.
+    label:
+        - ibm
+        - detect
+        - tech
+        - decision-server
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/DecisionService/'
+      signs:
+        - "on": word
+          has:
+            - <title>Hosted Transparent Decision Service</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

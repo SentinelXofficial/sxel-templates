@@ -1,0 +1,17 @@
+id: mylittleadmin-panel
+brief:
+    title: myLittleAdmin Login Panel - Detect
+    by: nullfuzz
+    level: info
+    about: myLittleAdmin login panel was detected.
+    label:
+        - panel
+        - mylittleadmin
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/mylittleadmin/'
+      signs: []

@@ -1,0 +1,27 @@
+id: youtube
+brief:
+    title: YouTube User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: YouTube user name information check was conducted.
+    label:
+        - osint
+        - osint-video
+        - youtube
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.youtube.com/c/{{user}}/about
+        - https://www.youtube.com/user/{{user}}/about
+        - https://www.youtube.com/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - joinedDateText
+            - canonicalBaseUrl
+          in: body
+          need: all

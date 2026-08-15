@@ -1,0 +1,18 @@
+id: ibm-api-connect-detect
+brief:
+    title: IBM API Connect Developer Portal - Detect
+    by: righettod
+    level: info
+    about: IBM API Connect Developer Portal was detected.
+    label:
+        - tech
+        - ibm
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/favicon.ico'
+        - '{{BaseURL}}/modules/ibm_apim/ibm_apim.info.yml'
+      signs: []

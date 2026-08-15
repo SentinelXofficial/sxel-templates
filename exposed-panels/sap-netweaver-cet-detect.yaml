@@ -1,0 +1,30 @@
+id: sap-netweaver-cet-detect
+brief:
+    title: SAP NetWeaver Composition Environment Tools - Detect
+    by: ap3r
+    level: info
+    about: Detects the presence of the SAP NetWeaver Process Integration / Composition Environment Tools page
+    label:
+        - sap
+        - netweaver
+        - cet
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/rep/start/index.jsp'
+      signs:
+        - "on": word
+          has:
+            - Composition Environment Tools
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

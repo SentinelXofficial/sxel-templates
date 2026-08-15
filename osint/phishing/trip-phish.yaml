@@ -1,0 +1,24 @@
+id: trip-phish
+brief:
+    title: trip phishing Detection
+    by: rxerium
+    level: info
+    about: A trip phishing website was detected
+    label:
+        - phishing
+        - trip
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Trip.com: Book cheap flights, hotels, car rentals, trains and more'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

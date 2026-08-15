@@ -1,0 +1,40 @@
+id: graphql-graphene-detect
+brief:
+    title: Graphql Graphene Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - graphql
+        - graphene
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/graphql'
+        - '{{BaseURL}}/api/graphql'
+        - '{{BaseURL}}/query'
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: '{"query":"aaa"}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Syntax Error GraphQL (1:1)
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 'Content-Type: text/html'
+          in: header
+          need: all
+        - "on": word
+          has:
+            - <html
+            - <body
+          in: body
+          need: all

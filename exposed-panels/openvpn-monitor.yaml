@@ -1,0 +1,33 @@
+id: openvpn-monitor
+brief:
+    title: OpenVPN Monitor - Detect
+    by: geeknik
+    level: info
+    about: openvpn-monitor was discovered. OpenVPN Monitor is a simple python program to generate html that displays the status of an OpenVPN server, including all its current connections.
+    label:
+        - openvpn
+        - disclosure
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/openvpn-monitor/'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - OpenVPN Status Monitor
+            - Username
+            - VPN IP
+            - Remote IP
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

@@ -1,0 +1,24 @@
+id: ulanzi-clock
+brief:
+    title: Ulanzi Clock Detect
+    by: fabaff
+    level: info
+    about: Ulanzi Clock panel was detected.
+    label:
+        - panel
+        - ulanzi
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Ulanzi Clock</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

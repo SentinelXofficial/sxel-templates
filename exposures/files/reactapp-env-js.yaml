@@ -1,0 +1,36 @@
+id: reactapp-env-js
+brief:
+    title: React App Environment Js
+    by: random-robbie
+    level: info
+    about: ""
+    label:
+        - react
+        - exposure
+        - config
+        - js
+        - javascript
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/env.js'
+        - '{{BaseURL}}/config.js'
+        - '{{BaseURL}}/config/env.js'
+        - '{{BaseURL}}/config/runtime-env.js'
+      signs:
+        - "on": word
+          has:
+            - REACT_APP_
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+            - application/javascript
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

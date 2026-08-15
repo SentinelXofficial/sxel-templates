@@ -1,0 +1,17 @@
+id: silverback-detect
+brief:
+    title: Silverback MDM - Detection
+    by: nodauf
+    level: info
+    about: ""
+    label:
+        - favicon
+        - tech
+        - silverback
+        - mdm
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sts/Content/Images/favicon.ico'
+      signs: []

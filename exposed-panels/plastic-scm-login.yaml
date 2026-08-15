@@ -1,0 +1,23 @@
+id: plastic-scm-login
+brief:
+    title: Unity Plastic SCM Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Unity Plastic SCM login panel was detected.
+    label:
+        - panel
+        - plastic
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/account'
+      signs:
+        - "on": word
+          has:
+            - <title>Log in - Plastic SCM</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

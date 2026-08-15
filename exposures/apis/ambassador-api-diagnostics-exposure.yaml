@@ -1,0 +1,17 @@
+id: ambassador-api-diagnostics-exposure
+brief:
+    title: Ambassador API Gateway Diagnostics - Exposure
+    by: 0x_Akoko
+    level: medium
+    about: Detected Ambassador API Gateway diagnostics portal, revealing service mappings, API endpoints, routing configurations, and internal cluster information.
+    label:
+        - exposure
+        - ambassador
+        - api
+        - gateway
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ambassador/v0/diag/'
+      signs: []

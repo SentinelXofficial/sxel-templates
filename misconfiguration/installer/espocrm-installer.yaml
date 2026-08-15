@@ -1,0 +1,25 @@
+id: espocrm-installer
+brief:
+    title: Espocrm Installer
+    by: DhiyaneshDk
+    level: high
+    about: Espocrm is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - espocrm
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/'
+      signs:
+        - "on": word
+          has:
+            - <title>EspoCRM Installation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

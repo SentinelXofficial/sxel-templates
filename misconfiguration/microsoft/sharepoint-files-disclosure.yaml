@@ -1,0 +1,16 @@
+id: sharepoint-files-disclosure
+brief:
+    title: Microsoft SharePoint Files Disclosure
+    by: pussycat0x
+    level: info
+    about: Deteted information revealed that Microsoft SharePoint files had been inadvertently disclosed.
+    label:
+        - sharepoint
+        - microsoft
+        - exposure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_api/web/roledefinitions'
+      signs: []

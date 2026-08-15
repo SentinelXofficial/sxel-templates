@@ -1,0 +1,15 @@
+id: apache-httpd-eol
+brief:
+    title: Apache HTTP Server End-of-Life - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected Apache HTTP Server versions that have reached End-of-Life (EOL) and no longer receive security updates.
+    label:
+        - tech
+        - apache
+        - eol
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

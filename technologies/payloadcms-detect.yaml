@@ -1,0 +1,17 @@
+id: payloadcms-detect
+brief:
+    title: PayloadCMS - Detect
+    by: Shivam Kamboj
+    level: info
+    about: PayloadCMS panel was detected. PayloadCMS is an open-source, headless CMS and application framework built with Node.js, React, and TypeScript.
+    label:
+        - tech
+        - detect
+        - payloadcms
+        - cms
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/admin/login'
+      signs: []

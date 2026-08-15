@@ -1,0 +1,16 @@
+id: xwiki-detect
+brief:
+    title: XWiki - Detection
+    by: matejsmycka
+    level: info
+    about: XWiki Platform was discovered.
+    label:
+        - xwiki
+        - detect
+        - tech
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/xwiki/'
+      signs: []

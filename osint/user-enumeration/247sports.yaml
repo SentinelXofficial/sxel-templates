@@ -1,0 +1,24 @@
+id: 247sports
+brief:
+    title: 247sports User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: 247sports user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - 247sports
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://247sports.com/User/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <meta property=
+          in: body
+          need: all

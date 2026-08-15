@@ -1,0 +1,24 @@
+id: openvpn-router-management
+brief:
+    title: OpenVPN Server Router Management Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: OpenVPN Server Router Management Panel was detected.
+    label:
+        - panel
+        - openvpn
+        - router
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Router Management - Server OpenVPN
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

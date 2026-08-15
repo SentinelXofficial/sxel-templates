@@ -1,0 +1,23 @@
+id: dell-idrac9-default-login
+brief:
+    title: DELL iDRAC9 - Default Login
+    by: kophjager007
+    level: high
+    about: DELL iDRAC9 default login credentials was discovered.
+    label:
+        - dell
+        - idrac
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/sysmgmt/2015/bmc/session'
+      head:
+        Password: '"{{password}}"'
+        User: '"{{username}}"'
+      signs:
+        - "on": status
+          status:
+            - 201
+            - 200

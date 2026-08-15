@@ -1,0 +1,29 @@
+id: typo3-directory-listing
+brief:
+    title: Typo3 Directory Listing
+    by: theamanrawat
+    level: low
+    about: Detects directory listing enabled on the TYPO3 temp directory. The typo3temp folder contains cached files, compiled assets, and temporary data that may reveal sensitive information about the applic...
+    label:
+        - typo3
+        - directory-listing
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/typo3temp/'
+      signs:
+        - "on": word
+          has:
+            - Index of /typo3temp
+            - Last modified
+            - Parent Directory
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

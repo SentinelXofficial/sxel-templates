@@ -1,0 +1,23 @@
+id: lighttpd-default
+brief:
+    title: lighttpd Default Page
+    by: dhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - tech
+        - lighttpd
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Powered by lighttpd</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: ovh-phish
+brief:
+    title: OVHcloud phishing Detection
+    by: rxerium
+    level: info
+    about: A OVHcloud phishing website was detected
+    label:
+        - phishing
+        - ovh
+        - cloud
+        - hosting
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Global Cloud Service Provider
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

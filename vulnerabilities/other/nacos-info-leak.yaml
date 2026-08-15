@@ -1,0 +1,17 @@
+id: nacos-info-leak
+brief:
+    title: Nacos - Information Disclosure
+    by: s4e-io
+    level: high
+    about: Nacos unauthorized download of configuration information.
+    label:
+        - nacos
+        - tech
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v1/cs/configs?export=true&group=&tenant=&appName=&ids=&dataId='
+      signs: []

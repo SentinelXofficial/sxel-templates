@@ -1,0 +1,40 @@
+id: thinkphp-errors
+brief:
+    title: ThinkPHP Errors - Sensitive Information Exposure
+    by: j4vaovo
+    level: medium
+    about: ThinkPHP error is leaking sensitive info.
+    label:
+        - thinkphp
+        - misconfig
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - _DATABASE</td>
+            - _USERNAME</td>
+            - _PASSWORD</td>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <title>系统发生错误</title>
+            - <title>System Error</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Exception
+            - REQUEST_TIME
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+            - 500
+            - 404

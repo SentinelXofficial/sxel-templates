@@ -1,0 +1,24 @@
+id: greenbone-panel
+brief:
+    title: Greenbone Security Assistant Panel - Detect
+    by: pbuff07
+    level: info
+    about: Greenbone Security Assistant Web Panel is detected
+    label:
+        - panel
+        - greenbone
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Greenbone Security Assistant</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

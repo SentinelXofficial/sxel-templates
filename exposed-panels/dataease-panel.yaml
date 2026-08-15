@@ -1,0 +1,24 @@
+id: dataease-panel
+brief:
+    title: Dataease - Login Panel
+    by: DhiyaneshDK
+    level: info
+    about: Dataease Login Panel is discovered
+    label:
+        - login
+        - panel
+        - dataease
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/login?redirect=%2F'
+      signs:
+        - "on": word
+          has:
+            - DataEase doesn't work
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

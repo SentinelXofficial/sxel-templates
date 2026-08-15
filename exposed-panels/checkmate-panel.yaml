@@ -1,0 +1,24 @@
+id: checkmate-panel
+brief:
+    title: Checkmate Login Panel - Detect
+    by: theamanrawat
+    level: info
+    about: Checkmate administrative login page was found.
+    label:
+        - checkmate
+        - panel
+        - discovery
+        - login
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Checkmate</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

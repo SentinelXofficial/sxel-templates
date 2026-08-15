@@ -1,0 +1,25 @@
+id: activecollab-detect
+brief:
+    title: activecollab detect
+    by: ffffffff0x
+    level: info
+    about: ""
+    label:
+        - acsoft
+        - tech
+        - activecollab
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - http://www.activecollab.com
+            - <form method="post" id="system_form_2" class="uniForm focusFirstField">
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: orbys
+brief:
+    title: Orbys User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Orbys user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - orbys
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://orbys.net/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - profile_user_image
+          in: body
+          need: all

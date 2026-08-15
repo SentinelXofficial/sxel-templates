@@ -1,0 +1,28 @@
+id: veeam-panel
+brief:
+    title: Veeam Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Veeam login panel was detected.
+    label:
+        - panel
+        - veeam
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.aspx'
+      signs:
+        - "on": word
+          has:
+            - Login - Veeam ONE Reporter
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

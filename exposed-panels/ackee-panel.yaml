@@ -1,0 +1,18 @@
+id: ackee-panel
+brief:
+    title: Ackee Panel - Detect
+    by: userdehghani
+    level: info
+    about: self-hosted, node.js based analytics tool for those who care about privacy.
+    label:
+        - panel
+        - ackee
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/favicon.ico'
+      signs: []

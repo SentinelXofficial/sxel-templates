@@ -1,0 +1,21 @@
+id: magento-admin-panel
+brief:
+    title: Magento Admin Login Panel - Detect
+    by: TechbrunchFR
+    level: info
+    about: Magento admin login panel was detected.
+    label:
+        - magento
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin'
+      signs:
+        - "on": word
+          has:
+            - Magento
+            - Admin Panel
+          in: body
+          need: all

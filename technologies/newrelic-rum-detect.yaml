@@ -1,0 +1,16 @@
+id: newrelic-rum-detect
+brief:
+    title: New Relic Browser Monitoring (RUM) - Tech Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected New Relic Browser Monitoring (RUM) agent artifacts
+    label:
+        - tech
+        - discovery
+        - rum
+        - newrelic
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

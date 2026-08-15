@@ -1,0 +1,29 @@
+id: apache-answer-detect
+brief:
+    title: Apache Answer - Detection
+    by: omranisecurity
+    level: info
+    about: Detects Apache Answer version through API endpoit
+    label:
+        - detect
+        - tech
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/answer/api/v1/siteinfo'
+      signs:
+        - "on": word
+          has:
+            - '"code":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

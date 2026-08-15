@@ -1,0 +1,28 @@
+id: simatic-dashboard-exposed
+brief:
+    title: Siemens SIMATIC 300 Dashboard - Exposed
+    by: Th3l0newolf
+    level: high
+    about: An unauthenticated exposed web interface for Siemens SIMATIC S7-300 was discovered, potentially allowing access without any login credentials.
+    label:
+        - siemens
+        - simatic
+        - plc
+        - scada
+        - iot
+        - misconfig
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Portal0000.htm'
+      signs:
+        - "on": word
+          has:
+            - alt="Simatic S7 CP"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

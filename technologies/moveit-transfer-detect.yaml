@@ -1,0 +1,27 @@
+id: moveit-transfer-detect
+brief:
+    title: Moveit File Transfer - Detect
+    by: tess
+    level: info
+    about: ""
+    label:
+        - tech
+        - moveit
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/human.aspx'
+      signs:
+        - "on": word
+          has:
+            - stylesheet_MOVEit
+            - moveit.transfer
+            - MOVEitPopUp
+            - MOVEit Automation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

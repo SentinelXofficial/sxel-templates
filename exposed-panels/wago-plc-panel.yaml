@@ -1,0 +1,26 @@
+id: wago-plc-panel
+brief:
+    title: WAGO PLC Panel - Detect
+    by: github.com/its0x08
+    level: info
+    about: WAGO PLC panel was detected.
+    label:
+        - panel
+        - wago
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/plc/webvisu.htm'
+      signs:
+        - "on": word
+          has:
+            - <TITLE>CoDeSys WebVisualization</TITLE>
+            - webvisu.jar,minml.jar
+          in: body
+          need: all
+        - "on": word
+          has:
+            - WAGO_Webs
+          in: header
+          need: all

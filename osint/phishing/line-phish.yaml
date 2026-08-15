@@ -1,0 +1,24 @@
+id: line-phish
+brief:
+    title: LINE phishing Detection
+    by: rxerium
+    level: info
+    about: A LINE phishing website was detected
+    label:
+        - phishing
+        - line
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - メッセンジャーアプリを超え、新しいコミュニケーションの形を目指して、新時代のインフラ体験をLINEはひとりひとりに届けていきます。
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

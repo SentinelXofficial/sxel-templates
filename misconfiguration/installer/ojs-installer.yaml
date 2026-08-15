@@ -1,0 +1,26 @@
+id: ojs-installer
+brief:
+    title: Open Journal Systems Installer - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Open Journal Systems is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - ojs
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index/install'
+        - '{{BaseURL}}/index.php/index/install'
+      signs:
+        - "on": word
+          has:
+            - OJS Installation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

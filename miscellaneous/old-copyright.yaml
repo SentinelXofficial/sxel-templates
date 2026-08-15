@@ -1,0 +1,21 @@
+id: old-copyright
+brief:
+    title: Find Pages with Old Copyright Dates
+    by: geeknik
+    level: info
+    about: ""
+    label:
+        - miscellaneous
+        - misc
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - "2026"
+          in: body
+          need: all

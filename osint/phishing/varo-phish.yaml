@@ -1,0 +1,25 @@
+id: varo-phish
+brief:
+    title: Varo phishing Detection
+    by: rxerium
+    level: info
+    about: A Varo phishing website was detected
+    label:
+        - phishing
+        - varo
+        - fintech
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Home - Varo
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

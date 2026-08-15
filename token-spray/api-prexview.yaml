@@ -1,0 +1,22 @@
+id: api-prexview
+brief:
+    title: PrexView API Test
+    by: daffainfo
+    level: info
+    about: Data from XML or JSON to PDF, HTML or Image
+    label:
+        - token-spray
+        - prexview
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}https://api.prexview.com/v1/transform'
+      head:
+        Authorization: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"output is a required argument"'
+            - '"status":400'
+          in: body
+          need: all

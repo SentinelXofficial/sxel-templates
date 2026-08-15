@@ -1,0 +1,24 @@
+id: puppetdb-detect
+brief:
+    title: PuppetDB Detection
+    by: c-sh0
+    level: info
+    about: ""
+    label:
+        - puppet
+        - tech
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pdb/meta/v1/version'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

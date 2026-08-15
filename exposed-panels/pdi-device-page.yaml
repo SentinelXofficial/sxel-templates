@@ -1,0 +1,25 @@
+id: pdi-device-page
+brief:
+    title: PDI Intellifuel - Device Page
+    by: DhiyaneshDk
+    level: low
+    about: ""
+    label:
+        - exposure
+        - pdi
+        - intellifuel
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php'
+      signs:
+        - "on": word
+          has:
+            - Intellifuel Device page
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,16 @@
+id: docker-hub-pat
+brief:
+    title: Docker Hub Personal Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - docker
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

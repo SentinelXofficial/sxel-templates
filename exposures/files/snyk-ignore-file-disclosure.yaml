@@ -1,0 +1,23 @@
+id: snyk-ignore-file-disclosure
+brief:
+    title: Snyk Ignore File Disclosure
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.snyk'
+      signs:
+        - "on": word
+          has:
+            - '# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

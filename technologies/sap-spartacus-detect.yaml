@@ -1,0 +1,22 @@
+id: sap-spartacus-detect
+brief:
+    title: SAP Spartacus detect
+    by: TechbrunchFR
+    level: info
+    about: Spartacus is a lean, Angular-based JavaScript storefront for SAP Commerce Cloud that communicates exclusively through the Commerce REST API.
+    label:
+        - tech
+        - sap
+        - hybris
+        - angular
+        - spartacus
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <cx-storefront
+          in: body

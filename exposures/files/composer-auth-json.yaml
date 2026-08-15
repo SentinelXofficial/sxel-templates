@@ -1,0 +1,26 @@
+id: composer-auth-json
+brief:
+    title: Composer-auth Json File Disclosure
+    by: DhiyaneshDK
+    level: low
+    about: Composer Auth Josn file is disclosed.
+    label:
+        - exposure
+        - devops
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.composer-auth.json'
+        - '{{BaseURL}}/vendor/webmozart/assert/.composer-auth.json'
+      signs:
+        - "on": word
+          has:
+            - github-oauth
+            - github.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: tryhackme
+brief:
+    title: TryHackMe User Name Information - Detect
+    by: olearycrew
+    level: info
+    about: TryHackMe user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - tryhackme
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://tryhackme.com/p/{{user}}
+      signs:
+        - "on": word
+          has:
+            - profileUsername
+            - profileAvatar
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: telegram
+brief:
+    title: Telegram User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Telegram user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - telegram
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://t.me/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - tgme_page_title
+          in: body
+          need: all

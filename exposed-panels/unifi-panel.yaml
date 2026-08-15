@@ -1,0 +1,24 @@
+id: unifi-panel
+brief:
+    title: UniFi Network Login Panel - Detect
+    by: TechbrunchFR
+    level: info
+    about: UniFi Network login panel was detected.
+    label:
+        - unifi
+        - ubnt
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>UniFi Network</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

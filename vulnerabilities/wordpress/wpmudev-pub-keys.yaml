@@ -1,0 +1,25 @@
+id: wpmudev-pub-keys
+brief:
+    title: Wpmudev Dashboard Pub Key
+    by: dhiyaneshDk
+    level: medium
+    about: Wpmudev Wordpress Plugin public key leaked.
+    label:
+        - wordpress
+        - edb
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wpmudev-updates/keys/'
+      signs:
+        - "on": word
+          has:
+            - Index of /
+            - .pub
+            - wpmudev
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

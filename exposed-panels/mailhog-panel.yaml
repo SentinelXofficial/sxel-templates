@@ -1,0 +1,26 @@
+id: mailhog-panel
+brief:
+    title: MailHog Panel - Detect
+    by: kh4sh3i
+    level: info
+    about: MailHog panel was detected.
+    label:
+        - panel
+        - mailhog
+        - mail
+        - smtp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - MailHog
+            - SMTP server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

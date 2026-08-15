@@ -1,0 +1,26 @@
+id: harbor-default-login
+brief:
+    title: Harbor Registry - Default Admin Credentials
+    by: 0x_Akoko
+    level: high
+    about: 'Detected: The Harbor container registry was found to be using default administrator credentials (admin:Harbor12345). An attacker could have gained full administrative access to manage registries, p...'
+    label:
+        - harbor
+        - default-login
+        - auth
+        - registry
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v2.0/systeminfo'
+      head:
+        Accept: application/json
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v2.0/users/current'
+      head:
+        Accept: application/json
+        Authorization: Basic {{base64(username + ":" + password)}}
+      signs: []

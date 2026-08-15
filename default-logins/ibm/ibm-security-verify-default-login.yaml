@@ -1,0 +1,23 @@
+id: ibm-security-verify-default-login
+brief:
+    title: IBM Security Verify Access - Default Login
+    by: johnk3r
+    level: high
+    about: IBM Security Verify Access default admin credentials were discovered. An unauthenticated, remote attacker can exploit this gain privileged or administrator access to the system.
+    label:
+        - ibm
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/core/j_security_check'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: j_username={{username}}&j_password={{password}}&commit=&locale=en&_method=PUT
+      signs: []

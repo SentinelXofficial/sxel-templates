@@ -1,0 +1,25 @@
+id: laragon-phpinfo
+brief:
+    title: Laragon - phpinfo Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: Laragon phpinfo file was exposed.
+    label:
+        - laragon
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?q=info'
+      signs:
+        - "on": word
+          has:
+            - PHP Extension
+            - PHP Version
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

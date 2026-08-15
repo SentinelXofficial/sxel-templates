@@ -1,0 +1,26 @@
+id: librechat-config-exposure
+brief:
+    title: librechat - Config Exposure
+    by: icarot
+    level: low
+    about: Detected the `/api/config` endpoint of the LibreChat web application was publicly accessible, potentially exposing internal configuration details.
+    label:
+        - librechat
+        - config
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/config'
+      signs:
+        - "on": word
+          has:
+            - LibreChat
+            - serverDomain
+            - registrationEnabled
+            - passwordResetEnabled
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

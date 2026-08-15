@@ -1,0 +1,19 @@
+id: ghost-cms-installer
+brief:
+    title: Ghost CMS Installation Setup - Exposure
+    by: 0x_Akoko
+    level: high
+    about: Detected Ghost CMS installation setup wizard accessible without authentication. An unauthenticated remote attacker can navigate to
+    label:
+        - ghost
+        - cms
+        - exposure
+        - setup
+        - takeover
+        - unauth
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ghost/api/admin/authentication/setup/'
+        - '{{BaseURL}}/ghost/api/v3/admin/authentication/setup/'
+      signs: []

@@ -1,0 +1,23 @@
+id: intelbras-login
+brief:
+    title: Intelbras Router Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Intelbras router logjn panel was detected.
+    label:
+        - panel
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Intelbras</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,33 @@
+id: datagerry-default-login
+brief:
+    title: Datagerry - Default Login
+    by: gy741
+    level: high
+    about: Datagerry was using default username and password was discovered.
+    label:
+        - datagerry
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/rest/auth/login'
+      head:
+        Content-Type: application/json
+      body: '{"user_name":"{{username}}","password":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - '"token":'
+            - '"token_issued_at":'
+            - '"token_expire":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

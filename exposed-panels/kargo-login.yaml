@@ -1,0 +1,24 @@
+id: kargo-login
+brief:
+    title: Kargo Login Panel - Detect
+    by: theamanrawat
+    level: info
+    about: Kargo login panel was detected.
+    label:
+        - kargo
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Kargo</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

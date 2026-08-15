@@ -1,0 +1,28 @@
+id: google-services-json
+brief:
+    title: Google Service Json
+    by: DhiyaneshDK
+    level: low
+    about: google-services.json internal file is exposed.
+    label:
+        - google
+        - cloud
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/google-services.json'
+        - '{{BaseURL}}/app/google-services.json'
+        - '{{BaseURL}}/android/app/google-services.json'
+      signs:
+        - "on": word
+          has:
+            - storage_bucket
+            - oauth_client
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

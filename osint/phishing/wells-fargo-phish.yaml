@@ -1,0 +1,25 @@
+id: wells-fargo-phish
+brief:
+    title: Wells Fargo phishing Detection
+    by: rxerium
+    level: info
+    about: A Wells Fargo phishing website was detected
+    label:
+        - phishing
+        - wells-fargo
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Committed to the financial health of our customers and communities. Explore bank accounts, loans, mortgages, investing, credit cards & banking services»
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

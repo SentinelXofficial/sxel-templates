@@ -1,0 +1,22 @@
+id: ansible-semaphore-panel
+brief:
+    title: Ansible Semaphore Panel Detect
+    by: Yuzhe-zhang-0
+    level: info
+    about: An Ansible Semaphore login panel was detected.
+    label:
+        - panel
+        - ansible
+        - semaphore
+        - cicd
+        - oss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Ansible Semaphore</title>
+          in: body

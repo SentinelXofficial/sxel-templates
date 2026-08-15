@@ -1,0 +1,24 @@
+id: burp-collaborator-detect
+brief:
+    title: Burp Collaborator Server - Detect
+    by: lum8rjack
+    level: info
+    about: Burp Collaborator server detected.
+    label:
+        - burp
+        - tech
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Server: Burp Collaborator https://burpcollaborator.net/'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

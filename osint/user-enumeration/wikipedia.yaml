@@ -1,0 +1,24 @@
+id: wikipedia
+brief:
+    title: Wikipedia User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Wikipedia user name information check was conducted.
+    label:
+        - osint
+        - osint-news
+        - wikipedia
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://en.wikipedia.org/w/api.php?action=query&format=json&list=users&ususers={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - userid
+          in: body
+          need: all

@@ -1,0 +1,26 @@
+id: hp-switch-default-login
+brief:
+    title: HP 1820-8G Switch J9979A Default Login
+    by: pussycat0x
+    level: high
+    about: HP 1820-8G Switch J9979A default admin login credentials were discovered.
+    label:
+        - default-login
+        - hp
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/htdocs/login/login.lua'
+      body: username={{username}}&password=
+      signs:
+        - "on": word
+          has:
+            - '"redirect": "/htdocs/pages/main/main.lsp"'
+            - '"error": ""'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

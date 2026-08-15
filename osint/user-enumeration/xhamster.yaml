@@ -1,0 +1,24 @@
+id: xhamster
+brief:
+    title: XHamster User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: XHamster user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - xhamster
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://xhamster.com/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s profile | xHamster</title>
+          in: body
+          need: all

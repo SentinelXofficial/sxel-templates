@@ -1,0 +1,25 @@
+id: elastic-beanstalk-detect
+brief:
+    title: AWS Elastic Beanstalk Detect
+    by: pussycat0x
+    level: info
+    about: ""
+    label:
+        - aws
+        - tech
+        - beanstalk
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <li><a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html">AWS Elastic Beanstalk overview</a></li>
+            - <li><a href="http://docs.amazonwebservices.com/elasticbeanstalk/latest/dg/">AWS Elastic Beanstalk overview</a></li>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

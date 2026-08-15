@@ -1,0 +1,25 @@
+id: buymeacoffee-phish
+brief:
+    title: Buy Me a Coffee phishing Detection
+    by: rxerium
+    level: info
+    about: A Buy Me a Coffee phishing website was detected
+    label:
+        - phishing
+        - buymeacoffee
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Buy Me a Coffee is the best way for creators and artists to accept support and membership from their fans.
+            - <title>Buy Me a Coffee
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

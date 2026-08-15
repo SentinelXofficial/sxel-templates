@@ -1,0 +1,30 @@
+id: aws-xray-application
+brief:
+    title: AWS X-Ray Sample Application
+    by: DhiyaneshDk
+    level: info
+    about: AWS X-Ray is a service that helps developers analyze and debug distributed applications.
+    label:
+        - misconfig
+        - aws
+        - x-ray
+        - amazon
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>AWS X-Ray Sample Application</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

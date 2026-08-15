@@ -1,0 +1,24 @@
+id: netsurveillance-web
+brief:
+    title: NETSurveillance Web Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: NETSurveillance Web panel was detected.
+    label:
+        - tech
+        - iot
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Login.htm'
+      signs:
+        - "on": word
+          has:
+            - <title>NetSurveillance WEB</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: rockstar-phish
+brief:
+    title: Rockstar Games phishing Detection
+    by: rxerium
+    level: info
+    about: A Rockstar Games phishing website was detected
+    label:
+        - phishing
+        - rockstar
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - The official home of Rockstar Games
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

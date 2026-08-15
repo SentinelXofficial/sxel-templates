@@ -1,0 +1,45 @@
+id: graphql-field-suggestion
+brief:
+    title: GraphQL Field Suggestion Information Disclosure
+    by: Dolev Farhi
+    level: info
+    about: If introspection is disabled on your target, Field Suggestion can allow users to still earn information on the GraphQL schema.
+    label:
+        - graphql
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/graphql'
+      head:
+        Content-Type: application/json
+      body: '{"query":"query {\n  __schema {\n directive\n }\n}","variables":null}'
+      signs:
+        - "on": word
+          has:
+            - Did you mean
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/graphql'
+      head:
+        Content-Type: application/json
+      body: '{"query":"query {\n  __schema {\n directive\n }\n}","variables":null}'
+      signs:
+        - "on": word
+          has:
+            - Did you mean
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

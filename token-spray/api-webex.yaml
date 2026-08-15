@@ -1,0 +1,24 @@
+id: api-webex
+brief:
+    title: Cisco Webex API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - cisco
+        - webex
+moves:
+    - verb: GET
+      to:
+        - https://webexapis.com/v1/rooms
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - id
+            - title
+            - type
+          in: body
+          need: all

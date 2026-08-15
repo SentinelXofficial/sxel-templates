@@ -1,0 +1,24 @@
+id: xvideos-models
+brief:
+    title: XVIDEOS-models User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: XVIDEOS-models user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - xvideos-models
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.xvideos.com/models/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Total video views
+          in: body
+          need: all

@@ -1,0 +1,19 @@
+id: versa-director-api
+brief:
+    title: Versa Director API Endpoint Detection
+    by: c-sh0
+    level: info
+    about: Versa Director API Endpoint (Unauthorized) Detection
+    label:
+        - api
+        - versa
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}:9182'
+      signs:
+        - "on": status
+          status:
+            - 401

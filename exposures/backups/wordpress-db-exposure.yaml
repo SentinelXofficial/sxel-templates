@@ -1,0 +1,19 @@
+id: wordpress-db-exposure
+brief:
+    title: WordPress Database Backup File - Exposure
+    by: 0x_Akoko
+    level: high
+    about: Detected WordPress database backup files that were publicly accessible, exposing sensitive data including user credentials, email addresses, and site content.
+    label:
+        - exposure
+        - wordpress
+        - backup
+        - database
+        - sql
+        - misconfig
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs: []

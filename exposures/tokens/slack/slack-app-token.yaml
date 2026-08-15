@@ -1,0 +1,16 @@
+id: slack-app-token
+brief:
+    title: Slack App Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - slack
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

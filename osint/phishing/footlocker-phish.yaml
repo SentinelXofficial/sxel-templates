@@ -1,0 +1,26 @@
+id: footlocker-phish
+brief:
+    title: Foot Locker phishing Detection
+    by: rxerium
+    level: info
+    about: A Foot Locker phishing website was detected
+    label:
+        - phishing
+        - footlocker
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Foot Locker
+            - Sneakers, Apparel &amp; More | Foot Locker
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

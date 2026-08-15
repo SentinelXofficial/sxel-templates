@@ -1,0 +1,17 @@
+id: eclipse-project-exposure
+brief:
+    title: Eclipse .project Configuration - Exposure
+    by: 0x_Akoko
+    level: info
+    about: Detected Eclipse .project configuration file, which may reveal project structure and paths.
+    label:
+        - exposure
+        - config
+        - eclipse
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.project'
+      signs: []

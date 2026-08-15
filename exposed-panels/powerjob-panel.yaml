@@ -1,0 +1,23 @@
+id: powerjob-panel
+brief:
+    title: PowerJob Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: PowerJob login panel was detected.
+    label:
+        - panel
+        - powerjob
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>PowerJob</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

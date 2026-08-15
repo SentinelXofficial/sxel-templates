@@ -1,0 +1,32 @@
+id: fortiauthenticator-detect
+brief:
+    title: FortiAuthenticator - Detect
+    by: johnk3r
+    level: info
+    about: The FortiAuthenticator panel was detected.
+    label:
+        - panel
+        - fortinet
+        - fortiauthenticator
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1'
+      signs:
+        - "on": word
+          has:
+            - list_endpoint
+            - schema
+            - faccloudhost
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

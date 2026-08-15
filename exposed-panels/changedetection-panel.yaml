@@ -1,0 +1,27 @@
+id: changedetection-panel
+brief:
+    title: Changedetection.io Panel - Detect
+    by: rxerium
+    level: info
+    about: Change Detection is an open-source service which allows you to detect changes on websites
+    label:
+        - panel
+        - changedetection
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - changedetection.io</a>
+            - title="Changedetection.io
+            - <title>Change Detection
+            - Change</strong>Detection.io
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

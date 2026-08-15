@@ -1,0 +1,17 @@
+id: unauthenticated-opencode-web
+brief:
+    title: OpenCode Web - Unauthenticated Access
+    by: Kazgangap
+    level: medium
+    about: Unauthenticated network access to the OpenCode web interface was detected. When the OpenCode web server is started without setting the OPENCODE_SERVER_PASSWORD environment variable, the server is c...
+    label:
+        - config
+        - unauth
+        - opencode
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Lw/session/'
+      signs: []

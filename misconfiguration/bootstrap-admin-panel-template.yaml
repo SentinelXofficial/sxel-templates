@@ -1,0 +1,27 @@
+id: bootstrap-admin-panel-template
+brief:
+    title: Bootstrap Admin Panel Template Panel - Detect
+    by: tess
+    level: info
+    about: Bootstrap Admin Panel Template panel was detected.
+    label:
+        - bootstrap
+        - panel
+        - misconfig
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Dashboard - Bootstrap Admin Template
+            - Bootstrap Responsive Admin Template
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Bootstrap Admin Template
+          in: body

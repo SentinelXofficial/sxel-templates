@@ -1,0 +1,25 @@
+id: matomo-panel
+brief:
+    title: Matomo Panel - Detect
+    by: Arr0way
+    level: info
+    about: google analytics alternative that protects your data and your customers privacy.
+    label:
+        - panel
+        - matomo
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/index.php'
+        - '{{BaseURL}}/plugins/CoreHome/images/favicon.png'
+      signs:
+        - "on": word
+          has:
+            - Sign in - Matomo
+            - content="Matomo
+            - title="Matomo
+          in: body

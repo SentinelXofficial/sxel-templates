@@ -1,0 +1,25 @@
+id: ftm-manager-panel
+brief:
+    title: Financial Transaction Manager Login Panel - Detect
+    by: idealphase
+    level: info
+    about: Financial Transaction Manager login panel was detected.
+    label:
+        - panel
+        - ftm
+        - ibm
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - FTM Manager
+            - login-panel
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: samba-config
+brief:
+    title: Samba Config - Detect
+    by: sheikhrishad
+    level: info
+    about: Samba configuration information was detected.
+    label:
+        - config
+        - exposure
+        - smb
+        - samba
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/smb.conf'
+      signs:
+        - "on": word
+          has:
+            - configuration file
+            - samba
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

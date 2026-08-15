@@ -1,0 +1,26 @@
+id: apache-hive-config
+brief:
+    title: Apache Hive Configuration - Exposure
+    by: icarot
+    level: medium
+    about: Detects if the config page of the Apache Hive is exposed.
+    label:
+        - apache
+        - hive
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/conf'
+      signs:
+        - "on": word
+          has:
+            - hive.conf.
+            - <configuration>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

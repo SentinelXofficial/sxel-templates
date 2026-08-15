@@ -1,0 +1,31 @@
+id: remotely-registration-enabled
+brief:
+    title: Remotely Registration Enabled
+    by: ritikchaddha
+    level: high
+    about: Checks if the Remotely self-hosted remote desktop and collaboration web application has its user registration endpoint enabled, potentially allowing anyone to register without invitation.
+    label:
+        - remotely
+        - registration
+        - exposure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Identity/Account/Register'
+        - '{{BaseURL}}/Account/Register'
+      signs:
+        - "on": word
+          has:
+            - Create a new account.
+            - Remotely
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Registration is disabled.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

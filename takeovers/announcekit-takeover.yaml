@@ -1,0 +1,23 @@
+id: announcekit-takeover
+brief:
+    title: Announcekit Takeover Detection
+    by: melbadry9
+    level: high
+    about: Announcekit takeover was detected.
+    label:
+        - takeover
+        - announcekit
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Error 404 - AnnounceKit
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

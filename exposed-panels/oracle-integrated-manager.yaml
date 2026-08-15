@@ -1,0 +1,24 @@
+id: oracle-integrated-manager
+brief:
+    title: Oracle Integrated Lights Out Manager Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Oracle Integrated Lights Out Manager login panel was detected.
+    label:
+        - oracle
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/iPages/i_login.asp'
+      signs:
+        - "on": word
+          has:
+            - <title>Oracle(R) Integrated Lights Out Manager - Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

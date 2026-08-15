@@ -1,0 +1,24 @@
+id: vmware-horizon-daas
+brief:
+    title: Desktop Portal VMware Horizon DaaS Trade Platform
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - panel
+        - vmware
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.action'
+      signs:
+        - "on": word
+          has:
+            - <title>Desktop Portal | VMware&reg; Horizon DaaS&trade; Platform</title>
+            - Desktop Portal | VMware Horizon DaaS
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

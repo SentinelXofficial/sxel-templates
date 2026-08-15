@@ -1,0 +1,25 @@
+id: syncthing-dashboard
+brief:
+    title: Syncthing Dashboard Exposure
+    by: fabaff
+    level: medium
+    about: Syncthing Dashboard is exposed.
+    label:
+        - misconfig
+        - syncthing
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - The Syncthing Authors.
+            - Actions
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

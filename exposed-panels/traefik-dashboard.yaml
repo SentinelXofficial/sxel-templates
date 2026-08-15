@@ -1,0 +1,19 @@
+id: traefik-dashboard-detect
+brief:
+    title: Traefik Dashboard Panel - Detect
+    by: schniggie
+    level: info
+    about: Traefik Dashboard panel was detected.
+    label:
+        - panel
+        - traefik
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard/'
+      signs:
+        - "on": word
+          has:
+            - <meta name=description content="Traefik UI">
+          in: body

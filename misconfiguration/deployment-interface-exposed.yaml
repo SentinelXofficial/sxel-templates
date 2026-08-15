@@ -1,0 +1,24 @@
+id: deployment-interface-exposed
+brief:
+    title: Deployment Management Interface - Exposed
+    by: DhiyaneshDK
+    level: medium
+    about: Deployment Management Interface is exposed. This exposure could potentially allow unauthorized access to the management interface
+    label:
+        - deployment
+        - management
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - <title>Deployment Management Interface</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,32 @@
+id: apache-zeppelin-unauth
+brief:
+    title: Apache Zeppelin - Unauthenticated Access
+    by: j4vaovo
+    level: high
+    about: Apache Zeppelin server was able to be accessed because no authentication was required.
+    label:
+        - misconfig
+        - apache
+        - zeppelin
+        - unauth
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/security/ticket'
+      signs:
+        - "on": word
+          has:
+            - status":"OK
+            - '"ticket":"anonymous"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

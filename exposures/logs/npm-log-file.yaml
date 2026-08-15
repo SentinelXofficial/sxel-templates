@@ -1,0 +1,25 @@
+id: npm-log-file
+brief:
+    title: Publicly accessible NPM Log file
+    by: sheikhrishad
+    level: low
+    about: NPM log file is exposed to external users.
+    label:
+        - npm
+        - logs
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/npm-debug.log'
+        - '{{BaseURL}}/assets/npm-debug.log'
+      signs:
+        - "on": word
+          has:
+            - info it worked if it ends with ok
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

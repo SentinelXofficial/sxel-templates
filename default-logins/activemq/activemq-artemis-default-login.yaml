@@ -1,0 +1,31 @@
+id: activemq-artemis-default-login
+brief:
+    title: Apache ActiveMQ Artemis Console Default Login
+    by: pdteam
+    level: high
+    about: Detected Apache ActiveMQ Artemis console default login credentials were discovered.
+    label:
+        - apache
+        - activemq
+        - artemis
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/console/auth/login'
+      head:
+        Content-Type: application/json
+        X-Requested-With: XMLHttpRequest
+      body: '{"username":"{{username}}","password":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - '{"credentials"'
+            - '"principals":['
+            - org.apache.activemq
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: unifi-os-panel
+brief:
+    title: UniFi OS - Panel
+    by: DhiyaneshDk
+    level: info
+    about: UniFi OS Panel was discovered
+    label:
+        - panel
+        - router
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>UniFi OS</title>
+            - UNIFI_OS_MANIFEST
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

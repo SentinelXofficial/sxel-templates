@@ -1,0 +1,26 @@
+id: nagios-logserver-installer
+brief:
+    title: Nagios Log Server - Install
+    by: ritikchaddha
+    level: high
+    about: Detects the presence of a Nagios Log Server installation page, which can expose configuration setup information or initialization steps.
+    label:
+        - misconfig
+        - install
+        - nagios
+        - nagios-logserver
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nagioslogserver/install'
+      signs:
+        - "on": word
+          has:
+            - Nagios Log Server
+            - Install</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

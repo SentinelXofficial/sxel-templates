@@ -1,0 +1,23 @@
+id: opencast-panel
+brief:
+    title: Opencast Admin Panel Discovery
+    by: cyllective
+    level: info
+    about: An Opencast Admin panel was discovered. Opencast is a free and open source solution for automated video capture and distribution at scale.
+    label:
+        - panel
+        - opencast
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin-ng/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Opencast</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

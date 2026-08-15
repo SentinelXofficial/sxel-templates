@@ -1,0 +1,20 @@
+id: cisco-asa-panel
+brief:
+    title: Cisco ASA VPN Panel - Detect
+    by: organiccrap
+    level: info
+    about: Cisco ASA VPN panel was detected.
+    label:
+        - cisco
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/+CSCOE+/logon.html'
+      signs:
+        - "on": word
+          has:
+            - /+CSCOU+/portal.css
+            - SSL VPN Service
+          in: body

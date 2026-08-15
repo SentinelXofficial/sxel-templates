@@ -1,0 +1,33 @@
+id: ht-deployment
+brief:
+    title: .htdeployment - Files Tree Cache File
+    by: Michal-Mikolas
+    level: medium
+    about: FTP Deployment cache file that contains whole files structure with paths to potentially sensitive files.
+    label:
+        - files
+        - exposure
+        - php
+        - deployment
+        - cache
+        - dg
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.htdeployment'
+        - '{{BaseURL}}/.deployment'
+      signs:
+        - "on": word
+          has:
+            - '[config]'
+            - 1F 8B
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+            - text/plain
+          in: header
+          need: all

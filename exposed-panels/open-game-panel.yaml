@@ -1,0 +1,23 @@
+id: open-game-panel
+brief:
+    title: Open Game Panel Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Open Game Panel login panel was detected.
+    label:
+        - panel
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php'
+      signs:
+        - "on": word
+          has:
+            - <title>Open Game Panel</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

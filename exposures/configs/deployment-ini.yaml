@@ -1,0 +1,16 @@
+id: deployment-ini
+brief:
+    title: FTP Deployment Config File - Exposure
+    by: Michal Mikolas (nanuqcz)
+    level: medium
+    about: Config file for "FTP deployment" utility usually contains server's FTP credentials in plain text.
+    label:
+        - config
+        - exposure
+        - dg
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs: []

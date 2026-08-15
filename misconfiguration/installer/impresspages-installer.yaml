@@ -1,0 +1,31 @@
+id: impresspages-installer
+brief:
+    title: ImpressPages Installer
+    by: pussycat0x
+    level: low
+    about: ImpressPages is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - exposure
+        - install
+        - impresspages
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ImpressPages installation wizard
+            - Configuration
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

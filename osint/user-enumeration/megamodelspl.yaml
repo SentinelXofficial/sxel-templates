@@ -1,0 +1,24 @@
+id: megamodelspl
+brief:
+    title: Megamodels.pl User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Megamodels.pl user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - megamodelspl
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://megamodels.pl/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Portfolio
+          in: body
+          need: all

@@ -1,0 +1,24 @@
+id: cache-poisoning-xss
+brief:
+    title: Cache Poisoning - Stored XSS
+    by: melbadry9
+    level: high
+    about: Cache Poisoning leads to Stored XSS.
+    label:
+        - cache
+        - generic
+        - xss
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?{{cache_key}}=1'
+      head:
+        X-Forwarded-For: '{{cache_header}}.xff{{xss_payload}}'
+        X-Forwarded-Host: '{{cache_header}}.xfh{{xss_payload}}'
+        X-Forwarded-Prefix: '{{cache_header}}.xfp{{xss_payload}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?{{cache_key}}=1'
+      signs: []

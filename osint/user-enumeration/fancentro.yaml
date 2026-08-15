@@ -1,0 +1,24 @@
+id: fancentro
+brief:
+    title: FanCentro User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: FanCentro user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - fancentro
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://fancentro.com/api/profile.get?profileAlias={{user}}&limit=1
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"status" :true'
+          in: body
+          need: all

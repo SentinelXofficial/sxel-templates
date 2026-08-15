@@ -1,0 +1,17 @@
+id: airbyte-panel
+brief:
+    title: Airbyte Panel - Detect
+    by: ChrisJr404
+    level: info
+    about: Airbyte panel was detected. Airbyte is a popular open-source data integration platform.
+    label:
+        - panel
+        - airbyte
+        - login
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/api/v1/health'
+      signs: []

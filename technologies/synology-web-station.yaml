@@ -1,0 +1,24 @@
+id: synology-web-station
+brief:
+    title: Synology Web Station Page - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Synology Web Station page was detected.
+    label:
+        - tech
+        - synology
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Hello! Welcome to Synology Web Station!</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

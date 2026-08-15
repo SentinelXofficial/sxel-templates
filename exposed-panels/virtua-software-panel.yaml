@@ -1,0 +1,24 @@
+id: virtua-software-panel
+brief:
+    title: Virtua Software Panel - Detect
+    by: princechaddha
+    level: info
+    about: Virtua Software panel was detected.
+    label:
+        - panel
+        - virtua
+        - virtuasoftware
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title id="tituloPagina">Virtua Software</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

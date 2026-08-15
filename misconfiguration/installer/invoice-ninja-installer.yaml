@@ -1,0 +1,25 @@
+id: invoice-ninja-installer
+brief:
+    title: Invoice Ninja Setup Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed Invoice Ninja Setup page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - invoice
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup'
+      signs:
+        - "on": word
+          has:
+            - Invoice Ninja Setup
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

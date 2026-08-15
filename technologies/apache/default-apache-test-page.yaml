@@ -1,0 +1,19 @@
+id: default-apache-test-page
+brief:
+    title: Apache HTTP Server Test Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Apache HTTP Server Test Page powered by CentOS</title>
+          in: body

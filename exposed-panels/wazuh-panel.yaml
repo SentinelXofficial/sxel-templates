@@ -1,0 +1,27 @@
+id: wazuh-panel
+brief:
+    title: Wazuh Login Panel
+    by: cyllective
+    level: info
+    about: Wazuh - The Open Source Security Platform
+    label:
+        - panel
+        - wazuh
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/app/login'
+      signs:
+        - "on": word
+          has:
+            - '&quot;id&quot;:&quot;wazuh&quot;'
+            - '&quot;title&quot;:&quot;Wazuh&quot;'
+            - '&quot;icon&quot;:&quot;plugins/wazuh/img/icon_blue.png&quot;'
+            - '&quot;url&quot;:&quot;/app/wazuh&quot;'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

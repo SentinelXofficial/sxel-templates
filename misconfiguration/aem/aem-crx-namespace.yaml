@@ -1,0 +1,31 @@
+id: aem-crx-namespace
+brief:
+    title: Adobe AEM CRX Namespace Editor Exposure
+    by: dhiyaneshDk
+    level: low
+    about: Adobe AEM CRX Namespace Editor is exposed.
+    label:
+        - exposure
+        - aem
+        - adobe
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/crx/explorer/ui/namespace_editor.jsp'
+      signs:
+        - "on": word
+          has:
+            - <title>Namespaces</title>
+            - 'The following namespaces are registered in the repository:'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

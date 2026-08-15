@@ -1,0 +1,32 @@
+id: apache-tomcat-manager-path-normalization
+brief:
+    title: Apache Tomcat Manager Path Normalization Panel - Detect
+    by: brenocss
+    level: info
+    about: Apache Tomcat Manager Path Normalization login panel was discovered via path normalization. Normalizing a path involves modifying the string that identifies a path or file so that it conforms to a ...
+    label:
+        - panel
+        - tomcat
+        - apache
+        - misconfig
+        - intrusive
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/..;/manager/html'
+        - '{{BaseURL}}/..;/..;/manager/html;/'
+        - '{{BaseURL}}/..;/host-manager/html'
+        - '{{BaseURL}}/..;/..;/host-manager/html;/'
+        - '{{BaseURL}}/{{randstr}}/..;/manager/html'
+        - '{{BaseURL}}/{{randstr}}/..;/host-manager/html'
+      signs:
+        - "on": word
+          has:
+            - username="tomcat" password="s3cret"
+            - manager-gui
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 403

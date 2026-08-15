@@ -1,0 +1,20 @@
+id: apple-cups-exposure
+brief:
+    title: Apple CUPS Sources - Exposure
+    by: DhiyaneshDK
+    level: info
+    about: Apple CUPS Sources was exposed.
+    label:
+        - apple
+        - cups
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

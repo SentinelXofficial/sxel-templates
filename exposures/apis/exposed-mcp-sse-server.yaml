@@ -1,0 +1,20 @@
+id: exposed-mcp-sse-server
+brief:
+    title: MCP SSE API Exposed - Detect
+    by: domwhewell-sage
+    level: info
+    about: Detects exposed Model Context Protocol (MCP) servers through the SSE API. MCP servers often provide administrative access to AI tools, LLM systems, or other automation infrastructure. Exposed MCP i...
+    label:
+        - mcp
+        - devtools
+        - exposure
+        - api
+        - ai
+        - llm
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/sse'
+      signs: []

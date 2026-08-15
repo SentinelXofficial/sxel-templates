@@ -1,0 +1,23 @@
+id: trellix-panel
+brief:
+    title: Trellix Login Panel
+    by: johnk3r
+    level: info
+    about: Trellix login panel was detected.
+    label:
+        - trellix
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/login'
+      signs:
+        - "on": word
+          has:
+            - Trellix
+          in: header
+        - "on": status
+          status:
+            - 200

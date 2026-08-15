@@ -1,0 +1,20 @@
+id: apache-cocoon-detect
+brief:
+    title: Apache Cocoon detect
+    by: ffffffff0x
+    level: info
+    about: ""
+    label:
+        - apache
+        - cocoon
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - X-Cocoon-Version
+          in: header

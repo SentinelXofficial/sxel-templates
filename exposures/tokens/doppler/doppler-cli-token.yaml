@@ -1,0 +1,16 @@
+id: doppler-cli-token
+brief:
+    title: Doppler CLI Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - doppler
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

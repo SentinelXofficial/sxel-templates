@@ -1,0 +1,19 @@
+id: teradici-pcoip
+brief:
+    title: Teradici PCoIP Detection
+    by: pdteam
+    level: info
+    about: Teradici PColP was detected.
+    label:
+        - tech
+        - pcoip
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/info/'
+      signs:
+        - "on": word
+          has:
+            - PCoIP Connection Manager
+          in: body

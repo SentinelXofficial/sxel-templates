@@ -1,0 +1,24 @@
+id: weheartit
+brief:
+    title: Weheartit User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Weheartit user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - weheartit
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://weheartit.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' on We Heart It</title>'
+          in: body
+          need: all

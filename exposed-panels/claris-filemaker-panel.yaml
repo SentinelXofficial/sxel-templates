@@ -1,0 +1,24 @@
+id: claris-filemaker-panel
+brief:
+    title: Claris FileMaker Server Admin Console - Detect
+    by: s4e-io
+    level: info
+    about: Claris FileMaker Server Admin Console panel was detected.
+    label:
+        - panel
+        - filemaker
+        - claris
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin-console/signin'
+      signs:
+        - "on": word
+          has:
+            - <title>Claris FileMaker Server Admin Console</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

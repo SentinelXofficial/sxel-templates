@@ -1,0 +1,25 @@
+id: fiorilaunchpad-logon
+brief:
+    title: Fiori Launchpad Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Fiori Launchpad login panel was detected.
+    label:
+        - panel
+        - edb
+        - sap
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html?saml2=disabled'
+      signs:
+        - "on": word
+          has:
+            - <title>Logon</title>
+            - fioriLogin
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

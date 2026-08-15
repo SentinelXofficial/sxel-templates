@@ -1,0 +1,16 @@
+id: luxtrust-cosi-detect
+brief:
+    title: LuxTrust COSI - Detect
+    by: righettod
+    level: info
+    about: LuxTrust COSI was detected.
+    label:
+        - panel
+        - luxtrust
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web/thanks'
+      signs: []

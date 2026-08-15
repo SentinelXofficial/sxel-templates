@@ -1,0 +1,36 @@
+id: teccom-openmessaging-detect
+brief:
+    title: TecConnect OpenMessaging Webservice Detection
+    by: lunarcowboy
+    level: info
+    about: TecCom TecConnect OpenMessaging webservice was detected.
+    label:
+        - tech
+        - teccom
+        - tecconnect
+        - eol
+        - wsdl
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/openmessaging.asmx?wsdl'
+        - '{{BaseURL}}/tecopenmessaging/openmessaging.asmx?wsdl'
+        - '{{BaseURL}}/tomconnect/openmessaging.asmx?wsdl'
+        - '{{BaseURL}}/tomconnect_apo/openmessaging.asmx?wsdl'
+        - '{{BaseURL}}/tompreprod/openmessaging.asmx?wsdl'
+      signs:
+        - "on": word
+          has:
+            - ProcessRequestResponse
+            - ProcessRequestResult
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/xml
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

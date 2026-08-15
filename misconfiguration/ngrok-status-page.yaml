@@ -1,0 +1,25 @@
+id: ngrok-status-page
+brief:
+    title: Ngrok Status Page
+    by: pussycat0x
+    level: low
+    about: Ngrok is a popular platform that provides secure tunnels to localhost, allowing users to expose a local web server to the internet.The Ngrok status page is a web page that provides real-time inform...
+    label:
+        - ngrok
+        - misconfig
+        - status
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/status'
+      signs:
+        - "on": word
+          has:
+            - <title>ngrok</title>
+            - <title>ngrok - Status</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: onlyoffice-installer
+brief:
+    title: OnlyOffice Wizard Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed OnlyOffice Setup page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - onlyoffice
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Wizard.aspx'
+      signs:
+        - "on": word
+          has:
+            - Portal Setup
+            - onlyoffice
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

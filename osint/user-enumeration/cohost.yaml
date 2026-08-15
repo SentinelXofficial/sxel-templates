@@ -1,0 +1,24 @@
+id: cohost
+brief:
+    title: Cohost User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Cohost user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - cohost
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://cohost.org/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - cohost! - @
+          in: body
+          need: all

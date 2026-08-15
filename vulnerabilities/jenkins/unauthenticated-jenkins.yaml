@@ -1,0 +1,23 @@
+id: unauthenticated-jenkins
+brief:
+    title: Jenkins Dashboard - Unauthenticated Access
+    by: dhiyaneshDK
+    level: high
+    about: Jenkins Dashboard is exposed to external users.
+    label:
+        - jenkins
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/jenkins/'
+      signs:
+        - "on": word
+          has:
+            - Dashboard [Jenkins]
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

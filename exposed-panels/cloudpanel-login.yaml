@@ -1,0 +1,27 @@
+id: cloudpanel-login
+brief:
+    title: CloudPanel Login - Detect
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - panel
+        - login
+        - cloudpanel
+        - detect
+        - mgt-commerce
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - CloudPanel | Log In
+            - Forgot password
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

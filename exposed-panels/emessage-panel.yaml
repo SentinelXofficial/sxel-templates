@@ -1,0 +1,18 @@
+id: emessage-panel
+brief:
+    title: eMessage Login Panel - Detect
+    by: ffffffff0x
+    level: info
+    about: eMessage login panel was detected.
+    label:
+        - panel
+        - emessage
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.jsp'
+      signs:
+        - "on": status
+          status:
+            - 200

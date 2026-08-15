@@ -1,0 +1,16 @@
+id: unauth-qdrantui
+brief:
+    title: Qdrant UI - Unauthenticated Access
+    by: DhiyaneshDk
+    level: high
+    about: Qdrant UI Dashboard was detected and appeared to be accessible without authentication.
+    label:
+        - qdrant
+        - misconfig
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/collections'
+      signs: []

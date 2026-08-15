@@ -1,0 +1,27 @@
+id: roundcube-log-disclosure
+brief:
+    title: Roundcube Log Disclosure
+    by: dhiyaneshDk
+    level: medium
+    about: Roundcube Log file was disclosed.
+    label:
+        - exposure
+        - logs
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{roundcube_path}}'
+      signs:
+        - "on": word
+          has:
+            - 'IMAP Error:'
+            - Message for
+            - 'DB Error:'
+            - 'PHP Error:'
+            - 'PHP Warning:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

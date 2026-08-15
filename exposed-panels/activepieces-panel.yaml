@@ -1,0 +1,26 @@
+id: activepieces-panel
+brief:
+    title: Activepieces Panel - Detect
+    by: rxerium
+    level: info
+    about: Activepieces was detected. Activepieces was an open-source automation platform with AI and LLM integrations. Exposed instances may allow access to workflow automation configurations and connected i...
+    label:
+        - panel
+        - activepieces
+        - automation
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Activepieces</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

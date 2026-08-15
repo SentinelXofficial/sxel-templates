@@ -1,0 +1,23 @@
+id: owncast-default-login
+brief:
+    title: Owncast - Default Credentials
+    by: 0x_Akoko
+    level: high
+    about: Detected Owncast using default admin credentials admin:abc123. The admin API was accessible via HTTP Basic authentication, allowing full server configuration access.
+    label:
+        - default-login
+        - owncast
+        - streaming
+        - admin
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/status'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/admin/serverconfig'
+      head:
+        Authorization: Basic {{base64(username + ":" + password)}}
+      signs: []

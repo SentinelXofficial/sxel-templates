@@ -1,0 +1,18 @@
+id: api-googlestreetview
+brief:
+    title: Google Static Streetview API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - streetview
+moves:
+    - verb: GET
+      to:
+        - https://maps.googleapis.com/maps/api/streetview?size=400x400&location=40.720032,-73.988354&fov=90&heading=235&pitch=10&key={{token}}
+      signs:
+        - "on": status
+          status:
+            - 200

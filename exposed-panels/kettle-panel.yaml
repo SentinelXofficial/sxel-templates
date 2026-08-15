@@ -1,0 +1,19 @@
+id: kettle-panel
+brief:
+    title: Kettle Panel - Detect
+    by: For3stCo1d
+    level: info
+    about: Kettle panel was detected.
+    label:
+        - panel
+        - kettle
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - basic realm="Kettle"
+          in: header

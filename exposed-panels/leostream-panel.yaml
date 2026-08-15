@@ -1,0 +1,23 @@
+id: leostream-panel
+brief:
+    title: Leostream Login Panel - Detect
+    by: praetorian-thendrickson
+    level: info
+    about: Leostream login panel was detected.
+    label:
+        - panel
+        - leostream
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Leostream</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

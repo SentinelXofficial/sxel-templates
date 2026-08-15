@@ -1,0 +1,31 @@
+id: sumowebtools-installer
+brief:
+    title: SumoWebTools Installer Exposure
+    by: DhiyaneshDk
+    level: high
+    about: SumoWebTools is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - sumowebtools
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install'
+      signs:
+        - "on": word
+          has:
+            - SumoWebTools Installer
+            - configure
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

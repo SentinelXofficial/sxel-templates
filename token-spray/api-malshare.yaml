@@ -1,0 +1,20 @@
+id: api-malshare
+brief:
+    title: MalShare API Test
+    by: daffainfo
+    level: info
+    about: Malware Archive / file sourcing
+    label:
+        - token-spray
+        - malshare
+moves:
+    - verb: GET
+      to:
+        - https://api.malshare.com/api.php?api_key={{token}}&action=getlist
+      signs:
+        - "on": word
+          has:
+            - '"md5":'
+            - '"sha1":'
+          in: body
+          need: all

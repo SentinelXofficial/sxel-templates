@@ -1,0 +1,24 @@
+id: achecker-panel
+brief:
+    title: AChecker Login - Panel Detect
+    by: princechaddha
+    level: info
+    about: AChecker login panel was detected.
+    label:
+        - panel
+        - achecker
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/checker/login.php'
+      signs:
+        - "on": word
+          has:
+            - ': Web Accessibility Checker</title>'
+            - AChecker - Copyright
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

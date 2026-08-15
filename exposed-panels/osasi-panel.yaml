@@ -1,0 +1,26 @@
+id: osasi-panel
+brief:
+    title: OSASI Login - Panel
+    by: biero-el-corridor
+    level: info
+    about: OSASI Login panel was discovered.
+    label:
+        - osasi
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/users/login'
+      signs:
+        - "on": word
+          has:
+            - /img/osasil_logo_f.png
+            - UserLoginid
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

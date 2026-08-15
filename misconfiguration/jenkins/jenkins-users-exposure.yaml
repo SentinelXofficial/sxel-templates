@@ -1,0 +1,16 @@
+id: jenkins-users-exposure
+brief:
+    title: Jenkins Users - Exposure
+    by: theamanrawat
+    level: info
+    about: Detected an exposed Jenkins asynchPeople endpoint that discloses user information (e.g., users, full names, and profile URLs) allowing user enumeration.
+    label:
+        - exposure
+        - jenkins
+        - vuln
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/asynchPeople/api/json'
+      signs: []

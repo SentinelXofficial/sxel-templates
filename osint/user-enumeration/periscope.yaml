@@ -1,0 +1,24 @@
+id: periscope
+brief:
+    title: Periscope User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Periscope user name information check was conducted.
+    label:
+        - osint
+        - osint-video
+        - periscope
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.periscope.tv/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <label>Followers
+          in: body
+          need: all

@@ -1,0 +1,16 @@
+id: sumologic-access-id
+brief:
+    title: Sumologic Access ID
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - sumologic
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

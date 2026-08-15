@@ -1,0 +1,26 @@
+id: collectd-exporter-metrics
+brief:
+    title: Collectd Exporter Metrics
+    by: DhiyaneshDk
+    level: low
+    about: Collectd Exporter Metrics is exposed.
+    label:
+        - collectd
+        - exposure
+        - debug
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/metrics'
+      signs:
+        - "on": word
+          has:
+            - '# HELP'
+            - collectd_
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

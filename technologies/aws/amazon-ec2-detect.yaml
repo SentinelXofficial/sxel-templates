@@ -1,0 +1,21 @@
+id: amazon-ec2-detect
+brief:
+    title: Amazon EC2 Server Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - aws
+        - ec2
+        - amazon
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Server: EC2ws'
+          in: header

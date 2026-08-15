@@ -1,0 +1,26 @@
+id: goat-phish
+brief:
+    title: GOAT phishing Detection
+    by: rxerium
+    level: info
+    about: A GOAT phishing website was detected
+    label:
+        - phishing
+        - goat
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - GOAT
+            - '<title>GOAT: Sneakers, Apparel, Accessories'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

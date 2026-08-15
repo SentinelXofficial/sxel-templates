@@ -1,0 +1,26 @@
+id: versa-default-login
+brief:
+    title: Versa Networks SD-WAN Application Default Login
+    by: davidmckennirey
+    level: high
+    about: Versa Networks SD-WAN application default admin credentials were discovered.
+    label:
+        - default-login
+        - versa
+        - sdwan
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/versa/login.html'
+      head:
+        Accept-Encoding: gzip, deflate
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/versa/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{user}}&password={{pass}}&sso=systemRadio
+      signs: []

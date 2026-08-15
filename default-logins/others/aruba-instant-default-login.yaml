@@ -1,0 +1,18 @@
+id: aruba-instant-default-login
+brief:
+    title: Aruba Instant - Default Login
+    by: SleepingBag945
+    level: high
+    about: Aruba Instant is an AP device. The device has a default password, and attackers can control the entire platform through the default password admin/admin vulnerability, and use administrator privile...
+    label:
+        - aruba
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/swarm.cgi'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: opcode=login&user={{username}}&passwd={{password}}&refresh=false&nocache=0.17699820340903838
+      signs: []

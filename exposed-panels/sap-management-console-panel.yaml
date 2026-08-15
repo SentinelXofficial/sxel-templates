@@ -1,0 +1,26 @@
+id: sap-management-console-panel
+brief:
+    title: SAP Management Console - Panel
+    by: LRVT
+    level: info
+    about: Detected the SAP Management Console (SAP MC) web panel by requesting /sapmc/sapmc.html and checking for a gSOAP server header the page title.
+    label:
+        - panel
+        - sap
+        - sapmc
+        - ui
+        - discovery
+        - login
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sapmc/sapmc.html'
+      signs:
+        - "on": word
+          has:
+            - <title>SAP Management Console</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

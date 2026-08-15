@@ -1,0 +1,17 @@
+id: unauth-esphome
+brief:
+    title: ESPHome Web Server access - Unauthenticated Access
+    by: pussycat0x
+    level: high
+    about: ESPHome is a powerful smart home devices with simple YAML configuration.
+    label:
+        - esphome
+        - iot
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

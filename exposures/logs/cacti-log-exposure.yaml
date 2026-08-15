@@ -1,0 +1,31 @@
+id: cacti-log-exposure
+brief:
+    title: Cacti Log - Exposure
+    by: theamanrawat
+    level: medium
+    about: Exposed Cacti log files (cacti.log) were detected. These files contain system statistics, error messages, and potentially sensitive information. They can also be used in log poisoning attacks.
+    label:
+        - cacti
+        - log
+        - exposure
+        - file
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cacti/log/cacti.log'
+        - '{{BaseURL}}/log/cacti.log'
+        - '{{BaseURL}}/cacti.log'
+        - '{{BaseURL}}/include/cacti.log'
+      signs:
+        - "on": word
+          has:
+            - SYSTEM STATS
+            - 'Method:'
+            - 'Processes:'
+            - 'Threads:'
+            - 'Hosts:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,19 @@
+id: wordpress-plugin-detect
+brief:
+    title: Wordpress Plugin Detection
+    by: s4e-io
+    level: info
+    about: Detects installed WordPress plugins by analyzing HTTP responses and common plugin paths
+    label:
+        - tech
+        - wp
+        - wordpress
+        - plugin
+        - detection
+        - wp-plugin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,19 @@
+id: quantum-scalar-detect
+brief:
+    title: Quantum Scalar i500 Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Quantum Scalar i500 login panel was detected.
+    label:
+        - panel
+        - quantum
+        - scalar
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

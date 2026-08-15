@@ -1,0 +1,26 @@
+id: brickcom-camera-unauth-snapshot
+brief:
+    title: Brickcom Camera - Unauthenticated Snapshot Access
+    by: 0xr2r
+    level: high
+    about: Detected Brickcom IP cameras was exposed live camera snapshots without authentication via the ONVIF media endpoint.
+    label:
+        - iot
+        - camera
+        - default-login
+        - exposure
+        - unauth
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ONVIF/media.cgi?action=getSnapshot'
+        - '{{BaseURL}}/ONVIF/media.cgi?action=getSnapshot&channel=1'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - image/jpeg
+          in: header
+          need: all

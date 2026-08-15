@@ -1,0 +1,19 @@
+id: linshare-panel
+brief:
+    title: LinShare Login Panel - Detect
+    by: righettod
+    level: info
+    about: LinShare login panel was detected.
+    label:
+        - panel
+        - linshare
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login'
+        - '{{BaseURL}}/new/login'
+      signs: []

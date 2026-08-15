@@ -1,0 +1,25 @@
+id: locust-exposure
+brief:
+    title: Locust Exposure
+    by: DhiyaneshDK
+    level: medium
+    about: Locust is exposed.
+    label:
+        - exposure
+        - locust
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - locust.js
+            - Charts</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

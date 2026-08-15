@@ -1,0 +1,28 @@
+id: gitlab-api-user-enum
+brief:
+    title: GitLab - User Information Disclosure Via Open API
+    by: Suman_Kar
+    level: medium
+    about: GitLab - User Information is exposed Via Open API.
+    label:
+        - gitlab
+        - enum
+        - misconfig
+        - disclosure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v4/users/{{uid}}'
+      head:
+        Accept: application/json, text/plain, */*
+        Referer: '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

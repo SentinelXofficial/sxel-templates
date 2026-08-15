@@ -1,0 +1,26 @@
+id: prometheus-promtail
+brief:
+    title: Prometheus Promtail - Exposure
+    by: irshad ahamed
+    level: medium
+    about: Prometheus Promtail is an agent that gathers log data from various sources, such as files or systemd journal.
+    label:
+        - misconfig
+        - prometheus
+        - promtail
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/service-discovery'
+      signs:
+        - "on": word
+          has:
+            - '>Promtail</a>'
+            - https://github.com/grafana/loki
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

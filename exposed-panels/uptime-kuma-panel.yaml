@@ -1,0 +1,26 @@
+id: uptime-kuma-panel
+brief:
+    title: Uptime Kuma - Panel
+    by: irshad ahamed
+    level: info
+    about: Realtime website and application monitoring tool
+    label:
+        - uptime
+        - kuma
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard'
+      signs:
+        - "on": word
+          has:
+            - <title>Uptime Kuma</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

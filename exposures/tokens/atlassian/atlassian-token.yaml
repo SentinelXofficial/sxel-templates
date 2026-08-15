@@ -1,0 +1,16 @@
+id: atlassian-token
+brief:
+    title: Atlassian API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - atlassian
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

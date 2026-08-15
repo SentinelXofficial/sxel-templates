@@ -1,0 +1,16 @@
+id: odoo-cms-redirect
+brief:
+    title: Odoo CMS - Open Redirect
+    by: 0x_Akoko
+    level: medium
+    about: Odoo CMS contains an open redirect vulnerability. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - odoo
+        - redirect
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/website/lang/en_US?r=https://interact.sh/'
+      signs: []

@@ -1,0 +1,23 @@
+id: nozomi-panel
+brief:
+    title: Nozomi Guardian Login Panel - Detect
+    by: robotshell
+    level: info
+    about: Nozomi Guardian login panel was detected.
+    label:
+        - panel
+        - nozomi
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Please Login | Nozomi Networks Console</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

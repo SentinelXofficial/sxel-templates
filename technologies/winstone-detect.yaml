@@ -1,0 +1,15 @@
+id: winstone-detect
+brief:
+    title: Winstone Servlet Engine
+    by: Shivam Kamboj
+    level: info
+    about: Detected servers running the Winstone Servlet Engine via the Server or X-Powered-By headers.
+    label:
+        - tech
+        - winstone
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

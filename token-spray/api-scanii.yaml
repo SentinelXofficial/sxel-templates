@@ -1,0 +1,22 @@
+id: api-scanii
+brief:
+    title: Scanii API Test
+    by: daffainfo
+    level: info
+    about: Simple REST API that can scan submitted documents/files for the presence of threats
+    label:
+        - token-spray
+        - scanii
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://api.scanii.com/v2.1/ping'
+      head:
+        Authorization: Basic {{base64(api + ':' + secret)}}
+      signs:
+        - "on": word
+          has:
+            - '"key"'
+            - '"message" : "pong"'
+          in: body
+          need: all

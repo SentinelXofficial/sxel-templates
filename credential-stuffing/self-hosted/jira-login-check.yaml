@@ -1,0 +1,30 @@
+id: jira-login-check
+brief:
+    title: Jira Login Check
+    by: parthmalhotra
+    level: critical
+    about: Checks for a valid login on self hosted Jira instance.
+    label:
+        - creds-stuffing
+        - login-check
+        - self-hosted
+        - jira
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/rest/gadget/1.0/login'
+      head:
+        Connection: close
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36
+      body: os_username={{username}}&os_password={{password}}
+      signs:
+        - "on": word
+          has:
+            - '"loginSucceeded":true'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

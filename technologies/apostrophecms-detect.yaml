@@ -1,0 +1,16 @@
+id: apostrophecms-detect
+brief:
+    title: ApostropheCMS - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected the presence of ApostropheCMS, a full-stack content management system built on Node.js and MongoDB.
+    label:
+        - tech
+        - cms
+        - apostrophe
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

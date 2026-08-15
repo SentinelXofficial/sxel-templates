@@ -1,0 +1,24 @@
+id: hubski
+brief:
+    title: Hubski User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Hubski user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - hubski
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://hubski.com/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '''s profile'
+          in: body
+          need: all

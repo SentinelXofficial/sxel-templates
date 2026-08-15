@@ -1,0 +1,17 @@
+id: vectoradmin-panel
+brief:
+    title: VectorAdmin Panel - Detect
+    by: s4e-io
+    level: info
+    about: VectorAdmin panel was discovered.
+    label:
+        - panel
+        - login
+        - vectoradmin
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

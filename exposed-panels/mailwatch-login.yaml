@@ -1,0 +1,23 @@
+id: mailwatch-login
+brief:
+    title: MailWatch Login Panel - Detect
+    by: oppsec
+    level: info
+    about: MailWatch login panel was detected.
+    label:
+        - panel
+        - mailwatch
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mailscanner/login.php'
+      signs:
+        - "on": word
+          has:
+            - MailWatch Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

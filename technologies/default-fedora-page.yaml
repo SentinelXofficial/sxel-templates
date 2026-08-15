@@ -1,0 +1,19 @@
+id: default-fedora-page
+brief:
+    title: Fedora Default Test Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - fedora
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Test Page for the HTTP Server on Fedora</title>
+          in: body

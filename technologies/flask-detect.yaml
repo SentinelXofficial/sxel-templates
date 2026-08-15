@@ -1,0 +1,32 @@
+id: flask-detect
+brief:
+    title: Flask Detection
+    by: Chirag Mistry
+    level: info
+    about: An instance running Flask is detected by looking for specific HTTP headers, HTML tags, and known endpoints.
+    label:
+        - flask
+        - detect
+        - tech
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/robots.txt'
+        - '{{BaseURL}}/sitemap.xml'
+        - '{{BaseURL}}/favicon.ico'
+        - '{{BaseURL}}/index.php'
+        - '{{BaseURL}}/static/'
+        - '{{BaseURL}}/flask/'
+        - '{{BaseURL}}/health/'
+      signs:
+        - "on": word
+          has:
+            - Powered by Flask
+            - flask.palletsprojects.com
+            - X-Powered-By-Flask
+          in: response
+          need: all
+        - "on": status
+          status:
+            - 200

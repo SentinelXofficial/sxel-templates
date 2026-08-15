@@ -1,0 +1,17 @@
+id: wordpress-simple-custom-post-order
+brief:
+    title: Simple Custom Post Order Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/simple-custom-post-order/readme.txt'
+      signs: []

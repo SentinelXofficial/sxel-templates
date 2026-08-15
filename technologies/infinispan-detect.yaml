@@ -1,0 +1,17 @@
+id: infinispan-detect
+brief:
+    title: Infinispan Console - Detection
+    by: DhiyaneshDk
+    level: info
+    about: Infinispan is an open-source in-memory data grid by Red Hat that exposes a management console under `/console/welcome` and a REST API under `/rest/v2/` on the default port 11222. This template fing...
+    label:
+        - tech
+        - detect
+        - infinispan
+        - redhat
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/console/welcome'
+        - '{{BaseURL}}/rest/v2/cache-managers/default'
+      signs: []

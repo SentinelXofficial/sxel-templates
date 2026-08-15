@@ -1,0 +1,24 @@
+id: zillow
+brief:
+    title: Zillow User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Zillow user name information check was conducted.
+    label:
+        - osint
+        - osint-shopping
+        - zillow
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.zillow.com/profile/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- Real Estate Agent'
+          in: body
+          need: all

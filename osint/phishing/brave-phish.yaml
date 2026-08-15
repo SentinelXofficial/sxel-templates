@@ -1,0 +1,24 @@
+id: brave-phish
+brief:
+    title: brave phishing Detection
+    by: rxerium
+    level: info
+    about: A brave phishing website was detected
+    label:
+        - phishing
+        - brave
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Brave Browser Download | Brave
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

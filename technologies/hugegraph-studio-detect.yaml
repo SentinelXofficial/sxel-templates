@@ -1,0 +1,25 @@
+id: hugegraph-studio-detect
+brief:
+    title: HugeGraph Studio - Detect
+    by: pussycat0x
+    level: info
+    about: HugeGraph Studio was detected.
+    label:
+        - hugegraph
+        - studio
+        - detect
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>HugeGraph Studio
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

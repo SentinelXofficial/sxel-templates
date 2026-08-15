@@ -1,0 +1,20 @@
+id: wp-touch-redirect
+brief:
+    title: WordPress WPtouch 3.7.5 - Open Redirect
+    by: r3Y3r53
+    level: medium
+    about: WordPress WPtouch 3.7.5 is affected by an Open Redirect issue.
+    label:
+        - wp-plugin
+        - wp
+        - packetstorm
+        - wptouch
+        - unauth
+        - redirect
+        - wordpress
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?wptouch_switch=desktop&redirect=http://interact.sh'
+      signs: []

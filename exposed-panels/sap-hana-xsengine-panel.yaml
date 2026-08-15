@@ -1,0 +1,19 @@
+id: sap-hana-xsengine-panel
+brief:
+    title: SAP HANA XS Engine Admin Login Panel - Detect
+    by: PR3R00T
+    level: info
+    about: SAP HANA XS Engine admin login panel was detected.
+    label:
+        - panel
+        - sap
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sap/hana/xs/formLogin/login.html'
+      signs:
+        - "on": word
+          has:
+            - /sap/hana/xs/formLogin/images/sap.png
+          in: body

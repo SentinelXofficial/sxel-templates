@@ -1,0 +1,24 @@
+id: deviantart
+brief:
+    title: DeviantArt User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: DeviantArt user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - deviantart
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.deviantart.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' | DeviantArt</title>'
+          in: body
+          need: all

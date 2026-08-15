@@ -1,0 +1,24 @@
+id: lastfm
+brief:
+    title: Last.fm User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Last.fm user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - lastfm
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://last.fm/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Music Profile | Last.fm
+          in: body
+          need: all

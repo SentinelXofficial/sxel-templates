@@ -1,0 +1,16 @@
+id: yandex-aws-access-token
+brief:
+    title: Yandex AWS Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - yandex
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

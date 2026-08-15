@@ -1,0 +1,27 @@
+id: weaver-getemdslist-disclosure
+brief:
+    title: Weaver E-cology getEmDsList Sensitive Information Disclosure
+    by: DhiyaneshDk
+    level: high
+    about: Weaver E-cology10 contains a sensitive information disclosure vulnerability in the `/papi/em/transform/getEmDsList` endpoint. An unauthenticated attacker can access the endpoint to retrieve datasou...
+    label:
+        - weaver
+        - ecology
+        - ecology10
+        - disclosure
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/papi/em/transform/getEmDsList'
+      signs:
+        - "on": word
+          has:
+            - '"dsKey":'
+            - '"deleteType":'
+            - '"dsValue":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

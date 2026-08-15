@@ -1,0 +1,18 @@
+id: django-admin-panel
+brief:
+    title: Python Django Admin Login Panel - Detect
+    by: pdteam
+    level: info
+    about: Python Django admin login panel was detected.
+    label:
+        - panel
+        - django
+        - python
+        - djangoproject
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login/'
+      signs: []

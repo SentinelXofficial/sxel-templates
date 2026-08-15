@@ -1,0 +1,27 @@
+id: exposed-sqlite-manager
+brief:
+    title: SQLiteManager - Text Display
+    by: dhiyaneshDK
+    level: medium
+    about: SQLiteManager panel contains inconsistent text display in title and text.
+    label:
+        - misconfig
+        - sqlite
+        - edb
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/sqlite/'
+        - '{{BaseURL}}/sqlitemanager/'
+      signs:
+        - "on": word
+          has:
+            - <title>SQLiteManager</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

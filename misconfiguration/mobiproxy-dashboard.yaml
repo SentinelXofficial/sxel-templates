@@ -1,0 +1,28 @@
+id: mobiproxy-dashboard
+brief:
+    title: MobiProxy Dashboard - Detect
+    by: tess
+    level: medium
+    about: MobiProxy dashboard was detected.
+    label:
+        - dashboard
+        - exposure
+        - mobiproxy
+        - misconfig
+        - discovery
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>MobiProxy
+            - Dashboard
+            - Setting
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

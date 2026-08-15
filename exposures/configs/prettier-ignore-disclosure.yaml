@@ -1,0 +1,33 @@
+id: prettier-ignore-disclosure
+brief:
+    title: Prettier - Ignore File Disclosure
+    by: ritikchaddha
+    level: info
+    about: The .prettierignore file is publicly accessible, potentially revealing project structure, sensitive file paths, and internal directory organization.
+    label:
+        - prettier
+        - config
+        - exposure
+        - disclosure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.prettierignore'
+        - '{{BaseURL}}/.prettierrc'
+      signs:
+        - "on": word
+          has:
+            - MongoDB over HTTP on the native
+            - application/javascript
+            - application/x-javascript
+            - application/json
+            - application/xml
+            - text/xml
+            - <html
+            - <!doctype
+            - <script
+            - <meta
+            - image/
+            - Response xmlns
+          in: response
+          need: all

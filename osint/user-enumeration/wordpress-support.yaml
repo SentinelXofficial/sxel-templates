@@ -1,0 +1,24 @@
+id: wordpress-support
+brief:
+    title: WordPress Support User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: WordPress Support user name information check was conducted.
+    label:
+        - osint
+        - osint-blog
+        - wordpress-support
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://wordpress.org/support/users/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s Profile &#124; WordPress.org
+          in: body
+          need: all

@@ -1,0 +1,30 @@
+id: alibaba-mongoshake-unauth
+brief:
+    title: Alibaba Mongoshake Unauth
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - mongoshake
+        - unauth
+        - alibaba
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - '{"Uri":"/worker","Method":"GET"}'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

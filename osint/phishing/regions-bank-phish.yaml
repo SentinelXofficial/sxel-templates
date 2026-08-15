@@ -1,0 +1,26 @@
+id: regions-bank-phish
+brief:
+    title: Regions Bank phishing Detection
+    by: rxerium
+    level: info
+    about: A Regions Bank phishing website was detected
+    label:
+        - phishing
+        - regions-bank
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Regions Bank
+            - Sign On
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

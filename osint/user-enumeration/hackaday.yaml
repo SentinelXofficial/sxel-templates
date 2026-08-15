@@ -1,0 +1,24 @@
+id: hackaday
+brief:
+    title: Hackaday User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Hackaday user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - hackaday
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://hackaday.io/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '''s Profile | Hackaday.io'
+          in: body
+          need: all

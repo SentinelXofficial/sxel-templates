@@ -1,0 +1,27 @@
+id: jackett-unauth
+brief:
+    title: Jackett UI - Unauthenticated
+    by: ProjectDiscoveryAI
+    level: high
+    about: The Jackett UI can be accessed without authentication, potentially exposing sensitive information and configuration settings to unauthorized users.
+    label:
+        - unauth
+        - misconfig
+        - exposure
+        - jackett-ui
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/UI/Dashboard'
+        - '{{BaseURL}}/jackett/UI/Dashboard'
+      signs:
+        - "on": word
+          has:
+            - Jackett
+            - 'API Key:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

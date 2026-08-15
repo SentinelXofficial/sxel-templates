@@ -1,0 +1,41 @@
+id: versa-flexvnf-default-login
+brief:
+    title: Versa FlexVNF - Default Login
+    by: c-sh0
+    level: high
+    about: Versa FlexVNF contains a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - default-login
+        - versa
+        - flexvnf
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/authenticate'
+      signs:
+        - "on": word
+          has:
+            - '{"username":"{{username}}","error":false}'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/authenticate'
+      head:
+        CSRF-Token: '{{xsrf_token}}'
+        Content-Type: application/json;charset=UTF-8
+      body: '{"username":"{{username}}","password":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - '{"username":"{{username}}","error":false}'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

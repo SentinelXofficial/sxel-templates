@@ -1,0 +1,25 @@
+id: dell-bmc-panel
+brief:
+    title: Dell BMC Panel - Detect
+    by: megamansec
+    level: info
+    about: Dell BMC web panel was detected.
+    label:
+        - panel
+        - bmc
+        - dell
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Dell Remote Management Controller</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

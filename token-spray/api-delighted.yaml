@@ -1,0 +1,29 @@
+id: api-delighted
+brief:
+    title: Delighted API Test
+    by: 0xpugal
+    level: info
+    about: Collect customer feedback in minutes
+    label:
+        - token-spray
+        - delighted
+moves:
+    - verb: GET
+      to:
+        - https://api.delighted.com/v1/metrics.json
+      head:
+        Authorization: Basic {{base64(token)}}
+        Content-Type: application/json
+      signs:
+        - "on": word
+          has:
+            - '"nps"'
+            - '"promoter_count"'
+            - '"promoter_percent"'
+            - '"passive_count"'
+            - '"response_count"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

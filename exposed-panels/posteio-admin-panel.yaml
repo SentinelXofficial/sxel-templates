@@ -1,0 +1,26 @@
+id: posteio-admin-panel
+brief:
+    title: Poste.io Admin Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Poste.io login panel was detected.
+    label:
+        - panel
+        - poste
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login'
+      signs:
+        - "on": word
+          has:
+            - poste<span
+            - Administration login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

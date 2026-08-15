@@ -1,0 +1,24 @@
+id: lowcygierpl
+brief:
+    title: Lowcygier.pl User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Lowcygier.pl user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - lowcygierpl
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://bazar.lowcygier.pl/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Zarejestrowany
+          in: body
+          need: all

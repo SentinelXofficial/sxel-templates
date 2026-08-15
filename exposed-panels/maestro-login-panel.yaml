@@ -1,0 +1,25 @@
+id: maestro-login-panel
+brief:
+    title: Maestro LuCI Login Panel - Detect
+    by: tess
+    level: info
+    about: Maestro LuCI login panel was detected.
+    label:
+        - panel
+        - maestro
+        - luci
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/luci'
+      signs:
+        - "on": word
+          has:
+            - <title>Maestro - LuCI</title>
+            - Please enter your username and password.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

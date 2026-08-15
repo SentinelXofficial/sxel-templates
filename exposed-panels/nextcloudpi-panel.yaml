@@ -1,0 +1,17 @@
+id: nextcloudpi-panel
+brief:
+    title: NextcloudPi Login - Panel
+    by: ritikchaddha
+    level: info
+    about: Detects the presence of a NextcloudPi login page. NextcloudPi is a ready-to-use Nextcloud instance for Raspberry Pi.
+    label:
+        - nextcloud
+        - nextcloudpi
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php/login'
+      signs: []

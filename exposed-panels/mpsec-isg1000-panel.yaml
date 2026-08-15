@@ -1,0 +1,25 @@
+id: mpsec-isg1000-panel
+brief:
+    title: MPSec ISG1000 Security Gateway Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - panel
+        - login
+        - mpsec
+        - isg1000
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - /webui/images/maipu/login/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

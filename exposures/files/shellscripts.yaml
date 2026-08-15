@@ -1,0 +1,26 @@
+id: shellscripts
+brief:
+    title: Public shellscripts
+    by: panch0r3d
+    level: low
+    about: This template checks exposure of bash scripts.
+    label:
+        - bash
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - application/x-sh
+            - text/plain
+            - text/x-sh
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

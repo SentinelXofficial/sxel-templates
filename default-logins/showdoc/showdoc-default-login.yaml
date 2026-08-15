@@ -1,0 +1,28 @@
+id: showdoc-default-login
+brief:
+    title: Showdoc Default Login
+    by: pikpikcu
+    level: medium
+    about: Showdoc default credentials were discovered.
+    label:
+        - showdoc
+        - default-login
+        - vuln
+    score: CVSS:5.8
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/server/index.php?s=/api/user/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+      body: username={{username}}&password={{password}}&v_code=
+      signs:
+        - "on": word
+          has:
+            - '"username":"showdoc"'
+            - '"user_token":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

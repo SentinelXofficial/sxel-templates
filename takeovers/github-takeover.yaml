@@ -1,0 +1,23 @@
+id: github-takeover
+brief:
+    title: Github Takeover Detection
+    by: pdteam
+    level: high
+    about: Github takeover was detected.
+    label:
+        - takeover
+        - github
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - There isn't a GitHub Pages site here.
+            - For root URLs (like http://example.com/) you must provide an index.html file
+            - The site configured at this address does not contain the requested file.
+            - For root URLs (like <code>http://example.com/</code>)
+          in: body
+          need: all

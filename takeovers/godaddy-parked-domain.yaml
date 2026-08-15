@@ -1,0 +1,22 @@
+id: godaddy-parked-domain
+brief:
+    title: GoDaddy Parked Domain - Subdomain Takeover
+    by: ritikchaddha
+    level: medium
+    about: Detects potential subdomain takeover when a subdomain's CNAME points to a domain that is parked or listed for sale on GoDaddy. An attacker could purchase the target domain and gain full control ove...
+    label:
+        - takeover
+        - godaddy
+        - parked-domain
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/lander'
+      signs:
+        - "on": word
+          has:
+            - parking-lander
+            - window.LANDER_SYSTEM
+          in: body
+          need: all

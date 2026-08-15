@@ -1,0 +1,23 @@
+id: music-store-open-redirect
+brief:
+    title: WordPress eCommerce Music Store <=1.0.14 - Open Redirect
+    by: dhiyaneshDk
+    level: medium
+    about: WordPress eCommerce Music Store plugin through 1.0.14 contains an open redirect vulnerability via the referer header. An attacker can redirect a user to a malicious site and possibly obtain sensiti...
+    label:
+        - musicstore
+        - wp
+        - wpscan
+        - seclists
+        - wordpress
+        - redirect
+        - wp-plugin
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/music-store/ms-core/ms-submit.php'
+      head:
+        Referer: https://interact.sh
+      signs: []

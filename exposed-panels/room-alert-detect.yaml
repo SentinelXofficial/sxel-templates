@@ -1,0 +1,32 @@
+id: room-alert-detect
+brief:
+    title: AVTECH Room Alert Login Panel - Detect
+    by: gy741
+    level: info
+    about: AVTECH Room Alert login panel was detected.
+    label:
+        - panel
+        - room-alert
+        - avtech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.html'
+        - '{{BaseURL}}/gateway'
+      signs:
+        - "on": word
+          has:
+            - Room Alert - Account Log In
+            - AVTECH Software, Inc. - Room Alert
+            - alt="Room Alert"
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

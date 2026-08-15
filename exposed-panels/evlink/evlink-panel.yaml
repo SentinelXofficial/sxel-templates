@@ -1,0 +1,25 @@
+id: evlink-panel
+brief:
+    title: EVlink Local Controller - Detection
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - evlink
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - EVlink Local Controller</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

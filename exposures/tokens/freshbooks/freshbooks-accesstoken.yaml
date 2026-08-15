@@ -1,0 +1,16 @@
+id: freshbooks-accesstoken
+brief:
+    title: Freshbooks Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - freshbooks
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

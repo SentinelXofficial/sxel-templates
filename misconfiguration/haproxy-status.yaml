@@ -1,0 +1,27 @@
+id: haproxy-status
+brief:
+    title: HAProxy Statistics Page - Detect
+    by: dhiyaneshDK
+    level: medium
+    about: HAProxy statistics page was detected.
+    label:
+        - logs
+        - haproxy
+        - edb
+        - misconfig
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/haproxy-status'
+        - '{{BaseURL}}/haproxy?stats'
+      signs:
+        - "on": word
+          has:
+            - Statistics Report for HAProxy
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

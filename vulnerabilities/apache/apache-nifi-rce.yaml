@@ -1,0 +1,32 @@
+id: apache-nifi-rce
+brief:
+    title: Apache NiFi - Remote Code Execution
+    by: arliya
+    level: critical
+    about: Apache NiFi is designed for data streaming. It supports highly configurable data routing, transformation, and system mediation logic that indicate graphs. The system has unauthorized remote command...
+    label:
+        - packetstorm
+        - apache
+        - nifi
+        - rce
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nifi-api/process-groups/root'
+      signs:
+        - "on": word
+          has:
+            - revision
+            - canRead
+            - permissions
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,30 @@
+id: encompass-cm1-homepage
+brief:
+    title: Encompass CM1 Home Page - Detect
+    by: tess
+    level: info
+    about: Encompass CM1 home page was detected.
+    label:
+        - misconfig
+        - encompass
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Encompass CM1 Home Page
+            - 'DIAGNOSTIC LINKS:'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

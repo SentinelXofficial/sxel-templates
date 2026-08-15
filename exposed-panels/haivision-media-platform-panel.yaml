@@ -1,0 +1,17 @@
+id: haivision-media-platform-panel
+brief:
+    title: Haivision Media Platform Login Panel - Detect
+    by: righettod
+    level: info
+    about: Haivision Media Platform login panel was detected.
+    label:
+        - panel
+        - haivision
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,24 @@
+id: mylittlebackup-panel
+brief:
+    title: myLittleBackup Panel - Detect
+    by: nullfuzz
+    level: info
+    about: myLittleBackup panel was detected.
+    label:
+        - panel
+        - mylittlebackup
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/mlb/'
+        - '{{BaseURL}}/mylittlebackup/'
+      signs:
+        - "on": word
+          has:
+            - <title>myLittleBackup for SQL Server
+          in: body
+        - "on": status
+          status:
+            - 200

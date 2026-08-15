@@ -1,0 +1,21 @@
+id: raygun-rum-detect
+brief:
+    title: Raygun RUM - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects ACTIVE Raygun (Raygun4JS) Error Tracking & Real User Monitoring implementations.
+    label:
+        - tech
+        - discovery
+        - rum
+        - raygun
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

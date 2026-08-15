@@ -1,0 +1,26 @@
+id: crunchyroll-phish
+brief:
+    title: Crunchyroll phishing Detection
+    by: rxerium
+    level: info
+    about: A Crunchyroll phishing website was detected
+    label:
+        - phishing
+        - crunchyroll
+        - streaming
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - crunchyroll.com
+            - Crunchyroll
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

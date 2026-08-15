@@ -1,0 +1,19 @@
+id: zip-backup-files
+brief:
+    title: Compressed Backup File - Detect
+    by: toufik-airane
+    level: medium
+    about: Multiple compressed backup files were detected.
+    label:
+        - exposure
+        - backup
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{FILENAME}}.{{EXT}}'
+      signs:
+        - "on": status
+          status:
+            - 200

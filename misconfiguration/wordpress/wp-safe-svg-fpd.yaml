@@ -1,0 +1,30 @@
+id: wp-safe-svg-fpd
+brief:
+    title: WordPress Plugin Safe SVG - Full Path Disclosure
+    by: ritikchaddha
+    level: low
+    about: WordPress Safe SVG plugin is vulnerable to full path disclosure via direct access to plugin files.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - fpd
+        - safe-svg
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/safe-svg/includes/class-safe-svg.php'
+        - '{{BaseURL}}/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/Sanitizer.php'
+        - '{{BaseURL}}/wp-content/plugins/safe-svg/lib/safe-svg-tags.php'
+      signs:
+        - "on": word
+          has:
+            - Fatal error
+            - safe-svg
+            - 'Uncaught Error:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

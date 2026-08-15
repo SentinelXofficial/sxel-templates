@@ -1,0 +1,24 @@
+id: taringa
+brief:
+    title: Taringa User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Taringa user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - taringa
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.taringa.net/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' en Taringa!</title>'
+          in: body
+          need: all

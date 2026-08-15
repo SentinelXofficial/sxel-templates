@@ -1,0 +1,27 @@
+id: rubocop-config
+brief:
+    title: Rubocop Configuration - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Rubocop configuration information was detected.
+    label:
+        - exposure
+        - files
+        - config
+        - ruby
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.rubocop.yml'
+      signs:
+        - "on": word
+          has:
+            - 'AllCops:'
+            - 'Include:'
+            - 'Exclude:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

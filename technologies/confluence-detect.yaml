@@ -1,0 +1,21 @@
+id: confluence-detect
+brief:
+    title: Confluence Detection
+    by: philippedelteil
+    level: info
+    about: This nuclei template is used to detect the presence of Confluence, a popular collaboration software.
+    label:
+        - tech
+        - confluence
+        - atlassian
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dologin.action'
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/pages'
+        - '{{BaseURL}}/confluence'
+        - '{{BaseURL}}/wiki'
+      signs: []

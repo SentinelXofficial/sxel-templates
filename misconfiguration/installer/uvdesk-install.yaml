@@ -1,0 +1,26 @@
+id: uvdesk-install
+brief:
+    title: UVDesk Installation Wizard
+    by: DhiyaneshDk
+    level: high
+    about: UVDesk is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - uvdesk
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - UVDesk Helpdesk Community Edition
+            - Installation Wizard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: highmail-admin-panel
+brief:
+    title: HighMail Admin Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: HighMail admin login panel was detected.
+    label:
+        - highmail
+        - panel
+        - aryanic
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - HighMail
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

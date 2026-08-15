@@ -1,0 +1,26 @@
+id: go-mod-disclosure
+brief:
+    title: Go.mod Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: go.mod internal file is exposed.
+    label:
+        - exposure
+        - files
+        - go
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/go.mod'
+      signs:
+        - "on": word
+          has:
+            - module
+            - go
+            - require (
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,20 @@
+id: beyondtrust-panel
+brief:
+    title: BeyondTrust Login Panel - Detect
+    by: r3dg33k
+    level: info
+    about: BeyondTrust login panel was detected.
+    label:
+        - beyondtrust
+        - pam
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/WebConsole/'
+      signs:
+        - "on": word
+          has:
+            - <title>BeyondInsight</title>
+          in: body

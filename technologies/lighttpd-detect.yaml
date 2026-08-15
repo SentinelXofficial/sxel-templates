@@ -1,0 +1,16 @@
+id: lighttpd-detect
+brief:
+    title: Lighttpd Web Server - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected servers running the Lighttpd web server by identifying the Server header in HTTP responses.
+    label:
+        - tech
+        - lighttpd
+        - server
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

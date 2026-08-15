@@ -1,0 +1,18 @@
+id: mitric-checker-panel
+brief:
+    title: Mitric Checker Login Panel - Detect
+    by: righettod
+    level: info
+    about: Mitric Checker login panel was detected.
+    label:
+        - panel
+        - mitric
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/QSA/Login.aspx'
+        - '{{BaseURL}}/API/External/GetPrivacy'
+      signs: []

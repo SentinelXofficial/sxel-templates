@@ -1,0 +1,23 @@
+id: cisco-vmanage-login
+brief:
+    title: Cisco vManage Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Cisco vManage login panel was detected.
+    label:
+        - panel
+        - cisco
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Cisco vManage</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

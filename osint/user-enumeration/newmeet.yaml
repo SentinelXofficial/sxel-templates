@@ -1,0 +1,24 @@
+id: newmeet
+brief:
+    title: Newmeet User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Newmeet user name information check was conducted.
+    label:
+        - osint
+        - osint-dating
+        - newmeet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.newmeet.com/en/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - The profile of
+          in: body
+          need: all

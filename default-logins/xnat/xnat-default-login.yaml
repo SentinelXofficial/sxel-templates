@@ -1,0 +1,28 @@
+id: xnat-default-login
+brief:
+    title: XNAT - Default Login
+    by: 0x_Akoko
+    level: high
+    about: XNAT contains an admin default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - default-login
+        - xnat
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: login_method=localdb&username={{username}}&password={{password}}&login=&XNAT_CSRF=
+      signs:
+        - "on": word
+          has:
+            - app/template/Index.vm?login=true
+            - JSESSIONID
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

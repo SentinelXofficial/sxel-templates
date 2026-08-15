@@ -1,0 +1,23 @@
+id: tenda-11n-wireless-router-panel
+brief:
+    title: Tenda 11n Wireless Router - Admin Panel
+    by: idealphase
+    level: info
+    about: The administrative panel for a Tenda Technology 11n Wireless Router was found.
+    label:
+        - panel
+        - tenda
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.asp'
+      signs:
+        - "on": word
+          has:
+            - <title>Tenda 11N Wireless Router Login Screen</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

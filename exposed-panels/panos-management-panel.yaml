@@ -1,0 +1,27 @@
+id: panos-management-panel
+brief:
+    title: PAN-OS Management Panel - Detect
+    by: bhutch
+    level: info
+    about: PAN-OS management panel was detected.
+    label:
+        - panel
+        - panos
+        - login
+        - detect
+        - paloaltonetworks
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/php/login.php'
+      signs:
+        - "on": word
+          has:
+            - <TITLE>Login</TITLE>
+            - PAN_FORM_CONTENT
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

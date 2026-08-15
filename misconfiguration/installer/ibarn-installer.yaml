@@ -1,0 +1,26 @@
+id: ibarn-installer
+brief:
+    title: iBarn Installer - Exposure
+    by: ritikchaddha
+    level: high
+    about: Detects the exposure of the iBarn installer page, which could allow unauthorized setup or reinstallation of the application.
+    label:
+        - ibarn
+        - installer
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - iBarn
+            - install()
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: obsidian-phish
+brief:
+    title: Obsidian phishing Detection
+    by: rxerium
+    level: info
+    about: A Obsidian phishing website was detected
+    label:
+        - phishing
+        - obsidian
+        - notes
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Obsidian - Sharpen your thinking
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

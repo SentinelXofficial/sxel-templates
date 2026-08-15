@@ -1,0 +1,27 @@
+id: zyxel-router-panel
+brief:
+    title: ZyXel Router Login Panel - Detect
+    by: arafatansari
+    level: info
+    about: ZyXel Router login panel was detected.
+    label:
+        - panel
+        - zyxel
+        - router
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Welcome to the Web-Based Configurator
+            - zyxel
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

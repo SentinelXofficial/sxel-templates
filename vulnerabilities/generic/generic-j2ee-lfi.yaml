@@ -1,0 +1,25 @@
+id: generic-j2ee-lfi
+brief:
+    title: Generic J2EE LFI Scan Panel - Detect
+    by: davidfegyver
+    level: high
+    about: Generic J2EE Scan panel was detected. Looks for J2EE specific LFI vulnerabilities; tries to leak the web.xml file.
+    label:
+        - lfi
+        - generic
+        - j2ee
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - <servlet-name>
+            - </web-app>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

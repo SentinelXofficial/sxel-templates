@@ -1,0 +1,27 @@
+id: wpml-xss
+brief:
+    title: WordPress Plugin WPML Version < 4.6.1 Cross-Site Scripting
+    by: bugvsme
+    level: medium
+    about: WordPress Plugin WPML Version < 4.6.1  is vulnerable to RXSS via wp_lang parameter.
+    label:
+        - xss
+        - wp
+        - wordpress
+        - wpml
+        - wp-plugin
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-login.php?wp_lang=en_US%27'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '#039;"='
+            - wpml_lang
+          in: body
+          need: all

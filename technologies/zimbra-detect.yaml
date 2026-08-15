@@ -1,0 +1,25 @@
+id: zimbra-detect
+brief:
+    title: Zimbra Detect
+    by: UdinChan
+    level: info
+    about: Send a GET request to js file on Zimbra server to obtain version information
+    label:
+        - tech
+        - zimbra
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/js/zimbraMail/share/model/ZmSettings.js'
+      signs:
+        - "on": word
+          has:
+            - Zimbra Collaboration Suite Web Client
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/x-javascript
+          in: header
+          need: all

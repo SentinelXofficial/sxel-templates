@@ -1,0 +1,26 @@
+id: nginx-vhost-traffic-status
+brief:
+    title: Nginx Vhost Traffic Status
+    by: geeknik
+    level: low
+    about: Nginx Vhost Traffic status is exposed.
+    label:
+        - status
+        - nginx
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/status'
+      signs:
+        - "on": word
+          has:
+            - Nginx Vhost Traffic Status
+            - Host
+            - Zone
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

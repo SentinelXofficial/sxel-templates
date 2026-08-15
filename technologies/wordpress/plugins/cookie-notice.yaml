@@ -1,0 +1,18 @@
+id: wordpress-cookie-notice
+brief:
+    title: Cookie Notice & Compliance for GDPR / CCPA Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/cookie-notice/readme.txt'
+      signs: []

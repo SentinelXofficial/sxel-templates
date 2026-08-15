@@ -1,0 +1,28 @@
+id: sqlite-history-exposure
+brief:
+    title: SQLite History - Exposure
+    by: theamanrawat
+    level: medium
+    about: Detects exposed .sqlite_history files. These files contain SQLite command history, including executed queries, table names, and potentially sensitive data that was queried or inserted.
+    label:
+        - exposure
+        - sqlite
+        - history
+        - database
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.sqlite_history'
+      signs:
+        - "on": word
+          has:
+            - <html
+            - <!DOCTYPE
+            - <head
+            - <body
+            - '{"'
+            - '"error"'
+            - '"message"'
+          in: body
+          need: all

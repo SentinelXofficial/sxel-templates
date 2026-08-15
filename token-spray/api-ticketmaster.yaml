@@ -1,0 +1,22 @@
+id: api-ticketmaster
+brief:
+    title: Ticket Master API Test
+    by: 0xpugal
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - ticketmaster
+moves:
+    - verb: GET
+      to:
+        - https://app.ticketmaster.com/discovery/v2/events.json?apikey={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"id"'
+            - '"name"'
+            - '"type"'
+            - '"images"'
+          in: body
+          need: all

@@ -1,0 +1,38 @@
+id: api-openai
+brief:
+    title: OpenAI API Test
+    by: geeknik
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - openai
+        - ai
+moves:
+    - verb: POST
+      to:
+        - https://api.openai.com/v1/chat/completions
+      head:
+        Authorization: Bearer {{token}}
+        Content-Type: application/json
+      body: |
+        {
+          "model": "gpt-3.5-turbo",
+          "messages": [
+            {"role": "system", "content": "You are a helpful assistant designed to output JSON."},
+            {"role": "user", "content": "Who won the world series in 2020?"}
+          ]
+        }
+      signs:
+        - "on": word
+          has:
+            - Los Angeles Dodgers
+          in: body
+          need: all
+        - "on": word
+          has:
+            - invalid_request_error
+            - Incorrect API key
+            - invalid_api_key
+          in: body
+          need: all

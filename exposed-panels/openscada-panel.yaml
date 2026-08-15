@@ -1,0 +1,27 @@
+id: openscada-panel
+brief:
+    title: OpenSCADA - Panel
+    by: rxerium
+    level: info
+    about: OpenSCADA is an open-source SCADA (Supervisory Control and Data Acquisition)
+    label:
+        - panel
+        - ics
+        - scada
+        - openscada
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>OpenSCADA
+            - OpenSCADA
+            - WorkStation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

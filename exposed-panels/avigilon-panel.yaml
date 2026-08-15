@@ -1,0 +1,29 @@
+id: avigilon-panel
+brief:
+    title: Avigilon Login Panel - Detect
+    by: robotshell
+    level: info
+    about: Avigilon login panel was detected.
+    label:
+        - panel
+        - avigilon
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cfg/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Login - Avigilon Control Center Gateway</title>
+            - <title>Iniciar sesión - Puerta de enlace de Avigilon Control Center</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

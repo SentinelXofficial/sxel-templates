@@ -1,0 +1,47 @@
+id: app-manager-default-login
+brief:
+    title: ManageEngine Applications Manager - Default Credentials
+    by: 0midC13
+    level: high
+    about: Default credentials grants administrative access to ManageEngine Applications Manager, which can be later escalated into a RCE via DB queries.
+    label:
+        - default-login
+        - manageengine
+        - zoho
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.do'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/j_security_check'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/index.do'
+      body: clienttype=html&webstart=&j_username=admin&ScreenWidth=1280&ScreenHeight=709&username={{username}}&j_password={{password}}
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/showresource.do?group=All&method=showResourceTypes&monitor_viewtype=categoryview'
+      head:
+        Referer: '{{RootURL}}/j_security_check'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Super Administrator
+            - Add Application
+          in: body
+          need: all
+        - "on": word
+          has:
+            - j_username
+            - j_password
+            - clienttype=html
+          in: body
+          need: all

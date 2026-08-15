@@ -1,0 +1,24 @@
+id: ebay
+brief:
+    title: EBay User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: EBay user name information check was conducted.
+    label:
+        - osint
+        - osint-shopping
+        - ebay
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.ebay.com/usr/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - on eBay</title>
+          in: body
+          need: all

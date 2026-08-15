@@ -1,0 +1,24 @@
+id: itch-io-phish
+brief:
+    title: itch.io phishing Detection
+    by: rxerium
+    level: info
+    about: An itch.io phishing website was detected
+    label:
+        - phishing
+        - itch-io
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - itch.io is a simple way to find, download and distribute indie games online. Whether you're a developer looking to upload your game or just someone looking for something new to play itch.io has you covered.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

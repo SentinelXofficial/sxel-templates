@@ -1,0 +1,51 @@
+id: php-backup-files
+brief:
+    title: PHP Source - Backup File Information Disclosure
+    by: StreetOfHackerR007
+    level: medium
+    about: PHP Source File is disclosed to external users.
+    label:
+        - exposure
+        - backup
+        - php
+        - disclosure
+        - fuzz
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{filepath}}{{bakext}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <?php
+            - <?=
+          in: body
+          need: all
+        - "on": word
+          has:
+            - ?>
+            - ($
+            - $_GET[
+            - $_POST[
+            - $_REQUEST[
+            - $_SERVER[
+            - '''DB_PASSWORD'''
+            - '''DBPASS'''
+            - '''dbname'''
+            - '''database_name'''
+            - database_type
+            - _DB_NAME_
+            - define('DB
+            - 'environments:'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+            - bytes
+          in: header
+          need: all

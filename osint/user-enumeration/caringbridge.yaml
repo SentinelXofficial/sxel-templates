@@ -1,0 +1,24 @@
+id: caringbridge
+brief:
+    title: CaringBridge User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: CaringBridge user name information check was conducted.
+    label:
+        - osint
+        - osint-health
+        - caringbridge
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.caringbridge.org/visit/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| CaringBridge'
+          in: body
+          need: all

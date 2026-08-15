@@ -1,0 +1,18 @@
+id: localstack-detect
+brief:
+    title: LocalStack - Detect
+    by: ChrisJr404
+    level: info
+    about: LocalStack (localstack.cloud / github.com/localstack/localstack) is a local AWS cloud-service emulator widely used in development and CI. It typically listens on TCP 4566 and exposes an unauthentic...
+    label:
+        - localstack
+        - aws
+        - cloud
+        - detect
+        - discovery
+        - tech
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_localstack/health'
+      signs: []

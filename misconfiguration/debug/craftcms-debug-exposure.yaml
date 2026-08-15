@@ -1,0 +1,19 @@
+id: craftcms-debug-exposure
+brief:
+    title: CraftCMS Debug Methods Exposed
+    by: 0x_Akoko
+    level: medium
+    about: Detected CraftCMS with devMode enabled, which exposed the Yii2 debug toolbar and sensitive information. This misconfiguration could have leaked database queries, session data, cookies, stack traces...
+    label:
+        - craftcms
+        - debug
+        - misconfiguration
+        - exposure
+        - yii2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/actions/debug/default/index'
+        - '{{BaseURL}}/actions/debug/default/toolbar'
+        - '{{BaseURL}}/actions/debug/default/view'
+      signs: []

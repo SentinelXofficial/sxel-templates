@@ -1,0 +1,25 @@
+id: robinhood-phish
+brief:
+    title: Robinhood phishing Detection
+    by: rxerium
+    level: info
+    about: A Robinhood phishing website was detected
+    label:
+        - phishing
+        - robinhood
+        - trading
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Robinhood: 24/5 Commission-Free Stock Trading & Investing'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

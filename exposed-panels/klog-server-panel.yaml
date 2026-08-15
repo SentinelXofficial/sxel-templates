@@ -1,0 +1,17 @@
+id: klog-server-panel
+brief:
+    title: Klog Server Panel - Detect
+    by: s4e-io
+    level: info
+    about: Klog Server panel was discovered.
+    label:
+        - panel
+        - login
+        - klog-server
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.php'
+      signs: []

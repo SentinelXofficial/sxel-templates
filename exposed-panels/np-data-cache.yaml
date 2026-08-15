@@ -1,0 +1,25 @@
+id: np-data-cache
+brief:
+    title: NP Data Cache Panel - Detect
+    by: tess
+    level: info
+    about: NP Data Cache panel was detected.
+    label:
+        - np
+        - panel
+        - cache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - NP Data Cache
+            - Server logs (if subscribed)
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,32 @@
+id: apache-axis-detect
+brief:
+    title: apache-axis-detect
+    by: dogasantos
+    level: info
+    about: Axis and Axis2 detection
+    label:
+        - tech
+        - axis2
+        - middleware
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/axis2/'
+        - '{{BaseURL}}/axis/'
+      signs:
+        - "on": word
+          has:
+            - Validate
+            - Welcome
+            - Axis
+            - deployed
+            - installation
+            - Admin
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

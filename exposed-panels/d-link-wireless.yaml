@@ -1,0 +1,26 @@
+id: dlink-wireless
+brief:
+    title: D-Link Wireless Router Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: D-Link Wireless Router panel was detected.
+    label:
+        - dlink
+        - router
+        - edb
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/status.php'
+      signs:
+        - "on": word
+          has:
+            - <title>D-LINK SYSTEMS, INC. | WIRELESS ROUTER | HOME</title>
+            - <title>D-LINK SYSTEMS, INC. | WIRELESS ACCESS POINT | HOME</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

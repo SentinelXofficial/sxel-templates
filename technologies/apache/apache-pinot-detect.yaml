@@ -1,0 +1,25 @@
+id: apache-pinot-detect
+brief:
+    title: Apache Pinot - Detect
+    by: icarot
+    level: info
+    about: Detects a Apache Pinot web application, A realtime distributed OLAP datastore.
+    label:
+        - tech
+        - pinot
+        - apache
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - <title>Apache Pinot</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: struts-ognl-console
+brief:
+    title: Apache Struts - OGNL Console
+    by: DhiyaneshDK
+    level: info
+    about: This development console allows the evaluation of OGNL expressions that could lead to Remote Command Execution
+    label:
+        - apache
+        - struts
+        - ognl
+        - panel
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/struts/webconsole.html?debug=console'
+      signs:
+        - "on": word
+          has:
+            - Welcome to the OGNL console!
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

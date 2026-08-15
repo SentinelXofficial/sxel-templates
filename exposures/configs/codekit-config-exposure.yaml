@@ -1,0 +1,17 @@
+id: codekit-config-exposure
+brief:
+    title: CodeKit Configuration Exposure
+    by: pussycat0x
+    level: low
+    about: Detected exposed CodeKit configuration files that may have revealed sensitive project information, including file paths, build settings, hooks, and project structure.
+    label:
+        - codekit
+        - config
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config.codekit3'
+        - '{{BaseURL}}/config.codekit'
+        - '{{BaseURL}}/assets/js/config.codekit3'
+      signs: []

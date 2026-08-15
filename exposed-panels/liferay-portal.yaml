@@ -1,0 +1,28 @@
+id: liferay-portal
+brief:
+    title: Liferay Login Panel - Detect
+    by: organiccrap
+    level: info
+    about: Liferay login panel was detected,
+    label:
+        - panel
+        - liferay
+        - portal
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/api/jsonws'
+        - '{{BaseURL}}/api/jsonws/invoke'
+      signs:
+        - "on": word
+          has:
+            - Liferay-Portal
+          in: header
+        - "on": word
+          has:
+            - <title>json-web-services-api</title>
+            - There are no services matching that phrase.
+            - Unable to deserialize object
+          in: body

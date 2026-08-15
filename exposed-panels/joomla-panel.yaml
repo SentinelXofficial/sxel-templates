@@ -1,0 +1,20 @@
+id: joomla-panel
+brief:
+    title: Joomla! Panel
+    by: its0x08
+    level: info
+    about: ""
+    label:
+        - panel
+        - joomla
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/administrator/'
+      signs:
+        - "on": word
+          has:
+            - <meta name="generator" content="Joomla! - Open Source Content Management" />
+            - /administrator/templates/isis/images/joomla.png
+          in: body

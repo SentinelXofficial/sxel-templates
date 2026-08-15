@@ -1,0 +1,24 @@
+id: jeuxvideo
+brief:
+    title: Jeuxvideo User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Jeuxvideo user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - jeuxvideo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.jeuxvideo.com/profil/{{user}}?mode=infos
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- jeuxvideo.com'
+          in: body
+          need: all

@@ -1,0 +1,19 @@
+id: wp-responsive-fpd
+brief:
+    title: WordPress Coming Soon Page - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Coming Soon Page & Maintenance Mode plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed di...
+    label:
+        - debug
+        - wp
+        - wp-plugin
+        - wordpress
+        - fpd
+        - vuln
+        - responsive-coming-soon
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/responsive-coming-soon/responsive-coming-soon.php'
+      signs: []

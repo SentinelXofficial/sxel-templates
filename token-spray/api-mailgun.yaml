@@ -1,0 +1,23 @@
+id: api-mailgun
+brief:
+    title: Mailgun API Test
+    by: zzeitlin
+    level: info
+    about: Email Service
+    label:
+        - token-spray
+        - mailgun
+moves:
+    - verb: GET
+      to:
+        - https://api.mailgun.net/v3/domains
+      head:
+        Authorization: Basic {{base64('api:' + token)}}
+      signs:
+        - "on": word
+          has:
+            - '"total_count":'
+            - '"items":'
+            - '"created_at":'
+          in: body
+          need: all

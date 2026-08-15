@@ -1,0 +1,24 @@
+id: cafecito
+brief:
+    title: Cafecito User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Cafecito user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - cafecito
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://cafecito.app/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' | Cafecito</title>'
+          in: body
+          need: all

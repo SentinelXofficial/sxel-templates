@@ -1,0 +1,25 @@
+id: cubebackup-setup-installer
+brief:
+    title: CubeBackup Setup Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed CubeBackup Setup page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - cubebackup
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - CubeBackup setup
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

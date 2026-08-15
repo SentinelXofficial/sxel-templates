@@ -1,0 +1,30 @@
+id: aws-ec2-status
+brief:
+    title: Amazon EC2 Status
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - ec2
+        - aws
+        - amazon
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Amazon EC2 Status</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

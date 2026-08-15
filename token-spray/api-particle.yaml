@@ -1,0 +1,23 @@
+id: api-particle
+brief:
+    title: Particle Cloud API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - particle
+moves:
+    - verb: GET
+      to:
+        - https://api.particle.io/v1/user?access_token={{token}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"account_info":'
+            - '"username":'
+          in: body
+          need: all

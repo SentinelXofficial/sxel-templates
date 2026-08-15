@@ -1,0 +1,29 @@
+id: wp-registration-enabled
+brief:
+    title: WordPress User Registration Panel - Detect
+    by: tess
+    level: info
+    about: WordPress user registration is currently configured so that anyone can register as a user, thereby enabling an attacker to possibly access sensitive data and execute unathorized operations.
+    label:
+        - wordpress
+        - wp
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-login.php'
+      signs:
+        - "on": word
+          has:
+            - ?action=register"
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

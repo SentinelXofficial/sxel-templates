@@ -1,0 +1,19 @@
+id: wp-intuitive-custom-post-order-fpd
+brief:
+    title: WordPress Plugin Intuitive Custom Post Order - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Widget Logic plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - debug
+        - wordpress
+        - fpd
+        - vuln
+        - intuitive-custom-post-order
+        - wp-plugin
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/intuitive-custom-post-order/admin/settings.php'
+        - '{{BaseURL}}/wp-content/plugins/intuitive-custom-post-order/admin/settings-network.php'
+      signs: []

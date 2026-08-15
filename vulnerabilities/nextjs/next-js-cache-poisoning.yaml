@@ -1,0 +1,24 @@
+id: next-js-cache-poisoning
+brief:
+    title: Next.js Cache Poisoning
+    by: Ice3man543
+    level: high
+    about: Next.js is vulnerable to cache poisoning through the x-middleware-prefetch and x-invoke-status headers. This can result in DoS by serving an empty JSON object or error page instead of the intended ...
+    label:
+        - cve
+        - cve2023
+        - next-js
+        - cache
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?cb={{rand}}'
+      head:
+        Priority: u=1
+        x-invoke-status: "888"
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?cb={{rand}}'
+      signs: []

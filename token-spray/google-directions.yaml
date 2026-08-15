@@ -1,0 +1,19 @@
+id: api-googledirections
+brief:
+    title: Google Directions API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - directions
+moves:
+    - verb: GET
+      to:
+        - https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood4&key={{token}}
+      signs:
+        - "on": word
+          has:
+            - error_message
+          in: body

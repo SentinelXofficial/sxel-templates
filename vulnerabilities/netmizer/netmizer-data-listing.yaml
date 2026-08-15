@@ -1,0 +1,30 @@
+id: netmizer-data-listing
+brief:
+    title: NetMizer LogManagement System Data - Directory Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Directory Exposure vulnerability in the NetMizer log management system of Beijing Lingzhou Network Technology Co., Ltd. Due to the loose control of /data, attackers can use this vulnerability to ob...
+    label:
+        - netmizer
+        - exposure
+        - listing
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/data/'
+      signs:
+        - "on": word
+          has:
+            - Index of /data
+            - bin/
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

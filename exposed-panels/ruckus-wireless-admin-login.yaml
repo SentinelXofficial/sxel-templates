@@ -1,0 +1,25 @@
+id: ruckus-wireless-admin-login
+brief:
+    title: Ruckus Wireless Admin Login Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Ruckus Wireless admin login panel was detected.
+    label:
+        - panel
+        - exposed
+        - ruckus
+        - ruckuswireless
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.asp'
+      signs:
+        - "on": word
+          has:
+            - <title>Ruckus Wireless Admin</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,31 @@
+id: jboss-juddi-panel
+brief:
+    title: JBoss WS JUDDI Console Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: The jUDDI (Java Universal Description, Discovery and Integration) Registry is a core component of the JBoss Enterprise SOA Platform. It is the product's default service registry and comes included ...
+    label:
+        - panel
+        - jboss
+        - juddi
+        - redhat
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/juddi/'
+      signs:
+        - "on": word
+          has:
+            - JBoss JUDDI
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

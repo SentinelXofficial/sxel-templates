@@ -1,0 +1,25 @@
+id: secnet-info-leak
+brief:
+    title: Secnet Intelligent Routing System actpt_5g.data - Information Leak
+    by: DhiyaneshDk
+    level: high
+    about: Secnet Intelligent Routing System is exposed.
+    label:
+        - info-leak
+        - secnet
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/actpt_5g.data'
+      signs:
+        - "on": word
+          has:
+            - '"http_username":'
+            - '"http_passwd":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

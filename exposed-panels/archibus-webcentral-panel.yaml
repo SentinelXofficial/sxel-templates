@@ -1,0 +1,31 @@
+id: archibus-webcentral-panel
+brief:
+    title: Archibus Web Central Login - Panel Detect
+    by: righettod
+    level: info
+    about: Archibus Web Central login panel was detected.
+    label:
+        - panel
+        - archibus
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/archibus/login.axvw'
+        - '{{BaseURL}}/archibus/schema/ab-core/views/sign-in/ab-sign-in.jsp'
+      signs:
+        - "on": word
+          has:
+            - ARCHIBUS
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Continue As a Guest
+            - login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

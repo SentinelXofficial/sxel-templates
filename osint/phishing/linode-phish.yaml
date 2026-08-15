@@ -1,0 +1,26 @@
+id: linode-phish
+brief:
+    title: Linode phishing Detection
+    by: rxerium
+    level: info
+    about: A Linode phishing website was detected
+    label:
+        - phishing
+        - linode
+        - cloud
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Linode
+            - <title>The World&#39;s Most Distributed Cloud Computing Platform | Akamai
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

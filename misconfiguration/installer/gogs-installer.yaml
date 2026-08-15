@@ -1,0 +1,27 @@
+id: gogs-installer
+brief:
+    title: Gogs (Go Git Service) - Installer
+    by: dhiyaneshDk
+    level: critical
+    about: Go Git Service installer panel was detected.
+    label:
+        - misconfig
+        - exposure
+        - gogs
+        - install
+        - vuln
+    score: CVSS:9.4
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install'
+      signs:
+        - "on": word
+          has:
+            - General Settings
+            - Database Settings
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

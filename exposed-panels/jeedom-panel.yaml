@@ -1,0 +1,25 @@
+id: jeedom-panel
+brief:
+    title: Jeedom Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: Jeedom login panel was detected.
+    label:
+        - panel
+        - jeedom
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?v=d'
+      signs:
+        - "on": word
+          has:
+            - <title>Jeedom</title>
+            - JEEDOM_PRODUCT_NAME
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,17 @@
+id: openai-admin-api-key
+brief:
+    title: OpenAI Admin API Key Detection
+    by: Chemo850
+    level: info
+    about: ""
+    label:
+        - openai
+        - exposure
+        - tokens
+        - vuln
+        - ai
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

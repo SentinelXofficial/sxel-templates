@@ -1,0 +1,29 @@
+id: zen-cart-log-exposure
+brief:
+    title: Zen Cart Log File Exposure
+    by: 0x_Akoko
+    level: medium
+    about: Detected exposed Zen Cart log files that may contain sensitive information including error messages, file paths, database queries, and customer data.
+    label:
+        - zencart
+        - exposure
+        - logs
+        - ecommerce
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/logs/'
+        - '{{BaseURL}}/cache/'
+        - '{{BaseURL}}/includes/logs/'
+        - '{{BaseURL}}/admin/logs/'
+      signs:
+        - "on": word
+          has:
+            - Index of
+            - myDEBUG
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

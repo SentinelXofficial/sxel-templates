@@ -1,0 +1,24 @@
+id: ccleaner-phish
+brief:
+    title: ccleaner phishing Detection
+    by: rxerium
+    level: info
+    about: A ccleaner phishing website was detected
+    label:
+        - phishing
+        - ccleaner
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - CCleaner Makes Your Computer Faster & More Secure | Official Website
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

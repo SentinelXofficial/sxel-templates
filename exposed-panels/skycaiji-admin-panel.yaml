@@ -1,0 +1,25 @@
+id: skycaiji-admin-panel
+brief:
+    title: SkyCaiji Admin Panel - Detect
+    by: princechaddha
+    level: info
+    about: SkyCaiji admin panel was detected.
+    label:
+        - panel
+        - tech
+        - skycaiji
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?s=/admin/Index/index'
+      signs:
+        - "on": word
+          has:
+            - <p>Powered by <a href="https://www.skycaiji.com" target="_blank">
+            - <a href="/index.php?s=/Admin/Index/find_password">
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

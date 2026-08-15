@@ -1,0 +1,15 @@
+id: wp-enabled-registration
+brief:
+    title: WordPress user registration enabled
+    by: Ratnadip Gajbhiye
+    level: info
+    about: ""
+    label:
+        - wordpress
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-login.php?action=register'
+        - '{{BaseURL}}/wp-signup.php'
+      signs: []

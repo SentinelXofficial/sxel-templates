@@ -1,0 +1,23 @@
+id: ivanti-sentry-panel
+brief:
+    title: Ivanti Sentry Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Ivanti Sentry panel was detected.
+    label:
+        - panel
+        - ivanti
+        - discovery
+        - login
+        - sentry
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mics/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - Ivanti System Manager
+            - sentry
+          in: body
+          need: all

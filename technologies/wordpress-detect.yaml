@@ -1,0 +1,24 @@
+id: wordpress-detect
+brief:
+    title: WordPress Detect
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - cms
+        - wp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/wp-admin/install.php'
+        - '{{BaseURL}}/feed/'
+        - '{{BaseURL}}/?feed=rss2'
+      signs:
+        - "on": word
+          has:
+            - name="generator" content="wordpress
+          in: body

@@ -1,0 +1,20 @@
+id: teamwork-takeover
+brief:
+    title: Teamwork Takeover Detection
+    by: pdteam
+    level: high
+    about: Teamwork takeover was detected.
+    label:
+        - takeover
+        - teamwork
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Oops - We didn't find your site.
+          in: body
+          need: all

@@ -1,0 +1,23 @@
+id: api-google-drive
+brief:
+    title: Google Drive API Test
+    by: geeknik
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - drive
+        - intrusive
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://www.googleapis.com/drive/v3/files/{{randstr}}.txt/%3fkey={{token}}&supportsAllDrives=true'
+      head:
+        Content-Type: application/json
+        Referer: '{{referer}}'
+      signs:
+        - "on": word
+          has:
+            - 'File not found: {{randstr}}.txt.'
+          in: body

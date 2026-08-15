@@ -1,0 +1,32 @@
+id: aem-sling-login
+brief:
+    title: Adobe Experience Manager Sling User Login - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Adobe Experience Manager Sling user login panel was detected.
+    label:
+        - panel
+        - aem
+        - adobe
+        - sling
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/system/sling/cqform/defaultlogin.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Login</title>
+            - j_username
+            - j_password
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

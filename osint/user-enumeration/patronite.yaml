@@ -1,0 +1,24 @@
+id: patronite
+brief:
+    title: Patronite User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Patronite user name information check was conducted.
+    label:
+        - osint
+        - osint-finance
+        - patronite
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://patronite.pl/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Zostań Patronem
+          in: body
+          need: all

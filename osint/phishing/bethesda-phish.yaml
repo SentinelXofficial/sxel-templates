@@ -1,0 +1,25 @@
+id: bethesda-phish
+brief:
+    title: Bethesda phishing Detection
+    by: rxerium
+    level: info
+    about: A Bethesda phishing website was detected
+    label:
+        - phishing
+        - bethesda
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - The official site for Bethesda, publisher of Fallout, DOOM, Dishonored, Skyrim, Wolfenstein, The Elder Scrolls, more. Your source for news, features &amp; community
+            - Bethesda
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

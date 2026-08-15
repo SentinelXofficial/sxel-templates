@@ -1,0 +1,25 @@
+id: backblaze-phish
+brief:
+    title: Backblaze phishing Detection
+    by: rxerium
+    level: info
+    about: A Backblaze phishing website was detected
+    label:
+        - phishing
+        - backblaze
+        - backup
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>The Leading Open Cloud Storage Platform - Backblaze
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

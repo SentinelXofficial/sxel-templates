@@ -1,0 +1,24 @@
+id: zomato
+brief:
+    title: Zomato User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Zomato user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - zomato
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.zomato.com/{{user}}/foodjourney
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| Zomato'
+          in: body
+          need: all

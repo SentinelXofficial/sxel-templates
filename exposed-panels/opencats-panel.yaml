@@ -1,0 +1,25 @@
+id: opencats-panel
+brief:
+    title: OpenCATS Login Panel - Detect
+    by: arafatansari
+    level: info
+    about: OpenCATS login panel was detected.
+    label:
+        - panel
+        - opencats
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/opencats/'
+      signs:
+        - "on": word
+          has:
+            - <title>opencats - Login</title>
+            - <!-- CATS_LOGIN -->
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

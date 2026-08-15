@@ -1,0 +1,26 @@
+id: gemini-phish
+brief:
+    title: Gemini phishing Detection
+    by: rxerium
+    level: info
+    about: A Gemini phishing website was detected
+    label:
+        - phishing
+        - gemini
+        - crypto
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Gemini
+            - <title>Buy, Sell &amp; Trade Bitcoin, Solana, &amp; Other Cryptos with Gemini&#x27;s Best-in-class Platform | Gemini
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

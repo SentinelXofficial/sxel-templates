@@ -1,0 +1,25 @@
+id: xinference-detect
+brief:
+    title: Xinference - Detect
+    by: rxerium
+    level: info
+    about: Xinference (Xorbits Inference) was detected. Xinference is a distributed LLM inference framework supporting multiple model types including LLMs, embeddings, and multimodal models. The API endpoint ...
+    label:
+        - tech
+        - xinference
+        - llm
+        - inference
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v1/models'
+      signs:
+        - "on": word
+          has:
+            - '"object":"list"'
+            - '"data":'
+          in: body
+          need: all

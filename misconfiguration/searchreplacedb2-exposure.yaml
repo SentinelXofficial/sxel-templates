@@ -1,0 +1,30 @@
+id: searchreplacedb2-exposure
+brief:
+    title: Safe Search Replace Exposure
+    by: kazet
+    level: high
+    about: Safe Search Replace is exposed leaking internal info.
+    label:
+        - misconfig
+        - searchreplacedb2
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/searchreplacedb2.php'
+      signs:
+        - "on": word
+          has:
+            - Database details
+            - Safe Search Replace
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

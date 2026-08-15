@@ -1,0 +1,24 @@
+id: pinkbike
+brief:
+    title: PinkBike User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: PinkBike user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - pinkbike
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.pinkbike.com/u/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - on Pinkbike</title>
+          in: body
+          need: all

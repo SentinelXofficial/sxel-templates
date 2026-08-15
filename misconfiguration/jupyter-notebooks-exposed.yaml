@@ -1,0 +1,15 @@
+id: jupyter-notebooks-exposed
+brief:
+    title: Jupyter notebooks exposed to reading and writing
+    by: johnk3r
+    level: high
+    about: Jupyter notebooks are exposed.
+    label:
+        - jupyter
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

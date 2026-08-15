@@ -1,0 +1,16 @@
+id: artifactory-api-token
+brief:
+    title: Artifactory API Token Disclosure
+    by: Ice3man
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - artifactory
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

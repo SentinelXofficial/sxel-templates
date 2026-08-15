@@ -1,0 +1,20 @@
+id: code42-panel
+brief:
+    title: Code42 Panel - Detect
+    by: Adam Crosser
+    level: info
+    about: Code42 panel was detected.
+    label:
+        - panel
+        - code42
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/404'
+      signs:
+        - "on": word
+          has:
+            - <a href="https://code42.com">Code42 homepage</a>
+          in: body
+          need: all

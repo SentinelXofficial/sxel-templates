@@ -1,0 +1,24 @@
+id: gravatar
+brief:
+    title: Gravatar User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Gravatar user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - gravatar
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://en.gravatar.com/profiles/{{user}}.json
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - entry
+          in: body
+          need: all

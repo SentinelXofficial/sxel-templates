@@ -1,0 +1,24 @@
+id: udemy
+brief:
+    title: Udemy User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Udemy user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - udemy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.udemy.com/user/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| Udemy</title>'
+          in: body
+          need: all

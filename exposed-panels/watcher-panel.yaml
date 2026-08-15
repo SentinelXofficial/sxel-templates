@@ -1,0 +1,24 @@
+id: watcher-panel
+brief:
+    title: Watcher Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - panel
+        - watcher
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/vsaas/v2/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Watcher</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

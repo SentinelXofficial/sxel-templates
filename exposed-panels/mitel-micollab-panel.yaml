@@ -1,0 +1,18 @@
+id: mitel-micollab-panel
+brief:
+    title: Mitel MiCollab Login Panel - Detect
+    by: righettod
+    level: info
+    about: Mitel MiCollab login panel was detected.
+    label:
+        - panel
+        - mitel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wd/en-us/wapplink.asp'
+        - '{{BaseURL}}/portal/'
+      signs: []

@@ -1,0 +1,18 @@
+id: wp-user-role-editor-fpd
+brief:
+    title: User Role Editor - Full Path Disclosure
+    by: theamanrawat
+    level: low
+    about: User Role Editor WordPress plugin contains a full path disclosure vulnerability due to improper access restrictions in its source files, allowing unauthenticated attackers to retrieve full server p...
+    label:
+        - debug
+        - wordpress
+        - wp
+        - wp-plugin
+        - user-role-editor
+        - fpd
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/user-role-editor/user-role-editor.php'
+      signs: []

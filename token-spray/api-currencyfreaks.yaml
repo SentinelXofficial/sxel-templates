@@ -1,0 +1,21 @@
+id: api-currencyfreaks
+brief:
+    title: CurrencyFreaks API Test
+    by: daffainfo
+    level: info
+    about: Provides current and historical currency exchange rates with free plan 1K requests/month
+    label:
+        - token-spray
+        - currencyfreaks
+moves:
+    - verb: GET
+      to:
+        - https://api.currencyfreaks.com/latest?apikey={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"date"'
+            - '"base"'
+            - '"rates"'
+          in: body
+          need: all

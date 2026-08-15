@@ -1,0 +1,25 @@
+id: puppetboard-panel
+brief:
+    title: Puppetboard Panel - Detect
+    by: c-sh0
+    level: info
+    about: Puppetboard panel was detected.
+    label:
+        - panel
+        - puppet
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <a href="https://github.com/voxpupuli/puppetboard" target="_blank">
+            - puppetboard.css" rel="stylesheet"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

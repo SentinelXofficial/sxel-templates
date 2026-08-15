@@ -1,0 +1,25 @@
+id: 1a-auto-phish
+brief:
+    title: 1A Auto phishing Detection
+    by: rxerium
+    level: info
+    about: A 1A Auto phishing website was detected
+    label:
+        - phishing
+        - 1a-auto
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>1A Auto | Aftermarket Car Parts -  Buy Quality Auto Parts Online
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

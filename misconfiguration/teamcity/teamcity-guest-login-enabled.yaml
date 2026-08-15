@@ -1,0 +1,26 @@
+id: teamcity-guest-login-enabled
+brief:
+    title: JetBrains TeamCity - Guest User Access Enabled
+    by: Ph33r
+    level: high
+    about: TeamCity provides the ability to turn on the guest login allowing anonymous access to the TeamCity UI.
+    label:
+        - misconfig
+        - teamcity
+        - jetbrains
+        - vuln
+    score: CVSS:7.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/guestLogin.html?guest=1'
+      signs:
+        - "on": word
+          has:
+            - 'Location: /overview.html'
+            - TCSESSIONID=
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

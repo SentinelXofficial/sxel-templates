@@ -1,0 +1,23 @@
+id: vertex-tax-panel
+brief:
+    title: Vertex Tax Installer Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Vertex Tax Installer panel was detected.
+    label:
+        - panel
+        - vertex
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Vertex Tax Installer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

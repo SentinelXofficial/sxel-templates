@@ -1,0 +1,24 @@
+id: subscribestar
+brief:
+    title: Subscribestar User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Subscribestar user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - subscribestar
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://subscribestar.adult/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - CREATOR STATS
+          in: body
+          need: all

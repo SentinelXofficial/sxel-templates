@@ -1,0 +1,24 @@
+id: trading212-phish
+brief:
+    title: trading212 phishing Detection
+    by: rxerium
+    level: info
+    about: A trading212 phishing website was detected
+    label:
+        - phishing
+        - trading212
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Commission-free investing for everyone | Trading 212
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

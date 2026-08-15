@@ -1,0 +1,26 @@
+id: ibm-service-assistant
+brief:
+    title: IBM Service Assistant Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: IBM Service Assistant login panel was detected.
+    label:
+        - panel
+        - ibm
+        - service
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/service/'
+      signs:
+        - "on": word
+          has:
+            - <title>Welcome to Service Assistant</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

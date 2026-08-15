@@ -1,0 +1,25 @@
+id: customink-phish
+brief:
+    title: CustomInk phishing Detection
+    by: rxerium
+    level: info
+    about: A CustomInk phishing website was detected
+    label:
+        - phishing
+        - customink
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - CustomInk
+            - <title>Custom T-shirts - Design T-shirts, Apparel & Promo Products Online
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

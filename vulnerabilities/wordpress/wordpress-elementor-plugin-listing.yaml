@@ -1,0 +1,26 @@
+id: wordpress-elementor-plugin-listing
+brief:
+    title: WordPress Elementor Plugin Directory Listing
+    by: dhiyaneshDK
+    level: info
+    about: Searches for sensitive directories present in the elementor wordpress plugin.
+    label:
+        - listing
+        - plugin
+        - edb
+        - wordpress
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/elementor/'
+      signs:
+        - "on": word
+          has:
+            - Index of
+            - /wp-content/plugins/elementor/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

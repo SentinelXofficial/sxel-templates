@@ -1,0 +1,26 @@
+id: strapi-admin-installer
+brief:
+    title: Strapi Admin - Installer
+    by: dhiyaneshDk
+    level: critical
+    about: Strapi Admin Registration enabled was detected.
+    label:
+        - misconfig
+        - exposure
+        - strapi
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to your Strapi app
+            - Click to create the first administration
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

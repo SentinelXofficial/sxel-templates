@@ -1,0 +1,24 @@
+id: vimeo
+brief:
+    title: Vimeo User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Vimeo user name information check was conducted.
+    label:
+        - osint
+        - osint-video
+        - vimeo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://vimeo.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - is a member of Vimeo, the
+          in: body
+          need: all

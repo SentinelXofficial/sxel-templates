@@ -1,0 +1,26 @@
+id: shibboleth-detect
+brief:
+    title: Shibboleth SSO Detect
+    by: rxerium
+    level: info
+    about: A Shibboleth SSO panel was detected
+    label:
+        - shibboleth
+        - sso
+        - detect
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/shibboleth-idp'
+      signs:
+        - "on": word
+          has:
+            - <title>Shibboleth IdP</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

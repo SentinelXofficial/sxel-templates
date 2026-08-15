@@ -1,0 +1,25 @@
+id: jetbrains-phish
+brief:
+    title: JetBrains phishing Detection
+    by: rxerium
+    level: info
+    about: A JetBrains phishing website was detected
+    label:
+        - phishing
+        - jetbrains
+        - developer
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>JetBrains: Essential tools for software developers and teams'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

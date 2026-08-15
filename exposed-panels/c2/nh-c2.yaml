@@ -1,0 +1,17 @@
+id: nh-c2
+brief:
+    title: NH C2 Server - Detect
+    by: pussycat0
+    level: info
+    about: ""
+    label:
+        - tech
+        - nh
+        - c2
+        - panel
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

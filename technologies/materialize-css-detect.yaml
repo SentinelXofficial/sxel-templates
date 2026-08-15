@@ -1,0 +1,15 @@
+id: materialize-css-detect
+brief:
+    title: Materialize CSS - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected the presence of Materialize, a modern responsive front-end framework based on Material Design.
+    label:
+        - tech
+        - materialize
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

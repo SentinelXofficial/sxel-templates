@@ -1,0 +1,20 @@
+id: arcgis-detect
+brief:
+    title: ArcGIS - Detect
+    by: righettod
+    level: info
+    about: ArcGIS products was detected.
+    label:
+        - tech
+        - arcgis
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/portal/sharing/rest'
+        - '{{BaseURL}}/portal/portalhelp/en/rest/'
+        - '{{BaseURL}}/arcgis/rest/services'
+        - '{{BaseURL}}/server/rest/services'
+        - '{{BaseURL}}/arcgis/'
+      signs: []

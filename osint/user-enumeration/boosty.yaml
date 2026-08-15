@@ -1,0 +1,24 @@
+id: boosty
+brief:
+    title: Boosty User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Boosty user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - boosty
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://boosty.to/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- exclusive content on Boosty</title>'
+          in: body
+          need: all

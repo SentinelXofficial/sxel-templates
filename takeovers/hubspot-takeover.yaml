@@ -1,0 +1,26 @@
+id: hubspot-takeover
+brief:
+    title: hubspot takeover detection
+    by: pdteam
+    level: high
+    about: hubspot takeover was detected.
+    label:
+        - takeover
+        - hubspot
+        - hackerone
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Domain not found
+            - does not exist in our system
+          in: body
+          need: all
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

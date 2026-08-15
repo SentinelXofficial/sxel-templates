@@ -1,0 +1,24 @@
+id: manage-cabinet-register
+brief:
+    title: Manage Cabinet Register - Exposed
+    by: noel
+    level: low
+    about: The path to the Cabinet Storage is omniapp/pages/cabinet/managecabinet.jsf?Action=1. If exposed, it gives an attacker insight into information such as Storage Volume Name, Cabinet Name, it's alias,...
+    label:
+        - misconfig
+        - cabinet
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/omniapp/pages/cabinet/managecabinet.jsf?Action=1'
+      signs:
+        - "on": word
+          has:
+            - Manage Cabinet [Register Cabinet]
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: blazor-boot
+brief:
+    title: Blazor Boot File Disclosure
+    by: freakyclown
+    level: info
+    about: Exposed Blazor Boot (a web framework developed by Microsoft) config file.
+    label:
+        - blazor
+        - boot
+        - exposure
+        - config
+        - disclosure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_framework/blazor.boot.json'
+      signs:
+        - "on": word
+          has:
+            - Blazor
+            - '"config":'
+          in: body
+          need: all

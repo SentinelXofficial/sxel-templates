@@ -1,0 +1,24 @@
+id: loytec-device
+brief:
+    title: Loytec Device Info Detection
+    by: pussycat0x
+    level: info
+    about: Loytec Device info panel was detected.
+    label:
+        - iot
+        - loytec
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webui/device_info/device_info'
+      signs:
+        - "on": word
+          has:
+            - device_info
+            - syslog
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

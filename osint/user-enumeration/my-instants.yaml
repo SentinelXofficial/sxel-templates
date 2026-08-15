@@ -1,0 +1,24 @@
+id: my-instants
+brief:
+    title: My instants User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: My instants user name information check was conducted.
+    label:
+        - osint
+        - osint-music
+        - my-instants
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.myinstants.com/en/profile/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' | Myinstants</title>'
+          in: body
+          need: all

@@ -1,0 +1,23 @@
+id: bigbluebutton-detect
+brief:
+    title: BigBlueButton Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - bigbluebutton
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>BigBlueButton</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

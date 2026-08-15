@@ -1,0 +1,22 @@
+id: ghost-panel
+brief:
+    title: Ghost Panel - Detect
+    by: userdehghani
+    level: info
+    about: Beautiful, modern publishing with email newsletters and paid subscriptions built-in.
+    label:
+        - panel
+        - ghost
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ghost/#/signin'
+      signs:
+        - "on": word
+          has:
+            - <title>Ghost Admin
+            - content="Ghost"
+          in: body

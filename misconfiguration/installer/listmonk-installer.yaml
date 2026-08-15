@@ -1,0 +1,27 @@
+id: listmonk-installer
+brief:
+    title: Listmonk Installer Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Listmonk is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - listmonk
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login?next=%2Fadmin'
+      signs:
+        - "on": word
+          has:
+            - This is a fresh install
+            - Super Admin account
+            - listmonk
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

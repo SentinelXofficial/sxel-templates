@@ -1,0 +1,23 @@
+id: api-tink
+brief:
+    title: Tink API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - tink
+moves:
+    - verb: GET
+      to:
+        - https://api.tink.com/api/v1/user
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - appId
+            - externalUserId
+            - username
+          in: body
+          need: all

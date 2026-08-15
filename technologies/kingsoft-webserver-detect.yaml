@@ -1,0 +1,23 @@
+id: kingsoft-webserver-detect
+brief:
+    title: Kingsoft Web Server Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - kingsoft
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Welcome to Kingsoft Web Server!</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

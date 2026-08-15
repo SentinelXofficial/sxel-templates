@@ -1,0 +1,24 @@
+id: api-sslmate
+brief:
+    title: SSLMate API Test
+    by: 0ri2N
+    level: info
+    about: ""
+    label:
+        - recon
+        - sslmate
+        - token-spray
+moves:
+    - verb: GET
+      to:
+        - https://sslmate.com/api/v2/certs/interact.sh?expand=current.crt
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"exists"'
+            - '"wildcard"'
+            - '"auto_renew"'
+          in: body
+          need: all

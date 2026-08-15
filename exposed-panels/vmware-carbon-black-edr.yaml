@@ -1,0 +1,23 @@
+id: vmware-carbon-black-edr
+brief:
+    title: VMware Carbon Black EDR Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: VMware Carbon Black EDR panel was detected.
+    label:
+        - panel
+        - vmware
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - VMware Carbon Black EDR
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

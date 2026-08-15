@@ -1,0 +1,24 @@
+id: adobe-connect-central-login
+brief:
+    title: Adobe Connect Central Login Panel
+    by: dhiyaneshDk
+    level: info
+    about: An Adobe Connect Central login panel was detected.
+    label:
+        - adobe
+        - panel
+        - connect-central
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/system/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Adobe Connect Central Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

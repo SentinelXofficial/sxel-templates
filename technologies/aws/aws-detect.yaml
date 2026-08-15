@@ -1,0 +1,76 @@
+id: aws-detect
+brief:
+    title: AWS Service - Detect
+    by: 6mile
+    level: info
+    about: Detect if AWS is being used in the application.
+    label:
+        - tech
+        - aws
+        - amazon
+        - alb
+        - cloudfront
+        - codebuild
+        - gateway
+        - xray
+        - captcha
+        - dynamodb
+        - kms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'X-Amz-Content-Sha256:'
+            - 'X-Amz-Date:'
+            - 'X-Amz-Version-Id:'
+            - 'X-Amz-Id-2:'
+            - 'X-Amz-Delete-Marker:'
+          in: header
+        - "on": word
+          has:
+            - 'Server: awselb/2.0'
+            - 'Set-Cookie: AWSALB='
+            - 'Set-Cookie: AWSALBCORS='
+          in: header
+        - "on": word
+          has:
+            - 'X-Amz-Cf-Id:'
+            - 'X-Amz-Cf-Pop:'
+          in: header
+        - "on": word
+          has:
+            - 'arn: arn:aws:codebuild'
+            - 'X-Amz-Meta-Codebuild-Buildarn:'
+            - 'X-Amz-Meta-Codebuild-Content-Sha256:'
+            - 'X-Amz-Meta-Codebuild-Content-Md5:'
+          in: header
+        - "on": word
+          has:
+            - 'X-Amz-Apigw-Id:'
+            - 'X-Amzn-Requestid:'
+            - 'X-Amzn-Errortype: MissingAuthenticationTokenException'
+            - 'X-Amzn-Remapped-Connection:'
+            - 'X-Amzn-Remapped-Content-Length:'
+            - 'X-Amzn-Remapped-Date:'
+          in: header
+        - "on": word
+          has:
+            - 'X-Amz-Server-Side-Encryption:'
+          in: header
+        - "on": word
+          has:
+            - 'X-Amzn-Trace-Id:'
+          in: header
+        - "on": word
+          has:
+            - 'X-Amzn-Waf-Action:'
+          in: header
+        - "on": word
+          has:
+            - 'X-Amz-Crc32:'
+            - 'X-Amz-Target:'
+          in: header

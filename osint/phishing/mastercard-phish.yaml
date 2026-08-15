@@ -1,0 +1,26 @@
+id: mastercard-phish
+brief:
+    title: Mastercard phishing Detection
+    by: rxerium
+    level: info
+    about: A Mastercard phishing website was detected
+    label:
+        - phishing
+        - mastercard
+        - credit-card
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Mastercard
+            - <title>Mastercard - A global technology company in the payments industry
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

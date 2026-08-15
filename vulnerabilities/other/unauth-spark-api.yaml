@@ -1,0 +1,25 @@
+id: unauth-spark-api
+brief:
+    title: Unauthenticated Spark REST API
+    by: princechaddha
+    level: critical
+    about: The Spark product's REST API interface allows access to unauthenticated users.
+    label:
+        - spark
+        - unauth
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v1/submissions'
+      signs:
+        - "on": status
+          status:
+            - 400
+        - "on": word
+          has:
+            - Missing an action
+            - serverSparkVersion
+          in: body
+          need: all

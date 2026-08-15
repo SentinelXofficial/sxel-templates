@@ -1,0 +1,25 @@
+id: filegator-panel
+brief:
+    title: FileGator Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - filegator
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>FileGator
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

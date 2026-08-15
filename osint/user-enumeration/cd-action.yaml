@@ -1,0 +1,24 @@
+id: cd-action
+brief:
+    title: CD-Action User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: CD-Action user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - cd-action
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://cdaction.pl/uzytkownicy/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'Lista gier:'
+          in: body
+          need: all

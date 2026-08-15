@@ -1,0 +1,38 @@
+id: generic-php-files
+brief:
+    title: Generic PHP Backup Information Disclosure
+    by: sheikhrishad
+    level: medium
+    about: Generic php file source code was detected via backup files.
+    label:
+        - exposure
+        - backup
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/settings.php.bak'
+        - '{{BaseURL}}/settings.php.dist'
+        - '{{BaseURL}}/settings.php.old'
+        - '{{BaseURL}}/settings.php.save'
+        - '{{BaseURL}}/.settings.php.swp'
+        - '{{BaseURL}}/settings.php.txt'
+        - '{{BaseURL}}/config/settings.old.php'
+        - '{{BaseURL}}/config.php.bak'
+        - '{{BaseURL}}/config.php.dist'
+        - '{{BaseURL}}/config.php.old'
+        - '{{BaseURL}}/config.php.save'
+        - '{{BaseURL}}/.config.php.swp'
+        - '{{BaseURL}}/config.php.txt'
+        - '{{BaseURL}}/config/settings.old.php'
+      signs:
+        - "on": word
+          has:
+            - DB_NAME
+            - DB
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

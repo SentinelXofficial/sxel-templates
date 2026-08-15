@@ -1,0 +1,24 @@
+id: instagram-phish
+brief:
+    title: instagram phishing Detection
+    by: rxerium
+    level: info
+    about: A instagram phishing website was detected
+    label:
+        - phishing
+        - instagram
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Login • Instagram
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

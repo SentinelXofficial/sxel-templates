@@ -1,0 +1,23 @@
+id: corebos-panel
+brief:
+    title: coreBOS Panel - Detect
+    by: arafatansari
+    level: info
+    about: coreBOS panel was detected.
+    label:
+        - panel
+        - corebos
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Powered by coreBOS
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

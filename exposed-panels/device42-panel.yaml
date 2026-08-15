@@ -1,0 +1,17 @@
+id: device42-panel
+brief:
+    title: Device42 Panel - Detect
+    by: righettod
+    level: info
+    about: Device42 was detected — a Discovery, Asset Management and Dependency Mapping for Data Center and Cloud.
+    label:
+        - panel
+        - device42
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login/?next=/'
+        - '{{BaseURL}}'
+      signs: []

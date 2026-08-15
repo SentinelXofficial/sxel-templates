@@ -1,0 +1,24 @@
+id: flexbe-takeover
+brief:
+    title: Flexbe Subdomain Takeover
+    by: 0x_Akoko
+    level: high
+    about: Flexbe takeover was detected.
+    label:
+        - takeover
+        - flexbe
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Domain not configured
+            - flexbe.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

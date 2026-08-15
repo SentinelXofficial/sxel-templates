@@ -1,0 +1,16 @@
+id: algolia-api-key
+brief:
+    title: Algolia API Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - algolia
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

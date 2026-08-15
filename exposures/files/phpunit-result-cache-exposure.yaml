@@ -1,0 +1,25 @@
+id: phpunit-result-cache-exposure
+brief:
+    title: PHPUnit Result Cache File Exposure
+    by: DhiyaneshDk
+    level: low
+    about: PHPUnit cache file is exposed.
+    label:
+        - config
+        - exposure
+        - devops
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.phpunit.result.cache'
+      signs:
+        - "on": word
+          has:
+            - '"defects"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

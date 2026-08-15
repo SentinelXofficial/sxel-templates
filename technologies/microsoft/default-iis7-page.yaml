@@ -1,0 +1,19 @@
+id: default-iis7-page
+brief:
+    title: IIS-7 Default Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - iis
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>IIS7</title>
+          in: body

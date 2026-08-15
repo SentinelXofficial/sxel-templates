@@ -1,0 +1,23 @@
+id: api-front
+brief:
+    title: Frontapp API
+    by: Luqmaan Hadia [Luqiih](https://github.com/Luqiih)
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - front
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://api2.frontapp.com/accounts'
+      head:
+        Accept: application/json
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - logo_url
+            - name
+          in: body
+          need: all

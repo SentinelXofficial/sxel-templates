@@ -1,0 +1,41 @@
+id: collibra-properties
+brief:
+    title: Collibra Properties Exposure
+    by: 0xPugal
+    level: high
+    about: Detected exposed Collibra Properties.
+    label:
+        - exposure
+        - config
+        - collibra-properties
+        - collibra
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/collibra.properties'
+        - '{{BaseURL}}/app/collibra.properties'
+        - '{{BaseURL}}/src/collibra.properties'
+      signs:
+        - "on": word
+          has:
+            - collibra.url
+            - collibra.port
+            - collibra.user
+            - collibra.password
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+            - bytes
+          in: header
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

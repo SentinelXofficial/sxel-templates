@@ -1,0 +1,24 @@
+id: smugmug
+brief:
+    title: SmugMug User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: SmugMug user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - smugmug
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://{{valid_username}}.smugmug.com
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - schema.org/Person
+          in: body
+          need: all

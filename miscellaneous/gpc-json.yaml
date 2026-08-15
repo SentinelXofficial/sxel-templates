@@ -1,0 +1,26 @@
+id: gpc-json
+brief:
+    title: Global Privacy Control (GPC) File Disclosure
+    by: MihhailSokolov
+    level: info
+    about: The website defines a Global Privacy Control policy.
+    label:
+        - miscellaneous
+        - misc
+        - generic
+        - gpc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{RootURL}}/.well-known/gpc.json'
+        - '{{RootURL}}/gpc.json'
+      signs:
+        - "on": word
+          has:
+            - '"gpc"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

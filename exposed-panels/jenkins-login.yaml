@@ -1,0 +1,23 @@
+id: jenkins-login
+brief:
+    title: Jenkins Login Detected
+    by: pdteam
+    level: info
+    about: Jenkins is an open source automation server.
+    label:
+        - panel
+        - jenkins
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Sign in [Jenkins]
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

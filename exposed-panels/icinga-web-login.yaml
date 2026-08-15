@@ -1,0 +1,23 @@
+id: icinga-web-login
+brief:
+    title: Icinga Web 2 Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Icinga Web 2 login panel was detected.
+    label:
+        - panel
+        - icinga
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/authentication/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Icinga Web 2 Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

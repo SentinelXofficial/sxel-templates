@@ -1,0 +1,25 @@
+id: gitpod-phish
+brief:
+    title: Gitpod phishing Detection
+    by: rxerium
+    level: info
+    about: A Gitpod phishing website was detected
+    label:
+        - phishing
+        - gitpod
+        - developer
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Gitpod - Always Ready to Code
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

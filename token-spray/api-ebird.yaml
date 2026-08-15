@@ -1,0 +1,24 @@
+id: api-ebird
+brief:
+    title: eBird API Test
+    by: daffainfo
+    level: info
+    about: Retrieve recent or notable birding observations within a region
+    label:
+        - token-spray
+        - ebird
+moves:
+    - verb: GET
+      to:
+        - https://api.ebird.org/v2/data/obs/KZ/recent
+      head:
+        X-eBirdApiToken: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"speciesCode":'
+            - '"comName":'
+            - '"sciName":'
+            - '"locId":'
+          in: body
+          need: all

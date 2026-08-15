@@ -1,0 +1,16 @@
+id: sqlbuddy-panel
+brief:
+    title: SQL Buddy Login Panel - Detect
+    by: nullfuzz
+    level: info
+    about: SQL Buddy login panel was detected.
+    label:
+        - panel
+        - sqlbuddy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/sqlbuddy/'
+      signs: []

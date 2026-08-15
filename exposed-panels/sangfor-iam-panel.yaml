@@ -1,0 +1,24 @@
+id: sangfor-iam-panel
+brief:
+    title: Sangfor Internet Access Management - Login Panel
+    by: rxerium
+    level: info
+    about: Sangfor Internet Access Management (IAM) is a network access control and web filtering appliance from Sangfor Technologies used for managing internet access policies and user authentication in ente...
+    label:
+        - panel
+        - sangfor
+        - iam
+        - vpn
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - SANGFOR Internet Access Management
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,27 @@
+id: eventum-panel
+brief:
+    title: Eventum Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Eventum login panel was detected.
+    label:
+        - panel
+        - eventum
+        - mysql
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Login - Eventum</title>
+            - title="Eventum Issues search"
+          in: body
+        - "on": word
+          has:
+            - 'Database Error:'
+            - There seems to be a problem connecting to the database server specified in your configuration file
+          in: body
+          need: all

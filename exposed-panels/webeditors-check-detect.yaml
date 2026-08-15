@@ -1,0 +1,28 @@
+id: webeditors-check-detect
+brief:
+    title: Web Editor Check - Detect
+    by: princechaddha
+    level: info
+    about: Multiple web editor checks were detected.
+    label:
+        - panel
+        - webeditors
+        - ckeditor
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - <title>FCKeditor
+            - <title>CKEditor Samples</title>
+            - http://ckeditor.com</a>
+            - 'Custom Uploader URL:'
+            - init_spell()
+            - '''tip'':'''
+            - ':: Smart Editor 2'
+            - Replace Textareas by Class Name
+            - CKEditor - The text editor for the Internet
+          in: body

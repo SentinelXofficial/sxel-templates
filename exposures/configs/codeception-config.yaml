@@ -1,0 +1,27 @@
+id: codeception-config
+brief:
+    title: Codeception YAML Configuration File - Detect
+    by: DhiyaneshDk
+    level: low
+    about: Codeception YAML configuration file was detected.
+    label:
+        - exposure
+        - devops
+        - codeception
+        - config
+        - cicd
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/codeception.yml'
+      signs:
+        - "on": word
+          has:
+            - 'paths:'
+            - 'settings:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

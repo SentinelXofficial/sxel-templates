@@ -1,0 +1,21 @@
+id: wp-gravity-forms-log-disclosure
+brief:
+    title: WordPress Gravity Forms - Log File Disclosure
+    by: ritikchaddha
+    level: low
+    about: The Gravity Forms plugin for WordPress stores log files that may be accessible without authentication. When logging is enabled, debug and error logs are created in the wp-content/uploads/gravity_fo...
+    label:
+        - wordpress
+        - wp
+        - wp-plugin
+        - gravityforms
+        - log
+        - disclosure
+        - exposure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/gravityforms/debug.log'
+        - '{{BaseURL}}/wp-content/plugins/gravityforms/tmp/debug.log'
+      signs: []

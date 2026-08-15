@@ -1,0 +1,20 @@
+id: ibm-hmc-default-login
+brief:
+    title: IBM Power HMC - Default Login
+    by: R3S OST
+    level: high
+    about: IBM HMC default admin login credentials were discovered.
+    label:
+        - default-login
+        - ibm
+        - hmc
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/hmc/j_security_check'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: j_username={{username}}&j_password={{password}}&j_newConsole=Dashboard&j_security_check=Log+in
+      signs: []

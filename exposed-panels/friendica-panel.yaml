@@ -1,0 +1,27 @@
+id: friendica-panel
+brief:
+    title: Friendica Panel - Detect
+    by: righettod
+    level: info
+    about: Friendica Login Panel was detected.
+    label:
+        - friendica
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - title="Search in Friendica
+            - Welcome to Friendica Social Network
+            - content="Friendica
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

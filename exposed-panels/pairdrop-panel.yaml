@@ -1,0 +1,25 @@
+id: pair-drop-panel
+brief:
+    title: Pair Drop Panel - Detect
+    by: rxerium
+    level: info
+    about: Local file sharing in your browser. Inspired by Apple's AirDrop. Fork of Snapdrop.
+    label:
+        - panel
+        - pairdrop
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>PairDrop
+            - Peer2Peer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,27 @@
+id: openhands-panel
+brief:
+    title: OpenHands Panel - Detect
+    by: rxerium
+    level: info
+    about: OpenHands (formerly OpenDevin) was detected. OpenHands is an open-source AI software engineering agent platform that can write code, run commands, and perform development tasks autonomously. Expose...
+    label:
+        - panel
+        - openhands
+        - opendevin
+        - agent
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>OpenHands</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

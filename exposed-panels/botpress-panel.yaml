@@ -1,0 +1,27 @@
+id: botpress-panel
+brief:
+    title: Botpress Admin Panel - Detect
+    by: rxerium
+    level: info
+    about: Botpress admin panel was detected. Botpress is an open-source conversational AI platform for building chatbots and virtual assistants.
+    label:
+        - panel
+        - botpress
+        - chatbot
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin'
+      signs:
+        - "on": word
+          has:
+            - '@botpress/ui-admin'
+            - webpackJsonp
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

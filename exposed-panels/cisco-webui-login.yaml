@@ -1,0 +1,28 @@
+id: cisco-webui-login
+brief:
+    title: Cisco Web UI Login - Detect
+    by: drewvravick
+    level: info
+    about: Detects the presence of Cisco Web UI login panels
+    label:
+        - webui
+        - cisco
+        - login
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/webui/'
+      signs:
+        - "on": word
+          has:
+            - Cisco Systems
+            - webui-centerpanel
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

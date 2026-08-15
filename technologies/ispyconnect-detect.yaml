@@ -1,0 +1,23 @@
+id: ispyconnect-detect
+brief:
+    title: iSpyConnect - Detect
+    by: arafatansari
+    level: info
+    about: ""
+    label:
+        - tech
+        - ispy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - iSpy is running
+          in: body
+        - "on": word
+          has:
+            - 'Server: iSpy'
+          in: header

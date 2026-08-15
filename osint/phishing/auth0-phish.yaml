@@ -1,0 +1,25 @@
+id: auth0-phish
+brief:
+    title: Auth0 phishing Detection
+    by: rxerium
+    level: info
+    about: An Auth0 phishing website was detected
+    label:
+        - phishing
+        - auth0
+        - authentication
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ecure users, AI agents, and more with Auth0, an easy-to-implement, scalable, and adaptable authentication and authorization platform.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

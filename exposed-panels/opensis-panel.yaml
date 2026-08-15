@@ -1,0 +1,26 @@
+id: opensis-detect
+brief:
+    title: OpenSIS Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: OpenSIS login panel was detected.
+    label:
+        - panel
+        - opensis
+        - login
+        - os4ed
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/opensis/index.php'
+      signs:
+        - "on": word
+          has:
+            - <title>openSIS Student Information System</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

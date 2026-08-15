@@ -1,0 +1,24 @@
+id: storycorps
+brief:
+    title: StoryCorps User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: StoryCorps user name information check was conducted.
+    label:
+        - osint
+        - osint-blog
+        - storycorps
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://archive.storycorps.org/user/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - archive author
+          in: body
+          need: all

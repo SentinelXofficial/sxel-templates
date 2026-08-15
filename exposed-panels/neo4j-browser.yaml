@@ -1,0 +1,25 @@
+id: neo4j-browser
+brief:
+    title: Neo4j Browser - Detect
+    by: DhiyaneshDK
+    level: info
+    about: The Neo4j Browser has been detected.
+    label:
+        - neo4j
+        - exposure
+        - unauth
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/browser/'
+      signs:
+        - "on": word
+          has:
+            - <title>Neo4j Browser</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,22 @@
+id: uni-gui-framework
+brief:
+    title: UniGUI Framework - Detect
+    by: serrapa
+    level: info
+    about: Checks for the presence of UniGUI framework and extracts its version along with the Sencha Ext JS version.
+    label:
+        - tech
+        - unigui
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - uni-xtheme-
+            - ext-all.js
+            - uniVars._extVer=
+          in: body
+          need: all

@@ -1,0 +1,24 @@
+id: gnome-extensions
+brief:
+    title: Gnome extensions User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Gnome extensions user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - gnome-extensions
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://extensions.gnome.org/accounts/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - s Profile - GNOME Shell Extensions
+          in: body
+          need: all

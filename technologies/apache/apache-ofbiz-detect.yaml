@@ -1,0 +1,26 @@
+id: apache-ofbiz-detect
+brief:
+    title: Apache OFBiz - Detect
+    by: rxerium
+    level: info
+    about: An Apache OFBiz instance was detected.
+    label:
+        - tech
+        - detect
+        - ofbiz
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - OFBiz.Visitor=
+            - Apache OFBiz.
+          in: response
+          need: all
+        - "on": status
+          status:
+            - 200

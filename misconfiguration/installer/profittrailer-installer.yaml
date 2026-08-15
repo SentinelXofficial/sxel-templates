@@ -1,0 +1,25 @@
+id: profittrailer-installer
+brief:
+    title: ProfitTrailer Setup Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed ProfitTrailer Setup page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - profittrailer
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup/license'
+      signs:
+        - "on": word
+          has:
+            - ProfitTrailer Setup
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

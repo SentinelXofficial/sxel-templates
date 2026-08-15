@@ -1,0 +1,26 @@
+id: stripe-phish
+brief:
+    title: Stripe phishing Detection
+    by: rxerium
+    level: info
+    about: A Stripe phishing website was detected
+    label:
+        - phishing
+        - stripe
+        - payment
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Stripe is a suite of APIs powering online payment processing and commerce solutions for internet businesses of all sizes. Accept payments and scale faster with AI.
+            - Stripe Dashboard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

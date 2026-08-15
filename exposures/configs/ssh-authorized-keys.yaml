@@ -1,0 +1,31 @@
+id: ssh-authorized-keys
+brief:
+    title: SSH Authorized Keys File - Detect
+    by: geeknik
+    level: medium
+    about: SSH authorized keys file was detected.
+    label:
+        - config
+        - exposure
+        - ssh
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.ssh/authorized_keys'
+        - '{{BaseURL}}/_/.ssh/authorized_keys'
+        - '{{BaseURL}}/authorized_keys'
+        - '{{BaseURL}}/.authorized_keys'
+      signs:
+        - "on": word
+          has:
+            - ssh-dss
+            - ssh-ed25519
+            - ssh-rsa
+            - ecdsa-sha2-nistp256
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

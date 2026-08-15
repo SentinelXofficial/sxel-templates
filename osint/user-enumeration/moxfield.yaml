@@ -1,0 +1,24 @@
+id: moxfield
+brief:
+    title: Moxfield User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Moxfield user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - moxfield
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.moxfield.com/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Moxfield Profile
+          in: body
+          need: all

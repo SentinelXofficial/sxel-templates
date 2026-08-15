@@ -1,0 +1,27 @@
+id: nessus-panel
+brief:
+    title: Tenable Nessus Panel - Detect
+    by: joanbono
+    level: info
+    about: Tenable Nessus panel was detected.
+    label:
+        - panel
+        - nessus
+        - tenable
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/server/status'
+      signs:
+        - "on": word
+          has:
+            - NessusWWW
+          in: header
+        - "on": word
+          has:
+            - <title>Nessus</title>
+            - window.location = '/unsupported6.html';
+          in: body
+          need: all

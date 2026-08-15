@@ -1,0 +1,26 @@
+id: asus-aicloud-panel
+brief:
+    title: ASUS AiCloud Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ASUS AiCloud Panel was detected.
+    label:
+        - panel
+        - asus
+        - aicloud
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - AiCloud</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+            - 401

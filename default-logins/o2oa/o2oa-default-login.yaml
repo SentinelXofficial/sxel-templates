@@ -1,0 +1,35 @@
+id: o2oa-default-login
+brief:
+    title: O2OA - Default Login
+    by: SleepingBag945
+    level: high
+    about: O2OA is an open source and free enterprise and team office platform. It provides four major platforms portal management, process management, information management, and data management. It integrat...
+    label:
+        - o2oa
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/x_organization_assemble_authentication/jaxrs/authentication/captcha'
+      head:
+        Accept: text/html,application/json,*/*
+        Authorization: anonymous
+        Content-Type: application/json; charset=UTF-8
+        Cookie: x-token=anonymous
+      body: '{"credential":"{{username}}","password":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - '"type": "success"'
+            - distinguishedName
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,21 @@
+id: cmsimple-detect
+brief:
+    title: CMSimple - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects the presence of CMSimple, a simple content management system that requires no database (flat-file).
+    label:
+        - tech
+        - cmsimple
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - cmsimpleLocatorElement
+            - Welcome_to_CMSimple
+            - templates/__cmsimple_
+          in: body

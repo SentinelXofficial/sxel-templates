@@ -1,0 +1,18 @@
+id: prefect-detect
+brief:
+    title: Prefect - Detect
+    by: rxerium
+    level: info
+    about: Detected Prefect, a modern workflow orchestration platform with Orion UI for managing data pipelines.
+    label:
+        - tech
+        - prefect
+        - workflow
+        - orchestration
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

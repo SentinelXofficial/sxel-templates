@@ -1,0 +1,24 @@
+id: nordpass-phish
+brief:
+    title: nordpass phishing Detection
+    by: rxerium
+    level: info
+    about: A nordpass phishing website was detected
+    label:
+        - phishing
+        - nordpass
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Securely Store, Manage &amp; Autofill Passwords | NordPass
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

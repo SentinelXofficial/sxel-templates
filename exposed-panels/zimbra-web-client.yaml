@@ -1,0 +1,25 @@
+id: zimbra-web-client
+brief:
+    title: Zimbra Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Zimbra panel was detected. Zimbra provides open source server and client software for messaging and collaboration.
+    label:
+        - edb
+        - panel
+        - zimbra
+        - synacor
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/zimbraAdmin/'
+      signs:
+        - "on": word
+          has:
+            - <title>Zimbra Administration</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,17 @@
+id: wordpress-header-and-footer-scripts
+brief:
+    title: Header and Footer Scripts Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/header-and-footer-scripts/readme.txt'
+      signs: []

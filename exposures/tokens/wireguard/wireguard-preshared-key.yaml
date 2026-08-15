@@ -1,0 +1,16 @@
+id: wireguard-preshared-key
+brief:
+    title: WireGuard Preshared Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - wireguard
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

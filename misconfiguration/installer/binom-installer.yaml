@@ -1,0 +1,27 @@
+id: binom-installer
+brief:
+    title: Binom Installer Exposure
+    by: tess
+    level: high
+    about: Binom is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - binom
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+        - '{{BaseURL}}/?page=step_1'
+      signs:
+        - "on": word
+          has:
+            - <title>Install Binom</title>
+            - System check
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

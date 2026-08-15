@@ -1,0 +1,29 @@
+id: unauthenticated-zipkin
+brief:
+    title: Zipkin Discovery
+    by: dhiyaneshDk
+    level: high
+    about: Unauthenticated access to Zipkin was discovered.
+    label:
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config.json'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": word
+          has:
+            - environment
+            - defaultLookback
+          in: body
+          need: all

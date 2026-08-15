@@ -1,0 +1,24 @@
+id: bigo-live
+brief:
+    title: BIGO Live User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: BIGO Live user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - bigo-live
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.bigo.tv/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - userInfo:{nickName
+          in: body
+          need: all

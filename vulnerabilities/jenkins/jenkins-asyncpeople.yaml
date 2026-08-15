@@ -1,0 +1,18 @@
+id: jenkins-async-people
+brief:
+    title: Jenkins panel async-people
+    by: nadino
+    level: info
+    about: ""
+    label:
+        - jenkins
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/asynchPeople/'
+      signs:
+        - "on": word
+          has:
+            - <title>People -  [Jenkins]</title>
+          in: body

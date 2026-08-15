@@ -1,0 +1,24 @@
+id: pypicloud-panel
+brief:
+    title: PyPICloud Login Panel - Detect
+    by: Supras
+    level: info
+    about: PyPLCloud login panel was detected.
+    label:
+        - panel
+        - pypicloud
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Pypicloud</title>
+            - <html ng-app="pypicloud">
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

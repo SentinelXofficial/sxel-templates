@@ -1,0 +1,31 @@
+id: springboot-gateway
+brief:
+    title: Detect Spring Gateway Actuator
+    by: wdahlenb
+    level: medium
+    about: Sensitive environment variables may not be masked
+    label:
+        - springboot
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/gateway/routes'
+        - '{{BaseURL}}/actuator/gateway/routes'
+      signs:
+        - "on": word
+          has:
+            - predicate
+            - route_id
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

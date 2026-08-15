@@ -1,0 +1,25 @@
+id: wg-easy-panel
+brief:
+    title: WireGuard Easy (wg-easy) - Login Panel
+    by: rxerium
+    level: info
+    about: wg-easy is the easiest way to run WireGuard VPN with a web-based admin UI.
+    label:
+        - panel
+        - wireguard
+        - wg-easy
+        - vpn
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - wg-easy
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

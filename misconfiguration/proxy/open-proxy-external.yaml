@@ -1,0 +1,26 @@
+id: open-proxy-external
+brief:
+    title: Open Proxy To External Network
+    by: gtrrnr
+    level: medium
+    about: The host is configured as a proxy which allows access to other hosts on the external network.
+    label:
+        - exposure
+        - config
+        - proxy
+        - misconfig
+        - vuln
+    score: CVSS:5.8
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://test.s3.amazonaws.com'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://{{interactsh-url}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

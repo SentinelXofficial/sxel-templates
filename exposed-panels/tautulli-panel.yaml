@@ -1,0 +1,28 @@
+id: tautulli-panel
+brief:
+    title: Tautulli Panel - Detect
+    by: rxerium
+    level: info
+    about: A Python based monitoring and tracking tool for Plex Media Server.
+    label:
+        - panel
+        - tautulli
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/auth/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Tautulli - Login
+            - content="Tautulli
+            - alt="Tautulli
+            - Sign In with Tautulli
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

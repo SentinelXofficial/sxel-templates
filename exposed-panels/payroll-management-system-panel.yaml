@@ -1,0 +1,23 @@
+id: payroll-management-system-panel
+brief:
+    title: Payroll Management System Web Login Panel - Detect
+    by: idealphase
+    level: info
+    about: Payroll Management System Web login panel was detected.
+    label:
+        - panel
+        - payroll
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Admin | Employee's Payroll Management System</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

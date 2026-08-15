@@ -1,0 +1,25 @@
+id: gyra-master-admin
+brief:
+    title: GYRA Master Admin Login Panel - Detect
+    by: Hardik-Solanki
+    level: info
+    about: GYRA Master Admin login panel was detected.
+    label:
+        - panel
+        - master
+        - admin
+        - gyra
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Login | GYRA Master Admin
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

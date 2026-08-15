@@ -1,0 +1,32 @@
+id: ispconfig-hcp-default-login
+brief:
+    title: ISPConfig Hosting Control Panel - Default Login
+    by: ritikchaddha
+    level: high
+    about: ISPConfig Hosting Control Panel Default Password Vulnerability exposes systems to unauthorized access, compromising data integrity and security.
+    label:
+        - ispconfig
+        - hsp
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/content.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&passwort={{password}}&s_mod=login&s_pg=index
+      signs:
+        - "on": word
+          has:
+            - LOGIN_REDIRECT:dashboard/dashboard.php
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Set-Cookie
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

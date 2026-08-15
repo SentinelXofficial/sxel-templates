@@ -1,0 +1,30 @@
+id: ec2-instance-information
+brief:
+    title: EC2 Instance Information
+    by: DhiyaneshDk
+    level: low
+    about: EC2 Instance information is exposed.
+    label:
+        - misconfig
+        - ec2
+        - aws
+        - amazon
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>EC2 Instance Information</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

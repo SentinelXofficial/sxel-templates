@@ -1,0 +1,25 @@
+id: epic-games-phish
+brief:
+    title: Epic Games phishing Detection
+    by: rxerium
+    level: info
+    about: An Epic Games phishing website was detected
+    label:
+        - phishing
+        - epic-games
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - The Epic Games Store is now open.
+            - Epic Games
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

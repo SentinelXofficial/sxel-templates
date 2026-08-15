@@ -1,0 +1,25 @@
+id: koel-panel
+brief:
+    title: Koel Panel - Detect
+    by: rxerium
+    level: info
+    about: Personal audio streaming service that works.
+    label:
+        - panel
+        - koel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Koel</title>
+            - Personal audio streaming service that works.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

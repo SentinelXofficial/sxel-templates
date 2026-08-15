@@ -1,0 +1,26 @@
+id: bitfinex-phish
+brief:
+    title: Bitfinex phishing Detection
+    by: rxerium
+    level: info
+    about: A Bitfinex phishing website was detected
+    label:
+        - phishing
+        - bitfinex
+        - crypto
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Bitfinex
+            - Bitfinex is the longest-running and most liquid major cryptocurrency exchange. Founded in 2012, it has become the go-to platform for traders &amp; institutional investors.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

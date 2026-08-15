@@ -1,0 +1,25 @@
+id: proftpd-config
+brief:
+    title: ProFTPD Configuration File - Detect
+    by: sheikhrishad
+    level: info
+    about: ProFTPD configuration file was detected.
+    label:
+        - config
+        - exposure
+        - proftpd
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/proftpd.conf'
+      signs:
+        - "on": word
+          has:
+            - ProFTPD
+            - ServerName
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

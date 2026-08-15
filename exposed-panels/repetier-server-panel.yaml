@@ -1,0 +1,26 @@
+id: repetier-server-panel
+brief:
+    title: Repetier Server Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Repetier Server login panel detected.
+    label:
+        - panel
+        - repetier
+        - detect
+        - repetier-server
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#!/login'
+      signs:
+        - "on": word
+          has:
+            - content="Repetier-Server
+            - About Repetier-Server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

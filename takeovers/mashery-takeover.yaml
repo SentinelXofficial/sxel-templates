@@ -1,0 +1,19 @@
+id: mashery-takeover
+brief:
+    title: mashery takeover detection
+    by: pdteam
+    level: high
+    about: mashery takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Unrecognized domain <strong>
+          in: body
+          need: all

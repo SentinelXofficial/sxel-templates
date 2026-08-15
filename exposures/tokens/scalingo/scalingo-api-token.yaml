@@ -1,0 +1,16 @@
+id: scalingo-api-token
+brief:
+    title: Scalingo API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - scalingo
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

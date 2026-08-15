@@ -1,0 +1,19 @@
+id: pentaho-panel
+brief:
+    title: Pentaho User Console Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Pentaho User Console login panel was detected.
+    label:
+        - panel
+        - pentaho
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pentaho/Login'
+      signs:
+        - "on": word
+          has:
+            - <title>Pentaho User Console - Login</title>
+          in: body

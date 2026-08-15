@@ -1,0 +1,26 @@
+id: tigase-xmpp-server
+brief:
+    title: Tigase XMPP Server - Exposure
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tigase
+        - xmpp
+        - server
+        - panel
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Tigase XMPP Server</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

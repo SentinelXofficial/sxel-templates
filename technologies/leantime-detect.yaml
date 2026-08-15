@@ -1,0 +1,27 @@
+id: leantime-detect
+brief:
+    title: Leantime - Detect
+    by: icarot
+    level: info
+    about: Detects a Leantime server, a project management system for non-project managers.
+    label:
+        - tech
+        - leantime
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+      signs:
+        - "on": word
+          has:
+            - content="Leantime
+            - name="leantime-version
+            - window.leantime.currentProject
+            - .leantimeLogo {
+            - class="leantimeLogo
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

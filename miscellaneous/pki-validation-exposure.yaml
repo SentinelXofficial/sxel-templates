@@ -1,0 +1,29 @@
+id: pki-validation-exposure
+brief:
+    title: Well-Known PKI Validation Directory
+    by: rxerium
+    level: info
+    about: Detects CA/B Forum PKI validation artefacts directory.
+    label:
+        - well-known
+        - pki
+        - certificate
+        - validation
+        - miscellaneous
+        - misc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.well-known/pki-validation/'
+        - '{{BaseURL}}/well-known/pki-validation/'
+      signs:
+        - "on": word
+          has:
+            - pki-validation
+            - Parent Directory
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

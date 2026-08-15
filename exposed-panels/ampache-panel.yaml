@@ -1,0 +1,30 @@
+id: ampache-panel
+brief:
+    title: Ampache Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Ampache login panel was detected.
+    label:
+        - panel
+        - ampache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login.php'
+        - '{{BaseURL}}/public/login.php'
+      signs:
+        - "on": word
+          has:
+            - 'Ampache :: For the Love of Music'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Music - Installation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

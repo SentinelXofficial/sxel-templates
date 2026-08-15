@@ -1,0 +1,23 @@
+id: librenms-login
+brief:
+    title: LibreNMS Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: LibreNMS login panel was detected.
+    label:
+        - librenms
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>LibreNMS</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

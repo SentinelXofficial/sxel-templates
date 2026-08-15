@@ -1,0 +1,25 @@
+id: proxmox-panel
+brief:
+    title: Proxmox Virtual Environment Login Panel - Detect
+    by: lum8rjack
+    level: info
+    about: Proxmox Virtual Environment login panel was detected.
+    label:
+        - panel
+        - proxmox
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Proxmox Virtual Environment</title>
+            - 'auth_cookie_name: ''PVEAuthCookie'''
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

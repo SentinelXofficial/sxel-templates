@@ -1,0 +1,27 @@
+id: aws-ecs-container-agent-tasks
+brief:
+    title: aws-ecs-container-agent-tasks
+    by: dogasantos
+    level: info
+    about: Aws container metadata content
+    label:
+        - miscellaneous
+        - aws
+        - docker
+        - ec2
+        - misc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v1/metadata'
+        - '{{BaseURL}}/v1/tasks'
+      signs:
+        - "on": word
+          has:
+            - arn:aws:ecs
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

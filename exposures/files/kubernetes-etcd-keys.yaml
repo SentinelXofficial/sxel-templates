@@ -1,0 +1,26 @@
+id: kubernetes-etcd-keys
+brief:
+    title: Kubernetes etcd Keys - Exposure
+    by: Hardik-Solanki
+    level: medium
+    about: Kubernetes private etcd keys are exposed.
+    label:
+        - files
+        - exposure
+        - kubernetes
+        - k8s
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/apiserver-etcd-client.key'
+      signs:
+        - "on": word
+          has:
+            - application/json
+            - application/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

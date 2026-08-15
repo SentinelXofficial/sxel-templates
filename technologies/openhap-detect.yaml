@@ -1,0 +1,24 @@
+id: opnhap-detect
+brief:
+    title: OpenHAP Detection
+    by: fabaff
+    level: info
+    about: ""
+    label:
+        - tech
+        - iot
+        - openhab
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - openHAB
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

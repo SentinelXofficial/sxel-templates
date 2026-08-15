@@ -1,0 +1,19 @@
+id: api-googletimezone
+brief:
+    title: Google Timezone API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - timezone
+moves:
+    - verb: GET
+      to:
+        - https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810,-119.6822510&timestamp=1331161200&key={{token}}
+      signs:
+        - "on": word
+          has:
+            - errorMessage
+          in: body

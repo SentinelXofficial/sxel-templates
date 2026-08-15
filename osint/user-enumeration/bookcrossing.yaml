@@ -1,0 +1,24 @@
+id: bookcrossing
+brief:
+    title: Bookcrossing User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Bookcrossing user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - bookcrossing
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.bookcrossing.com/mybookshelf/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Recent Book Activity
+          in: body
+          need: all

@@ -1,0 +1,24 @@
+id: archive-of-our-own-account
+brief:
+    title: Archive Of Our Own Account User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Archive Of Our Own Account user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - archive-of-our-own-account
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://archiveofourown.org/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '>Profile<'
+          in: body
+          need: all

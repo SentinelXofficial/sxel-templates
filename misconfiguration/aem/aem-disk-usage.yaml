@@ -1,0 +1,32 @@
+id: aem-disk-usage
+brief:
+    title: Adobe AEM Disk Usage Information Disclosure
+    by: dhiyaneshDk
+    level: low
+    about: Adobe AEM Disk Usage Information is exposed.
+    label:
+        - misconfig
+        - aem
+        - adobe
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/etc/reports/diskusage.html'
+        - '{{BaseURL}}/etc/reports/diskusage.html?path=/content/dam'
+      signs:
+        - "on": word
+          has:
+            - Disk Usage /
+            - <th>nodes</th>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

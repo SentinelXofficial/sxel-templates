@@ -1,0 +1,25 @@
+id: buildpath-file-disclosure
+brief:
+    title: .buildpath - File Disclosure
+    by: ritikchaddha
+    level: low
+    about: Publicly accessible /.buildpath configuration file was detected, which may expose project structure or sensitive information.
+    label:
+        - exposure
+        - files
+        - buildpath
+        - config
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.buildpath'
+      signs:
+        - "on": word
+          has:
+            - </buildpath>
+            - <?xml
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

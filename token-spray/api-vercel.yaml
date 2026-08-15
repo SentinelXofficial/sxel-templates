@@ -1,0 +1,23 @@
+id: api-vercel
+brief:
+    title: Vercel - API Detection
+    by: dwisiswant0
+    level: info
+    about: Vercel API was detected.
+    label:
+        - token-spray
+        - vercel
+moves:
+    - verb: GET
+      to:
+        - https://api.vercel.com/www/user
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"user":'
+            - '"username":'
+            - '"email":'
+          in: body
+          need: all

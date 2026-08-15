@@ -1,0 +1,25 @@
+id: threadless-phish
+brief:
+    title: Threadless phishing Detection
+    by: rxerium
+    level: info
+    about: A Threadless phishing website was detected
+    label:
+        - phishing
+        - threadless
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Threadless
+            - Shop our collection of awesome t-shirts, art prints, iphone cases, and more featuring unique designs by the global Threadless artist community.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

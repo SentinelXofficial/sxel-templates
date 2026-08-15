@@ -1,0 +1,17 @@
+id: blackbox-exporter-exposure
+brief:
+    title: Blackbox Exporter - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Blackbox Exporter was detected and appeared to be accessible without authentication.
+    label:
+        - blackbox
+        - misconfig
+        - unauth
+        - exporter
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

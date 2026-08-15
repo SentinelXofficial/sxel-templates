@@ -1,0 +1,24 @@
+id: samsung-phish
+brief:
+    title: samsung phishing Detection
+    by: rxerium
+    level: info
+    about: A samsung phishing website was detected
+    label:
+        - phishing
+        - samsung
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Samsung UK | Mobile | Home Electronics | Home Appliances | TV
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

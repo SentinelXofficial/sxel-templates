@@ -1,0 +1,16 @@
+id: localai-detect
+brief:
+    title: LocalAI - Detect
+    by: s4e-io
+    level: info
+    about: An instance running LocalAI was detected.
+    label:
+        - localai
+        - tech
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

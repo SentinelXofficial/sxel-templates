@@ -1,0 +1,26 @@
+id: librephotos-panel
+brief:
+    title: LibrePhotos Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - librephotos
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>LibrePhotos
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+            - 404

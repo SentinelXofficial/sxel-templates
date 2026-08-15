@@ -1,0 +1,24 @@
+id: uwumarket
+brief:
+    title: Uwumarket User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Uwumarket user name information check was conducted.
+    label:
+        - osint
+        - osint-business
+        - uwumarket
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://uwumarket.us/collections/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - collection-hero__text-wrapper
+          in: body
+          need: all

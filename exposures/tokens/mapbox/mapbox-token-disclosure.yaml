@@ -1,0 +1,16 @@
+id: mapbox-token-disclosure
+brief:
+    title: Mapbox Token Disclosure
+    by: Devang-Solanki
+    level: medium
+    about: Mapbox secret token is exposed to external users.
+    label:
+        - token
+        - exposure
+        - mapbox
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

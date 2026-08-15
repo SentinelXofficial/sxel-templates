@@ -1,0 +1,19 @@
+id: akuiteo-panel
+brief:
+    title: Akuiteo Login Panel - Detect
+    by: righettod
+    level: info
+    about: Akuiteo products was detected.
+    label:
+        - panel
+        - akuiteo
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/akuiteo.collabs/login/login.html'
+        - '{{BaseURL}}/akuiteo/login.html/'
+      signs: []

@@ -1,0 +1,25 @@
+id: netlify-phish
+brief:
+    title: Netlify phishing Detection
+    by: rxerium
+    level: info
+    about: A Netlify phishing website was detected
+    label:
+        - phishing
+        - netlify
+        - hosting
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Build with AI or code, deploy instantly. One platform with everything you need to make real apps live.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

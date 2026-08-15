@@ -1,0 +1,24 @@
+id: hiberworld
+brief:
+    title: Hiberworld User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Hiberworld user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - hiberworld
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://hiberworld.com/u/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'Creations by '
+          in: body
+          need: all

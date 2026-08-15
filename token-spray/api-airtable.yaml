@@ -1,0 +1,23 @@
+id: api-airtable
+brief:
+    title: Airtable API Test
+    by: daffainfo
+    level: info
+    about: Integrate with Airtable
+    label:
+        - token-spray
+        - airtable
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://api.airtable.com/v0/meta/bases'
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"bases"'
+            - '"id"'
+            - '"name"'
+          in: body
+          need: all

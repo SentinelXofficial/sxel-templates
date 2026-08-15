@@ -1,0 +1,24 @@
+id: 21buttons
+brief:
+    title: 21buttons User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: 21buttons user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - 21buttons
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.21buttons.com/buttoner/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - profile_user_followers
+          in: body
+          need: all

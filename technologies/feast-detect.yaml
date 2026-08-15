@@ -1,0 +1,26 @@
+id: feast-detect
+brief:
+    title: Feast Feature Store - Detect
+    by: rxerium
+    level: info
+    about: Detected Feast, an open-source feature store for managing and serving ML features.
+    label:
+        - tech
+        - feast
+        - feature-store
+        - ml
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/p/automl_pipeline'
+      signs:
+        - "on": word
+          has:
+            - <title>Feast Feature Store
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

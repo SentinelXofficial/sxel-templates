@@ -1,0 +1,25 @@
+id: opcache-status-exposure
+brief:
+    title: OPcache Status Page - Detect
+    by: pdteam
+    level: medium
+    about: OPcache status page was detected.
+    label:
+        - config
+        - exposure
+        - status
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/opcache-status/'
+        - '{{BaseURL}}/php-opcache-status/'
+        - '{{BaseURL}}/opcache-status/opcache.php'
+      signs:
+        - "on": word
+          has:
+            - <th>opcache_enabled</th>
+            - <th>opcache_hit_rate</th>
+          in: body
+          need: all

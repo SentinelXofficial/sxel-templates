@@ -1,0 +1,24 @@
+id: retool-login
+brief:
+    title: Retool Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Retool login panel was detected.
+    label:
+        - login
+        - panel
+        - retool
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Retool</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

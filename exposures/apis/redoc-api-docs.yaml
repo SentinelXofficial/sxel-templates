@@ -1,0 +1,20 @@
+id: redoc-api-docs
+brief:
+    title: ReDoc API Docs - Detect
+    by: Hamza Sahin
+    level: info
+    about: ReDoc API documentation interface is available without authentication, potentially exposing information about the API endpoints.
+    label:
+        - api
+        - openapi
+        - redoc
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/redoc'
+        - '{{BaseURL}}/docs'
+        - '{{BaseURL}}/api/docs'
+        - '{{BaseURL}}/openapi'
+      signs: []

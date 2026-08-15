@@ -1,0 +1,34 @@
+id: wordpress-accessible-wpconfig
+brief:
+    title: WordPress wp-config Detection
+    by: Kiblyn11
+    level: high
+    about: WordPress `wp-config` was discovered. This file is remotely accessible and its content available for reading.
+    label:
+        - wordpress
+        - backup
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - DB_NAME
+            - DB_PASSWORD
+          in: body
+          need: all
+        - "on": word
+          has:
+            - DBNAME
+            - PASSWORD
+          in: body
+          need: all
+        - "on": word
+          has:
+            - DB_USERNAME
+            - DB_PASSWORD
+          in: body
+          need: all

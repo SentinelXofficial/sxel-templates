@@ -1,0 +1,16 @@
+id: metersphere-login
+brief:
+    title: MeterSphere Login Panel - Detect
+    by: pdteam
+    level: info
+    about: MeterSphere login panel was detected.
+    label:
+        - panel
+        - metersphere
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/favicon.ico'
+        - '{{BaseURL}}/login'
+      signs: []

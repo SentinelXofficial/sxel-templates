@@ -1,0 +1,26 @@
+id: unauthenticated-varnish-cache-purge
+brief:
+    title: Varnish Unauthenticated Cache Purge
+    by: 0xelkomy
+    level: low
+    about: As per guideline one should protect purges with ACLs from unauthorized hosts.
+    label:
+        - misconfig
+        - cache
+        - hackerone
+        - varnish
+        - vuln
+moves:
+    - verb: PURGE
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>200 Purged</title>
+            - '"status": "ok"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

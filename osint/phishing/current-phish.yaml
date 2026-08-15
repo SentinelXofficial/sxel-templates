@@ -1,0 +1,26 @@
+id: current-phish
+brief:
+    title: Current phishing Detection
+    by: rxerium
+    level: info
+    about: A Current phishing website was detected
+    label:
+        - phishing
+        - current
+        - fintech
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Current
+            - Mobile banking done better. Build credit while you bank. No overdraft fees/hidden fees. Current is a fintech not a bank. Banking services provided by Choice Financial Group, Member FDIC, and Cross River Bank, Member FDIC.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

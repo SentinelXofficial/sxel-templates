@@ -1,0 +1,21 @@
+id: api-abstract-company-enrichment
+brief:
+    title: Abstract Api Company Enrichment Test
+    by: daffainfo
+    level: info
+    about: Enrich any domain or email with accurate company data, including headcount, location and industry.
+    label:
+        - token-spray
+        - abstractapi
+moves:
+    - verb: GET
+      to:
+        - https://companyenrichment.abstractapi.com/v1/?api_key={{token}}&domain=airbnb.com
+      signs:
+        - "on": word
+          has:
+            - '"name":'
+            - '"domain":'
+            - '"year_founded":'
+          in: body
+          need: all

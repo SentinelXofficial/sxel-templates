@@ -1,0 +1,59 @@
+id: ispconfig-admin-default-login
+brief:
+    title: ISPConfig Admin - Default Password
+    by: pussycat0x
+    level: high
+    about: ISPConfig Admin Default Password Vulnerability exposes systems to unauthorized access, compromising data integrity and security.
+    label:
+        - default-login
+        - ispconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Tools
+            - Websites
+          in: body_3
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login/index.php'
+      head:
+        Connection: close
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{BaseURL}}'
+        Referer: '{{RootURL}}/login/'
+      body: username={{username}}&password={{password}}&s_mod=login&s_pg=index
+      signs:
+        - "on": word
+          has:
+            - Tools
+            - Websites
+          in: body_3
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sites/web_vhost_domain_list.php'
+      head:
+        Referer: '{{RootURL}}/index.php'
+        X-Requested-With: XMLHttpRequest
+      signs:
+        - "on": word
+          has:
+            - Tools
+            - Websites
+          in: body_3
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,17 @@
+id: ds-store-file
+brief:
+    title: DS_Store File - Exposed
+    by: 0w4ys
+    level: info
+    about: A .DS_Store file was found. This file may contain names of files that exist on the server, including backups or other files that aren't meant to be publicly available.
+    label:
+        - exposure
+        - files
+        - ds_store
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.DS_Store'
+      signs: []

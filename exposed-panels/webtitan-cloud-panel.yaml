@@ -1,0 +1,28 @@
+id: webtitan-cloud-panel
+brief:
+    title: WebTitan Cloud Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: WebTitan Cloud is a cloud-based web filtering solution that monitors, controls, and protects users and businesses online. It blocks malware, phishing, viruses, ransomware, and malicious sites.
+    label:
+        - panel
+        - webtitan
+        - cloud
+        - detect
+        - titanhq
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.php'
+      signs:
+        - "on": word
+          has:
+            - <title>WebTitan Cloud
+            - alt="WebTitan Cloud Logo
+            - title="WebTitan
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

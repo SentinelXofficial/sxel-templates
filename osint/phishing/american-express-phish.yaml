@@ -1,0 +1,24 @@
+id: american-express-phish
+brief:
+    title: american-express phishing Detection
+    by: rxerium
+    level: info
+    about: An american express phishing website was detected
+    label:
+        - phishing
+        - american-express
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Credit Cards, Rewards, Travel and Business Services | American Express
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

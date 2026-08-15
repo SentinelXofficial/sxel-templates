@@ -1,0 +1,23 @@
+id: solr-panel-exposure
+brief:
+    title: Apache Solr Admin Panel - Detect
+    by: pdteam
+    level: info
+    about: Apache Solr admin panel was detected.
+    label:
+        - panel
+        - solr
+        - apache
+        - admin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/solr/'
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Solr Admin</title>
+          in: body
+          need: all

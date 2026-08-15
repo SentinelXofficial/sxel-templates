@@ -1,0 +1,19 @@
+id: yonyou-nc-baseapp-deserialization
+brief:
+    title: Yonyou NC BaseApp UploadServlet - Deserialization Detect
+    by: SleepingBag945
+    level: high
+    about: Yonyou NC is an enterprise-level management software, widely used in large and medium-sized enterprises.Realize modeling, development, inheritance, operation, management integration of IT solution ...
+    label:
+        - yonyou
+        - nc
+        - fileupload
+        - baseapp
+        - deserialization
+        - intrusive
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/service/~baseapp/UploadServlet'
+      signs: []

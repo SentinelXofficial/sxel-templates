@@ -1,0 +1,31 @@
+id: orangehrm-installer
+brief:
+    title: OrangeHrm Installer
+    by: pussycat0x
+    level: high
+    about: OrangeHrm is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - exposure
+        - install
+        - orangehrm
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/installer/installerUI.php'
+      signs:
+        - "on": word
+          has:
+            - OrangeHRM Web Installation Wizard
+            - admin user creation
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

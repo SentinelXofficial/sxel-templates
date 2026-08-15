@@ -1,0 +1,24 @@
+id: chrome-phish
+brief:
+    title: chrome phishing Detection
+    by: rxerium
+    level: info
+    about: A chrome phishing website was detected
+    label:
+        - phishing
+        - chrome
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Google Chrome – Download the fast, secure browser from Google
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

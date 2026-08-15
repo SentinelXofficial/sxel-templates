@@ -1,0 +1,25 @@
+id: akeeba-installer
+brief:
+    title: Akeeba Backup Installer - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Akeeba Backup is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - akeeba
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/installation/index.php'
+      signs:
+        - "on": word
+          has:
+            - Akeeba Backup Installer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,31 @@
+id: jsconfig-json
+brief:
+    title: Visual Studio Code jsconfig.json - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Visual Studio Code jsconfig.json was detected.
+    label:
+        - devops
+        - exposure
+        - jsconfig
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jsconfig.json'
+      signs:
+        - "on": word
+          has:
+            - '"compilerOptions": {'
+            - '"typeAcquisition": {'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

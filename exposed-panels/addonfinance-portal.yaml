@@ -1,0 +1,25 @@
+id: addonfinance-portal
+brief:
+    title: AddOnFinance Portal - Detect
+    by: ritikchaddha
+    level: info
+    about: AddOnFinance Portal Panel was detected.
+    label:
+        - panel
+        - addon
+        - finance
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - AddOnFinancePortal</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

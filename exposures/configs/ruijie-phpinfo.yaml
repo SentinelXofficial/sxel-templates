@@ -1,0 +1,27 @@
+id: ruijie-phpinfo
+brief:
+    title: Ruijie Phpinfo Configuration - Detect
+    by: pikpikcu
+    level: low
+    about: Ruijie phpinfo configuration was detected.
+    label:
+        - phpinfo
+        - rujjie
+        - config
+        - exposure
+        - ruijie
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/tool/view/phpinfo.view.php'
+      signs:
+        - "on": word
+          has:
+            - PHP Version
+            - PHP Extension
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

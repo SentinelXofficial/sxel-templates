@@ -1,0 +1,24 @@
+id: linkedin-phish
+brief:
+    title: linkedin phishing Detection
+    by: rxerium
+    level: info
+    about: A linkedin phishing website was detected
+    label:
+        - phishing
+        - linkedin
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'LinkedIn: Log In or Sign Up'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

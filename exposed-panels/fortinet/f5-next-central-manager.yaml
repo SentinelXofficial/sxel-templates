@@ -1,0 +1,25 @@
+id: f5-next-central-manager
+brief:
+    title: F5 Next Central Manager Panel - Detect
+    by: EgemenKochisarli
+    level: info
+    about: F5 Next Central Manager login panel was detected.
+    label:
+        - panel
+        - fortinet
+        - login
+        - f5
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/gui/login'
+      signs:
+        - "on": word
+          has:
+            - <title>BIG-IP Next | Central Manager
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

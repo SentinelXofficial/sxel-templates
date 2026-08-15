@@ -1,0 +1,20 @@
+id: api-travisci
+brief:
+    title: Travis CI API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - travis
+moves:
+    - verb: GET
+      to:
+        - https://api.travis-ci.com/user
+      head:
+        Authorization: token {{token}}
+        Travis-API-Version: "3"
+      signs:
+        - "on": status
+          status:
+            - 403

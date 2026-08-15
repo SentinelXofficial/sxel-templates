@@ -1,0 +1,24 @@
+id: insecure-crossdomain
+brief:
+    title: Insecure cross-domain.xml file
+    by: Borna Nematzadeh
+    level: info
+    about: ""
+    label:
+        - exposure
+        - generic
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/crossdomain.xml'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <allow-access-from domain="*"/>
+          in: body
+          need: all

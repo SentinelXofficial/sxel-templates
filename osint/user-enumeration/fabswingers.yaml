@@ -1,0 +1,24 @@
+id: fabswingers
+brief:
+    title: Fabswingers User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Fabswingers user name information check was conducted.
+    label:
+        - osint
+        - osint-dating
+        - fabswingers
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.fabswingers.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - View Profile
+          in: body
+          need: all

@@ -1,0 +1,18 @@
+id: axigen-webmail
+brief:
+    title: Axigen WebMail PanelDetection
+    by: dhiyaneshDk
+    level: info
+    about: An Axigen webmail panel was discovered.
+    label:
+        - axigen
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

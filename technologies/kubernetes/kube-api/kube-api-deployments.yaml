@@ -1,0 +1,27 @@
+id: kube-api-deployments
+brief:
+    title: Kube API Deployments
+    by: sharath
+    level: info
+    about: Scans for kube deployments
+    label:
+        - tech
+        - k8s
+        - kubernetes
+        - devops
+        - kube
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/apis/apps/v1/namespaces/default/deployments'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"DeploymentList":'
+            - '"items":'
+          in: body
+          need: all

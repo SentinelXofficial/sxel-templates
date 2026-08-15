@@ -1,0 +1,16 @@
+id: google-calendar-link
+brief:
+    title: Google Calendar URI Disclosure
+    by: Ice3man
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - google
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,32 @@
+id: szhe-default-login
+brief:
+    title: Szhe Default Login
+    by: pikpikcu
+    level: medium
+    about: Szhe default login information was discovered.
+    label:
+        - szhe
+        - default-login
+        - vuln
+    score: CVSS:5.8
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login/'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: email={{username}}&password={{password}}&remeber=true
+      signs:
+        - "on": word
+          has:
+            - 'You should be redirected automatically to target URL: <a href="/">/</a>'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 'Set-Cookie: session'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

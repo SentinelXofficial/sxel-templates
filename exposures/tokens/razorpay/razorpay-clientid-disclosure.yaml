@@ -1,0 +1,16 @@
+id: razorpay-clientid-disclosure
+brief:
+    title: Razorpay Client ID Disclosure
+    by: Devang-Solanki
+    level: high
+    about: Razorpay Client ID is exposed to external users.
+    label:
+        - exposure
+        - token
+        - razorpay
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

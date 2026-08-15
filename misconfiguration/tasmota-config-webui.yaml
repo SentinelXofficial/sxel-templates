@@ -1,0 +1,29 @@
+id: tasmota-config-webui
+brief:
+    title: Tasmota Configuration Exposure
+    by: ritikchaddha
+    level: medium
+    about: Tasmota configuration is exposed.
+    label:
+        - misconfig
+        - tasmota
+        - exposure
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Firmware
+            - Tasmota
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Theo Arends
+            - <h2>Tasmota</h2>
+          in: body
+          need: all

@@ -1,0 +1,24 @@
+id: barracuda-panel
+brief:
+    title: Barracuda SSL VPN Log In
+    by: dhiyaneshDK
+    level: info
+    about: The Barracuda SSL VPN is an integrated hardware and software solution enabling secure, clientless remote access to internal network resources from any web browser.
+    label:
+        - barracuda
+        - panel
+        - vpn
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/default/showLogon.do'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Barracuda SSL VPN
+          in: body
+          need: all

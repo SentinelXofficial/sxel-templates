@@ -1,0 +1,25 @@
+id: discuz-panel
+brief:
+    title: Discuz Panel - Detection
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - discuz
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - discuz_uid =
+            - discuz</a>
+            - Powered by Discuz!
+            - content="Discuz
+          in: body
+          need: all

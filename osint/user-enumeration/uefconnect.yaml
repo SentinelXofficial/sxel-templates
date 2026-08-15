@@ -1,0 +1,24 @@
+id: uefconnect
+brief:
+    title: Uefconnect User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Uefconnect user name information check was conducted.
+    label:
+        - osint
+        - osint-business
+        - uefconnect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://uefconnect.uef.fi/en/person/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- UEFConnect</title>'
+          in: body
+          need: all

@@ -1,0 +1,24 @@
+id: curiouscat
+brief:
+    title: Curiouscat User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Curiouscat user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - curiouscat
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://curiouscat.live/api/v2.1/profile?username={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - is_followed_by_me
+          in: body
+          need: all

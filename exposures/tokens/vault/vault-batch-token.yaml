@@ -1,0 +1,16 @@
+id: vault-batch-token
+brief:
+    title: Vault Batch Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - vault
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

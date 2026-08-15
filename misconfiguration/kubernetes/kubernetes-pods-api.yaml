@@ -1,0 +1,32 @@
+id: kubernetes-pods-api
+brief:
+    title: Kubernetes Pods - API Discovery & Remote Code Execution
+    by: ilovebinbash
+    level: critical
+    about: A Kubernetes Pods API was discovered. When the service port is available, unauthenticated users can execute commands inside the container.
+    label:
+        - k8
+        - unauth
+        - kubernetes
+        - devops
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pods'
+        - '{{BaseURL}}/api/v1/pods'
+      signs:
+        - "on": word
+          has:
+            - apiVersion
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,22 @@
+id: osisoft-pi-vision-panel
+brief:
+    title: OSIsoft PI Vision - Login Panel
+    by: rxerium
+    level: info
+    about: OSIsoft PI Vision (now AVEVA PI Vision) is a web-based data visualisation
+    label:
+        - panel
+        - scada
+        - historian
+        - ics
+        - osisoft
+        - aveva
+        - pi-vision
+        - pi-system
+        - energy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

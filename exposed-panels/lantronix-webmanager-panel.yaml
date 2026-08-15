@@ -1,0 +1,23 @@
+id: lantronix-webmanager-panel
+brief:
+    title: Lantronix Web Manager Login Panel- Detect
+    by: princechaddha
+    level: info
+    about: Lantronix Web Manager login panel was detected.
+    label:
+        - panel
+        - lantronix
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/LTX_navi.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Lantronix WEB-Manager</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

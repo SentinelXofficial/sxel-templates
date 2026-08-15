@@ -1,0 +1,20 @@
+id: ws-ftp-log
+brief:
+    title: WS FTP File Disclosure
+    by: Hardik-Solanki
+    level: low
+    about: WS_FTP software, which is a popular FTP (File Transfer Protocol) client used for transferring files between a local computer and a remote server has its log file exposed.
+    label:
+        - exposure
+        - ftp
+        - logs
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ws_ftp.log'
+        - '{{BaseURL}}/WS_FTP.LOG'
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: extralunchmoney
+brief:
+    title: ExtraLunchMoney User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: ExtraLunchMoney user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - extralunchmoney
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://extralunchmoney.com/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Public Profile Page
+          in: body
+          need: all

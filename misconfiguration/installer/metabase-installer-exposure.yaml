@@ -1,0 +1,17 @@
+id: metabase-installer-exposure
+brief:
+    title: Metabase Installer - Exposure
+    by: 0x_Akoko
+    level: high
+    about: Detected Metabase installer page, allowing unauthorized database setup and configuration.
+    label:
+        - exposure
+        - metabase
+        - installer
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup'
+      signs: []

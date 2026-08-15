@@ -1,0 +1,36 @@
+id: guacamole-default-login
+brief:
+    title: Guacamole Default Login
+    by: r3dg33k
+    level: high
+    about: Guacamole default admin login credentials were detected.
+    label:
+        - guacamole
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/tokens'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{Hostname}}'
+        Referer: '{{Hostname}}'
+      body: username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - '"username"'
+            - '"authToken"'
+            - '"guacadmin"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

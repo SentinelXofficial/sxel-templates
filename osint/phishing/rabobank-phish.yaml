@@ -1,0 +1,25 @@
+id: rabobank-phish
+brief:
+    title: Rabobank phishing Detection
+    by: rxerium
+    level: info
+    about: A Rabobank phishing website was detected
+    label:
+        - phishing
+        - rabobank
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Looks like something went wrong…
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

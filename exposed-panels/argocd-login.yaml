@@ -1,0 +1,18 @@
+id: argocd-login
+brief:
+    title: Argo CD Login Panel
+    by: Adam Crosser
+    level: info
+    about: An Argo CD login panel was discovered.
+    label:
+        - panel
+        - argocd
+        - login
+        - kubernetes
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/version'
+        - '{{BaseURL}}/api/v1/settings'
+      signs: []

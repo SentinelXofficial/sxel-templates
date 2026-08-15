@@ -1,0 +1,20 @@
+id: eMerge-panel
+brief:
+    title: Nortek Linear eMerge Panel - Detect
+    by: arafatansari
+    level: info
+    about: Nortek Linear eMerge panel was detected.
+    label:
+        - panel
+        - emerge
+        - nortek
+        - nortekcontrol
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

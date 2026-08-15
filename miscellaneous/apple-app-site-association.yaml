@@ -1,0 +1,33 @@
+id: apple-app-site-association
+brief:
+    title: Apple app site association for harvesting end points
+    by: panch0r3d
+    level: info
+    about: ""
+    label:
+        - miscellaneous
+        - misc
+        - apple
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.well-known/apple-app-site-association'
+        - '{{BaseURL}}/well-known/apple-app-site-association'
+        - '{{BaseURL}}/apple-app-site-association'
+      signs:
+        - "on": word
+          has:
+            - applinks
+            - appID
+            - paths
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

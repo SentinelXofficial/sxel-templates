@@ -1,0 +1,26 @@
+id: thinkcmf-lfi
+brief:
+    title: ThinkCMF - Local File Inclusion
+    by: pikpikcu
+    level: high
+    about: ThinkCMF is vulnerable to local file inclusion.
+    label:
+        - thinkcmf
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?a=display&templateFile=README.md'
+      signs:
+        - "on": word
+          has:
+            - ThinkCMF
+            - '## README'
+            - '## UPDATE'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

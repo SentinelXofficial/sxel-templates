@@ -1,0 +1,23 @@
+id: secmail-detect
+brief:
+    title: SecMail Login Panel - Detect
+    by: johnk3r
+    level: info
+    about: SecMail login panel was detected.
+    label:
+        - secmail
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/SecMail/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - Path=/SecMail
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

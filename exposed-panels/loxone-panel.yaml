@@ -1,0 +1,23 @@
+id: loxone-panel
+brief:
+    title: Loxone Intercom Video Panel - Detect
+    by: theabhinavgaur
+    level: info
+    about: Loxone Intercom Video panel was detected.
+    label:
+        - panel
+        - loxone
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Loxone Intercom Video</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

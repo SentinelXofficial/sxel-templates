@@ -1,0 +1,16 @@
+id: vaultwarden-panel
+brief:
+    title: Vaultwarden Login Panel - Detect
+    by: righettod
+    level: info
+    about: Vaultwarden products was detected.
+    label:
+        - panel
+        - vaultwarden
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/login'
+      signs: []

@@ -1,0 +1,26 @@
+id: wp-sfwd-lms-listing
+brief:
+    title: WordPress Plugin Sfwd-lms Listing
+    by: pussycat0x
+    level: info
+    about: Searches for sensitive directories present in the sfwd-lms plugin.
+    label:
+        - wordpress
+        - listing
+        - plugin
+        - edb
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/sfwd-lms/'
+      signs:
+        - "on": word
+          has:
+            - Index of
+            - wp-content/plugins/sfwd-lms
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

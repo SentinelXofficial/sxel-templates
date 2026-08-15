@@ -1,0 +1,31 @@
+id: moleculer-microservices
+brief:
+    title: Moleculer Microservices Project
+    by: pussycat0x
+    level: low
+    about: Moleculer microservice was able to be accessed with no required authentication in place.
+    label:
+        - misconfig
+        - microservice
+        - moleculer
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Moleculer Microservices Project
+            - Service/Action name
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

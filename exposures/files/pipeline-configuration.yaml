@@ -1,0 +1,26 @@
+id: pipeline-configuration
+brief:
+    title: Pipeline Configuration Exposure
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - devops
+        - exposure
+        - cicd
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pipeline.yaml'
+      signs:
+        - "on": word
+          has:
+            - 'system:'
+            - 'project_name:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

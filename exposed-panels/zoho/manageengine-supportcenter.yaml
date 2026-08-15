@@ -1,0 +1,25 @@
+id: manageengine-supportcenter
+brief:
+    title: ZOHO ManageEngine SupportCenter Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: ZOHO ManageEngine SupportCenter panel was detected.
+    label:
+        - panel
+        - zoho
+        - manageengine
+        - zohocorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ManageEngine SupportCenter Plus</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

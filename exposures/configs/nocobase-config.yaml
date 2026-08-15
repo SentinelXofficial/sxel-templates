@@ -1,0 +1,35 @@
+id: nocobase-config
+brief:
+    title: Nocobase - Config
+    by: icarot
+    level: medium
+    about: The path /api/v1/db/meta/nocodb/info of the NocoBase web application was exposed, revealing internal information. NocoBase was an extensibility-first, open-source no-code/low-code platform for buil...
+    label:
+        - nocobase
+        - config
+        - exposed
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/db/meta/nocodb/info'
+      head:
+        Content-Type: application/json
+      signs:
+        - "on": word
+          has:
+            - '"authType":'
+            - '"env":'
+            - '"version":'
+            - '"ncSiteUrl":'
+            - '"mainSubDomain":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

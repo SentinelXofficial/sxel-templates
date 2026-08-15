@@ -1,0 +1,24 @@
+id: flightradar24
+brief:
+    title: Flightradar24 User Name Information - Detect
+    by: gl0bal01
+    level: info
+    about: Flightradar24 user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://my.flightradar24.com/{{user}}
+      signs:
+        - "on": word
+          has:
+            - <title>{{user}} |
+            - CONTINENTS
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

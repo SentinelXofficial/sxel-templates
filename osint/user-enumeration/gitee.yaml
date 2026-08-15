@@ -1,0 +1,24 @@
+id: gitee
+brief:
+    title: Gitee User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Gitee user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - gitee
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://gitee.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Commits, issues, and pull requests will appear
+          in: body
+          need: all

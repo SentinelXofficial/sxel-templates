@@ -1,0 +1,23 @@
+id: webroot-login
+brief:
+    title: Webroot Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Webroot login panel was detected.
+    label:
+        - panel
+        - webroot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Login'
+      signs:
+        - "on": word
+          has:
+            - <title>Webroot - Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

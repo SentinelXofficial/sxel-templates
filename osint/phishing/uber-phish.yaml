@@ -1,0 +1,24 @@
+id: uber-phish
+brief:
+    title: uber phishing Detection
+    by: rxerium
+    level: info
+    about: A uber phishing website was detected
+    label:
+        - phishing
+        - uber
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Explore the Uber Platform | Uber
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

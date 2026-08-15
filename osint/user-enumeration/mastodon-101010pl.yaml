@@ -1,0 +1,24 @@
+id: mastodon-101010pl
+brief:
+    title: Mastodon-101010.pl User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mastodon-101010.pl user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastodon-101010pl
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://101010.pl/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '@101010.pl'
+          in: body
+          need: all

@@ -1,0 +1,30 @@
+id: mantisbt-installer
+brief:
+    title: MantisBT Installation Exposure
+    by: DhiyaneshDK
+    level: high
+    about: MantisBT is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - mantisbt
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/install.php'
+      signs:
+        - "on": word
+          has:
+            - Administration - Installation - MantisBT
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

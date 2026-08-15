@@ -1,0 +1,20 @@
+id: connectwise-panel
+brief:
+    title: ConnectWise Control Remote Support Software Panel - Detect
+    by: johnk3r
+    level: info
+    about: ""
+    label:
+        - screenconnect
+        - panel
+        - connectwise
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Login'
+      signs:
+        - "on": status
+          status:
+            - 200

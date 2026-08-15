@@ -1,0 +1,16 @@
+id: jdbc-connection-string
+brief:
+    title: JDBC Connection String Disclosure
+    by: Ice3man
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

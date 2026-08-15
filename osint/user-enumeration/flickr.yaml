@@ -1,0 +1,24 @@
+id: flickr
+brief:
+    title: Flickr User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Flickr user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - flickr
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.flickr.com/photos/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| Flickr'
+          in: body
+          need: all

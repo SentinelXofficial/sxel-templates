@@ -1,0 +1,26 @@
+id: nocobase-detect
+brief:
+    title: NocoBase - Detect
+    by: Fur1na
+    level: info
+    about: NocoBase is an open source, extensibility-first, low-code platform for building business applications and enterprise solutions.
+    label:
+        - tech
+        - nocobase
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - __nocobase_public
+            - __nocobase_api
+            - __nocobase_ws
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

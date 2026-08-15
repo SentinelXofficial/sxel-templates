@@ -1,0 +1,25 @@
+id: myq-panel
+brief:
+    title: MyQ Print Server Panel - Detect
+    by: darses
+    level: info
+    about: ""
+    label:
+        - panel
+        - myq
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/en'
+      signs:
+        - "on": word
+          has:
+            - <title>MyQ
+            - Wsf_App
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

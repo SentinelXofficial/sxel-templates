@@ -1,0 +1,17 @@
+id: google-api-key
+brief:
+    title: Google API Key
+    by: Swissky
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - google
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/hopfully404'
+      signs: []

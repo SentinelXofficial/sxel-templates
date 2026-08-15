@@ -1,0 +1,16 @@
+id: carestream-vue-detect
+brief:
+    title: CARESTREAM Vue Motion Detector
+    by: philippedelteil
+    level: info
+    about: This template will detect a running CARESTREAM Vue Motion instance
+    label:
+        - tech
+        - myvuehelp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/portal/favicon.ico'
+        - '{{BaseURL}}/portal/images/MyVue/MyVueHelp.png'
+      signs: []

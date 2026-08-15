@@ -1,0 +1,24 @@
+id: sonic-wall-application
+brief:
+    title: SonicWall Appliance Management Console Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: SonicWall Appliance Management Console login panel was detected.
+    label:
+        - panel
+        - sonicwall
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.do'
+      signs:
+        - "on": word
+          has:
+            - <title>Appliance Management Console Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: mastodon-api
+brief:
+    title: Mastodon-API User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mastodon-API user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastodon-api
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://mastodon.social/api/v2/search?q={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - display_name
+          in: body
+          need: all

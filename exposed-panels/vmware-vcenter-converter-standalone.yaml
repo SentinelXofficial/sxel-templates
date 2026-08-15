@@ -1,0 +1,24 @@
+id: vmware-vcenter-converter-standalone
+brief:
+    title: VMware vCenter Converter Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: VMware vCenter Converter panel was detected.
+    label:
+        - panel
+        - vmware
+        - vcenter
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - VMware vCenter Converter Standalone
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

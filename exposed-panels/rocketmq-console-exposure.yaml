@@ -1,0 +1,19 @@
+id: rocketmq-console-exposure
+brief:
+    title: Apache RocketMQ Console Panel - Detect
+    by: pdteam
+    level: info
+    about: Apache RocketMQ Console panel was detected.
+    label:
+        - panel
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>RocketMq-console-ng</title>
+          in: body

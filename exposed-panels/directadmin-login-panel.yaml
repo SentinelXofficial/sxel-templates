@@ -1,0 +1,23 @@
+id: directadmin-login-panel
+brief:
+    title: DirectAdmin Login Panel - Detect
+    by: idealphase
+    level: info
+    about: DirectAdmin login panel was detected.
+    label:
+        - panel
+        - directadmin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>DirectAdmin Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

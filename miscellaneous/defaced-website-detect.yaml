@@ -1,0 +1,16 @@
+id: defaced-website-detect
+brief:
+    title: Defaced Website - Detection
+    by: ggranjus
+    level: info
+    about: The detected website is defaced.
+    label:
+        - miscellaneous
+        - defacement
+        - misc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

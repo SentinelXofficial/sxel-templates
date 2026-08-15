@@ -1,0 +1,23 @@
+id: netris-dashboard-panel
+brief:
+    title: Netris Dashboard Panel - Detect
+    by: theamanrawat
+    level: info
+    about: Netris Dashboard panel was detected.
+    label:
+        - panel
+        - netris
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Netris Dashboard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

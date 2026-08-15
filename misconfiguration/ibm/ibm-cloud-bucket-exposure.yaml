@@ -1,0 +1,19 @@
+id: ibm-cloud-bucket-exposure
+brief:
+    title: IBM Cloud Object Storage - Bucket Exposure
+    by: 0x_Akoko
+    level: info
+    about: IBM Cloud Object Storage bucket is publicly accessible, potentially exposing sensitive files and data. Public bucket listing allows enumeration of stored objects.
+    label:
+        - ibm
+        - cloud
+        - bucket
+        - exposure
+        - misconfig
+        - s3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/?list-type=2'
+      signs: []

@@ -1,0 +1,25 @@
+id: dependency-track-panel
+brief:
+    title: Dependency-Track Login - Panel
+    by: Th3l0newolf
+    level: info
+    about: Dependency Track login panel was discovered.
+    label:
+        - panel
+        - login
+        - dependency
+        - track
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login?redirect=%2Fdashboard'
+      signs:
+        - "on": word
+          has:
+            - <title>Dependency-Track</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

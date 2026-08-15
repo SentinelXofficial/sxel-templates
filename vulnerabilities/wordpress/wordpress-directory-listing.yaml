@@ -1,0 +1,25 @@
+id: wordpress-directory-listing
+brief:
+    title: Wordpress directory listing
+    by: Manas_Harsh
+    level: info
+    about: Directory listing enabled in wordpress.
+    label:
+        - wordpress
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/uploads/'
+        - '{{BaseURL}}/wp-content/themes/'
+        - '{{BaseURL}}/wp-content/plugins/'
+        - '{{BaseURL}}/wp-includes/'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Index of /
+          in: body
+          need: all

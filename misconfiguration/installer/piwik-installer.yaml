@@ -1,0 +1,30 @@
+id: piwik-installer
+brief:
+    title: Piwik Installer Exposure
+    by: DhiyaneshDk
+    level: low
+    about: Piwik is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - piwik
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Piwik
+            - Installation status
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

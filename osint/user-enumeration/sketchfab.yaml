@@ -1,0 +1,25 @@
+id: sketchfab
+brief:
+    title: Sketchfab User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Sketchfab user name information check was conducted.
+    label:
+        - osint
+        - osint-creative
+        - sketchfab
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://sketchfab.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Sketchfab
+            - View the profile and 3D models by
+          in: body
+          need: all

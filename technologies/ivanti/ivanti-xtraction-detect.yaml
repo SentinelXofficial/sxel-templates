@@ -1,0 +1,26 @@
+id: ivanti-xtraction-detect
+brief:
+    title: Ivanti Xtraction - Detect
+    by: rxerium
+    level: info
+    about: Detects Ivanti Xtraction, a reporting and dashboard platform used with Ivanti products.
+    label:
+        - tech
+        - ivanti
+        - xtraction
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/xtraction'
+      signs:
+        - "on": word
+          has:
+            - <title>Xtraction</title>
+            - application-name" content="Xtraction
+            - dev-extreme-ivanti.css
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

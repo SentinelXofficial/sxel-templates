@@ -1,0 +1,24 @@
+id: showdoc-panel
+brief:
+    title: ShowDoc Panel Detection
+    by: rxerium
+    level: info
+    about: ShowDoc panel was detected. ShowDoc was a tool for documenting APIs and interfaces.
+    label:
+        - panel
+        - discovery
+        - showdoc
+        - tech
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web/#/user/login'
+      signs:
+        - "on": word
+          has:
+            - <title>ShowDoc</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

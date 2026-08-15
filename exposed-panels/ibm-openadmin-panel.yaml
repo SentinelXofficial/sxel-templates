@@ -1,0 +1,24 @@
+id: ibm-openadmin-panel
+brief:
+    title: IBM OpenAdmin Tool - Panel
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - openadmin
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/openadmin/index.php'
+      signs:
+        - "on": word
+          has:
+            - class="oat oneui"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

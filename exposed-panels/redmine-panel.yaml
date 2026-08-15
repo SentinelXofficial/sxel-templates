@@ -1,0 +1,17 @@
+id: redmine-panel
+brief:
+    title: Redmine Login Panel - Detect
+    by: righettod
+    level: info
+    about: Redmine login panel was detected.
+    label:
+        - panel
+        - redmine
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs: []

@@ -1,0 +1,25 @@
+id: weblogic-login
+brief:
+    title: Oracle WebLogic Login Panel - Detect
+    by: bing0o
+    level: info
+    about: Oracle WebLogic login panel was detected.
+    label:
+        - panel
+        - oracle
+        - weblogic
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/console/login/LoginForm.jsp'
+      signs:
+        - "on": word
+          has:
+            - WebLogic
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

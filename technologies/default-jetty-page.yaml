@@ -1,0 +1,19 @@
+id: default-jetty-page
+brief:
+    title: Jetty Default Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - jetty
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <TITLE>Powered By Jetty</TITLE>
+          in: body

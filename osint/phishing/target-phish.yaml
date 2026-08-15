@@ -1,0 +1,24 @@
+id: target-phish
+brief:
+    title: target phishing Detection
+    by: rxerium
+    level: info
+    about: A target phishing website was detected
+    label:
+        - phishing
+        - target
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Target : Expect More. Pay Less.'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

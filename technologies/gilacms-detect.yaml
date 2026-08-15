@@ -1,0 +1,25 @@
+id: gilacms-detect
+brief:
+    title: GilaCMS Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - gilacms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/user'
+      signs:
+        - "on": word
+          has:
+            - Homepage | Gila CMS
+            - <meta name="generator" content="Gila CMS">
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

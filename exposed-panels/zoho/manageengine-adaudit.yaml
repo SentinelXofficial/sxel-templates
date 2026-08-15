@@ -1,0 +1,27 @@
+id: manageengine-adaudit
+brief:
+    title: ZOHO ManageEngine ADAudit/ADManager Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: ZOHO ManageEngine ADAudit/ADManager panel was detected.
+    label:
+        - panel
+        - zoho
+        - manageengine
+        - zohocorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/authorization.do'
+      signs:
+        - "on": word
+          has:
+            - ManageEngine - ADManager Plus
+            - ADAudit Plus
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

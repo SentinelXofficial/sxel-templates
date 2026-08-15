@@ -1,0 +1,22 @@
+id: api-quip
+brief:
+    title: Quip API Test
+    by: daffainfo
+    level: info
+    about: File Sharing and Storage for groups
+    label:
+        - token-spray
+        - quip
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://platform.quip.com/1/users/current'
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"id":'
+            - '"name":'
+          in: body
+          need: all

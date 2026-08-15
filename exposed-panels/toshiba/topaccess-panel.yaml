@@ -1,0 +1,27 @@
+id: topaccess-panel
+brief:
+    title: Toshiba TopAccess Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - topaccess
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - content="TopAccess
+            - locale_TopAccess_Messages
+            - <title>TopAccess
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

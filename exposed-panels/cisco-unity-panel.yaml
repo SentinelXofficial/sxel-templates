@@ -1,0 +1,28 @@
+id: cisco-unity-panel
+brief:
+    title: Cisco Unity Connection Panel - Detect
+    by: HeeresS
+    level: info
+    about: A Cisco Unity Connection instance was detected.
+    label:
+        - panel
+        - cisco
+        - unity
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cuadmin/home.do'
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Cisco Unity Connection Administration
+            - '>Cisco Unity Connection</a>'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

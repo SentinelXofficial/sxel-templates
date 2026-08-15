@@ -1,0 +1,24 @@
+id: pokerstrategy
+brief:
+    title: Pokerstrategy User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Pokerstrategy user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - pokerstrategy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://www.pokerstrategy.net/user/{{user}}/profile/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - User profile for
+          in: body
+          need: all

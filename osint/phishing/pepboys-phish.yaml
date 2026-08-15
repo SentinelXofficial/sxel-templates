@@ -1,0 +1,25 @@
+id: pepboys-phish
+brief:
+    title: Pep Boys phishing Detection
+    by: rxerium
+    level: info
+    about: A Pep Boys phishing website was detected
+    label:
+        - phishing
+        - pepboys
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - px-captcha
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

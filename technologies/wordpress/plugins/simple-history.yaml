@@ -1,0 +1,17 @@
+id: wordpress-simple-history
+brief:
+    title: Simple History – Track, Log, and Audit WordPress Changes Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/simple-history/readme.txt'
+      signs: []

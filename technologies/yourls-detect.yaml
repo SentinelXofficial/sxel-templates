@@ -1,0 +1,26 @@
+id: yourls-detect
+brief:
+    title: YOURLS - Detection
+    by: lstatro
+    level: info
+    about: Detects if the target is running a YOURLS (Your Own URL Shortener) server
+    label:
+        - tech
+        - yourls
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>YOURLS
+            - content="YOURLS
+            - alt="YOURLS
+            - /yourls-logo
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

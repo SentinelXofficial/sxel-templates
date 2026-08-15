@@ -1,0 +1,17 @@
+id: chatwoot-installer
+brief:
+    title: Chatwoot - Installation
+    by: 0x_Akoko
+    level: high
+    about: Detected chatwoot instance with the initial installation onboarding page accessible at /installation/onboarding, enabling unauthenticated users to create the first Super Admin account and gain full...
+    label:
+        - misconfig
+        - install
+        - exposure
+        - chatwoot
+        - unauth
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/installation/onboarding'
+      signs: []

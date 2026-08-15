@@ -1,0 +1,32 @@
+id: oscommerce-detect
+brief:
+    title: osCommerce Detection
+    by: Chirag Mistry
+    level: info
+    about: An instance running osCommerce is detected by looking for specific HTTP headers, HTML tags, and known endpoints.
+    label:
+        - oscommerce
+        - detect
+        - tech
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/robots.txt'
+        - '{{BaseURL}}/sitemap.xml'
+        - '{{BaseURL}}/favicon.ico'
+        - '{{BaseURL}}/admin'
+        - '{{BaseURL}}/includes/modules/'
+        - '{{BaseURL}}/catalog/includes/javascript/oscommerce.js'
+        - '{{BaseURL}}/checkout_payment.php'
+      signs:
+        - "on": word
+          has:
+            - Powered by osCommerce
+            - oscommerce.com
+            - X-Powered-By-osCommerce
+          in: response
+          need: all
+        - "on": status
+          status:
+            - 200

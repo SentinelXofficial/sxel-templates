@@ -1,0 +1,17 @@
+id: wp-prostore-open-redirect
+brief:
+    title: WordPress ProStore <1.1.3 - Open Redirect
+    by: 0x_Akoko
+    level: low
+    about: WordPress ProStore theme before 1.1.3 contains an open redirect vulnerability. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or exe...
+    label:
+        - wordpress
+        - wp-theme
+        - redirect
+        - wpscan
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/themes/prostore/go.php?https://interact.sh/'
+      signs: []

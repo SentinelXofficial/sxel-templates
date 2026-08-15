@@ -1,0 +1,22 @@
+id: jira-unauthenticated-projects
+brief:
+    title: Jira Unauthenticated Projects
+    by: TechbrunchFR
+    level: info
+    about: ""
+    label:
+        - atlassian
+        - jira
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/rest/api/2/project?maxResults=100'
+      signs:
+        - "on": word
+          has:
+            - projects
+            - startAt
+            - maxResults
+          in: body
+          need: all

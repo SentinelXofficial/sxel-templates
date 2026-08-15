@@ -1,0 +1,24 @@
+id: dragonfly-panel
+brief:
+    title: DragonFly Login - Panel
+    by: DhiyaneshDK
+    level: info
+    about: Dragonfly Login Panel was discovered
+    label:
+        - dragonfly
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - href="logo-dragonfly.png"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

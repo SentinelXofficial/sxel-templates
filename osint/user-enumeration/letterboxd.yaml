@@ -1,0 +1,24 @@
+id: letterboxd
+brief:
+    title: Letterboxd User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Letterboxd user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - letterboxd
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://letterboxd.com/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - profile on Letterboxd
+          in: body
+          need: all

@@ -1,0 +1,30 @@
+id: global-traffic-statistics
+brief:
+    title: Global Traffic Statistics Exposure
+    by: tess
+    level: low
+    about: Global Traffic Statistics page is exposed.
+    label:
+        - misconfig
+        - global
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Global Traffic Statistics
+            - Listening on
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

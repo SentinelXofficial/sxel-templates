@@ -1,0 +1,26 @@
+id: supershell-c2
+brief:
+    title: Supershell C2 - Detect
+    by: pussycat0x
+    level: info
+    about: Supershell is a C2 remote control platform accessed through WEB services. By establishing a reverse SSH tunnel, a fully interactive shell can be obtained, and it supports multi-platform architectur...
+    label:
+        - c2
+        - ir
+        - osint
+        - supershell
+        - panel
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Supershell - 登录</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

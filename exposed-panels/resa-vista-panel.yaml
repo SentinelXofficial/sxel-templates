@@ -1,0 +1,16 @@
+id: resa-vista-panel
+brief:
+    title: RESA Vista Panel - Detect
+    by: righettod
+    level: info
+    about: RESA Vista was detected — an automated multimedia display system for airports.
+    label:
+        - panel
+        - resa
+        - login
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/account/login'
+      signs: []

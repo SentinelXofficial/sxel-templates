@@ -1,0 +1,32 @@
+id: aws-object-listing
+brief:
+    title: AWS bucket with Object listing
+    by: pdteam
+    level: low
+    about: Object listing is enabled in AWS bucket.
+    label:
+        - aws
+        - misconfig
+        - bucket
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <ListBucketResult xmlns=
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/xml
+          in: header
+          need: all
+        - "on": word
+          has:
+            - x-goog-metageneration
+            - x-goog-generation
+          in: header
+          need: all

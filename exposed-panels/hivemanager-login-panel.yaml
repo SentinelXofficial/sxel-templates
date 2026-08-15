@@ -1,0 +1,26 @@
+id: hivemanager-login-panel
+brief:
+    title: HiveManager Login Panel - Detect
+    by: binaryfigments
+    level: info
+    about: HiveManager login panel was detected.
+    label:
+        - panel
+        - hivemanager
+        - aerohive
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/hm/login.action'
+      signs:
+        - "on": word
+          has:
+            - HiveManager
+          in: header
+        - "on": word
+          has:
+            - HiveManager
+            - alt="Aerohive
+          in: body
+          need: all

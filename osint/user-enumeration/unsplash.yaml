@@ -1,0 +1,24 @@
+id: unsplash
+brief:
+    title: Unsplash User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Unsplash user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - unsplash
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://unsplash.com/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| Unsplash Photo Community'
+          in: body
+          need: all

@@ -1,0 +1,24 @@
+id: sauter-login
+brief:
+    title: Sauter moduWeb Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Sauter moduWeb login panel was detected.
+    label:
+        - panel
+        - sauter
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?locale=en'
+      signs:
+        - "on": word
+          has:
+            - <title>Sauter moduWeb - Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

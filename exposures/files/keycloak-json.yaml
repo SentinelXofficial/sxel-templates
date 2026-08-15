@@ -1,0 +1,27 @@
+id: keycloak-json
+brief:
+    title: Keycloak JSON File
+    by: oppsec
+    level: info
+    about: ""
+    label:
+        - exposure
+        - keycloak
+        - config
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/keycloak.json'
+      signs:
+        - "on": word
+          has:
+            - realm
+            - resource
+            - auth-server-url
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

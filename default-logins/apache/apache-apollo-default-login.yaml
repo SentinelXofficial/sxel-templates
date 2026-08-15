@@ -1,0 +1,44 @@
+id: apache-apollo-default-login
+brief:
+    title: Apache Apollo - Default Login
+    by: ritikchaddha
+    level: high
+    about: ""
+    label:
+        - apache
+        - apollo
+        - default-login
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/json/session/signin'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - '<strong>Log Details:'
+            - Store Status
+            - Logout</a>
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/console/index.html'
+      signs:
+        - "on": word
+          has:
+            - '<strong>Log Details:'
+            - Store Status
+            - Logout</a>
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200

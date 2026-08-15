@@ -1,0 +1,21 @@
+id: api-1forge
+brief:
+    title: 1Forge API Test
+    by: daffainfo
+    level: info
+    about: Forex currency market data
+    label:
+        - token-spray
+        - 1forge
+moves:
+    - verb: GET
+      to:
+        - https://api.1forge.com/quota?api_key={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"quota_used":'
+            - '"quota_limit":'
+            - '"quota_remaining":'
+          in: body
+          need: all

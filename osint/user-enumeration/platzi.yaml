@@ -1,0 +1,25 @@
+id: platzi
+brief:
+    title: Platzi service User Name Information - Detect
+    by: philippedelteil
+    level: info
+    about: Platzi service user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - platzi
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://platzi.com/p/{{user}}
+      signs:
+        - "on": word
+          has:
+            - '"username":'
+            - 'profile_url:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,16 @@
+id: gitlab-pipeline-token
+brief:
+    title: GitLab Pipeline Trigger Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - gitlab
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

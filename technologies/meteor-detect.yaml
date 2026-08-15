@@ -1,0 +1,21 @@
+id: meteor-detect
+brief:
+    title: Meteor.js Framework - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects the presence of Meteor.js, an open-source isomorphic JavaScript web framework written using Node.js.
+    label:
+        - tech
+        - discovery
+        - meteor
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - __meteor_runtime_config__
+            - __meteor-css__
+          in: body
+          need: all

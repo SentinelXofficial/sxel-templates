@@ -1,0 +1,24 @@
+id: scoutwiki
+brief:
+    title: ScoutWiki User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: ScoutWiki user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - scoutwiki
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://en.scoutwiki.org/User:{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - NewPP limit report
+          in: body
+          need: all

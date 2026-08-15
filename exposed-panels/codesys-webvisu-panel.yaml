@@ -1,0 +1,28 @@
+id: codesys-webvisu-panel
+brief:
+    title: CODESYS WebVisu - Panel
+    by: rxerium
+    level: info
+    about: CODESYS WebVisu is the web-based HMI (Human-Machine Interface) component of the
+    label:
+        - panel
+        - ics
+        - scada
+        - codesys
+        - webvisu
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - WebVisu Authentication
+            - WEBVISU LOGIN
+            - 4Tredir
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

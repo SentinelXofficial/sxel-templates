@@ -1,0 +1,28 @@
+id: graphql-playground
+brief:
+    title: GraphQL Playground
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - graphql
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>GraphQL playground</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

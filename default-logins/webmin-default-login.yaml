@@ -1,0 +1,50 @@
+id: webmin-default-login
+brief:
+    title: Webmin - Default Login
+    by: pussycat0x
+    level: high
+    about: Webmin default login credentials were discovered.
+    label:
+        - webmin
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/session_login.cgi'
+      head:
+        Accept-Encoding: gzip, deflate
+        Content-Type: application/x-www-form-urlencoded
+        Cookie: redirect=1; testing=1
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}'
+      body: user={{username}}&pass={{password}}
+      signs:
+        - "on": word
+          has:
+            - Webmin
+            - Backup Configuration Files
+            - Webmin Actions Log
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sysinfo.cgi'
+      head:
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+        Accept-Encoding: gzip, deflate
+        Referer: '{{RootURL}}'
+      signs:
+        - "on": word
+          has:
+            - Webmin
+            - Backup Configuration Files
+            - Webmin Actions Log
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

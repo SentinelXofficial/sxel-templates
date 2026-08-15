@@ -1,0 +1,25 @@
+id: americanmuscle-phish
+brief:
+    title: AmericanMuscle phishing Detection
+    by: rxerium
+    level: info
+    about: An AmericanMuscle phishing website was detected
+    label:
+        - phishing
+        - americanmuscle
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Performance Muscle Car Parts & Accessories | AmericanMuscle
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

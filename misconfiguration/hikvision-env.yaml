@@ -1,0 +1,45 @@
+id: hikvision-env
+brief:
+    title: Hikvision Springboot Env Actuator - Detect
+    by: SleepingBag945
+    level: high
+    about: The HIKVISION comprehensive security management platform has information leakage vulnerabilities, through which attackers can obtain sensitive information such as environment env for further attacks
+    label:
+        - misconfig
+        - hikvision
+        - springboot
+        - env
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/artemis/env'
+        - '{{BaseURL}}/artemis-portal/artemis/env'
+        - '{{BaseURL}}/artemis/actuator/env'
+        - '{{BaseURL}}/artemis;/env;'
+        - '{{BaseURL}}/artemis/1/..;/env'
+      signs:
+        - "on": word
+          has:
+            - applicationConfig
+            - activeProfiles
+          in: body
+          need: all
+        - "on": word
+          has:
+            - server.port
+            - local.server.port
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v1+json
+            - application/vnd.spring-boot.actuator.v2+json
+            - application/vnd.spring-boot.actuator.v3+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,29 @@
+id: bigip-detect
+brief:
+    title: BIGIP - Detection
+    by: PR3R00T
+    level: info
+    about: ""
+    label:
+        - bigip
+        - tech
+        - f5
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/my.policy'
+      signs:
+        - "on": word
+          has:
+            - BIGipServer
+          in: header
+        - "on": word
+          has:
+            - BigIP
+          in: header
+        - "on": word
+          has:
+            - F5 Networks.
+          in: body

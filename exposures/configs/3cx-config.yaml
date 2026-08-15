@@ -1,0 +1,27 @@
+id: 3cx-config
+brief:
+    title: 3CX Config - File Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: 3CX Configuration file was discovered.
+    label:
+        - 3cx
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/SetupConfig.xml'
+      signs:
+        - "on": word
+          has:
+            - 3CX
+            - <SetupConfig
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/xml
+          in: content_type
+          need: all

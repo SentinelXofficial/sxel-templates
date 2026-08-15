@@ -1,0 +1,36 @@
+id: homebridge-unfinished-install
+brief:
+    title: Homebridge - Unfinished Installation
+    by: theamanrawat
+    level: high
+    about: Homebridge instance with incomplete installation detected. The setup wizard is exposed, allowing anyone to create the first admin account and gain full control over the Homebridge instance. This ca...
+    label:
+        - homebridge
+        - misconfig
+        - exposure
+        - iot
+        - smart-home
+        - unauth
+    score: CVSS:9.8
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/auth/settings'
+      signs:
+        - "on": word
+          has:
+            - '"setupWizardComplete":false'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

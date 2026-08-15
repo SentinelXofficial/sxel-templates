@@ -1,0 +1,31 @@
+id: npmrc-authtoken
+brief:
+    title: Hardcoded .npmrc AuthToken
+    by: geeknik
+    level: info
+    about: ""
+    label:
+        - npm
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.npmrc'
+      signs:
+        - "on": word
+          has:
+            - _authToken=
+            - _auth=
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+            - application/javascript
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

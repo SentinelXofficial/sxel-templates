@@ -1,0 +1,24 @@
+id: animeplanet
+brief:
+    title: AnimePlanet User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: AnimePlanet user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - animeplanet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.anime-planet.com/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Joined
+          in: body
+          need: all

@@ -1,0 +1,24 @@
+id: octoprint-installer
+brief:
+    title: OctoPrint Installation Page - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Checks for the presence of a OctoPrint Installer Page.
+    label:
+        - install
+        - octoprint
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Thank you for installing OctoPrint
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

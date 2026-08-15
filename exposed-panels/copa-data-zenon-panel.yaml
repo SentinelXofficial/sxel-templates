@@ -1,0 +1,28 @@
+id: copa-data-zenon-panel
+brief:
+    title: Copa-Data zenon - Login Panel
+    by: rxerium
+    level: info
+    about: Copa-Data zenon is an industrial automation platform used in manufacturing,
+    label:
+        - panel
+        - scada
+        - hmi
+        - ics
+        - copa-data
+        - zenon
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - COPA-DATA
+            - zenon
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

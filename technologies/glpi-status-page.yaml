@@ -1,0 +1,26 @@
+id: glpi-status-page
+brief:
+    title: GLPI Status Page - Detect
+    by: canberbamber
+    level: info
+    about: A php status page that indicates if local or ldap identity is used for glpi.
+    label:
+        - tech
+        - status
+        - glpi
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/status.php'
+      signs:
+        - "on": word
+          has:
+            - GLPI_DB_OK
+            - GLPI_SESSION_DIR_OK
+            - GLPI_OK
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

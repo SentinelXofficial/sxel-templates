@@ -1,0 +1,25 @@
+id: phpmyadmin-setup
+brief:
+    title: PhpMyAdmin Setup File - Detect
+    by: sheikhrishad
+    level: medium
+    about: Multiple phpMyAdmin setup files were detected.
+    label:
+        - phpmyadmin
+        - misconfig
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - You want to configure phpMyAdmin using web interface
+            - <title>phpMyAdmin setup</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: tornado-server-login
+brief:
+    title: Tornado Server Panel - Detect
+    by: tess
+    level: info
+    about: Tornado server panel was detected.
+    label:
+        - panel
+        - tornado
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Docmosis Tornado
+            - 'Please log in:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: pyproject-disclosure
+brief:
+    title: Pyproject Disclosure
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pyproject.toml'
+      signs:
+        - "on": word
+          has:
+            - '[build-system]'
+            - '[tool.poetry]'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

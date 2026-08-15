@@ -1,0 +1,22 @@
+id: jamf-panel
+brief:
+    title: Jamf MDM Login Panel - Detect
+    by: pdteam
+    level: info
+    about: Jamf Mobile Device Management login panel was detected.
+    label:
+        - jamf
+        - panel
+        - mdm
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Jamf Pro Login
+            - Jamf Cloud Node
+          in: response
+          need: all

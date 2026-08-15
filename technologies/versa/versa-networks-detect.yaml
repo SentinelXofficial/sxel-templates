@@ -1,0 +1,22 @@
+id: versa-networks-detect
+brief:
+    title: Versa Networks Detection
+    by: c-sh0
+    level: info
+    about: ""
+    label:
+        - tech
+        - versa
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/favicon.ico'
+        - '{{BaseURL}}/favicon.png'
+        - '{{BaseURL}}/images/versalogo.png'
+        - '{{BaseURL}}/images/versalogo2.png'
+        - '{{BaseURL}}/common/images/Logo.png'
+        - '{{BaseURL}}/versa/dist/images/versa-logo.png'
+        - '{{BaseURL}}/versa/styles/img/versa-logo.png'
+        - '{{BaseURL}}/versa/app/img/versa-logo.png'
+      signs: []

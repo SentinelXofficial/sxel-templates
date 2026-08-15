@@ -1,0 +1,24 @@
+id: hp-blade-system
+brief:
+    title: HP BladeSystem Onboard Administrator Panel - Detector
+    by: pussycat0x
+    level: info
+    about: HPBladeSystem Onboard Administrator panel was detected.
+    label:
+        - panel
+        - hp
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>HP BladeSystem Onboard Administrator</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

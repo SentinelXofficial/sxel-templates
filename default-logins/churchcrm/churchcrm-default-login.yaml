@@ -1,0 +1,18 @@
+id: churchcrm-default-login
+brief:
+    title: ChurchCRM - Default Login
+    by: Kazgangap
+    level: high
+    about: ChurchCRM contains a default login vulnerability.
+    label:
+        - default-login
+        - churchcrm
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/session/begin'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: User={{username}}&Password={{password}}
+      signs: []

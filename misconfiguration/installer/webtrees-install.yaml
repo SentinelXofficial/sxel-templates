@@ -1,0 +1,24 @@
+id: webtrees-install
+brief:
+    title: WebTrees Exposed Installation
+    by: ritikchaddha
+    level: high
+    about: WebTrees is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - webtrees
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Setup wizard for webtrees
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

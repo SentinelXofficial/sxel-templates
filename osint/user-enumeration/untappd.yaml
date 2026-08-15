@@ -1,0 +1,24 @@
+id: untappd
+brief:
+    title: Untappd User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Untappd user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - untappd
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://untappd.com/user/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - on Untappd</title>
+          in: body
+          need: all

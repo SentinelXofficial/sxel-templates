@@ -1,0 +1,21 @@
+id: git-config-nginxoffbyslash
+brief:
+    title: Nginx - Git Configuration Exposure
+    by: organiccrap
+    level: medium
+    about: Nginx is vulnerable to git configuration exposure.
+    label:
+        - config
+        - exposure
+        - nginx
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - '[core]'
+          in: body

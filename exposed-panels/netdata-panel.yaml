@@ -1,0 +1,19 @@
+id: netdata-panel
+brief:
+    title: Netdata Panel - Detect
+    by: TechbrunchFR
+    level: info
+    about: Netdata panel was discovered.
+    label:
+        - panel
+        - netdata
+        - login
+        - dashboard
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/info'
+        - '{{BaseURL}}/api/v2/info'
+        - '{{BaseURL}}/sign-in'
+      signs: []

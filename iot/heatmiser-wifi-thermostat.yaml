@@ -1,0 +1,23 @@
+id: heatmiser-wifi-thermostat
+brief:
+    title: Heatmiser Wifi Thermostat Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Heatmiser Wifi Thermostat panel was detected.
+    label:
+        - iot
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.htm'
+      signs:
+        - "on": word
+          has:
+            - <title>Heatmiser Wifi Thermostat</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

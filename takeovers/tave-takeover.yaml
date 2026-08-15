@@ -1,0 +1,19 @@
+id: tave-takeover
+brief:
+    title: tave takeover detection
+    by: pdteam
+    level: high
+    about: tave takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<h1>Error 404: Page Not Found</h1>'
+          in: body
+          need: all

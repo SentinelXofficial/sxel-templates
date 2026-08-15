@@ -1,0 +1,21 @@
+id: api-host-io
+brief:
+    title: host.io API Test
+    by: daffainfo
+    level: info
+    about: Domains Data API for Developers
+    label:
+        - token-spray
+        - hostio
+moves:
+    - verb: GET
+      to:
+        - https://host.io/api/full/facebook.com?token=${{token}}
+      signs:
+        - "on": word
+          has:
+            - '"domain"'
+            - '"rank"'
+            - '"url"'
+          in: body
+          need: all

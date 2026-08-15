@@ -1,0 +1,22 @@
+id: expression-engine-exception
+brief:
+    title: ExpressionEngine Exception - Page
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - error
+        - expressionengine
+        - log
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Exception - ExpressionEngine
+            - Exception Caught
+          in: body
+          need: all

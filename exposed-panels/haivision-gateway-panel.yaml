@@ -1,0 +1,17 @@
+id: haivision-gateway-panel
+brief:
+    title: Haivision Gateway Login Panel - Detect
+    by: righettod
+    level: info
+    about: Haivision Gateway login panel was detected.
+    label:
+        - panel
+        - haivision
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

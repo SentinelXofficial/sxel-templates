@@ -1,0 +1,23 @@
+id: codian-mcu-login
+brief:
+    title: Codian MCU Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Codian MCU login panel was detected.
+    label:
+        - iot
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Codian MCU - login:</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

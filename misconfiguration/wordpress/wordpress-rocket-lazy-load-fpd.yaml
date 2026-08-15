@@ -1,0 +1,23 @@
+id: wordpress-rocket-lazy-load-fpd
+brief:
+    title: WordPress LazyLoad Plugin - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Plugin LazyLoad files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - fpd
+        - rocket-lazy-load
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/rocket-lazy-load/src/Subscriber/AdminPageSubscriber.php'
+        - '{{BaseURL}}/wp-content/plugins/rocket-lazy-load/src/Subscriber/LazyloadSubscriber.php'
+        - '{{BaseURL}}/wp-content/plugins/rocket-lazy-load/src/ServiceProvider/AdminServiceProvider.php'
+        - '{{BaseURL}}/wp-content/plugins/rocket-lazy-load/src/ServiceProvider/ImagifyNoticeServiceProvider.php'
+        - '{{BaseURL}}/wp-content/plugins/rocket-lazy-load/src/ServiceProvider/LazyloadServiceProvider.php'
+        - '{{BaseURL}}/wp-content/plugins/rocket-lazy-load/src/ServiceProvider/SubscribersServiceProvider.php'
+      signs: []

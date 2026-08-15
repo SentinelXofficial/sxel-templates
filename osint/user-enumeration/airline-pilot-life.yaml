@@ -1,0 +1,24 @@
+id: airline-pilot-life
+brief:
+    title: Airline Pilot Life User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Airline Pilot Life user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - airline-pilot-life
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://airlinepilot.life/u/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title> Profile -
+          in: body
+          need: all

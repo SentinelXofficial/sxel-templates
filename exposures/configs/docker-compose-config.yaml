@@ -1,0 +1,26 @@
+id: docker-compose-config
+brief:
+    title: Docker Compose - Detect
+    by: meme-lord
+    level: medium
+    about: Multiple Docker Compose configuration files were detected. The configuration allows deploy, combine and configure operations on multiple containers at the same time. The default is to outsource eac...
+    label:
+        - config
+        - exposure
+        - devops
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/docker-compose.yml'
+        - '{{BaseURL}}/docker-compose.prod.yml'
+        - '{{BaseURL}}/docker-compose.production.yml'
+        - '{{BaseURL}}/docker-compose.staging.yml'
+        - '{{BaseURL}}/docker-compose.dev.yml'
+        - '{{BaseURL}}/docker-compose-dev.yml'
+        - '{{BaseURL}}/docker-compose.override.yml'
+      signs:
+        - "on": status
+          status:
+            - 200

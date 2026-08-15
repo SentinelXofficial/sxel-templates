@@ -1,0 +1,30 @@
+id: motive-eim-panel
+brief:
+    title: Motive eSIM Secure Connect Panel - Exposure Detection
+    by: miguelse
+    level: high
+    about: Detects exposed Motive eSIM Secure Connect (EIM) panels used for managing eSIM/iSIM provisioning. Public access to these interfaces may allow attackers to view or interact with sensitive operations...
+    label:
+        - panel
+        - motive
+        - eim
+        - esim
+        - iot
+        - discovery
+    score: CVSS:8.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/eIMConfiguration'
+        - '{{BaseURL}}/eid-management'
+        - '{{BaseURL}}/eid-management-new'
+        - '{{BaseURL}}/bulk-profile-operation'
+      signs:
+        - "on": word
+          has:
+            - <title>EIM</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

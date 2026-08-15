@@ -1,0 +1,24 @@
+id: pandora-fms-console
+brief:
+    title: Pandora FMS Mobile Console Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Pandora FMS Mobile Console login panel was detected.
+    label:
+        - panel
+        - edb
+        - pandorafms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pandora_console/mobile/'
+      signs:
+        - "on": word
+          has:
+            - <title>Pandora FMS mobile</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

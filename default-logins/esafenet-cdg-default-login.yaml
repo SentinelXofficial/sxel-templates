@@ -1,0 +1,27 @@
+id: esafenet-cdg-default-login
+brief:
+    title: Esafenet CDG - Default Login
+    by: chesterblue
+    level: high
+    about: Esafenet electronic document security management system default  credentials were discovered.
+    label:
+        - esafenet
+        - cdg
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/CDGServer3/SystemConfig'
+      head:
+        content-type: application/x-www-form-urlencoded
+      body: command=Login&help=null&verifyCodeDigit=dfd&name={{username}}&pass={{password}}
+      signs:
+        - "on": word
+          has:
+            - est.connection.url
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

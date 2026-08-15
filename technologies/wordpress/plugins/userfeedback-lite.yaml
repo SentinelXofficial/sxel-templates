@@ -1,0 +1,17 @@
+id: wordpress-userfeedback-lite
+brief:
+    title: User Feedback – Create Interactive Feedback Form, User Surveys, and Polls in Seconds Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/userfeedback-lite/readme.txt'
+      signs: []

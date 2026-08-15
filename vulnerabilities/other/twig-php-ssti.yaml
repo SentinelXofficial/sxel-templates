@@ -1,0 +1,24 @@
+id: twig-php-ssti
+brief:
+    title: Twig PHP <2.4.4 template engine - SSTI
+    by: madrobot
+    level: high
+    about: A vulnerability in Twig PHP allows remote attackers to cause the product to execute arbitrary commands via an SSTI vulnerability.
+    label:
+        - php
+        - ssti
+        - twig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/search?search_key=%7B%7B1337*1338%7D%7D'
+      signs:
+        - "on": word
+          has:
+            - "1788906"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

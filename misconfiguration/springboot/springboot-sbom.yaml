@@ -1,0 +1,35 @@
+id: springboot-sbom
+brief:
+    title: Spring Boot Actuator SBOM - Exposure
+    by: koungq
+    level: low
+    about: Spring Boot Actuator SBOM endpoint was detected and is exposed without authentication. The endpoint returns a Software Bill of Materials (typically CycloneDX or SPDX JSON) listing every dependency ...
+    label:
+        - misconfig
+        - exposure
+        - springboot
+        - actuator
+        - sbom
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sbom'
+        - '{{BaseURL}}/actuator/sbom'
+        - '{{BaseURL}}/sbom/application'
+        - '{{BaseURL}}/actuator/sbom/application'
+      signs:
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v1+json
+            - application/vnd.spring-boot.actuator.v2+json
+            - application/vnd.spring-boot.actuator.v3+json
+            - application/vnd.cyclonedx+json
+            - application/spdx+json
+            - application/vnd.syft+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

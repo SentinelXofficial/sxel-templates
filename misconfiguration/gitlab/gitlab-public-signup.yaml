@@ -1,0 +1,35 @@
+id: gitlab-public-signup
+brief:
+    title: GitLab public signup
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - gitlab
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/users/sign_in'
+        - '{{BaseURL}}/users/sign_up'
+      signs:
+        - "on": word
+          has:
+            - <a data-qa-selector="register_link" href="/users/sign_up">Register now</a>
+            - data-qa-selector="new_user_register_button"
+          in: body
+          need: all
+        - "on": word
+          has:
+            - https://about.gitlab.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <meta content="GitLab.com" property="og:description">
+          in: body
+          need: all

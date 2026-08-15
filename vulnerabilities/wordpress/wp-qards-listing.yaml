@@ -1,0 +1,26 @@
+id: wp-qards-listing
+brief:
+    title: WordPress Plugin Qards
+    by: pussycat0x
+    level: info
+    about: Searches for sensitive directories present in the qards plugin.
+    label:
+        - wordpress
+        - listing
+        - wp-plugin
+        - wp
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/qards/'
+      signs:
+        - "on": word
+          has:
+            - Index of
+            - /wp-content/plugins/qards
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

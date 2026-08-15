@@ -1,0 +1,29 @@
+id: securenvoy-panel
+brief:
+    title: SecurEnvoy Login Panel - Detect
+    by: 0xrod
+    level: info
+    about: SecurEnvoy login panel was detected.
+    label:
+        - panel
+        - securenvoy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/secadmin/'
+        - '{{BaseURL}}/securenvoy/'
+        - '{{BaseURL}}/secenrol/'
+        - '{{BaseURL}}/RDWeb'
+      signs:
+        - "on": word
+          has:
+            - <base href="/secadmin/">
+            - SecurEnvoy Portal
+            - SecurEnvoy Tokenless Authentication
+            - 'Manage My Token : Authentication'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,30 @@
+id: kube-api-nodes
+brief:
+    title: Kube API Nodes
+    by: sharath
+    level: info
+    about: Scans for kube nodes
+    label:
+        - tech
+        - k8s
+        - kubernetes
+        - devops
+        - kube
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/nodes'
+      signs:
+        - "on": word
+          has:
+            - '"NodeList":'
+            - '"items":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - '"containerRuntimeVersion"'
+            - '"kubeletVersion": "v'
+          in: body
+          need: all

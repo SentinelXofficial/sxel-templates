@@ -1,0 +1,18 @@
+id: forgerock-ig-panel
+brief:
+    title: ForgeRock IG Login/Welcome Page - Detect
+    by: r3dg33k
+    level: info
+    about: Detects ForgeRock Identity Gateway login or welcome page and extracts version number
+    label:
+        - forgerock
+        - ig
+        - login
+        - identity-gateway
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

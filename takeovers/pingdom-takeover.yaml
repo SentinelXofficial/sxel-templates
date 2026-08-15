@@ -1,0 +1,21 @@
+id: pingdom-takeover
+brief:
+    title: Pingdom Takeover Detection
+    by: pdteam
+    level: high
+    about: Pingdom takeover was detected.
+    label:
+        - takeover
+        - pingdom
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Public Report Not Activated
+            - This public report page has not been activated by the user
+          in: body
+          need: all

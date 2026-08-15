@@ -1,0 +1,19 @@
+id: simplebooklet-takeover
+brief:
+    title: simplebooklet takeover detection
+    by: pdteam
+    level: high
+    about: simplebooklet takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - We can't find this <a href="https://simplebooklet.com
+          in: body
+          need: all

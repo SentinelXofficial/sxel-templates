@@ -1,0 +1,24 @@
+id: virustotal
+brief:
+    title: Virustotal User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Virustotal user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - virustotal
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.virustotal.com/gui/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - USER PROFILE
+          in: body
+          need: all

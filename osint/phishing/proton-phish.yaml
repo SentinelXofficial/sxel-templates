@@ -1,0 +1,24 @@
+id: proton-phish
+brief:
+    title: proton phishing Detection
+    by: rxerium
+    level: info
+    about: A proton phishing website was detected
+    label:
+        - phishing
+        - proton
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Proton Account: Sign-in'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

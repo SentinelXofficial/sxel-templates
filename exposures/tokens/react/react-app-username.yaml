@@ -1,0 +1,16 @@
+id: react-app-username
+brief:
+    title: React App Username
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - react
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

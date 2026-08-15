@@ -1,0 +1,15 @@
+id: joomla-registration-enabled
+brief:
+    title: Joomla - User Registration Enabled
+    by: 0x_Akoko
+    level: info
+    about: Detected Joomla user registration enabled, allowing anyone to create accounts on the site. If not intentionally configured, this could lead to unauthorized access or spam account creation.
+    label:
+        - joomla
+        - misconfig
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?option=com_users&view=registration'
+      signs: []

@@ -1,0 +1,26 @@
+id: starz-phish
+brief:
+    title: Starz phishing Detection
+    by: rxerium
+    level: info
+    about: A Starz phishing website was detected
+    label:
+        - phishing
+        - starz
+        - streaming
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Starz
+            - STARZ brings diverse perspectives to life through bold storytelling. Sign-up to stream original series, movies, extras, and more—on-demand and ad-free.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

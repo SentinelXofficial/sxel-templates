@@ -1,0 +1,24 @@
+id: smashrun
+brief:
+    title: SmashRun User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: SmashRun user name information check was conducted.
+    label:
+        - osint
+        - osint-health
+        - smashrun
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://smashrun.com/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Miles run overall
+          in: body
+          need: all

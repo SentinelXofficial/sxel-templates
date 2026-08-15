@@ -1,0 +1,24 @@
+id: freshrss-installer
+brief:
+    title: FreshRSS - Installation
+    by: ritikchaddha
+    level: high
+    about: FreshRSS Installation panel has been exposed.
+    label:
+        - freshrss
+        - misconfig
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/i/?rid'
+      signs:
+        - "on": word
+          has:
+            - Installation · FreshRSS
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

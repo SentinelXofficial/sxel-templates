@@ -1,0 +1,27 @@
+id: ibm-dcec-panel
+brief:
+    title: IBM Decision Center Enterprise Console - Panel Detection
+    by: DhiyaneshDK
+    level: info
+    about: IBM Decision Center Enterprise Console panel was detected.
+    label:
+        - panel
+        - ibm
+        - login
+        - detect
+        - decision-center
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/teamserver/faces/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - <title>Decision Center Enterprise console</title>
+            - Sign in to Decision Center
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

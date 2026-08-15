@@ -1,0 +1,24 @@
+id: f-secure-policy-manager
+brief:
+    title: F-Secure Policy Manager Server Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: F-Secure Policy Manager Server login panel was detected.
+    label:
+        - login
+        - panel
+        - withsecure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>F-Secure Policy Manager Server</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: phpipam-installer
+brief:
+    title: PHP IPAM Installation Page - Exposed
+    by: DhiyaneshDK
+    level: high
+    about: PHP IPAM is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - exposure
+        - install
+        - phpipam
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?page=install'
+      signs:
+        - "on": word
+          has:
+            - <title>phpipam installation</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

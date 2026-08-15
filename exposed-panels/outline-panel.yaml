@@ -1,0 +1,18 @@
+id: outline-panel
+brief:
+    title: Outline Panel - Detect
+    by: ChrisJr404
+    level: info
+    about: Outline (getoutline.com / github.com/outline/outline) is a popular open-source team knowledge base / wiki, often self-hosted as a Notion alternative. Exposed self-hosted instances may reveal team d...
+    label:
+        - panel
+        - outline
+        - wiki
+        - knowledge-base
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

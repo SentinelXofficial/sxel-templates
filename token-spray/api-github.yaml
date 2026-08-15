@@ -1,0 +1,22 @@
+id: api-github
+brief:
+    title: GitHub API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - github
+moves:
+    - verb: GET
+      to:
+        - https://api.github.com/user
+      head:
+        Authorization: Basic {{base64('user:' + token)}}
+      signs:
+        - "on": word
+          has:
+            - '"login":'
+            - '"avatar_url":'
+          in: body
+          need: all

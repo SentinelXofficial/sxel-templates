@@ -1,0 +1,25 @@
+id: dolphin-installer
+brief:
+    title: Dolphin Installer - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Dolphin is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - dolphin
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install.php'
+      signs:
+        - "on": word
+          has:
+            - Dolphin Installation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

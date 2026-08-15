@@ -1,0 +1,25 @@
+id: openemr-setup-installer
+brief:
+    title: OpenEMR Setup Installation Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed OpenEMR setup installation pages which could allow unauthorized access or information disclosure.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - openemr
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup.php'
+      signs:
+        - "on": word
+          has:
+            - <title>OpenEMR Setup Tool</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

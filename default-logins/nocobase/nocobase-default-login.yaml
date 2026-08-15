@@ -1,0 +1,33 @@
+id: nocobase-default-login
+brief:
+    title: NocoBase - Default Login
+    by: Fur1na
+    level: high
+    about: NocoBase default login was discovered.
+    label:
+        - default-login
+        - nocobase
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}{{path}}'
+      head:
+        Content-Type: application/json
+      body: '{"account": "{{username}}", "password": "{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - '"username":'
+            - '"email":'
+            - systemSettings
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: beyondtrust-priv-panel
+brief:
+    title: BeyondTrust Privileged Remote Access - Panel
+    by: righettod
+    level: info
+    about: BeyondTrust Privileged Remote Access login panel was detected.
+    label:
+        - panel
+        - beyondtrust
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/login'
+        - '{{BaseURL}}/login/pre_login_agreement'
+      signs: []

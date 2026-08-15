@@ -1,0 +1,24 @@
+id: uid
+brief:
+    title: Uid User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Uid user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - uid
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://uid.me/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- uID.me'
+          in: body
+          need: all

@@ -1,0 +1,25 @@
+id: cyberoam-ssl-vpn-panel
+brief:
+    title: Cyberoam SSL VPN Panel - Detect
+    by: idealphase
+    level: info
+    about: Cyberoam SSL VPN panel was detected.
+    label:
+        - panel
+        - cyberoam
+        - vpn
+        - sophos
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Cyberoam SSL VPN Portal</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

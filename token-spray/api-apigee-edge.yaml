@@ -1,0 +1,25 @@
+id: api-apigee-edge
+brief:
+    title: Apigee Edge API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - apigee
+moves:
+    - verb: GET
+      to:
+        - https://apimonitoring.enterprise.apigee.com/alerts
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"uuid":'
+            - '"name":'
+          in: body
+          need: all

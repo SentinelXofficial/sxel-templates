@@ -1,0 +1,46 @@
+id: kasm-login-panel
+brief:
+    title: Kasm Login Panel - Detect
+    by: lum8rjack
+    level: info
+    about: Kasm workspaces login panel was detected.
+    label:
+        - panel
+        - kasm
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Kasm</title>
+            - content="Kasm Server
+            - content="Kasm Technologies
+            - '"html_title": "Kasm'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/login_settings'
+      head:
+        Content-Type: application/json
+      body: '{"token":null,"username":null}'
+      signs:
+        - "on": word
+          has:
+            - <title>Kasm</title>
+            - content="Kasm Server
+            - content="Kasm Technologies
+            - '"html_title": "Kasm'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

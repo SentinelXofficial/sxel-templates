@@ -1,0 +1,23 @@
+id: synnefo-admin-panel
+brief:
+    title: Synnefo Admin Login Panel - Detect
+    by: impramodsargar
+    level: info
+    about: Synnefo Admin login panel was detected.
+    label:
+        - panel
+        - synnefo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/synnefoclient/'
+      signs:
+        - "on": word
+          has:
+            - <title>Synnefo Admin</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

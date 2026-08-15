@@ -1,0 +1,24 @@
+id: viber-phish
+brief:
+    title: Viber phishing Detection
+    by: rxerium
+    level: info
+    about: A Viber phishing website was detected
+    label:
+        - phishing
+        - viber
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Home | Viber
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

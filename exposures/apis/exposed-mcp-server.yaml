@@ -1,0 +1,41 @@
+id: exposed-mcp-server
+brief:
+    title: Exposed MCP JSON-RPC 2.0 API Detection
+    by: ivan_wallarm
+    level: info
+    about: Detects exposed Machine Control Protocol (MCP) servers through JSON-RPC 2.0 API endpoints.
+    label:
+        - mcp
+        - jsonrpc
+        - devtools
+        - exposure
+        - api
+        - ai
+        - llm
+        - discovery
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/mcp/'
+      head:
+        Accept: application/json, text/event-stream
+        Content-Type: application/json
+      body: |
+        {
+          "jsonrpc": "2.0",
+          "method": "{{method}}",
+          "params": {},
+          "id": 1
+        }
+      signs:
+        - "on": word
+          has:
+            - jsonrpc
+            - result
+          in: body
+          need: all
+        - "on": word
+          has:
+            - '"observatories_by_type"'
+          in: body

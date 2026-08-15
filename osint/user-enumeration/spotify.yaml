@@ -1,0 +1,24 @@
+id: spotify
+brief:
+    title: Spotify User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Spotify user name information check was conducted.
+    label:
+        - osint
+        - osint-music
+        - spotify
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://open.spotify.com/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - on Spotify</title>
+          in: body
+          need: all

@@ -1,0 +1,17 @@
+id: wordpress-wp-seopress
+brief:
+    title: SEOPress – On-site SEO Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wp-seopress/readme.txt'
+      signs: []

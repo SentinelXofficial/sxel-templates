@@ -1,0 +1,24 @@
+id: memrise
+brief:
+    title: Memrise User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Memrise user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - memrise
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://app.memrise.com/user/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - followers
+          in: body
+          need: all

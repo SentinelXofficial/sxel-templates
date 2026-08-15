@@ -1,0 +1,22 @@
+id: anonymous-distribution-point-sccm
+brief:
+    title: Microsoft SCCM - Anonymous Distribution Point Access
+    by: matejsmycka
+    level: medium
+    about: Microsoft System Center Configuration Manager (SCCM) can be configured to allow anonymous access to its distribution points.This can lead to sensitive data exposure and information gathering by una...
+    label:
+        - misconfig
+        - microsoft
+        - sccm
+        - anonymous
+        - distribution-point
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/SMS_DP_SMSPKG$/Datalib'
+        - '{{BaseURL}}:80/SMS_DP_SMSPKG$/Datalib'
+      signs:
+        - "on": status
+          status:
+            - 200

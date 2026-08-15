@@ -1,0 +1,26 @@
+id: carel-plantvisor-panel
+brief:
+    title: CAREL Pl@ntVisor Panel
+    by: Hardik-Solanki
+    level: info
+    about: Carel plantvisor panel was detected.
+    label:
+        - panels
+        - scada
+        - iot
+        - carel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - CAREL Pl@ntVisor
+            - alt="CAREL
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

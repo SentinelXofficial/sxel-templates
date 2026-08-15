@@ -1,0 +1,27 @@
+id: squirrelmail-login
+brief:
+    title: SquirrelMail Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: SquirrelMail login panel was detected.
+    label:
+        - squirrelmail
+        - edb
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/src/login.php'
+        - '{{BaseURL}}/webmail/src/login.php'
+        - '{{BaseURL}}/squirrelmail/src/login.php'
+      signs:
+        - "on": word
+          has:
+            - SquirrelMail
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

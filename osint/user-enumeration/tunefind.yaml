@@ -1,0 +1,24 @@
+id: tunefind
+brief:
+    title: Tunefind User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Tunefind user name information check was conducted.
+    label:
+        - osint
+        - osint-music
+        - tunefind
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.tunefind.com/user/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Achievements
+          in: body
+          need: all

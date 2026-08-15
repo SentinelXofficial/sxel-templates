@@ -1,0 +1,31 @@
+id: protractor-config
+brief:
+    title: Protractor Configuration Exposure
+    by: DhiyaneshDK
+    level: low
+    about: Protractor configuration file was detected.
+    label:
+        - devops
+        - exposure
+        - protractor
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/protractor.conf.js'
+      signs:
+        - "on": word
+          has:
+            - exports.config
+            - 'capabilities:'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/javascript
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

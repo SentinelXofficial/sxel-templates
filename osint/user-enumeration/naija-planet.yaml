@@ -1,0 +1,24 @@
+id: naija-planet
+brief:
+    title: Naija planet User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Naija planet user name information check was conducted.
+    label:
+        - osint
+        - osint-dating
+        - naija-planet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://naijaplanet.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'dating Profile, '
+          in: body
+          need: all

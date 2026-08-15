@@ -1,0 +1,16 @@
+id: meilisearch-detect
+brief:
+    title: Meilisearch - Detect
+    by: userdehghani
+    level: info
+    about: An open-source, blazingly fast, and hyper-relevant search engine that will improve your search experience.
+    label:
+        - meilisearch
+        - detect
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

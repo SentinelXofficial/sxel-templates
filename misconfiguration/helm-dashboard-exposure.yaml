@@ -1,0 +1,25 @@
+id: helm-dashboard-exposure
+brief:
+    title: Helm Dashboard - Exposure
+    by: DhiyaneshDk
+    level: medium
+    about: ""
+    label:
+        - helm
+        - exposure
+        - dashboard
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Helm Dashboard</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

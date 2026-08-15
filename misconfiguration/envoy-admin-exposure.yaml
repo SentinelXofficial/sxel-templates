@@ -1,0 +1,29 @@
+id: envoy-admin-exposure
+brief:
+    title: Envoy Admin Exposure
+    by: DhiyaneshDk
+    level: medium
+    about: Envoy Admin page exposed.
+    label:
+        - misconfig
+        - envoy
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Envoy Admin</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

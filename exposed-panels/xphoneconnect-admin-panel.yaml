@@ -1,0 +1,27 @@
+id: xphoneconnect-admin-panel
+brief:
+    title: XPhone Connect Admin Interface - Detect
+    by: FLX
+    level: info
+    about: Detects the presence of the XPhone Connect admin interface.
+    label:
+        - panel
+        - xphone
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/xphoneconnect/admin/Login.aspx'
+      signs:
+        - "on": word
+          has:
+            - XPhone Connect server - Logon
+            - XPhone Web-Meeting
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

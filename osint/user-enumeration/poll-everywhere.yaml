@@ -1,0 +1,24 @@
+id: poll-everywhere
+brief:
+    title: Poll Everywhere User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Poll Everywhere user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - poll-everywhere
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://pollev.com/proxy/api/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - name
+          in: body
+          need: all

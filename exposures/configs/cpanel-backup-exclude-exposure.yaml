@@ -1,0 +1,32 @@
+id: cpanel-backup-exclude-exposure
+brief:
+    title: cPanel Backup Exclusion Configuration - Exposure
+    by: 0x_Akoko
+    level: info
+    about: cPanel backup exclusion configuration file (cpbackup-exclude.conf) was publicly accessible, potentially exposing directory structure and system paths.
+    label:
+        - cpanel
+        - exposure
+        - config
+        - misconfig
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cpbackup-exclude.conf'
+        - '{{BaseURL}}/.cpbackup-exclude.conf'
+      signs:
+        - "on": word
+          has:
+            - <html
+            - <!doctype
+            - <script
+            - <meta
+            - <head
+            - <body
+            - application/json
+            - application/xml
+            - text/xml
+            - image/
+          in: body
+          need: all

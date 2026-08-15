@@ -1,0 +1,16 @@
+id: huginn-panel
+brief:
+    title: Huginn Login Panel - Detect
+    by: righettod
+    level: info
+    about: Huginn products was detected.
+    label:
+        - panel
+        - huginn
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/users/sign_in'
+      signs: []

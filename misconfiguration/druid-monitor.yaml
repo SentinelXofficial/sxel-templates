@@ -1,0 +1,25 @@
+id: druid-monitor
+brief:
+    title: Alibaba Druid Monitor Unauthorized Access
+    by: ohlinge
+    level: high
+    about: Alibaba Druid Monitor is exposed.
+    label:
+        - druid
+        - alibaba
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/druid/index.html'
+      signs:
+        - "on": word
+          has:
+            - Druid Stat Index</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

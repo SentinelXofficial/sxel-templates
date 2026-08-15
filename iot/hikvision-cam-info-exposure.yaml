@@ -1,0 +1,17 @@
+id: hikvision-cam-info-exposure
+brief:
+    title: Hikvision IP Camera - Info Exposure
+    by: AbdulrahmanTamim
+    level: high
+    about: Unauthenticated exposure of sensitive endpoints was detected on vulnerable Hikvision IP cameras. This included live snapshot feeds, encrypted configuration files, and full user credential XML throu...
+    label:
+        - hikvision
+        - iot
+        - camera
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Security/users?auth={{b64auth}}'
+      signs: []

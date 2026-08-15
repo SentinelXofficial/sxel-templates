@@ -1,0 +1,19 @@
+id: sap-message-server-detect
+brief:
+    title: SAP Message Server HTTP - Detect
+    by: LRVT
+    level: info
+    about: Detected SAP Message Server by sending an HTTP request to the root path and checking for SAP Message Server header.
+    label:
+        - sap
+        - discovery
+        - recon
+moves:
+    - verb: GET
+      to:
+        - '{{RootURL}}'
+      signs:
+        - "on": word
+          has:
+            - SAP Message Server
+          in: header

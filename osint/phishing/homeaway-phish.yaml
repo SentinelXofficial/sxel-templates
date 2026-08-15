@@ -1,0 +1,26 @@
+id: homeaway-phish
+brief:
+    title: HomeAway phishing Detection
+    by: rxerium
+    level: info
+    about: A HomeAway phishing website was detected
+    label:
+        - phishing
+        - homeaway
+        - travel
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - HomeAway
+            - '<title>Vrbo | Book Your Vacation Home Rentals: Beach Houses, Cabins, Condos &amp; More'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

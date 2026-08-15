@@ -1,0 +1,40 @@
+id: rundeck-default-login
+brief:
+    title: Rundeck - Default Login
+    by: karkis3c
+    level: high
+    about: Rundeck default login was discovered.
+    label:
+        - default-login
+        - rundeck
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/j_security_check'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: j_username={{username}}&j_password={{password}}
+      signs:
+        - "on": word
+          has:
+            - /user/logout
+            - Hi admin
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/menu/home'
+      signs:
+        - "on": word
+          has:
+            - /user/logout
+            - Hi admin
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200

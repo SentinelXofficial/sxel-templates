@@ -1,0 +1,26 @@
+id: amcrest-login
+brief:
+    title: Amcrest Login
+    by: DhiyaneshDK
+    level: info
+    about: An Amcrest LDAP user login was discovered.
+    label:
+        - panel
+        - camera
+        - amcrest
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Amcrest Technologies
+            - LDAPUser
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

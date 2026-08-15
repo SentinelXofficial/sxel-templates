@@ -1,0 +1,19 @@
+id: pantheon-takeover
+brief:
+    title: Pantheon Takeover Detection
+    by: pdteam
+    level: high
+    about: Pantheon takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - The gods are wise, but do not know of the site which you seek.
+          in: body
+          need: all

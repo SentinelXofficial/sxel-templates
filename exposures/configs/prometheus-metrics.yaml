@@ -1,0 +1,44 @@
+id: prometheus-metrics
+brief:
+    title: Prometheus Metrics - Detect
+    by: dhiyaneshDK
+    level: medium
+    about: Prometheus metrics page was detected.
+    label:
+        - exposure
+        - prometheus
+        - hackerone
+        - config
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/metrics'
+        - '{{BaseURL}}/api/metrics'
+      signs:
+        - "on": word
+          has:
+            - cpu_seconds_total
+            - http_request_duration_seconds
+            - process_virtual_memory_bytes
+            - process_start_time_seconds
+          in: body
+          need: all
+        - "on": word
+          has:
+            - lvm_
+            - kube
+            - namedprocess
+            - mysqld
+            - collectd_
+            - libvirt_
+            - mongodb
+            - blackbox_
+            - haproxy_
+            - rabbitmq_
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

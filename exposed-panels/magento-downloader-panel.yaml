@@ -1,0 +1,30 @@
+id: magento-downloader-panel
+brief:
+    title: Magento Connect Manager Installer - Detect
+    by: 5up3r541y4n
+    level: info
+    about: Magento Connect Manager installer was detected. The software, available via /downloader/ location, requires Magento admin rights and uses the same authorization methods as for backend. If an attack...
+    label:
+        - magento
+        - exposure
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/downloader/'
+      signs:
+        - "on": word
+          has:
+            - Magento Downloader
+            - Log In
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

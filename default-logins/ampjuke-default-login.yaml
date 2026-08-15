@@ -1,0 +1,59 @@
+id: ampjuke-default-login
+brief:
+    title: AmpJuke - Default Login
+    by: ritikchaddha
+    level: high
+    about: AmpJuke contains a default login vulnerability. Default admin login password 'pass' was found.
+    label:
+        - default-login
+        - ampjuke
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.php'
+      signs:
+        - "on": word
+          has:
+            - AmpJuke
+            - Track
+            - Logout
+            - Random play
+          in: body_3
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/loginvalidate.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: uuid={{url_encode(token)}}&login={{username}}&password={{password}}&Submit=Submit
+      signs:
+        - "on": word
+          has:
+            - AmpJuke
+            - Track
+            - Logout
+            - Random play
+          in: body_3
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?what=welcome'
+      signs:
+        - "on": word
+          has:
+            - AmpJuke
+            - Track
+            - Logout
+            - Random play
+          in: body_3
+          need: all
+        - "on": status
+          status:
+            - 200

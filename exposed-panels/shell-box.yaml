@@ -1,0 +1,27 @@
+id: shell-box
+brief:
+    title: Shell In A Box - Detect
+    by: irshad ahamed
+    level: info
+    about: Shell In A Box implements a web server that can export arbitrary command line tools to a web based terminal emulator
+    label:
+        - shell
+        - emulator
+        - detect
+        - panel
+        - login
+        - shellinabox_project
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Shell In A Box</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

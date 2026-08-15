@@ -1,0 +1,28 @@
+id: polycom-admin-detect
+brief:
+    title: Polycom Admin Panel - Detect
+    by: e_schultze_
+    level: info
+    about: Polycom admin panel was detected.
+    label:
+        - panel
+        - polycom
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/systemstatus.xml'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - SYSTEMSTATUS
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 'Server: lighttpd'
+          in: header
+          need: all

@@ -1,0 +1,20 @@
+id: metatag-cms
+brief:
+    title: Metatag CMS Detection
+    by: dadevel
+    level: info
+    about: Generic CMS Detection using html meta generator tag
+    label:
+        - tech
+        - cms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

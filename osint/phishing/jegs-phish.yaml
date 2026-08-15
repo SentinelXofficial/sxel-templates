@@ -1,0 +1,26 @@
+id: jegs-phish
+brief:
+    title: JEGS phishing Detection
+    by: rxerium
+    level: info
+    about: A JEGS phishing website was detected
+    label:
+        - phishing
+        - jegs
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - JEGS
+            - JEGS Aftermarket Auto Parts &amp; High Performance Racing &amp; Replacement Accessories Online
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: Chase-phish
+brief:
+    title: Chase phishing Detection
+    by: rxerium
+    level: info
+    about: A Chase phishing website was detected
+    label:
+        - phishing
+        - Chase
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Credit Card, Mortgage, Banking, Auto | Chase Online | Chase.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

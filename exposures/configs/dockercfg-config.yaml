@@ -1,0 +1,31 @@
+id: dockercfg-config
+brief:
+    title: Detect .dockercfg
+    by: geeknik
+    level: high
+    about: Docker registry authentication data
+    label:
+        - docker
+        - exposure
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.dockercfg'
+        - '{{BaseURL}}/.docker/config.json'
+      signs:
+        - "on": word
+          has:
+            - '"email":'
+            - '"auth":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

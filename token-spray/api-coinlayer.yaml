@@ -1,0 +1,21 @@
+id: api-coinlayer
+brief:
+    title: Coinlayer API Test
+    by: daffainfo
+    level: info
+    about: Real-time Crypto Currency Exchange Rates
+    label:
+        - token-spray
+        - coinlayer
+moves:
+    - verb: GET
+      to:
+        - https://api.coinlayer.com/live?access_key={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"success"'
+            - '"terms"'
+            - '"privacy"'
+          in: body
+          need: all

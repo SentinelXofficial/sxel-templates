@@ -1,0 +1,22 @@
+id: ocomon-panel
+brief:
+    title: OcoMon Login Panel - Detect
+    by: dogasantos
+    level: info
+    about: a tiny helpdesk system written in php
+    label:
+        - panel
+        - ocomon
+        - oss
+        - ocomon_project
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - open_form/ticket_form_open.php
+          in: body
+          need: all

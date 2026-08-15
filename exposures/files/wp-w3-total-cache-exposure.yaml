@@ -1,0 +1,18 @@
+id: wp-w3-total-cache-exposure
+brief:
+    title: WordPress W3 Total Cache - Cache Files Exposure
+    by: pussycat0x
+    level: high
+    about: Detects publicly accessible W3 Total Cache database cache files in the wp-content/w3tc/dbcache/ directory. When database caching to disk is enabled, these files contain raw SQL query results, poten...
+    label:
+        - wordpress
+        - wp-plugin
+        - w3-total-cache
+        - exposure
+        - cache
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/w3tc/dbcache/'
+      signs: []

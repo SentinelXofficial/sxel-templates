@@ -1,0 +1,17 @@
+id: paperless-ngx-panel
+brief:
+    title: Paperless-ngx Panel - Detect
+    by: ChrisJr404
+    level: info
+    about: Detected Paperless-ngx was a self-hosted document management platform for scanning, OCR-ing and tagging paper documents.
+    label:
+        - panel
+        - paperless-ngx
+        - paperless
+        - discovery
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/accounts/login/'
+      signs: []

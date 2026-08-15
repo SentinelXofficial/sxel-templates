@@ -1,0 +1,26 @@
+id: exposed-bitkeeper
+brief:
+    title: BitKeeper Configuration - Detect
+    by: daffainfo
+    level: low
+    about: BitKeeper configuration was detected.
+    label:
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/BitKeeper/etc/config'
+      signs:
+        - "on": word
+          has:
+            - BitKeeper configuration
+            - logging
+            - email
+            - description
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

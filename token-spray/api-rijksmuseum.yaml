@@ -1,0 +1,21 @@
+id: api-rijksmuseum
+brief:
+    title: Rijksmuseum API Test
+    by: daffainfo
+    level: info
+    about: The Rijksmuseum is a Dutch national museum dedicated to arts and history in Amsterdam
+    label:
+        - token-spray
+        - rijksmuseum
+moves:
+    - verb: GET
+      to:
+        - https://www.rijksmuseum.nl/api/nl/usersets?key={{token}}&format=json&page=2
+      signs:
+        - "on": word
+          has:
+            - '"count":'
+            - '"userSets":'
+            - '"user":'
+          in: body
+          need: all

@@ -1,0 +1,24 @@
+id: ecessa-panel
+brief:
+    title: Ecessa WANworX - Login Panel
+    by: rxerium
+    level: info
+    about: Ecessa WANworX management panel detected.
+    label:
+        - panel
+        - ecessa
+        - sdwan
+        - wanworx
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - webmaster@ecessa.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: seagate-nas-login
+brief:
+    title: Seagate NAS Login - Detect
+    by: JustaAcat
+    level: info
+    about: Seagate NAS - SEAGATE Login was detected.
+    label:
+        - panel
+        - seagate
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Seagate NAS - SEAGATE
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

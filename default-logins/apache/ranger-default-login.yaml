@@ -1,0 +1,29 @@
+id: ranger-default-login
+brief:
+    title: Apache Ranger - Default Login
+    by: For3stCo1d
+    level: high
+    about: Apache Ranger contains a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - apache
+        - ranger
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: username={{user}}&password={{pass}}
+      signs:
+        - "on": word
+          has:
+            - '"statusCode":200'
+            - '"msgDesc":"Login Successful"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

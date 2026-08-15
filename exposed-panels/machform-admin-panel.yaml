@@ -1,0 +1,25 @@
+id: machform-admin-panel
+brief:
+    title: MachForm Admin Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: MachForm Admin panel was detected.
+    label:
+        - panel
+        - machform
+        - admin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - alt="MachForm"
+            - <title>MachForm Admin Panel</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

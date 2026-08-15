@@ -1,0 +1,17 @@
+id: ngsurvey-panel
+brief:
+    title: ngSurvey Login Panel - Detect
+    by: righettod
+    level: info
+    about: ngSurvey products was detected.
+    label:
+        - panel
+        - ngsurvey
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/home/login'
+      signs: []

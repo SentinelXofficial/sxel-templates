@@ -1,0 +1,25 @@
+id: midjourney-phish
+brief:
+    title: Midjourney phishing Detection
+    by: rxerium
+    level: info
+    about: A Midjourney phishing website was detected
+    label:
+        - phishing
+        - midjourney
+        - ai
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Midjourney
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,17 @@
+id: wordpress-all-404-redirect-to-homepage
+brief:
+    title: All 404 Redirect to Homepage Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/all-404-redirect-to-homepage/readme.txt'
+      signs: []

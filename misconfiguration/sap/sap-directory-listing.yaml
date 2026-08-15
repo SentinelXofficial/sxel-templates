@@ -1,0 +1,30 @@
+id: sap-directory-listing
+brief:
+    title: SAP Directory Listing
+    by: dhiyaneshDK
+    level: medium
+    about: SAP Directory Listing is enabled.
+    label:
+        - sap
+        - listing
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/irj/go/km/navigation/'
+      signs:
+        - "on": word
+          has:
+            - title="~system"
+            - NetWeaver
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

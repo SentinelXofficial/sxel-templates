@@ -1,0 +1,25 @@
+id: apple-discussions
+brief:
+    title: Apple Discussions User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Apple Discussions user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - apple
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://discussions.apple.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Apple Community
+            - communities.apple.com
+          in: body
+          need: all

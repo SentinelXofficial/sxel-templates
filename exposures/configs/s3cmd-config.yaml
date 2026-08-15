@@ -1,0 +1,25 @@
+id: s3cmd-config
+brief:
+    title: S3CMD Configuration - Detect
+    by: Ice3man
+    level: info
+    about: S3CMD configuration information was detected.
+    label:
+        - amazon
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/s3cmd.ini'
+      signs:
+        - "on": word
+          has:
+            - '[default]'
+            - access_key
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

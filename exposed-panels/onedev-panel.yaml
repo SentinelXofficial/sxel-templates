@@ -1,0 +1,25 @@
+id: onedev-panel
+brief:
+    title: OneDev Panel - Detect
+    by: vultza
+    level: info
+    about: OneDev is a Git Server with CI/CD, Kanban, and Packages.
+    label:
+        - tech
+        - detect
+        - onedev
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/~login'
+      signs:
+        - "on": word
+          has:
+            - OneDev
+            - Git Server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

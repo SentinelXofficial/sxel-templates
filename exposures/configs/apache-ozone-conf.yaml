@@ -1,0 +1,31 @@
+id: apache-ozone-conf
+brief:
+    title: Apache Ozone - Exposure
+    by: icarot
+    level: info
+    about: Detects if path /conf of Apache Ozone web application is exposed.
+    label:
+        - tech
+        - ozone
+        - apache
+        - detect
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/conf'
+      signs:
+        - "on": word
+          has:
+            - <source>ozone-default.xml</source>
+            - ozone
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/xml
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: xenforo-detect
+brief:
+    title: XenForo Forum Detection
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - xenforo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php'
+      signs:
+        - "on": word
+          has:
+            - <html id="XenForo"
+            - <html id="XF"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

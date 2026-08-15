@@ -1,0 +1,25 @@
+id: apache-druid-unauth
+brief:
+    title: Apache Druid Unauth
+    by: DhiyaneshDk
+    level: low
+    about: Apache Druid is exposed to external users.
+    label:
+        - misconfig
+        - druid
+        - unauth
+        - apache
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/unified-console.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Apache Druid</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

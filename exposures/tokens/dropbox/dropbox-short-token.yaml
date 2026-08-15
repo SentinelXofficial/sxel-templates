@@ -1,0 +1,16 @@
+id: dropbox-short-token
+brief:
+    title: Dropbox Short Lived API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - dropbox
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

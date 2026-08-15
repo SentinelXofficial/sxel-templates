@@ -1,0 +1,17 @@
+id: wp-megamenu-fpd
+brief:
+    title: WordPress Plugin Max Mega Menu (megamenu) - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Plugin Max Mega Menu plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - debug
+        - wordpress
+        - fpd
+        - megamenu
+        - wp-plugin
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/megamenu/integration/zerif/functions.php'
+      signs: []

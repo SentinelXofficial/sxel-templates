@@ -1,0 +1,33 @@
+id: springboot-caches
+brief:
+    title: Springboot Actuator Caches
+    by: ELSFA7110
+    level: low
+    about: The caches endpoint provides access to the application's caches.
+    label:
+        - misconfig
+        - springboot
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/caches'
+        - '{{BaseURL}}/actuator/caches'
+      signs:
+        - "on": word
+          has:
+            - cacheManagers
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v1+json
+            - application/vnd.spring-boot.actuator.v2+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

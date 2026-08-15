@@ -1,0 +1,16 @@
+id: plesk-eol
+brief:
+    title: Plesk End-of-Life - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected Plesk versions that have reached End-of-Life (EOL) and no longer receive security updates.
+    label:
+        - tech
+        - plesk
+        - eol
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login_up.php'
+      signs: []

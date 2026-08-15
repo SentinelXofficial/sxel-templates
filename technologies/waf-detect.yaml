@@ -1,0 +1,65 @@
+id: waf-detect
+brief:
+    title: WAF Detection
+    by: dwisiswant0
+    level: info
+    about: A web application firewall was detected.
+    label:
+        - waf
+        - tech
+        - misc
+        - discovery
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: _=<script>alert(1)</script>
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: cookiesession1='
+          in: header
+        - "on": word
+          has:
+            - 'Set-Cookie: HWWAFSESID='
+            - 'Set-Cookie: HWWAFSESTIME='
+          in: response
+        - "on": word
+          has:
+            - safe3 Web Firewall
+          in: header
+        - "on": word
+          has:
+            - X-Safe-Firewall
+            - safedog-flow
+          in: header
+        - "on": word
+          has:
+            - Squarespace
+            - Firewall_action
+          in: header
+          need: all
+        - "on": word
+          has:
+            - yunsuologo
+          in: body
+        - "on": word
+          has:
+            - GoDaddy Security
+            - seal.godaddy.com
+            - GoDaddy security
+          in: body
+        - "on": word
+          has:
+            - X-TransIP-Balancer
+          in: header
+        - "on": word
+          has:
+            - 'Secured: By XLabs Security'
+          in: header
+        - "on": word
+          has:
+            - 'X-Protected-By: shieldon.io'
+          in: header

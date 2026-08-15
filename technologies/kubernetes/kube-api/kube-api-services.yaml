@@ -1,0 +1,27 @@
+id: kube-api-services
+brief:
+    title: Kube API Services
+    by: sharath
+    level: info
+    about: Scans for kube services
+    label:
+        - tech
+        - k8s
+        - kubernetes
+        - devops
+        - kube
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/namespaces/default/services'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"ServiceList":'
+            - '"items":'
+          in: body
+          need: all

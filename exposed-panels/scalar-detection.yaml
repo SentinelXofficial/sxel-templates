@@ -1,0 +1,32 @@
+id: scalar-detection
+brief:
+    title: Scalar API Documentation - Detect
+    by: recepgunes
+    level: info
+    about: Scalar API documentation panel was detected.
+    label:
+        - panel
+        - scalar
+        - api
+        - documentation
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/scalar'
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Scalar API Reference
+            - '@scalar/api-reference'
+            - scalar-references
+            - src="scalar.js
+            - ./scalar.aspnetcore.js
+            - /scalar/v1
+          in: response
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: bitbucket-panel
+brief:
+    title: Bitbucket Panel - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Bitbucket panel was detected. Bitbucket is a Git-based source code repository hosting service owned by Atlassian, providing CI/CD and collaboration features.
+    label:
+        - panel
+        - bitbucket
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+        - '{{BaseURL}}'
+      signs: []

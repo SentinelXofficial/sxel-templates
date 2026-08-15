@@ -1,0 +1,24 @@
+id: booking-phish
+brief:
+    title: booking phishing Detection
+    by: rxerium
+    level: info
+    about: A booking phishing website was detected
+    label:
+        - phishing
+        - booking
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Booking.com | Official site | The best hotels, flights, car rentals & accommodations
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

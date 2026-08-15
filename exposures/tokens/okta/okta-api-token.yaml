@@ -1,0 +1,16 @@
+id: okta-api-token
+brief:
+    title: Okta API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - okta
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

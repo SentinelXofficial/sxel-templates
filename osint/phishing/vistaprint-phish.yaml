@@ -1,0 +1,25 @@
+id: vistaprint-phish
+brief:
+    title: Vistaprint phishing Detection
+    by: rxerium
+    level: info
+    about: A Vistaprint phishing website was detected
+    label:
+        - phishing
+        - vistaprint
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Vistaprint
+            - '<title>VistaPrint Official Website: Online Printing Services'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

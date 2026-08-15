@@ -1,0 +1,29 @@
+id: atproto-did-exposure
+brief:
+    title: Well-Known ATProto DID
+    by: rxerium
+    level: info
+    about: Detects AT Protocol DID reference used by Bluesky.
+    label:
+        - well-known
+        - atproto
+        - bluesky
+        - misc
+        - identity
+        - miscellaneous
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.well-known/atproto-did'
+        - '{{BaseURL}}/well-known-atproto-did'
+      signs:
+        - "on": word
+          has:
+            - atproto
+            - did:plc
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

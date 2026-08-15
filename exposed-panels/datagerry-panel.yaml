@@ -1,0 +1,18 @@
+id: datagerry-panel
+brief:
+    title: Datagerry Panel - Detect
+    by: s4e-io
+    level: info
+    about: Datagerry panel was discovered.
+    label:
+        - panel
+        - login
+        - datagerry
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth'
+        - '{{BaseURL}}'
+      signs: []

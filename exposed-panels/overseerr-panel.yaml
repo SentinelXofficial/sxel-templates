@@ -1,0 +1,24 @@
+id: overseerr-panel
+brief:
+    title: Overseerr Panel - Detect
+    by: rxerium
+    level: info
+    about: Overseerr is a request management and media discovery tool built to work with your existing Plex ecosystem.
+    label:
+        - panel
+        - overseerr
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Sign In - Overseerr
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

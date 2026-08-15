@@ -1,0 +1,30 @@
+id: wp-app-log
+brief:
+    title: Discover wp-app.log Files
+    by: geeknik
+    level: info
+    about: wp-app.log file is exposed.
+    label:
+        - exposure
+        - logs
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-app.log'
+      signs:
+        - "on": word
+          has:
+            - LANG
+            - Array
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+            - application/javascript
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

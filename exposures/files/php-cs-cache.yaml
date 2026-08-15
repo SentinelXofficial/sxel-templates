@@ -1,0 +1,26 @@
+id: php-cs-cache
+brief:
+    title: PHP-CS-Fixer Cache - File Disclosure
+    by: DhiyaneshDk
+    level: medium
+    about: PHP CS fixer cache internal file is disclosed.
+    label:
+        - exposure
+        - files
+        - php
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.php_cs.cache'
+      signs:
+        - "on": word
+          has:
+            - '{"php":'
+            - '"version":'
+            - '"indent":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

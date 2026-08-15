@@ -1,0 +1,24 @@
+id: octoprint-3dprinter
+brief:
+    title: Octoprint 3D Printer Panel - Detect
+    by: Matthew Nickerson (b0than) @ Layer 8 Security
+    level: info
+    about: Octoprint 3D Printer panel was detected.
+    label:
+        - iot
+        - octoprint
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - OctoPrint
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

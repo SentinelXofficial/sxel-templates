@@ -1,0 +1,25 @@
+id: api-smartsheet
+brief:
+    title: Smartsheet API Test
+    by: daffainfo
+    level: info
+    about: Allows you to programmatically access and Smartsheet data and account information
+    label:
+        - token-spray
+        - smartsheet
+moves:
+    - verb: GET
+      to:
+        - https://api.smartsheet.com/2.0/home?include=source
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"sheets":'
+            - '"folders":'
+          in: body
+          need: all

@@ -1,0 +1,19 @@
+id: thanos-prometheus-exposure
+brief:
+    title: Thanos Prometheus Setup - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Thanos graph endpoint was detected.
+    label:
+        - thanos
+        - prometheus
+        - exposure
+        - setup
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/graph'
+        - '{{BaseURL}}/classic/graph'
+      signs: []

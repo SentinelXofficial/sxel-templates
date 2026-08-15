@@ -1,0 +1,23 @@
+id: sas-login-panel
+brief:
+    title: SAS Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: SAS login panel has been detected.
+    label:
+        - sas
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/SASLogon/login'
+      signs:
+        - "on": word
+          has:
+            - SAS&reg; Logon Manager
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

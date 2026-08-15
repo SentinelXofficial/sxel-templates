@@ -1,0 +1,24 @@
+id: blender-phish
+brief:
+    title: blender phishing Detection
+    by: rxerium
+    level: info
+    about: A blender phishing website was detected
+    label:
+        - phishing
+        - blender
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - blender.org - Home of the Blender project - Free and Open 3D Creation Software
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

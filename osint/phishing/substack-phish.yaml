@@ -1,0 +1,25 @@
+id: substack-phish
+brief:
+    title: Substack phishing Detection
+    by: rxerium
+    level: info
+    about: A Substack phishing website was detected
+    label:
+        - phishing
+        - substack
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Substack
+            - <title data-rh="true">Home | Substack
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

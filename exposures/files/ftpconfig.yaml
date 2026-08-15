@@ -1,0 +1,29 @@
+id: ftpconfig
+brief:
+    title: Atom remote-ssh ftpconfig Exposure
+    by: geeknik
+    level: high
+    about: Created by remote-ssh for Atom, contains SFTP/SSH server details and credentials
+    label:
+        - atom
+        - ftp
+        - config
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.ftpconfig'
+      signs:
+        - "on": word
+          has:
+            - '"protocol":'
+            - '"host":'
+            - '"user":'
+            - '"passphrase":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

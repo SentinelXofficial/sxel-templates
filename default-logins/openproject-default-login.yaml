@@ -1,0 +1,27 @@
+id: openproject-default-login
+brief:
+    title: OpenProject - Default Admin Credentials
+    by: 0x_Akoko
+    level: high
+    about: Detected OpenProject was found using the default administrator credentials admin:admin. An attacker could gain full administrative control, including user management, project data, and system confi...
+    label:
+        - openproject
+        - default-login
+        - auth
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: authenticity_token={{url_encode(csrf_token)}}&username={{username}}&password={{password}}&login=Sign+in
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v3/users/me'
+      signs: []

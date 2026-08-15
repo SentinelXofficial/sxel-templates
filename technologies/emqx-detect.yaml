@@ -1,0 +1,15 @@
+id: emqx-detect
+brief:
+    title: Emqx Detection
+    by: For3stCo1d
+    level: info
+    about: ""
+    label:
+        - tech
+        - emqx
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/static/emq.ico'
+      signs: []

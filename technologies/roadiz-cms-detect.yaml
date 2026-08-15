@@ -1,0 +1,17 @@
+id: roadiz-cms-detect
+brief:
+    title: Roadiz CMS - Detect
+    by: righettod
+    level: info
+    about: Roadiz is a modern CMS based on Symfony components with a focus on handling complex content structures. This template detects Roadiz CMS installations by checking for generator meta tags.
+    label:
+        - tech
+        - cms
+        - roadiz
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

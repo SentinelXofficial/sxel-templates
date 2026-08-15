@@ -1,0 +1,25 @@
+id: api-virustotal
+brief:
+    title: VirusTotal API Test
+    by: daffainfo
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - virustotal
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}https://www.virustotal.com/vtapi/v2/url/scan'
+      head:
+        Content-Length: "86"
+        Content-Type: application/x-www-form-urlencoded
+      body: apikey={{token}}&url=google.com
+      signs:
+        - "on": word
+          has:
+            - '"verbose_msg":'
+            - '"scan_date":'
+            - '"permalink":'
+          in: body
+          need: all

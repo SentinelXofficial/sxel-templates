@@ -1,0 +1,26 @@
+id: limesurvey-detect
+brief:
+    title: LimeSurvey Survey Software - Detect
+    by: Matt Galligan
+    level: info
+    about: Limesurvey is the number one open-source survey software. Advanced features like branching and multiple question types make it a valuable partner for survey-creation.
+    label:
+        - tech
+        - limesurvey
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - content="LimeSurvey
+            - alt="LimeSurvey Survey Software
+            - data-limesurvey-lang=
+            - alt="Powered by LimeSurvey
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,31 @@
+id: gocd-unauth-dashboard
+brief:
+    title: GoCd Unauth Dashboard
+    by: dhiyaneshDk
+    level: medium
+    about: GoCd Dashboard is exposed.
+    label:
+        - go
+        - gocd
+        - unauth
+        - misconfig
+        - vuln
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/go/admin/pipelines/create?group=defaultGroup'
+      signs:
+        - "on": word
+          has:
+            - <title>Create a pipeline - Go</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

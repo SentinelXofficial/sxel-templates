@@ -1,0 +1,25 @@
+id: dynatrace-rum-detect
+brief:
+    title: Dynatrace RUM - Tech Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects Dynatrace Real User Monitoring (RUM) and OneAgent artifacts.
+    label:
+        - tech
+        - discovery
+        - rum
+        - dynatrace
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ruxitagentjs_
+            - data-dtconfig=
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

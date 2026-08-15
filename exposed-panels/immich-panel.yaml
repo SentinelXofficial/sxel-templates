@@ -1,0 +1,27 @@
+id: immich-panel
+brief:
+    title: Immich Panel - Detect
+    by: rxerium
+    level: info
+    about: Immich is a self-hosted photo and video backup solution
+    label:
+        - panel
+        - immich
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Login - Immich
+            - '"PUBLIC_IMMICH_'
+            - alt="Immich Logo
+            - Welcome to Immich
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

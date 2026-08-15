@@ -1,0 +1,22 @@
+id: api-shodan
+brief:
+    title: Shodan API Test
+    by: 0ri2N
+    level: info
+    about: Shodan is a search engine that lets users search for various types of servers connected to the internet using a variety of filters.
+    label:
+        - recon
+        - shodan
+        - token-spray
+moves:
+    - verb: GET
+      to:
+        - https://api.shodan.io/api-info?key={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"plan"'
+            - '"unlocked"'
+            - '"scan_credits"'
+          in: body
+          need: all

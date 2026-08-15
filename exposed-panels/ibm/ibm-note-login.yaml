@@ -1,0 +1,29 @@
+id: ibm-note-login
+brief:
+    title: IBM iNotes Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: IBM iNotes login panel was detected.
+    label:
+        - ibm
+        - edb
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/names.nsf'
+        - '{{BaseURL}}/webredir.nsf'
+      signs:
+        - "on": word
+          has:
+            - <title>IBM iNotes Login</title>
+            - Lotus iNotes Login Screen
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

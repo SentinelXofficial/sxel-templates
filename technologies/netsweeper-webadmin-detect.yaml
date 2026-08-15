@@ -1,0 +1,27 @@
+id: netsweeper-webadmin-detect
+brief:
+    title: Netsweeper WebAdmin - Detect
+    by: dwisiswant0
+    level: info
+    about: Netsweeper WebAdmin was detected.
+    label:
+        - tech
+        - netsweeper
+        - webadmin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webadmin/start/'
+        - '{{BaseURL}}/webadmin/tools/systemstatus_remote.php'
+      head:
+        Referer: http://{{Hostname}}/webadmin/admin/systemstatus_inc_data.php
+      signs:
+        - "on": word
+          has:
+            - Powered by netsweeper
+            - Netsweeper Inc
+          in: body
+        - "on": status
+          status:
+            - 200

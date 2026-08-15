@@ -1,0 +1,23 @@
+id: drupal-source-code-disclosure
+brief:
+    title: Drupal - Source Code Disclosure
+    by: pussycat0x
+    level: medium
+    about: Detected exposed Drupal source code, backup files, and sensitive configurations, potentially disclosing database credentials and API keys. This exposure revealed internal system paths and critical ...
+    label:
+        - drupal
+        - exposure
+        - disclosure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sites/default/settings.php'
+        - '{{BaseURL}}/sites/default/settings.php~'
+        - '{{BaseURL}}/sites/default/settings.php.bak'
+        - '{{BaseURL}}/sites/default/settings.php.old'
+        - '{{BaseURL}}/sites/default/settings.php.orig'
+        - '{{BaseURL}}/sites/default/settings.php.save'
+        - '{{BaseURL}}/sites/default/settings.php.swp'
+        - '{{BaseURL}}/sites/default/settings.local.php'
+      signs: []

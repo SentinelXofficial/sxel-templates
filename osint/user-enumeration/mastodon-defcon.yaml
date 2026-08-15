@@ -1,0 +1,24 @@
+id: mastodon-defcon
+brief:
+    title: Mastodon-Defcon User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mastodon-Defcon user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastodon-defcon
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://defcon.social/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- DEF CON Social</title>'
+          in: body
+          need: all

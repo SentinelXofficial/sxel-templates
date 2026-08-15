@@ -1,0 +1,24 @@
+id: iconfinder
+brief:
+    title: Iconfinder User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Iconfinder user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - iconfinder
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.iconfinder.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - iconsets
+          in: body
+          need: all

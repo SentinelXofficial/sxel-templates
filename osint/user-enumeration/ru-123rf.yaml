@@ -1,0 +1,24 @@
+id: ru-123rf
+brief:
+    title: Ru 123rf User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Ru 123rf user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - ru-123rf
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://ru.123rf.com/profile_{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- 123RF'
+          in: body
+          need: all

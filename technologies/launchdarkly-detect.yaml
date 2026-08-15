@@ -1,0 +1,21 @@
+id: launchdarkly-detect
+brief:
+    title: LaunchDarkly - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects the presence of LaunchDarkly, a feature management and feature flag platform.
+    label:
+        - tech
+        - discovery
+        - launchdarkly
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - LDClient.initialize
+            - ldclient.min.js
+            - launchdarkly-js-client-sdk
+          in: body

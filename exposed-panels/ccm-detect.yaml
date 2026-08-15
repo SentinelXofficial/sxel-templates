@@ -1,0 +1,24 @@
+id: ccm-detect
+brief:
+    title: Clear-Com Core Configuration Manager Panel - Detect
+    by: failOpen
+    level: info
+    about: Clear-Com Core Configuration Manager panel was detected.
+    label:
+        - panel
+        - clearcom
+        - ccm
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - CCM - Authentication Failure
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 401

@@ -1,0 +1,23 @@
+id: ncentral-panel
+brief:
+    title: N-central Login Panel - Detect
+    by: theabhinavgaur
+    level: info
+    about: N-central login panel was detected.
+    label:
+        - panel
+        - n-central
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - class="ncentral"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

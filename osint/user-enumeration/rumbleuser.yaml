@@ -1,0 +1,24 @@
+id: rumbleuser
+brief:
+    title: RumbleUser User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: RumbleUser user name information check was conducted.
+    label:
+        - osint
+        - osint-political
+        - rumbleuser
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://rumble.com/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' href=https://rumble.com/user/'
+          in: body
+          need: all

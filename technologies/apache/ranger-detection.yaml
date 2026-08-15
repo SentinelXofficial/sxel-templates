@@ -1,0 +1,21 @@
+id: ranger-detection
+brief:
+    title: Apache Ranger Detection
+    by: For3stCo1d
+    level: info
+    about: ""
+    label:
+        - tech
+        - apache
+        - ranger
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.jsp'
+        - '{{BaseURL}}/images/favicon.ico'
+      signs:
+        - "on": word
+          has:
+            - <title> Ranger - Sign In</title>
+          in: body

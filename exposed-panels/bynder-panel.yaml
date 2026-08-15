@@ -1,0 +1,17 @@
+id: bynder-panel
+brief:
+    title: Bynder Login Panel - Detect
+    by: righettod
+    level: info
+    about: Bynder login panel was detected.
+    label:
+        - panel
+        - bynder
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login/'
+      signs: []

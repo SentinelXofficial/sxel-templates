@@ -1,0 +1,15 @@
+id: jitsi-meet-detect
+brief:
+    title: Jitsi Meet Page Detect
+    by: DhiyaneshDk
+    level: info
+    about: Jitsi was detected — a free open-source video conferencing software for web and mobile.
+    label:
+        - tech
+        - jitsi
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

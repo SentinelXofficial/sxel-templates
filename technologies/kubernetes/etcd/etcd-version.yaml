@@ -1,0 +1,32 @@
+id: etcd-version
+brief:
+    title: Etcd Version - Detect
+    by: pussycat0x
+    level: info
+    about: Template detects Etcd version.
+    label:
+        - tech
+        - k8s
+        - kubernetes
+        - devops
+        - etcd
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/version'
+      signs:
+        - "on": word
+          has:
+            - '"etcdserver"'
+            - '"etcdcluster"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

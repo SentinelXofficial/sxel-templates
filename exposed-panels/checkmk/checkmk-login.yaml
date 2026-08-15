@@ -1,0 +1,17 @@
+id: checkmk-login
+brief:
+    title: Checkmk Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Checkmk login panel was detected.
+    label:
+        - panel
+        - checkmk
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

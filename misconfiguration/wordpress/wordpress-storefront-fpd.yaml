@@ -1,0 +1,21 @@
+id: wordpress-storefront-fpd
+brief:
+    title: WordPress Storefront Theme - Full Path Disclosure
+    by: pussycat0x
+    level: low
+    about: The Storefront theme for WordPress was detected to be vulnerable to Full Path Disclosure, allowing unauthenticated attackers to obtain the full application path that could aid other attacks when co...
+    label:
+        - wordpress
+        - wp
+        - wp-theme
+        - fpd
+        - disclosure
+        - storefront
+        - woocommerce
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/themes/storefront/functions.php'
+        - '{{BaseURL}}/wp-content/themes/storefront/header.php'
+        - '{{BaseURL}}/wp-content/themes/storefront/footer.php'
+      signs: []

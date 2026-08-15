@@ -1,0 +1,25 @@
+id: iparapheur-detect
+brief:
+    title: Iparapheur - Detect
+    by: righettod
+    level: info
+    about: iparapheur technology was detected.
+    label:
+        - iparapheur
+        - detect
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>iparapheur</title>
+            - Libriciel SCOP
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

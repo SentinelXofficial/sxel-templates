@@ -1,0 +1,24 @@
+id: mintme
+brief:
+    title: Mintme User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mintme user name information check was conducted.
+    label:
+        - osint
+        - osint-finance
+        - mintme
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.mintme.com/token/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - token | mintMe
+          in: body
+          need: all

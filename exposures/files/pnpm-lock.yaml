@@ -1,0 +1,28 @@
+id: pnpm-lock
+brief:
+    title: PNPM Lock Yaml File Disclosure
+    by: noraj
+    level: info
+    about: The pnpm-lock.yaml file is similar to the package-lock.json file used by npm or the yarn.lock file used by Yarn. It serves as a lock file that ensures consistent and reproducible installations of d...
+    label:
+        - exposure
+        - files
+        - node
+        - npm
+        - pnpm
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pnpm-lock.yaml'
+      signs:
+        - "on": word
+          has:
+            - 'lockfileVersion:'
+            - 'specifiers:'
+            - 'packages:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

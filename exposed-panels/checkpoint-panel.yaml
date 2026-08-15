@@ -1,0 +1,30 @@
+id: checkpoint-panel
+brief:
+    title: Checkpoint Login Panel - Detect
+    by: 0x240x23elu
+    level: info
+    about: Checkpoint login panel was detected.
+    label:
+        - panel
+        - checkpoint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sslvpn/Login/Login'
+        - '{{BaseURL}}/Login/Login'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Check Point Software Technologies Ltd. All rights reserved.
+            - /Login/images/CompanyLogo.png
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

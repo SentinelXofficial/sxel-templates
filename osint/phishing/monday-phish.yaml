@@ -1,0 +1,26 @@
+id: monday-phish
+brief:
+    title: Monday.com phishing Detection
+    by: rxerium
+    level: info
+    about: A Monday.com phishing website was detected
+    label:
+        - phishing
+        - monday
+        - productivity
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>monday.com
+            - Monday.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: web-file-manager
+brief:
+    title: Web File Manager Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Web File Manager login panel was detected.
+    label:
+        - panel
+        - filemanager
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Login'
+      signs:
+        - "on": word
+          has:
+            - Web File Manager
+            - Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,17 @@
+id: akamai-bot-manager-detect
+brief:
+    title: Akamai Bot Manager Protection - Detect
+    by: Fazle Arefin
+    level: info
+    about: Checks if the website is protected by Akamai Bot Manager
+    label:
+        - akamai
+        - bot
+        - security
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

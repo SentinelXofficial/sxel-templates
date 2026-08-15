@@ -1,0 +1,24 @@
+id: airflow-configuration-exposure
+brief:
+    title: Apache Airflow Configuration Page - Detect
+    by: pdteam
+    level: medium
+    about: Apache Airflow configuration page was detected.
+    label:
+        - exposure
+        - config
+        - airflow
+        - apache
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/airflow.cfg'
+      signs:
+        - "on": word
+          has:
+            - '[core]'
+            - '[api]'
+          in: body
+          need: all

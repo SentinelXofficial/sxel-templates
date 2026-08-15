@@ -1,0 +1,16 @@
+id: sharepoint-lists-api-disclosure
+brief:
+    title: Microsoft SharePoint - List API Disclosure
+    by: theamanrawat
+    level: low
+    about: Detected exposed SharePoint lists-api endpoint without proper authentication, exposing site content and metadata.
+    label:
+        - sharepoint
+        - microsoft
+        - exposure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_api/web/lists'
+      signs: []

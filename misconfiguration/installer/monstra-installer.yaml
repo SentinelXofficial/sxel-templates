@@ -1,0 +1,24 @@
+id: monstra-installer
+brief:
+    title: Monstra Installation Exposure
+    by: ritikchaddha
+    level: high
+    about: Monstra is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - monstra
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Monstra :: Install'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

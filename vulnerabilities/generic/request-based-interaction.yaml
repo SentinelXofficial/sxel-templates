@@ -1,0 +1,87 @@
+id: request-based-interaction
+brief:
+    title: OOB Request Based Interaction
+    by: pdteam
+    level: info
+    about: The remote server fetched a spoofed DNS Name from the request.
+    label:
+        - oast
+        - ssrf
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Accept: '*/*'
+        Cache-Control: no-transform
+      signs:
+        - "on": word
+          has:
+            - http
+          in: interactsh_protocol
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Accept: '*/*'
+        Cache-Control: no-transform
+      signs:
+        - "on": word
+          has:
+            - http
+          in: interactsh_protocol
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://{{interactsh-url}}/'
+      head:
+        Accept: '*/*'
+        Cache-Control: no-transform
+      signs:
+        - "on": word
+          has:
+            - http
+          in: interactsh_protocol
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+    - verb: GET
+      to:
+        - '{{BaseURL}}@{{interactsh-url}}/'
+      head:
+        Accept: '*/*'
+        Cache-Control: no-transform
+      signs:
+        - "on": word
+          has:
+            - http
+          in: interactsh_protocol
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{interactsh-url}}:80/'
+      head:
+        Accept: '*/*'
+        Cache-Control: no-transform
+      signs:
+        - "on": word
+          has:
+            - http
+          in: interactsh_protocol
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol

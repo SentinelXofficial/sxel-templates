@@ -1,0 +1,25 @@
+id: printify-phish
+brief:
+    title: Printify phishing Detection
+    by: rxerium
+    level: info
+    about: A Printify phishing website was detected
+    label:
+        - phishing
+        - printify
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Printify
+            - '<title>Printify: Build your eCommerce business in minutes.'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,15 @@
+id: nginx-opencloudos-test-page
+brief:
+    title: Nginx Test Page for OpenCloudOS
+    by: pussycat0x
+    level: info
+    about: OpenCloudOS test page was discovered.
+    label:
+        - tech
+        - nginx
+        - opencloudos
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,31 @@
+id: unauthenticated-glowroot
+brief:
+    title: Glowroot Anonymous User
+    by: pussycat0x
+    level: high
+    about: Anonymous user access allows to understand the host internals
+    label:
+        - misconfig
+        - unauth
+        - glowroot
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/backend/admin/users?username=anonymous'
+      signs:
+        - "on": word
+          has:
+            - '"username":"anonymous"'
+            - '"Administrator"'
+            - '"newPassword":""'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

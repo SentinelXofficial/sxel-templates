@@ -1,0 +1,19 @@
+id: umbraco-directory-listing
+brief:
+    title: Umbraco CMS - Directory Listing Exposure
+    by: DhiyaneshDk
+    level: medium
+    about: Detected directory listing enabled on sensitive Umbraco CMS directories, potentially exposing configuration files, logs, backups, and other sensitive data.
+    label:
+        - umbraco
+        - misconfig
+        - exposure
+        - cms
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/App_Data/'
+        - '{{BaseURL}}/App_Plugins/'
+      signs: []

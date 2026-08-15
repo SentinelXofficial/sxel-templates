@@ -1,0 +1,17 @@
+id: snoop-servlet
+brief:
+    title: Snoop Servlet - Information Disclosure
+    by: omranisecurity
+    level: low
+    about: The Snoop Servlet returns information about the HTTP request itself and sometimes. It could help an attacker to prepare more advanced attacks.
+    label:
+        - config
+        - exposure
+        - snoop
+        - snoop-servlet
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/snoop'
+      signs: []

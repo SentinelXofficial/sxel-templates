@@ -1,0 +1,26 @@
+id: rg-uac-panel
+brief:
+    title: Ruijie RG-UAC Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Ruijie RG-UAC login panel was detected.
+    label:
+        - panel
+        - ruijie
+        - router
+        - firewall
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - dkey_check.php
+            - get_dkey_passwd
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

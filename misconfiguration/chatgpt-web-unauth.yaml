@@ -1,0 +1,35 @@
+id: chatgpt-web-unauth
+brief:
+    title: ChatGPT Web - Unauthorized Access
+    by: SleepingBag945
+    level: high
+    about: ChatGPT Web is exposed.
+    label:
+        - chatgpt
+        - unauth
+        - misconfig
+        - vuln
+        - ai
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/session'
+      head:
+        Content-Type: application/json
+      body: '{}'
+      signs:
+        - "on": word
+          has:
+            - '"status":"Success"'
+            - '"auth":false'
+            - ChatGPTAPI
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

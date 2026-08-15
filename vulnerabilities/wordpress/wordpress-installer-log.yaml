@@ -1,0 +1,18 @@
+id: wordpress-installer-log
+brief:
+    title: WordPress Installer Log
+    by: dwisiswant0
+    level: info
+    about: This file is generated during the installation process of wordpress and is exposed.
+    label:
+        - wordpress
+        - log
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/installer-log.txt'
+      signs:
+        - "on": status
+          status:
+            - 200

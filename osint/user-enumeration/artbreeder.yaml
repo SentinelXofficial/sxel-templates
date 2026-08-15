@@ -1,0 +1,24 @@
+id: artbreeder
+brief:
+    title: ArtBreeder User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: ArtBreeder user name information check was conducted.
+    label:
+        - osint
+        - osint-art
+        - artbreeder
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.artbreeder.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>
+          in: body
+          need: all

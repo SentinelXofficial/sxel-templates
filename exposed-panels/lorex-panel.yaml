@@ -1,0 +1,17 @@
+id: lorex-panel
+brief:
+    title: Lorex Panel - Detect
+    by: rxerium
+    level: info
+    about: A lorex panel was detected.
+    label:
+        - panel
+        - login
+        - detect
+        - lorex
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,15 @@
+id: jaeger-eol
+brief:
+    title: Jaeger End-of-Life - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected Jaeger versions that have reached End-of-Life (EOL) and no longer receive security updates.
+    label:
+        - tech
+        - jaeger
+        - eol
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

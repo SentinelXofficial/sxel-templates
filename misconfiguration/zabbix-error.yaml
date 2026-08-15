@@ -1,0 +1,23 @@
+id: zabbix-error
+brief:
+    title: Zabbix Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Zabbix panel was detected.
+    label:
+        - zabbix
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Warning [refreshed every 30 sec.]</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

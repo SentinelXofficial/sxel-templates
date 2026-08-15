@@ -1,0 +1,16 @@
+id: lobechat-detect
+brief:
+    title: LobeChat - Detect
+    by: s4e-io
+    level: info
+    about: An instance running LobeChat was detected.
+    label:
+        - lobechat
+        - tech
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/welcome'
+      signs: []

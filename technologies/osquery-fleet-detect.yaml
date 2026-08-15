@@ -1,0 +1,27 @@
+id: osquery-fleet-detect
+brief:
+    title: OSQuery Fleet Detection Panel - Detect
+    by: Adam Crosser
+    level: info
+    about: OSQuery Fleet Detection panel was detected.
+    label:
+        - panel
+        - fleet
+        - osquery
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Fleet
+            - osquery
+            - /assets/bundle
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

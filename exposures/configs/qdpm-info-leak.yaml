@@ -1,0 +1,26 @@
+id: qdpm-info-leak
+brief:
+    title: qdPM 9.2 - DB Credentials Exposure
+    by: gy741
+    level: high
+    about: qdPM 9.2 database credentials were discovered.
+    label:
+        - qdpm
+        - exposure
+        - edb
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/core/config/databases.yml'
+      signs:
+        - "on": word
+          has:
+            - 'dsn:'
+            - 'username:'
+            - 'password:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: mysql-config-exposure
+brief:
+    title: MySQL Conifg - Exposure
+    by: theamanrawat
+    level: high
+    about: Detects exposure of MySQL credentials, configuration, and command history via HTTP. Exposure of files such as .my.cnf and .mysql_history may lead to leakage of database passwords or SQL history, en...
+    label:
+        - exposure
+        - config
+        - mysql
+        - database
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.my.cnf'
+      signs:
+        - "on": word
+          has:
+            - '[client]'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

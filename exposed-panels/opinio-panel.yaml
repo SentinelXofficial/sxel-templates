@@ -1,0 +1,18 @@
+id: opinio-panel
+brief:
+    title: Opinio Login Panel - Detect
+    by: righettod
+    level: info
+    about: Opinio login panel was detected.
+    label:
+        - panel
+        - opinio
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/folder.do'
+        - '{{BaseURL}}'
+      signs: []

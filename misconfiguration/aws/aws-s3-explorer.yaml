@@ -1,0 +1,32 @@
+id: aws-s3-explorer
+brief:
+    title: Amazon Web Services S3 Explorer - Detect
+    by: DhiyaneshDk
+    level: medium
+    about: Amazon Web Services S3 Explorer page was detected. Page contains links to sensitive information.
+    label:
+        - s3
+        - edb
+        - misconfig
+        - aws
+        - amazon
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.html'
+      signs:
+        - "on": word
+          has:
+            - <title>AWS S3 Explorer</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: node-repl-history-disclosure
+brief:
+    title: Node.js REPL History Disclosure
+    by: pussycat0x
+    level: low
+    about: The Node.js REPL history file (.node_repl_history) was exposed, which had contained a log of commands entered into the Node.js interactive shell.
+    label:
+        - exposure
+        - nodejs
+        - history
+        - disclosure
+        - misconfiguration
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.node_repl_history'
+        - '{{BaseURL}}/node_repl_history'
+      signs: []

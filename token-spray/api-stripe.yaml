@@ -1,0 +1,23 @@
+id: api-stripe
+brief:
+    title: Stripe API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - stripe
+moves:
+    - verb: GET
+      to:
+        - https://api.stripe.com/v1/charges
+      head:
+        Authorization: Basic {{base64(token + ':')}}
+      signs:
+        - "on": word
+          has:
+            - '"object":'
+            - '"url":'
+            - '"data":'
+          in: body
+          need: all

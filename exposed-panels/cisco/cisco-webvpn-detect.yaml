@@ -1,0 +1,28 @@
+id: cisco-webvpn-detect
+brief:
+    title: Cisco WebVPN Panel - Detect
+    by: ricardomaia
+    level: info
+    about: Cisco WebVPN panel was detected.
+    label:
+        - panel
+        - cisco
+        - vpn
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/webvpn.html'
+      signs:
+        - "on": word
+          has:
+            - CISCO
+            - AnyConnect
+            - SSLVPN Service
+          in: body
+          need: all
+        - "on": word
+          has:
+            - webvpn=
+          in: header

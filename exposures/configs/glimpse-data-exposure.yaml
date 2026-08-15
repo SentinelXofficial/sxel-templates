@@ -1,0 +1,18 @@
+id: glimpse-data-exposure
+brief:
+    title: Glimpse Diagnostics - Sensitive Data Exposure
+    by: 0x_Akoko
+    level: high
+    about: Detected Glimpse diagnostics endpoint. Glimpse is a .NET diagnostics tool that reveals detailed request information, server configuration, SQL queries, connection strings, and session data.
+    label:
+        - exposure
+        - misconfig
+        - dotnet
+        - glimpse
+        - debug
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/glimpse.axd'
+        - '{{BaseURL}}/Glimpse.axd'
+      signs: []

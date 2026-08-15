@@ -1,0 +1,24 @@
+id: castingcallclub
+brief:
+    title: CastingCallClub User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: CastingCallClub user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - castingcallclub
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.castingcall.club/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| Casting Call Club'
+          in: body
+          need: all

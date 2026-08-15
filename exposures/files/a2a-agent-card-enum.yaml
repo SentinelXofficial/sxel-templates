@@ -1,0 +1,19 @@
+id: a2a-agent-card-enum
+brief:
+    title: Google A2A Agent Card - Enumeration
+    by: 0x_Akoko
+    level: info
+    about: Detected exposed Google Agent-to-Agent protocol agent cards. The agent-card.json file advertises an AI agent's capabilities, supported skills, authentication requirements, and endpoint URLs.
+    label:
+        - enum
+        - a2a
+        - google
+        - ai
+        - agent
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.well-known/agent-card.json'
+        - '{{BaseURL}}/.well-known/agent.json'
+      signs: []

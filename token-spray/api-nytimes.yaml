@@ -1,0 +1,21 @@
+id: api-nytimes
+brief:
+    title: NYTimes API Test
+    by: daffainfo
+    level: info
+    about: NYTimes API Test
+    label:
+        - token-spray
+        - nytimes
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://api.nytimes.com/svc/mostpopular/v2/shared/1.json?api-key={{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"status":'
+            - '"copyright":'
+            - '"num_results":'
+          in: body
+          need: all

@@ -1,0 +1,26 @@
+id: seeddms-panel
+brief:
+    title: SeedDMS Login Panel - Detect
+    by: pussycat0x
+    level: info
+    about: SeedDMS login panel was detected.
+    label:
+        - panel
+        - seeddms
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/out/out.Login.php?referuri=%2Fout%2Fout.ViewFolder.php'
+        - '{{BaseURL}}/dms/out/out.Login.php?referuri=%2Fout%2Fout.ViewFolder.php'
+      signs:
+        - "on": word
+          has:
+            - href="/out/out.ViewFolder.php">SeedDMS</a>
+            - href="../out/out.ViewFolder.php?folderid=1">SeedDMS</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: sfd
+brief:
+    title: SFD User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: SFD user name information check was conducted.
+    label:
+        - osint
+        - osint-health
+        - sfd
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.sfd.pl/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Tematy użytkownika
+          in: body
+          need: all

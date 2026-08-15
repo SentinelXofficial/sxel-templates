@@ -1,0 +1,24 @@
+id: chyoa
+brief:
+    title: Chyoa User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Chyoa user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - chyoa
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://chyoa.com/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - When I'm not reading erotica I like to read
+          in: body
+          need: all

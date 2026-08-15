@@ -1,0 +1,43 @@
+id: apache-sling-default-login
+brief:
+    title: Apache Sling - Default Login
+    by: icarot
+    level: high
+    about: Apache Sling default login was discovered.
+    label:
+        - apache
+        - sling
+        - default-login
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/j_security_check'
+      head:
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryBCQeiTztQvBDyNxA
+      body: |-
+        ------WebKitFormBoundaryBCQeiTztQvBDyNxA
+        Content-Disposition: form-data; name="_charset_"
+
+        UTF-8
+        ------WebKitFormBoundaryBCQeiTztQvBDyNxA
+        Content-Disposition: form-data; name="resource"
+
+        /
+        ------WebKitFormBoundaryBCQeiTztQvBDyNxA
+        Content-Disposition: form-data; name="j_username"
+
+        {{username}}
+        ------WebKitFormBoundaryBCQeiTztQvBDyNxA
+        Content-Disposition: form-data; name="j_password"
+
+        {{password}}
+        ------WebKitFormBoundaryBCQeiTztQvBDyNxA--
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: sling.formauth'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

@@ -1,0 +1,24 @@
+id: polygon
+brief:
+    title: Polygon User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Polygon user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - polygon
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.polygon.com/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- Polygon'
+          in: body
+          need: all

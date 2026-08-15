@@ -1,0 +1,20 @@
+id: hmc-hybris-panel
+brief:
+    title: Hybris Management Console Login Panel - Detect
+    by: dogasantos
+    level: info
+    about: Hybris Management Console login panel was detected.
+    label:
+        - panel
+        - sap
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/hmc/hybris'
+        - '{{BaseURL}}/hybris/hmc/hybris'
+      signs:
+        - "on": word
+          has:
+            - hybris Management Console
+          in: body

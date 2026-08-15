@@ -1,0 +1,25 @@
+id: venmo-phish
+brief:
+    title: Venmo phishing Detection
+    by: rxerium
+    level: info
+    about: A Venmo phishing website was detected
+    label:
+        - phishing
+        - venmo
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Pay Friends | Payments App | Venmo
+            - Pay. Get paid. Shop. Share.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

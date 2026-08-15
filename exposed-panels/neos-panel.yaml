@@ -1,0 +1,25 @@
+id: neos-panel
+brief:
+    title: Neos CMS Login Panel - Detect
+    by: k11h-de
+    level: info
+    about: Neos CMS login panel was detected.
+    label:
+        - panel
+        - neos
+        - cms
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/neos/login'
+      signs:
+        - "on": word
+          has:
+            - Neos comes with ABSOLUTELY NO WARRANTY
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

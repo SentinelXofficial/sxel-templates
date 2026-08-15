@@ -1,0 +1,24 @@
+id: external-service-interaction
+brief:
+    title: External Service Interaction
+    by: andreluna
+    level: info
+    about: External Service interaction via Host Header Injection.
+    label:
+        - miscellaneous
+        - http
+        - misc
+        - oast
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Host: '{{interactsh-url}}'
+      signs:
+        - "on": word
+          has:
+            - http
+            - dns
+          in: interactsh_protocol

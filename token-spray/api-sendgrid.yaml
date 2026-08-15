@@ -1,0 +1,30 @@
+id: api-sendgrid
+brief:
+    title: Sendgrid API Test
+    by: zzeitlin
+    level: info
+    about: A REST-like interface that enables you to send email at scale, ensuring your application can handle high-volume email with ease.
+    label:
+        - token-spray
+        - sendgrid
+moves:
+    - verb: GET
+      to:
+        - https://api.sendgrid.com/v3/scopes
+      head:
+        Authorization: Bearer {{token}}
+        Content-Type: application/json
+      signs:
+        - "on": word
+          has:
+            - '"scopes":['
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

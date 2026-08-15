@@ -1,0 +1,26 @@
+id: ni-web-based-panel
+brief:
+    title: NI Web-based Configuration & Monitoring - Detect
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - detect
+        - ni
+        - web-based
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - NI Web-based Configuration & Monitoring
+            - NI Web-based Monitoring
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

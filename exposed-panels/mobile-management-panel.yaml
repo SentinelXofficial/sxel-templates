@@ -1,0 +1,25 @@
+id: mobile-management-panel
+brief:
+    title: Mobile Management Platform Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Mobile Management Platform panel was detected.
+    label:
+        - panel
+        - mobile
+        - management
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 移动管理平台-企业管理
+            - Mobile management platform
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

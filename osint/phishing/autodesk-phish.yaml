@@ -1,0 +1,25 @@
+id: autodesk-phish
+brief:
+    title: Autodesk phishing Detection
+    by: rxerium
+    level: info
+    about: A Autodesk phishing website was detected
+    label:
+        - phishing
+        - autodesk
+        - design
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Autodesk | 3D Design, Engineering &amp; Construction Software
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,19 @@
+id: scriptcase-panel
+brief:
+    title: ScriptCase Panel Detect
+    by: Ricardo Maia (Brainfork)
+    level: info
+    about: ""
+    label:
+        - panel
+        - scriptcase
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/devel/iface/'
+        - '{{BaseURL}}/scriptcase/devel/iface/'
+      signs:
+        - "on": status
+          status:
+            - 200

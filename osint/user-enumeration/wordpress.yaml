@@ -1,0 +1,24 @@
+id: wordpress
+brief:
+    title: WordPress User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: WordPress user name information check was conducted.
+    label:
+        - osint
+        - osint-blog
+        - wordpress
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://profiles.wordpress.org/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - user-member-since
+          in: body
+          need: all

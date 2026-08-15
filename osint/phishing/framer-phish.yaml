@@ -1,0 +1,25 @@
+id: framer-phish
+brief:
+    title: Framer phishing Detection
+    by: rxerium
+    level: info
+    about: A Framer phishing website was detected
+    label:
+        - phishing
+        - framer
+        - design
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>Framer: Create a professional website, free. No code website builder loved by designers.'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

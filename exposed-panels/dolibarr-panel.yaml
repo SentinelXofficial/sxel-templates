@@ -1,0 +1,31 @@
+id: dolibarr-panel
+brief:
+    title: Dolibarr Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: Dolibarr login panel was detected.
+    label:
+        - panel
+        - dolibarr
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: DOLSESSID_'
+          in: header
+          need: all
+        - "on": word
+          has:
+            - <meta name="author" content="Dolibarr Development Team">
+            - authentication mode = dolibarr
+            - Includes JS of Dolibarr
+            - <div class="login_table_title center" title="Dolibarr
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

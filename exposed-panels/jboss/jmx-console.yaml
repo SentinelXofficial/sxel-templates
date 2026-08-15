@@ -1,0 +1,21 @@
+id: jmx-console
+brief:
+    title: JBoss JMX Management Console Login Panel - Detect
+    by: yashanand155
+    level: info
+    about: JBoss JMX Management Console login panel was detected.
+    label:
+        - panel
+        - jmx
+        - jboss
+        - redhat
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jmx-console/'
+      signs:
+        - "on": word
+          has:
+            - JBoss JMX Management Console
+          in: body

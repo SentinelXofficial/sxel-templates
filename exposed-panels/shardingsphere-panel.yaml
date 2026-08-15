@@ -1,0 +1,25 @@
+id: shardingsphere-panel
+brief:
+    title: ShardingSphere ElasticJob UI Panel
+    by: DhiyaneshDk
+    level: info
+    about: An ShardingSphere ElasticJob UI panel was detected.
+    label:
+        - panel
+        - shardingsphere
+        - login
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/login'
+      signs:
+        - "on": word
+          has:
+            - <title>ShardingSphere ElasticJob UI</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

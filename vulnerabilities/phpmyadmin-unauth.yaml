@@ -1,0 +1,37 @@
+id: phpmyadmin-unauth-access
+brief:
+    title: PhpMyAdmin - Unauthenticated Access
+    by: pwnhxl
+    level: high
+    about: Unauthenticated Access to phpmyadmin dashboard.
+    label:
+        - misconfig
+        - phpmyadmin
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{path}}'
+      signs:
+        - "on": word
+          has:
+            - server_sql.php
+            - server_status.php
+            - server_variables.php
+            - server_databases.php
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 'Set-Cookie: phpMyAdmin='
+          in: header
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

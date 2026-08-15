@@ -1,0 +1,31 @@
+id: jira-unauthenticated-adminprojects
+brief:
+    title: Jira Unauthenticated Admin Projects
+    by: TESS
+    level: info
+    about: ""
+    label:
+        - atlassian
+        - jira
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/rest/menu/latest/admin'
+      signs:
+        - "on": word
+          has:
+            - key
+            - link
+            - label
+            - self
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - atlassian.xsrf.token
+          in: header
+          need: all

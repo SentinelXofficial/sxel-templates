@@ -1,0 +1,25 @@
+id: sonicwall-security-login
+brief:
+    title: SonicWall Network Security Login - Detect
+    by: JustaAcat
+    level: info
+    about: SonicWall Network Security Login panel was detected.
+    label:
+        - panel
+        - sonicwall
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/sonicui/7/login/'
+      signs:
+        - "on": word
+          has:
+            - SonicWall Network Security Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

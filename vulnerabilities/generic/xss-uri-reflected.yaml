@@ -1,0 +1,36 @@
+id: xss-uri-reflected
+brief:
+    title: Reflected XSS
+    by: nadino
+    level: low
+    about: Reflected cross-site scripting vulnerability was discovered via generic testing. Manual testing is needed to verify exploitation.
+    label:
+        - xss
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/a%22%3E%3Cinjectable%3E'
+        - '{{BaseURL}}/a%27%3E%3Cinjectable%3E'
+      signs:
+        - "on": word
+          has:
+            - '"><injectable>'
+            - '''><injectable>'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Access Denied</title>
+            - You don't have permission to access
+          in: body
+          need: all

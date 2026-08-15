@@ -1,0 +1,17 @@
+id: spnego-detect
+brief:
+    title: SPNEGO - Detect
+    by: lady_bug
+    level: info
+    about: SPNEGO stands for Simple and Protected GSSAPI Negotiation Mechanism. It is a protocol used for secure authentication and negotiation between client and server applications in a network environment....
+    label:
+        - miscellaneous
+        - misc
+        - windows
+        - spnego
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

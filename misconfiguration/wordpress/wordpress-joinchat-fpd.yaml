@@ -1,0 +1,18 @@
+id: wordpress-joinchat-fpd
+brief:
+    title: WordPress Joinchat - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Plugin Joinchat files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - fpd
+        - creame-whatsapp-me
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/creame-whatsapp-me/includes/class-joinchat-elementor-finder.php'
+      signs: []

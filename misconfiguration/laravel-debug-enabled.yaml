@@ -1,0 +1,24 @@
+id: laravel-debug-enabled
+brief:
+    title: Laravel Debug Enabled
+    by: notsoevilweasel
+    level: medium
+    about: Laravel with APP_DEBUG set to true is prone to show verbose errors.
+    label:
+        - debug
+        - laravel
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_ignition/health-check'
+      signs:
+        - "on": word
+          has:
+            - can_execute_commands
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

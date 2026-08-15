@@ -1,0 +1,24 @@
+id: event-debug-server-status
+brief:
+    title: Event Debug Server Status
+    by: pussycat0x
+    level: low
+    about: Exposes server status,logs and internal information.
+    label:
+        - event
+        - exposure
+        - debug
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <h1>Event Debug Server Status</h1>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

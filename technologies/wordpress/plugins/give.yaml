@@ -1,0 +1,17 @@
+id: wordpress-give
+brief:
+    title: Wordpress GiveWP Detection
+    by: mailler
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/give/readme.txt'
+      signs: []

@@ -1,0 +1,44 @@
+id: rocketlms-default-login
+brief:
+    title: Rocket LMS - Default Login
+    by: hamad501
+    level: high
+    about: Rocket LMS default credentials were discovered.
+    label:
+        - default-login
+        - lms
+        - rocketlms
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - /panel
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 302
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/login'
+      body: _token={{token}}&type=email&email={{username}}&country_code=&mobile=&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - /panel
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 302

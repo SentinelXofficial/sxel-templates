@@ -1,0 +1,22 @@
+id: crxde-lite
+brief:
+    title: CRXDE Lite - Exposure
+    by: nadino
+    level: low
+    about: CRXDE Lite exposure was detected.
+    label:
+        - aem
+        - crxde
+        - exposure
+        - adobe
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/crx/de/index.jsp'
+      signs:
+        - "on": word
+          has:
+            - <title>CRXDE Lite</title>
+          in: body

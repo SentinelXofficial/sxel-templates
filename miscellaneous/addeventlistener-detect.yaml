@@ -1,0 +1,16 @@
+id: addeventlistener-detect
+brief:
+    title: Add DOM EventListener - Detection
+    by: yavolo
+    level: info
+    about: Identifies the use of JavaScript addEventListener calls in the DOM.
+    label:
+        - miscellaneous
+        - xss
+        - misc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

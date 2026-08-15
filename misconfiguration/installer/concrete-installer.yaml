@@ -1,0 +1,31 @@
+id: concrete-installer
+brief:
+    title: Concrete Installer
+    by: pussycat0x
+    level: high
+    about: Concrete is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - exposure
+        - install
+        - concrete
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php/install'
+      signs:
+        - "on": word
+          has:
+            - install concrete
+            - choose language
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

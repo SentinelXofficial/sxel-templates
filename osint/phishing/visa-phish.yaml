@@ -1,0 +1,25 @@
+id: visa-phish
+brief:
+    title: Visa phishing Detection
+    by: rxerium
+    level: info
+    about: A Visa phishing website was detected
+    label:
+        - phishing
+        - visa
+        - credit-card
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Discover Visa personal payment solutions, secure transactions, travel support, cards and rewards designed to bring more value to your everyday experiences.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

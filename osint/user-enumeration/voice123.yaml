@@ -1,0 +1,24 @@
+id: voice123
+brief:
+    title: Voice123 User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Voice123 user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - voice123
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://voice123.com/api/providers/search/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - user_id
+          in: body
+          need: all

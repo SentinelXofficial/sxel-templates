@@ -1,0 +1,16 @@
+id: azure-connection
+brief:
+    title: Azure Connection String
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - azure
+        - exposure
+        - token
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

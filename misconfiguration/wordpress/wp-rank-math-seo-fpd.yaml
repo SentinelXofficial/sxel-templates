@@ -1,0 +1,20 @@
+id: wp-rank-math-seo-fpd
+brief:
+    title: WordPress SEO Plugin Rank Math - Full Path Disclosure
+    by: ritikchaddha
+    level: low
+    about: WordPress Rank Math SEO plugin is vulnerable to full path disclosure via direct access to plugin files.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - fpd
+        - rank-math
+        - seo
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/seo-by-rank-math/vendor/developer/developer.php'
+        - '{{BaseURL}}/wp-content/plugins/seo-by-rank-math/vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php'
+      signs: []

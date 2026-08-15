@@ -1,0 +1,28 @@
+id: timekeeper-default-login
+brief:
+    title: TimeKeeper - Default Login
+    by: theamanrawat
+    level: high
+    about: TimeKeeper contains default credentials. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - timekeeper
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login?arg1={{url_encode(base64(username))}}&arg2={{url_encode(base64(password))}}'
+      signs:
+        - "on": word
+          has:
+            - '%7B%20%22username%22%20%3A%20%22admin%22%2C%20%22result%22%3A%20%22OK%22'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

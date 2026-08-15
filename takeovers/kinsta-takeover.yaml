@@ -1,0 +1,19 @@
+id: kinsta-takeover
+brief:
+    title: kinsta takeover detection
+    by: pdteam
+    level: high
+    about: kinsta takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - No Site For Domain
+          in: body
+          need: all

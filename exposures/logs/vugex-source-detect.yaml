@@ -1,0 +1,17 @@
+id: vugex-source-detect
+brief:
+    title: Vugex Framework Source Code - Detect
+    by: ProjectDiscoveryAI
+    level: medium
+    about: Detects the presence of exposed Vugex Framework source code by identifying common files and directories associated with the framework.
+    label:
+        - vugex
+        - framework
+        - disclosure
+        - info-leak
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

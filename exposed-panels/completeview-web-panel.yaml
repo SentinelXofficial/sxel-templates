@@ -1,0 +1,23 @@
+id: completeview-web-panel
+brief:
+    title: CompleteView Panel - Detect
+    by: tess
+    level: info
+    about: CompleteView panel was detected.
+    label:
+        - panel
+        - completeview
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/en-US/login?return=/live-view'
+      signs:
+        - "on": word
+          has:
+            - CompleteView Web Client
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

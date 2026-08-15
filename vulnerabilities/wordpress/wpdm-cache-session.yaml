@@ -1,0 +1,25 @@
+id: wpdm-cache-session
+brief:
+    title: Wpdm-Cache Session
+    by: dhiyaneshDk
+    level: medium
+    about: Leaked session of Wpdm Cache wordpress plugin.
+    label:
+        - wordpress
+        - edb
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/uploads/wpdm-cache/'
+      signs:
+        - "on": word
+          has:
+            - Index of /
+            - .txt
+            - wpdm-cache
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

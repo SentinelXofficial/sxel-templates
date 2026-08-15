@@ -1,0 +1,16 @@
+id: nostromo-detect
+brief:
+    title: Nostromo Web Server
+    by: Shivam Kamboj
+    level: info
+    about: Detected servers running the Nostromo web server by identifying the Server header in HTTP responses.
+    label:
+        - tech
+        - nostromo
+        - server
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

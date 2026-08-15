@@ -1,0 +1,24 @@
+id: github
+brief:
+    title: GitHub User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: GitHub user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - github
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://github.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - p-nickname vcard-username d-block
+          in: body
+          need: all

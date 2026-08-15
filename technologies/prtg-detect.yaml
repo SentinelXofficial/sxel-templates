@@ -1,0 +1,29 @@
+id: prtg-detect
+brief:
+    title: Detect PRTG
+    by: geeknik
+    level: info
+    about: Monitor all the systems, devices, traffic, and applications in your IT infrastructure -- https://www.paessler.com/prtg
+    label:
+        - tech
+        - prtg
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.htm'
+        - '{{BaseURL}}/prtg/index.htm'
+        - '{{BaseURL}}/PRTG/index.htm'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - PRTG Network Monitor
+          in: body
+          need: all
+        - "on": word
+          has:
+            - PRTG
+          in: header

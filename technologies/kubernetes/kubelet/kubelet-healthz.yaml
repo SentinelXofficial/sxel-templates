@@ -1,0 +1,35 @@
+id: kubelet-healthz
+brief:
+    title: Kubelet Healthz
+    by: sharath
+    level: info
+    about: Scans for kubelet healthz
+    label:
+        - tech
+        - k8s
+        - kubernetes
+        - devops
+        - kubelet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/healthz'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - text/plain
+          in: header
+        - "on": word
+          has:
+            - ok
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Kubernetes
+          in: header
+          need: all

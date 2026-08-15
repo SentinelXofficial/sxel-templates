@@ -1,0 +1,24 @@
+id: mystrom-panel
+brief:
+    title: MyStrom Panel - Detect
+    by: fabaff
+    level: info
+    about: Mystrom panel was detected.
+    label:
+        - panel
+        - mystrom
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.html#en'
+      signs:
+        - "on": word
+          has:
+            - <title>myStrom</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

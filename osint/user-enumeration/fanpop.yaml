@@ -1,0 +1,24 @@
+id: fanpop
+brief:
+    title: Fanpop User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Fanpop user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - fanpop
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.fanpop.com/fans/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Fanpopping since
+          in: body
+          need: all

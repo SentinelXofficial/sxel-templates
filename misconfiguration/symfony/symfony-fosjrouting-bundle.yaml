@@ -1,0 +1,29 @@
+id: symfony-fosjrouting-bundle
+brief:
+    title: Symfony FOSJsRoutingBundle
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - symfony
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/js/routing?callback=fos.Router.setDatafoobarfoo'
+      signs:
+        - "on": word
+          has:
+            - /**/fos.Router.setDatafoobarfoo({
+            - routes
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/javascript
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

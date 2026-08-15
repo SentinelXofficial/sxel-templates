@@ -1,0 +1,25 @@
+id: teslamate-unauth-access
+brief:
+    title: TeslaMate - Unauthenticated Access
+    by: For3stCo1d
+    level: medium
+    about: A misconfig in Teslamate allows unauthorized access to /settings endpoint.
+    label:
+        - misconfig
+        - teslamate
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/settings'
+      signs:
+        - "on": word
+          has:
+            - Settings · TeslaMate
+            - URLs</h2>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

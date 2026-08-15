@@ -1,0 +1,24 @@
+id: bikemap
+brief:
+    title: Bikemap User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Bikemap user name information check was conducted.
+    label:
+        - osint
+        - osint-health
+        - bikemap
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.bikemap.net/en/u/{{user}}/routes/created/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - "- \U0001F6B2 Bikemap</title>"
+          in: header
+          need: all

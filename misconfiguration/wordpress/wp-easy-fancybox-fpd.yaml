@@ -1,0 +1,18 @@
+id: wp-easy-fancybox-fpd
+brief:
+    title: Easy FancyBox - Full Path Disclosure
+    by: theamanrawat
+    level: low
+    about: Easy FancyBox WordPress plugin contains a full path disclosure vulnerability due to improper access restrictions in its source files, allowing unauthenticated attackers to retrieve full server path...
+    label:
+        - debug
+        - wordpress
+        - wp
+        - wp-plugin
+        - easy-fancybox
+        - fpd
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/easy-fancybox/easy-fancybox.php'
+      signs: []

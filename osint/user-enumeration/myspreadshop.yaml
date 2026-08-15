@@ -1,0 +1,24 @@
+id: myspreadshop
+brief:
+    title: Myspreadshop User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Myspreadshop user name information check was conducted.
+    label:
+        - osint
+        - osint-business
+        - myspreadshop
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://myspreadshop.de/{{user}}/shopData/list
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - siteName
+          in: body
+          need: all

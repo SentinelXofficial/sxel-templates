@@ -1,0 +1,24 @@
+id: tooljet-panel
+brief:
+    title: ToolJet Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: ToolJet login panel was detected.
+    label:
+        - panel
+        - tooljet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login?redirectTo=/'
+      signs:
+        - "on": word
+          has:
+            - ToolJet - Dashboard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

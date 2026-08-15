@@ -1,0 +1,31 @@
+id: pcdn-cache-node
+brief:
+    title: PCDN Cache Node Dataset
+    by: DhiyaneshDk
+    level: low
+    about: PCDN Cache Node dataset is exposed.
+    label:
+        - node
+        - pcdn
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Bandwidth
+            - ReportEventID
+            - ReadDiskDuration
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

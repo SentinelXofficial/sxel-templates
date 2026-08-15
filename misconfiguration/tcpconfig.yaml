@@ -1,0 +1,26 @@
+id: tcpconfig
+brief:
+    title: Rockwell Automation TCP/IP Configuration Information - Detect
+    by: dhiyaneshDK
+    level: medium
+    about: TCP/IP configuration information was detected.
+    label:
+        - config
+        - edb
+        - logs
+        - misconfig
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/tcpconfig.html'
+      signs:
+        - "on": word
+          has:
+            - TCP/IP Configuration
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

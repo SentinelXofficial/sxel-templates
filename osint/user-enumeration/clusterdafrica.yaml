@@ -1,0 +1,24 @@
+id: clusterdafrica
+brief:
+    title: Clusterdafrica User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Clusterdafrica user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - clusterdafrica
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://clusterdafrica.com/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Membre depuis -
+          in: body
+          need: all

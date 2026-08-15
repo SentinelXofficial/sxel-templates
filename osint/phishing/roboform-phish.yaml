@@ -1,0 +1,26 @@
+id: roboform-phish
+brief:
+    title: roboform phishing Detection
+    by: rxerium
+    level: info
+    about: A roboform phishing website was detected
+    label:
+        - phishing
+        - roboform
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Best Password Manager: No more writing down passwords'
+            - Multi-platform secure solution to simplify your online experience. One click login on Chrome, Firefox, Safari, IE, Opera, Edge, Windows, Mac, iOS, Android.
+            - roboform
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

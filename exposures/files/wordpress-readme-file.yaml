@@ -1,0 +1,28 @@
+id: wordpress-readme-file
+brief:
+    title: WordPress Readme File
+    by: tess
+    level: info
+    about: ""
+    label:
+        - exposure
+        - wordpress
+        - wp
+        - readme
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/readme.html'
+        - '{{BaseURL}}/wp/readme.html'
+        - '{{BaseURL}}/blog/wp/readme.html'
+      signs:
+        - "on": word
+          has:
+            - WordPress &#8250; ReadMe
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: elmah-log-file
+brief:
+    title: ELMAH Exposure
+    by: shine
+    level: high
+    about: ELMAH (Error Logging Modules and Handlers) is an application-wide error logging facility that is completely pluggable. It can be dynamically added to a running ASP.NET web application, or even all ...
+    label:
+        - logs
+        - elmah
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/elmah'
+        - '{{BaseURL}}/elmah.axd'
+      signs:
+        - "on": word
+          has:
+            - Error Log for
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

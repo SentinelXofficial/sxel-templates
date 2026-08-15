@@ -1,0 +1,28 @@
+id: gnu-mailman
+brief:
+    title: GNU Mailman Panel - Detect
+    by: Matt Galligan
+    level: info
+    about: GNU Mailman panel was detected. Panel exposes all public mailing lists on server.
+    label:
+        - exposure
+        - mailman
+        - panel
+        - gnu
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mailman/listinfo'
+        - '{{BaseURL}}/listinfo'
+      signs:
+        - "on": word
+          has:
+            - Mailing Lists
+            - Description
+            - list
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

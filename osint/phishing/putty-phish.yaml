@@ -1,0 +1,24 @@
+id: putty-phish
+brief:
+    title: putty phishing Detection
+    by: rxerium
+    level: info
+    about: A putty phishing website was detected
+    label:
+        - phishing
+        - putty
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Download PuTTY - a free SSH and telnet client for Windows
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

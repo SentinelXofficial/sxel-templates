@@ -1,0 +1,23 @@
+id: api-bitcoinaverage
+brief:
+    title: BitcoinAverage API Test
+    by: daffainfo
+    level: info
+    about: Digital Asset Price Data for the blockchain industry
+    label:
+        - token-spray
+        - bitcoinaverage
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://apiv2.bitcoinaverage.com/exchanges/ticker/bitstamp'
+      head:
+        x-ba-key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"name"'
+            - '"display_name"'
+            - '"url"'
+          in: body
+          need: all

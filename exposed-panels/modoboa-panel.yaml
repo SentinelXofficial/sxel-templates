@@ -1,0 +1,25 @@
+id: modoboa-panel
+brief:
+    title: Modoboa Login Panel - Detect
+    by: kh4sh3i
+    level: info
+    about: Modoboa login panel was detected.
+    label:
+        - panel
+        - modoboa
+        - mail
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/accounts/login/?next=/'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Modoboa
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

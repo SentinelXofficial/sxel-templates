@@ -1,0 +1,24 @@
+id: opencollective
+brief:
+    title: Opencollective User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Opencollective user name information check was conducted.
+    label:
+        - osint
+        - osint-finance
+        - opencollective
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://opencollective.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- Open Collective'
+          in: body
+          need: all

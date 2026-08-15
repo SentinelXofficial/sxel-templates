@@ -1,0 +1,24 @@
+id: mastodon-chaossocial
+brief:
+    title: Mastodon-Chaos.social User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mastodon-Chaos.social user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastodon-chaossocial
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://chaos.social/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '@chaos.social) - chaos.social</title>'
+          in: body
+          need: all

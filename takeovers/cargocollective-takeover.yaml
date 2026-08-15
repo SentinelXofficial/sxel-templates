@@ -1,0 +1,21 @@
+id: cargocollective-takeover
+brief:
+    title: CargoCollective Takeover Detection
+    by: pdteam
+    level: high
+    about: CargoCollective takeover was detected.
+    label:
+        - takeover
+        - cargocollective
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <div class="notfound">
+            - 404 Not Found<br>
+          in: body
+          need: all

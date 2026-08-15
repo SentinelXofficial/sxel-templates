@@ -1,0 +1,24 @@
+id: gimp-phish
+brief:
+    title: gimp phishing Detection
+    by: rxerium
+    level: info
+    about: A gimp phishing website was detected
+    label:
+        - phishing
+        - gimp
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - GIMP - GNU Image Manipulation Program
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

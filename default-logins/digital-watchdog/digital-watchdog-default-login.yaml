@@ -1,0 +1,19 @@
+id: digital-watchdog-default-login
+brief:
+    title: Digital Watchdog - Default Login
+    by: omranisecurity
+    level: high
+    about: Digital Watchdog default login credentials were discovered.
+    label:
+        - digital-watchdog
+        - default-login
+        - dw-Spectrum
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/web/rest/v1/login/sessions'
+      head:
+        Content-Type: application/json
+      body: '{"username":"{{user}}","password":"{{pass}}","setCookie":true}'
+      signs: []

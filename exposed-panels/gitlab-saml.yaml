@@ -1,0 +1,30 @@
+id: gitlab-saml
+brief:
+    title: Gitlab SAML - Detection
+    by: rootxharsh
+    level: info
+    about: The presence of SAML-based authentication on GitLab instances. SAML is commonly used for Single Sign-On (SSO) integrations, which allows users to authenticate with GitLab using an external Identity...
+    label:
+        - panel
+        - saml
+        - gitlab
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/users/auth/saml/metadata'
+      signs:
+        - "on": word
+          has:
+            - EntityDescriptor
+            - SAML
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/xml
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: kinguin-phish
+brief:
+    title: Kinguin phishing Detection
+    by: rxerium
+    level: info
+    about: A Kinguin phishing website was detected
+    label:
+        - phishing
+        - kinguin
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Kinguin
+            - Steam CD Keys and PC Game Keys - Compare &amp; Buy | Kinguin.net
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,29 @@
+id: fortiap-panel
+brief:
+    title: FortiAP Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: FortiAP login panel was detected.
+    label:
+        - panel
+        - fortinet
+        - fortiap
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>FortiAP</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

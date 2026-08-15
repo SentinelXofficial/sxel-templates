@@ -1,0 +1,24 @@
+id: magix
+brief:
+    title: Magix User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Magix user name information check was conducted.
+    label:
+        - osint
+        - osint-music
+        - magix
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.magix.info/us/users/profile/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - About me
+          in: body
+          need: all

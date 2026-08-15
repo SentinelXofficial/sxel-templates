@@ -1,0 +1,24 @@
+id: novnc-login-panel
+brief:
+    title: noVNC Login Panel - Detect
+    by: tess
+    level: info
+    about: noVNC login panel was detected.
+    label:
+        - panel
+        - novnc
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/vnc.html'
+        - '{{BaseURL}}:6080/vnc.html'
+      signs:
+        - "on": word
+          has:
+            - <title>noVNC</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

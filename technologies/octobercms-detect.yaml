@@ -1,0 +1,24 @@
+id: octobercms-detect
+brief:
+    title: OctoberCMS detect
+    by: cyllective
+    level: info
+    about: Detects OctoberCMS
+    label:
+        - tech
+        - octobercms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/modules/system/assets/js/framework.combined-min.js'
+      signs:
+        - "on": word
+          has:
+            - october_session
+          in: header
+        - "on": word
+          has:
+            - OctoberCMS
+          in: body

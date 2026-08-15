@@ -1,0 +1,23 @@
+id: rustici-content-controller
+brief:
+    title: Rustici Content Controller Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Rustici Content Controller panel was detected.
+    label:
+        - panel
+        - rustici
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Rustici Content Controller</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

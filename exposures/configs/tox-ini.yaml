@@ -1,0 +1,30 @@
+id: tox-ini
+brief:
+    title: Tox Configuration File - Detect
+    by: geeknik
+    level: info
+    about: Tox configuration file was detected.
+    label:
+        - exposure
+        - config
+        - tox
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/tox.ini'
+      signs:
+        - "on": word
+          has:
+            - '[tox]'
+            - '[testenv]'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

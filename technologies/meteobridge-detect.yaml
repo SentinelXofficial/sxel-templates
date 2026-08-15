@@ -1,0 +1,24 @@
+id: meteobridge-detect
+brief:
+    title: MeteoBridge - Detect
+    by: rxerium
+    level: info
+    about: Exposed MeteoBridge devices by identifying their unique HTTP response patterns.
+    label:
+        - meteobridge
+        - tech
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/meteobridge.cgi'
+      signs:
+        - "on": word
+          has:
+            - Basic realm="MeteoBridge"
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 401

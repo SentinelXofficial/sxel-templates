@@ -1,0 +1,25 @@
+id: walgreens-phish
+brief:
+    title: Walgreens phishing Detection
+    by: rxerium
+    level: info
+    about: A Walgreens phishing website was detected
+    label:
+        - phishing
+        - walgreens
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Your go-to for Pharmacy, Health & Wellness and Photo products. Refill prescriptions online, order items for delivery or store pickup, and create Photo Gifts.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

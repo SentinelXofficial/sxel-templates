@@ -1,0 +1,24 @@
+id: opgg
+brief:
+    title: OPGG User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: OPGG user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - opgg
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://eune.op.gg/summoners/eune/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- Summoner Stats - League of Legends'
+          in: body
+          need: all

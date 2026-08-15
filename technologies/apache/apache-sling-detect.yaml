@@ -1,0 +1,24 @@
+id: apache-sling-detect
+brief:
+    title: Apache Sling - Detect
+    by: icarot
+    level: info
+    about: Detects a Apache Sling, a Java-based web framework designed for content-centric applications, using a RESTful approach to map URL requests directly to resources in a Java Content Repository (JCR).
+    label:
+        - apache
+        - sling
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/starter.html'
+      signs:
+        - "on": word
+          has:
+            - Apache Sling
+            - sling.apache
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

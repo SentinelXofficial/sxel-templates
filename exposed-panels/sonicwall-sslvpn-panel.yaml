@@ -1,0 +1,24 @@
+id: sonicwall-sslvpn-panel
+brief:
+    title: SonicWall Virtual Office SSL VPN Login Panel - Detect
+    by: PR3R00T
+    level: info
+    about: SonicWall Virtual Office SSL VPN login panel was detected.
+    label:
+        - panel
+        - sonicwall
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/welcome'
+      signs:
+        - "on": word
+          has:
+            - <title>Virtual Office</title>
+          in: body
+        - "on": word
+          has:
+            - SonicWALL SSLVPN Web Server
+            - SonicWALL SSL-VPN Web Server
+          in: header

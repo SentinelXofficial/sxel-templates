@@ -1,0 +1,26 @@
+id: homematic-panel
+brief:
+    title: Homematic Panel - Detect
+    by: princechaddha
+    level: info
+    about: Homematic panel was deetcted.
+    label:
+        - panel
+        - homematic
+        - iot
+        - eq-3
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - HomeMatic Logo
+            - <title>HomeMatic WebUI</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

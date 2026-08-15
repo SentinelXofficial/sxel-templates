@@ -1,0 +1,22 @@
+id: druid-console-exposure
+brief:
+    title: Alibaba Druid Panel - Detect
+    by: pdteam
+    level: info
+    about: Alibaba Druid panel was detected.
+    label:
+        - panel
+        - alibaba
+        - druid
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - src="/druid.js"
+            - href="/druid.css"
+          in: body
+          need: all

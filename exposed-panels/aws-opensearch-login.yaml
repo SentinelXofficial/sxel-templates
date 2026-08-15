@@ -1,0 +1,25 @@
+id: aws-opensearch-login
+brief:
+    title: AWS OpenSearch Login - Detect
+    by: Higor Melgaço (eremit4)
+    level: info
+    about: AWS OpenSearch login page was detected.
+    label:
+        - panel
+        - opensearch
+        - aws
+        - amazon
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_dashboards/app/login'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Please login to OpenSearch Dashboards
+          in: body
+          need: all

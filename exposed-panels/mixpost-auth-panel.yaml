@@ -1,0 +1,17 @@
+id: mixpost-auth-panel
+brief:
+    title: Mixpost Auth Login - Panel Detect
+    by: Th3l0newolf
+    level: info
+    about: Mixpost authentication interface was discovered.
+    label:
+        - panel
+        - login
+        - mixpost
+        - auth
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mixpost/login'
+      signs: []

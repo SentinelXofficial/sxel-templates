@@ -1,0 +1,18 @@
+id: gitlab-explore
+brief:
+    title: GitLab Instance Explore - Detect
+    by: Sujal Tuladhar
+    level: info
+    about: This template checks for GitLab instances by verifying if /explore and /api/v4/projects endpoints are accessible with a 200 response.
+    label:
+        - gitlab
+        - explore
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/explore'
+        - '{{BaseURL}}/api/v4/projects'
+      signs: []

@@ -1,0 +1,34 @@
+id: laravel-horizon-unauth
+brief:
+    title: Laravel Horizon Dashboard - Unauthenticated
+    by: vagnerd
+    level: medium
+    about: Laravel Horizon Dashboard unauthenticated was detected.
+    label:
+        - laravel
+        - unauth
+        - dashboard
+        - misconfig
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/stats'
+        - '{{BaseURL}}/horizon/api/stats'
+      signs:
+        - "on": word
+          has:
+            - queueWithMaxRuntime
+            - recentJobs
+            - status
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

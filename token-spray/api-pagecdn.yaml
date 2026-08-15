@@ -1,0 +1,20 @@
+id: api-pagecdn
+brief:
+    title: PageCDN API Test
+    by: daffainfo
+    level: info
+    about: Public API for javascript, css and font libraries on PageCDN
+    label:
+        - token-spray
+        - pagecdn
+moves:
+    - verb: GET
+      to:
+        - https://pagecdn.com/api/v2/private/account/info?apikey={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"username"'
+            - '"email"'
+          in: body
+          need: all

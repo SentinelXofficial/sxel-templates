@@ -1,0 +1,27 @@
+id: telecom-gateway-default-login
+brief:
+    title: Telecom Gateway - Default Admin Login
+    by: ritikchaddha
+    level: high
+    about: Telecom Gateway default admin login credentials were successful.
+    label:
+        - default-login
+        - telecom
+        - gateway
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/manager/login.php'
+      body: Name={{username}}&Pass={{password}}
+      signs:
+        - "on": word
+          has:
+            - <title>电信网关服务器管理后台</title>
+            - index-shang.php
+            - di.php
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

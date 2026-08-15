@@ -1,0 +1,31 @@
+id: production-log
+brief:
+    title: Production Log File Disclosure
+    by: geeknik
+    level: low
+    about: Production log file was exposed.
+    label:
+        - exposure
+        - files
+        - logs
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/log/production.log'
+        - '{{BaseURL}}/logs/production.log'
+        - '{{BaseURL}}/production.log'
+      signs:
+        - "on": word
+          has:
+            - Connecting to database specified by database.yml
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

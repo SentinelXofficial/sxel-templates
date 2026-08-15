@@ -1,0 +1,25 @@
+id: openfire-setup
+brief:
+    title: Openfire Setup - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Checks for the presence of a Openfire Setup Page.
+    label:
+        - install
+        - openfire
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup/index.jsp'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Openfire Setup
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

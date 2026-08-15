@@ -1,0 +1,16 @@
+id: firebase-database-extractor
+brief:
+    title: Firebase Database Extract Check
+    by: rafaelwdornelas
+    level: info
+    about: Extract Firebase Database
+    label:
+        - miscellaneous
+        - firebase
+        - misc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

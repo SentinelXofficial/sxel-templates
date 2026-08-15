@@ -1,0 +1,25 @@
+id: dotclear-panel
+brief:
+    title: Dotclear Admin Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: Dotclear admin login panel was detected.
+    label:
+        - panel
+        - dotclear
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dc2/admin/auth.php'
+        - '{{BaseURL}}/auth.php'
+      signs:
+        - "on": word
+          has:
+            - <body id="dotclear-admin" class="auth">
+            - <title>Dotclear</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

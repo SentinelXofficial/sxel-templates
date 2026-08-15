@@ -1,0 +1,23 @@
+id: processwire-login
+brief:
+    title: ProcessWire Login - Panel Detect
+    by: Ramkrishna Sawant
+    level: info
+    about: ProcessWire login panel was detected.
+    label:
+        - panel
+        - processwire
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/processwire/'
+      signs:
+        - "on": word
+          has:
+            - ProcessWireAdminTheme.init();
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

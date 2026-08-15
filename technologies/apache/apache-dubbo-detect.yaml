@@ -1,0 +1,20 @@
+id: apache-dubbo-detect
+brief:
+    title: Apache dubbo detect
+    by: ffffffff0x
+    level: info
+    about: ""
+    label:
+        - apache
+        - dubbo
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Basic realm="dubbo"
+          in: header

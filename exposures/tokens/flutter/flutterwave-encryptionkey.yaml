@@ -1,0 +1,17 @@
+id: flutterwave-encryptionkey
+brief:
+    title: Flutterwave Encryption Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - flutterwave
+        - exposure
+        - tokens
+        - encryption
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

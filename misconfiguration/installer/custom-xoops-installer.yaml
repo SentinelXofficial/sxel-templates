@@ -1,0 +1,24 @@
+id: custom-xoops-installer
+brief:
+    title: XOOPS Custom - Installation
+    by: DhiyaneshDK
+    level: high
+    about: Detects the presence of XOOPS Custom installation page.
+    label:
+        - misconfig
+        - xoops
+        - installer
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/index.php'
+      signs:
+        - "on": word
+          has:
+            - <title>XOOPS Custom Installation</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

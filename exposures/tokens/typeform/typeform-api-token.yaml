@@ -1,0 +1,16 @@
+id: typeform-api-token
+brief:
+    title: Typeform API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - typeform
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

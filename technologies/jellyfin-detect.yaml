@@ -1,0 +1,29 @@
+id: jellyfin-detect
+brief:
+    title: Jellyfin detected
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - tech
+        - jellyfin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/home.html'
+        - '{{BaseURL}}/web/home.html'
+        - '{{BaseURL}}/index.html'
+        - '{{BaseURL}}/web/index.html'
+        - '{{BaseURL}}/web/manifest.json'
+      signs:
+        - "on": word
+          has:
+            - name="application-name" content="Jellyfin"
+            - class="page homePage libraryPage allLibraryPage backdropPage pageWithAbsoluteTabs withTabs"
+            - The Free Software Media System
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

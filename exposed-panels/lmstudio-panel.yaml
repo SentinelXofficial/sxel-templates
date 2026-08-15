@@ -1,0 +1,26 @@
+id: lmstudio-panel
+brief:
+    title: LM Studio Panel - Detect
+    by: rxerium
+    level: info
+    about: LM Studio is a desktop application for discovering, downloading, and running local
+    label:
+        - panel
+        - lmstudio
+        - llm
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - LM Studio
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

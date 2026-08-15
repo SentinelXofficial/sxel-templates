@@ -1,0 +1,24 @@
+id: opengear-panel
+brief:
+    title: Opengear Management Console Login Panel - Detect
+    by: ffffffff0x
+    level: info
+    about: The Opengear Management Console admin panel has been discovered.
+    label:
+        - panel
+        - opengear
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <a href="http://www.Opengear.com" build="_new">&copy; Opengear
+            - Opengear Management Console</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,32 @@
+id: alibaba-canal-info-leak
+brief:
+    title: Alibaba Canal Config - Detect
+    by: pikpikcu
+    level: info
+    about: Alibaba Canal configuration information was detected.
+    label:
+        - config
+        - exposure
+        - alibaba
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/canal/config/1/1'
+      head:
+        Content-Type: application/json
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": word
+          has:
+            - ncanal.aliyun.accessKey
+            - ncanal.aliyun.secretKey
+          in: body
+          need: all

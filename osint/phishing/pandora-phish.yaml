@@ -1,0 +1,25 @@
+id: pandora-phish
+brief:
+    title: Pandora phishing Detection
+    by: rxerium
+    level: info
+    about: A Pandora phishing website was detected
+    label:
+        - phishing
+        - pandora
+        - streaming
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Play the songs, albums, playlists and podcasts you love on the all-new Pandora. Sign up for a subscription plan to stream ad-free and on-demand. Listen on your mobile phone, desktop, TV, smart speakers or in the car.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

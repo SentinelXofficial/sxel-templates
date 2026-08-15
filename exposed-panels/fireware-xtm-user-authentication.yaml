@@ -1,0 +1,23 @@
+id: fireware-xtm-user-authentication
+brief:
+    title: Fireware XTM Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Fireware XTM login panel was detected.
+    label:
+        - panel
+        - watchguard
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sslvpn_logon.shtml'
+      signs:
+        - "on": word
+          has:
+            - <title>User Authentication
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,16 @@
+id: sonicwall-email-security-detect
+brief:
+    title: SonicWall Email Security Panel - Detect
+    by: gy741
+    level: info
+    about: SonicWall Email Security panel was detected.
+    label:
+        - tech
+        - panel
+        - sonicwall
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/favicon.ico'
+      signs: []

@@ -1,0 +1,21 @@
+id: campaignmonitor-takeover
+brief:
+    title: CampaignMonitor Takeover Detection
+    by: pdteam
+    level: high
+    about: CampaignMonitor takeover was detected.
+    label:
+        - takeover
+        - campaignmonitor
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Email Newsletter Software
+            - css.createsend1.com
+          in: body
+          need: all

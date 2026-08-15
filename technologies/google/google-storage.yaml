@@ -1,0 +1,22 @@
+id: gstorage-detect
+brief:
+    title: Google Bucket detection
+    by: 0xTeles
+    level: info
+    about: ""
+    label:
+        - tech
+        - gstorage
+        - google
+        - bucket
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - x-goog-metageneration
+            - x-goog-generation
+          in: header

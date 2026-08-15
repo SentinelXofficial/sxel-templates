@@ -1,0 +1,16 @@
+id: apigee-panel
+brief:
+    title: Apigee Login Panel - Detect
+    by: righettod
+    level: info
+    about: Apigee login panel was detected.
+    label:
+        - panel
+        - apigee
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs: []

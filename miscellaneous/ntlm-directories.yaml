@@ -1,0 +1,22 @@
+id: ntlm-directories
+brief:
+    title: Discovering directories w/ NTLM
+    by: puzzlepeaches
+    level: info
+    about: ""
+    label:
+        - miscellaneous
+        - misc
+        - fuzz
+        - windows
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{path}}'
+      head:
+        Authorization: NTLM TlRMTVNTUAABAAAAB4IIAAAAAAAAAAAAAAAAAAAAAAA=
+      signs:
+        - "on": status
+          status:
+            - 401

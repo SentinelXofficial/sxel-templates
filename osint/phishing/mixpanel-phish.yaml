@@ -1,0 +1,25 @@
+id: mixpanel-phish
+brief:
+    title: Mixpanel phishing Detection
+    by: rxerium
+    level: info
+    about: A Mixpanel phishing website was detected
+    label:
+        - phishing
+        - mixpanel
+        - analytics
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Product Analytics &amp; Robust Event Tracking | Mixpanel
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

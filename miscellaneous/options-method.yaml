@@ -1,0 +1,16 @@
+id: options-method
+brief:
+    title: Allowed Options Method
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - miscellaneous
+        - misc
+        - generic
+        - vuln
+moves:
+    - verb: OPTIONS
+      to:
+        - '{{BaseURL}}'
+      signs: []

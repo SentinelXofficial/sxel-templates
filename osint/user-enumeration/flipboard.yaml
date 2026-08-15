@@ -1,0 +1,24 @@
+id: flipboard
+brief:
+    title: Flipboard User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Flipboard user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - flipboard
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://flipboard.com/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ) on Flipboard
+          in: body
+          need: all

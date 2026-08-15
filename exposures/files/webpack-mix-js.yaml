@@ -1,0 +1,26 @@
+id: webpack-mix-js
+brief:
+    title: Webpack Mix File Disclosure
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - config
+        - exposure
+        - devops
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webpack.mix.js'
+      signs:
+        - "on": word
+          has:
+            - Mix Asset Management
+            - const mix
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

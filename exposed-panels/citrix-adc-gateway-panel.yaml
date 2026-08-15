@@ -1,0 +1,20 @@
+id: citrix-adc-gateway-panel
+brief:
+    title: Citrix ADC Gateway Login Panel - Detect
+    by: organiccrap
+    level: info
+    about: Citrix ADC Gateway login panel was detected.
+    label:
+        - panel
+        - citrix
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/logon/LogonPoint/index.html'
+        - '{{BaseURL}}/logon/LogonPoint/custom.html'
+      signs:
+        - "on": word
+          has:
+            - _ctxstxt_CitrixCopyright
+          in: body

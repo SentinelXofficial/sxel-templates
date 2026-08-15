@@ -1,0 +1,26 @@
+id: solaredge-monitoring-panel
+brief:
+    title: SolarEdge Monitoring - Login Panel
+    by: rxerium
+    level: info
+    about: SolarEdge Telematics monitoring panel has been detected.
+    label:
+        - panel
+        - solaredge
+        - ics
+        - solar
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - SolarEdge Telematics
+            - SolarEdge
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

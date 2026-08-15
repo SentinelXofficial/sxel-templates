@@ -1,0 +1,26 @@
+id: codemeter-webadmin-panel
+brief:
+    title: CodeMeter - WebAdmin Panel Access
+    by: Techryptic (@Tech)
+    level: info
+    about: CodeMeter WebAdmin panel was accessed.
+    label:
+        - codemeter
+        - webadmin
+        - panel
+        - wibu
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: CmWebAdminSession'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 301
+            - 302

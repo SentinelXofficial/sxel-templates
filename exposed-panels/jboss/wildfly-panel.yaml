@@ -1,0 +1,25 @@
+id: wildfly-panel
+brief:
+    title: WildFly Welcome Page - Tech Detect
+    by: righettod
+    level: info
+    about: WildFly welcome page was detected.
+    label:
+        - panel
+        - jboss
+        - wildfly
+        - redhat
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to WildFly
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

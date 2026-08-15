@@ -1,0 +1,21 @@
+id: api-iucn
+brief:
+    title: IUCN API Test
+    by: daffainfo
+    level: info
+    about: IUCN Red List of Threatened Species
+    label:
+        - token-spray
+        - iucn
+moves:
+    - verb: GET
+      to:
+        - http://apiv3.iucnredlist.org/api/v3/country/list?token={{token}}
+      signs:
+        - "on": word
+          has:
+            - taxonid
+            - scientific_name
+            - subspecies
+          in: body
+          need: all

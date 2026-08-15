@@ -1,0 +1,23 @@
+id: api-opsgenie
+brief:
+    title: OpsGenie API Test
+    by: 0xpugal
+    level: info
+    about: Forex currency market data
+    label:
+        - token-spray
+        - opsgenie
+moves:
+    - verb: GET
+      to:
+        - https://api.opsgenie.com/v2/alerts
+      head:
+        Authorization: GenieKey {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"data":'
+            - '"paging":'
+            - '"took":'
+          in: body
+          need: all

@@ -1,0 +1,26 @@
+id: rsa-self-service
+brief:
+    title: RSA Self-Service Login Panel - Detect
+    by: PR3R00T
+    level: info
+    about: RSA Self-Service login panel was detected.
+    label:
+        - panel
+        - rsa
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/console-selfservice/SelfService.do'
+      signs:
+        - "on": word
+          has:
+            - Self-Service Console
+            - RSA
+            - AM_Self_Service_Console
+            - console-selfservice
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

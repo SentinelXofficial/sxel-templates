@@ -1,0 +1,41 @@
+id: symfony-profiler
+brief:
+    title: Symfony Profiler - Detect
+    by: pdteam
+    level: high
+    about: Symfony profiler was detected.
+    label:
+        - config
+        - exposure
+        - symfony
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/app_dev.php/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/index.php/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/index_dev.php/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/dev.php/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/debug.php/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/_debug/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/web/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/public/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/frontend_dev.php/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/backend_dev.php/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/api_dev.php/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/app.php/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/app_test.php/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/test.php/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/symfony/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/debug/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/dev/_profiler/empty/search/results?limit=10'
+        - '{{BaseURL}}/profiler/empty/search/results?limit=10'
+      signs:
+        - "on": word
+          has:
+            - Symfony Profiler
+            - <title>Profiler</title>
+            - Symfony-Debug-Toolbar
+          in: body

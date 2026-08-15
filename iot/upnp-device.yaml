@@ -1,0 +1,25 @@
+id: upnp-device-detect
+brief:
+    title: Detect Basic uPNP Device
+    by: geeknik
+    level: info
+    about: uPNP Device was detected.
+    label:
+        - upnp
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - urn:schemas-upnp-org:device-1-0
+            - <deviceType>
+            - <modelName>
+          in: body
+          need: all

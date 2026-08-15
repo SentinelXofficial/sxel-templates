@@ -1,0 +1,16 @@
+id: sentry-access-token
+brief:
+    title: Sentry Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - sentry
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

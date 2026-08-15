@@ -1,0 +1,19 @@
+id: scriptcase-prod-login
+brief:
+    title: ScriptCase Production Environment Login
+    by: Ricardo Maia (Brainfork)
+    level: info
+    about: ""
+    label:
+        - panel
+        - scriptcase
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/prod/lib/php/'
+        - '{{BaseURL}}/scriptcase/prod/lib/php/'
+      signs:
+        - "on": status
+          status:
+            - 200

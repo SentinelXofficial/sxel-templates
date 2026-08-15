@@ -1,0 +1,27 @@
+id: citibank-phish
+brief:
+    title: Citibank phishing Detection
+    by: rxerium
+    level: info
+    about: A Citibank phishing website was detected
+    label:
+        - phishing
+        - citibank
+        - citi
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Citi
+            - Citibank is the consumer division of financial services multinational Citigroup. Citibank was founded in 1812 as the City Bank of New York, and later became First National City Bank of New York. Citibank provides credit cards, mortgages, personal loans, commercial loans, and lines of credit.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

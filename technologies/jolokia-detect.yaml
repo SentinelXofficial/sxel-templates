@@ -1,0 +1,26 @@
+id: jolokia-detect
+brief:
+    title: Jolokia Detection
+    by: mavericknerd
+    level: info
+    about: ""
+    label:
+        - tech
+        - jolokia
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jolokia/version'
+        - '{{BaseURL}}/actuator/jolokia/version'
+      signs:
+        - "on": word
+          has:
+            - '"timestamp":'
+            - '"protocol":'
+            - '"agent":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

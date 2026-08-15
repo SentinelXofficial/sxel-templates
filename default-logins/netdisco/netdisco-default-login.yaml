@@ -1,0 +1,18 @@
+id: netdisco-default-login
+brief:
+    title: Netdisco Admin - Default Login
+    by: ritikchaddha
+    level: critical
+    about: Detects use of hard-coded credentials in Netdisco.
+    label:
+        - netdisco
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}&return_url=%2Finventory
+      signs: []

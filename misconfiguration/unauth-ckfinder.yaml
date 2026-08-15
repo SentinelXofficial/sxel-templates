@@ -1,0 +1,27 @@
+id: unauth-ckfinder
+brief:
+    title: CKFinder - Unauthenticated Exposure
+    by: Amjad Ali
+    level: high
+    about: The CKFinder file manager was found to be exposed without authentication, allowing unauthenticated users to directly access its web interface. Due to this misconfiguration, attackers were able to b...
+    label:
+        - ckfinder
+        - misconfig
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ckfinder/ckfinder.html'
+      signs:
+        - "on": word
+          has:
+            - <title>CKFinder</title>
+            - CKFinderFrameWindow
+            - var ckfinder = new CKFinder
+            - CKFinder.start()
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

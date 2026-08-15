@@ -1,0 +1,17 @@
+id: opentext-filr-guest-access
+brief:
+    title: OpenText Filr - Guest Access Enabled
+    by: pussycat0x
+    level: medium
+    about: 'OpenText Filr (formerly Micro Focus/Novell Filr) had guest access enabled, allowing unauthenticated users to access the system as a Guest, exposing GuestUser: ''true'' and an "Enter as Guest" option ...'
+    label:
+        - misconfig
+        - opentext
+        - filr
+        - exposure
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ssf/a/do?p_name=ss_forum&p_action=1&action=__login'
+      signs: []

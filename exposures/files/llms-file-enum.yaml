@@ -1,0 +1,32 @@
+id: llms-file-enum
+brief:
+    title: llms.txt - Enumeration
+    by: ritikchaddha
+    level: info
+    about: Detects the presence of a /llms.txt file on the server. This file may be used for internal documentation, configuration, or as a placeholder for third-party integrations. Enumerating such files cou...
+    label:
+        - enum
+        - llms
+        - config
+        - ai
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/llms.txt'
+      signs:
+        - "on": word
+          has:
+            - MongoDB over HTTP on the native
+            - application/javascript
+            - application/x-javascript
+            - application/json
+            - application/xml
+            - text/xml
+            - <html
+            - <!doctype
+            - <script
+            - <meta
+            - image/
+            - Response xmlns
+          in: response
+          need: all

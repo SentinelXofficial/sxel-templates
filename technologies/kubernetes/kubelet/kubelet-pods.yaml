@@ -1,0 +1,28 @@
+id: kubelet-pods
+brief:
+    title: Kubelet Scan
+    by: sharath
+    level: info
+    about: Scans for kubelet pods
+    label:
+        - tech
+        - k8s
+        - kubernetes
+        - devops
+        - kubelet
+        - pods
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pods'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"PodList":'
+            - '"items":'
+          in: body
+          need: all

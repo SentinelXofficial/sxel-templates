@@ -1,0 +1,27 @@
+id: php-ini
+brief:
+    title: Php.ini File Disclosure
+    by: geeknik
+    level: low
+    about: php.ini file is exposed.
+    label:
+        - config
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/php.ini'
+      signs:
+        - "on": word
+          has:
+            - '[PHP]'
+            - short_open_tag
+            - safe_mode
+            - expose_php
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

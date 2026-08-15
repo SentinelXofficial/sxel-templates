@@ -1,0 +1,25 @@
+id: unauth-redis-insight
+brief:
+    title: RedisInsight - Unauthenticated Access
+    by: ggranjus
+    level: high
+    about: RedisInsight was able to be accessed because no authentication was required.
+    label:
+        - redis
+        - redisinsight
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>RedisInsight</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

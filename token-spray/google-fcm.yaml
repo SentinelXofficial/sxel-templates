@@ -1,0 +1,25 @@
+id: api-googlefcm
+brief:
+    title: Google FCM API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - fcm
+        - firebase
+        - cloud
+        - messaging
+moves:
+    - verb: POST
+      to:
+        - https://fcm.googleapis.com/fcm/send
+      head:
+        Authorization: key={{token}}
+        Content-Type: application/json
+      body: '{''registration_ids'':[''ABC'']}'
+      signs:
+        - "on": status
+          status:
+            - 200

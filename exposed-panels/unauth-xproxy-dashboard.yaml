@@ -1,0 +1,24 @@
+id: unauth-xproxy-dashboard
+brief:
+    title: X-Proxy Dashboard Panel - Detect
+    by: pussycat0x
+    level: info
+    about: X-Proxy Dashboard panel was detected.
+    label:
+        - xproxy
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>X-Proxy</title>
+            - Dashboard</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

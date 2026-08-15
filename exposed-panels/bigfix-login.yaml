@@ -1,0 +1,24 @@
+id: bigfix-login
+brief:
+    title: HCL BigFix Login Panel - Detect
+    by: idealphase
+    level: info
+    about: HCL BigFix login panel was detected.
+    label:
+        - panel
+        - bigfix
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title> BigFix </title>
+            - <div class="bigfix-logo">
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

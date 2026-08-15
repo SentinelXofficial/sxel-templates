@@ -1,0 +1,26 @@
+id: unauthenticated-prtg
+brief:
+    title: PRTG Traffic Grapher - Unauthenticated Access
+    by: dhiyaneshDK
+    level: high
+    about: PRTG Traffic Grapher was able to be accessed with no authentication requirements in place.
+    label:
+        - config
+        - unauth
+        - prtg
+        - edb
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sensorlist.htm'
+      signs:
+        - "on": word
+          has:
+            - PRTG Traffic Grapher
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

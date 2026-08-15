@@ -1,0 +1,22 @@
+id: exposed-kafdrop
+brief:
+    title: Publicly exposed Kafdrop Interface
+    by: dhiyaneshDk
+    level: low
+    about: Publicly Kafdrop Interface is exposed.
+    label:
+        - exposure
+        - misconfig
+        - kafdrop
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>Kafdrop: Broker List</title>'
+            - Kafka Cluster Overview
+          in: body
+          need: all

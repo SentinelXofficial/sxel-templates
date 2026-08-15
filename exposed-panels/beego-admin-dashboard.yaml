@@ -1,0 +1,31 @@
+id: beego-admin-dashboard
+brief:
+    title: Beego Admin Dashboard Panel- Detect
+    by: DhiyaneshDk
+    level: medium
+    about: Beego Admin Dashboard panel was detected.
+    label:
+        - panel
+        - beego
+        - unauth
+        - discovery
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/listconf?command=conf'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Beego Admin Dashboard
+            - Configurations
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

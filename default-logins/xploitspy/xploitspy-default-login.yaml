@@ -1,0 +1,30 @@
+id: xploitspy-default-login
+brief:
+    title: XploitSPY - Default Login
+    by: andreluna
+    level: high
+    about: Default login and password to access administrator panel
+    label:
+        - xploitspy
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/login'
+      body: username={{user}}&password={{pass}}&hostname={{Hostname}}
+      signs:
+        - "on": word
+          has:
+            - Change Password
+            - Logout
+            - XploitSPY
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

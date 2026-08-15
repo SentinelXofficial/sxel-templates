@@ -1,0 +1,16 @@
+id: pexip-detect
+brief:
+    title: Pexip - Detect
+    by: righettod
+    level: info
+    about: Pexip technology was detected.
+    label:
+        - tech
+        - pexip
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

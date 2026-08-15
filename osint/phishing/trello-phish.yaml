@@ -1,0 +1,25 @@
+id: trello-phish
+brief:
+    title: Trello phishing Detection
+    by: rxerium
+    level: info
+    about: A Trello phishing website was detected
+    label:
+        - phishing
+        - trello
+        - productivity
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Make the impossible, possible with Trello. The ultimate tool to boost your productivity. Escape the clutter and chaos—stay efficient with Inbox, Boards, and Planner from anywhere, even on mobile.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

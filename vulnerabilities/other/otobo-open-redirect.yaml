@@ -1,0 +1,17 @@
+id: otobo-open-redirect
+brief:
+    title: Otobo - Open Redirect
+    by: 0x_Akoko
+    level: medium
+    about: Otobo contains an open redirect vulnerability. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - redirect
+        - otobo
+        - huntr
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/otobo/index.pl?Action=ExternalURLJump;URL=http://www.interact.sh'
+      signs: []

@@ -1,0 +1,24 @@
+id: filezilla-phish
+brief:
+    title: filezilla phishing Detection
+    by: rxerium
+    level: info
+    about: A filezilla phishing website was detected
+    label:
+        - phishing
+        - filezilla
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - FileZilla - The free FTP solution
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

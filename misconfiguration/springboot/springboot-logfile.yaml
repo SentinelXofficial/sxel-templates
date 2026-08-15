@@ -1,0 +1,32 @@
+id: springboot-logfile
+brief:
+    title: Detects Springboot Logfile Actuator
+    by: DhiyaneshDK
+    level: low
+    about: Springboot Logfile Actuator is exposed.
+    label:
+        - misconfig
+        - springboot
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/logfile'
+        - '{{BaseURL}}/actuator/logfile'
+        - '{{BaseURL}}/actuators/logfile'
+      signs:
+        - "on": word
+          has:
+            - springframework.web.HttpRequestMethodNotSupportedException
+            - INFO
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

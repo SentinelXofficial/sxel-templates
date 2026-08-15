@@ -1,0 +1,22 @@
+id: hpe-system-management-login
+brief:
+    title: Hewlett Packard Enterprise System Management Login Panel - Detect
+    by: divya_mudgal
+    level: info
+    about: Hewlett Packard Enterprise System Management login page was detected.
+    label:
+        - hpe
+        - tech
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cpqlogin.htm'
+      signs:
+        - "on": word
+          has:
+            - HPE System Management Homepage
+            - /proxy/ssllogin
+          in: body
+          need: all

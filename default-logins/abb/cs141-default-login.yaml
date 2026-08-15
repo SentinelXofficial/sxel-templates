@@ -1,0 +1,35 @@
+id: cs141-default-login
+brief:
+    title: UPS Adapter CS141 SNMP Module Default Login
+    by: socketz
+    level: medium
+    about: UPS Adapter CS141 SNMP Module default login credentials were discovered.
+    label:
+        - hiawatha
+        - iot
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/login'
+      head:
+        Accept: application/json, text/plain, */*
+        Content-Type: application/json
+      body: '{"userName":"{{user}}","password":"{{pass}}"}'
+      signs:
+        - "on": word
+          has:
+            - accessToken
+            - application/json
+          in: header
+          need: all
+        - "on": word
+          has:
+            - accessToken
+            - AdminFirstTime
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

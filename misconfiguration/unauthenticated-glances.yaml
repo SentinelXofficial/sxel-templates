@@ -1,0 +1,24 @@
+id: unauthenticated-glances
+brief:
+    title: Glances Unauthenticated Panel
+    by: remonsec
+    level: low
+    about: Glance running web server mode & Unauthenticated leads system monitoring to info disclosure
+    label:
+        - exposure
+        - glances
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Monitor</title>
+          in: body
+          need: all

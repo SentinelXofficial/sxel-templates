@@ -1,0 +1,26 @@
+id: corebos-htaccess
+brief:
+    title: CoreBos - .htaccess File Exposure
+    by: arafatansari
+    level: info
+    about: CoreBos was discovered to have .htaccess file exposed to public which includes sensitive information.
+    label:
+        - exposure
+        - corebos
+        - huntr
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/htaccess.txt'
+      signs:
+        - "on": word
+          has:
+            - Options -Indexes
+            - <FilesMatch
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

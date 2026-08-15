@@ -1,0 +1,37 @@
+id: lesshst-history
+brief:
+    title: Less History - File Disclosure
+    by: kazet
+    level: low
+    about: LESSHST file is a Less History File. LESSHST file is a Less History File. Less is a terminal pager program on Unix, Windows, and Unix-like systems used to view (but not change) the contents of a te...
+    label:
+        - misconfig
+        - disclosure
+        - config
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.lesshst'
+      signs:
+        - "on": word
+          has:
+            - '.less-history-file:'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - <?xml
+            - <env
+            - application/javascript
+            - application/json
+            - application/xml
+            - html>
+            - text/html
+            - image/
+          in: response
+          need: all
+        - "on": status
+          status:
+            - 200

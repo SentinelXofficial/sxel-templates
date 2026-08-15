@@ -1,0 +1,17 @@
+id: superset-login
+brief:
+    title: Apache Superset Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Apache Superset login panel was detected.
+    label:
+        - panel
+        - superset
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login'
+      signs: []

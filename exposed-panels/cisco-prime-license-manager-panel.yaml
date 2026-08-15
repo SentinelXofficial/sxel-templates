@@ -1,0 +1,24 @@
+id: cisco-prime-license-manager-panel
+brief:
+    title: Cisco Prime License Manager - Detect
+    by: rxerium
+    level: info
+    about: Detected exposed Cisco Prime License Manager portals
+    label:
+        - cisco
+        - cisco-prime-license-manager
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/elm-admin/'
+      signs:
+        - "on": word
+          has:
+            - <title>Cisco Prime License Manager
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

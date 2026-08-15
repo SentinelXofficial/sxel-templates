@@ -1,0 +1,24 @@
+id: yii-error-page
+brief:
+    title: Yii Error Page - Detct
+    by: DhiyaneshDk
+    level: info
+    about: Yii (An application framework to handle and manage errors) error page detected.
+    label:
+        - exposure
+        - yii
+        - logs
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>yii\base\ErrorException</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 500

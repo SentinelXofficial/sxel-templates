@@ -1,0 +1,23 @@
+id: acunetix-panel-detect
+brief:
+    title: Acunetix Login Panel
+    by: joanbono
+    level: info
+    about: An Acunetix login panel was detected.
+    label:
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Acunetix</title>
+            - <acx-root></acx-root>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: microsoft-iis-8
+brief:
+    title: Microsoft Internet Information Services 8
+    by: dhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - tech
+        - iis
+        - microsoft
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Microsoft Internet Information Services 8</title>
+          in: body
+          need: all

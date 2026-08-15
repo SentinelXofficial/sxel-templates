@@ -1,0 +1,27 @@
+id: andover-continuum-panel
+brief:
+    title: Andover Continuum BMS - Login Panel
+    by: rxerium
+    level: info
+    about: Andover Continuum Building Management System panel has been detected.
+    label:
+        - panel
+        - andover
+        - continuum
+        - ics
+        - bms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Andover Continuum
+            - Andover Continuum Embedded WebServer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,16 @@
+id: google-service-info-plist
+brief:
+    title: GoogleService-Info.plist - Detect
+    by: cyberguy-somnath
+    level: info
+    about: The GoogleService-Info.plist file contains sensitive information about the Firebase project, including the Google App ID, Project ID, Client ID, Client Secret, and Reversed Client ID. This file is ...
+    label:
+        - config
+        - exposure
+        - firebase
+        - ios
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/GoogleService-Info.plist'
+      signs: []

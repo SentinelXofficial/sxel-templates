@@ -1,0 +1,24 @@
+id: symantec-phishing-panel
+brief:
+    title: Symantec Phishing Readiness Platform Console
+    by: andreluna
+    level: info
+    about: Management Console for Symantec Phishing Readiness Platform
+    label:
+        - symantec
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/users/sign_in'
+      signs:
+        - "on": word
+          has:
+            - <title>Symantec Phishing Readiness Platform</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

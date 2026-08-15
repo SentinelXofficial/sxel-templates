@@ -1,0 +1,27 @@
+id: kube-api-namespaces
+brief:
+    title: Kube API Namespaces
+    by: sharath
+    level: info
+    about: Scans for kube namespaces
+    label:
+        - tech
+        - k8s
+        - kubernetes
+        - devops
+        - kube
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/namespaces'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"NamespaceList":'
+            - '"items":'
+          in: body
+          need: all

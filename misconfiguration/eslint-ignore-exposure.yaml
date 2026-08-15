@@ -1,0 +1,28 @@
+id: eslint-ignore-exposure
+brief:
+    title: Eslint Ignore File Exposure
+    by: DhiyaneshDk
+    level: low
+    about: Eslint Ignore File was exposed.
+    label:
+        - eslintignore
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.eslintignore'
+      signs:
+        - "on": word
+          has:
+            - xtscancodes.js
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

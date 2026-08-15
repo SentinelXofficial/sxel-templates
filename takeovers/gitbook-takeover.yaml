@@ -1,0 +1,22 @@
+id: gitbook-takeover
+brief:
+    title: gitbook takeover detection
+    by: philippedelteil
+    level: high
+    about: gitbook takeover was detected.
+    label:
+        - takeover
+        - gitbook
+        - hackerone
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - If you need specifics, here's the error
+            - Domain not found
+          in: body
+          need: all

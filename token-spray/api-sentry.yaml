@@ -1,0 +1,22 @@
+id: api-sentry
+brief:
+    title: Sentry API Test
+    by: 0ri2N
+    level: info
+    about: ""
+    label:
+        - sentry
+        - tracing
+        - tracking
+        - monitoring
+        - token-spray
+moves:
+    - verb: GET
+      to:
+        - https://sentry.io/api/0/projects/
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,21 @@
+id: icewarp-open-redirect
+brief:
+    title: IceWarp - Open Redirect
+    by: uomogrande
+    level: medium
+    about: IceWarp open redirect vulnerabilities were detected. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - icewarp
+        - redirect
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}///interact.sh/%2F..'
+      signs:
+        - "on": word
+          has:
+            - IceWarp
+          in: header
+          need: all

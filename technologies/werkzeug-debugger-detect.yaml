@@ -1,0 +1,19 @@
+id: werkzeug-debugger-detect
+brief:
+    title: Werkzeug debugger console
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - tech
+        - werkzeug
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/console'
+      signs:
+        - "on": word
+          has:
+            - <h1>Interactive Console</h1>
+          in: body

@@ -1,0 +1,24 @@
+id: ems-login-panel
+brief:
+    title: EMS Login Panel - Detect
+    by: __Fazal
+    level: info
+    about: EMS login panel was detected.
+    label:
+        - panel
+        - ems
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/EMSWebClient/Login.aspx'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - EMS Web Client - Login
+          in: body
+          need: all

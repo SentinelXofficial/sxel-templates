@@ -1,0 +1,16 @@
+id: cpanel-config
+brief:
+    title: cPanel Configuration - File Disclosure
+    by: DhiyaneshDk
+    level: medium
+    about: cPanel configuration file is exposed and accessible, potentially leading to sensitive information disclosure.
+    label:
+        - cpanel
+        - config
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cpanel.config'
+      signs: []

@@ -1,0 +1,16 @@
+id: microfocus-iprint-detect
+brief:
+    title: Micro Focus iPrint Appliance - Detect
+    by: righettod
+    level: info
+    about: Micro Focus iPrint Appliance was detected.
+    label:
+        - tech
+        - microfocus
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/welcome/'
+      signs: []

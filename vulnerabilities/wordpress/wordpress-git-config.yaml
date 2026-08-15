@@ -1,0 +1,29 @@
+id: wordpress-git-config
+brief:
+    title: Wordpress Git Config
+    by: nerrorsec
+    level: info
+    about: Searches for the pattern /.git/config inside themes and plugins folder.
+    label:
+        - hackerone
+        - config
+        - git
+        - exposure
+        - wordpress
+        - wp-plugin
+        - wp-theme
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/.git/config'
+        - '{{BaseURL}}/wp-content/themes/.git/config'
+      signs:
+        - "on": word
+          has:
+            - '[core]'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

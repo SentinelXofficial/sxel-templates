@@ -1,0 +1,26 @@
+id: agentgpt-panel
+brief:
+    title: AgentGPT Panel - Detect
+    by: rxerium
+    level: info
+    about: AgentGPT was detected. AgentGPT was a browser-based autonomous AI agent platform that allows users to create, configure and deploy AI agents directly in the browser.
+    label:
+        - panel
+        - agentgpt
+        - agent
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>AgentGPT</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

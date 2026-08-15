@@ -1,0 +1,24 @@
+id: qualtrics-login
+brief:
+    title: Qualtrics Login Panel - Detect
+    by: tess
+    level: info
+    about: Qualtrics login panel was detected.
+    label:
+        - panel
+        - qualtrics
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Powered by Qualtrics
+            - Welcome to Qualtrics Certification
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: intel-amt-detect
+brief:
+    title: Intel Active Management Technology Server Detection
+    by: Shivam Kamboj
+    level: info
+    about: Detected Intel Active Management Technology (AMT) web interfaces by identifying the Server header in HTTP responses.
+    label:
+        - tech
+        - intel
+        - amt
+        - detect
+        - server
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

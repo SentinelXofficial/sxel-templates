@@ -1,0 +1,31 @@
+id: sequoiadb-default-login
+brief:
+    title: SequoiaDB Default Login
+    by: dhiyaneshDk
+    level: high
+    about: SequoiaDB default admin credentials were discovered.
+    label:
+        - default-login
+        - sequoiadb
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Accept: '*/*'
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+        SdbLanguage: en
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36
+        X-Requested-With: XMLHttpRequest
+      body: cmd=login&user={{username}}&passwd={{md5(password)}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '{ "errno": 0 }'
+          in: body
+          need: all

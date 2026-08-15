@@ -1,0 +1,28 @@
+id: netalertx-dashboard
+brief:
+    title: NetAlert X Admin Dashboard - Exposed
+    by: s4e-io
+    level: medium
+    about: Unauthorized access to the NetAlert X Admin Dashboard.
+    label:
+        - netalertx
+        - unauth
+        - dashboard
+        - misconfig
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/devices.php'
+      signs:
+        - "on": word
+          has:
+            - <title>NetAlertX
+            - Sign out</a>
+            - My Devices
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

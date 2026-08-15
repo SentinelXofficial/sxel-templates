@@ -1,0 +1,17 @@
+id: amprion-gridloss-panel
+brief:
+    title: Amprion Grid Loss Login Panel - Detect
+    by: righettod
+    level: info
+    about: Amprion Grid Loss login panel was detected.
+    label:
+        - panel
+        - amprion
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config/public'
+      signs: []

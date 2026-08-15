@@ -1,0 +1,26 @@
+id: flask-redis-docker
+brief:
+    title: Flask Redis Queue Docker - Exposure
+    by: DhiyaneshDk
+    level: low
+    about: Flask Redis Queue Docker is exposed.
+    label:
+        - misconfig
+        - exposure
+        - flask
+        - redis
+        - docker
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Flask + Redis Queue + Docker</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

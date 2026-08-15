@@ -1,0 +1,23 @@
+id: somfy-login
+brief:
+    title: Somfy Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Somfy login panel was detected.
+    label:
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/m_login.htm'
+      signs:
+        - "on": word
+          has:
+            - Home motion by Somfy
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

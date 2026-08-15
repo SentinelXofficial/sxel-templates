@@ -1,0 +1,31 @@
+id: readme-md
+brief:
+    title: README.md file disclosure
+    by: ambassify
+    level: info
+    about: Internal documentation file often used in projects which can contain sensitive information.
+    label:
+        - exposure
+        - markdown
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/README.md'
+      signs:
+        - "on": word
+          has:
+            - '#'
+            - '##'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/markdown
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

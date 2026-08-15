@@ -1,0 +1,27 @@
+id: bitbucket-pipelines
+brief:
+    title: BitBucket Pipelines Configuration Exposure
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - exposure
+        - bitbucket
+        - devops
+        - cicd
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/bitbucket-pipelines.yml'
+      signs:
+        - "on": word
+          has:
+            - 'pipelines:'
+            - 'step:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,35 @@
+id: exposed-gitignore
+brief:
+    title: Gitignore Config - Detect
+    by: TheZakMan
+    level: info
+    about: Gitignore configuration information was detected.
+    label:
+        - exposure
+        - tenable
+        - config
+        - git
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.gitignore'
+        - '{{BaseURL}}/assets/.gitignore'
+        - '{{BaseURL}}/includes/.gitignore'
+      signs:
+        - "on": word
+          has:
+            - MongoDB over HTTP on the native
+            - application/javascript
+            - application/x-javascript
+            - application/json
+            - application/xml
+            - text/xml
+            - html
+            - <!doctype
+            - <script
+            - <meta
+            - image/
+            - Response xmlns
+          in: response
+          need: all

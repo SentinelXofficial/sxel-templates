@@ -1,0 +1,24 @@
+id: acrolinx-dashboard
+brief:
+    title: Acrolinx Dashboard
+    by: ffffffff0x
+    level: info
+    about: An Acrolinx Analytics dashboard was detected.
+    label:
+        - acrolinx
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Acrolinx Dashboard</title>
+            - Acrolinx</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: hugegraph-detect
+brief:
+    title: HugeGraph - Detect
+    by: rxerium
+    level: info
+    about: A huge graph technology was detected.
+    label:
+        - hugegraph
+        - tech
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '"service":"hugegraph"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

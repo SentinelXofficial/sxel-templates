@@ -1,0 +1,28 @@
+id: burp-rest-api-detect
+brief:
+    title: Burp Rest API Server Running
+    by: joanbono
+    level: info
+    about: ""
+    label:
+        - burp
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v0.1/'
+      signs:
+        - "on": word
+          has:
+            - <title>Burp API</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - X-Burp-Version
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

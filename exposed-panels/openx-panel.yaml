@@ -1,0 +1,28 @@
+id: openx-panel
+brief:
+    title: OpenX/Revive Adserver Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: OpenX login panel was detected. Note that OpenX is now a Revive Adserver.
+    label:
+        - panel
+        - openx
+        - revive
+        - adserver
+        - login
+        - revive-adserver
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/www/admin/index.php'
+        - '{{BaseURL}}/admin/index.php'
+      signs:
+        - "on": word
+          has:
+            - <title>OpenX</title>
+            - <title>Revive Adserver</title>
+          in: body
+        - "on": status
+          status:
+            - 200

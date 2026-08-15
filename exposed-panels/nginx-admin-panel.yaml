@@ -1,0 +1,20 @@
+id: nginx-admin-panel
+brief:
+    title: Nginx Admin Manager Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Nginx Admin Manager login panel was detected.
+    label:
+        - panel
+        - nginx
+        - admin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 401
+            - 200

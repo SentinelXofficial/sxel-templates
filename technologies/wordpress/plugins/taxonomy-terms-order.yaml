@@ -1,0 +1,17 @@
+id: wordpress-taxonomy-terms-order
+brief:
+    title: Category Order and Taxonomy Terms Order Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/taxonomy-terms-order/readme.txt'
+      signs: []

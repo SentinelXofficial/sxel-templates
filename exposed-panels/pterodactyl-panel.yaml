@@ -1,0 +1,30 @@
+id: pterodactyl-panel
+brief:
+    title: Pterodactyl game server - Panel
+    by: darses
+    level: info
+    about: Detects Pterodactyl game server management panel.
+    label:
+        - detect
+        - pterodactyl
+        - panel
+        - oos
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - pterodactyl_session=
+          in: header
+          need: all
+        - "on": word
+          has:
+            - window.SiteConfiguration
+          in: body
+          need: all

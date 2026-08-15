@@ -1,0 +1,28 @@
+id: gocd-cruise-configuration
+brief:
+    title: GoCd Cruise Configuration disclosure
+    by: dhiyaneshDk
+    level: high
+    about: GoCd Cruise Configuration is exposed.
+    label:
+        - go
+        - gocd
+        - config
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/go/add-on/business-continuity/api/cruise_config'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - server agentAutoRegisterKey
+            - webhookSecret
+            - tokenGenerationKey
+          in: body
+          need: all

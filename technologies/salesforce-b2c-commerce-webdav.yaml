@@ -1,0 +1,25 @@
+id: salesforce-b2c-commerce-webdav
+brief:
+    title: Salesforce B2C Commerce WebDAV - Detection
+    by: batutahibnu17
+    level: info
+    about: Detects Salesforce B2C Commerce WebDAV by checking for specific patterns in a 404 response.
+    label:
+        - salesforce
+        - tech
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - /waroot/style.css
+            - /waroot/system_arrow.gif
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

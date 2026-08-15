@@ -1,0 +1,20 @@
+id: juniper-panel
+brief:
+    title: Juniper J-Web Panel - Detect
+    by: bhutch
+    level: info
+    about: Juniper J-Web panel was detected.
+    label:
+        - panel
+        - juniper
+        - vpn
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

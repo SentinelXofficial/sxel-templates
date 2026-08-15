@@ -1,0 +1,23 @@
+id: api-web3storage
+brief:
+    title: Web3 Storage API Test
+    by: daffainfo
+    level: info
+    about: File Sharing and Storage for Free with 1TB Space
+    label:
+        - token-spray
+        - web3storage
+        - intrusive
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://api.web3.storage/user/uploads'
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"created"'
+            - '"cid"'
+          in: body
+          need: all

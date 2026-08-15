@@ -1,0 +1,26 @@
+id: keybank-phish
+brief:
+    title: KeyBank phishing Detection
+    by: rxerium
+    level: info
+    about: A KeyBank phishing website was detected
+    label:
+        - phishing
+        - keybank
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - KeyBank
+            - <title>KeyBank | Banking, Credit Cards, Mortgages, and Loans
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

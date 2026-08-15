@@ -1,0 +1,28 @@
+id: crestron-airmedia-default-login
+brief:
+    title: Crestron Airmedia 2.0 - Default Login
+    by: Andrew Lentz
+    level: high
+    about: Crestron AirMedia 2.0 devices contain default credentials (admin:admin) that allow unauthorized administrative access to device configuration and control.
+    label:
+        - crestron
+        - default-login
+        - iot
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/userlogin.html'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/userlogin.html'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: login={{username}}&passwd={{password}}
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webView/Network'
+      signs: []

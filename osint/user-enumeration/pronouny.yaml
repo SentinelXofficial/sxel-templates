@@ -1,0 +1,24 @@
+id: pronouny
+brief:
+    title: Pronouny User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Pronouny user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - pronouny
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://pronouny.xyz/api/users/profile/username/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - username
+          in: body
+          need: all

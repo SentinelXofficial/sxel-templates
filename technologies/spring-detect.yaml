@@ -1,0 +1,24 @@
+id: spring-detect
+brief:
+    title: Java Spring Detection
+    by: Adam Crosser
+    level: info
+    about: ""
+    label:
+        - tech
+        - java
+        - spring
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/error'
+      signs:
+        - "on": word
+          has:
+            - '"status":999'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 500

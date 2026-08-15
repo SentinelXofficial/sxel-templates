@@ -1,0 +1,27 @@
+id: laravel-pulse-unauth
+brief:
+    title: Laravel Pulse - Unauthenticated Dashboard Access
+    by: moamenbasel
+    level: medium
+    about: Laravel Pulse monitoring dashboard is accessible without authentication. Pulse displays server performance metrics, slow queries, user activity, cache hit rates, and exception logs that could aid a...
+    label:
+        - laravel
+        - pulse
+        - monitoring
+        - misconfig
+        - unauth
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/pulse'
+      signs:
+        - "on": word
+          has:
+            - Laravel Pulse
+            - livewire
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

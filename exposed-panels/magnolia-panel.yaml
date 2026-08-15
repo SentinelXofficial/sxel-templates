@@ -1,0 +1,27 @@
+id: magnolia-panel
+brief:
+    title: Magnolia CMS Login Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Magnolia CMS login panel was detected.
+    label:
+        - magnolia
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/.magnolia/admincentral'
+      signs:
+        - "on": word
+          has:
+            - Magnolia is a registered trademark
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

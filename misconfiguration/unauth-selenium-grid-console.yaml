@@ -1,0 +1,26 @@
+id: unauth-selenium-grid-console
+brief:
+    title: Selenium Grid Console - Detect
+    by: pussycat0x
+    level: info
+    about: Selenium Grid Console panel was detected.
+    label:
+        - misconfig
+        - unauth
+        - selenium
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/grid/console'
+        - '{{BaseURL}}/console'
+      signs:
+        - "on": word
+          has:
+            - Grid Console
+            - view config
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

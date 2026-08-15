@@ -1,0 +1,21 @@
+id: harbor-panel
+brief:
+    title: Harbor Login Panel - Detect
+    by: daffainfo
+    level: info
+    about: Harbor login panel was detected.
+    label:
+        - panel
+        - harbor
+        - linuxfoundation
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v2.0/systeminfo'
+        - '{{BaseURL}}/api/systeminfo'
+        - '{{BaseURL}}/account/sign-in'
+        - '{{BaseURL}}/harbor/sign-in'
+      signs: []

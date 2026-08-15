@@ -1,0 +1,24 @@
+id: threatq-login
+brief:
+    title: ThreatQ Login Panel - Detect
+    by: idealphase
+    level: info
+    about: ThreatQ login panel was detected.
+    label:
+        - panel
+        - threatq
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title ng-bind="PageTitle.getTitle()">ThreatQ</title>
+            - <script src="/assets/js/threatq.min.js
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

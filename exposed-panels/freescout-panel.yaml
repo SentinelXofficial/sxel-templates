@@ -1,0 +1,17 @@
+id: freescout-panel
+brief:
+    title: FreeScout Panel - Detect
+    by: s4e-io
+    level: info
+    about: FreeScout panel was discovered.
+    label:
+        - panel
+        - login
+        - freescout
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs: []

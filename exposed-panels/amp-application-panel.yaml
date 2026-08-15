@@ -1,0 +1,26 @@
+id: amp-application-panel
+brief:
+    title: Application Management Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Application Management Panel was detected.
+    label:
+        - panel
+        - amp
+        - cubecoders
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>AMP - Application Management Panel</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

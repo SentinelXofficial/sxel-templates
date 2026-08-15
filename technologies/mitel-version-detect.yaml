@@ -1,0 +1,18 @@
+id: mitel-version-detect
+brief:
+    title: Mitel MiCollab Unified Communications Server (UCS) - Detect
+    by: aushack
+    level: info
+    about: Mitel MiCollab UCS version disclosure via the /ucs/micollab/version.json endpoint.
+    label:
+        - mitel
+        - micollab
+        - ucs
+        - version
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ucs/micollab/version.json'
+      signs: []

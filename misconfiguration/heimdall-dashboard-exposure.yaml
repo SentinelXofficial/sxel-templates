@@ -1,0 +1,19 @@
+id: heimdall-dashboard-exposure
+brief:
+    title: Heimdall Application Dashboard - Unauthenticated Access
+    by: 0x_Akoko
+    level: medium
+    about: Detected The Heimdall Application Dashboard was accessible without authentication.When it was deployed without the protection, the full dashboard-including all linked internal services and API cred...
+    label:
+        - heimdall
+        - exposure
+        - unauth
+        - misconfig
+        - dashboard
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Accept: text/html
+      signs: []

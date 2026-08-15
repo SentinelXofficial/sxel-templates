@@ -1,0 +1,28 @@
+id: xnat-login
+brief:
+    title: XNAT Login Panel - Detect
+    by: 0x_Akoko
+    level: info
+    about: XNAT login panel was detected.
+    label:
+        - xnat
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/app/template/Login.vm'
+      signs:
+        - "on": word
+          has:
+            - <title>XNAT</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

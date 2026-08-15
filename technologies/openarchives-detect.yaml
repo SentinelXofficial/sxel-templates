@@ -1,0 +1,25 @@
+id: openarchives-detect
+brief:
+    title: openarchives - Detection
+    by: ZeroChill
+    level: info
+    about: Detects Open Archives Initiative instance
+    label:
+        - tech
+        - openarchive
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - OAI-PMH
+            - www.openarchives.org
+            - </OAI-PMH
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

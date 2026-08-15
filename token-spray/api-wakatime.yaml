@@ -1,0 +1,21 @@
+id: api-wakatime
+brief:
+    title: WakaTime CI API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - wakatime
+moves:
+    - verb: GET
+      to:
+        - https://wakatime.com/api/v1/users/current/projects/?api_key={{token}}
+      signs:
+        - "on": word
+          has:
+            - '"data":'
+            - '"seconds":'
+            - '"is_up_to_date":'
+          in: body
+          need: all

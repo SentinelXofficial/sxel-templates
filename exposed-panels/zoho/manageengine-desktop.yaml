@@ -1,0 +1,25 @@
+id: manageengine-desktop
+brief:
+    title: ZOHO ManageEngine Desktop Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: ZOHO ManageEngine desktop panel was detected.
+    label:
+        - panel
+        - zoho
+        - manageengine
+        - zohocorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/configurations'
+      signs:
+        - "on": word
+          has:
+            - <title>ManageEngine Desktop Central 10</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

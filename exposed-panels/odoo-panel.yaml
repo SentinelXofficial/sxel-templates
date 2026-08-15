@@ -1,0 +1,37 @@
+id: odoo-panel
+brief:
+    title: Odoo - Panel Detect
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - login
+        - panel
+        - odoo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web/login'
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Odoo</title>
+            - odoo.session_info
+            - web.layout.odooscript
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Log in
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

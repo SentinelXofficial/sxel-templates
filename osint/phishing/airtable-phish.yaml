@@ -1,0 +1,25 @@
+id: airtable-phish
+brief:
+    title: Airtable phishing Detection
+    by: rxerium
+    level: info
+    about: A Airtable phishing website was detected
+    label:
+        - phishing
+        - airtable
+        - productivity
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Airtable: AI App Building for Enterprise - Airtable'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

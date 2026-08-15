@@ -1,0 +1,37 @@
+id: bitrix-log-file-disclosure
+brief:
+    title: Bitrix Site Manager - Log File Disclosure
+    by: 0x_Akoko
+    level: medium
+    about: Detected Bitrix Site Manager log files, potentially exposing sensitive information including database credentials, file paths, SQL queries, and user session data.
+    label:
+        - exposure
+        - bitrix
+        - logs
+        - files
+        - disclosure
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/bitrix/modules/updater.log'
+        - '{{BaseURL}}/bitrix/modules/updater_partner.log'
+      signs:
+        - "on": word
+          has:
+            - LICENSE_KEY
+            - CUpdateClient
+            - UPD_SUCCESS
+            - UPD_ERROR
+            - SUPD_VER
+            - bitm_
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

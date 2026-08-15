@@ -1,0 +1,24 @@
+id: cudatel-panel
+brief:
+    title: CudaTel Login Panel - Detect
+    by: arafatansari
+    level: info
+    about: CudaTel login panel was detected.
+    label:
+        - panel
+        - cudatel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - CudaTel Communications Server
+            - alt="CudaTel
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

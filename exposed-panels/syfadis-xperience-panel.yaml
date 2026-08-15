@@ -1,0 +1,17 @@
+id: syfadis-xperience-panel
+brief:
+    title: Syfadis Xperience Login Panel - Detect
+    by: righettod
+    level: info
+    about: Syfadis Xperience login panel was detected.
+    label:
+        - panel
+        - syfadis
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Directory/Login/Login.aspx'
+      signs: []

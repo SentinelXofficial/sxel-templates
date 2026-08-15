@@ -1,0 +1,28 @@
+id: nuuo-nvr-default-login
+brief:
+    title: NUUO NVR - Default Login
+    by: ritikchaddha
+    level: high
+    about: NUUO NVR systems are often deployed with default credentials (admin:admin).This template detects systems using these default credentials.
+    label:
+        - nuuo
+        - nvr
+        - default-login
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.php'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: language=en&user={{username}}&pass={{password}}&submit=Login
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setting.php'
+      signs: []

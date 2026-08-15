@@ -1,0 +1,24 @@
+id: rekognition-image-validation
+brief:
+    title: Rekognition Image Validation Debug UI Panel - Detect
+    by: tess
+    level: info
+    about: Rekognition Image Validation UI panel was detected.
+    label:
+        - misconfig
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Rekognition Image Validation Debug UI</title>
+            - Optional Parameters
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

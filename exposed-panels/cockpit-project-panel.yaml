@@ -1,0 +1,16 @@
+id: cockpit-project-panel
+brief:
+    title: Cockpit Project Login Panel - Detect
+    by: righettod
+    level: info
+    about: Cockpit Project products was detected.
+    label:
+        - panel
+        - cockpit
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

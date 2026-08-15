@@ -1,0 +1,26 @@
+id: revolut-phish
+brief:
+    title: Revolut phishing Detection
+    by: rxerium
+    level: info
+    about: A Revolut phishing website was detected
+    label:
+        - phishing
+        - revolut
+        - fintech
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Revolut
+            - Log in
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

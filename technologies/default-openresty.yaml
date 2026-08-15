@@ -1,0 +1,19 @@
+id: default-openresty
+brief:
+    title: OpenResty Default Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - openresty
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Welcome to OpenResty!</title>
+          in: body

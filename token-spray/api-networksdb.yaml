@@ -1,0 +1,23 @@
+id: api-networksdb
+brief:
+    title: NetworksDB API Test
+    by: 0xpugal
+    level: info
+    about: US Address Verification
+    label:
+        - token-spray
+        - networkdb
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://networksdb.io/api/key'
+      head:
+        X-Api-Key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"subscription_id":'
+            - '"req_limit":'
+            - '"resets_at":'
+          in: body
+          need: all

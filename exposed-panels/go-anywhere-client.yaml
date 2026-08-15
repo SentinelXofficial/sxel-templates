@@ -1,0 +1,21 @@
+id: go-anywhere-client
+brief:
+    title: GoAnywhere Web Client Login Panel - Detect
+    by: iamthefrogy
+    level: info
+    about: GoAnywhere Web Client login panel was detected.
+    label:
+        - panel
+        - goanywhere
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webclient/Login.xhtml'
+      signs:
+        - "on": word
+          has:
+            - Powered by GoAnywhere
+            - GoAnywhere.com
+          in: body

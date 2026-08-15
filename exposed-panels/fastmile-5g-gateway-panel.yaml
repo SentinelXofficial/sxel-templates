@@ -1,0 +1,27 @@
+id: fastmile-5g-gateway-panel
+brief:
+    title: FastMile 5G Gateway Panel - Detect
+    by: Th3l0newolf
+    level: info
+    about: FastMile 5G Gateway web interface was discovered.
+    label:
+        - panel
+        - login
+        - router
+        - 5g
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web_whw/'
+        - '{{BaseURL}}/web_whw/overview'
+      signs:
+        - "on": word
+          has:
+            - <title>FastMile 5G Gateway</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

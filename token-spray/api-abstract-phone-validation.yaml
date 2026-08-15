@@ -1,0 +1,21 @@
+id: api-abstract-phone-validation
+brief:
+    title: Abstract Api Phone Validation Test
+    by: daffainfo
+    level: info
+    about: Improve your contact rate and clean your lists with Abstract's industry-leading phone number validation API
+    label:
+        - token-spray
+        - abstractapi
+moves:
+    - verb: GET
+      to:
+        - https://phonevalidation.abstractapi.com/v1/?api_key={{token}}&number=14154582468
+      signs:
+        - "on": word
+          has:
+            - '"number":'
+            - '"is_valid_number":'
+            - '"local_format":'
+          in: body
+          need: all

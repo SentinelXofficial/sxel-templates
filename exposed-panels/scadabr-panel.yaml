@@ -1,0 +1,29 @@
+id: scadabr-panel
+brief:
+    title: ScadaBR - Login Panel
+    by: rxerium
+    level: info
+    about: ScadaBR is an open-source SCADA system based on Mango Automation, widely
+    label:
+        - panel
+        - scada
+        - ics
+        - scadabr
+        - mango
+        - open-source
+        - latin-america
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ScadaBR</title>
+            - ScadaBR Software
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

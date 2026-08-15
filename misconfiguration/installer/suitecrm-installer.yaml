@@ -1,0 +1,30 @@
+id: suitecrm-installer
+brief:
+    title: SuiteCRM Installer Exposure
+    by: DhiyaneshDk
+    level: high
+    about: SuiteCRM is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - suitecrm
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install.php'
+      signs:
+        - "on": word
+          has:
+            - 'SuiteCRM Setup Wizard:'
+            - Checking Environment
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

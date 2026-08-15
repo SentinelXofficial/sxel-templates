@@ -1,0 +1,27 @@
+id: nextgen-gallery-pro-error-log
+brief:
+    title: WordPress NextGEN Gallery Pro - Error Log Disclosure
+    by: ritikchaddha
+    level: medium
+    about: The NextGEN Gallery Pro plugin for WordPress may expose debug/error log files that contain sensitive information including file paths, database queries, and potentially credentials. These log files...
+    label:
+        - wordpress
+        - wp
+        - wp-plugin
+        - nextgen-gallery-pro
+        - log
+        - exposure
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - nextgen
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/debug.log'
+      signs: []

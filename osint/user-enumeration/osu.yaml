@@ -1,0 +1,19 @@
+id: osu
+brief:
+    title: Osu! User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Osu! user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - osu
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://osu.ppy.sh/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 302

@@ -1,0 +1,28 @@
+id: nzbget-panel
+brief:
+    title: NZBGet Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: NZBGet login panel was detected.
+    label:
+        - panel
+        - nzbget
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>NZBGet</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

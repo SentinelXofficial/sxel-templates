@@ -1,0 +1,17 @@
+id: maestro-listserv-panel
+brief:
+    title: Maestro LISTSERV - Detect
+    by: righettod
+    level: info
+    about: Maestro LISTSERV panel was detected.
+    label:
+        - panel
+        - maestro
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/lui/'
+      signs: []

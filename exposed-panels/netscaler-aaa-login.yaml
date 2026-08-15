@@ -1,0 +1,24 @@
+id: netscaler-aaa-login
+brief:
+    title: NetScaler AAA Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: NetScaler AAA login panel was detected.
+    label:
+        - panel
+        - netscaler
+        - login
+        - edb
+        - citrix
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/logon/LogonPoint/tmindex.html'
+      signs:
+        - "on": word
+          has:
+            - NetScaler AAA</title>
+            - _ctxstxt_NetscalerAAA
+          in: body

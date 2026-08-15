@@ -1,0 +1,24 @@
+id: patreon-phish
+brief:
+    title: Patreon phishing Detection
+    by: rxerium
+    level: info
+    about: A Patreon phishing website was detected
+    label:
+        - phishing
+        - patreon
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Patreon is the best place to build community with your biggest fans, share exclusive work, and turn your passion into a lasting creative business.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

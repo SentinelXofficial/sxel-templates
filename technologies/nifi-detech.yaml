@@ -1,0 +1,30 @@
+id: apache-nifi-detect
+brief:
+    title: Apache NiFi detect
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - tech
+        - apache
+        - nifi
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/access/config'
+        - '{{BaseURL}}/controller/config'
+        - '{{BaseURL}}/controller/registry-clients'
+        - '{{BaseURL}}/counters'
+        - '{{BaseURL}}/flow/registries'
+        - '{{BaseURL}}/system-diagnostics'
+        - '{{BaseURL}}/nifi-api/access/config'
+      signs:
+        - "on": word
+          has:
+            - supportsLogin
+            - disconnectedNodeAcknowledged
+          in: body
+        - "on": status
+          status:
+            - 200

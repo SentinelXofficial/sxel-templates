@@ -1,0 +1,27 @@
+id: moxa-vpn-router-panel
+brief:
+    title: Moxa OnCell VPN - Login Panel
+    by: biero-el-corridor
+    level: info
+    about: Moxa OnCell VPN panel was discovered.
+    label:
+        - moxo
+        - oncel
+        - vpn
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Login.asp'
+      signs:
+        - "on": word
+          has:
+            - <title>Moxa OnCell
+            - Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

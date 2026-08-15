@@ -1,0 +1,22 @@
+id: seats-login
+brief:
+    title: Seats Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Seats login panel was detected.
+    label:
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>seats.io  | login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: teespring-phish
+brief:
+    title: Teespring phishing Detection
+    by: rxerium
+    level: info
+    about: A Teespring phishing website was detected
+    label:
+        - phishing
+        - teespring
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Teespring
+            - Teespring is the free and easy way to bring your ideas to life. Design your product, set a price, and start selling. Teespring handles the rest - production, shipping, and customer service - and you keep the profit!
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

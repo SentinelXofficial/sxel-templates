@@ -1,0 +1,24 @@
+id: api-onelogin
+brief:
+    title: OneLogin API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - onelogin
+moves:
+    - verb: GET
+      to:
+        - https://api.us.onelogin.com/api/2/apps
+        - https://api.eu.onelogin.com/api/2/apps
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"id":'
+            - '"connector_id":'
+            - '"auth_method":'
+          in: body
+          need: all

@@ -1,0 +1,28 @@
+id: tyk-gateway-detect
+brief:
+    title: Tyk API Gateway - Detection
+    by: davidfegyver
+    level: info
+    about: Detects if the application uses Tyk API Gateway
+    label:
+        - tyk
+        - gateway
+        - tech
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/hello'
+      signs:
+        - "on": word
+          has:
+            - Tyk GW
+            - description
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all

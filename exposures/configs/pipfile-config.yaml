@@ -1,0 +1,26 @@
+id: pipfile-config
+brief:
+    title: Pipfile Config - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Pipfile configuration information was detected.
+    label:
+        - exposure
+        - pip
+        - devops
+        - cicd
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Pipfile'
+      signs:
+        - "on": word
+          has:
+            - '[[source]]'
+            - '[packages]'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

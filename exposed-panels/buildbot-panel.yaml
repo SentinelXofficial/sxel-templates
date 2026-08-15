@@ -1,0 +1,23 @@
+id: buildbot-panel
+brief:
+    title: Buildbot Panel - Detect
+    by: thardt-praetorian
+    level: info
+    about: Buildbot panel was detected.
+    label:
+        - panel
+        - buildbot
+        - cicd
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - buildbot_config
+          in: body
+        - "on": status
+          status:
+            - 200

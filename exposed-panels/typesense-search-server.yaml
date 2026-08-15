@@ -1,0 +1,16 @@
+id: typesense-search-server
+brief:
+    title: Typesense Search Server - Detect
+    by: ChrisJr404
+    level: info
+    about: Detected Typesense was an open-source typo-tolerant search engine often self-hosted on TCP 8108.
+    label:
+        - tech
+        - typesense
+        - search
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/health'
+      signs: []

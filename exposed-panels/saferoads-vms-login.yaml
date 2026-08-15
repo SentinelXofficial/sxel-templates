@@ -1,0 +1,19 @@
+id: saferoads-vms-login
+brief:
+    title: Saferoads VMS Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Saferoads VMS login panel was detected.
+    label:
+        - panel
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - Saferoads VMS
+          in: body

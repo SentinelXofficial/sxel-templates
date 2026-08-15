@@ -1,0 +1,20 @@
+id: crypto-address-detect
+brief:
+    title: Exposed Cryptocurrency Wallet Address
+    by: rxerium
+    level: info
+    about: Detected Bitcoin, Monero, Ethereum, or XRP wallet addresses were identified in webpage content.
+    label:
+        - crypto
+        - bitcoin
+        - monero
+        - ethereum
+        - xrp
+        - ripple
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

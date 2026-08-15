@@ -1,0 +1,28 @@
+id: openfire-admin-panel
+brief:
+    title: Openfire Admin Console Login Panel - Detect
+    by: theamanrawat
+    level: info
+    about: Openfire Admin Console login panel was detected.
+    label:
+        - panel
+        - openfire
+        - admin
+        - console
+        - igniterealtime
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - <title>Openfire Admin Console
+            - 'Openfire, Version:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

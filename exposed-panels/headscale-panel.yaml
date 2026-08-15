@@ -1,0 +1,25 @@
+id: headscale-panel
+brief:
+    title: Headscale - Login Panel
+    by: rxerium
+    level: info
+    about: Headscale is an open-source, self-hosted implementation of the Tailscale control server.
+    label:
+        - panel
+        - headscale
+        - vpn
+        - wireguard
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Headscale
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

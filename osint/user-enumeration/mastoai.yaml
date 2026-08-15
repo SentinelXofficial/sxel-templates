@@ -1,0 +1,24 @@
+id: mastoai
+brief:
+    title: Masto.ai User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Masto.ai user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastoai
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://masto.ai/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '@masto.ai) - Mastodon</title>'
+          in: body
+          need: all

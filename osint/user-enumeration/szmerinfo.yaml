@@ -1,0 +1,24 @@
+id: szmerinfo
+brief:
+    title: Szmer.info User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Szmer.info user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - szmerinfo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://szmer.info/u/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Joined
+          in: body
+          need: all

@@ -1,0 +1,26 @@
+id: php-composer-binary
+brief:
+    title: PHP Composer Binary - Exposure
+    by: mayank_pandey01
+    level: info
+    about: This Nuclei template checks if the specified endpoints have publically accessible PHP Composer Binary.
+    label:
+        - php
+        - composer
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/composer'
+      signs:
+        - "on": word
+          has:
+            - /usr/bin/env php
+            - <?php
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,21 @@
+id: casdoor-default-login
+brief:
+    title: Casdoor - Default Admin Credentials
+    by: 0x_Akoko
+    level: high
+    about: Detected Casdoor platform was found to have been using the default administrator credentials (admin:123). An attacker could have gained full administrative access to manage organizations, users, ap...
+    label:
+        - casdoor
+        - default-login
+        - auth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/login'
+      body: '{"application":"app-built-in","organization":"built-in","username":"{{username}}","password":"{{password}}","autoSignin":true,"signinMethod":"Password","type":"login"}'
+      signs: []

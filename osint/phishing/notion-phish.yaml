@@ -1,0 +1,24 @@
+id: notion-phish
+brief:
+    title: notion phishing Detection
+    by: rxerium
+    level: info
+    about: A notion phishing website was detected
+    label:
+        - phishing
+        - notion
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Your connected workspace for wiki, docs &amp; projects | Notion
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

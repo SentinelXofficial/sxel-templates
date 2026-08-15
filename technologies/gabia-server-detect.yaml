@@ -1,0 +1,23 @@
+id: gabia-server-detect
+brief:
+    title: Gabia Server - Detection
+    by: jadu101
+    level: info
+    about: Detects gabia web server.
+    label:
+        - tech
+        - gabia
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Server: gabia'
+          in: header
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: duckduckgo-phish
+brief:
+    title: duckduckgo phishing Detection
+    by: rxerium
+    level: info
+    about: A duckduckgo phishing website was detected
+    label:
+        - phishing
+        - duckduckgo
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - DuckDuckGo — Privacy, simplified.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: independent-academia
+brief:
+    title: Independent academia User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Independent academia user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - independent-academia
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://independent.academia.edu/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '- Academia.edu'
+          in: body
+          need: all

@@ -1,0 +1,15 @@
+id: maian-cart-detect
+brief:
+    title: Maian Cart Detection
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - tech
+        - maian
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/favicon.ico'
+      signs: []

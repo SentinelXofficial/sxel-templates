@@ -1,0 +1,25 @@
+id: oracle-people-enterprise
+brief:
+    title: Oracle PeopleSoft Enterprise Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Oracle PeopleSoft Enterprise login panel detected.
+    label:
+        - oracle
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - /signon.html
+            - <meta HTTP-EQUIV='Refresh' CONTENT='1
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

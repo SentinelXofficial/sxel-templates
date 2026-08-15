@@ -1,0 +1,18 @@
+id: wordpress-wps-hide-login
+brief:
+    title: WPS Hide Login Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wps-hide-login/readme.txt'
+      signs: []

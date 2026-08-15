@@ -1,0 +1,29 @@
+id: canon-c3325-default-login
+brief:
+    title: Canon R-ADV C3325 - Default-Login
+    by: ritikchaddha
+    level: high
+    about: ""
+    label:
+        - canon
+        - c3325
+        - default-login
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: uri=%2F&user_type_generic=true&deptid={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - writeln('Log Out
+            - 'Remote UI : Portal'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

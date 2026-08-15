@@ -1,0 +1,29 @@
+id: laravel-sanctum-misconfig
+brief:
+    title: Laravel Sanctum - Stateful Domain CSRF Misconfiguration
+    by: moamenbasel
+    level: medium
+    about: Laravel Sanctum's SPA authentication uses cookie-based session authentication for first-party single-page applications. The /sanctum/csrf-cookie endpoint issues XSRF-TOKEN cookies to requesting ori...
+    label:
+        - laravel
+        - sanctum
+        - csrf
+        - misconfig
+        - cors
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sanctum/csrf-cookie'
+      head:
+        Origin: https://evil.oast.pro
+        Referer: https://evil.oast.pro
+      signs:
+        - "on": word
+          has:
+            - XSRF-TOKEN
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+            - 204

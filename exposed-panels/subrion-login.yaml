@@ -1,0 +1,24 @@
+id: subrion-login
+brief:
+    title: Subrion Admin Panel Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Subrion Admin Panel login panel was detected.
+    label:
+        - panel
+        - subrion
+        - intelliants
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/panel'
+      signs:
+        - "on": word
+          has:
+            - <h1>Welcome to<br>Subrion Admin Panel</h1>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

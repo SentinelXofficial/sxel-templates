@@ -1,0 +1,19 @@
+id: sql-server-reporting
+brief:
+    title: Detect Microsoft SQL Server Reporting
+    by: puzzlepeaches
+    level: info
+    about: ""
+    label:
+        - tech
+        - microsoft
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Reports/Pages/Folder.aspx'
+      signs:
+        - "on": word
+          has:
+            - Report Manager
+          in: body

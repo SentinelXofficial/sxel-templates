@@ -1,0 +1,24 @@
+id: api-chaos
+brief:
+    title: Chaos API Test
+    by: 0ri2N
+    level: info
+    about: ""
+    label:
+        - recon
+        - chaos
+        - token-spray
+        - projectdiscovery
+moves:
+    - verb: GET
+      to:
+        - https://dns.projectdiscovery.io/dns/projectdiscovery.io
+      head:
+        Authorization: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"domain":'
+            - '"subdomains":'
+          in: body
+          need: all

@@ -1,0 +1,15 @@
+id: weak-csp-detect
+brief:
+    title: Weak Content Security Policy - Detect
+    by: pussycat0x
+    level: info
+    about: Detected misconfigured CSP directives containing unsafe and overly permissive keywords that weakened resource loading restrictions. This configuration allowed high-risk script behaviors, resulting ...
+    label:
+        - csp
+        - misconfig
+        - headers
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

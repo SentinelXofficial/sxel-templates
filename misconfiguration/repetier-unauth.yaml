@@ -1,0 +1,28 @@
+id: repetier-unauth
+brief:
+    title: Repetier Server Dashboard - Unauthenticated
+    by: ritikchaddha
+    level: high
+    about: Repetier Server Dashboard has been exposed.
+    label:
+        - repetier
+        - dashboard
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#!/printer/Prusa_I3/print'
+      signs:
+        - "on": word
+          has:
+            - Global Settings
+            - Edit Profile
+            - Logout
+            - Clear all Messages
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

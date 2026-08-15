@@ -1,0 +1,38 @@
+id: astrbot-default-login
+brief:
+    title: AstrBot - Default Login
+    by: theamanrawat
+    level: high
+    about: AstrBot contains a default login vulnerability. An attacker can access the AstrBot dashboard using default credentials and gain control over the chatbot framework, modify configurations, manage LLM...
+    label:
+        - astrbot
+        - default-login
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - <title>AstrBot
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/auth/login'
+      head:
+        Content-Type: application/json
+      body: '{"username":"{{username}}","password":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - '"token"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: gloriatv
+brief:
+    title: Gloria.tv User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Gloria.tv user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - gloriatv
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://gloria.tv/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Last online
+          in: body
+          need: all

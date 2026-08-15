@@ -1,0 +1,25 @@
+id: ibm-odm-detect
+brief:
+    title: IBM Operational Decision Manager - Detect
+    by: DhiyaneshDK
+    level: info
+    about: IBM Operational Decision Manager was detected.
+    label:
+        - ibm
+        - decision-center
+        - tech
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>IBM ODM</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

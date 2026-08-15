@@ -1,0 +1,25 @@
+id: python-phish
+brief:
+    title: python phishing Detection
+    by: rxerium
+    level: info
+    about: A python phishing website was detected
+    label:
+        - phishing
+        - python
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Python.org
+            - The official home of the Python Programming Language
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: wago-webbased-panel
+brief:
+    title: WAGO WebBased Management - Panel
+    by: biero-el-corridor
+    level: info
+    about: WAGO WebBased Management was discovered.
+    label:
+        - panel
+        - login
+        - wago
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wbm/index.php'
+      signs:
+        - "on": word
+          has:
+            - Web-based Management
+            - login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

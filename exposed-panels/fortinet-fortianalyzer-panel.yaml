@@ -1,0 +1,26 @@
+id: fortinet-fortianalyzer-panel
+brief:
+    title: Fortinet FortiAnalyzer - Login Panel
+    by: rxerium
+    level: info
+    about: Fortinet FortiAnalyzer is a centralised log management and analytics platform for
+    label:
+        - panel
+        - fortinet
+        - fortianalyzer
+        - network
+        - vpn
+        - ics
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - FortiAnalyzer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

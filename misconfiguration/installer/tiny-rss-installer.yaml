@@ -1,0 +1,30 @@
+id: tiny-rss-installer
+brief:
+    title: Tiny Tiny RSS Installer Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Tiny Tiny RSS is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - tiny
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/'
+      signs:
+        - "on": word
+          has:
+            - Tiny Tiny RSS - Installer
+            - Test configuration
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

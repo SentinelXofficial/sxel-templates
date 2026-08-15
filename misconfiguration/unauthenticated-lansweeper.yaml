@@ -1,0 +1,20 @@
+id: unauthenticated-lansweeper
+brief:
+    title: Unauthenticated Lansweeper Instance
+    by: divya_mudgal
+    level: high
+    about: Lansweeper Instance is exposed.
+    label:
+        - lansweeper
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Default.aspx'
+      signs:
+        - "on": word
+          has:
+            - Main page - Lansweeper
+          in: body

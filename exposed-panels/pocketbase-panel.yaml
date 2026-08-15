@@ -1,0 +1,25 @@
+id: pocketbase-panel
+brief:
+    title: PocketBase Panel - Detect
+    by: userdehghani
+    level: info
+    about: PocketBase Login panel was discovered.
+    label:
+        - panel
+        - pocketbase
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_/#/login'
+      signs:
+        - "on": word
+          has:
+            - <title>PocketBase
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

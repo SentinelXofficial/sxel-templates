@@ -1,0 +1,17 @@
+id: wordpress-woocommerce-pdf-invoices-packing-slips
+brief:
+    title: PDF Invoices & Packing Slips for WooCommerce Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/woocommerce-pdf-invoices-packing-slips/readme.txt'
+      signs: []

@@ -1,0 +1,26 @@
+id: sumitomo-mitsui-phish
+brief:
+    title: Sumitomo Mitsui Bank phishing Detection
+    by: rxerium
+    level: info
+    about: A Sumitomo Mitsui Bank phishing website was detected
+    label:
+        - phishing
+        - sumitomo-mitsui
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Sumitomo Mitsui
+            - Sign On
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

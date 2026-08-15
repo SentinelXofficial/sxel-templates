@@ -1,0 +1,24 @@
+id: sky-phish
+brief:
+    title: sky phishing Detection
+    by: rxerium
+    level: info
+    about: A sky phishing website was detected
+    label:
+        - phishing
+        - sky
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Discover TV, Broadband & Mobile Phone Packages with Sky
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

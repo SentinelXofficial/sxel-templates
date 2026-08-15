@@ -1,0 +1,17 @@
+id: deepmail-panel
+brief:
+    title: Advanced eMail Solution DEEPMail - Panel
+    by: Splint3r7
+    level: info
+    about: Advanced eMail Solution DEEPMail login panel was detected.
+    label:
+        - panel
+        - deepmail
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

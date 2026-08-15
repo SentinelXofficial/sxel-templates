@@ -1,0 +1,29 @@
+id: sftp-deployment-config
+brief:
+    title: Atom SFTP Configuration File - Detect
+    by: geeknik
+    level: high
+    about: Atom SFTP deployment configuration file was detected. File contains server details and credentials.
+    label:
+        - sftp
+        - atom
+        - config
+        - exposure
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/deployment-config.json'
+      signs:
+        - "on": word
+          has:
+            - '"host":'
+            - '"username":'
+            - '"password":'
+            - '"remotePath":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

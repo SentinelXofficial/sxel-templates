@@ -1,0 +1,23 @@
+id: api-binance
+brief:
+    title: Binance REST API
+    by: geeknik
+    level: info
+    about: Exchange for Trading Cryptocurrencies based in China
+    label:
+        - token-spray
+        - binance
+moves:
+    - verb: GET
+      to:
+        - https://api.binance.com/api/v3/historicalTrades
+      head:
+        X-MBX-APIKEY: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"id":'
+            - '"price":'
+            - '"quoteQty":'
+          in: body
+          need: all

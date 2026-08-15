@@ -1,0 +1,29 @@
+id: azure-instrumentation-key-exposure
+brief:
+    title: Azure Instrumentation Key - Exposure
+    by: pussycat0x
+    level: medium
+    about: Detected exposed Azure Application Insights Instrumentation Keys (classic ikey format) in HTTP responses, which allowed anyone to send telemetry data and, in some older configurations, could enable...
+    label:
+        - exposure
+        - azure
+        - instrumentation
+        - appinsights
+        - token
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/appsettings.json'
+      signs:
+        - "on": word
+          has:
+            - InstrumentationKey
+            - instrumentationKey
+            - APPINSIGHTS_INSTRUMENTATIONKEY
+            - <InstrumentationKey>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

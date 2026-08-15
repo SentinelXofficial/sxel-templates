@@ -1,0 +1,25 @@
+id: microfocus-vibe-panel
+brief:
+    title: Micro Focus Vibe Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Micro Focus Vibe login panel was detected.
+    label:
+        - panel
+        - microfocus
+        - vibe
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ssf/s/portalLogin'
+      signs:
+        - "on": word
+          has:
+            - Micro Focus Vibe
+            - baseVibeUrl
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

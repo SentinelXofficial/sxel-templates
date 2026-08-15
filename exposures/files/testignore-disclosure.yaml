@@ -1,0 +1,29 @@
+id: testignore-disclosure
+brief:
+    title: Testignore - File Disclosure
+    by: 0x_Akoko
+    level: info
+    about: Detected that the .testignore file was publicly accessible, potentially revealing the project structure, sensitive file paths, and internal directory organization.
+    label:
+        - files
+        - exposure
+        - disclosure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.testignore'
+      signs:
+        - "on": word
+          has:
+            - <html
+            - <!doctype
+            - <script
+            - <meta
+            - <head
+            - <body
+            - application/json
+            - application/xml
+            - text/xml
+            - image/
+          in: body
+          need: all

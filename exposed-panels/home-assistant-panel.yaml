@@ -1,0 +1,24 @@
+id: home-assistant-panel
+brief:
+    title: Home Assistant Panel
+    by: fabaff
+    level: info
+    about: ""
+    label:
+        - panel
+        - iot
+        - homeassistant
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Home Assistant</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

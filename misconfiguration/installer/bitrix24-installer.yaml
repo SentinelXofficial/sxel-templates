@@ -1,0 +1,31 @@
+id: bitrix24-installer
+brief:
+    title: Bitrix24 Installation Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Bitrix24 is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - bitrix24
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Start installation
+            - Bitrix24
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

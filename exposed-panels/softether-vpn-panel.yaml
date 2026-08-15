@@ -1,0 +1,24 @@
+id: softether-vpn-panel
+brief:
+    title: SoftEther VPN Panel - Detect
+    by: bhutch
+    level: info
+    about: SoftEther VPN panel was detected.
+    label:
+        - panel
+        - vpn
+        - softether
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>SoftEther VPN Server</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 202

@@ -1,0 +1,25 @@
+id: label-studio-panel
+brief:
+    title: Label Studio - Login Panel
+    by: DhiyaneshDK
+    level: info
+    about: Detects the presence of the Label Studio Login Page.
+    label:
+        - label-studio
+        - login
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/user/login'
+      signs:
+        - "on": word
+          has:
+            - Label Studio
+            - Log in
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

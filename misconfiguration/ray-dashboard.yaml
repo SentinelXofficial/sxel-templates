@@ -1,0 +1,24 @@
+id: ray-dashboard
+brief:
+    title: Ray Dashboard Exposure
+    by: DhiyaneshDk
+    level: critical
+    about: Ray Dashboard is exposed.
+    label:
+        - misconfig
+        - exposure
+        - ray
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Ray Dashboard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

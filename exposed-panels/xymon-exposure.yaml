@@ -1,0 +1,32 @@
+id: xymon-exposure
+brief:
+    title: Xymon - Exposure
+    by: theamanrawat
+    level: low
+    about: Detected the exposure of the Xymon monitoring system interface.
+    label:
+        - xymon
+        - exposure
+        - monitoring
+        - panel
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/xymon/'
+        - '{{BaseURL}}/xymon-se/xymon/'
+      signs:
+        - "on": word
+          has:
+            - Xymon
+            - xymon-se
+            - xymon-cgi
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

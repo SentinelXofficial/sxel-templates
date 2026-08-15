@@ -1,0 +1,31 @@
+id: nodebb-installer
+brief:
+    title: NodeBB Web Installer
+    by: DhiyaneshDk
+    level: high
+    about: NodeBB Web is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - nodebb
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - NodeBB Web Installer
+            - Create an Administrator account
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

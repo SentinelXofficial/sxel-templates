@@ -1,0 +1,17 @@
+id: seafile-panel
+brief:
+    title: Seafile Panel - Detect
+    by: TechbrunchFR
+    level: info
+    about: Seafile panel was detected.
+    label:
+        - sefile
+        - panel
+        - login
+        - seafile
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/accounts/login/'
+      signs: []

@@ -1,0 +1,24 @@
+id: babypips
+brief:
+    title: BabyPips User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: BabyPips user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - babypips
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://forums.babypips.com/u/{{user}}.json
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - user_badges
+          in: body
+          need: all

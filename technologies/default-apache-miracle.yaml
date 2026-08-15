@@ -1,0 +1,25 @@
+id: default-apache-miracle
+brief:
+    title: Default Apache Miracle Linux Web Server Page
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - tech
+        - default-page
+        - apache
+        - miracle
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <TITLE>Apache Miracle Linux Web Server</TITLE>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

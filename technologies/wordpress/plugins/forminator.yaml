@@ -1,0 +1,17 @@
+id: wordpress-forminator
+brief:
+    title: Forminator Forms – Contact Form, Payment Form & Custom Form Builder Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/forminator/readme.txt'
+      signs: []

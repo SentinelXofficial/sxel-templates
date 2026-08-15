@@ -1,0 +1,26 @@
+id: nginx-ui-dashboard
+brief:
+    title: Nginx UI Panel - Detect
+    by: gy741
+    level: info
+    about: Nginx UI panel was detected.
+    label:
+        - panel
+        - nginx
+        - exposure
+        - f5
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Nginx UI
+            - Main Config
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

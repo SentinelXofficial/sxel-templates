@@ -1,0 +1,17 @@
+id: wordpress-mailchimp-for-woocommerce
+brief:
+    title: Mailchimp for WooCommerce Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/mailchimp-for-woocommerce/readme.txt'
+      signs: []

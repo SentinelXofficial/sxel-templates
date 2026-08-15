@@ -1,0 +1,26 @@
+id: gocd-login
+brief:
+    title: GoCD Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: GoCD login panel was detected.
+    label:
+        - go
+        - panel
+        - gocd
+        - thoughtworks
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/go/auth/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Login - Go</title>
+            - gocd-params
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

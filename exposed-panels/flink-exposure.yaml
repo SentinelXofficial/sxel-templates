@@ -1,0 +1,20 @@
+id: flink-exposure
+brief:
+    title: Apache Flink Login Panel - Detect
+    by: pdteam
+    level: info
+    about: Apache Flink login panel was detected.
+    label:
+        - panel
+        - apache
+        - flink
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Apache Flink Web Dashboard</title>
+          in: body

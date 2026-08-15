@@ -1,0 +1,26 @@
+id: postmates-phish
+brief:
+    title: Postmates phishing Detection
+    by: rxerium
+    level: info
+    about: A Postmates phishing website was detected
+    label:
+        - phishing
+        - postmates
+        - food-delivery
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Postmates
+            - Order delivery or pickup from more than 600,000 restaurants, retailers, grocers, and more all across your city. Download the app now to get everything you crave, on-demand.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

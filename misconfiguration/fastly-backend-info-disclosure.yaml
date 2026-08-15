@@ -1,0 +1,17 @@
+id: fastly-backend-info-disclosure
+brief:
+    title: Fastly Backend Server Information Disclosure
+    by: 0x_Akoko
+    level: low
+    about: Detected Fastly CDN misconfigured and exposing backend/origin server IP addresses or hostnames in HTTP response headers.
+    label:
+        - exposure
+        - fastly
+        - cdn
+        - misconfig
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

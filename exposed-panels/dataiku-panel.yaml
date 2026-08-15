@@ -1,0 +1,25 @@
+id: dataiku-panel
+brief:
+    title: Dataiku Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Dataiku panel was detected.
+    label:
+        - panel
+        - dataiku
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Dataiku</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

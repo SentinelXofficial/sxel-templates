@@ -1,0 +1,51 @@
+id: functions-php-disclosure
+brief:
+    title: functions.php Full Path Disclosure
+    by: pussycat0x
+    level: low
+    about: Detected a full server file path disclosure in the WordPress functions.php file. This exposure revealed sensitive directory information that could have aided attackers in further exploitation.
+    label:
+        - wordpress
+        - functions.php
+        - disclosure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/wp-admin/install.php'
+        - '{{BaseURL}}/feed/'
+        - '{{BaseURL}}/?feed=rss2'
+      signs:
+        - "on": word
+          has:
+            - name="generator" content="wordpress
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{path}}'
+        - '{{BaseURL}}/wp-content/themes/twentytwentyfour/functions.php'
+        - '{{BaseURL}}/wp-content/themes/twentytwentythree/functions.php'
+        - '{{BaseURL}}/wp-content/themes/twentytwentytwo/functions.php'
+        - '{{BaseURL}}/wp-content/themes/twentytwentyone/functions.php'
+        - '{{BaseURL}}/wp-content/themes/twentytwenty/functions.php'
+        - '{{BaseURL}}/wp-content/themes/twentynineteen/functions.php'
+        - '{{BaseURL}}/wp-content/themes/twentyeighteen/functions.php'
+        - '{{BaseURL}}/wp-content/themes/twentyseventeen/functions.php'
+        - '{{BaseURL}}/wp-content/themes/twentysixteen/functions.php'
+        - '{{BaseURL}}/wp-content/themes/twentyfifteen/functions.php'
+        - '{{BaseURL}}/wp-content/themes/twentyfourteen/functions.php'
+        - '{{BaseURL}}/wp-content/themes/twentythirteen/functions.php'
+        - '{{BaseURL}}/wp-content/themes/astra/functions.php'
+        - '{{BaseURL}}/wp-content/themes/oceanwp/functions.php'
+        - '{{BaseURL}}/wp-content/themes/generatepress/functions.php'
+        - '{{BaseURL}}/wp-content/themes/kadence/functions.php'
+        - '{{BaseURL}}/wp-content/themes/blocksy/functions.php'
+        - '{{BaseURL}}/wp-content/themes/neve/functions.php'
+        - '{{BaseURL}}/wp-content/themes/hello-elementor/functions.php'
+        - '{{BaseURL}}/wp-content/themes/storefront/functions.php'
+        - '{{BaseURL}}/wp-content/themes/divi/functions.php'
+        - '{{BaseURL}}/wp-content/themes/avada/functions.php'
+        - '{{BaseURL}}/wp-content/themes/twentytwenty-child/functions.php'
+        - '{{BaseURL}}/wp-content/themes/astra-child/functions.php'
+        - '{{BaseURL}}/wp-content/themes/generatepress-child/functions.php'
+      signs: []

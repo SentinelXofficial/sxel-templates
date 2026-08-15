@@ -1,0 +1,22 @@
+id: api-twitter
+brief:
+    title: Twitter API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - twitter
+moves:
+    - verb: GET
+      to:
+        - https://api.twitter.com/1.1/account_activity/all/subscriptions/count.json
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"account_name":'
+            - '"subscriptions_count_all":'
+          in: body
+          need: all

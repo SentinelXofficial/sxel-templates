@@ -1,0 +1,29 @@
+id: wordpress-rdf-user-enum
+brief:
+    title: Wordpress RDF User Enumeration
+    by: r3dg33k
+    level: info
+    about: Leaked Wordpress RDF leads to User Emumeration.
+    label:
+        - wordpress
+        - enum
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/feed/rdf'
+      signs:
+        - "on": word
+          has:
+            - application/rdf+xml
+          in: header
+          need: all
+        - "on": word
+          has:
+            - <rdf:RDF
+            - <dc:creator>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

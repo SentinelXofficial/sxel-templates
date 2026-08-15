@@ -1,0 +1,30 @@
+id: gibbon-installer
+brief:
+    title: Gibbon Installer - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Gibbon is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - gibbon
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/installer/install.php'
+      signs:
+        - "on": word
+          has:
+            - <title>Gibbon Installer</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

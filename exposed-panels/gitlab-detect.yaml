@@ -1,0 +1,24 @@
+id: gitlab-detect
+brief:
+    title: Gitlab Login Panel - Detect
+    by: ehsahil
+    level: info
+    about: Gitlab login panel was detected.
+    label:
+        - panel
+        - gitlab
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/users/sign_in'
+      signs:
+        - "on": word
+          has:
+            - GitLab
+            - https://about.gitlab.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

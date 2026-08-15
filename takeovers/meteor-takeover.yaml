@@ -1,0 +1,19 @@
+id: meteor-takeover
+brief:
+    title: Meteor subdomain takeover
+    by: rivalsec
+    level: high
+    about: Meteor takeover was detected.
+    label:
+        - takeover
+        - meteor
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '404 Not Found: No applications registered for host '''
+          in: body

@@ -1,0 +1,21 @@
+id: api-serpstack
+brief:
+    title: serpstack API Test
+    by: daffainfo
+    level: info
+    about: Real-Time & Accurate Google Search Results API
+    label:
+        - token-spray
+        - serpstack
+moves:
+    - verb: GET
+      to:
+        - http://api.serpstack.com/search?access_key={{token}}&query=mcdonalds
+      signs:
+        - "on": word
+          has:
+            - '"total_time_taken"'
+            - '"processed_timestamp"'
+            - '"search_url"'
+          in: body
+          need: all

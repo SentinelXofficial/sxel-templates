@@ -1,0 +1,31 @@
+id: tomcat-scripts
+brief:
+    title: Apache Tomcat Example Scripts - Detect
+    by: Co0nan
+    level: info
+    about: Multiple Apache Tomcat example scripts were detected.
+    label:
+        - apache
+        - tomcat
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/examples/servlets/index.html'
+        - '{{BaseURL}}/examples/jsp/index.html'
+        - '{{BaseURL}}/examples/websocket/index.xhtml'
+        - '{{BaseURL}}/examples/servlets/servlet/SessionExample'
+        - '{{BaseURL}}/..;/examples/servlets/index.html'
+        - '{{BaseURL}}/..;/examples/jsp/index.html'
+        - '{{BaseURL}}/..;/examples/websocket/index.xhtml'
+        - '{{BaseURL}}/..;/examples/servlets/servlet/SessionExample'
+      signs:
+        - "on": word
+          has:
+            - JSP Examples
+            - JSP Samples
+            - Servlets Examples
+            - WebSocket Examples
+            - GET based form
+          in: body

@@ -1,0 +1,26 @@
+id: shopware-installer
+brief:
+    title: Shopware Installer
+    by: DhiyaneshDk
+    level: high
+    about: Shopware is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - shopware
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/public/recovery/install/index.php'
+      signs:
+        - "on": word
+          has:
+            - Setup | Shopware
+            - install
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

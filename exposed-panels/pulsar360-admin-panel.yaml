@@ -1,0 +1,26 @@
+id: pulsar360-admin-panel
+brief:
+    title: Pulsar360 Admin Panel - Detect
+    by: tess
+    level: info
+    about: Pulsar360 admin panel was detected.
+    label:
+        - panel
+        - pulsar360
+        - pulsar
+        - admin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/config.php'
+      signs:
+        - "on": word
+          has:
+            - Pulsar Admin
+            - User Control Panel
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

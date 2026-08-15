@@ -1,0 +1,29 @@
+id: portainer-panel
+brief:
+    title: Portainer Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - portainer
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/#!/auth'
+      signs:
+        - "on": word
+          has:
+            - <title>Portainer
+            - ng-app="portainer
+            - content="Portainer
+            - alt="Portainer
+            - portainer.auth
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

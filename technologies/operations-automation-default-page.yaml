@@ -1,0 +1,23 @@
+id: operations-automation-default-page
+brief:
+    title: Operations Automation Default Page
+    by: dhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - tech
+        - default
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Operations Automation Default Page</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

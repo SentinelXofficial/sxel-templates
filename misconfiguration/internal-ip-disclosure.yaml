@@ -1,0 +1,31 @@
+id: internal-ip-disclosure
+brief:
+    title: Internal IP Disclosure
+    by: WillD96
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - disclosure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Accept: '*/*'
+      signs:
+        - "on": status
+          status:
+            - 301
+            - 302
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Accept: '*/*'
+      signs:
+        - "on": status
+          status:
+            - 301
+            - 302

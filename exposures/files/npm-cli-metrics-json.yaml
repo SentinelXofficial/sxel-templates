@@ -1,0 +1,27 @@
+id: npm-cli-metrics-json
+brief:
+    title: NPM Anonymous CLI Metrics Json
+    by: DhiyaneshDK
+    level: low
+    about: anonymous-cli-metrics.json internal file in NPM is exposed.
+    label:
+        - npm
+        - devops
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/anonymous-cli-metrics.json'
+        - '{{BaseURL}}/.npm/anonymous-cli-metrics.json'
+      signs:
+        - "on": word
+          has:
+            - '"metricId"'
+            - '"metrics"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

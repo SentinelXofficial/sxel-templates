@@ -1,0 +1,21 @@
+id: jeecg-boot-detect
+brief:
+    title: Jeecg-Boot Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - jeecg-boot
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/jeecg-boot/'
+      signs:
+        - "on": word
+          has:
+            - Jeecg-Boot
+          in: body
+          need: all

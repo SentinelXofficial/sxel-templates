@@ -1,0 +1,27 @@
+id: pipfile-lock
+brief:
+    title: Pipfile.lock Disclosure
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - exposure
+        - pip
+        - devops
+        - cicd
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Pipfile.lock'
+      signs:
+        - "on": word
+          has:
+            - '"pipfile-spec":'
+            - '"requires"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

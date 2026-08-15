@@ -1,0 +1,20 @@
+id: envoy-metadata-disclosure
+brief:
+    title: Envoy Proxy - Metadata Disclosure
+    by: theamanrawat
+    level: info
+    about: Detected misconfigured Envoy proxy instances that disclose sensitive information about the target infrastructure via the "x-envoy-peer-metadata" response header.
+    label:
+        - envoy
+        - exposure
+        - misconfig
+        - disclosure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - x-envoy-peer-metadata
+          in: header

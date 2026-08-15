@@ -1,0 +1,27 @@
+id: totemomail-panel
+brief:
+    title: Totemomail Login Panel - Detect
+    by: johnk3r
+    level: info
+    about: Totemomail login panel was detected.
+    label:
+        - totemomail
+        - panel
+        - totemo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/responsiveUI/'
+        - '{{BaseURL}}/responsiveUI/webmail/folder.xhtml'
+      signs:
+        - "on": word
+          has:
+            - /responsiveUI/javax.faces.resource/images/totemomail_logo.svg.xhtml
+            - /responsiveUI/javax.faces.resource/css/custom.css.xhtml?con=totemo
+            - '<title>WebMail login: totemomail® WebMail</title>'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

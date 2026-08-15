@@ -1,0 +1,21 @@
+id: opencpu-panel
+brief:
+    title: OpenCPU Panel - Detect
+    by: wa1tf0rme
+    level: info
+    about: OpenCPU panel was detected.
+    label:
+        - panel
+        - opencpu
+        - oss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ocpu/'
+      signs:
+        - "on": word
+          has:
+            - OpenCPU Test Page
+            - OpenCPU API Explorer
+          in: body

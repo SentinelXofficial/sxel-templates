@@ -1,0 +1,32 @@
+id: prestashop-installer
+brief:
+    title: Prestashop Installer Exposure
+    by: tess
+    level: high
+    about: Prestashop is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - prestashop
+        - exposure
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/index.php'
+      signs:
+        - "on": word
+          has:
+            - <title>PrestaShop Installation Assistant</title>
+            - <li>System configuration</li>
+            - <li>Store installation</li>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

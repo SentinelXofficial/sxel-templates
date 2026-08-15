@@ -1,0 +1,17 @@
+id: unauth-phoenix-dashboard
+brief:
+    title: Unauth Phoenix Dashboard - Detect
+    by: DhiyaneshDk
+    level: high
+    about: Phoenix Dashboard was detected and appeared to be accessible without authentication.
+    label:
+        - phoenix
+        - misconfig
+        - unauth
+        - dashboard
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/settings/general'
+      signs: []

@@ -1,0 +1,26 @@
+id: apache-mesos-panel
+brief:
+    title: Apache Mesos - Panel Detect
+    by: pikpikcu
+    level: info
+    about: Apache Mesos panel was detected.
+    label:
+        - panel
+        - apache
+        - mesos
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}:5050'
+      signs:
+        - "on": word
+          has:
+            - <title>Mesos</title>
+            - Apache
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: metabase-panel
+brief:
+    title: Metabase Login Panel - Detect
+    by: revblock
+    level: info
+    about: Metabase login panel was detected.
+    label:
+        - panel
+        - metabase
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Metabase</title>
+            - window.MetabaseBootstrap
+            - window.MetabaseRoot
+          in: body
+          need: all

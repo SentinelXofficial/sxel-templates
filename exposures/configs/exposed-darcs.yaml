@@ -1,0 +1,23 @@
+id: exposed-darcs
+brief:
+    title: Darcs Configuration - Detect
+    by: daffainfo
+    level: info
+    about: Darcs configuration was detected.
+    label:
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_darcs/prefs/binaries'
+      signs:
+        - "on": word
+          has:
+            - Binary file regexps
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

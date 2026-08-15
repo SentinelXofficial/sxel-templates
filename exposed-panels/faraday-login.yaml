@@ -1,0 +1,23 @@
+id: faraday-login
+brief:
+    title: Faraday Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Faraday login panel was detected.
+    label:
+        - panel
+        - faraday
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/login'
+      signs:
+        - "on": word
+          has:
+            - ng-app="faradayApp">
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

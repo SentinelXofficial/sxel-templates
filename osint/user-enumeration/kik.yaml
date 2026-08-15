@@ -1,0 +1,24 @@
+id: kik
+brief:
+    title: Kik User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Kik user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - kik
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://ws2.kik.com/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - firstName
+          in: body
+          need: all

@@ -1,0 +1,22 @@
+id: grandstream-device-configuration
+brief:
+    title: Grandstream Device Configuration
+    by: dhiyaneshDK
+    level: info
+    about: Exposed Grandstream device configuration page detected.
+    label:
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Grandstream Device Configuration</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

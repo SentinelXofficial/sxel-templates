@@ -1,0 +1,23 @@
+id: api-buildkite
+brief:
+    title: Buildkite API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - buildkite
+moves:
+    - verb: GET
+      to:
+        - https://api.buildkite.com/v2/user
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": word
+          has:
+            - '"id":'
+            - '"graphql_id":'
+            - '"email":'
+          in: body
+          need: all

@@ -1,0 +1,36 @@
+id: powershell-default-login
+brief:
+    title: PowerShell Universal - Default Login
+    by: ap3r
+    level: high
+    about: PowerShell Universal default admin credentials were discovered.
+    label:
+        - default-login
+        - powershell-universal
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/v1/signin'
+      head:
+        Content-Type: application/json
+      body: '{"username":"{{username}}","password":"{{password}}"}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Set-Cookie
+          in: header
+          need: all
+        - "on": word
+          has:
+            - '{"returnUrl":"/admin"}'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - '{"errorMessage":"Bad username or password"}'
+          in: body
+          need: all

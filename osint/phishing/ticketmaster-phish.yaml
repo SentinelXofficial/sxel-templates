@@ -1,0 +1,24 @@
+id: ticket-master-phish
+brief:
+    title: ticket master phishing Detection
+    by: rxerium
+    level: info
+    about: A ticket-master phishing website was detected
+    label:
+        - phishing
+        - ticket-master
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Buy and sell tickets online for concerts, sports, theater, family and other events near you from Ticketmaster.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

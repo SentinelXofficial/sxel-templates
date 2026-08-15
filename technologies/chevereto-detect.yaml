@@ -1,0 +1,18 @@
+id: chevereto-detect
+brief:
+    title: Chevereto detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - chevereto
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

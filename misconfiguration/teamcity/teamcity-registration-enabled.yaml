@@ -1,0 +1,23 @@
+id: teamcity-registration-enabled
+brief:
+    title: JetBrains TeamCity - Registration Enabled
+    by: Ph33r
+    level: high
+    about: JetBrains TeamCity allows all visitors to register due to a misconfiguration.
+    label:
+        - misconfig
+        - auth-bypass
+        - teamcity
+        - jetbrains
+        - intrusive
+        - vuln
+    score: CVSS:7.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/registerUser.html?init=1'
+      signs:
+        - "on": word
+          has:
+            - <title>Register a New User Account ? TeamCity</title>
+          in: body

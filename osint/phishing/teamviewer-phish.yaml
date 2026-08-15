@@ -1,0 +1,24 @@
+id: teamviewer-phish
+brief:
+    title: teamviewer phishing Detection
+    by: rxerium
+    level: info
+    about: A teamviewer phishing website was detected
+    label:
+        - phishing
+        - teamviewer
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - TeamViewer – The Remote Connectivity Software
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

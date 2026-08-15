@@ -1,0 +1,24 @@
+id: lorsh-mastodon-instance
+brief:
+    title: Lor.sh (Mastodon Instance) User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Lor.sh (Mastodon Instance) user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - lorsh-mastodon-instance
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://lor.sh/api/v1/accounts/lookup?acct={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - display_name
+          in: body
+          need: all

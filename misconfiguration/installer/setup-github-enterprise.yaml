@@ -1,0 +1,26 @@
+id: setup-github-enterprise
+brief:
+    title: Setup GitHub Enterprise - Detect
+    by: tess
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - installer
+        - github
+        - setup
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup/start'
+      signs:
+        - "on": word
+          has:
+            - Setup GitHub Enterprise
+            - Install GitHub Enterprise
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

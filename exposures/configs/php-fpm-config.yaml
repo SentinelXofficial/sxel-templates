@@ -1,0 +1,25 @@
+id: php-fpm-config
+brief:
+    title: PHP-FPM Configuration Page - Detect
+    by: sheikhrishad
+    level: info
+    about: PHP-FPM configuration page was detected.
+    label:
+        - config
+        - exposure
+        - php
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/php-fpm.conf'
+      signs:
+        - "on": word
+          has:
+            - FPM Configuration
+            - Pool Definitions
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

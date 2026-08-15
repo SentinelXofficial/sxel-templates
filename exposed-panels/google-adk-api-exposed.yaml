@@ -1,0 +1,29 @@
+id: google-adk-api-exposed
+brief:
+    title: Google ADK API Exposure
+    by: princechaddha
+    level: info
+    about: Detects the exposure of the Google Agent Development Kit (ADK) API, which may lead to sensitive information disclosure or unauthorized access.
+    label:
+        - adk
+        - exposure
+        - google
+        - ai
+        - agent
+        - api
+        - devops
+        - discovery
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/apps/my_sample_agent/users/{{randstr}}/sessions/s_123'
+      head:
+        Content-Type: application/json
+      body: '{"state": {"key1": "value1", "key2": 42}}'
+      signs:
+        - "on": word
+          has:
+            - '","userId":"{{randstr}}"'
+            - '{"id":"'
+          in: body
+          need: all

@@ -1,0 +1,26 @@
+id: capital-one-phish
+brief:
+    title: Capital One phishing Detection
+    by: rxerium
+    level: info
+    about: A Capital One phishing website was detected
+    label:
+        - phishing
+        - capital-one
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Capital One
+            - <title>Capital One | Credit Cards, Checking, Savings &amp; Auto Loans
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

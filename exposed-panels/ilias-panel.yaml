@@ -1,0 +1,26 @@
+id: ilias-panel
+brief:
+    title: ILIAS Login Panel - Detect
+    by: arafatansari
+    level: info
+    about: ILIAS login panel was detected.
+    label:
+        - panel
+        - ilias
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.php'
+        - '{{BaseURL}}/ilias/login.php'
+      signs:
+        - "on": word
+          has:
+            - Login to ILIAS
+            - alt="ILIAS
+            - powered by ILIAS
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

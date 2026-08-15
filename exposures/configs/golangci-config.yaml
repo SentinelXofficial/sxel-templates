@@ -1,0 +1,29 @@
+id: golangci-config
+brief:
+    title: GolangCI-Lint Configuration File - Detect
+    by: Hardik-Solanki
+    level: info
+    about: GolangCI-Lint configuration file was detected.
+    label:
+        - exposure
+        - golang
+        - devops
+        - cicd
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.golangci.yml'
+        - '{{BaseURL}}/.golangci.yaml'
+        - '{{BaseURL}}/.golangci.toml'
+        - '{{BaseURL}}/.golangci.json'
+      signs:
+        - "on": word
+          has:
+            - 'linters:'
+            - 'linters-settings:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

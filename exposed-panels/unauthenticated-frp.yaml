@@ -1,0 +1,24 @@
+id: unauthenticated-frp
+brief:
+    title: FRPS Dashboard - Detect
+    by: pikpikcu
+    level: info
+    about: FRPS Dashboard panel was detected.
+    label:
+        - frp
+        - unauth
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/static/'
+      signs:
+        - "on": word
+          has:
+            - <title>frps dashboard</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

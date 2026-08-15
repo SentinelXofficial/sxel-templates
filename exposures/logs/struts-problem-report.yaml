@@ -1,0 +1,26 @@
+id: struts-problem-report
+brief:
+    title: Apache Struts Dev Mode - Detect
+    by: dhiyaneshDK
+    level: low
+    about: Multiple Apache Struts applications were detected in dev-mode.
+    label:
+        - struts
+        - debug
+        - edb
+        - exposure
+        - apache
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Struts Problem Report</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

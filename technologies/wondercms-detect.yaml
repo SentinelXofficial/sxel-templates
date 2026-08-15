@@ -1,0 +1,25 @@
+id: wondercms-detect
+brief:
+    title: WonderCMS Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - wondercms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: wondercms_'
+          in: header
+        - "on": word
+          has:
+            - Powered by WonderCMS
+            - https://www.wondercms.com
+          in: body
+          need: all

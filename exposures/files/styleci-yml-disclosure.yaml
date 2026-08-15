@@ -1,0 +1,27 @@
+id: styleci-yml-disclosure
+brief:
+    title: StyleCi Yaml File Disclosure
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - config
+        - exposure
+        - devops
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.styleci.yml'
+      signs:
+        - "on": word
+          has:
+            - php
+            - preset
+            - disabled
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

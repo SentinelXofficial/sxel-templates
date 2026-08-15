@@ -1,0 +1,34 @@
+id: http-etcd-unauthenticated-api-data-leak
+brief:
+    title: etcd Unauthenticated HTTP API Leak
+    by: dhiyaneshDk
+    level: high
+    about: etcd HTTP API is exposed.
+    label:
+        - misconfig
+        - hackerone
+        - unauth
+        - etcd
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v2/auth/roles'
+      signs:
+        - "on": word
+          has:
+            - '"roles"'
+            - '"permissions"'
+            - '"role"'
+            - '"kv"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

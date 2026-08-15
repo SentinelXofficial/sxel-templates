@@ -1,0 +1,26 @@
+id: virtual-smartzone-installer
+brief:
+    title: Virtual SmartZone Setup Wizard - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed Virtual SmartZone Installation page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - virtual-smartzone
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/adminweb/'
+      signs:
+        - "on": word
+          has:
+            - Virtual SmartZone
+            - Setup Wizard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

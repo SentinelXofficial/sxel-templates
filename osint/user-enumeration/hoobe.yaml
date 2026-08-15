@@ -1,0 +1,24 @@
+id: hoobe
+brief:
+    title: Hoo.be User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Hoo.be user name information check was conducted.
+    label:
+        - osint
+        - osint-business
+        - hoobe
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://hoo.be/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - --profile-name-color
+          in: body
+          need: all

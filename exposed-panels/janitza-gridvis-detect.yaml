@@ -1,0 +1,30 @@
+id: janitza-gridvis-detect
+brief:
+    title: Janitza GridVis Energy Management - Detect
+    by: rxerium
+    level: info
+    about: Janitza GridVis is an energy monitoring and management software platform by Janitza Electronics GmbH.
+    label:
+        - tech
+        - panel
+        - janitza
+        - ics
+        - energy
+        - scada
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/landingpage'
+        - '{{BaseURL}}/landingpage/'
+      signs:
+        - "on": word
+          has:
+            - <title>GridVis</title>
+            - /landingpage/img/favicon.ico
+            - gve-8janitza.energy.security
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

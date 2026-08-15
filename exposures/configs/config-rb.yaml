@@ -1,0 +1,28 @@
+id: config-rb
+brief:
+    title: Ruby Configuration File - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Multiple Ruby configuration files were detected.
+    label:
+        - ruby
+        - devops
+        - exposure
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config.rb'
+        - '{{BaseURL}}/.chef/config.rb'
+        - '{{BaseURL}}/assets/config.rb'
+      signs:
+        - "on": word
+          has:
+            - images_dir
+            - css_dir
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

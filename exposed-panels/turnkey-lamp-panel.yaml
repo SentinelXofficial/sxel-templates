@@ -1,0 +1,26 @@
+id: turnkey-lamp-panel
+brief:
+    title: TurnKey LAMP Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: TurnKey LAMP Control Panel was detected.
+    label:
+        - panel
+        - login
+        - turnkey
+        - lamp
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - TurnKey LAMP</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

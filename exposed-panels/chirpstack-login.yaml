@@ -1,0 +1,19 @@
+id: chirpstack-login
+brief:
+    title: ChirpStack LoRaWAN Detection
+    by: ProjectDiscoveryAI
+    level: info
+    about: Detects the presence of ChirpStack LoRaWAN Network-Server by identifying unique page characteristics in the HTML response.
+    label:
+        - panel
+        - chirpstack
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ChirpStack LoRaWAN
+          in: body

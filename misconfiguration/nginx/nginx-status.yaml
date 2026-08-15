@@ -1,0 +1,25 @@
+id: nginx-status
+brief:
+    title: Nginx Status Page
+    by: dhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - nginx
+        - status
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nginx_status'
+        - '{{BaseURL}}/nginx-status'
+      signs:
+        - "on": word
+          has:
+            - 'Active connections:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,21 @@
+id: mongodb-exception-page
+brief:
+    title: MongoDB Exception - Page
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - error
+        - mongodb
+        - log
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - MongoDB Exception
+          in: body
+          need: all

@@ -1,0 +1,24 @@
+id: speedrun
+brief:
+    title: Speedrun User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Speedrun user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - speedrun
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.speedrun.com/user/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'Runs - '
+          in: body
+          need: all

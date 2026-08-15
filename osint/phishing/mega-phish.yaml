@@ -1,0 +1,25 @@
+id: mega-phish
+brief:
+    title: mega phishing Detection
+    by: rxerium
+    level: info
+    about: A mega phishing website was detected
+    label:
+        - phishing
+        - mega
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Home - MEGA
+            - Secure and private cloud storage for everyone. Store and share files, chat, meet, back up, sync, and more.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

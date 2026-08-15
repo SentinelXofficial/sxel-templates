@@ -1,0 +1,18 @@
+id: wp-image-widget-fpd
+brief:
+    title: Image Widget - Full Path Disclosure
+    by: theamanrawat
+    level: low
+    about: Image Widget WordPress plugin contains a full path disclosure vulnerability due to improper access restrictions in its source files, allowing unauthenticated attackers to retrieve full server paths...
+    label:
+        - debug
+        - wordpress
+        - wp
+        - wp-plugin
+        - image-widget
+        - fpd
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/plugins/image-widget/image-widget.php'
+      signs: []

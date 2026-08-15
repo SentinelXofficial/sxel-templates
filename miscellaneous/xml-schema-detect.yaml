@@ -1,0 +1,25 @@
+id: xml-schema-detect
+brief:
+    title: XML Schema Detection
+    by: alph4byt3
+    level: info
+    about: ""
+    label:
+        - miscellaneous
+        - misc
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/schema'
+      signs:
+        - "on": word
+          has:
+            - .xsd
+            - Schemas
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

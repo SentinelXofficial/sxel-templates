@@ -1,0 +1,24 @@
+id: mistrzowie
+brief:
+    title: Mistrzowie User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mistrzowie user name information check was conducted.
+    label:
+        - osint
+        - osint-images
+        - mistrzowie
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://mistrzowie.org/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Profil użytkownika
+          in: body
+          need: all

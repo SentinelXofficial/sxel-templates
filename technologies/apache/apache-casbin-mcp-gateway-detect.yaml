@@ -1,0 +1,24 @@
+id: apache-casbin-mcp-gateway-detect
+brief:
+    title: Apache Casbin MCP Gateway - Detection
+    by: icarot
+    level: info
+    about: Detects an Apache Casbin MCP Gateway server, a lightweight gateway service that instantly transforms existing MCP Servers and APIs into MCP servers with zero code changes.
+    label:
+        - tech
+        - casbin-mcp-gateway
+        - apache
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/health'
+      signs:
+        - "on": word
+          has:
+            - '"service": "mcp-gateway"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: octoprint-panel
+brief:
+    title: OctoPrint Login Panel - Detect
+    by: affix
+    level: info
+    about: OctoPrint login panel was detected.
+    label:
+        - octoprint
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login/'
+      signs:
+        - "on": word
+          has:
+            - <title>OctoPrint Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

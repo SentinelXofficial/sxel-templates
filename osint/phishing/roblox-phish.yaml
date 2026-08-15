@@ -1,0 +1,24 @@
+id: roblox-phish
+brief:
+    title: roblox phishing Detection
+    by: rxerium
+    level: info
+    about: A roblox phishing website was detected
+    label:
+        - phishing
+        - roblox
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Roblox is ushering in the next generation of entertainment. Imagine, create, and play together with millions of people across an infinite variety of immersive, user-generated 3D worlds.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

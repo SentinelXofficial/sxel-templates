@@ -1,0 +1,29 @@
+id: vivotex-web-console-detect
+brief:
+    title: VIVOTEK Web Console Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - vivotex
+        - console
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>VIVOTEK Web Console</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

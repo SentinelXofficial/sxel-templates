@@ -1,0 +1,17 @@
+id: tabby-panel
+brief:
+    title: Tabby Panel - Detect
+    by: s4e-io
+    level: info
+    about: Tabby panel was discovered.
+    label:
+        - panel
+        - login
+        - tabby
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/signin'
+      signs: []

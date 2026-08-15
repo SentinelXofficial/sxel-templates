@@ -1,0 +1,19 @@
+id: ibm-webmethods-panel
+brief:
+    title: IBM webMethods Integration Login Panel - Detect
+    by: infosec.asish
+    level: info
+    about: Identified an exposed IBM or Software AG webMethods login panel
+    label:
+        - tech
+        - panel
+        - ibm
+        - webmethods
+        - recon
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/wmroot/'
+        - '{{BaseURL}}/integration/'
+      signs: []

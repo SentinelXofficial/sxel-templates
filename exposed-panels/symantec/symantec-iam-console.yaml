@@ -1,0 +1,25 @@
+id: symantec-iam-console
+brief:
+    title: Symantec Identity Manager Management Console
+    by: therealtoastycat
+    level: info
+    about: Management Console to administrate Symantec Identity Manager environment, authentication is sometimes disabled.
+    label:
+        - symantec
+        - panel
+        - login
+        - broadcom
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/iam/immanage/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - <title>Management Console</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

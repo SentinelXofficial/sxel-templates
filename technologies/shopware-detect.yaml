@@ -1,0 +1,29 @@
+id: shopware-detect
+brief:
+    title: Shopware CMS detect
+    by: cyllective
+    level: info
+    about: Detects Shopware CMS
+    label:
+        - tech
+        - shopware
+        - cms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin'
+        - '{{BaseURL}}/backend'
+      signs:
+        - "on": word
+          has:
+            - Realisiert mit Shopware
+            - Realised with Shopware
+            - Shopware Administration (c) shopware AG
+            - <title>Shopware 5 - Backend (c) shopware AG</title>
+            - Shopware.Application.start
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

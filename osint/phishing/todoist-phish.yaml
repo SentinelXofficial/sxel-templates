@@ -1,0 +1,25 @@
+id: todoist-phish
+brief:
+    title: Todoist phishing Detection
+    by: rxerium
+    level: info
+    about: A Todoist phishing website was detected
+    label:
+        - phishing
+        - todoist
+        - productivity
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Todoist | A To-Do List to Organize Your Work &amp; Life
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

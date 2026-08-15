@@ -1,0 +1,16 @@
+id: cherrypy-detect
+brief:
+    title: CherryPy Web Server - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects servers running the CherryPy web server by identifying the Server header in HTTP responses.
+    label:
+        - tech
+        - cherrypy
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

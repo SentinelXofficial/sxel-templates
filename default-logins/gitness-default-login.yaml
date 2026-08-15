@@ -1,0 +1,17 @@
+id: gitness-default-login
+brief:
+    title: Gitness - Default Login
+    by: 0x_Akoko
+    level: high
+    about: Detected Gitness instance was found using default admin credentials (admin/changeit).
+    label:
+        - gitness
+        - default-login
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/v1/login?include_cookie=true'
+      head:
+        Content-Type: application/json
+      body: '{"login_identifier":"{{username}}","password":"{{password}}"}'
+      signs: []

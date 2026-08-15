@@ -1,0 +1,28 @@
+id: htaccess-config
+brief:
+    title: HTaccess config file
+    by: Yash Anand @yashanand155
+    level: info
+    about: ""
+    label:
+        - miscellaneous
+        - misc
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.htaccess'
+        - '{{BaseURL}}/example.htaccess'
+        - '{{BaseURL}}/_.htaccess'
+        - '{{BaseURL}}/sample.htaccess'
+        - '{{BaseURL}}/a.htaccess'
+        - '{{BaseURL}}/htaccess_for_page_not_found_redirects.htaccess'
+      signs:
+        - "on": word
+          has:
+            - RewriteRule
+            - </IfModule>
+            - <IfModule
+          in: body
+          need: all

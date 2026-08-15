@@ -1,0 +1,28 @@
+id: alphaweb-default-login
+brief:
+    title: AlphaWeb XE Default Login
+    by: Lark Lab
+    level: medium
+    about: An AlphaWeb XE default login was discovered.
+    label:
+        - default-login
+        - AlphaWeb
+        - vuln
+    score: CVSS:5.8
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/php/node_info.php'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+        Referer: '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - HW Configuration
+            - SW Configuration
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

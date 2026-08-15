@@ -1,0 +1,17 @@
+id: riello-netman204-panel
+brief:
+    title: Riello UPS NetMan 204 Panel - Detect
+    by: s4e-io
+    level: info
+    about: Riello UPS NetMan 204 login panel was detected.
+    label:
+        - netman
+        - panel
+        - detect
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

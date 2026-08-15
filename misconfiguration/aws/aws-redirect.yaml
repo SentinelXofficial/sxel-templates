@@ -1,0 +1,24 @@
+id: aws-redirect
+brief:
+    title: Subdomain takeover AWS S3
+    by: manikanta a.k.a @secureitmania
+    level: info
+    about: ""
+    label:
+        - aws
+        - takeover
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 307
+        - "on": word
+          has:
+            - 'Location: https://aws.amazon.com/s3/'
+          in: header
+          need: all

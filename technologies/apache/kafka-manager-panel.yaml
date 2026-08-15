@@ -1,0 +1,24 @@
+id: kafka-manager-panel
+brief:
+    title: Kafka Manager Panel
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - kafka
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Kafka Manager
+          in: body
+        - "on": word
+          has:
+            - Kafka-Manager
+          in: header

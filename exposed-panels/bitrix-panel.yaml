@@ -1,0 +1,23 @@
+id: bitrix-login
+brief:
+    title: Bitrix Login Panel
+    by: juicypotato1
+    level: info
+    about: Bitrix24 is a unified work space that places a complete set of business tools into a single, intuitive interface.
+    label:
+        - panel
+        - bitrix
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/bitrix/admin/'
+        - '{{BaseURL}}/bitrix/components/bitrix/map.yandex.view/settings/settings.php'
+      signs:
+        - "on": word
+          has:
+            - USER_LOGIN
+            - /bitrix/js/main/
+          in: body
+          need: all

@@ -1,0 +1,25 @@
+id: odoo-database-manager
+brief:
+    title: Odoo - Database Manager Discovery
+    by: __Fazal
+    level: low
+    about: Odoo database manager was discovered.
+    label:
+        - panel
+        - odoo
+        - backup
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web/database/manager'
+      signs:
+        - "on": word
+          has:
+            - <title>Odoo</title>
+            - .o_database_delete
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

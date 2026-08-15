@@ -1,0 +1,17 @@
+id: wordpress-woocommerce-legacy-rest-api
+brief:
+    title: WooCommerce Legacy REST API Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/woocommerce-legacy-rest-api/readme.txt'
+      signs: []

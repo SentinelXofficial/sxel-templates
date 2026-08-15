@@ -1,0 +1,16 @@
+id: dedecms-detect
+brief:
+    title: DedeCMS Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - dedecms
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/robots.txt'
+      signs: []

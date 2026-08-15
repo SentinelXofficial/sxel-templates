@@ -1,0 +1,23 @@
+id: mongodb-exposure
+brief:
+    title: MongoDB Exposure
+    by: DhiyaneshDk
+    level: info
+    about: Detected MongoDB instances exposed over HTTP using the native driver port.
+    label:
+        - mongodb
+        - exposure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - access MongoDB
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

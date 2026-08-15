@@ -1,0 +1,24 @@
+id: kipin
+brief:
+    title: Kipin User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Kipin user name information check was conducted.
+    label:
+        - osint
+        - osint-business
+        - kipin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://kipin.app/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - kipin.app/data/photos/resized2/
+          in: body
+          need: all

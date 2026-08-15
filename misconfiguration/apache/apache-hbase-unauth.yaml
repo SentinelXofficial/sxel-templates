@@ -1,0 +1,25 @@
+id: apache-hbase-unauth
+brief:
+    title: Apache Hbase Unauth
+    by: pikpikcu
+    level: medium
+    about: Apache Hbase is exposed.
+    label:
+        - apache
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/conf'
+      signs:
+        - "on": word
+          has:
+            - <name>hbase.defaults.for.version</name>
+            - <source>hbase-default.xml</source>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

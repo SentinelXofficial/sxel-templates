@@ -1,0 +1,21 @@
+id: api-flickr
+brief:
+    title: Flickr API Test
+    by: geeknik
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - flickr
+moves:
+    - verb: GET
+      to:
+        - https://www.flickr.com/services/rest/?method=flickr.tags.getHotList&api_key={{token}}
+      signs:
+        - "on": word
+          has:
+            - secret
+            - owner
+            - username
+          in: body
+          need: all

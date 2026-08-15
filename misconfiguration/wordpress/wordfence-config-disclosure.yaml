@@ -1,0 +1,37 @@
+id: wordfence-config-disclosure
+brief:
+    title: WordPress Wordfence - Configuration File Disclosure
+    by: ritikchaddha
+    level: medium
+    about: The Wordfence Security plugin for WordPress stores configuration files in the /wp-content/wflogs/ directory. These files may be accessible without authentication and can expose sensitive configurat...
+    label:
+        - wordpress
+        - wp
+        - wp-plugin
+        - wordfence
+        - config
+        - exposure
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - plugins/wordfence
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/wflogs/config.php'
+        - '{{BaseURL}}/wp-content/wflogs/config-synced.php'
+      signs:
+        - "on": word
+          has:
+            - authKey"
+            - '{s'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

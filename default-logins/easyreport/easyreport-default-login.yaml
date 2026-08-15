@@ -1,0 +1,35 @@
+id: easyreport-default-login
+brief:
+    title: EasyReport - Default Login
+    by: SleepingBag945
+    level: high
+    about: ""
+    label:
+        - easyreport
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/member/authenticate'
+      head:
+        Accept: application/json, text/javascript, */*; q=0.01
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+        X-Requested-With: XMLHttpRequest
+      body: account={{username}}&password={{password}}&rememberMe=false
+      signs:
+        - "on": word
+          has:
+            - '"code":'
+            - '"detailMsg":'
+            - '"data":true'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: nginx-proxy-manager
+brief:
+    title: Nginx Proxy Manager Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Nginx Proxy Manager login panel was detected.
+    label:
+        - panel
+        - nginx
+        - proxy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Nginx Proxy Manager</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

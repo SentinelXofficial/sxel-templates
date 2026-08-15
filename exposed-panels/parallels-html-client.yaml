@@ -1,0 +1,18 @@
+id: parallels-html-client
+brief:
+    title: Parallels HTML5 Client Login Panel - Detect
+    by: pdteam
+    level: info
+    about: Parallels HTML5 Client login panel was detected.
+    label:
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/RASHTML5Gateway/'
+      signs:
+        - "on": word
+          has:
+            - <title>Parallels HTML5 Client</title>
+          in: body

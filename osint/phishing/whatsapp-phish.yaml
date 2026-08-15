@@ -1,0 +1,24 @@
+id: Whatsapp-phish
+brief:
+    title: Whatsapp phishing Detection
+    by: rxerium
+    level: info
+    about: A Whatsapp phishing website was detected
+    label:
+        - phishing
+        - whatsapp
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - WhatsApp | Secure and Reliable Free Private Messaging and Callings
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

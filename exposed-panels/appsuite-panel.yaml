@@ -1,0 +1,26 @@
+id: appsuite-panel
+brief:
+    title: Appsuite Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - panel
+        - appsuite
+        - detect
+        - open-xchange
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/appsuite/'
+      signs:
+        - "on": word
+          has:
+            - /appsuite
+            - io-ox-login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

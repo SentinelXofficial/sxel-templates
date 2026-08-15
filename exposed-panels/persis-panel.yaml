@@ -1,0 +1,30 @@
+id: persis-panel
+brief:
+    title: Persis Panel - Detect
+    by: righettod
+    level: info
+    about: Persis panel was detected,
+    label:
+        - panel
+        - persis
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/main'
+      signs:
+        - "on": word
+          has:
+            - <title>Persis</title>
+            - /persis/
+            - persis.require
+            - persis.ui.progress
+            - images_persis/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+            - 301
+            - 302

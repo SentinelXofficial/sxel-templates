@@ -1,0 +1,25 @@
+id: nextjs-redirect
+brief:
+    title: Next.js <1.2.3 - Open Redirect
+    by: DhiyaneshDk
+    level: medium
+    about: Next.js contains an open redirect via “_next/image” due to improper path parsing.
+    label:
+        - redirect
+        - nextjs
+        - xss
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_next/image?url=/\/\interact.sh/&q=100&w=128&h=128'
+      signs:
+        - "on": word
+          has:
+            - 'Location: /\/\/interact.sh'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 308

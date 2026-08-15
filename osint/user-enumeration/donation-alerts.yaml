@@ -1,0 +1,24 @@
+id: donation-alerts
+brief:
+    title: Donation Alerts User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Donation Alerts user name information check was conducted.
+    label:
+        - osint
+        - osint-business
+        - donation-alerts
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.donationalerts.com/api/v1/user/{{user}}/donationpagesettings
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - background_image_url
+          in: body
+          need: all

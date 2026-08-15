@@ -1,0 +1,20 @@
+id: netscaler-gateway
+brief:
+    title: Netscaler Gateway
+    by: joeldeleep
+    level: info
+    about: Citrix NetScaler is an application delivery controller that improves the delivery speed and quality of applications to an end user.
+    label:
+        - panel
+        - netscaler
+        - citrix
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/vpn/index.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Netscaler Gateway</title>
+          in: body

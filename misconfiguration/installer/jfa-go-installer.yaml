@@ -1,0 +1,25 @@
+id: jfa-go-installer
+brief:
+    title: jfa-go Setup Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed jfa-go Setup page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - jfa-go
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Setup - jfa-go
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

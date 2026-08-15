@@ -1,0 +1,30 @@
+id: symfony-debug
+brief:
+    title: Symfony Debug Mode
+    by: organiccrap
+    level: high
+    about: A Symfony installations 'debug' interface is enabled, allowing the disclosure and possible execution of arbitrary code.
+    label:
+        - symfony
+        - debug
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/admin_dev.php'
+        - '{{BaseURL}}/index_dev.php'
+        - '{{BaseURL}}/app_dev.php'
+      signs:
+        - "on": word
+          has:
+            - 'x-debug-token-link:'
+            - /_profiler/
+          in: header
+          need: all
+        - "on": word
+          has:
+            - debug mode</a> is enabled.
+            - id="sfWebDebugSymfony"
+          in: body

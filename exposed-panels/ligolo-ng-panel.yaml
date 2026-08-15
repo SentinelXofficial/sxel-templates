@@ -1,0 +1,17 @@
+id: ligolo-ng-panel
+brief:
+    title: Ligolo-ng Panel - Detect
+    by: Kazgangap
+    level: info
+    about: Ligolo-ng panel was detected.
+    label:
+        - panel
+        - ligolo-ng
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs: []

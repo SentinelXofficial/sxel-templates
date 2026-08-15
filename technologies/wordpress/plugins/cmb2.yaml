@@ -1,0 +1,17 @@
+id: wordpress-cmb2
+brief:
+    title: CMB2 Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/cmb2/readme.txt'
+      signs: []

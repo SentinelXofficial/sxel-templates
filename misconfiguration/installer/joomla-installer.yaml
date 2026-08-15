@@ -1,0 +1,30 @@
+id: joomla-installer
+brief:
+    title: Joomla! Installer Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Joomla is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - joomla
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/installation/index.php'
+      signs:
+        - "on": word
+          has:
+            - Joomla! Web Installer
+            - Configuration
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

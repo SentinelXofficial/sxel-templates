@@ -1,0 +1,25 @@
+id: ubersmith-installer
+brief:
+    title: Ubersmith Setup Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed Ubersmith Setup page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - ubersmith
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup/index.php'
+      signs:
+        - "on": word
+          has:
+            - Ubersmith Setup
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

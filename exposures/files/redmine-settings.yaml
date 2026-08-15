@@ -1,0 +1,30 @@
+id: redmine-settings
+brief:
+    title: Redmine settings.yml File Disclosure
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - redmine
+        - devops
+        - files
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/settings.yml'
+        - '{{BaseURL}}/config/settings.yml'
+        - '{{BaseURL}}/redmine/config/settings.yml'
+      signs:
+        - "on": word
+          has:
+            - 'format:'
+            - 'default:'
+            - Redmine
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

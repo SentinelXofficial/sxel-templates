@@ -1,0 +1,25 @@
+id: oracle-webcenter-sites
+brief:
+    title: Oracle WebCenter Sites
+    by: leovalcante
+    level: info
+    about: ""
+    label:
+        - tech
+        - oracle
+        - webcenter
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/welcome_webcenter.html'
+      signs:
+        - "on": word
+          has:
+            - FOR ORACLE
+            - WebCenter Framework
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

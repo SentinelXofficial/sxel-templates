@@ -1,0 +1,33 @@
+id: laravel-log-file
+brief:
+    title: Laravel log file publicly accessible
+    by: sheikhrishad
+    level: high
+    about: The log file of this Laravel web app might reveal details on the inner workings of the app, possibly even tokens, credentials or personal information.
+    label:
+        - laravel
+        - logs
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/storage/logs/laravel.log'
+      signs:
+        - "on": word
+          has:
+            - InvalidArgumentException
+            - local.ERROR
+            - ErrorException
+            - syntax error
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+            - text/x-log
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: processwire-installer
+brief:
+    title: ProcessWire 3.x Installer Exposure
+    by: pussycat0x
+    level: high
+    about: ProcessWire 3.x is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - processwire
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/install.php'
+      signs:
+        - "on": word
+          has:
+            - <title>ProcessWire 3.x Installer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: twitch
+brief:
+    title: Twitch User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Twitch user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - twitch
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://twitchtracker.com/search?q={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Found Exact Match
+          in: body
+          need: all

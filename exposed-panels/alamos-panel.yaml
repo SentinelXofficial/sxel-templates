@@ -1,0 +1,17 @@
+id: alamos-panel
+brief:
+    title: Alamos GmbH Panel - Detect
+    by: Splint3r7
+    level: info
+    about: Alamos GmbH panel was detected.
+    label:
+        - panel
+        - alamos
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,29 @@
+id: phpsec-config
+brief:
+    title: phpspec Config - Detect
+    by: DhiyaneshDK
+    level: info
+    about: phpspec configuration information was detected.
+    label:
+        - exposure
+        - phpsec
+        - php
+        - devops
+        - cicd
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.phpspec.yml'
+        - '{{BaseURL}}/phpspec.yml'
+      signs:
+        - "on": word
+          has:
+            - 'suites:'
+            - 'main:'
+            - 'namespace:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

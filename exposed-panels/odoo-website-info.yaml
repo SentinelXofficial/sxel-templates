@@ -1,0 +1,24 @@
+id: odoo-website-info-exposure
+brief:
+    title: Odoo Website - Information Disclosure
+    by: aushack
+    level: info
+    about: Detected exposure of the Odoo website info page, which discloses installed applications and extensions that could aid reconnaissance.
+    label:
+        - info
+        - odoo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/website/info'
+      signs:
+        - "on": word
+          has:
+            - instance of Odoo, the <a target="_blank" href="https://www.odoo.com">Open Source ERP</a>
+            - Installed Applications
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

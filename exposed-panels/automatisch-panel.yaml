@@ -1,0 +1,25 @@
+id: automatisch-panel
+brief:
+    title: Automatisch Panel - Detect
+    by: rxerium
+    level: info
+    about: The open source Zapier alternative.
+    label:
+        - panel
+        - automatisch
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Automatisch
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

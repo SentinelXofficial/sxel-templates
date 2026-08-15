@@ -1,0 +1,24 @@
+id: lansweeper-login
+brief:
+    title: Lansweeper Login Panel - Detect
+    by: divya_mudgal
+    level: info
+    about: Lansweeper login panel was detected.
+    label:
+        - lansweeper
+        - tech
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.aspx'
+      signs:
+        - "on": word
+          has:
+            - Lansweeper - Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

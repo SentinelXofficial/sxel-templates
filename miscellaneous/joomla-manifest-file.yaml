@@ -1,0 +1,31 @@
+id: joomla-manifest-file
+brief:
+    title: Joomla! Manifest File - Disclosure
+    by: oppsec
+    level: medium
+    about: A Joomla! Manifest file was discovered. joomla.xml is a file which stores information about installed Joomla!, such as version, files, and paths.
+    label:
+        - miscellaneous
+        - misc
+        - joomla
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/administrator/manifests/files/joomla.xml'
+      signs:
+        - "on": word
+          has:
+            - admin@joomla.org
+            - www.joomla.org
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/xml
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

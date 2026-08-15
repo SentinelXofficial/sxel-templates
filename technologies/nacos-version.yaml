@@ -1,0 +1,24 @@
+id: nacos-version
+brief:
+    title: Nacos - Detect
+    by: Arm!tage
+    level: info
+    about: Nacos was detected.
+    label:
+        - tech
+        - detect
+        - nacos
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v1/console/server/state?accessToken=&username='
+        - '{{BaseURL}}/nacos/v1/console/server/state?accessToken=&username='
+      signs:
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+        - "on": status
+          status:
+            - 200

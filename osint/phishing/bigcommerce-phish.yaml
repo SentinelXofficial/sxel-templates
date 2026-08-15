@@ -1,0 +1,25 @@
+id: bigcommerce-phish
+brief:
+    title: BigCommerce phishing Detection
+    by: rxerium
+    level: info
+    about: A BigCommerce phishing website was detected
+    label:
+        - phishing
+        - bigcommerce
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Shape Your Future On Your Terms | BigCommerce
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

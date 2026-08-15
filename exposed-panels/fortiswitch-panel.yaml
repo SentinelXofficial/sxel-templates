@@ -1,0 +1,24 @@
+id: fortiswitch-panel
+brief:
+    title: Fortiswitch Panel - Detect
+    by: rxerium
+    level: info
+    about: Fortiswitch panel was detected.
+    label:
+        - login
+        - panel
+        - fortiswitch
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>FortiSwitch
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

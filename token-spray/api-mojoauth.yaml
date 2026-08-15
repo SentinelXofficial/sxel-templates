@@ -1,0 +1,23 @@
+id: api-mojoauth
+brief:
+    title: MojoAuth API Test
+    by: daffainfo
+    level: info
+    about: Secure and modern passwordless authentication platform
+    label:
+        - token-spray
+        - mojoauth
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}https://api.mojoauth.com/token/jwks'
+      head:
+        X-API-Key: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"keys"'
+            - '"kty"'
+            - '"kid"'
+          in: body
+          need: all

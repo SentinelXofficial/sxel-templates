@@ -1,0 +1,32 @@
+id: oracle-ebs-sqllog-disclosure
+brief:
+    title: Oracle EBS - SQL Log Disclosure
+    by: dhiyaneshDk
+    level: medium
+    about: An Oracle EBS SQL log was discovered.
+    label:
+        - oracle
+        - ebs
+        - logs
+        - exposure
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/OA_HTML/bin/sqlnet.log'
+      signs:
+        - "on": word
+          has:
+            - DESCRIPTION=
+            - USER=
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

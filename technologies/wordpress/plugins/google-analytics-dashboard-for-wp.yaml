@@ -1,0 +1,17 @@
+id: wordpress-google-analytics-dashboard-for-wp
+brief:
+    title: ExactMetrics – Google Analytics Dashboard for WordPress (Website Stats Plugin) Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/google-analytics-dashboard-for-wp/readme.txt'
+      signs: []

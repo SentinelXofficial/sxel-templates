@@ -1,0 +1,30 @@
+id: elastic-hd-dashboard
+brief:
+    title: Elastic HD Dashboard Exposure
+    by: tess
+    level: low
+    about: Elastic HD Dashboard is exposed.
+    label:
+        - misconfig
+        - exposure
+        - elastic
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Elastic HD Dashboard
+            - elasticsearch go Edition head plugin
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

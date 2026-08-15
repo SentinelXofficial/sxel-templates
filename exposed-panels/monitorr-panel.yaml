@@ -1,0 +1,16 @@
+id: monitorr-panel
+brief:
+    title: Monitorr Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - monitorr
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

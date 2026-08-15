@@ -1,0 +1,33 @@
+id: default-spx-key
+brief:
+    title: SPX PHP Profiler - Default Key
+    by: vagnerd
+    level: high
+    about: SPX PHP profiler default spx key were discovered.
+    label:
+        - spx-php
+        - debug
+        - misconfig
+        - spx
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?SPX_KEY={{api_key}}&SPX_UI_URI=/'
+      signs:
+        - "on": word
+          has:
+            - <title>SPX Control Panel</title>
+            - SPX_ENABLED
+            - Configuration
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

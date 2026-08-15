@@ -1,0 +1,26 @@
+id: mrtg-detect
+brief:
+    title: Detect MRTG
+    by: geeknik
+    level: info
+    about: The Multi Router Traffic Grapher
+    label:
+        - tech
+        - mrtg
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/mrtg/'
+        - '{{BaseURL}}/MRTG/'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - MRTG Index Page
+            - Multi Router Traffic Grapher
+          in: body
+          need: all

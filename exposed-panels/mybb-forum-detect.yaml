@@ -1,0 +1,21 @@
+id: mybb-forum-detect
+brief:
+    title: MyBB Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: MyBB login panel was detected.
+    label:
+        - panel
+        - mybb
+        - forum
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/portal.php'
+      signs:
+        - "on": word
+          has:
+            - MyBB Forum
+            - <title>MyBB
+          in: body

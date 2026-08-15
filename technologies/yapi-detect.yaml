@@ -1,0 +1,23 @@
+id: yapi-detect
+brief:
+    title: YApi Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - yapi
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>YApi-高效、易用、功能强大的可视化接口管理平台</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

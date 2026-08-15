@@ -1,0 +1,18 @@
+id: wp-ajax-search-lite-fpd
+brief:
+    title: WordPress Ajax Search Lite - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Plugin Ajax Search Lite files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - fpd
+        - ajax-search-lite
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/ajax-search-lite/includes/classes/widgets/class-search-widget.php'
+      signs: []

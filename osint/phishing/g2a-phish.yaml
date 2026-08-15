@@ -1,0 +1,25 @@
+id: g2a-phish
+brief:
+    title: G2A phishing Detection
+    by: rxerium
+    level: info
+    about: A G2A phishing website was detected
+    label:
+        - phishing
+        - g2a
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - G2A
+            - G2A.COM - Open the Gate 2 Adventure in the Digital World
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

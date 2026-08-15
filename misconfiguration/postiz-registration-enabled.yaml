@@ -1,0 +1,25 @@
+id: postiz-registration-enabled
+brief:
+    title: Postiz - User Registration Enabled
+    by: Th3l0newolf
+    level: info
+    about: Postiz registration page is exposed and allows public account creation. Unrestricted registration may allow unauthorized users to create accounts.
+    label:
+        - postiz
+        - misconfig
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth'
+      signs:
+        - "on": word
+          has:
+            - <title>Postiz Register</title>
+            - Create Account</div></button>
+            - Sign Up</h1>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

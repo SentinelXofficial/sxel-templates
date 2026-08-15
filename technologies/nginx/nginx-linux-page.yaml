@@ -1,0 +1,21 @@
+id: nginx-linux-page
+brief:
+    title: Nginx HTTP Server Amazon Linux
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - nginx
+        - amazon
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Test Page for the Nginx HTTP Server on Amazon Linux</title>
+          in: body
+          need: all

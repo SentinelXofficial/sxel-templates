@@ -1,0 +1,17 @@
+id: asana-client-id
+brief:
+    title: Asana Client ID
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - asana
+        - exposure
+        - tokens
+        - secret
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

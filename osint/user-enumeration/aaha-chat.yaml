@@ -1,0 +1,24 @@
+id: aaha-chat
+brief:
+    title: Aaha chat User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Aaha chat user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - aaha-chat
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.aahachat.org/profile/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - og:title
+          in: body
+          need: all

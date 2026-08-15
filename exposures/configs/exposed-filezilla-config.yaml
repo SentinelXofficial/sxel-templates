@@ -1,0 +1,18 @@
+id: exposed-filezilla-config
+brief:
+    title: Exposed FileZilla Configuration File - Exposure
+    by: pussycat0x
+    level: medium
+    about: Detected publicly accessible FileZilla client configuration files (sitemanager.xml, recentservers.xml, filezilla.xml).
+    label:
+        - exposure
+        - config
+        - filezilla
+        - ftp
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/files/FileZilla.xml'
+        - '{{BaseURL}}/recentservers.xml'
+        - '{{BaseURL}}/filezilla.xml'
+      signs: []

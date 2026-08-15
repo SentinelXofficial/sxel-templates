@@ -1,0 +1,24 @@
+id: netsweeper-webadmin-panel
+brief:
+    title: Netsweeper WebAdmin - Login Panel
+    by: rxerium
+    level: info
+    about: Netsweeper is an internet content filtering and web policy management platform used by ISPs, governments, educational institutions, and enterprises to enforce acceptable use policies and restrict a...
+    label:
+        - panel
+        - netsweeper
+        - webfilter
+        - vpn
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Netsweeper WebAdmin
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

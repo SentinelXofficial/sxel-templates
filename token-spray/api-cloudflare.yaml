@@ -1,0 +1,21 @@
+id: api-cloudflare
+brief:
+    title: Cloudflare API Test
+    by: ffffffff0x
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - cloudflare
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://api.cloudflare.com/client/v4/user/tokens/verify'
+      head:
+        Authorization: Bearer {{token}}
+        Content-Type: application/json
+      signs:
+        - "on": word
+          has:
+            - This API Token is valid and active
+          in: body

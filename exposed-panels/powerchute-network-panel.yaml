@@ -1,0 +1,25 @@
+id: powerchute-network-panel
+brief:
+    title: PowerChute Network Shutdown Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - panel
+        - login
+        - powerchute
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>PowerChute Network Shutdown</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

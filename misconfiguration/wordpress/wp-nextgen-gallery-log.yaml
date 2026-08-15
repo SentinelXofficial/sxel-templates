@@ -1,0 +1,18 @@
+id: wp-nextgen-gallery-log
+brief:
+    title: WordPress Gallery Plugin / NextGEN Gallery (nextgen-gallery) Error Log Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: The WordPress NextGEN Gallery plugin exposes a PHP error log file (php_errors.log) within its admin directory that is directly accessible without authentication.
+    label:
+        - debug
+        - wordpress
+        - wp
+        - wp-plugin
+        - nextgen-gallery
+        - log
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/nextgen-gallery/admin/php_errors.log'
+      signs: []

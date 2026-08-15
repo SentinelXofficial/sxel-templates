@@ -1,0 +1,26 @@
+id: apex-central-panel
+brief:
+    title: TrendMicro Apex Central Login - Panel
+    by: darses
+    level: info
+    about: TrendMicro Apex Central Login Panel was discovered..
+    label:
+        - panel
+        - trendmicro
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webapp/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Login</title>
+            - images/logo_trend_20.png
+            - Action=GetLogonInfo
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

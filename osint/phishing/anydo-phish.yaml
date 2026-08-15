@@ -1,0 +1,25 @@
+id: anydo-phish
+brief:
+    title: Any.do phishing Detection
+    by: rxerium
+    level: info
+    about: A Any.do phishing website was detected
+    label:
+        - phishing
+        - anydo
+        - productivity
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>A simple to do list for you and your team
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

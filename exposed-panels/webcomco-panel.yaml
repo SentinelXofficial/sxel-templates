@@ -1,0 +1,24 @@
+id: webcomco-panel
+brief:
+    title: WebcomCo - Panel
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - panel
+        - webcomco
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>WebcomCo</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

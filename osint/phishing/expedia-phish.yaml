@@ -1,0 +1,26 @@
+id: expedia-phish
+brief:
+    title: Expedia phishing Detection
+    by: rxerium
+    level: info
+    about: An Expedia phishing website was detected
+    label:
+        - phishing
+        - expedia
+        - travel
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Expedia
+            - '<title>Expedia Travel: Vacation Homes, Hotels, Car Rentals, Flights &amp; More'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

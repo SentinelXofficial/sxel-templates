@@ -1,0 +1,26 @@
+id: recoverpoint-panel
+brief:
+    title: Dell EMC RecoverPoint Panel - Detect
+    by: rxerium
+    level: info
+    about: Dell EMC RecoverPoint management panel was detected.
+    label:
+        - panel
+        - recoverpoint
+        - dell
+        - emc
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#!/welcome'
+      signs:
+        - "on": word
+          has:
+            - RecoverPoint Wizard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

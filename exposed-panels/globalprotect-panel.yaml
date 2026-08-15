@@ -1,0 +1,23 @@
+id: globalprotect-panel
+brief:
+    title: Palo Alto Networks GlobalProtect Login Panel - Detect
+    by: organiccrap
+    level: info
+    about: Palo Alto Networks GlobalProtect login panel was detected.
+    label:
+        - panel
+        - panos
+        - globalprotect
+        - paloaltonetworks
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/global-protect/login.esp'
+        - '{{BaseURL}}/sslmgr'
+      signs:
+        - "on": word
+          has:
+            - <title>GlobalProtect Portal</TITLE>
+            - <msg>Invalid parameters</msg>
+          in: body

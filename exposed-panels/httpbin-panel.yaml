@@ -1,0 +1,24 @@
+id: httpbin-panel
+brief:
+    title: HTTPBin Login Panel - Detect
+    by: Adam Crosser
+    level: info
+    about: HTTPBin login panel was detected.
+    label:
+        - panel
+        - httpbin
+        - oss
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>httpbin.org</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

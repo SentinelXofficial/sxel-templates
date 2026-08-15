@@ -1,0 +1,25 @@
+id: ganglia-cluster-dashboard
+brief:
+    title: Ganglia Cluster Dashboard - Detect
+    by: ritikchaddha
+    level: low
+    about: Ganglia Cluster dashboard was detected.
+    label:
+        - misconfig
+        - ganglia
+        - dashboard
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/ganglia/'
+      signs:
+        - "on": word
+          has:
+            - ganglia_form.submit()
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

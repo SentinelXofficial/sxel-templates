@@ -1,0 +1,24 @@
+id: okta-panel
+brief:
+    title: Okta Login Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Okta login panel was detected.
+    label:
+        - panel
+        - okta
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Okta - Sign In</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

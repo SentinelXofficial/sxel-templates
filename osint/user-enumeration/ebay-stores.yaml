@@ -1,0 +1,24 @@
+id: ebay-stores
+brief:
+    title: Ebay stores User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Ebay stores user name information check was conducted.
+    label:
+        - osint
+        - osint-shopping
+        - ebay-stores
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.ebay.com/str/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| eBay Stores</title>'
+          in: body
+          need: all

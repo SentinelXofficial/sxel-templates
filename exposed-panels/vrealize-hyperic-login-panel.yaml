@@ -1,0 +1,26 @@
+id: vrealize-hyperic-panel
+brief:
+    title: vRealize Hyperic Login Panel - Detect
+    by: Charles D
+    level: info
+    about: vRealize Hyperic login panel was detected
+    label:
+        - login
+        - panel
+        - vrealize
+        - hyperic
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/app/login'
+      signs:
+        - "on": word
+          has:
+            - Sign In - Hyperic
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

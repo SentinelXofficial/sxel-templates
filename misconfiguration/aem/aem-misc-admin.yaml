@@ -1,0 +1,31 @@
+id: aem-misc-admin
+brief:
+    title: Adobe AEM Misc Admin Dashboard Exposure
+    by: dhiyaneshDk
+    level: high
+    about: Adobe AEM Misc Admin Dashboard is exposed.
+    label:
+        - misconfig
+        - aem
+        - adobe
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - <title>AEM Tools</title>
+            - <title>AEM MCM</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

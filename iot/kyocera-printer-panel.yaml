@@ -1,0 +1,25 @@
+id: kyocera-printer-panel
+brief:
+    title: Kyocera Printer Panel - Detect
+    by: gy741
+    level: info
+    about: Kyocera printer panel was detected.
+    label:
+        - iot
+        - panel
+        - kyocera
+        - printer
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - /startwlm/Start_Wlm.htm
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

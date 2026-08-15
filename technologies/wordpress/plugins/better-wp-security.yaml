@@ -1,0 +1,18 @@
+id: wordpress-better-wp-security
+brief:
+    title: Solid Security – Password, Two Factor Authentication, and Brute Force Protection Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/better-wp-security/readme.txt'
+      signs: []

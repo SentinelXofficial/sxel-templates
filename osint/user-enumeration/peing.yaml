@@ -1,0 +1,24 @@
+id: peing
+brief:
+    title: Peing User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Peing user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - peing
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://peing.net/api/v2/items/?type=answered&account={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - items
+          in: body
+          need: all

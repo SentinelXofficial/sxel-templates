@@ -1,0 +1,17 @@
+id: simplesamlphp-detect
+brief:
+    title: SimpleSAMLphp - Detect
+    by: righettod
+    level: info
+    about: SimpleSAMLphp was detected.
+    label:
+        - tech
+        - simplesamlphp
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/simplesaml/module.php/core/frontpage_welcome.php'
+        - '{{BaseURL}}/module.php/core/frontpage_welcome.php'
+      signs: []

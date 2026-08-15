@@ -1,0 +1,17 @@
+id: rubygems-api-key
+brief:
+    title: RubyGems API Key
+    by: DhiyaneshDK
+    level: high
+    about: ""
+    label:
+        - rubygems
+        - token
+        - exposure
+        - ruby
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

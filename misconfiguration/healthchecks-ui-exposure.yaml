@@ -1,0 +1,24 @@
+id: healthchecks-ui-exposure
+brief:
+    title: Healthchecks UI Exposure
+    by: tess
+    level: low
+    about: Healthchecks UI is exposed.
+    label:
+        - misconfig
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Health Checks UI
+            - var webhookEndpoint
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

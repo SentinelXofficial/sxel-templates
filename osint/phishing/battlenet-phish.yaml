@@ -1,0 +1,24 @@
+id: battlenet-phish
+brief:
+    title: battlenet phishing Detection
+    by: rxerium
+    level: info
+    about: A battlenet phishing website was detected
+    label:
+        - phishing
+        - battlenet
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Battle.net Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

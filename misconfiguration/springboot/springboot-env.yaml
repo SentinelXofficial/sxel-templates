@@ -1,0 +1,44 @@
+id: springboot-env
+brief:
+    title: Springboot Env Actuator - Detect
+    by: that_juan_
+    level: low
+    about: Sensitive environment variables may not be masked
+    label:
+        - misconfig
+        - springboot
+        - env
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/env'
+        - '{{BaseURL}}/actuator/env'
+        - '{{BaseURL}}/actuator;/env;'
+        - '{{BaseURL}}/message-api/actuator/env'
+      signs:
+        - "on": word
+          has:
+            - applicationConfig
+            - activeProfiles
+          in: body
+          need: all
+        - "on": word
+          has:
+            - server.port
+            - local.server.port
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v1+json
+            - application/vnd.spring-boot.actuator.v2+json
+            - application/vnd.spring-boot.actuator.v3+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

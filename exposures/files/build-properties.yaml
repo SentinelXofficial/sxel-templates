@@ -1,0 +1,27 @@
+id: build-properties
+brief:
+    title: Build Properties File Exposure
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - exposure
+        - config
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/build.properties'
+        - '{{BaseURL}}/build/build.properties'
+        - '{{BaseURL}}/manual/style/build.properties'
+      signs:
+        - "on": word
+          has:
+            - manpages.8 = \
+            - manpages.1 = \
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

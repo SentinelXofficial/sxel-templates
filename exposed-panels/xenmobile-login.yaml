@@ -1,0 +1,24 @@
+id: xenmobile-login
+brief:
+    title: Xenmobile Console Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Xenmobile Console login panel was detected.
+    label:
+        - panel
+        - edb
+        - citrix
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/zdm/login_xdm_uc.jsp'
+      signs:
+        - "on": word
+          has:
+            - <title>XenMobile - Console - Logon</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

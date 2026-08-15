@@ -1,0 +1,25 @@
+id: cofense-vision-panel
+brief:
+    title: Cofense Vision Login Panel - Detect
+    by: Adam Crosser
+    level: info
+    about: Cofense Vision login panel was detected.
+    label:
+        - panel
+        - cofense
+        - vision
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Vision</title>
+            - Cofense Inc.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

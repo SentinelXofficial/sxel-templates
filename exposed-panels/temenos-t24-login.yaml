@@ -1,0 +1,25 @@
+id: temenos-t24-login
+brief:
+    title: Temenos Transact Login Panel - Detect
+    by: korteke
+    level: info
+    about: Temenos Transact login panel was detected.
+    label:
+        - panel
+        - exposure
+        - temenos
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/servlet/BrowserServlet'
+      signs:
+        - "on": word
+          has:
+            - <title>T24 Sign in</title>
+            - value="CREATE.SESSION"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

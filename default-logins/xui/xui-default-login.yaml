@@ -1,0 +1,22 @@
+id: xui-default-login
+brief:
+    title: X-UI - Default Login
+    by: dali
+    level: high
+    about: X-UI contains default credentials. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - x-ui
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        content-type: application/x-www-form-urlencoded
+      body: username={{username}}&password={{password}}
+      signs: []

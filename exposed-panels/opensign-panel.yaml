@@ -1,0 +1,18 @@
+id: opensign-panel
+brief:
+    title: OpenSign Login Panel - Detect
+    by: righettod
+    level: info
+    about: OpenSign Login panel was discovered.
+    label:
+        - panel
+        - opensign
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/locales/en/translation.json'
+        - '{{BaseURL}}/'
+      signs: []

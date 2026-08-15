@@ -1,0 +1,26 @@
+id: pghero-dashboard-exposure
+brief:
+    title: PgHero Dashboard Exposure Panel - Detect
+    by: DhiyaneshDk
+    level: medium
+    about: PgHero Dashboard Exposure panel was detected.
+    label:
+        - exposure
+        - panel
+        - pghero
+        - misconfig
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/connections'
+      signs:
+        - "on": word
+          has:
+            - <title>PgHero / Connections</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

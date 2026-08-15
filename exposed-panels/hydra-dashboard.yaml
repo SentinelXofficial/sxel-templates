@@ -1,0 +1,26 @@
+id: hydra-dashboard
+brief:
+    title: Hydra Router Dashboard - Detect
+    by: tess
+    level: info
+    about: Hydra router dashboard was detected.
+    label:
+        - panel
+        - exposure
+        - hydra
+        - hydra_project
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Hydra Router Dashboard
+            - 'screen: ''dashboard'''
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

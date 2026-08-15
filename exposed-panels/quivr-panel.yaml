@@ -1,0 +1,17 @@
+id: quivr-panel
+brief:
+    title: Quivr Panel - Detect
+    by: s4e-io
+    level: info
+    about: Quivr panel was discovered.
+    label:
+        - panel
+        - login
+        - quivr
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs: []

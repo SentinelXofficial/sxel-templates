@@ -1,0 +1,25 @@
+id: aerohive-netconfig-ui
+brief:
+    title: Aerohive NetConfig UI
+    by: pussycat0x
+    level: info
+    about: An Aerohive NetConfig user interface was detected. The NetConfig UI provides a fundamental set of configurations for configuring basic network and HiveManager connectivity settings, and uploading n...
+    label:
+        - panel
+        - tech
+        - hiveos
+        - aerohive
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php5'
+      signs:
+        - "on": word
+          has:
+            - <title>Aerohive NetConfig UI</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

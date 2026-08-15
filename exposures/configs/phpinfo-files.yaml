@@ -1,0 +1,25 @@
+id: phpinfo-files
+brief:
+    title: PHPinfo Page - Detect
+    by: pdteam
+    level: low
+    about: PHPinfo page was detected. The output of the phpinfo() command can reveal sensitive and detailed PHP environment information.
+    label:
+        - config
+        - exposure
+        - phpinfo
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": word
+          has:
+            - PHP Extension
+            - PHP Version
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

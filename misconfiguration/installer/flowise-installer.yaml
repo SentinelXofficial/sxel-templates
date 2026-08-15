@@ -1,0 +1,24 @@
+id: flowise-installer
+brief:
+    title: Flowise Installation Wizard - Exposure
+    by: pussycat0x
+    level: high
+    about: Flowise Installation Wizard is susceptible to the Installation page exposure due to misconfiguration
+    label:
+        - misconfig
+        - exposure
+        - install
+        - flowise
+        - intrusive
+        - vuln
+        - ai
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/organization-setup'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/v1/account/register'
+      body: '{"user":{"name":"{{name}}","email":"{{email}}","type":"pro","credential":"{{password}}"}}'
+      signs: []

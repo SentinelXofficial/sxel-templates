@@ -1,0 +1,27 @@
+id: privategpt-detect
+brief:
+    title: PrivateGPT - Detect
+    by: ritikchaddha
+    level: info
+    about: PrivateGPT panel has been detected.
+    label:
+        - panel
+        - privategpt
+        - detect
+        - discovery
+        - ai
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - alt=PrivateGPT
+            - title":"My Private GPT
+            - content="My Private GPT
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

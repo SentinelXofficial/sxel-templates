@@ -1,0 +1,24 @@
+id: gespage-panel
+brief:
+    title: Gespage Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: Gespage login panel was detected.
+    label:
+        - panel
+        - gespage
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/gespage/webapp/login.xhtml'
+      signs:
+        - "on": word
+          has:
+            - <link rel="stylesheet" href="css/gespage.css" />
+            - <link rel="stylesheet" href="css/menugrey.css" />
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

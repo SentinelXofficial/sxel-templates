@@ -1,0 +1,25 @@
+id: sonarqube-public-projects
+brief:
+    title: Sonarqube with public projects
+    by: sickwell
+    level: low
+    about: Sonarqube public projects detected.
+    label:
+        - sonarqube
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/components/suggestions?recentlyBrowsed='
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"results":'
+            - '"items":'
+            - '"more":'
+          in: body
+          need: all

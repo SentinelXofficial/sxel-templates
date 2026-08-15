@@ -1,0 +1,26 @@
+id: espeasy-mega-exposure
+brief:
+    title: ESPEasy Mega Panel Exposure
+    by: ritikchaddha
+    level: high
+    about: ESPEasy Mega Panel is exposed.
+    label:
+        - misconfig
+        - espeasy
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'ESP Easy Mega:'
+            - Config
+            - Tools
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

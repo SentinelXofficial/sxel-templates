@@ -1,0 +1,32 @@
+id: neo4j-neodash-config
+brief:
+    title: Neo4j Neodash Config - Exposure
+    by: icarot
+    level: medium
+    about: Detects the file config.json from Neo4j Neodash web application, it contains information about DB connection with Neo4J.
+    label:
+        - config
+        - exposure
+        - neodash
+        - neo4j
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config.json'
+      signs:
+        - "on": word
+          has:
+            - standaloneHost
+            - standalonePort
+            - standaloneDatabase
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

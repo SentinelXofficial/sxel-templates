@@ -1,0 +1,24 @@
+id: mastodon-tflnetpl
+brief:
+    title: Mastodon-tfl.net.pl User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mastodon-tfl.net.pl user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastodon-tflnetpl
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://tfl.net.pl/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '@tfl.net.pl'
+          in: body
+          need: all

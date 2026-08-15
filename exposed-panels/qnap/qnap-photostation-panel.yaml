@@ -1,0 +1,19 @@
+id: qnap-photostation-panel
+brief:
+    title: QNAP Photo Station Panel - Detect
+    by: idealphase
+    level: info
+    about: QNAP Photo Station panel was detected.
+    label:
+        - panel
+        - photostation
+        - qnap
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/photo/'
+      signs:
+        - "on": status
+          status:
+            - 200

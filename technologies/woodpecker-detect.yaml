@@ -1,0 +1,16 @@
+id: woodpecker-detect
+brief:
+    title: Woodpecker - Detect
+    by: righettod
+    level: info
+    about: Woodpecker was detected — a lightweight, powerful CI/CD engine with great extensibility.
+    label:
+        - tech
+        - woodpecker
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web-config.js'
+      signs: []

@@ -1,0 +1,15 @@
+id: vmware-horizon-version
+brief:
+    title: Vmware Horizon Version Detect
+    by: veshraj
+    level: info
+    about: ""
+    label:
+        - vmware
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/portal/info.jsp'
+      signs: []

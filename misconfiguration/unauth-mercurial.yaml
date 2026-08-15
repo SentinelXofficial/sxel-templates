@@ -1,0 +1,25 @@
+id: unauth-mercurial
+brief:
+    title: Unauthenticated Mercurial Detect
+    by: pussycat0x
+    level: high
+    about: Mercurial repositories index is disclosed.
+    label:
+        - misconfig
+        - unauth
+        - mercurial
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Mercurial Repositories
+            - Last modified
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

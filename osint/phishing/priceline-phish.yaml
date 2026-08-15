@@ -1,0 +1,26 @@
+id: priceline-phish
+brief:
+    title: Priceline phishing Detection
+    by: rxerium
+    level: info
+    about: A Priceline phishing website was detected
+    label:
+        - phishing
+        - priceline
+        - travel
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Priceline
+            - Deep Discounts on Hotels, Flights and Rental Cars.  Get Exclusive Savings with Priceline.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

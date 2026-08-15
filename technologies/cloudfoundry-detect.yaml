@@ -1,0 +1,19 @@
+id: cloudfoundry-detect
+brief:
+    title: Cloudfoundry Detect
+    by: uomogrande
+    level: info
+    about: Detects cloudfoundry based on response headers
+    label:
+        - cloudfoundry
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

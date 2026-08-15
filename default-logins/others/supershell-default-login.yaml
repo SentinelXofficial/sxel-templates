@@ -1,0 +1,18 @@
+id: supershell-default-login
+brief:
+    title: Supershell - Default Login
+    by: SleepingBag945
+    level: high
+    about: Supershell is a WEB management platform that integrates the reverse_ssh service.
+    label:
+        - supershell
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/supershell/login/auth'
+      head:
+        Content-Type: application/json
+      body: '{"username":"{{username}}","password":"{{password}}"}'
+      signs: []

@@ -1,0 +1,24 @@
+id: foursquare
+brief:
+    title: Foursquare User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Foursquare user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - foursquare
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://foursquare.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - on Foursquare</title>
+          in: body
+          need: all

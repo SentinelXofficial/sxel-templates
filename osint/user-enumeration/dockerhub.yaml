@@ -1,0 +1,24 @@
+id: dockerhub
+brief:
+    title: DockerHub User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: DockerHub user name information check was conducted.
+    label:
+        - osint
+        - osint-coding
+        - dockerhub
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://hub.docker.com/v2/users/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - username
+          in: body
+          need: all

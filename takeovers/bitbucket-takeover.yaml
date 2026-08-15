@@ -1,0 +1,24 @@
+id: bitbucket-takeover
+brief:
+    title: Bitbucket Takeover Detection
+    by: pdteam
+    level: high
+    about: Bitbucket takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Repository not found
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all

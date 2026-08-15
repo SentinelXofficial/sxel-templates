@@ -1,0 +1,18 @@
+id: aem-jcr-exposure
+brief:
+    title: Adobe AEM JCR Compare Exposure
+    by: pussycat0x
+    level: medium
+    about: Detected an exposed Adobe AEM JCR compare functionality that was accessible without proper authorization. This exposure may have allowed attackers to infer repository structure or sensitive content...
+    label:
+        - aem
+        - adobe
+        - exposure
+        - misconfiguration
+        - jcr
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jcr:content.json'
+        - '{{BaseURL}}/etc/replication/agents.author/publish/jcr:content.json'
+      signs: []

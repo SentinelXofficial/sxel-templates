@@ -1,0 +1,21 @@
+id: api-abstract-email-validation
+brief:
+    title: Abstract Api Email Validation Test
+    by: daffainfo
+    level: info
+    about: Improve your delivery rate and clean your email lists with Abstract's industry-leading email verification API
+    label:
+        - token-spray
+        - abstractapi
+moves:
+    - verb: GET
+      to:
+        - https://emailvalidation.abstractapi.com/v1/?api_key={{token}}&email=johnsmith@gmail.com
+      signs:
+        - "on": word
+          has:
+            - '"email":'
+            - '"autocorrect":'
+            - '"is_valid_format":'
+          in: body
+          need: all

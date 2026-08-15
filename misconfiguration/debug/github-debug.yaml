@@ -1,0 +1,24 @@
+id: github-debug
+brief:
+    title: GitHub Debug Page
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - misconfig
+        - github
+        - debug
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - GitHub Debug
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

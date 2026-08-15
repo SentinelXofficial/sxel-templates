@@ -1,0 +1,30 @@
+id: oracle-business-intelligence
+brief:
+    title: Oracle Business Intelligence Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Oracle Business Intelligence login panel was detected.
+    label:
+        - panel
+        - oracle
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/saw.dll?bieehome&startPage=1'
+        - '{{BaseURL}}/analytics/saw.dll?bieehome&startPage=1'
+        - '{{BaseURL}}/analytics/saw.dll?Dashboard'
+      signs:
+        - "on": word
+          has:
+            - <title>Oracle Business Intelligence Sign In</title>
+            - <title>Oracle Business Intelligence</title>
+            - Oracle BI Presentation Services
+            - use Oracle BIEE
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

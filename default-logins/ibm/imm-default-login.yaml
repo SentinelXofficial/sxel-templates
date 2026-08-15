@@ -1,0 +1,32 @@
+id: imm-default-login
+brief:
+    title: Integrated Management Module - Default Login
+    by: jpg0mez
+    level: high
+    about: Integrated Management Module default login credentials were discovered.
+    label:
+        - imm
+        - ibm
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/data/login'
+      body: user=USERID&password=PASSW0RD
+      signs:
+        - "on": word
+          has:
+            - <authResult>0</authResult>
+            - authResult":"0
+          in: body
+          need: all
+        - "on": word
+          has:
+            - index-console.php
+            - home.php
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: dash-panel-detect
+brief:
+    title: Dash Panel Detect
+    by: tess
+    level: info
+    about: ""
+    label:
+        - tech
+        - dash
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - _dash-config
+            - DashRenderer
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

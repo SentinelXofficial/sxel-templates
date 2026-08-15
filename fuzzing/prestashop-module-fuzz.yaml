@@ -1,0 +1,32 @@
+id: prestashop-module-fuzz
+brief:
+    title: Prestashop Modules Enumeration
+    by: meme-lord
+    level: info
+    about: ""
+    label:
+        - fuzz
+        - prestashop
+        - fuzzing
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/modules/{{path}}/config.xml'
+      head:
+        Accept: application/json, text/plain, */*
+        Accept-Language: en-US,en;q=0.5
+        Referer: '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <module>
+            - <name>
+            - <displayName>
+            - <is_configurable>
+            - </module>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

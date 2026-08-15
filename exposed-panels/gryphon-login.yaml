@@ -1,0 +1,21 @@
+id: gryphon-login
+brief:
+    title: Gryphon Panel - Detect
+    by: pdteam
+    level: info
+    about: Gryphon router panel was detected.
+    label:
+        - panel
+        - gryphon
+        - router
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/luci/'
+      signs:
+        - "on": word
+          has:
+            - Gryphon
+            - Welcome to GryphonCare
+          in: body

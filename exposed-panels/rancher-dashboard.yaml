@@ -1,0 +1,28 @@
+id: rancher-dashboard
+brief:
+    title: Rancher Dashboard Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Rancher Dashboard was detected.
+    label:
+        - panel
+        - rancher
+        - dashboard
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/dashboard/auth/login'
+      signs:
+        - "on": word
+          has:
+            - content="Rancher Dashboard
+            - 'rancherEnv:'
+            - <title>Rancher
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

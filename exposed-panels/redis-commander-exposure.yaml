@@ -1,0 +1,21 @@
+id: redis-commander-exposure
+brief:
+    title: Redis Commander Panel - Detect
+    by: dahse89
+    level: info
+    about: Redis Commander panel was detected.
+    label:
+        - panel
+        - redis
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Redis Commander
+            - redisCommanderBearerToken
+          in: body
+          need: all

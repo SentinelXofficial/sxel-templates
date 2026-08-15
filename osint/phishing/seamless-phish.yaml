@@ -1,0 +1,25 @@
+id: seamless-phish
+brief:
+    title: Seamless phishing Detection
+    by: rxerium
+    level: info
+    about: A Seamless phishing website was detected
+    label:
+        - phishing
+        - seamless
+        - food-delivery
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Prepare your taste buds...
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

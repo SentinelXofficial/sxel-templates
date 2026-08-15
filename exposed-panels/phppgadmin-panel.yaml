@@ -1,0 +1,17 @@
+id: phppgadmin-panel
+brief:
+    title: phpPgAdmin Login Panel - Detect
+    by: Ganofins
+    level: info
+    about: phpPgAdmin login ipanel was detected.
+    label:
+        - panel
+        - phppgadmin
+        - phppgadmin_project
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/phppgadmin/'
+      signs: []

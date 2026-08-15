@@ -1,0 +1,24 @@
+id: tamtam
+brief:
+    title: TamTam User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: TamTam user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - tamtam
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://tamtam.chat/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - deeplink=tamtam://chat/
+          in: body
+          need: all

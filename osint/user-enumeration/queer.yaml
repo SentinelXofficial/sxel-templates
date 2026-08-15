@@ -1,0 +1,24 @@
+id: queer
+brief:
+    title: QUEER User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: QUEER user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - queer
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://queer.pl/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - "Spo\U000142ECzność"
+          in: body
+          need: all

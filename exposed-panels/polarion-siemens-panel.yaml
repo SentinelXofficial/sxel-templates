@@ -1,0 +1,26 @@
+id: polarion-siemens-panel
+brief:
+    title: Polarion Siemens Login - Panel
+    by: Th3l0newolf
+    level: info
+    about: Detects the exposed Polarion Siemens login page.
+    label:
+        - polarion
+        - siemens
+        - login
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/polarion/'
+      signs:
+        - "on": word
+          has:
+            - Polarion AG
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

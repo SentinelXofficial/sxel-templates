@@ -1,0 +1,24 @@
+id: gab
+brief:
+    title: Gab User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Gab user name information check was conducted.
+    label:
+        - osint
+        - osint-political
+        - gab
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://gab.com/api/v1/account_by_username/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - followers_count
+          in: body
+          need: all

@@ -1,0 +1,23 @@
+id: group-ib-panel
+brief:
+    title: Group-IB Managed XDR Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Group-IB Managed XDR login panel was detected.
+    label:
+        - panel
+        - groupib
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Group-IB Managed XDR</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

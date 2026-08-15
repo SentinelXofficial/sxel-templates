@@ -1,0 +1,28 @@
+id: growatt-shinelink-panel
+brief:
+    title: Growatt Shinelink - Login Panel
+    by: rxerium
+    level: info
+    about: Growatt Shinelink is a web-based data logger and monitoring interface for Growatt solar inverters, providing real-time solar energy production data and system configuration.
+    label:
+        - panel
+        - growatt
+        - ics
+        - scada
+        - solar
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Growatt Shinelink
+            - datalogsta
+            - treeapp.htm
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

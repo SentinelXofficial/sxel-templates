@@ -1,0 +1,25 @@
+id: exposed-svn
+brief:
+    title: SVN Configuration - Detect
+    by: udit_thakkur
+    level: medium
+    about: SVN configuration was detected.
+    label:
+        - config
+        - exposure
+        - svn
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.svn/entries'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all

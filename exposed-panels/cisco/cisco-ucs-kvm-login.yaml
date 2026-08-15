@@ -1,0 +1,25 @@
+id: cisco-ucs-kvm-login
+brief:
+    title: Cisco UCS Manager KVM Login Panel - Detect
+    by: idealphase
+    level: info
+    about: Cisco UCS Manager KVM login panel was detected.
+    label:
+        - panel
+        - cisco
+        - ucs
+        - kvm
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Cisco UCS KVM Direct</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

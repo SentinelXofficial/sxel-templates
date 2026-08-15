@@ -1,0 +1,17 @@
+id: symfony-lock-exposure
+brief:
+    title: Symfony Lock File - Exposure
+    by: ritikchaddha
+    level: low
+    about: symfony.lock was found accessible, exposing a full list of installed Composer packages, library versions, and metadata for a Symfony-based PHP application. Disclosure of this file can provide insig...
+    label:
+        - symfony
+        - exposure
+        - composer
+        - php
+        - config
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/symfony.lock'
+      signs: []

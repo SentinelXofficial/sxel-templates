@@ -1,0 +1,25 @@
+id: mpftvc-admin-panel
+brief:
+    title: MPFTVC Admin Login Panel - Detect
+    by: Hardik-Solanki
+    level: info
+    about: MPFTVC admin login panel was detected.
+    label:
+        - panel
+        - mpftvc
+        - admin
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - AdminLogin - MPFTVC
+            - 'Admin-Login: MPFTVC'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

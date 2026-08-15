@@ -1,0 +1,23 @@
+id: ekoapi-admin-panel
+brief:
+    title: EkoAPI Admin Panel - Detect
+    by: rxerium
+    level: info
+    about: EkoAPI Admin panel was detected.
+    label:
+        - panel
+        - ekoapi
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/login'
+      signs:
+        - "on": word
+          has:
+            - <title>EkoAPI Admin
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

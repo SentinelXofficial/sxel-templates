@@ -1,0 +1,30 @@
+id: npm-anonymous-cli
+brief:
+    title: NPM Anonymous CLI Metrics Exposure
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - exposure
+        - npm
+        - config
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.npm/anonymous-cli-metrics.json'
+        - '{{BaseURL}}/anonymous-cli-metrics.json'
+      signs:
+        - "on": word
+          has:
+            - '"metricId":'
+            - '"metrics":'
+            - '"successfulInstalls":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all

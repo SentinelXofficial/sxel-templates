@@ -1,0 +1,28 @@
+id: torchserve-detect
+brief:
+    title: TorchServe API Description - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Detects the presence of TorchServe APIs.
+    label:
+        - tech
+        - pytorch
+        - api
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api-description'
+      signs:
+        - "on": word
+          has:
+            - TorchServe APIs"
+            - '"apiDescription"'
+            - 'operationId":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all

@@ -1,0 +1,31 @@
+id: vbulletin-backdoor
+brief:
+    title: vBulletin Backdoor - Detect
+    by: MaStErCho
+    level: high
+    about: ""
+    label:
+        - backdoor
+        - php
+        - vbulletin
+        - rce
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - content="vBulletin
+            - id="vbulletin_css
+            - clientscript/vbulletin
+            - vBulletin_init
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/faq.php?cmd=echo%20-n%20{{num}}|md5sum'
+        - '{{BaseURL}}/forum.php?x=shell_exec&y=echo%20-n%20{{num}}|md5sum'
+        - '{{BaseURL}}/{{paths}}/faq.php?cmd=echo%20-n%20{{num}}|md5sum'
+        - '{{BaseURL}}/{{paths}}/forum.php?x=shell_exec&y=echo%20-n%20{{num}}|md5sum'
+      signs: []

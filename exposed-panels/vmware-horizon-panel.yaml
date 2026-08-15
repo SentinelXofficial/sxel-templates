@@ -1,0 +1,22 @@
+id: vmware-horizon-panel
+brief:
+    title: VMware Horizon Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: VMware Horizon login panel was detected.
+    label:
+        - horizon
+        - vmware
+        - edb
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/portal/webclient/index.html'
+      signs:
+        - "on": word
+          has:
+            - VMware Horizon
+          in: body

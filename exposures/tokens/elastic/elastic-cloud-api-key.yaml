@@ -1,0 +1,21 @@
+id: elastic-cloud-api-key
+brief:
+    title: Elastic Cloud API Key Detection
+    by: Chemo850
+    level: high
+    about: Detects Elastic Cloud API keys used for programmatic access to the Elastic Cloud and serverless APIs.
+    label:
+        - elastic
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - essu_
+          in: body
+          need: all

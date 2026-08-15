@@ -1,0 +1,16 @@
+id: opencart-panel
+brief:
+    title: OpenCart Login Panel - Detect
+    by: ricardomaia
+    level: info
+    about: OpenCart login panel was detected.
+    label:
+        - panel
+        - opencart
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin'
+        - '{{BaseURL}}/index.php?route=account/login'
+      signs: []

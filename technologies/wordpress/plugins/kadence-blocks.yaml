@@ -1,0 +1,17 @@
+id: wordpress-kadence-blocks
+brief:
+    title: Gutenberg Blocks with AI by Kadence WP – Page Builder Features Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/kadence-blocks/readme.txt'
+      signs: []

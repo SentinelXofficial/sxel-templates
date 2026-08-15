@@ -1,0 +1,24 @@
+id: freepbx-default-login
+brief:
+    title: FreePBX - Default Admin Credentials
+    by: 0x_Akoko
+    level: high
+    about: Detected FreePBX administration panel was using default admin credentials (admin:admin). An attacker could gain full administrative access to the PBX system, manage extensions, trunks, and call rou...
+    label:
+        - freepbx
+        - default-login
+        - auth
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/config.php'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/admin/config.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Cookie: '{{session}}'
+      body: username={{username}}&password={{password}}
+      signs: []

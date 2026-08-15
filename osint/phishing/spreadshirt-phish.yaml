@@ -1,0 +1,24 @@
+id: spreadshirt-phish
+brief:
+    title: Spreadshirt phishing Detection
+    by: rxerium
+    level: info
+    about: A Spreadshirt phishing website was detected
+    label:
+        - phishing
+        - spreadshirt
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Spreadshirt Print on Demand Platform | Spreadshirt
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

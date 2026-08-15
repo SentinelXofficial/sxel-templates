@@ -1,0 +1,18 @@
+id: telecontrol-server-basic-panel
+brief:
+    title: Telecontrol Server Basic Panel - Detect
+    by: Kazgangap
+    level: info
+    about: Telecontrol Server Basic panel was discovered.
+    label:
+        - panel
+        - login
+        - siemens
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+        - '{{BaseURL}}'
+      signs: []

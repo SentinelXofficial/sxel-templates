@@ -1,0 +1,27 @@
+id: interactsoftware-panel
+brief:
+    title: Interact Software Panel - Detect
+    by: righettod
+    level: info
+    about: Interact Software was detected.
+    label:
+        - panel
+        - interactsoftware
+        - interact
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - www.interactsoftware.com
+            - community.interact-intranet.com
+            - /InteractV
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

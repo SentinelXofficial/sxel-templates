@@ -1,0 +1,23 @@
+id: interswitch-webpay
+brief:
+    title: Interswitch Webpay - Credentials Exposure
+    by: Lloydcoder
+    level: info
+    about: Exposure of Interswitch Webpay product IDs, MAC keys and access tokens.
+    label:
+        - exposure
+        - interswitch
+        - webpay
+        - token
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - interswitch
+            - webpay
+            - macKey
+          in: body
+          need: all

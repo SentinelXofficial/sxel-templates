@@ -1,0 +1,25 @@
+id: citrix-hypervisor-page
+brief:
+    title: Citrix Hypervisor Page Detection
+    by: pussycat0x
+    level: info
+    about: ""
+    label:
+        - tech
+        - citrix
+        - default-page
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Citrix Hypervisor
+            - XenCenter
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

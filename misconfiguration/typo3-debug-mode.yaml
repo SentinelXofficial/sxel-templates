@@ -1,0 +1,22 @@
+id: typo3-debug-mode
+brief:
+    title: TYPO3 Debug Mode Enabled
+    by: tess
+    level: low
+    about: TYPO3 Debug Mode is enabled.
+    label:
+        - typo3
+        - debug
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - TYPO3 Exception
+            - Uncaught TYPO3 Exception
+          in: body
+          need: all

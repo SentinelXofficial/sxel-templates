@@ -1,0 +1,25 @@
+id: api-monday
+brief:
+    title: Monday API Test
+    by: daffainfo
+    level: info
+    about: Programmatically access and update data inside a monday.com account
+    label:
+        - token-spray
+        - monday
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}https://api.monday.com/v2'
+      head:
+        Authorization: '{{token}}'
+        Content-Type: application/json
+      body: '{"query": "query { me { is_guest created_at name id}}"}'
+      signs:
+        - "on": word
+          has:
+            - '"me"'
+            - '"name"'
+            - '"account_id"'
+          in: body
+          need: all

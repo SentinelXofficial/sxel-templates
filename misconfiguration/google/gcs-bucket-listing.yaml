@@ -1,0 +1,18 @@
+id: gcs-bucket-listing
+brief:
+    title: Google Cloud Storage - Public Bucket Listing
+    by: 0x_Akoko
+    level: info
+    about: Detected Google Cloud Storage bucket was publicly accessible and allows listing of objects, potentially exposing sensitive files.
+    label:
+        - exposure
+        - gcs
+        - google
+        - cloud
+        - bucket
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

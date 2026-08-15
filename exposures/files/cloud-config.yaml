@@ -1,0 +1,28 @@
+id: cloud-config
+brief:
+    title: Cloud Config File Exposure
+    by: DhiyaneshDK
+    level: medium
+    about: Cloud Config file is exposed.
+    label:
+        - exposure
+        - cloud
+        - devops
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cloud-config.yml'
+        - '{{BaseURL}}/core-cloud-config.yml'
+        - '{{BaseURL}}/cloud-config.txt'
+      signs:
+        - "on": word
+          has:
+            - ssh_authorized_keys
+            - '#cloud-config'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

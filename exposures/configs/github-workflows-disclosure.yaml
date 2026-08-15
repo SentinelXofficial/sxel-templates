@@ -1,0 +1,18 @@
+id: github-workflows-disclosure
+brief:
+    title: Github Workflow Disclosure
+    by: dhiyaneshDk
+    level: medium
+    about: Github Workflow was exposed.
+    label:
+        - exposure
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs:
+        - "on": status
+          status:
+            - 200

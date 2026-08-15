@@ -1,0 +1,26 @@
+id: kraken-phish
+brief:
+    title: Kraken phishing Detection
+    by: rxerium
+    level: info
+    about: A Kraken phishing website was detected
+    label:
+        - phishing
+        - kraken
+        - crypto
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Kraken
+            - 'Kraken: Buy and sell crypto securely'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

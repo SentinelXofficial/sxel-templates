@@ -1,0 +1,22 @@
+id: idea-logs-exposure
+brief:
+    title: Public .idea Folder containing http logs
+    by: martincodes-de
+    level: info
+    about: Searches for .idea Folder for http-requests-log.http and http-client.cookies file
+    label:
+        - phpstorm
+        - jetbrains
+        - idea
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.idea/httpRequests/http-requests-log.http'
+        - '{{BaseURL}}/.idea/httpRequests/http-client.cookies'
+      signs:
+        - "on": word
+          has:
+            - "# domain\tpath\tname\tvalue\tdate"
+          in: body

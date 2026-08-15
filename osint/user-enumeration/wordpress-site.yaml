@@ -1,0 +1,26 @@
+id: wordpress-site
+brief:
+    title: WordPress Site Name Information - Detect
+    by: gl0bal01
+    level: info
+    about: WordPress site name information check was conducted.
+    label:
+        - osint
+        - osint-blog
+        - wordpress
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://{{user}}.wordpress.com
+      signs:
+        - "on": word
+          has:
+            - https://{{user}}.wordpress.com
+            - siteID
+            - user_id
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

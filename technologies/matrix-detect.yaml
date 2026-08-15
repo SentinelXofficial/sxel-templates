@@ -1,0 +1,24 @@
+id: matrix-detect
+brief:
+    title: Matrix Server Detect
+    by: erethon
+    level: info
+    about: Detects Matrix servers based on .well-known entries. See https://en.wikipedia.org/wiki/Matrix_(protocol)
+    label:
+        - tech
+        - matrix
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.well-known/matrix/server'
+        - '{{BaseURL}}/.well-known/matrix/client'
+      signs:
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

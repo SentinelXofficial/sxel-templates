@@ -1,0 +1,24 @@
+id: livehelperchat-admin-panel
+brief:
+    title: Live Helper Chat Admin Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Live Helper Chat admin login panel was detected.
+    label:
+        - livehelperchat
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/site_admin/user/login'
+      signs:
+        - "on": word
+          has:
+            - Live Helper Chat
+            - Please login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

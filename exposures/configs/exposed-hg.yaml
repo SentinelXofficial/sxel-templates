@@ -1,0 +1,25 @@
+id: exposed-hg
+brief:
+    title: HG Configuration - Detect
+    by: daffainfo
+    level: medium
+    about: HG configuration was detected.
+    label:
+        - config
+        - exposure
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.hg/hgrc'
+      signs:
+        - "on": word
+          has:
+            - '[paths]'
+            - default
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

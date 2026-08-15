@@ -1,0 +1,20 @@
+id: intellian-aptus-panel
+brief:
+    title: Intellian Aptus Web Login Panel - Detect
+    by: princechaddha
+    level: info
+    about: Intelllian Aptus Web login panel was detected.
+    label:
+        - panel
+        - intellian
+        - aptus
+        - intelliantech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/getagent.cgi?type=s&xxxx'
+      signs:
+        - "on": status
+          status:
+            - 200

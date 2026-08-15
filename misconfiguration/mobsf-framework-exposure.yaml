@@ -1,0 +1,25 @@
+id: mobsf-framework-exposure
+brief:
+    title: MobSF Framework - Exposure
+    by: Shine
+    level: high
+    about: MobSF Framework is exposed.
+    label:
+        - misconfig
+        - exposure
+        - mobsf
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/recent_scans/'
+      signs:
+        - "on": word
+          has:
+            - Recent Scans
+            - Mobile Security Framework - MobSF
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,20 @@
+id: couchdb-fauxton
+brief:
+    title: Apache CouchDB Fauxton Panel - Detect
+    by: pdteam
+    level: info
+    about: Apache CouchDB Fauxton panel was detected.
+    label:
+        - panel
+        - apache
+        - couchdb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Project Fauxton</title>
+          in: body

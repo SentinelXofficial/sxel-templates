@@ -1,0 +1,25 @@
+id: dynamicweb-panel
+brief:
+    title: Dynamicweb Login Panel - Detect
+    by: pdteam
+    level: info
+    about: Dynamicweb login panel was detected.
+    label:
+        - panel
+        - dynamicweb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Admin/Access/default.aspx'
+      head:
+        Accept-Encoding: gzip, deflate
+      signs:
+        - "on": word
+          has:
+            - Dynamicweb
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

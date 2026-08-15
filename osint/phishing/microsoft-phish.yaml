@@ -1,0 +1,24 @@
+id: microsoft-phish
+brief:
+    title: Microsoft phishing Detection
+    by: rxerium
+    level: info
+    about: A microsoft phishing website was detected
+    label:
+        - phishing
+        - microsoft
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Login | Microsoft 365
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

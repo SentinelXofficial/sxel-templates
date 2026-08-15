@@ -1,0 +1,24 @@
+id: cisco-finesse-login
+brief:
+    title: Cisco Finesse Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Cisco Finesse login panel was detected.
+    label:
+        - panel
+        - cisco
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/desktop/container/landing.jsp?locale=en_US'
+      signs:
+        - "on": word
+          has:
+            - <title id="page_title">Sign in to Cisco Finesse</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

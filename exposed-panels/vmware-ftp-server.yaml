@@ -1,0 +1,24 @@
+id: vmware-ftp-server
+brief:
+    title: VMware FTP Server Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: VMware FTP Server login panel was detected.
+    label:
+        - panel
+        - vmware
+        - ftp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - VMWARE FTP SERVER
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

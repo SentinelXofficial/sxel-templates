@@ -1,0 +1,26 @@
+id: domcfg-page
+brief:
+    title: Lotus Domino Configuration Page
+    by: gevakun
+    level: low
+    about: Lotus Domino configuration file is exposed.
+    label:
+        - exposure
+        - lotus
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/domcfg.nsf'
+      signs:
+        - "on": word
+          has:
+            - Web Server Configuration
+            - Mapping
+            - Mappings
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

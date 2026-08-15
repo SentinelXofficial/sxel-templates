@@ -1,0 +1,19 @@
+id: vend-takeover
+brief:
+    title: vend takeover detection
+    by: pdteam
+    level: high
+    about: vend takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Looks like you've traveled too far into cyberspace.
+          in: body
+          need: all

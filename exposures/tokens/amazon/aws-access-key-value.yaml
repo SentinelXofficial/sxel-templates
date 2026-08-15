@@ -1,0 +1,17 @@
+id: aws-access-key-value
+brief:
+    title: AWS Access Key ID Value
+    by: Swissky
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - aws
+        - amazon
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

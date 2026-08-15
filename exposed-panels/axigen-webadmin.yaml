@@ -1,0 +1,23 @@
+id: axigen-webadmin
+brief:
+    title: Axigen Web Admin Detection
+    by: dhiyaneshDk
+    level: info
+    about: An Axigen Web Admin panel was discovered.
+    label:
+        - axigen
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Axigen WebAdmin</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,20 @@
+id: nicegui-detect
+brief:
+    title: NiceGUI Detection
+    by: theamanrawat
+    level: info
+    about: An instance running NiceGUI is detected by looking for specific HTTP headers.
+    label:
+        - nicegui
+        - detect
+        - tech
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - x-nicegui-content
+          in: header
+          need: all

@@ -1,0 +1,25 @@
+id: cloud-run-default-page
+brief:
+    title: Google Cloud Run Default Page
+    by: dhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - tech
+        - cloudrun
+        - google
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Congratulations | Cloud Run
+            - alt="A group celebrating
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

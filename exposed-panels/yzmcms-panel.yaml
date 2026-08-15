@@ -1,0 +1,25 @@
+id: yzmcms-panel
+brief:
+    title: YzmCMS Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: YzmCMS login panel was detected.
+    label:
+        - panel
+        - yzmcms
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/index/login.html'
+      signs:
+        - "on": word
+          has:
+            - Powered By <a href="http://www.yzmcms.com"
+            - Powered By YzmCMS
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

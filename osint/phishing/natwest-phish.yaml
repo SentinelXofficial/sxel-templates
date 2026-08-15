@@ -1,0 +1,25 @@
+id: natwest-phish
+brief:
+    title: NatWest phishing Detection
+    by: rxerium
+    level: info
+    about: A NatWest phishing website was detected
+    label:
+        - phishing
+        - natwest
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to NatWest. Our extensive personal banking products include bank accounts, mortgages, credit cards, loans and more. Visit today to see how we can serve you.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

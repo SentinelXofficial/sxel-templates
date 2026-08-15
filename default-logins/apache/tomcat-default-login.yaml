@@ -1,0 +1,18 @@
+id: tomcat-default-login
+brief:
+    title: Apache Tomcat Manager Default Login
+    by: pdteam
+    level: high
+    about: Apache Tomcat Manager default login credentials were discovered.
+    label:
+        - tomcat
+        - apache
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/manager/html'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+      signs: []

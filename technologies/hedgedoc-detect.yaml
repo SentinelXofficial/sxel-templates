@@ -1,0 +1,15 @@
+id: hedgedoc-detect
+brief:
+    title: HedgeDoc Collaborative Editor - Detect
+    by: Rupendra0
+    level: info
+    about: HedgeDoc is an open-source, collaborative markdown editor for teams to share and co-edit notes in real time. This template detects publicly reachable HedgeDoc instances by fingerprinting unique bra...
+    label:
+        - tech
+        - detect
+        - hedgedoc
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

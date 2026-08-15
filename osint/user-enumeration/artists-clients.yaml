@@ -1,0 +1,24 @@
+id: artists-clients
+brief:
+    title: Artists & Clients User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Artists & Clients user name information check was conducted.
+    label:
+        - osint
+        - osint-art
+        - artists-clients
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://artistsnclients.com/people/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Member Since
+          in: body
+          need: all

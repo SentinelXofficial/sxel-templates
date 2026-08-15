@@ -1,0 +1,34 @@
+id: springboot-mappings
+brief:
+    title: Detect Springboot Mappings Actuator
+    by: that_juan_
+    level: low
+    about: Additional routes may be displayed
+    label:
+        - springboot
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mappings'
+        - '{{BaseURL}}/actuator/mappings'
+      signs:
+        - "on": word
+          has:
+            - mappings
+            - method
+            - produces
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v1+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

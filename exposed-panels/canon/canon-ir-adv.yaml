@@ -1,0 +1,27 @@
+id: canon-ir-adv
+brief:
+    title: Canon iR-ADV Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - canon
+        - panel
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - iR-ADV
+            - Authentication
+            - CANON
+          in: response
+          need: all
+        - "on": status
+          status:
+            - 200

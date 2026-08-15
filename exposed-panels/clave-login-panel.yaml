@@ -1,0 +1,24 @@
+id: clave-login-panel
+brief:
+    title: Clave Login Panel - Detect
+    by: __Fazal
+    level: info
+    about: Clave login panel was detected.
+    label:
+        - panel
+        - clave
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin.php'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Clave
+          in: body
+          need: all

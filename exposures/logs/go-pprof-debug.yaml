@@ -1,0 +1,32 @@
+id: go-pprof-debug
+brief:
+    title: Go pprof Debug Page
+    by: w8ay
+    level: low
+    about: go pprof debug page was exposed.
+    label:
+        - logs
+        - exposure
+        - go
+        - pprof
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/debug/pprof/heap?debug=1'
+        - '{{BaseURL}}/pprof/heap?debug=1'
+      signs:
+        - "on": word
+          has:
+            - 'heap profile:'
+            - Alloc
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

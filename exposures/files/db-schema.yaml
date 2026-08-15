@@ -1,0 +1,27 @@
+id: db-schema
+brief:
+    title: Discover db schema files
+    by: geeknik
+    level: info
+    about: This file is auto-generated from the current state of the database.
+    label:
+        - exposure
+        - backup
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/db/schema.rb'
+        - '{{BaseURL}}/database/schema.rb'
+        - '{{BaseURL}}/schema.rb'
+      signs:
+        - "on": word
+          has:
+            - This file is auto-generated from the current state of the database.
+            - ActiveRecord::Schema.define
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,18 @@
+id: thumbs-db-disclosure
+brief:
+    title: Thumbs DB Disclosure
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Thumbs.db'
+      signs:
+        - "on": status
+          status:
+            - 200

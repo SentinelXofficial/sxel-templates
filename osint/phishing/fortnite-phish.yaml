@@ -1,0 +1,26 @@
+id: fortnite-phish
+brief:
+    title: Fortnite phishing Detection
+    by: rxerium
+    level: info
+    about: A Fortnite phishing website was detected
+    label:
+        - phishing
+        - fortnite
+        - epic-games
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Fortnite
+            - <title>Fortnite | Free-to-Play Cross-Platform Game - Fortnite
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

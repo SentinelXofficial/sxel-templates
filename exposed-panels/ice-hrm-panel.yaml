@@ -1,0 +1,22 @@
+id: ice-hrm-panel
+brief:
+    title: ICE HRM Login - Detect
+    by: Th3l0newolf
+    level: info
+    about: The ICE HRM login panel was discovered.
+    label:
+        - icehrm
+        - login
+        - hrm
+        - panel
+        - web
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/app/login.php'
+      signs:
+        - "on": status
+          status:
+            - 200

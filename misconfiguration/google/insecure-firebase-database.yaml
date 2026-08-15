@@ -1,0 +1,50 @@
+id: insecure-firebase-database
+brief:
+    title: Insecure Firebase Database
+    by: rafaelwdornelas
+    level: high
+    about: If the owner of the app have set the security rules as true for both "read" & "write" an attacker can probably dump database and write his own data to firebase database.
+    label:
+        - firebase
+        - google
+        - misconfig
+        - intrusive
+        - vuln
+moves:
+    - verb: PUT
+      to:
+        - '{{BaseURL}}/{{randstr}}.json'
+      head:
+        Content-Type: application/json
+      body: '{"id":"insecure-firebase-database"}'
+      signs:
+        - "on": word
+          has:
+            - '{"id":"insecure-firebase-database"}'
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{randstr}}.json'
+      signs:
+        - "on": word
+          has:
+            - '{"id":"insecure-firebase-database"}'
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

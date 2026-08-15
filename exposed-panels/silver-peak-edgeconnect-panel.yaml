@@ -1,0 +1,29 @@
+id: silver-peak-edgeconnect-panel
+brief:
+    title: Silver Peak / HPE Aruba EdgeConnect - Orchestrator Panel
+    by: rxerium
+    level: info
+    about: Silver Peak (now HPE Aruba Networking) EdgeConnect SD-WAN Orchestrator is a
+    label:
+        - panel
+        - silver-peak
+        - edgeconnect
+        - aruba
+        - sdwan
+        - vpn
+        - network
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - EdgeConnect
+            - Silver Peak
+            - silverpeak
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

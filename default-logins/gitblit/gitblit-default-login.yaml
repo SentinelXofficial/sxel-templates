@@ -1,0 +1,27 @@
+id: gitblit-default-login
+brief:
+    title: Gitblit - Default Login
+    by: ritikchaddha
+    level: high
+    about: Gitblit Default login credentials were discovered.
+    label:
+        - gitblit
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/?wicket:interface=:0:userPanel:loginForm::IFormSubmitListener::'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: wicket%3AbookmarkablePage=%3Acom.gitblit.wicket.pages.MyDashboardPage&id1_hf_0=&username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - JSESSIONID=
+            - Gitblit=
+          in: set_cookie
+          need: all
+        - "on": status
+          status:
+            - 302

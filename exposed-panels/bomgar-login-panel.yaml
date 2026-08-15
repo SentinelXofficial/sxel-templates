@@ -1,0 +1,17 @@
+id: bomgar-login-panel
+brief:
+    title: Bomgar Login Panel - Detect
+    by: pdteam
+    level: info
+    about: Bomgar Login panel was detected.
+    label:
+        - panel
+        - bomgar
+        - beyondtrust
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/favicon.ico'
+        - '{{BaseURL}}/appliance/login.ns'
+      signs: []

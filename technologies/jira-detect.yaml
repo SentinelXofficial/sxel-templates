@@ -1,0 +1,23 @@
+id: jira-detect
+brief:
+    title: Jira Detect
+    by: pdteam
+    level: info
+    about: Jira login panel was detected.
+    label:
+        - tech
+        - panel
+        - jira
+        - atlassian
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/secure/Dashboard.jspa'
+        - '{{BaseURL}}/jira/secure/Dashboard.jspa'
+        - '{{BaseURL}}/login.jsp'
+      signs:
+        - "on": word
+          has:
+            - Project Management Software
+          in: body

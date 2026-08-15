@@ -1,0 +1,37 @@
+id: wadl-api
+brief:
+    title: WADL API - Detect
+    by: 0xrudra
+    level: info
+    about: WADL API was detected.
+    label:
+        - exposure
+        - api
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/application.wadl'
+        - '{{BaseURL}}/application.wadl?detail=true'
+        - '{{BaseURL}}/api/application.wadl'
+        - '{{BaseURL}}/api/v1/application.wadl'
+        - '{{BaseURL}}/api/v2/application.wadl'
+      signs:
+        - "on": word
+          has:
+            - This is simplified WADL with user and core resources only
+            - http://jersey.java.net
+            - http://wadl.dev.java.net/2009/02
+          in: body
+    - verb: OPTIONS
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/api/v1'
+        - '{{BaseURL}}/api/v2'
+      signs:
+        - "on": word
+          has:
+            - This is simplified WADL with user and core resources only
+            - http://jersey.java.net
+            - http://wadl.dev.java.net/2009/02
+          in: body

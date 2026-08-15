@@ -1,0 +1,32 @@
+id: openmetadata-admin-userenum
+brief:
+    title: OpenMetadata - Admin User Enumeration
+    by: icarot
+    level: medium
+    about: Enumerates the admin users registered on OpenMetadata server.
+    label:
+        - openmetadata
+        - open-metadata
+        - userenum
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/v1/system/config/authorizer'
+      head:
+        Content-Type: application/json
+      signs:
+        - "on": word
+          has:
+            - '"adminPrincipals":'
+            - '"principalDomain"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

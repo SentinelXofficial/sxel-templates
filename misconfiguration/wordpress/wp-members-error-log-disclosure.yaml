@@ -1,0 +1,21 @@
+id: wp-members-error-log-disclosure
+brief:
+    title: WordPress Members / Membership & User Role Editor Plugin - Error Log Disclosure
+    by: ritikchaddha
+    level: low
+    about: WordPress Members plugin is vulnerable to error log disclosure via direct access to plugin files.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - fpd
+        - members
+        - exposure
+        - error-log
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/members/admin/class-role-edit.php'
+        - '{{BaseURL}}/wp-content/plugins/members/admin/class-role-new.php'
+        - '{{BaseURL}}/wp-content/plugins/members/inc/class-role.php'
+      signs: []

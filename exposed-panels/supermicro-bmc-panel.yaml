@@ -1,0 +1,24 @@
+id: supermicro-bmc-panel
+brief:
+    title: Supermicro BMC Login Panel - Detect
+    by: idealphase
+    level: info
+    about: Supermicro BMC login panel was detected.
+    label:
+        - panel
+        - supermicro
+        - bmc
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Supermicro BMC Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

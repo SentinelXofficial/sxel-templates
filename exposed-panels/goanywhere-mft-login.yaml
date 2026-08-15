@@ -1,0 +1,27 @@
+id: goanywhere-mft-login
+brief:
+    title: GoAnywhere Managed File Transfer Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: GoAnywhere Managed File Transfer login panel was detected.
+    label:
+        - panel
+        - goanywhere
+        - login
+        - filetransfer
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/goanywhere/auth/Login.xhtml'
+        - '{{BaseURL}}/webclient/Login.xhtml'
+      signs:
+        - "on": word
+          has:
+            - GoAnywhere Managed File Transfer
+            - GoAnywhere Web Client
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

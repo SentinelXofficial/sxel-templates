@@ -1,0 +1,24 @@
+id: ifunny
+brief:
+    title: Ifunny User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Ifunny user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - ifunny
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://ifunny.co/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - subscribers
+          in: body
+          need: all

@@ -1,0 +1,26 @@
+id: shein-phish
+brief:
+    title: Shein phishing Detection
+    by: rxerium
+    level: info
+    about: A Shein phishing website was detected
+    label:
+        - phishing
+        - shein
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - SHEIN
+            - Exclusive discounts and the latest trends at SHEIN
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: cae-monitor-panel
+brief:
+    title: CAE Monitoring - Login Panel
+    by: biero-el-corridor
+    level: info
+    about: Identified an exposed CAE Monitoring login panel.
+    label:
+        - cae
+        - login
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.html'
+      signs:
+        - "on": word
+          has:
+            - title="CAE Home Page"
+            - alt="CAE"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

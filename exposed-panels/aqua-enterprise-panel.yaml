@@ -1,0 +1,25 @@
+id: aqua-enterprise-panel
+brief:
+    title: Aqua Enterprise - Panel Detect
+    by: idealphase
+    level: info
+    about: Aqua Enterprise panel was detected.
+    label:
+        - panel
+        - aqua
+        - aquasec
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Aqua Enterprise</title>
+            - <title>Aqua Cloud Native Security Platform</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

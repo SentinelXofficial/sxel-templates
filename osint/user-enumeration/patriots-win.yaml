@@ -1,0 +1,24 @@
+id: patriots-win
+brief:
+    title: Patriots Win User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Patriots Win user name information check was conducted.
+    label:
+        - osint
+        - osint-political
+        - patriots-win
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://patriots.win/u/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - nav-user active register
+          in: body
+          need: all

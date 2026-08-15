@@ -1,0 +1,24 @@
+id: froxlor-installer
+brief:
+    title: Froxlor Server Management - Installer
+    by: DhiyaneshDK
+    level: high
+    about: Detects the Froxlor Server Management Panel installation page.
+    label:
+        - misconfig
+        - froxlor
+        - installer
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/install.php'
+      signs:
+        - "on": word
+          has:
+            - <title>Froxlor Server Management Panel - Installation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

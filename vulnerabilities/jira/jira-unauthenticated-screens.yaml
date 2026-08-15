@@ -1,0 +1,30 @@
+id: jira-unauthenticated-screens
+brief:
+    title: Jira Unauthenticated Access to screens
+    by: TESS
+    level: info
+    about: ""
+    label:
+        - atlassian
+        - jira
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/rest/api/2/screens'
+      signs:
+        - "on": word
+          has:
+            - '"id":'
+            - '"name":'
+            - '"description":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - atlassian.xsrf.token
+          in: header
+          need: all

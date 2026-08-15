@@ -1,0 +1,30 @@
+id: cogent-datahub-panel
+brief:
+    title: Cogent DataHub (OPC DataHub) - Panel
+    by: rxerium
+    level: info
+    about: Cogent DataHub (OPC DataHub) is an industrial middleware platform for OPC connectivity,
+    label:
+        - panel
+        - cogent
+        - datahub
+        - opc
+        - scada
+        - ics
+        - ot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - DataHub Web Server
+            - dhwebserver.css
+            - Cogent
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

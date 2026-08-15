@@ -1,0 +1,25 @@
+id: camunda-login-panel
+brief:
+    title: Camunda Login Panel - Detect
+    by: alifathi-h1
+    level: info
+    about: Camunda login panel was detected.
+    label:
+        - camunda
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/app/welcome/default/#!/login'
+        - '{{BaseURL}}/camunda/app/welcome/default/#!/login'
+      signs:
+        - "on": word
+          has:
+            - Camunda Welcome
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

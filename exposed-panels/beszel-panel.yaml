@@ -1,0 +1,16 @@
+id: beszel-panel
+brief:
+    title: Beszel Login Panel - Detect
+    by: righettod
+    level: info
+    about: Beszel products was detected.
+    label:
+        - panel
+        - beszel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

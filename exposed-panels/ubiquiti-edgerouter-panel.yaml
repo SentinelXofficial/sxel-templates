@@ -1,0 +1,25 @@
+id: ubiquiti-edgerouter-panel
+brief:
+    title: Ubiquiti EdgeRouter - Login Panel
+    by: rxerium
+    level: info
+    about: Ubiquiti EdgeRouter is an enterprise-grade router with advanced routing capabilities and VPN features, running EdgeOS (Ubiquiti's Vyatta-based firmware).
+    label:
+        - panel
+        - ubiquiti
+        - edgerouter
+        - vpn
+        - router
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - EdgeOS
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

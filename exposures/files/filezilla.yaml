@@ -1,0 +1,31 @@
+id: filezilla-exposed
+brief:
+    title: Filezilla
+    by: amsda
+    level: medium
+    about: Filezilla internal file is exposed.
+    label:
+        - exposure
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/filezilla.xml'
+        - '{{BaseURL}}/sitemanager.xml'
+        - '{{BaseURL}}/FileZilla.xml'
+      signs:
+        - "on": word
+          has:
+            - <FileZilla
+            - <Servers>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - xml
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

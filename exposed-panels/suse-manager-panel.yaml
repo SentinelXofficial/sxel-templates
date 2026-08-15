@@ -1,0 +1,27 @@
+id: suse-manager-panel
+brief:
+    title: SUSE Manager Server - Panel
+    by: darses
+    level: info
+    about: SUSE Manager login panel detected.
+    label:
+        - panel
+        - detect
+        - suse
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>SUSE Manager - Sign In</title>
+            - <title>SUSE Multi-Linux Manager - Sign In</title>
+            - <title>Uyuni - Sign In</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

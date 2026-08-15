@@ -1,0 +1,19 @@
+id: teampass-panel
+brief:
+    title: TeamPass Panel - Detect
+    by: arafatansari
+    level: info
+    about: TeamPass panel was detected.
+    label:
+        - panel
+        - teampass
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/teampass'
+      signs:
+        - "on": status
+          status:
+            - 200

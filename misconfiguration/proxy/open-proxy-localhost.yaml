@@ -1,0 +1,39 @@
+id: open-proxy-localhost
+brief:
+    title: Open Proxy to Other Web Ports via Proxy's localhost Interface
+    by: sullo
+    level: high
+    about: The host is configured as a proxy which allows access to web ports on the host's internal interface.
+    label:
+        - exposure
+        - config
+        - proxy
+        - misconfig
+        - fuzz
+        - vuln
+    score: CVSS:8.6
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://somethingthatdoesnotexist/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://127.0.0.1/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://127.0.0.1/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://localhost/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://localhost/'
+      signs: []

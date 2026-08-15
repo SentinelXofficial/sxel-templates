@@ -1,0 +1,16 @@
+id: mailchimp-access-key-value
+brief:
+    title: Mailchimp API Value
+    by: puzzlepeaches
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - mailchimp
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

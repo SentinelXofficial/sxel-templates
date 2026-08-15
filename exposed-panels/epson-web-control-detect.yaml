@@ -1,0 +1,29 @@
+id: epson-web-control-detect
+brief:
+    title: Epson Printer
+    by: pussycat0x
+    level: info
+    about: An Epson printer web panel was discovered.
+    label:
+        - panel
+        - unauth
+        - epson
+        - edb
+        - iot
+        - printer
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/home'
+      signs:
+        - "on": word
+          has:
+            - Epson Web Control
+            - Basic Control
+            - Advanced
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

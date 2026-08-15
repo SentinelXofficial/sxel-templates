@@ -1,0 +1,17 @@
+id: zitadel-panel
+brief:
+    title: ZITADEL Panel - Detect
+    by: ChrisJr404
+    level: info
+    about: Detected ZITADEL was an open-source identity infrastructure platform providing OIDC, OAuth 2.0, SAML and machine-user IAM.
+    label:
+        - panel
+        - zitadel
+        - iam
+        - oidc
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/console/'
+      signs: []

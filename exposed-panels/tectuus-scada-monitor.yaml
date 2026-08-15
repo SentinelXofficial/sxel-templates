@@ -1,0 +1,24 @@
+id: tectuus-scada-monitor
+brief:
+    title: Tectuus SCADA Monitor Panel - Detect
+    by: geeknik
+    level: info
+    about: Tectuus SCADA Monitor panel was detected.
+    label:
+        - panel
+        - tectuus
+        - scada
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>SCADAmonitor</title>
+          in: body
+          need: all

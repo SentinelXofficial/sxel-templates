@@ -1,0 +1,25 @@
+id: emby-installer
+brief:
+    title: Emby Installation Page - Exposure
+    by: DhiyaneshDk
+    level: high
+    about: Checks for the presence of a Emby Installer Page.
+    label:
+        - install
+        - emby
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web/index.html?start=wizard#!/wizard/wizardstart.html'
+      signs:
+        - "on": word
+          has:
+            - Auto-Install
+            - emby-elements
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

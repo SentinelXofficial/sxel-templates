@@ -1,0 +1,24 @@
+id: vero
+brief:
+    title: Vero User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Vero user name information check was conducted.
+    label:
+        - osint
+        - osint-art
+        - vero
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://vero.co/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - on VERO™</title>
+          in: body
+          need: all

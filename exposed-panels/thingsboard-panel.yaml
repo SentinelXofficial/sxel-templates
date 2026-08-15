@@ -1,0 +1,16 @@
+id: thingsboard-panel
+brief:
+    title: ThingsBoard Panel - Detect
+    by: righettod
+    level: info
+    about: ThingsBoard was detected — a Open-source IoT Platform for device management, data collection, processing and visualization.
+    label:
+        - panel
+        - thingsboard
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs: []

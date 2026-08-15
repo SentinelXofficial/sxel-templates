@@ -1,0 +1,21 @@
+id: intercom-takeover
+brief:
+    title: Intercom Takeover Detection
+    by: pdteam
+    level: high
+    about: Intercom takeover was detected.
+    label:
+        - takeover
+        - intercom
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <h1 class="headline">Uh oh. That page doesn\’t exist.</h1>
+            - This page is reserved for artistic dogs.
+          in: body
+          need: all

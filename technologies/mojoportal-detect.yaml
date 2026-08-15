@@ -1,0 +1,22 @@
+id: mojoportal-detect
+brief:
+    title: Mojoportal - Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - mojoportal
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Powered by mojoPortal
+          in: body
+        - "on": status
+          status:
+            - 200

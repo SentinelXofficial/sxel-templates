@@ -1,0 +1,19 @@
+id: hookbot-rat
+brief:
+    title: Hookbot Rat Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Hookbot panel were detected.
+    label:
+        - tech
+        - rat
+        - hookbot
+        - c2
+        - panel
+        - detect
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

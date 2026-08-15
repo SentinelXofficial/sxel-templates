@@ -1,0 +1,19 @@
+id: dockerrun-aws-json-exposure
+brief:
+    title: AWS Elastic Beanstalk Dockerrun.aws.json - Exposure
+    by: 0x_Akoko
+    level: medium
+    about: Detected AWS Elastic Beanstalk Dockerrun.aws.json configuration file was publicly accessible, potentially revealing Docker container definitions, image names, hostnames, port mappings, and infrastr...
+    label:
+        - aws
+        - docker
+        - config
+        - exposure
+        - misconfig
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Dockerrun.aws.json'
+        - '{{BaseURL}}/static/Dockerrun.aws.json'
+      signs: []

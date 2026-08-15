@@ -1,0 +1,25 @@
+id: weblogic-detect
+brief:
+    title: Detect Weblogic
+    by: pdteam
+    level: info
+    about: ""
+    label:
+        - tech
+        - weblogic
+        - intrusive
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{randstr}}'
+      signs:
+        - "on": word
+          has:
+            - From RFC 2068
+            - Error 404--Not Found
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

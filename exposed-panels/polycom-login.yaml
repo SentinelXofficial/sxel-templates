@@ -1,0 +1,23 @@
+id: polycom-login
+brief:
+    title: Polycom Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Polycom login panel was detected.
+    label:
+        - edb
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Polycom Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

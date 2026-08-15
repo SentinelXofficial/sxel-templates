@@ -1,0 +1,29 @@
+id: kcfinder-exposure
+brief:
+    title: KCFinder - Exposure
+    by: theamanrawat
+    level: high
+    about: Detected publicly accessible KCFinder instances that may have allowed arbitrary file uploads and remote code execution (RCE).Exposure of KCFinder could have allowed an attacker to gain unauthorized...
+    label:
+        - exposure
+        - kcfinder
+        - file-upload
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/kcfinder/browse.php'
+        - '{{BaseURL}}/assets/kcfinder/browse.php'
+        - '{{BaseURL}}/lib/kcfinder/browse.php'
+        - '{{BaseURL}}/admin/kcfinder/browse.php'
+        - '{{BaseURL}}/includes/kcfinder/browse.php'
+      signs:
+        - "on": word
+          has:
+            - '<title>KCFinder:'
+            - id="files"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

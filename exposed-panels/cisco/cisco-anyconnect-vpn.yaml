@@ -1,0 +1,25 @@
+id: cisco-anyconnect-vpn
+brief:
+    title: Cisco AnyConnect VPN Panel - Detect
+    by: pdteam
+    level: info
+    about: Cisco AnyConnect VPN panel was detected.
+    label:
+        - cisco
+        - panel
+        - vpn
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/CACHE/sdesktop/data.xml'
+      signs:
+        - "on": word
+          has:
+            - <config>
+            - <hostscan>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: piekielni
+brief:
+    title: Piekielni User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Piekielni user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - piekielni
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://piekielni.pl/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'Zamieszcza historie od:'
+          in: body
+          need: all

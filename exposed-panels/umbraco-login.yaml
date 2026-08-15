@@ -1,0 +1,26 @@
+id: umbraco-login
+brief:
+    title: Umbraco Login Panel - Detect
+    by: ola456
+    level: info
+    about: Umbraco login panel was detected.
+    label:
+        - panel
+        - umbraco
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/umbraco'
+        - '{{BaseURL}}/umbraco/login'
+      signs:
+        - "on": word
+          has:
+            - Umbraco.Sys
+            - <umb-auth
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,21 @@
+id: strapi-page
+brief:
+    title: Strapi API - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Strapi API was detected.
+    label:
+        - api
+        - strapi
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Welcome to your Strapi app</title>
+          in: body
+          need: all

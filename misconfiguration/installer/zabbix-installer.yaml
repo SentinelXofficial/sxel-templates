@@ -1,0 +1,31 @@
+id: zabbix-installer
+brief:
+    title: Zabbix Installation Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Zabbix is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - zabbix
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup.php'
+      signs:
+        - "on": word
+          has:
+            - <title>Installation</title>
+            - zabbix
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

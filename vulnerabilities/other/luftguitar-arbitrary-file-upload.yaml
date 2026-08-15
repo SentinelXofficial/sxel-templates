@@ -1,0 +1,24 @@
+id: luftguitar-arbitrary-file-upload
+brief:
+    title: Luftguitar CMS Arbitrary File Upload
+    by: pikpikcu
+    level: high
+    about: A vulnerability in Luftguitar CMS allows remote unauthenticated users to upload files to the remote service via the 'ftb.imagegallery.aspx' endpoint.
+    label:
+        - luftguitar
+        - edb
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ftb.imagegallery.aspx'
+      signs:
+        - "on": word
+          has:
+            - <title>Insert Image</title>
+            - <title>Image Gallery</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

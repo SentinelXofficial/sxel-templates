@@ -1,0 +1,20 @@
+id: api-adoptapet
+brief:
+    title: AdoptAPet API Test
+    by: daffainfo
+    level: info
+    about: Resource to help get pets adopted
+    label:
+        - token-spray
+        - adoptapet
+moves:
+    - verb: GET
+      to:
+        - https://api.adoptapet.com/search/pets_at_shelter?key={{token}}&v=2&output=json&shelter_id=79570&start_number=1&end_number=500
+      signs:
+        - "on": word
+          has:
+            - 'returned_pets":'
+            - 'total_pets":'
+          in: body
+          need: all

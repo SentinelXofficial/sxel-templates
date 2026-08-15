@@ -1,0 +1,27 @@
+id: pega-web-panel
+brief:
+    title: Pega Infinity Login Panel - Detect
+    by: powerexploit
+    level: info
+    about: Pega Infinity login panel was detected.
+    label:
+        - panel
+        - pega
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/prweb/PRAuth/app/default/'
+      signs:
+        - "on": word
+          has:
+            - alt="Pega Infinity
+            - alt="Pega Logo
+            - id = "pegaLogin
+            - Pega Platform
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

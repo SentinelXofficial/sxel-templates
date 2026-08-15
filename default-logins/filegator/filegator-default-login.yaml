@@ -1,0 +1,52 @@
+id: filegator-default-login
+brief:
+    title: Filegator - Default-Login
+    by: ritikchaddha
+    level: high
+    about: ""
+    label:
+        - filegator
+        - default-login
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/'
+      signs:
+        - "on": word
+          has:
+            - role":"admin
+            - permissions":[
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/?r=/login'
+      head:
+        Content-Type: application/json
+        X-Csrf-Token: '{{csrf_token}}'
+      body: '{"username":"{{username}}","password":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - role":"admin
+            - permissions":[
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

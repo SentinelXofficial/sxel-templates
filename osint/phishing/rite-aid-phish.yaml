@@ -1,0 +1,25 @@
+id: rite-aid-phish
+brief:
+    title: Rite Aid phishing Detection
+    by: rxerium
+    level: info
+    about: A Rite Aid phishing website was detected
+    label:
+        - phishing
+        - rite-aid
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Rite Aid pharmacy offers products and services to help you lead a healthy, happy life. Visit our online pharmacy, shop now, or find a store near you.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

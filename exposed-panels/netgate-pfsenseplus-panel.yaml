@@ -1,0 +1,24 @@
+id: netgate-pfsenseplus-panel
+brief:
+    title: Netgate pfSense Plus - Login Panel
+    by: rxerium
+    level: info
+    about: Netgate pfSense Plus firewall login panel detected.
+    label:
+        - panel
+        - netgate
+        - pfsense
+        - firewall
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Netgate pfSense Plus
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

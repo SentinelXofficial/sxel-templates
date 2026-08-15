@@ -1,0 +1,14 @@
+id: mixed-active-content
+brief:
+    title: Mixed Active Content
+    by: Liwermor
+    level: info
+    about: This check detects if there are any active content loaded over HTTP instead of HTTPS.
+    label:
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

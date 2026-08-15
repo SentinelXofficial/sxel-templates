@@ -1,0 +1,17 @@
+id: alfresco-panel
+brief:
+    title: Alfresco Content App Panel - Detect
+    by: Splint3r7
+    level: info
+    about: Alfresco Content App panel was detected.
+    label:
+        - panel
+        - alfresco
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

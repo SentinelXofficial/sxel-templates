@@ -1,0 +1,29 @@
+id: 3com-nj2000-default-login
+brief:
+    title: 3COM NJ2000 - Default Login
+    by: daffainfo
+    level: high
+    about: 3COM NJ2000 contains a default login vulnerability. Default admin login password of 'password' was found. An attacker can obtain access to user accounts and access sensitive information, modify dat...
+    label:
+        - default-login
+        - 3com
+        - nj2000
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login.html'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: password=password
+      signs:
+        - "on": word
+          has:
+            - <title>3Com Corporation Web Interface</title>
+            - <frame name="mainFrame" src="blank.html">
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

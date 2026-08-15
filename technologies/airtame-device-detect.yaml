@@ -1,0 +1,25 @@
+id: airtame-device-detect
+brief:
+    title: Airtame Device Detect
+    by: princechaddha
+    level: info
+    about: ""
+    label:
+        - tech
+        - airtame
+        - iot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - To access the settings of your Airtame
+            - https://airtame.com/download
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

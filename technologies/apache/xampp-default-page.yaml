@@ -1,0 +1,25 @@
+id: xampp-default-page
+brief:
+    title: XAMPP Default Page
+    by: dhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - tech
+        - php
+        - xampp
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dashboard/'
+      signs:
+        - "on": word
+          has:
+            - <title>Welcome to XAMPP</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

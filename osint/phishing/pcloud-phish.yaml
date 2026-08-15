@@ -1,0 +1,24 @@
+id: pcloud-phish
+brief:
+    title: pcloud phishing Detection
+    by: rxerium
+    level: info
+    about: A pcloud phishing website was detected
+    label:
+        - phishing
+        - pcloud
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - pCloud - Europe's Most Secure Cloud Storage
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

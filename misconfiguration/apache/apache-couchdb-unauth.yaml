@@ -1,0 +1,17 @@
+id: apache-couchdb-unauth
+brief:
+    title: Apache CouchDB - Unauthenticated Access
+    by: SleepingBag945
+    level: high
+    about: Apache CouchDB is exposed to external users.
+    label:
+        - apache
+        - couchdb
+        - unauth
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_config'
+      signs: []

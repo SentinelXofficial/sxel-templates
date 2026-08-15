@@ -1,0 +1,27 @@
+id: cisco-ucm-detect
+brief:
+    title: Cisco Unified Communications Manager - Detect
+    by: Morgan Robertson
+    level: info
+    about: Detected the presence of the Cisco Unified Communications User Management portal.
+    label:
+        - tech
+        - detect
+        - cisco
+        - ucm
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cucm-uds/version'
+      head:
+        Accept: application/xml
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <versionInformation
+            - <version>
+          in: body
+          need: all

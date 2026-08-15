@@ -1,0 +1,19 @@
+id: oipm-detect
+brief:
+    title: One Identity Password Manager Detection
+    by: nodauf
+    level: info
+    about: One Identity Password Manager is a secure password manager that gives enterprises control over password management, policies, and automated reset functions.
+    label:
+        - panel
+        - oneidentity
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/PMUser/'
+      signs:
+        - "on": word
+          has:
+            - One Identity Password Manager
+          in: body

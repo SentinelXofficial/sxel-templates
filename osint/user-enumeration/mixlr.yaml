@@ -1,0 +1,24 @@
+id: mixlr
+brief:
+    title: Mixlr User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mixlr user name information check was conducted.
+    label:
+        - osint
+        - osint-music
+        - mixlr
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://api.mixlr.com/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - username
+          in: body
+          need: all

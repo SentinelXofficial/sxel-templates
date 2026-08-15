@@ -1,0 +1,24 @@
+id: steller
+brief:
+    title: Steller User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Steller user name information check was conducted.
+    label:
+        - osint
+        - osint-shopping
+        - steller
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://steller.co/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - ' on Steller</title>'
+          in: body
+          need: all

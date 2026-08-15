@@ -1,0 +1,27 @@
+id: chronos-panel
+brief:
+    title: Chronos Panel - Detect
+    by: righettod
+    level: info
+    about: Chronos Login Panel was detected.
+    label:
+        - panel
+        - chronos
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/chronos.wsc/asparamlogin.html'
+      signs:
+        - "on": word
+          has:
+            - chronoslogin.html
+            - urlcli
+            - url_portail
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

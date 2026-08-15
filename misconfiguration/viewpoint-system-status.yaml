@@ -1,0 +1,25 @@
+id: viewpoint-system-status
+brief:
+    title: ViewPoint System Status
+    by: dhiyaneshDK
+    level: low
+    about: ViewPoint System status page is exposed.
+    label:
+        - status
+        - exposure
+        - viewpoint
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ViewPoint System Status</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

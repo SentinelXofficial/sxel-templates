@@ -1,0 +1,29 @@
+id: acunetix-login
+brief:
+    title: Acunetix Login Panel - Detect
+    by: tess
+    level: info
+    about: Acunetix login panel was detected.
+    label:
+        - panel
+        - acunetix
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Acunetix</title>
+            - assets/images/invicti-acunetix-logo.svg
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

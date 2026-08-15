@@ -1,0 +1,21 @@
+id: wing-ftp-service-detect
+brief:
+    title: Wing FTP Service - Detect
+    by: ritikchaddha
+    level: info
+    about: The File Transfer Protocol (FTP) is a standard network protocol used to transfer computer files between a client and server on a computer network.
+    label:
+        - tech
+        - ftp
+        - wing
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Wing FTP Server
+          in: header

@@ -1,0 +1,22 @@
+id: tensorboard-panel
+brief:
+    title: TensorBoard Panel - Detect
+    by: rxerium
+    level: info
+    about: TensorBoard is TensorFlow's visualization toolkit for machine learning experimentation
+    label:
+        - panel
+        - tensorboard
+        - tensorflow
+        - ml
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

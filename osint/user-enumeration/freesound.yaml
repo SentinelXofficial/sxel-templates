@@ -1,0 +1,24 @@
+id: freesound
+brief:
+    title: Freesound User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Freesound user name information check was conducted.
+    label:
+        - osint
+        - osint-music
+        - freesound
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://freesound.org/people/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - START of Content area
+          in: body
+          need: all

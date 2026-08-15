@@ -1,0 +1,25 @@
+id: webuzo-admin-panel
+brief:
+    title: Webuzo Admin Login Panel - Detect
+    by: theamanrawat
+    level: info
+    about: Webuzo admin login panel was detected.
+    label:
+        - panel
+        - webuzo
+        - admin
+        - softaculous
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Webuzo - Admin Panel
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

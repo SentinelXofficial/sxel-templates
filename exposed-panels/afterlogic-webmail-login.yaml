@@ -1,0 +1,26 @@
+id: afterlogic-webmail-login
+brief:
+    title: AfterLogic WebMail Login Panel - Detect
+    by: johnk3r
+    level: info
+    about: AfterLogic WebMail Login panel was detected.
+    label:
+        - panel
+        - afterlogic
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - afterlogic
+            - dav_url
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

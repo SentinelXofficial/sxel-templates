@@ -1,0 +1,24 @@
+id: knowyourmeme
+brief:
+    title: KnowYourMeme User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: KnowYourMeme user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - knowyourmeme
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://knowyourmeme.com/users/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Contributions
+          in: body
+          need: all

@@ -1,0 +1,16 @@
+id: passbolt-panel
+brief:
+    title: Passbolt Login Panel
+    by: righettod
+    level: info
+    about: Passbolt login panel was detected.
+    label:
+        - panel
+        - passbolt
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+      signs: []

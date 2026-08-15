@@ -1,0 +1,26 @@
+id: mautic-crm-panel
+brief:
+    title: Mautic CRM Login Panel - Detect
+    by: cyllective
+    level: info
+    about: Mautic CRM login panel was detected.
+    label:
+        - tech
+        - mautic
+        - crm
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/s/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Mautic</title>
+            - var mauticBasePath
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

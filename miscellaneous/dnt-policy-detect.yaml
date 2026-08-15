@@ -1,0 +1,28 @@
+id: dnt-policy-detect
+brief:
+    title: DNT Policy Declaration
+    by: rxerium
+    level: info
+    about: Detects a Do not Track policy.
+    label:
+        - privacy
+        - dnt
+        - detect
+        - compliance
+        - policy
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.well-known/dnt-policy.txt'
+      signs:
+        - "on": word
+          has:
+            - Do not track
+            - Policy
+            - Compliance
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

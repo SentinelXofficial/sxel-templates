@@ -1,0 +1,23 @@
+id: shoppable-token
+brief:
+    title: Shoppable Service Auth Token
+    by: philippedelteil
+    level: info
+    about: ""
+    label:
+        - exposure
+        - shoppable
+        - token
+        - auth
+        - service
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - data-shoppable-auth-token
+          in: body

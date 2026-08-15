@@ -1,0 +1,31 @@
+id: jolokia-tomcat-creds-leak
+brief:
+    title: Jolokia <= 1.7.1 Information Leakage
+    by: pathtaga
+    level: critical
+    about: Tomcat's credential disclosure leading to Remote Code Execution via WAR upload.
+    label:
+        - jolokia
+        - tomcat
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jolokia/read/Users:database=UserDatabase,type=UserDatabase'
+        - '{{BaseURL}}/actuator/jolokia/read/Users:database=UserDatabase,type=UserDatabase'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"mbean":"Users:database=UserDatabase,type=UserDatabase"'
+            - '"users":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - '"users":[]'
+          in: body
+          need: all

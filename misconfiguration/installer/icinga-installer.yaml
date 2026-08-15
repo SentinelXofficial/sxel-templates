@@ -1,0 +1,27 @@
+id: icinga-installer
+brief:
+    title: Icinga Web 2 Installer Exposure
+    by: pussycat0x
+    level: high
+    about: Icinga Web 2 installer/setup wizard is publicly accessible. The setup page at /icingaweb2/setup exposes the configuration wizard which guides through full application configuration including databa...
+    label:
+        - icinga
+        - exposure
+        - misconfig
+        - installer
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/icingaweb2/setup'
+        - '{{BaseURL}}/setup'
+      signs:
+        - "on": word
+          has:
+            - Welcome to the configuration of Icinga Web 2
+            - Setup Token
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

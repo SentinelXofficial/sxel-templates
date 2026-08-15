@@ -1,0 +1,25 @@
+id: server-backup-login
+brief:
+    title: Server Backup Manager SE Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Server Backup Manager SE login panel was detected.
+    label:
+        - panel
+        - paneil
+        - idera
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.zul'
+      signs:
+        - "on": word
+          has:
+            - <title>Idera Server Backup Manager SE  </title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

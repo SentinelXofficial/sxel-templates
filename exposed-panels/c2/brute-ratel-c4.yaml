@@ -1,0 +1,17 @@
+id: brute-ratel-c4
+brief:
+    title: Brute Ratel C4 - Detect
+    by: pussycat0x
+    level: info
+    about: Brute Ratel C4 (BRc4) is a legit red-teaming tool designed from the ground up with evasion capabilities in mind, but in the wrong hands can cause significant damage. Learn how to protect your organ...
+    label:
+        - c2
+        - bruteratel
+        - c4
+        - panel
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,19 @@
+id: api-googleroutetotraveled
+brief:
+    title: Google Route to Traveled API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - route
+moves:
+    - verb: GET
+      to:
+        - https://roads.googleapis.com/v1/snapToRoads?path=-35.27801,149.12958|-35.28032,149.12907&interpolate=true&key={{token}}
+      signs:
+        - "on": word
+          has:
+            - error
+          in: body

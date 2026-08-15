@@ -1,0 +1,16 @@
+id: discord-webhook
+brief:
+    title: Discord Webhook Disclosure
+    by: Ice3man
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - discord
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

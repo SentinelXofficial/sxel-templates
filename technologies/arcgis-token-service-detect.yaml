@@ -1,0 +1,26 @@
+id: arcgis-token-service-detect
+brief:
+    title: ArcGIS Token Service - Detect
+    by: HeeresS
+    level: info
+    about: Check for the existence of the ArcGIS Token Service on an ArcGIS server.
+    label:
+        - tech
+        - arcgis
+        - tokens
+        - detect
+        - esri
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/arcgis/tokens/'
+      signs:
+        - "on": word
+          has:
+            - alt="ArcGIS Token Service
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

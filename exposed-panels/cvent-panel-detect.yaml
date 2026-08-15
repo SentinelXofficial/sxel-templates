@@ -1,0 +1,24 @@
+id: cvent-panel-detect
+brief:
+    title: Cvent Login Panel - Detect
+    by: tess
+    level: info
+    about: Cvent login panel was detected.
+    label:
+        - panel
+        - cvent
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/Login.aspx'
+        - '{{BaseURL}}/manager/login.aspx'
+        - '{{BaseURL}}/GDSHost/Default.aspx'
+        - '{{BaseURL}}/events/EventRsvp.aspx'
+      signs:
+        - "on": word
+          has:
+            - Cvent Inc
+            - Cvent, Inc.
+          in: body

@@ -1,0 +1,17 @@
+id: qlikview-accesspoint-panel
+brief:
+    title: QlikView AccessPoint Login Panel - Detect
+    by: righettod
+    level: info
+    about: QlikView AccessPoint login panel was detected.
+    label:
+        - panel
+        - qlikview
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/qlikview/FormLogin.htm'
+      signs: []

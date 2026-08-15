@@ -1,0 +1,26 @@
+id: manageengine-network-config
+brief:
+    title: Zoho ManageEngine Network Configuration Manager Panel - Detect
+    by: righettod
+    level: info
+    about: ZOHO ManageEngine Network Configuration Manager was detected.
+    label:
+        - panel
+        - zoho
+        - manageengine
+        - zohocorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/apiclient/ember/Login.jsp'
+      signs:
+        - "on": word
+          has:
+            - Network Configuration Manager
+            - https://www.manageengine.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

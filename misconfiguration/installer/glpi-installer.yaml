@@ -1,0 +1,25 @@
+id: glpi-installer
+brief:
+    title: GLPI Installation Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed GLPI Setup page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - glpi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/install.php'
+      signs:
+        - "on": word
+          has:
+            - Setup GLPI
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

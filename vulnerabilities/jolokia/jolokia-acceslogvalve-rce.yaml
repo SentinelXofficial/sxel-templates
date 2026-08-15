@@ -1,0 +1,23 @@
+id: jolokia-acceslogvalve-rce
+brief:
+    title: Jolokia write to RCE valve
+    by: pathtaga
+    level: critical
+    about: RCE in Jolokia < 1.7.1 using AccesLogValve
+    label:
+        - jolokia
+        - rce
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jolokia/list'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"host=localhost,name=AccessLogValve,type=Valve"'
+          in: body
+          need: all

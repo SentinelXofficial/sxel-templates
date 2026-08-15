@@ -1,0 +1,39 @@
+id: coveralls-configuration-file-exposure
+brief:
+    title: Coveralls Configuration File Exposure
+    by: 0x_Akoko
+    level: medium
+    about: Detected a Coveralls configuration file (.coveralls.yml) on the target. This file could have exposed a sensitive repo_token, allowing an attacker to submit fake data, view private coverage details,...
+    label:
+        - exposure
+        - config
+        - coveralls
+        - token
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.coveralls.yml'
+      signs:
+        - "on": word
+          has:
+            - repo_token
+            - service_name
+          in: body
+          need: all
+        - "on": word
+          has:
+            - MongoDB over HTTP on the native
+            - application/javascript
+            - application/x-javascript
+            - application/json
+            - application/xml
+            - text/xml
+            - <html
+            - <!doctype
+            - <script
+            - <meta
+            - image/
+            - Response xmlns
+          in: response
+          need: all

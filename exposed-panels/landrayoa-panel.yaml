@@ -1,0 +1,29 @@
+id: landrayoa-panel
+brief:
+    title: Landray Login Panel - Detect
+    by: YanYun
+    level: info
+    about: Landray login panel was detected.
+    label:
+        - panel
+        - landrayoa
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.jsp'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - lui_login_input_username
+            - lui_login_input_password
+          in: body
+          need: all
+        - "on": word
+          has:
+            - isopen=
+          in: header
+          need: all

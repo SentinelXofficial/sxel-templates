@@ -1,0 +1,28 @@
+id: server-status
+brief:
+    title: Server Status Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Server Status panel was detected.
+    label:
+        - misconfig
+        - serverstatus
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ServerStatus</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

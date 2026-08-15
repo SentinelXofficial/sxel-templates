@@ -1,0 +1,15 @@
+id: squid-eol
+brief:
+    title: Squid End-of-Life - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected Squid proxy versions that have reached End-of-Life (EOL) and no longer receive security updates.
+    label:
+        - tech
+        - squid
+        - eol
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,24 @@
+id: mcuuid-minecraft
+brief:
+    title: MCUUID (Minecraft) User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: MCUUID (Minecraft) user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - mcuuid-minecraft
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://playerdb.co/api/player/minecraft/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Successfully found player by given ID.
+          in: body
+          need: all

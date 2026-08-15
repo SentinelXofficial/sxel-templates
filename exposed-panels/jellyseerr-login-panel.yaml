@@ -1,0 +1,27 @@
+id: jellyseerr-login-panel
+brief:
+    title: Jellyseerr Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - jellyseerr
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - Jellyseerr</title>
+            - content="Jellyseerr
+            - applicationTitle":"Jellyseerr
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

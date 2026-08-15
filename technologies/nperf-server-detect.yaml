@@ -1,0 +1,25 @@
+id: nperf-server-detect
+brief:
+    title: nPerf Server - Detect
+    by: rxerium
+    level: info
+    about: A nperf panel was detected.
+    label:
+        - tech
+        - nperf
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>nPerfServer</title>
+          in: body
+        - "on": word
+          has:
+            - Nperfserver-Remote-Endpoint
+            - nPerf/
+          in: header

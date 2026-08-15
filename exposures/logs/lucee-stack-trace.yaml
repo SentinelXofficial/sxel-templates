@@ -1,0 +1,24 @@
+id: lucee-stack-trace
+brief:
+    title: Lucee Stack Trace Error
+    by: dhiyaneshDK
+    level: low
+    about: Lucee Stack Trace error exposed.
+    label:
+        - lucee
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - lucee.runtime
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 500
+            - 200

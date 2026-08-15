@@ -1,0 +1,29 @@
+id: wago-webbased-default-login
+brief:
+    title: WAGO Web based Management - Default Login
+    by: biero-el-corridor
+    level: high
+    about: Identified WAGO Web-Based Management interfaces that were accessible using default credentials (admin:wago).These interfaces are used to configure and monitor WAGO programmable logic controllers (P...
+    label:
+        - wago
+        - default-login
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wbm/login.php'
+      head:
+        Origin: '{{RootURL}}'
+        Referer: '{{RootURL}}/wbm/index.php'
+        X-Requested-With: XMLHttpRequest
+      body: '{"username":"admin","password":"wago"}'
+      signs:
+        - "on": word
+          has:
+            - '"username":"admin"'
+            - '"isDefaultPW":"1"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

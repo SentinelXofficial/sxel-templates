@@ -1,0 +1,31 @@
+id: acunetix-360-installer
+brief:
+    title: Acunetix 360 Installer
+    by: pussycat0x
+    level: info
+    about: Acunetix 360 is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - exposure
+        - install
+        - acunetix
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wizard/database/'
+      signs:
+        - "on": word
+          has:
+            - Acunetix 360 - Installation Wizard
+            - License
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

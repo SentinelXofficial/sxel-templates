@@ -1,0 +1,25 @@
+id: openai-phish
+brief:
+    title: openai phishing Detection
+    by: rxerium
+    level: info
+    about: A openai phishing website was detected
+    label:
+        - phishing
+        - openai
+        - osint
+        - discovery
+        - ai
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Log in to OpenAI to continue to OpenAI Platform.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

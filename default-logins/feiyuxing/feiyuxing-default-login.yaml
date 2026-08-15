@@ -1,0 +1,33 @@
+id: feiyuxing-default-login
+brief:
+    title: Feiyuxing Enterprise-Level Management System - Default Login
+    by: SleepingBag945
+    level: high
+    about: Attackers can log in through admin:admin, check the system status, and configure the device.
+    label:
+        - feiyuxing
+        - default-login
+        - iot
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/send_order.cgi?parameter=login'
+      head:
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      body: '{"username":"{{username}}","password":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - '"msg":"ok"'
+            - '"type":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - hash_key=
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

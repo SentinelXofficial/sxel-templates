@@ -1,0 +1,17 @@
+id: amazon-ecs-defualt-page
+brief:
+    title: Amazon ECS Sample App Default Page - Detect
+    by: Splint3r7
+    level: info
+    about: Amazon ECS Sample App Default Page was detected.
+    label:
+        - amazon
+        - tech
+        - default
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

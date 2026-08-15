@@ -1,0 +1,23 @@
+id: sql-monitor
+brief:
+    title: SQL Monitor - Discovery
+    by: dhiyaneshDK
+    level: info
+    about: SQL Monitor was discovered.
+    label:
+        - panel
+        - red-gate
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Account/LogIn?returnUrl=%2F&hasAttemptedCookie=True'
+      signs:
+        - "on": word
+          has:
+            - <p>JavaScript needs to be enabled for SQL Monitor to work properly.</p>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

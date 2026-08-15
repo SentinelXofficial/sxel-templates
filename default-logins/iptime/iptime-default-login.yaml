@@ -1,0 +1,29 @@
+id: iptime-default-login
+brief:
+    title: ipTIME Default Login
+    by: gy741
+    level: high
+    about: ipTIME default admin credentials were discovered.
+    label:
+        - iptime
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/sess-bin/login_handler.cgi'
+      head:
+        Referer: '{{BaseURL}}/sess-bin/login_session.cgi'
+      body: username={{username}}&passwd={{password}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - setCookie
+            - efm_session_id
+            - login.cgi
+          in: body
+          need: all

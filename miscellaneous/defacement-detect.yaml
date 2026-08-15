@@ -1,0 +1,22 @@
+id: defacement-detect
+brief:
+    title: Defacement Content - Detection
+    by: ricardomaia
+    level: info
+    about: This template detects defacement content in the response body, using a list of commom paths as payload.It also detects spamdexing and hacktivism signatures and extracts a text snippet with the matc...
+    label:
+        - misc
+        - defacement
+        - spam
+        - hacktivism
+        - fuzz
+        - miscellaneous
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{path}}'
+      signs:
+        - "on": status
+          status:
+            - 200

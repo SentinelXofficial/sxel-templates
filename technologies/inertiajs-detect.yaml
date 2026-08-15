@@ -1,0 +1,15 @@
+id: inertiajs-detect
+brief:
+    title: Inertia.js - Detect
+    by: antonkulyk
+    level: info
+    about: 'Detected Inertia.js passively using a single plain GET request with no special headers. It matched four server-emitted Inertia-specific signals on the initial document: three proximity-bound body p...'
+    label:
+        - tech
+        - inertiajs
+        - inertia
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

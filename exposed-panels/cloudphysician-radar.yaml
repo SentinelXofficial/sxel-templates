@@ -1,0 +1,23 @@
+id: cloudphysician-radar
+brief:
+    title: Cloudphysician RADAR Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Cloudphysician RADAR login panel was detected.
+    label:
+        - panel
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Cloudphysician RADAR</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,27 @@
+id: salesforce-aura
+brief:
+    title: Salesforce Lightning - API Detection
+    by: aaron_costello (@ConspiracyProof)
+    level: info
+    about: A Salesforce Lightning aura API was detected.
+    label:
+        - aura
+        - unauth
+        - salesforce
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/aura'
+        - '{{BaseURL}}/s/sfsites/aura'
+        - '{{BaseURL}}/sfsites/aura'
+        - '{{BaseURL}}/s/aura'
+        - '{{BaseURL}}/s/fact'
+      body: '{}'
+      signs:
+        - "on": word
+          has:
+            - aura:invalidSession
+          in: body

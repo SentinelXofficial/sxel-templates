@@ -1,0 +1,19 @@
+id: wp-ajax-load-more-anything-fpd
+brief:
+    title: WordPress Load More Anything - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Plugin Load More Anything files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - fpd
+        - ajax-load-more-anything
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/ajax-load-more-anything/admin/Menu.php'
+        - '{{BaseURL}}/wp-content/plugins/ajax-load-more-anything/inc/ald-functions.php'
+      signs: []

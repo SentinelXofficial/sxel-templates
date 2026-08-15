@@ -1,0 +1,18 @@
+id: wp-elementor-pro-fpd
+brief:
+    title: WordPress Elementor Pro - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Plugin Elementor Pro plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - fpd
+        - elementor-pro
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/elementor-pro/modules/notes/notifications/views/email.php'
+      signs: []

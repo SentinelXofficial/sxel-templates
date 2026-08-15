@@ -1,0 +1,24 @@
+id: nutanix-web-console-login
+brief:
+    title: Nutanix Web Console Login Panel - Detect
+    by: gy741
+    level: info
+    about: Nutanix Web Console login panel was detected.
+    label:
+        - panel
+        - nutanix
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/console/'
+      signs:
+        - "on": word
+          has:
+            - <title>Nutanix Web Console</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

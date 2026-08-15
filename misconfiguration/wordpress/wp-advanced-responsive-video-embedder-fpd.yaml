@@ -1,0 +1,19 @@
+id: wp-advanced-responsive-video-embedder-fpd
+brief:
+    title: WordPress Advanced Responsive Video Embedder - Full Path Disclosure
+    by: DhiyaneshDk
+    level: low
+    about: WordPress Advanced Responsive Video Embedder plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed dir...
+    label:
+        - wp
+        - wordpress
+        - wp-plugin
+        - fpd
+        - advanced-iframe
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/advanced-responsive-video-embedder/php/init.php'
+        - '{{BaseURL}}/wp-content/plugins/advanced-responsive-video-embedder/advanced-responsive-video-embedder.php'
+      signs: []

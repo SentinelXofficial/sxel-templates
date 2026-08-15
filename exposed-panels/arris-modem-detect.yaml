@@ -1,0 +1,24 @@
+id: arris-modem-detect
+brief:
+    title: ARRIS Touchstone Telephony Modem - Panel Detect
+    by: gy741
+    level: info
+    about: ARRIS Touchstone Telephony Modem status panel was detected.
+    label:
+        - panel
+        - arris
+        - commscope
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/phy.htm'
+      signs:
+        - "on": word
+          has:
+            - <title>Touchstone Status</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

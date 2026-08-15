@@ -1,0 +1,23 @@
+id: api-clearbit
+brief:
+    title: Clearbit API Test
+    by: daffainfo
+    level: info
+    about: Search for company logos and embed them in your projects
+    label:
+        - token-spray
+        - clearbit
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://person.clearbit.com/v2/combined/find?email=alex@clearbit.com'
+      head:
+        Authorization: Basic {{base64(token + ':')}}
+      signs:
+        - "on": word
+          has:
+            - '"person":'
+            - '"id":'
+            - '"name":'
+          in: body
+          need: all

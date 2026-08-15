@@ -1,0 +1,21 @@
+id: api-abstract-vat-validation-rates
+brief:
+    title: Abstract Api VAT Validation Rates Test
+    by: daffainfo
+    level: info
+    about: Stay compliant with our simple, reliable, and powerful API for all your domestic and cross-border sales.
+    label:
+        - token-spray
+        - abstractapi
+moves:
+    - verb: GET
+      to:
+        - https://vat.abstractapi.com/v1/?api_key={{token}}&vat_number=SE556656688001
+      signs:
+        - "on": word
+          has:
+            - '"vat_number":'
+            - '"is_vat_valid":'
+            - '"company_name":'
+          in: body
+          need: all

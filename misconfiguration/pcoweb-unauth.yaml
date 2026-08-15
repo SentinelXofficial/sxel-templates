@@ -1,0 +1,27 @@
+id: pcoweb-unauth
+brief:
+    title: pCOWeb - Unauth
+    by: ritikchaddha
+    level: high
+    about: ""
+    label:
+        - pcoweb
+        - unauth
+        - misconfig
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config/pw_left_bar.html'
+      signs:
+        - "on": word
+          has:
+            - System is using
+            - pCOWeb
+            - Configuration
+          in: response
+          need: all
+        - "on": status
+          status:
+            - 200

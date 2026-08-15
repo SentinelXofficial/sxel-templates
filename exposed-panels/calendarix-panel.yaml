@@ -1,0 +1,25 @@
+id: calendarix-panel
+brief:
+    title: Calendarix Admin Login Panel - Detect
+    by: r3dg33k
+    level: info
+    about: Calendarix admin login panel was detected.
+    label:
+        - panel
+        - calendarix
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/calendarix/admin/cal_login.php'
+        - '{{BaseURL}}/calendar/admin/cal_login.php'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Calendarix Admin Login
+          in: body
+          need: all

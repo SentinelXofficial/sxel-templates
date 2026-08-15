@@ -1,0 +1,24 @@
+id: default-apache-shiro
+brief:
+    title: Apache Shiro Default Page
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - tech
+        - apache
+        - shiro
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Apache Shiro Quickstart</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,27 @@
+id: vernemq-status-page
+brief:
+    title: VerneMQ Status Page
+    by: geeknik
+    level: low
+    about: VerneMQ Status Page is exposed.
+    label:
+        - misconfig
+        - vernemq
+        - status
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/status'
+      signs:
+        - "on": word
+          has:
+            - VerneMQ
+            - Issues
+            - Cluster Overview
+            - Node Status
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

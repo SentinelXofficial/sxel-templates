@@ -1,0 +1,17 @@
+id: churchcrm-installer
+brief:
+    title: ChurchCRM - Setup Exposure
+    by: Kazgangap
+    level: high
+    about: ChurchCRM setup is exposed.
+    label:
+        - misconfig
+        - setup
+        - churchcrm
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/setup'
+      signs: []

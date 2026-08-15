@@ -1,0 +1,26 @@
+id: microsoft-runtime-error
+brief:
+    title: Microsoft Runtime Error Page
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - iis
+        - error
+        - microsoft
+        - log
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Runtime Error</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 500
+            - 404

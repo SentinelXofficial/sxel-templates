@@ -1,0 +1,16 @@
+id: cluster-trino-panel
+brief:
+    title: Cluster Overview Trino - Panel
+    by: DhiyaneshDk
+    level: info
+    about: Cluster Overview Trino Login Panel was discovered.
+    label:
+        - cluster
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/login.html'
+      signs: []

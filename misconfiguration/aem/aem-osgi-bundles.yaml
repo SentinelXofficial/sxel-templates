@@ -1,0 +1,25 @@
+id: aem-osgi-bundles
+brief:
+    title: Adobe AEM Installed OSGI Bundles
+    by: dhiyaneshDk
+    level: low
+    about: Adobe AEM Installed OSGI Bundles leaked.
+    label:
+        - misconfig
+        - aem
+        - adobe
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/bin.tidy.infinity.json'
+      signs:
+        - "on": word
+          has:
+            - '"jcr:primaryType":'
+            - '"jcr:uuid":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

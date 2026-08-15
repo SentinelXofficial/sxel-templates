@@ -1,0 +1,23 @@
+id: ecology-detect
+brief:
+    title: Ecology Detection
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - ecology
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - ecology_JSessionid
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

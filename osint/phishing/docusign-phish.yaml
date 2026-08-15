@@ -1,0 +1,25 @@
+id: docusign-phish
+brief:
+    title: DocuSign phishing Detection
+    by: rxerium
+    level: info
+    about: A DocuSign phishing website was detected
+    label:
+        - phishing
+        - docusign
+        - esignature
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'title>Docusign | #1 in Electronic Signature and Intelligent Agreement Management'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

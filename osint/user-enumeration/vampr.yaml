@@ -1,0 +1,25 @@
+id: vampr
+brief:
+    title: Vampr User Name Information - Detect
+    by: millermedia
+    level: info
+    about: Vampr user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - vampr
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.vampr.me/artist/{{user}}
+      signs:
+        - "on": word
+          has:
+            - SKILLS</h2>
+            - GENRES</h2>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

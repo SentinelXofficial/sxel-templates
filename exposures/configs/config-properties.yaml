@@ -1,0 +1,32 @@
+id: config-properties
+brief:
+    title: Config Properties Exposure
+    by: j4vaovo
+    level: high
+    about: Config Properties were exposed.
+    label:
+        - exposure
+        - config
+        - properties
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config.properties'
+        - '{{BaseURL}}/config.properties.bak'
+        - '{{BaseURL}}/ui_config.properties'
+      signs:
+        - "on": word
+          has:
+            - text/plain
+            - bytes
+          in: header
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

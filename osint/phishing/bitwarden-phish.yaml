@@ -1,0 +1,24 @@
+id: bitwarden-phish
+brief:
+    title: bitwarden phishing Detection
+    by: rxerium
+    level: info
+    about: A bitwarden phishing website was detected
+    label:
+        - phishing
+        - bitwarden
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - The password manager trusted by millions | Bitwarden
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

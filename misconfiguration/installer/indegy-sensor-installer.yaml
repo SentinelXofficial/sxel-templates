@@ -1,0 +1,25 @@
+id: indegy-sensor-installer
+brief:
+    title: Indegy Sensor Setup - Installer
+    by: ritikchaddha
+    level: high
+    about: Indegy Sensor is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - indegy
+        - sensor
+        - installer
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/settings'
+      signs:
+        - "on": word
+          has:
+            - <title>Setup Wizard</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

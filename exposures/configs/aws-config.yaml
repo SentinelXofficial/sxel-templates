@@ -1,0 +1,26 @@
+id: aws-config
+brief:
+    title: AWS Configuration - Detect
+    by: m4lwhere
+    level: medium
+    about: AWS config found via /.aws/config.
+    label:
+        - config
+        - exposure
+        - aws
+        - credential
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.aws/config'
+      signs:
+        - "on": word
+          has:
+            - '[default]'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

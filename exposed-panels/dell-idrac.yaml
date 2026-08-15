@@ -1,0 +1,27 @@
+id: dell-idrac
+brief:
+    title: Dell IDRAC Panel - Detect
+    by: kazet
+    level: info
+    about: Dell IDRAC panel was detected.
+    label:
+        - panel
+        - idrac
+        - dell
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/restgui/start.html'
+        - '{{BaseURL}}/login.html'
+      signs:
+        - "on": word
+          has:
+            - <idrac-start-screen
+            - thisIDRACText
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: eko-management-console-login
+brief:
+    title: Eko Charger Management Console Login Panel - Detect
+    by: clem9669
+    level: info
+    about: Eko Charger Management Console login panel was detected.
+    label:
+        - panel
+        - eko
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Charger Management Console</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

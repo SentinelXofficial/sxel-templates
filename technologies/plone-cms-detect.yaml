@@ -1,0 +1,24 @@
+id: plone-cms-detect
+brief:
+    title: Plone CMS detect
+    by: cyllective
+    level: info
+    about: Detects Plone CMS
+    label:
+        - tech
+        - plone
+        - cms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<meta name="generator" content="Plone - '
+            - <div xmlns:css="http://namespaces.plone.org/diazo/css"
+            - /++plone++static/plone-compiled.css
+            - /++plone++static/tinymce-styles.css
+            - '>Powered by Plone &amp; Python</a>'
+          in: body

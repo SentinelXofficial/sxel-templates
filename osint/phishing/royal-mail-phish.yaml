@@ -1,0 +1,24 @@
+id: royal-mail-phish
+brief:
+    title: royal-mail phishing Detection
+    by: rxerium
+    level: info
+    about: A royal-mail phishing website was detected
+    label:
+        - phishing
+        - royal-mail
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Log in | Royal Mail Group Ltd
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

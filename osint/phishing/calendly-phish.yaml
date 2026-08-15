@@ -1,0 +1,25 @@
+id: calendly-phish
+brief:
+    title: Calendly phishing Detection
+    by: rxerium
+    level: info
+    about: A Calendly phishing website was detected
+    label:
+        - phishing
+        - calendly
+        - scheduling
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Calendly is the modern scheduling platform that makes “finding time” a breeze. When connecting is easy, your teams can get more done.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: disabledrocks-mastodon-instance
+brief:
+    title: Disabled.rocks (Mastodon Instance) User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Disabled.rocks (Mastodon Instance) user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - disabledrocks-mastodon-instance
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://disabled.rocks/api/v1/accounts/lookup?acct={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - display_name
+          in: body
+          need: all

@@ -1,0 +1,17 @@
+id: wordpress-woo-cart-abandonment-recovery
+brief:
+    title: WooCommerce Cart Abandonment Recovery Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/woo-cart-abandonment-recovery/readme.txt'
+      signs: []

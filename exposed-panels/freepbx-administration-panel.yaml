@@ -1,0 +1,30 @@
+id: freepbx-administration-panel
+brief:
+    title: FreePBX Admin Panel - Detect
+    by: tess
+    level: info
+    about: FreePBX admin panel was detected.
+    label:
+        - freepbx
+        - panel
+        - sangoma
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/config.php'
+      signs:
+        - "on": word
+          has:
+            - <title>FreePBX
+            - FreePBX</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

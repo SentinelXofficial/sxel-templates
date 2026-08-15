@@ -1,0 +1,27 @@
+id: aspnet-soap-webservices-asmx
+brief:
+    title: SOAP-based ASP.NET web services ASMX - Detect
+    by: righettod
+    level: info
+    about: SOAP-based ASP.NET web services collection was detected.
+    label:
+        - config
+        - exposure
+        - asmx
+        - soap
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - .asmx?op=
+            - .asmx?WSDL
+            - .asmx?disco
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

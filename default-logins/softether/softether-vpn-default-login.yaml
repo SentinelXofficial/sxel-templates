@@ -1,0 +1,28 @@
+id: softether-vpn-default-login
+brief:
+    title: SoftEther VPN Admin Console - Default Login
+    by: bhutch
+    level: high
+    about: The administrative password for the SoftEther VPN Server is blank.
+    label:
+        - misconfig
+        - vpn
+        - softether
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/default/'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+      signs:
+        - "on": word
+          has:
+            - Create new Virtual Hub
+            - Toggle navigation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

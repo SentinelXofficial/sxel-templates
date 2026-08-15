@@ -1,0 +1,19 @@
+id: sitecore-cms
+brief:
+    title: Sitecore CMS - Detect
+    by: RandomDhiraj
+    level: info
+    about: Detect Sitecore Content Management System (CMS) websites based on a redirect from the sitecore media handler URL pattern to the notfound.aspx page.
+    label:
+        - cms
+        - sitecore
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/-/media/doo-doo.ashx'
+      signs:
+        - "on": status
+          status:
+            - 302

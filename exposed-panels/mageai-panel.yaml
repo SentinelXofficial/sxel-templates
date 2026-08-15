@@ -1,0 +1,16 @@
+id: mageai-panel
+brief:
+    title: Mage AI Panel - Detect
+    by: ChrisJr404
+    level: info
+    about: Mage AI (mage.ai / github.com/mage-ai/mage-ai) is an open-source data pipeline + orchestration platform with a notebook-style UI. Self-hosted instances default to TCP 6789 and historically have shi...
+    label:
+        - panel
+        - mageai
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/api/status'
+      signs: []

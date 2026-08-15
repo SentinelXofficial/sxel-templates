@@ -1,0 +1,25 @@
+id: jalios-jcms-panel
+brief:
+    title: Jalios JCMS Login Panel - Detect
+    by: righettod
+    level: info
+    about: Jalios JCMS login panel was detected.
+    label:
+        - panel
+        - jalios
+        - jcms
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/front/privateLogin.jsp'
+      signs:
+        - "on": word
+          has:
+            - content="Jalios JCMS
+            - jalios-login
+            - JCMS_login
+            - /jcms/
+          in: body
+          need: all

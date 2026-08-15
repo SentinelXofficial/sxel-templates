@@ -1,0 +1,24 @@
+id: vigor-login
+brief:
+    title: Vigor Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Vigor login panel was detected.
+    label:
+        - panel
+        - login
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/weblogin.htm'
+      signs:
+        - "on": word
+          has:
+            - <title>Vigor Login Page</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

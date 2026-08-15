@@ -1,0 +1,25 @@
+id: hashnode
+brief:
+    title: Hashnode User Name Information - Detect
+    by: cheesymoon
+    level: info
+    about: hashnode.com user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - hashnode
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://hashnode.com/@{{user}}
+      signs:
+        - "on": word
+          has:
+            - Member Since
+            - '"username":"{{user}}"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

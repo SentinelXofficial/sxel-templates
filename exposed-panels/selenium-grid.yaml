@@ -1,0 +1,24 @@
+id: selenium-grid
+brief:
+    title: Selenium Grid Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Selenium Grid panel was detected.
+    label:
+        - panel
+        - unauth
+        - selenium
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/index.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Selenium Grid</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

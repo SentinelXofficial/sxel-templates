@@ -1,0 +1,27 @@
+id: manageengine-opmanager
+brief:
+    title: ZOHO ManageEngine OpManager Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: ZOHO ManageEngine OpManager panel was detected.
+    label:
+        - panel
+        - zoho
+        - manageengine
+        - zohocorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <div class='opmIconsHolder'>
+            - <div class='opmLoginFieldHolder'>
+            - <div class='opmIconsRight'>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

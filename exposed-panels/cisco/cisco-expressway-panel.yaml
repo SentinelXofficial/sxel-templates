@@ -1,0 +1,17 @@
+id: cisco-expressway-panel
+brief:
+    title: CISCO Expressway Login Panel - Detect
+    by: righettod
+    level: info
+    about: CISCO Expressway login panel was detected.
+    label:
+        - panel
+        - cisco
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs: []

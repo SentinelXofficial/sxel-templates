@@ -1,0 +1,25 @@
+id: kraken-cluster-monitoring
+brief:
+    title: Kraken Cluster Monitoring Dashboard - Detect
+    by: pussycat0x
+    level: info
+    about: Kraken Cluster Monitoring Dashboard was detected.
+    label:
+        - panel
+        - kraken
+        - cluster
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Kraken dashboard
+            - Kraken cluster monitoring
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

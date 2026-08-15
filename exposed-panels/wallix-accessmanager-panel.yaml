@@ -1,0 +1,16 @@
+id: wallix-accessmanager-panel
+brief:
+    title: Wallix Access Manager Panel - Detect
+    by: righettod
+    level: info
+    about: Wallix Access Manager panel was detected.
+    label:
+        - panel
+        - wallix
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wabam'
+        - '{{BaseURL}}/wabam/favicon.ico'
+      signs: []

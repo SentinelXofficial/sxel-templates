@@ -1,0 +1,23 @@
+id: docebo-elearning-panel
+brief:
+    title: Docebo eLearning Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: Docebo eLearning login panel was detected.
+    label:
+        - panel
+        - docebo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Docebo E-learning
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

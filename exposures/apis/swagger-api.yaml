@@ -1,0 +1,32 @@
+id: swagger-api
+brief:
+    title: Public Swagger API - Detect
+    by: pdteam
+    level: info
+    about: Public Swagger API was detected.
+    label:
+        - exposure
+        - api
+        - swagger
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      head:
+        Accept: text/html, application/json
+      signs:
+        - "on": word
+          has:
+            - 'swagger:'
+            - Swagger 2.0
+            - '"swagger":'
+            - Swagger UI
+            - loadSwaggerUI
+            - '**token**:'
+            - id="swagger-ui
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: keybase
+brief:
+    title: Keybase User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Keybase user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - keybase
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://keybase.io/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - username
+          in: body
+          need: all

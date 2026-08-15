@@ -1,0 +1,26 @@
+id: hotels-phish
+brief:
+    title: Hotels.com phishing Detection
+    by: rxerium
+    level: info
+    about: A Hotels.com phishing website was detected
+    label:
+        - phishing
+        - hotels
+        - travel
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Hotels.com
+            - <title>Hotels.com - Deals &amp; Discounts for Hotel Reservations from Luxury Hotels to Budget Accommodations
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

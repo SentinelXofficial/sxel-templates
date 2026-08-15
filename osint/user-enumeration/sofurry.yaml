@@ -1,0 +1,24 @@
+id: sofurry
+brief:
+    title: Sofurry User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Sofurry user name information check was conducted.
+    label:
+        - osint
+        - osint-art
+        - sofurry
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://{{user}}.sofurry.com
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '''s Profile | SoFurry'
+          in: body
+          need: all

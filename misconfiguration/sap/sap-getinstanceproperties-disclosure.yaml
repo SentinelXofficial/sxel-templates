@@ -1,0 +1,41 @@
+id: sap-getinstanceproperties-disclosure
+brief:
+    title: SAPControl Webmethods - Disclosure
+    by: LRVT
+    level: medium
+    about: Detected SAP systems where the SAP Start Service (sapstartsrv) SAPControl SOAP interface exposes the GetInstanceProperties method without requiring authentication.
+    label:
+        - misconfig
+        - sap
+        - sapcontrol
+        - soap
+        - exposure
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: text/xml; charset=UTF-8
+        SOAPAction: '''""'''
+      body: |-
+        <?xml version="1.0" encoding="utf-8"?>
+        <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+          <SOAP-ENV:Header>
+            <sapsess:Session xmlns:sapsess="http://www.sap.com/webas/630/soap/features/session/">
+              <enableSession>true</enableSession>
+            </sapsess:Session>
+          </SOAP-ENV:Header>
+          <SOAP-ENV:Body>
+            <ns1:GetInstanceProperties xmlns:ns1="urn:SAPControl"/>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      signs:
+        - "on": word
+          has:
+            - GetInstancePropertiesResponse
+            - <property>Webmethods</property>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

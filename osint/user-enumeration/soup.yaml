@@ -1,0 +1,24 @@
+id: soup
+brief:
+    title: Soup User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Soup user name information check was conducted.
+    label:
+        - osint
+        - osint-blog
+        - soup
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.soup.io/author/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Author at Soup.io
+          in: body
+          need: all

@@ -1,0 +1,26 @@
+id: manageengine-servicedesk
+brief:
+    title: ZOHO ManageEngine ServiceDesk Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: ZOHO ManageEngine ServiceDesk panel was detected.
+    label:
+        - panel
+        - zoho
+        - manageengine
+        - zohocorp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ManageEngine ServiceDesk Plus</title>
+            - <title>ManageEngine ServiceDesk Plus - MSP</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

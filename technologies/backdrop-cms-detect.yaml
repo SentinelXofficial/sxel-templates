@@ -1,0 +1,23 @@
+id: backdrop-cms-detect
+brief:
+    title: Backdrop CMS - Detect
+    by: 5tr1x
+    level: info
+    about: Backdrop CMS was discovered.
+    label:
+        - tech
+        - backdrop
+        - cms
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/core/profiles/testing/testing.info'
+      signs:
+        - "on": word
+          has:
+            - Added by Backdrop CMS packaging script
+            - 'X-Generator: Backdrop CMS'
+          in: response

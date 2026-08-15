@@ -1,0 +1,25 @@
+id: dashlane-phish
+brief:
+    title: dashlane phishing Detection
+    by: rxerium
+    level: info
+    about: A dashlane phishing website was detected
+    label:
+        - phishing
+        - dashlane
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Dashlane Password Manager
+            - Dashlane Password Manager safeguards businesses &amp; people with easy-to-use, powerful features. Protect &amp; manage passwords and passkeys in one secure solution.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

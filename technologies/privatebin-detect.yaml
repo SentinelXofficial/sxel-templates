@@ -1,0 +1,16 @@
+id: privatebin-detect
+brief:
+    title: PrivateBin - Detect
+    by: righettod
+    level: info
+    about: PrivateBin was detected.
+    label:
+        - tech
+        - privatebin
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

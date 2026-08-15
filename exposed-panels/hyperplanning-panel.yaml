@@ -1,0 +1,17 @@
+id: hyperplanning-panel
+brief:
+    title: HYPERPLANNING Login Panel - Detect
+    by: righettod
+    level: info
+    about: HYPERPLANNING products was detected.
+    label:
+        - panel
+        - hyperplanning
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

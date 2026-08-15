@@ -1,0 +1,31 @@
+id: lmszai-installer
+brief:
+    title: LMSZAI Installer Exposure
+    by: DhiyaneshDk
+    level: high
+    about: LMSZAI is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - blesta
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install'
+      signs:
+        - "on": word
+          has:
+            - LMSZAI - Learning Management System
+            - Configuaration
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

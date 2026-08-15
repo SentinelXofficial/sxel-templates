@@ -1,0 +1,19 @@
+id: default-apache2-ubuntu-page
+brief:
+    title: Apache2 Ubuntu Default Page
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>Apache2 Ubuntu Default Page: It works</title>'
+          in: body

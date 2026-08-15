@@ -1,0 +1,18 @@
+id: wordpress-wp-super-cache
+brief:
+    title: WP Super Cache Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wp-super-cache/readme.txt'
+      signs: []

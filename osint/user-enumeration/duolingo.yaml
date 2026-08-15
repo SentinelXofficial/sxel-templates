@@ -1,0 +1,24 @@
+id: duolingo
+brief:
+    title: Duolingo User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Duolingo user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - duolingo
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.duolingo.com/2017-06-30/users?username={{user}}&_=1628308619574
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - joinedClassroomIds
+          in: body
+          need: all

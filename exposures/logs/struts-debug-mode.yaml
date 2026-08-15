@@ -1,0 +1,24 @@
+id: struts-debug-mode
+brief:
+    title: Apache Struts setup in Debug-Mode
+    by: pdteam
+    level: low
+    about: Apache Struts debug mode is enabled.
+    label:
+        - logs
+        - struts
+        - apache
+        - exposure
+        - setup
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <debug>
+            - <struts.actionMapping>
+          in: body
+          need: all

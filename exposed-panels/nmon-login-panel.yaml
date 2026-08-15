@@ -1,0 +1,24 @@
+id: nmon-login-panel
+brief:
+    title: nMon Panel - Detect
+    by: Th3l0newolf
+    level: info
+    about: nMon login interface was discovered.
+    label:
+        - panel
+        - login
+        - nmon
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?route=signin'
+      signs:
+        - "on": word
+          has:
+            - <title>nMon</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,22 @@
+id: umami-panel
+brief:
+    title: Umami Panel - Detect
+    by: userdehghani
+    level: info
+    about: simple, fast, privacy-focused, open-source analytics solution.
+    label:
+        - panel
+        - umami
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+        - '{{BaseURL}}/favicon.ico'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/~404'
+      signs: []

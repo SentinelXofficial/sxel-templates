@@ -1,0 +1,24 @@
+id: mag-dashboard-panel
+brief:
+    title: MAG Dashboard Login Panel - Detect
+    by: theamanrawat
+    level: info
+    about: MAG Dashboard login panel was detected.
+    label:
+        - panel
+        - mag
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - MAG Dashboard Login
+            - Check for Renewal License
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

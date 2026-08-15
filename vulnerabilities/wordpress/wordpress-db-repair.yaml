@@ -1,0 +1,31 @@
+id: wordpress-db-repair
+brief:
+    title: Wordpress DB Repair Exposed
+    by: _C0wb0y_
+    level: low
+    about: Discover enabled Wordpress repair page.
+    label:
+        - wordpress
+        - config
+        - fpd
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-admin/maint/repair.php'
+      signs:
+        - "on": word
+          has:
+            - <title>WordPress
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - define
+            - WP_ALLOW_REPAIR
+            - "true"
+          in: body
+          need: all

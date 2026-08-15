@@ -1,0 +1,25 @@
+id: ctrlpanel-installer
+brief:
+    title: CtrlPanel Installer Exposure
+    by: theamanrawat
+    level: high
+    about: CtrlPanel is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - ctrlpanel
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/installer/'
+      signs:
+        - "on": word
+          has:
+            - CtrlPanel | installer
+            - <title>CtrlPanel.gg installer Script
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

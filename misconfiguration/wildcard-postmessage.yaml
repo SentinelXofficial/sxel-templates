@@ -1,0 +1,17 @@
+id: wildcard-postmessage
+brief:
+    title: postMessage - Cross-Site Scripting
+    by: pdteam
+    level: info
+    about: postMessage contains a cross-site scripting vulnerability. An attacker can execute arbitrary script and therefore steal cookie-based authentication credentials and launch other attacks.
+    label:
+        - xss
+        - postmessage
+        - misconfig
+        - vuln
+    score: CVSS:7.2
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

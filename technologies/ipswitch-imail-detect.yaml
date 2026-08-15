@@ -1,0 +1,17 @@
+id: ipswitch-imail-detect
+brief:
+    title: Ipswitch IMail Server - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detects servers running Ipswitch IMail by identifying the Server header in HTTP responses.
+    label:
+        - tech
+        - ipswitch
+        - imail
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

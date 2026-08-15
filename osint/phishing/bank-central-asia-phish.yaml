@@ -1,0 +1,26 @@
+id: bank-central-asia-phish
+brief:
+    title: Bank Central Asia Phishing - Detect
+    by: bocgoInfosec
+    level: info
+    about: A Bank Central Asia (BCA) phishing website was detected
+    label:
+        - phishing
+        - bca
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - BCA - Senantiasa di sisi Anda
+            - BCA - Always by your side
+            - myBCA
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

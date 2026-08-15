@@ -1,0 +1,27 @@
+id: apache-tika-detect
+brief:
+    title: Apache Tika - Detection
+    by: icarot
+    level: info
+    about: Detects an Apache Tika server, a toolkit that detects and extracts metadata and text from over a thousand different file types (such as PPT, XLS, and PDF).
+    label:
+        - tech
+        - tika
+        - apache
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+        - '{{BaseURL}}/tika'
+        - '{{BaseURL}}/version'
+      signs:
+        - "on": word
+          has:
+            - Apache Tika
+            - apache.tika
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

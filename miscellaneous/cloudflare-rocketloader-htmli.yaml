@@ -1,0 +1,33 @@
+id: cloudflare-transform-via-url-injection
+brief:
+    title: Cloudflare Transform via URL - Image Injection
+    by: j3ssie
+    level: info
+    about: Transform via URL feature in Cloudflare allow attackers to show arbitrary images to the visitor of a crafted URL on the website. This can be used to perform various attacks such as phishing, deface...
+    label:
+        - misconfig
+        - cloudflare
+        - htmli
+        - miscellaneous
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cdn-cgi/image/width=1000,format=auto/https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/cloudflare.svg'
+      signs:
+        - "on": word
+          has:
+            - Cloudflare
+            - <svg
+            - M16.5088 16.8447c.1475-.5068.0908-.9707-.1553-1.3154-.2246-.3164-.6045-.499-1.0615-.5205l-
+            - 1475.5068-.0918.9707.1543 1.3164.2256.3164.6055.498
+          in: body
+          need: all
+        - "on": word
+          has:
+            - image/svg+xml
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

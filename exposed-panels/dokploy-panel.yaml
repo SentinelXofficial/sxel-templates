@@ -1,0 +1,24 @@
+id: dokploy-panel
+brief:
+    title: Dokploy Login Panel - Detect
+    by: theamanrawat
+    level: info
+    about: Dokploy login panel was detected.
+    label:
+        - panel
+        - dokploy
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Dokploy</title>
+            - dokploy
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

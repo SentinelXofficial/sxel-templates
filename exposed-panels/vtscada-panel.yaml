@@ -1,0 +1,31 @@
+id: vtscada-panel
+brief:
+    title: VTScada - Internet Client Panel
+    by: rxerium
+    level: info
+    about: VTScada (by Trihedral Engineering) is a SCADA platform used in water/
+    label:
+        - panel
+        - scada
+        - ics
+        - vtscada
+        - trihedral
+        - utilities
+        - water
+        - oil-gas
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - VTScada Anywhere
+            - VTScada
+            - trihedral.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

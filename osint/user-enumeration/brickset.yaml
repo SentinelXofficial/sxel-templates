@@ -1,0 +1,24 @@
+id: brickset
+brief:
+    title: Brickset User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Brickset user name information check was conducted.
+    label:
+        - osint
+        - osint-hobby
+        - brickset
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://forum.brickset.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Activity</h2>
+          in: body
+          need: all

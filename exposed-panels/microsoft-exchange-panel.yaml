@@ -1,0 +1,24 @@
+id: microsoft-exchange-panel
+brief:
+    title: Microsoft Exchange Admin Center Login Panel - Detect
+    by: r3dg33k
+    level: info
+    about: Microsoft Exchange Admin Center login panel was detected.
+    label:
+        - microsoft
+        - panel
+        - exchange
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/owa/auth/logon.aspx?replaceCurrent=1&url={{BaseURL}}/ecp'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Exchange Admin Center
+          in: body
+          need: all

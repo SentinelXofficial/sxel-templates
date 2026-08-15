@@ -1,0 +1,24 @@
+id: microcenter-phish
+brief:
+    title: microcenter phishing Detection
+    by: rxerium
+    level: info
+    about: A microcenter phishing website was detected
+    label:
+        - phishing
+        - microcenter
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Micro Center - Computer & Electronics Retailer - Shop Now
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

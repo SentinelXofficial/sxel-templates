@@ -1,0 +1,17 @@
+id: wp-easy-google-fonts-log-disclosure
+brief:
+    title: WordPress Easy Google Fonts - Error Log Disclosure
+    by: 0x_Akoko
+    level: low
+    about: Detected WordPress Easy Google Fonts plugin debug log file, potentially revealing file paths, errors, and sensitive information.
+    label:
+        - wordpress
+        - wp-plugin
+        - exposure
+        - easy-google-fonts
+        - logs
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/easy-google-fonts/error_log'
+      signs: []

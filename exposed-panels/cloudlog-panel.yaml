@@ -1,0 +1,18 @@
+id: cloudlog-panel
+brief:
+    title: Cloudlog Panel - Detect
+    by: s4e-io
+    level: info
+    about: Cloudlog panel was discovered.
+    label:
+        - panel
+        - login
+        - cloudlog
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/index.php/user/login'
+      signs: []

@@ -1,0 +1,25 @@
+id: osticket-panel
+brief:
+    title: osTicket Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: osTicket login panel was detected.
+    label:
+        - panel
+        - osticket
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/login.php'
+      signs:
+        - "on": word
+          has:
+            - powered by osTicket
+            - content="osTicket
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

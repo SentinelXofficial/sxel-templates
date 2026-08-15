@@ -1,0 +1,24 @@
+id: soloto
+brief:
+    title: Solo.to User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Solo.to user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - soloto
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://solo.to/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - create your own page
+          in: body
+          need: all

@@ -1,0 +1,17 @@
+id: craftercms-panel
+brief:
+    title: CrafterCMS Login Panel - Detect
+    by: righettod
+    level: info
+    about: CrafterCMS login panel was detected.
+    label:
+        - panel
+        - craftercms
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/studio/login'
+      signs: []

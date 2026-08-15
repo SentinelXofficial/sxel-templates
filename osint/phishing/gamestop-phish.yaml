@@ -1,0 +1,26 @@
+id: gamestop-phish
+brief:
+    title: GameStop phishing Detection
+    by: rxerium
+    level: info
+    about: A GameStop phishing website was detected
+    label:
+        - phishing
+        - gamestop
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - GameStop
+            - Consoles, Collectibles, Video Games, and More &ndash; Buy, Sell or Trade | GameStop
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

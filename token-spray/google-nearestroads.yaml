@@ -1,0 +1,19 @@
+id: api-googlenearestroads
+brief:
+    title: Google Nearest Roads API Test
+    by: zzeitlin
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - google
+        - roads
+moves:
+    - verb: GET
+      to:
+        - https://roads.googleapis.com/v1/nearestRoads?points=60.170880,24.942795|60.170879,24.942796|60.170877,24.942796&key={{token}}
+      signs:
+        - "on": word
+          has:
+            - error
+          in: body

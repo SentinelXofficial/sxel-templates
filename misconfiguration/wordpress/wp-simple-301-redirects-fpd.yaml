@@ -1,0 +1,18 @@
+id: wp-simple-301-redirects-fpd
+brief:
+    title: Simple 301 Redirects - Full Path Disclosure
+    by: theamanrawat
+    level: low
+    about: Simple 301 Redirects  WordPress plugin contains a full path disclosure vulnerability due to improper access restrictions in its source files, allowing unauthenticated attackers to retrieve full ser...
+    label:
+        - debug
+        - wordpress
+        - wp
+        - wp-plugin
+        - simple-301-redirects
+        - fpd
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/plugins/simple-301-redirects/wp-simple-301-redirects.php'
+      signs: []

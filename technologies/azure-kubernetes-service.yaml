@@ -1,0 +1,25 @@
+id: azure-kubernetes-service
+brief:
+    title: Detect Azure Kubernetes Service
+    by: dhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - tech
+        - azure
+        - k8s
+        - kubernetes
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Welcome to Azure Kubernetes Service (AKS)</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,23 @@
+id: hanwang-detect
+brief:
+    title: hanwang-detect
+    by: ffffffff0x
+    level: info
+    about: ""
+    label:
+        - hanwang
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 汉王人脸考勤管理系统
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

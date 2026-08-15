@@ -1,0 +1,24 @@
+id: auru
+brief:
+    title: Au.ru User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Au.ru user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - auru
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://au.ru/user/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Лоты пользователя
+          in: body
+          need: all

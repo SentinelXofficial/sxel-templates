@@ -1,0 +1,24 @@
+id: php-fusion-detect
+brief:
+    title: PHP Fusion Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - php
+        - tech
+        - php-fusion
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - PHP-Fusion
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

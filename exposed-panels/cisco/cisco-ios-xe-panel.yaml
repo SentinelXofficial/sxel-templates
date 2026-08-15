@@ -1,0 +1,16 @@
+id: cisco-ios-xe-panel
+brief:
+    title: Cisco IOS XE - Detect
+    by: bhutch
+    level: info
+    about: Cisco IOS XE login panel was detected.
+    label:
+        - panel
+        - cisco
+        - ssl
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

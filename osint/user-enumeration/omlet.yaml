@@ -1,0 +1,24 @@
+id: omlet
+brief:
+    title: Omlet User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Omlet user name information check was conducted.
+    label:
+        - osint
+        - osint-gaming
+        - omlet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://omlet.gg/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>Omlet Arcade -
+          in: body
+          need: all

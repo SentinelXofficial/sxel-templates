@@ -1,0 +1,19 @@
+id: aftership-takeover
+brief:
+    title: Aftership - Subdomain Takeover Detection
+    by: pdteam
+    level: high
+    about: Aftership subdomain takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Oops.</h2><p class="text-muted text-tight">The page you're looking for doesn't exist.
+          in: body
+          need: all

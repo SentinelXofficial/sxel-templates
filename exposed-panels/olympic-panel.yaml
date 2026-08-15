@@ -1,0 +1,17 @@
+id: olympic-panel
+brief:
+    title: OLYMPIC Banking System Login Panel - Detect
+    by: righettod
+    level: info
+    about: OLYMPIC Banking System was detected.
+    label:
+        - panel
+        - olympic
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/Connect.do'
+        - '{{BaseURL}}/javaScript/responsive/portal.js'
+      signs: []

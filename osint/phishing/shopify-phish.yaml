@@ -1,0 +1,26 @@
+id: shopify-phish
+brief:
+    title: Shopify phishing Detection
+    by: rxerium
+    level: info
+    about: A Shopify phishing website was detected
+    label:
+        - phishing
+        - shopify
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Try Shopify free and start a business or grow an existing one. Get more than ecommerce software with tools to manage every part of your business.
+            - Start your free trial
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

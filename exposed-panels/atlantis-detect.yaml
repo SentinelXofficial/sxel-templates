@@ -1,0 +1,25 @@
+id: atlantis-detect
+brief:
+    title: Atlantis Panel - Detect
+    by: jonathanwalker
+    level: info
+    about: Atlantis panel was detected.
+    label:
+        - panel
+        - atlantis
+        - runatlantis
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - title="atlantis
+            - Lock
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

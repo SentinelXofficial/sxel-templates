@@ -1,0 +1,26 @@
+id: xxljob-panel
+brief:
+    title: XXLJOB Admin Login Panel - Detect
+    by: pdteam
+    level: info
+    about: XXLJOB admin login panel was detected.
+    label:
+        - panel
+        - xxljob
+        - login
+        - xuxueli
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/xxl-job-admin/toLogin'
+        - '{{BaseURL}}/toLogin'
+      signs:
+        - "on": word
+          has:
+            - <a><b>XXL</b>JOB</a>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

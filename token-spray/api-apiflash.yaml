@@ -1,0 +1,18 @@
+id: api-apiflash
+brief:
+    title: ApiFlash API Test
+    by: daffainfo
+    level: info
+    about: Chrome based screenshot API for developers
+    label:
+        - token-spray
+        - apiflash
+moves:
+    - verb: GET
+      to:
+        - https://api.apiflash.com/v1/urltoimage?access_key={{token}}&url=https://selfcontained.test
+      signs:
+        - "on": word
+          has:
+            - net::ERR_NAME_NOT_RESOLVED at https://selfcontained.test
+          in: body

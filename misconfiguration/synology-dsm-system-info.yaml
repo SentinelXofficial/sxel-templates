@@ -1,0 +1,17 @@
+id: synology-dsm-system-info
+brief:
+    title: Synology DSM System Info - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Detected the disclosure of Synology DiskStation Manager (DSM) system information via the SYNO.API.Info endpoint, identifying all available APIs, versions, and installed packages returned without au...
+    label:
+        - synology
+        - dsm
+        - misconfig
+        - diskstation-manager
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webapi/entry.cgi?api=SYNO.API.Info&version=1&method=query&query=all'
+      signs: []

@@ -1,0 +1,25 @@
+id: ibm-websphere-panel
+brief:
+    title: IBM WebSphere Portal Login Panel - Detect
+    by: pdteam
+    level: info
+    about: IBM WebSphere Portal login panel was detected.
+    label:
+        - ibm
+        - websphere
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{RootURL}}/wps/portal'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - IBM WebSphere Portal
+            - IBMPortalWeb
+          in: body
+          need: all

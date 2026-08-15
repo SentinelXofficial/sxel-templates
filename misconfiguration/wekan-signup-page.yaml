@@ -1,0 +1,22 @@
+id: wekan-signup-page
+brief:
+    title: Wekan Sign Up Page - Exposure
+    by: DhiyaneshDK
+    level: medium
+    about: Detected exposed Wekan sign-up functionality, indicating that unauthenticated users could access the registration page and potentially create new accounts.
+    label:
+        - wekan
+        - sign-up
+        - register
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sign-up'
+      signs:
+        - "on": word
+          has:
+            - __meteor_runtime_config__
+            - Wekan
+          in: body
+          need: all

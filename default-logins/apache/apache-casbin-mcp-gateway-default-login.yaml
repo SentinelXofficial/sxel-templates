@@ -1,0 +1,32 @@
+id: apache-casbin-mcp-gateway-default-login
+brief:
+    title: Apache Casbin MCP Gateway - Default Login
+    by: icarot
+    level: high
+    about: Apache Casbin MCP Gateway server default login credentials were discovered.
+    label:
+        - apache
+        - casbin-mcp-gateway
+        - default-login
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/json
+      body: '{"username":"{{username}}","password":"{{password}}"}'
+      signs:
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": word
+          has:
+            - '"token":'
+            - '"user":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

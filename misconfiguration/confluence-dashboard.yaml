@@ -1,0 +1,32 @@
+id: confluence-dashboard
+brief:
+    title: Confluence Dashboard Exposed
+    by: tess
+    level: low
+    about: Confluence Dashboard is exposed.
+    label:
+        - misconfig
+        - exposure
+        - confluence
+        - atlassian
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Dashboard - Confluence
+            - title="Spaces">
+            - Atlassian Confluence
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

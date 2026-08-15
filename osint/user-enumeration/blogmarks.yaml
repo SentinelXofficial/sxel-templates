@@ -1,0 +1,24 @@
+id: blogmarks
+brief:
+    title: Blogmarks User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Blogmarks user name information check was conducted.
+    label:
+        - osint
+        - osint-misc
+        - blogmarks
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - http://blogmarks.net/user/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - class="mark"
+          in: body
+          need: all

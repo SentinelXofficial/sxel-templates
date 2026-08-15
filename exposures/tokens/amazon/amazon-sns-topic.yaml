@@ -1,0 +1,16 @@
+id: amazon-sns-topic
+brief:
+    title: Amazon SNS Topic Disclosure
+    by: Ice3man
+    level: info
+    about: ""
+    label:
+        - exposure
+        - token
+        - amazon
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,19 @@
+id: drupal-jsonapi-user-listing
+brief:
+    title: Drupal JSON:API Username Listing - Detect
+    by: lixts
+    level: medium
+    about: Drupal JSON:API username listing was detected via the /user/user endpoint.
+    label:
+        - drupal
+        - exposure
+        - discovery
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/jsonapi/user/user'
+      signs:
+        - "on": status
+          status:
+            - 200

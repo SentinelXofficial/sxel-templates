@@ -1,0 +1,31 @@
+id: pomerium-detect
+brief:
+    title: Pomerium Detect
+    by: rxerium
+    level: info
+    about: A Pomerium SSO Panel was detected.
+    label:
+        - pomerium
+        - sso
+        - detect
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.pomerium/index.js'
+      signs:
+        - "on": word
+          has:
+            - https://pomerium.com/docs
+            - https://discuss.pomerium.com
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/javascript
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

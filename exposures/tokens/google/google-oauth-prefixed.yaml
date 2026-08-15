@@ -1,0 +1,16 @@
+id: google-oauth-prefixed
+brief:
+    title: Google OAuth Client Secret (prefixed)
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - google
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

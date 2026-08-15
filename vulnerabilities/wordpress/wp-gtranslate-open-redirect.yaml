@@ -1,0 +1,19 @@
+id: wp-gtranslate-open-redirect
+brief:
+    title: GTranslate < 2.8.11 - Open Redirect
+    by: DhiyaneshDk
+    level: medium
+    about: The Translate WordPress with GTranslate WordPress plugin was affected by an Unauthenticated Open Redirect security vulnerability.
+    label:
+        - wordpress
+        - wp
+        - wp-plugin
+        - gtranslate
+        - redirect
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/gtranslate/url_addon/gtranslate.php?glang=en&gurl=/oast.me'
+      signs: []

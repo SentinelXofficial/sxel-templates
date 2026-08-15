@@ -1,0 +1,28 @@
+id: kubernetes-metrics
+brief:
+    title: Detect Kubernetes Exposed Metrics
+    by: pussycat0x
+    level: low
+    about: Information Disclosure of Garbage Collection
+    label:
+        - kubernetes
+        - exposure
+        - devops
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/metrics'
+      signs:
+        - "on": word
+          has:
+            - namespace
+            - HELP
+            - TYPE
+            - kube
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

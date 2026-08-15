@@ -1,0 +1,27 @@
+id: kubernetes-mirantis
+brief:
+    title: Mirantis Kubernetes Engine Panel - Detect
+    by: pussycat0x
+    level: info
+    about: Mirantis Kubernetes Engine panel was detected.
+    label:
+        - tech
+        - kubernetes
+        - devops
+        - kube
+        - k8s
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Mirantis Kubernetes Engine
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

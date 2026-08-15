@@ -1,0 +1,27 @@
+id: casaos-panel
+brief:
+    title: CasaOS Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: CasaOS login panel was detected.
+    label:
+        - panel
+        - casaos
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/#/login'
+      signs:
+        - "on": word
+          has:
+            - /CasaOS-UI/
+            - We're sorry but CasaOS
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

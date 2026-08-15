@@ -1,0 +1,34 @@
+id: travis-ci-disclosure
+brief:
+    title: Travis CI Disclosure
+    by: DhiyaneshDK
+    level: high
+    about: Travis CI is a Software as a Service (SaaS) based continuous integration service used to build and test software projects. By defining a configuration file named `.travis.yml` in their source code ...
+    label:
+        - exposure
+        - file
+        - config
+        - tenable
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.travis.yml'
+        - '{{BaseURL}}/matomo/.travis.yml'
+        - '{{BaseURL}}/ckeditor/.travis.yml'
+      signs:
+        - "on": word
+          has:
+            - 'before_script:'
+            - 'jobs:'
+            - 'language:'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/octet-stream
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

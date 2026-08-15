@@ -1,0 +1,16 @@
+id: easypost-testtoken
+brief:
+    title: Easypost Test API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - easypost
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

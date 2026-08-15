@@ -1,0 +1,24 @@
+id: adobe-coldfusion-error-detect
+brief:
+    title: Adobe ColdFusion Detector
+    by: philippedelteil
+    level: info
+    about: With this template we can detect a running ColdFusion instance due to an error page.
+    label:
+        - adobe
+        - coldfusion
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_something_.cfm'
+      signs:
+        - "on": word
+          has:
+            - ColdFusion documentation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

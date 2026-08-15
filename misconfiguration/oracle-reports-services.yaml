@@ -1,0 +1,33 @@
+id: oracle-reports-services
+brief:
+    title: Oracle Reports Services - Servlet
+    by: dogasantos
+    level: info
+    about: Oracle Reports Services - Servlet Command dashboard
+    label:
+        - exposure
+        - oracle
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/reports/'
+        - '{{BaseURL}}/ora/reports/'
+        - '{{BaseURL}}/oracle/reports/'
+      signs:
+        - "on": word
+          has:
+            - Valid Reports Servlet Commands
+            - rwservlet
+            - killengine
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

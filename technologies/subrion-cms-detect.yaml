@@ -1,0 +1,24 @@
+id: subrion-cms-detect
+brief:
+    title: Subrion CMS Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - subrion
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - subrion.org" title="Open Source CMS">Subrion CMS
+            - Subrion CMS - Open Source Content Management System
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

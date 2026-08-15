@@ -1,0 +1,25 @@
+id: espec-web-controller-panel
+brief:
+    title: Espec Web Controller - Panel
+    by: darses
+    level: info
+    about: Espec Web Controller panel was discovered.
+    label:
+        - panel
+        - espec
+        - ics
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/version'
+      signs:
+        - "on": word
+          has:
+            - Espec Web Controller
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

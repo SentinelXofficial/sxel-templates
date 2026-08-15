@@ -1,0 +1,27 @@
+id: kubelet-stats
+brief:
+    title: Kubelet Stats
+    by: sharath
+    level: info
+    about: Scans for kubelet stats
+    label:
+        - tech
+        - k8s
+        - kubernetes
+        - devops
+        - kubelet
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/stats/summary'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"node":'
+            - '"nodeName":'
+          in: body
+          need: all

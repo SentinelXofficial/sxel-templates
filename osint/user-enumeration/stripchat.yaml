@@ -1,0 +1,24 @@
+id: stripchat
+brief:
+    title: Stripchat User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Stripchat user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - stripchat
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://stripchat.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'I Do in My Shows:'
+          in: body
+          need: all

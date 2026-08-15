@@ -1,0 +1,21 @@
+id: prometheus-exporter
+brief:
+    title: Prometheus exporter detect
+    by: jarijaas
+    level: info
+    about: Prometheus exporter detector
+    label:
+        - prometheus
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Exporter
+            - <a href="/metrics">Metrics</a>
+          in: body
+          need: all

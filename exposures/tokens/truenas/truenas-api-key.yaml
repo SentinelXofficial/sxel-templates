@@ -1,0 +1,16 @@
+id: truenas-api-key
+brief:
+    title: TrueNAS API Key (WebSocket)
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - truenas
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

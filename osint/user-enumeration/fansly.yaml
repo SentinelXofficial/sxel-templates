@@ -1,0 +1,24 @@
+id: fansly
+brief:
+    title: Fansly User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Fansly user name information check was conducted.
+    label:
+        - osint
+        - osint-porn
+        - fansly
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://apiv2.fansly.com/api/v1/account?usernames={{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - username
+          in: body
+          need: all

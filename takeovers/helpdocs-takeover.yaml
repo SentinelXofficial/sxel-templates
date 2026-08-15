@@ -1,0 +1,20 @@
+id: helpdocs-takeover
+brief:
+    title: HelpDocs Takeover Detection
+    by: philippedelteil
+    level: high
+    about: ""
+    label:
+        - takeover
+        - helpdocs
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - You've tried to access an account/page that does not exist
+          in: body
+          need: all

@@ -1,0 +1,18 @@
+id: openvpn-as-config-exposure
+brief:
+    title: OpenVPN Access Server - Configuration Exposure
+    by: 0x_Akoko
+    level: high
+    about: Detected OpenVPN Access Server with sensitive configuration data exposed, including VPN client profiles, certificates, private keys, and session tokens, without authentication.
+    label:
+        - openvpn
+        - config
+        - exposure
+        - misconfig
+        - vpn
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/rest/GetUserlogin'
+        - '{{BaseURL}}/rest/GetAutologin'
+      signs: []

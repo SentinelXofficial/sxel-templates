@@ -1,0 +1,24 @@
+id: android-debug-database-exposed
+brief:
+    title: Android Debug Manager
+    by: dhiyaneshDK
+    level: low
+    about: Android Debug Manger is exposed.
+    label:
+        - unauth
+        - android
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Android Debug Database</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

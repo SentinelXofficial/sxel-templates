@@ -1,0 +1,22 @@
+id: drupal-install
+brief:
+    title: Drupal Install
+    by: NkxxkN
+    level: high
+    about: Drupal Install panel exposed.
+    label:
+        - misconfig
+        - drupal
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install.php?profile=default'
+        - '{{BaseURL}}/core/install.php'
+      signs:
+        - "on": word
+          has:
+            - <title>Choose language | Drupal</title>
+          in: body

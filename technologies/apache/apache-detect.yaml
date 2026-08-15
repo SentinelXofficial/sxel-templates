@@ -1,0 +1,18 @@
+id: apache-detect
+brief:
+    title: Apache Detection
+    by: philippedelteil
+    level: info
+    about: Some Apache servers have the version on the response header. The OpenSSL version can be also obtained
+    label:
+        - tech
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: service-pwd
+brief:
+    title: service.pwd - Sensitive Information Disclosure
+    by: pussycat0x
+    level: high
+    about: service.pwd was discovered, which is likely to contain sensitive information.
+    label:
+        - exposure
+        - listing
+        - service
+        - edb
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_vti_pvt/service.pwd'
+      signs:
+        - "on": word
+          has:
+            - '# -FrontPage-'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

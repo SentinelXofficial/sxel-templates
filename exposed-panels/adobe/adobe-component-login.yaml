@@ -1,0 +1,26 @@
+id: adobe-coldfusion-login
+brief:
+    title: Adobe ColdFusion Component Browser Login Panel
+    by: dhiyaneshDK
+    level: info
+    about: An Adobe ColdFusion Component Browser login panel was detected.
+    label:
+        - panel
+        - adobe
+        - coldfusion
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/CFIDE/componentutils/login.cfm'
+        - '{{BaseURL}}/cfide/componentutils/login.cfm'
+      signs:
+        - "on": word
+          has:
+            - <title>Component Browser Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

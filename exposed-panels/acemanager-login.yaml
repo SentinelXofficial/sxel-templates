@@ -1,0 +1,26 @@
+id: acemanager-login
+brief:
+    title: ACEmanager Detection
+    by: pussycat0x
+    level: info
+    about: ACEManager was detected. ACEManager is a configuration and diagnostic tool for the Sierra Wireless AirLink Raven modems.
+    label:
+        - panel
+        - login
+        - tech
+        - acemanager
+        - sierrawireless
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>::: ACEmanager :::</title>'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

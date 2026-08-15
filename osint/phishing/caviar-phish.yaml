@@ -1,0 +1,26 @@
+id: caviar-phish
+brief:
+    title: Caviar phishing Detection
+    by: rxerium
+    level: info
+    about: A Caviar phishing website was detected
+    label:
+        - phishing
+        - caviar
+        - food-delivery
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Caviar
+            - et food, grocery, and retail essentials delivered fast. Shop same-day delivery from local stores and restaurants near you.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

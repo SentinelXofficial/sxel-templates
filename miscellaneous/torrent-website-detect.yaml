@@ -1,0 +1,26 @@
+id: torrent-magnet-detect
+brief:
+    title: Torrent Magnet - Detect
+    by: rxerium
+    level: info
+    about: Detects magnet links present on a website, which are commonly used for torrenting.
+    label:
+        - torrent
+        - website
+        - detect
+        - piracy
+        - osint
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'magnet:?xt=urn:btih:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

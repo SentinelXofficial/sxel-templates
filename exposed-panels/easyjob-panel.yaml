@@ -1,0 +1,16 @@
+id: easyjob-panel
+brief:
+    title: EasyJOB Login Panel - Detect
+    by: righettod
+    level: info
+    about: EasyJOB login panel was detected.
+    label:
+        - panel
+        - easyjob
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/easy/app/Account/Login'
+      signs: []

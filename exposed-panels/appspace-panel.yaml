@@ -1,0 +1,30 @@
+id: appspace-panel
+brief:
+    title: Appspace Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: Appspace is the workplace experience platform for your whole team that lets you manage it all – from employee communications to your physical office spaces.
+    label:
+        - appspace
+        - panel
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/app/login.aspx'
+        - '{{BaseURL}}/signin/#!/login?returnUrl=%2Fapp%2Fdefault.aspx'
+      signs:
+        - "on": word
+          has:
+            - .appspace-ui
+            - appspace-logo
+            - <title>Appspace</title>
+            - class="btnSSOAppspace
+            - Sign in to Appspace Core
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

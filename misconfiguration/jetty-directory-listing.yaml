@@ -1,0 +1,21 @@
+id: jetty-directory-listing
+brief:
+    title: Eclipse Jetty - Directory Listing Enabled
+    by: ritikchaddha
+    level: low
+    about: Eclipse Jetty server has directory listing enabled, which exposes the directory structure and file names to unauthenticated users. This can reveal sensitive files, backup files, configuration files...
+    label:
+        - jetty
+        - misconfig
+        - exposure
+        - listing
+        - eclipse
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+        - '{{BaseURL}}/static/'
+        - '{{BaseURL}}/resources/'
+        - '{{BaseURL}}/assets/'
+        - '{{BaseURL}}/files/'
+      signs: []

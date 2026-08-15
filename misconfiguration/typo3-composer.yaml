@@ -1,0 +1,26 @@
+id: typo3-composer
+brief:
+    title: Typo3 composer.json Exposure
+    by: 0x_Akoko
+    level: low
+    about: The web application is based on Typo3 CMS. A sensitive file has been found. Access to such files must be restricted, as it may lead to disclosure of sensitive information about the web application.
+    label:
+        - typo3
+        - cms
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/typo3/sysext/install/composer.json'
+      signs:
+        - "on": word
+          has:
+            - The Install Tool mounted as the module Tools>Install in TYPO3.
+            - typo3-cms-framework
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

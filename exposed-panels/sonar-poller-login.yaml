@@ -1,0 +1,24 @@
+id: sonar-poller-panel
+brief:
+    title: Sonar Poller Login - Panel Detect
+    by: Th3l0newolf
+    level: info
+    about: Sonar Poller login/interface was discovered.
+    label:
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Sonar Poller
+            - <label for="sonarUrl" class="sr-only">Sonar Instance URL</label>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

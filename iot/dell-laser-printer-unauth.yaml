@@ -1,0 +1,23 @@
+id: dell-laser-printer-unauth
+brief:
+    title: Dell Laser Printer - Unauthenticated Detect
+    by: pussycat0x
+    level: high
+    about: The Dell Laser Printer web interface was accessible without authentication.
+    label:
+        - dell
+        - iot
+        - unauth
+        - misconfig
+        - printer
+        - vuln
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/dynamic/config/secure/security.html'
+      signs: []

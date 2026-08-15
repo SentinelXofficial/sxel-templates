@@ -1,0 +1,15 @@
+id: elgg-sqli
+brief:
+    title: Elgg 5.1.4 - SQL Injection
+    by: s4e-io
+    level: high
+    about: Elgg 5.1.4 version has a SQL Injection vulnerability in the sort_by[direction] parameter. This vulnerability allows an unauthenticated attacker to manipulate SQL queries by injecting malicious SQL ...
+    label:
+        - elgg
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

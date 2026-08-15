@@ -1,0 +1,18 @@
+id: mochiweb-detect
+brief:
+    title: MochiWeb - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected servers using the MochiWeb framework through the Server header.
+    label:
+        - tech
+        - mochiweb
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - MochiWeb
+          in: header

@@ -1,0 +1,25 @@
+id: sensu-panel
+brief:
+    title: Sensu by Sumo Logic Login Panel - Detect
+    by: ja1sh
+    level: info
+    about: Sensu by Sumo Logic login panel was detected.
+    label:
+        - panel
+        - sensu
+        - sumo
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Sensu
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

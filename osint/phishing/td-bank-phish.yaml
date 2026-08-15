@@ -1,0 +1,25 @@
+id: td-bank-phish
+brief:
+    title: TD Bank phishing Detection
+    by: rxerium
+    level: info
+    about: A TD Bank phishing website was detected
+    label:
+        - phishing
+        - td-bank
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Explore TD's online banking services, credit cards, checking accounts, savings accounts, loans and more financial products for you and your business.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

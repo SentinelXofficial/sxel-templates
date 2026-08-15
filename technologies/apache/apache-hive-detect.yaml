@@ -1,0 +1,26 @@
+id: apache-hive-detect
+brief:
+    title: Apache Hive - Detect
+    by: icarot
+    level: info
+    about: Apache Hive web application was detected, a data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL.
+    label:
+        - tech
+        - apache
+        - hive
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>HiveServer2</title>
+            - hiveserver2
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

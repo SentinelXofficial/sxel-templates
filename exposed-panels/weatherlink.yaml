@@ -1,0 +1,23 @@
+id: weatherlink-configuration
+brief:
+    title: WeatherLinkIP Configuration Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: WeatherLinkIP configuration panel was detected.
+    label:
+        - panel
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>WeatherLinkIP Configuration</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

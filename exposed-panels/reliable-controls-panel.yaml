@@ -1,0 +1,30 @@
+id: reliable-controls-panel
+brief:
+    title: Reliable Controls MACH-Pro - Login Panel
+    by: rxerium
+    level: info
+    about: Reliable Controls MACH-ProWebSys is a web-based building controller for
+    label:
+        - panel
+        - ics
+        - bms
+        - bacnet
+        - building-automation
+        - reliable-controls
+        - mach-pro
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Reliable Controls
+            - Reliable Controls Embedded Web Server
+            - mpw-sw
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

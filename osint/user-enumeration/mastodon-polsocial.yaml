@@ -1,0 +1,24 @@
+id: mastodon-polsocial
+brief:
+    title: Mastodon-pol.social User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mastodon-pol.social user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastodon-polsocial
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://pol.social/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '@pol.social'
+          in: body
+          need: all

@@ -1,0 +1,28 @@
+id: qmail-admin-login
+brief:
+    title: QmailAdmin Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: QmailAdmin login panel was detected.
+    label:
+        - qmail
+        - panel
+        - qmail_project
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/qmailadmin/qmailadmin.cgi'
+        - '{{BaseURL}}/cgi-bin/qmailadmin/qmailadmin'
+        - '{{BaseURL}}/cgi-bin/qmailadmin'
+        - '{{BaseURL}}/cgi-ssl/qmailadmin/qmailadmin'
+      signs:
+        - "on": word
+          has:
+            - QmailAdmin
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

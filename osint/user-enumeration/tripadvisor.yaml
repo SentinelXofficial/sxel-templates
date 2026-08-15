@@ -1,0 +1,24 @@
+id: tripadvisor
+brief:
+    title: Tripadvisor User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Tripadvisor user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - tripadvisor
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.tripadvisor.com/Profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Contributions
+          in: body
+          need: all

@@ -1,0 +1,33 @@
+id: waf-fuzz
+brief:
+    title: WAF Fuzzing
+    by: dwisiswant0
+    level: info
+    about: A web application firewall was detected.
+    label:
+        - waf
+        - fuzz
+        - fuzzing
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: _={{whatwaf-payloads}}
+      signs:
+        - "on": word
+          has:
+            - 'Server: CloudWAF'
+            - 'Set-Cookie: HWWAFSESID='
+          in: response
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?_={{whatwaf-payloads}}'
+      signs:
+        - "on": word
+          has:
+            - 'Server: CloudWAF'
+            - 'Set-Cookie: HWWAFSESID='
+          in: response

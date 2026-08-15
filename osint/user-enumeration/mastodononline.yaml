@@ -1,0 +1,24 @@
+id: mastodononline
+brief:
+    title: Mastodon.online User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mastodon.online user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastodononline
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://mastodon.online/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '@mastodon.online) - Mastodon</title>'
+          in: body
+          need: all

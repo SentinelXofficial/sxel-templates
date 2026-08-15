@@ -1,0 +1,19 @@
+id: yopass-panel
+brief:
+    title: Yopass Panel - Detect
+    by: Adam Crosser
+    level: info
+    about: Yopass panel was detected.
+    label:
+        - panel
+        - yopass
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Yopass
+          in: body

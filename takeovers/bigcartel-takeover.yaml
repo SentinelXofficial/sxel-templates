@@ -1,0 +1,19 @@
+id: bigcartel-takeover
+brief:
+    title: Bigcartel Takeover Detection
+    by: pdteam
+    level: high
+    about: Bigcartel takeover was detected.
+    label:
+        - takeover
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <h1>Oops! We couldn&#8217;t find that page.</h1>
+          in: body
+          need: all

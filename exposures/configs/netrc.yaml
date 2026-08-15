@@ -1,0 +1,31 @@
+id: netrc
+brief:
+    title: Netrc - Config File Discovery
+    by: geeknik
+    level: high
+    about: Netrc configuration file was discovered.
+    label:
+        - netrc
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.netrc'
+        - '{{BaseURL}}/_netrc'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - 'login '
+            - 'password '
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

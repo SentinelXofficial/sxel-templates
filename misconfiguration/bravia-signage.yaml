@@ -1,0 +1,25 @@
+id: bravia-signage
+brief:
+    title: BRAVIA Signage - Exposure
+    by: DhiyaneshDK
+    level: medium
+    about: Bravia Signage is exposed.
+    label:
+        - misconfig
+        - exposure
+        - bravia
+        - sony
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/#/settings'
+      signs:
+        - "on": word
+          has:
+            - BRAVIA Signage
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

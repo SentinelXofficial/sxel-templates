@@ -1,0 +1,24 @@
+id: saia-web-server
+brief:
+    title: Saia PCD Web-Server Configuration Page - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Saia PCD Web-Server configuration page was detected.
+    label:
+        - edb
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/loadtextfile.htm#programinfo'
+      signs:
+        - "on": word
+          has:
+            - <title>Saia PCD Web Server</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

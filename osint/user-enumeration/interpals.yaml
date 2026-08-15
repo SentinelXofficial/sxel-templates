@@ -1,0 +1,24 @@
+id: interpals
+brief:
+    title: Interpals User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Interpals user name information check was conducted.
+    label:
+        - osint
+        - osint-dating
+        - interpals
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.interpals.net/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Looking for
+          in: body
+          need: all

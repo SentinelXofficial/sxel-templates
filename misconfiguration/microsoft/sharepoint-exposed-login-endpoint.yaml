@@ -1,0 +1,23 @@
+id: sharepoint-exposed-login-endpoint
+brief:
+    title: Microsoft SharePoint - Exposed Login Endpoint
+    by: pussycat0x
+    level: info
+    about: Detected Microsoft SharePoint login and authentication endpoints.
+    label:
+        - sharepoint
+        - microsoft
+        - login
+        - exposure
+        - misconfig
+        - panel
+        - tech
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_layouts/15/Authenticate.aspx'
+        - '{{BaseURL}}/_layouts/Authenticate.aspx'
+      signs:
+        - "on": status
+          status:
+            - 401

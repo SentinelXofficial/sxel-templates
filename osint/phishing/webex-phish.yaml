@@ -1,0 +1,26 @@
+id: webex-phish
+brief:
+    title: Webex phishing Detection
+    by: rxerium
+    level: info
+    about: A Webex phishing website was detected
+    label:
+        - phishing
+        - webex
+        - cisco
+        - video
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>Webex: Video Conferencing, Online Meetings, Screen Share | Cisco Webex'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

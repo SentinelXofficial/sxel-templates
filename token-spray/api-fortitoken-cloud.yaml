@@ -1,0 +1,20 @@
+id: api-fortitoken-cloud
+brief:
+    title: FortiToken Cloud API Test
+    by: dwisiswant0
+    level: info
+    about: ""
+    label:
+        - token-spray
+        - fortinet
+        - fortitoken
+moves:
+    - verb: GET
+      to:
+        - https://ftc.fortinet.com:9696/api/v1/user
+      head:
+        Authorization: Bearer {{token}}
+      signs:
+        - "on": status
+          status:
+            - 200

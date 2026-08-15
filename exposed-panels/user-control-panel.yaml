@@ -1,0 +1,23 @@
+id: user-control-panel
+brief:
+    title: User Control Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: User Control Panel was detected.
+    label:
+        - panel
+        - ucp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>User Control Panel</title>
+          in: body
+          need: all

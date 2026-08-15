@@ -1,0 +1,16 @@
+id: jway-products-detect
+brief:
+    title: JWay Products - Detect
+    by: righettod
+    level: info
+    about: JWay products was detected.
+    label:
+        - panel
+        - jway
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/generatedHomepage.html'
+      signs: []

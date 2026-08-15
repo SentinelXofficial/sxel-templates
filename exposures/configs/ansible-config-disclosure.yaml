@@ -1,0 +1,22 @@
+id: ansible-config-disclosure
+brief:
+    title: Ansible Configuration Page - Detect
+    by: pdteam
+    level: medium
+    about: Ansible configuration page was detected.
+    label:
+        - config
+        - exposure
+        - vuln
+    score: CVSS:5.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ansible.cfg'
+      signs:
+        - "on": word
+          has:
+            - '[defaults]'
+            - '[inventory]'
+          in: body
+          need: all

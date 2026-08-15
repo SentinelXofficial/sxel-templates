@@ -1,0 +1,19 @@
+id: x-backend-server-header-detect
+brief:
+    title: X-Backend-Server Header - Exposure
+    by: pussycat0x
+    level: low
+    about: Detected that the website returned the X-Backend-Server header, which included potentially internal or hidden IP addresses or hostnames. By exposing these values, attackers might have attempted to ...
+    label:
+        - headers
+        - misconfig
+        - exposure
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/en'
+      signs:
+        - "on": word
+          has:
+            - X-Backend-Server
+          in: header

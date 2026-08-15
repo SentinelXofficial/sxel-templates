@@ -1,0 +1,24 @@
+id: project-insight-login
+brief:
+    title: Project Insight Login Panel - Detect
+    by: dhiyaneshDk
+    level: info
+    about: Project Insight login panel was detected.
+    label:
+        - panel
+        - edb
+        - helpproject
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+      signs:
+        - "on": word
+          has:
+            - <title>Project Insight - Login</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

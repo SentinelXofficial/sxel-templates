@@ -1,0 +1,24 @@
+id: owncloud-config
+brief:
+    title: owncloud Config - Detect
+    by: Mahendra Purbia (Mah3Sec_)
+    level: info
+    about: owncloud configuration information was detected.
+    label:
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/owncloud/config/'
+      signs:
+        - "on": word
+          has:
+            - Index of
+            - owncloud/config
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

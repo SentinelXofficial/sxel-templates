@@ -1,0 +1,25 @@
+id: santander-phish
+brief:
+    title: Santander Bank phishing Detection
+    by: rxerium
+    level: info
+    about: A Santander Bank phishing website was detected
+    label:
+        - phishing
+        - santander
+        - bank
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Our purpose is to help people and businesses prosper. We strive to make all we do Simple, Personal and Fair.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

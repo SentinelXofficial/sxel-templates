@@ -1,0 +1,24 @@
+id: ictprotege-login-panel
+brief:
+    title: ICT Protege WX Login Panel - Detect
+    by: ritikchaddha
+    level: info
+    about: ""
+    label:
+        - panel
+        - ictprotege
+        - ict
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.htm'
+      signs:
+        - "on": word
+          has:
+            - <title>ICT Protege WX&reg;</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

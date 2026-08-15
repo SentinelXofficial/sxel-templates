@@ -1,0 +1,20 @@
+id: cloudflare-speedtest
+brief:
+    title: Cloudflare Speedtest - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Detected the exposed default page of the Cloudflare Speedtest service.
+    label:
+        - tech
+        - cloudflare
+        - speedtest
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '@cloudflare/speedtest'
+          in: body

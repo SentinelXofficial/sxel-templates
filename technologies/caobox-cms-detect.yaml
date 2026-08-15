@@ -1,0 +1,24 @@
+id: caobox-cms-detect
+brief:
+    title: Caobox CMS - Detect
+    by: Chirag Mistry
+    level: info
+    about: Detects instances of Caobox CMS based on unique fingerprints and identifiers.
+    label:
+        - detect
+        - caobox
+        - cms
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Caobox CMS
+            - powered by Caobox
+            - Welcome to Caobox
+            - Caobox version
+          in: body

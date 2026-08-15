@@ -1,0 +1,19 @@
+id: netgear-version-detect
+brief:
+    title: NETGEAR Router Panel - Detect
+    by: dwisiswant0
+    level: info
+    about: NETGEAR router panel was detected.
+    label:
+        - panel
+        - router
+        - netgear
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/currentsetting.htm'
+      signs:
+        - "on": status
+          status:
+            - 200

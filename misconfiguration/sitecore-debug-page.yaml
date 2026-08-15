@@ -1,0 +1,24 @@
+id: sitecore-debug-page
+brief:
+    title: SiteCore Debug Page
+    by: dhiyaneshDK
+    level: low
+    about: SiteCore debug page is exposed.
+    label:
+        - debug
+        - sitecore
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sitecore/'''
+      signs:
+        - "on": word
+          has:
+            - extranet\Anonymous
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 404

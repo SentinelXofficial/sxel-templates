@@ -1,0 +1,25 @@
+id: aem-forms-panel
+brief:
+    title: Adobe Experience Manager Forms - Panel
+    by: darses
+    level: info
+    about: Adobe Experience Manager Forms was discovered.
+    label:
+        - panel
+        - login
+        - adobe
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/lc/libs/livecycle/core/content/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Adobe Experience Manager forms</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

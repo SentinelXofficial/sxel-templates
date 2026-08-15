@@ -1,0 +1,26 @@
+id: security-txt
+brief:
+    title: security.txt File
+    by: bad5ect0r
+    level: info
+    about: File similar to robots.txt but intended to be read by humans wishing to contact a website’s owner about security issues. Often defines a security policy and contact details.
+    label:
+        - miscellaneous
+        - misc
+        - generic
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{RootURL}}/.well-known/security.txt'
+        - '{{RootURL}}/security.txt'
+      signs:
+        - "on": word
+          has:
+            - 'Contact:'
+            - 'Expires:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

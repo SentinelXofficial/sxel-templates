@@ -1,0 +1,27 @@
+id: hp-color-laserjet-detect
+brief:
+    title: HP Color LaserJet Detection
+    by: idealphase
+    level: info
+    about: HP color laserJet panel was detected.
+    label:
+        - iot
+        - hp
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/hp/device/this.LCDispatcher'
+      signs:
+        - "on": word
+          has:
+            - HP Color LaserJet
+            - <td class="mastheadTitle"><h1>HP Color LaserJet
+            - <strong class="product">HP Color LaserJet
+            - <a href="info_deviceStatus.html?
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: 3g-wireless-gateway
+brief:
+    title: 3G Wireless Gateway Detection
+    by: pussycat0x
+    level: info
+    about: A 3G wireless gateway was detected.
+    label:
+        - panel
+        - router
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/htmlcode/html/indexdefault.asp'
+      signs:
+        - "on": word
+          has:
+            - g_i3gState
+            - g_sysinfo_sim_state
+            - g_iUID
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

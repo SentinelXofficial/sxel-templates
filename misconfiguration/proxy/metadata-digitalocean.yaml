@@ -1,0 +1,24 @@
+id: metadata-service-digitalocean
+brief:
+    title: DigitalOcean Metadata Service Check
+    by: sullo
+    level: critical
+    about: The DigitalOcean host is configured as a proxy which allows access to the instance metadata service. This could allow significant access to the host/infrastructure.
+    label:
+        - exposure
+        - config
+        - digitalocean
+        - proxy
+        - misconfig
+        - metadata
+        - vuln
+    score: CVSS:9.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}http://{{hostval}}/metadata/v1.json'
+      signs:
+        - "on": word
+          has:
+            - droplet_id
+          in: body

@@ -1,0 +1,31 @@
+id: concrete5-detect
+brief:
+    title: Concrete5 Detection
+    by: Chirag Mistry
+    level: info
+    about: An instance running Concrete5 is detected by looking for specific HTTP headers, HTML tags, and known endpoints.
+    label:
+        - concrete5
+        - detect
+        - tech
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/robots.txt'
+        - '{{BaseURL}}/sitemap.xml'
+        - '{{BaseURL}}/favicon.ico'
+        - '{{BaseURL}}/index.php'
+        - '{{BaseURL}}/concrete/js/build/'
+        - '{{BaseURL}}/concrete/block/'
+        - '{{BaseURL}}/dashboard/'
+      signs:
+        - "on": word
+          has:
+            - Powered by Concrete5
+            - X-Powered-By-Concrete5
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

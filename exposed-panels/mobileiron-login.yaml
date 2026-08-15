@@ -1,0 +1,29 @@
+id: mobileiron-login
+brief:
+    title: MobileIron Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: MobileIron login panel was detected.
+    label:
+        - panel
+        - mobileiron
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/mifs/login.jsp'
+        - '{{BaseURL}}/mifs/user/login.jsp'
+        - '{{BaseURL}}/mifs/c/d/android.html'
+      signs:
+        - "on": word
+          has:
+            - MobileIron Admin Portal
+            - MobileIron User Portal
+            - MobileIron Registration
+            - Mobilizing enterprise applications
+            - whitelabel/mobileiron/img/favicon.ico
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

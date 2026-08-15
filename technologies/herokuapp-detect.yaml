@@ -1,0 +1,15 @@
+id: herokuapp-detect
+brief:
+    title: Detect websites using Herokuapp endpoints
+    by: alifathi-h1
+    level: info
+    about: Detected endpoints might be vulnerable to subdomain takeover or disclose sensitive info
+    label:
+        - heroku
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

@@ -1,0 +1,26 @@
+id: jorani-panel
+brief:
+    title: Jorani Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Jorani login panel was detected.
+    label:
+        - panel
+        - jorani
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/index.php/session/login'
+      signs:
+        - "on": word
+          has:
+            - Login - Jorani
+            - name="csrf_test_jorani
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

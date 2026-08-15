@@ -1,0 +1,25 @@
+id: digitalrebar-login
+brief:
+    title: RackN Digital Rebar Login Panel - Detect
+    by: c-sh0
+    level: info
+    about: RackN Digital Rebar login panel was detected.
+    label:
+        - rackn
+        - digitalrebar
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/ui'
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Digital Rebar
+          in: body
+          need: all

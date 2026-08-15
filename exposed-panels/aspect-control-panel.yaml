@@ -1,0 +1,28 @@
+id: aspect-control-panel
+brief:
+    title: ASPECT Control Panel - Detect
+    by: JustaAcat
+    level: info
+    about: ASPECT Control Panel login was detected.
+    label:
+        - detect
+        - panel
+        - aspect
+        - login
+        - abb
+        - ics
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ASPECT Control Panel
+            - src="libjs/pngfix.js"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

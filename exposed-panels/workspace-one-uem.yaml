@@ -1,0 +1,21 @@
+id: workspace-one-uem
+brief:
+    title: VMware Workspace ONE UEM Airwatch Login Panel - Detect
+    by: gevakun
+    level: info
+    about: VMware Workspace ONE UEM Airwatch login panel was detected.
+    label:
+        - panel
+        - workspaceone
+        - vmware
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/AirWatch/Login'
+      signs:
+        - "on": word
+          has:
+            - About VMware AirWatch
+            - /AirWatch/Images
+          in: body

@@ -1,0 +1,25 @@
+id: oracle-cloud-phish
+brief:
+    title: Oracle Cloud phishing Detection
+    by: rxerium
+    level: info
+    about: An Oracle Cloud phishing website was detected
+    label:
+        - phishing
+        - oracle-cloud
+        - cloud
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - fw_error_www
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

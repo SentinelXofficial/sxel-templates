@@ -1,0 +1,15 @@
+id: cascade-cms-panel
+brief:
+    title: Cascade CMS Panel - Detect
+    by: righettod
+    level: info
+    about: Cascade CMS was detected — a web content management system for managing stand-out websites.
+    label:
+        - panel
+        - cascade
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.act'
+      signs: []

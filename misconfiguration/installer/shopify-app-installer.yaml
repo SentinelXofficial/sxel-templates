@@ -1,0 +1,25 @@
+id: shopify-app-installer
+brief:
+    title: SEO King - Shopify App — Installer
+    by: tess
+    level: info
+    about: Shopify App is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - shopify
+        - install
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Shopify App — Installation
+            - example.myshopify.com
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

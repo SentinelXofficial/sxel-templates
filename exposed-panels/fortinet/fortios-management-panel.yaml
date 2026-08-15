@@ -1,0 +1,34 @@
+id: fortinet-fortios-management-panel
+brief:
+    title: Fortinet FortiOS Management Interface Panel - Detect
+    by: mbmy
+    level: info
+    about: Fortinet FortiOS Management interface panel was detected.
+    label:
+        - panel
+        - fortinet
+        - fortios
+        - fortigate
+        - fortiproxy
+        - fortiap
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login?redir=/ng'
+      signs:
+        - "on": word
+          has:
+            - <html class="main-app">
+            - <f-icon class="fa-warning
+            - </f-icon>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - APSCOOKIE_
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

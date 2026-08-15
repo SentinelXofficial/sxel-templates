@@ -1,0 +1,23 @@
+id: thegreenbowvpn-panel
+brief:
+    title: TheGreenBow VPN - Login Panel
+    by: rxerium
+    level: info
+    about: TheGreenBow VPN Client login panel detected.
+    label:
+        - panel
+        - thegreenbowvpn
+        - vpn
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - TheGreenBow
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

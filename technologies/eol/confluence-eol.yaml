@@ -1,0 +1,16 @@
+id: confluence-eol
+brief:
+    title: Atlassian Confluence End-of-Life - Detect
+    by: Shivam Kamboj
+    level: info
+    about: Detected Atlassian Confluence instances versions that have reached End-of-Life (EOL) and no longer receive security updates.
+    label:
+        - tech
+        - confluence
+        - eol
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.action'
+        - '{{BaseURL}}'
+      signs: []

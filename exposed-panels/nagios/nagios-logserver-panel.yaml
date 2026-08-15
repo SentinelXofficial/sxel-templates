@@ -1,0 +1,23 @@
+id: nagios-logserver-panel
+brief:
+    title: Nagios Log Server - Detect
+    by: ritikchaddha
+    level: info
+    about: Detects the presence of Nagios Log Server by identifying specific response patterns, HTTP headers, or unique page elements.
+    label:
+        - panel
+        - nagios
+        - nagios-logserver
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Nagios Log Server
+            - /nagioslogserver/
+          in: response

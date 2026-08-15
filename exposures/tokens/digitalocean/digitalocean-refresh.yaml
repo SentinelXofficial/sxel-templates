@@ -1,0 +1,16 @@
+id: digitalocean-refresh
+brief:
+    title: DigitalOcean Refresh Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - digitalocean
+        - exposure
+        - token
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

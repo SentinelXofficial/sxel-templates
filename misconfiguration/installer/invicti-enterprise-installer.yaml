@@ -1,0 +1,25 @@
+id: invicti-enterprise-installer
+brief:
+    title: Invicti Enterprise Installation Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed Invicti Enterprise Installation page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - invicti
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wizard/database/'
+      signs:
+        - "on": word
+          has:
+            - Invicti Enterprise - Installation Wizard
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

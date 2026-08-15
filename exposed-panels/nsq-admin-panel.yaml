@@ -1,0 +1,26 @@
+id: nsq-admin-panel
+brief:
+    title: NSQ Admin Panel - Detect
+    by: random-robbie
+    level: medium
+    about: NSQ admin panel was detected.
+    label:
+        - nsq
+        - admin
+        - panel
+        - exposure
+        - discovery
+    score: CVSS:6.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>nsqadmin</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

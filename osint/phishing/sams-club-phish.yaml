@@ -1,0 +1,25 @@
+id: sams-club-phish
+brief:
+    title: Sam's Club phishing Detection
+    by: rxerium
+    level: info
+    about: A Sam's Club phishing website was detected
+    label:
+        - phishing
+        - sams-club
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Shop Samsclub.com today for Every Day Low Prices. Join Sam's Club as a Plus Member and get free same-day or next-day delivery from your club & free shipping on eligible items totaling $50 or more.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

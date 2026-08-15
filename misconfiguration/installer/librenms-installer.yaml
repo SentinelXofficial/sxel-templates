@@ -1,0 +1,25 @@
+id: librenms-installer
+brief:
+    title: LibreNMS Installation Page - Exposure
+    by: DhiyaneshDK
+    level: high
+    about: Detects exposed LibreNMS installation page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - librenms
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/checks'
+      signs:
+        - "on": word
+          has:
+            - LibreNMS Install
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

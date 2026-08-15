@@ -1,0 +1,25 @@
+id: phpsys-info
+brief:
+    title: phpSysInfo Exposure
+    by: fpatrik
+    level: low
+    about: 'phpSysInfo: a customizable PHP script that displays information about your system nicely'
+    label:
+        - config
+        - exposure
+        - phpsysinfo
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/phpsysinfo/index.php?disp=bootstrap'
+      signs:
+        - "on": word
+          has:
+            - phpSysInfo
+            - Hardware Information
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

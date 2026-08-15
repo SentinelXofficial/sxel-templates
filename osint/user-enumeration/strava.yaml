@@ -1,0 +1,25 @@
+id: strava
+brief:
+    title: Strava User Name Information - Detect
+    by: princechaddha
+    level: info
+    about: Strava user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - strava
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.strava.com/athletes/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - athlete-profile
+            - profile-stats
+          in: body
+          need: all

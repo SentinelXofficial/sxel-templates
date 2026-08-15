@@ -1,0 +1,26 @@
+id: chatbot-ui-panel
+brief:
+    title: Chatbot UI Panel - Detect
+    by: rxerium
+    level: info
+    about: Chatbot UI is an open-source AI chat app
+    label:
+        - panel
+        - chatbot-ui
+        - llm
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Chatbot UI</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

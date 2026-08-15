@@ -1,0 +1,26 @@
+id: intercom-phish
+brief:
+    title: Intercom phishing Detection
+    by: rxerium
+    level: info
+    about: A Intercom phishing website was detected
+    label:
+        - phishing
+        - intercom
+        - customer-support
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>The AI customer service company
+            - Intercom
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

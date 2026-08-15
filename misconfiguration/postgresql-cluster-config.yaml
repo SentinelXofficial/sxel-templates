@@ -1,0 +1,16 @@
+id: postgresql-cluster-config
+brief:
+    title: PostgreSQL Cluster - Configuration
+    by: DhiyaneshDk
+    level: high
+    about: PostgreSQL Cluster Configuration Page was detected and appeared to be accessible without authentication.
+    label:
+        - postgresql
+        - misconfig
+        - unauth
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config'
+      signs: []

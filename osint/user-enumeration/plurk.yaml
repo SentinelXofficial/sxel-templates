@@ -1,0 +1,24 @@
+id: plurk
+brief:
+    title: Plurk User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Plurk user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - plurk
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://www.plurk.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Profile views
+          in: body
+          need: all

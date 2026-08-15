@@ -1,0 +1,25 @@
+id: web-config
+brief:
+    title: Web Configuration File - Detect
+    by: Yash Anand @yashanand155
+    level: info
+    about: Web configuration file was detected.
+    label:
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/web.config'
+        - '{{BaseURL}}/../../web.config'
+      signs:
+        - "on": word
+          has:
+            - <configuration>
+            - <system.webServer>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

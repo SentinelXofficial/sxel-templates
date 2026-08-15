@@ -1,0 +1,27 @@
+id: nuxt-js-xss
+brief:
+    title: Nuxt.js Error Page - Cross-Site Scripting
+    by: DhiyaneshDK
+    level: medium
+    about: The developer server unsafely renders the stack trace within errors. This can be manipulated by sending a specially crafted request.
+    label:
+        - huntr
+        - xss
+        - nuxtjs
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/__nuxt_error?stack=%0A{{url_encode(payload)}}'
+      signs:
+        - "on": word
+          has:
+            - '{{payload}}'
+            - window.__NUXT__
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all

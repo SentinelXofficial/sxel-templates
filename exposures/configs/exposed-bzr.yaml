@@ -1,0 +1,29 @@
+id: exposed-bzr
+brief:
+    title: Bazaar Configuration - Detect
+    by: daffainfo
+    level: info
+    about: Bazaar configuration was detected.
+    label:
+        - config
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.bzr/branch/branch.conf'
+      signs:
+        - "on": word
+          has:
+            - parent_location
+            - push_location
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - text/plain
+          in: header
+          need: all

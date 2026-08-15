@@ -1,0 +1,27 @@
+id: freshrss-unauth
+brief:
+    title: Freshrss Admin Dashboard - Exposed
+    by: ritikchaddha
+    level: high
+    about: Freshrss Admin Dashboard has been exposed.
+    label:
+        - freshrss
+        - misconfig
+        - unauth
+        - exposed
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/i/?a=logs'
+      signs:
+        - "on": word
+          has:
+            - a=logout
+            - FreshRSS
+            - c=user&amp;a=profile
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

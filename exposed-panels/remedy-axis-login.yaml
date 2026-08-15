@@ -1,0 +1,25 @@
+id: remedy-axis-login
+brief:
+    title: Remedy Axis Login Panel - Detect
+    by: tess
+    level: info
+    about: ""
+    label:
+        - panel
+        - remedy
+        - bmc
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/arsys/shared/login.jsp'
+        - '{{BaseURL}}/rsso/admin/'
+      signs:
+        - "on": word
+          has:
+            - BMC&nbsp;Remedy&nbsp;Mid&nbsp;Tier&nbsp;
+            - Remedy Login Page
+            - BMC Remedy
+            - BMC Smart Reporting
+          in: body

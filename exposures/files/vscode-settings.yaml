@@ -1,0 +1,20 @@
+id: vscode-settings
+brief:
+    title: Visual Studio Code Settings - Credential Exposure
+    by: DhiyaneshDk
+    level: low
+    about: Detected exposed Visual Studio Code configuration files that were accessible over HTTP, which could have led to credential leakage or sensitive workspace disclosure.
+    label:
+        - exposure
+        - config
+        - vscode
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.vscode/settings.json'
+        - '{{BaseURL}}/settings.json'
+        - '{{BaseURL}}/.vscode/launch.json'
+        - '{{BaseURL}}/.vscode/tasks.json'
+        - '{{BaseURL}}/.vscode-server/data/Machine/settings.json'
+      signs: []

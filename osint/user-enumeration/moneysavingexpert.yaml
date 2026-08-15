@@ -1,0 +1,24 @@
+id: moneysavingexpert
+brief:
+    title: Moneysavingexpert User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Moneysavingexpert user name information check was conducted.
+    label:
+        - osint
+        - osint-finance
+        - moneysavingexpert
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://forums.moneysavingexpert.com/profile/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Profile
+          in: body
+          need: all

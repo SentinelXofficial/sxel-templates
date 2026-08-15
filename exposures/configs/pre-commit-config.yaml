@@ -1,0 +1,28 @@
+id: pre-commit-config
+brief:
+    title: Pre-commit Configuration File - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Pre-commit configuration file was detected.
+    label:
+        - exposure
+        - devops
+        - config
+        - cicd
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.pre-commit-config.yaml'
+        - '{{BaseURL}}/pre-commit-config.yaml'
+      signs:
+        - "on": word
+          has:
+            - 'repos:'
+            - 'hooks:'
+            - 'rev:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

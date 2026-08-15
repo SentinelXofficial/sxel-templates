@@ -1,0 +1,20 @@
+id: httpbin-open-redirect
+brief:
+    title: HTTPBin - Open Redirect
+    by: Adam Crosser
+    level: medium
+    about: HTTPBin contains an open redirect vulnerability. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+    label:
+        - redirect
+        - httpbin
+        - oss
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/redirect-to?url=https%3A%2F%2Finteract.sh'
+      signs:
+        - "on": status
+          status:
+            - 302

@@ -1,0 +1,24 @@
+id: mastodon-social-tchncs
+brief:
+    title: Mastodon-social tchncs User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Mastodon-social tchncs user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - mastodon-social-tchncs
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://social.tchncs.de/@{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - profile:username
+          in: body
+          need: all

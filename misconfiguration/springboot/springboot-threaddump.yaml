@@ -1,0 +1,33 @@
+id: springboot-threaddump
+brief:
+    title: Detect Springboot Thread Dump page
+    by: philippedelteil
+    level: low
+    about: The threaddump endpoint provides a thread dump from the application's JVM.
+    label:
+        - springboot
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/threaddump'
+        - '{{BaseURL}}/actuator/threaddump'
+      signs:
+        - "on": word
+          has:
+            - '"threads":'
+            - '"threadName":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+            - application/vnd.spring-boot.actuator
+            - application/vnd.spring-boot.actuator.v2+json
+            - application/vnd.spring-boot.actuator.v1+json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,24 @@
+id: walmart-phish
+brief:
+    title: walmart phishing Detection
+    by: rxerium
+    level: info
+    about: A walmart phishing website was detected
+    label:
+        - phishing
+        - walmart
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Walmart | Save Money. Live better.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

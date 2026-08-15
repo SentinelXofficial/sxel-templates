@@ -1,0 +1,16 @@
+id: hubble-detect
+brief:
+    title: Hubble - Detect
+    by: righettod
+    level: info
+    about: Hubble products was detected.
+    label:
+        - tech
+        - hubble
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

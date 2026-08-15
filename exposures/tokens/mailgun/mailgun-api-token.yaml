@@ -1,0 +1,16 @@
+id: mailgun-api-token
+brief:
+    title: Mailgun API Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - mailgun
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

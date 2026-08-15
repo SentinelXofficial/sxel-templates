@@ -1,0 +1,18 @@
+id: elastic-kibana-config
+brief:
+    title: Elastic Kibana Config - File Disclosure
+    by: DhiyaneshDk
+    level: medium
+    about: Elastic Kibana Config file is exposed.
+    label:
+        - exposure
+        - elastic
+        - kibana
+        - files
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/kibana.yml'
+      signs: []

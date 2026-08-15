@@ -1,0 +1,16 @@
+id: frappe-helpdesk-panel
+brief:
+    title: Frappe Helpdesk Login Panel - Detect
+    by: righettod
+    level: info
+    about: Frappe Helpdesk products was detected.
+    label:
+        - panel
+        - frappe
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/helpdesk/login'
+      signs: []

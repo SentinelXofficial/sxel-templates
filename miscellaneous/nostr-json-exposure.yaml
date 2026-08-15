@@ -1,0 +1,30 @@
+id: nostr-json-exposure
+brief:
+    title: Well-Known Nostr JSON
+    by: rxerium
+    level: info
+    about: Detects Nostr public key discovery JSON.
+    label:
+        - well-known
+        - nostr
+        - miscellaneous
+        - misc
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.well-known/nostr.json'
+      signs:
+        - "on": word
+          has:
+            - '"names": {'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

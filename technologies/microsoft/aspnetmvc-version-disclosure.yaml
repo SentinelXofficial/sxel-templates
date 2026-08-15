@@ -1,0 +1,17 @@
+id: aspnetmvc-version-disclosure
+brief:
+    title: AspNetMvc Version - Detect
+    by: lucky0x0d
+    level: info
+    about: Detects version disclosed via 'X-AspNetMvc-Version' header.
+    label:
+        - aspnetmvc
+        - tech
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/%3f'
+      signs: []

@@ -1,0 +1,17 @@
+id: generic-linux-lfi
+brief:
+    title: Generic Linux - Local File Inclusion
+    by: geeknik
+    level: high
+    about: Generic Linux is subject to Local File Inclusion - the vulnerability was identified by requesting /etc/passwd from the server.
+    label:
+        - linux
+        - lfi
+        - generic
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{paths}}'
+      signs: []

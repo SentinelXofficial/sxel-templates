@@ -1,0 +1,33 @@
+id: angular-json
+brief:
+    title: Angular JSON File Exposure
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - exposure
+        - angularjs
+        - files
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.angular-cli.json'
+        - '{{BaseURL}}/angular-cli.json'
+        - '{{BaseURL}}/angular.json'
+        - '{{BaseURL}}/.angular.json'
+      signs:
+        - "on": word
+          has:
+            - '"root":'
+            - '"config":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

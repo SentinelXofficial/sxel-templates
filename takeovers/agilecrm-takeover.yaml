@@ -1,0 +1,20 @@
+id: agilecrm-takeover
+brief:
+    title: AgileCRM Takeover Detection
+    by: pdteam
+    level: high
+    about: agilecrm subdomain takeover was detected.
+    label:
+        - takeover
+        - agilecrm
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Sorry, this page is no longer available.
+          in: body
+          need: all

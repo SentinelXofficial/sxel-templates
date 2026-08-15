@@ -1,0 +1,35 @@
+id: dvwa-default-login
+brief:
+    title: DVWA Default Login
+    by: pdteam
+    level: critical
+    about: Damn Vulnerable Web App (DVWA) is a test application for security professionals. The hard coded credentials are part of a security testing scenario.
+    label:
+        - dvwa
+        - default-login
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.php'
+      head:
+        Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+        Connection: close
+      signs:
+        - "on": word
+          has:
+            - You have logged in as 'admin'
+          in: body
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login.php'
+      head:
+        Connection: close
+        Content-Type: application/x-www-form-urlencoded
+        Cookie: PHPSESSID={{session}}; security=low
+      body: username={{username}}&password={{password}}&Login=Login&user_token={{token}}
+      signs:
+        - "on": word
+          has:
+            - You have logged in as 'admin'
+          in: body

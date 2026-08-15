@@ -1,0 +1,24 @@
+id: oki-data-corporation
+brief:
+    title: OKI Data Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: OKI Data panel was detected.
+    label:
+        - panel
+        - oki
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/status.htm'
+      signs:
+        - "on": word
+          has:
+            - Oki Data Corporation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

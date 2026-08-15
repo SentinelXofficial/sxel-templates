@@ -1,0 +1,24 @@
+id: pokec
+brief:
+    title: Pokec User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Pokec user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - pokec
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://pokec.azet.sk/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - idReportedUser
+          in: body
+          need: all

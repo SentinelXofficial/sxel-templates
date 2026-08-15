@@ -1,0 +1,25 @@
+id: puma-phish
+brief:
+    title: Puma phishing Detection
+    by: rxerium
+    level: info
+    about: A Puma phishing website was detected
+    label:
+        - phishing
+        - puma
+        - ecommerce
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Run The Streets. Do You. Research and shop all the latest gear from the world of Fashion, Sport, and everywhere in between.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

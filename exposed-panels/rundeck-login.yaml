@@ -1,0 +1,24 @@
+id: rundeck-login
+brief:
+    title: Rundeck Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Rundeck login panel was detected.
+    label:
+        - panel
+        - rundeck
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/user/login'
+      signs:
+        - "on": word
+          has:
+            - alt="Rundeck"
+            - /assets/rundeck
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

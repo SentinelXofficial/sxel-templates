@@ -1,0 +1,25 @@
+id: dex-panel
+brief:
+    title: Dex Authentication - Panel
+    by: rxerium
+    level: info
+    about: ""
+    label:
+        - dex
+        - sso
+        - panel
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/dex/auth'
+      signs:
+        - "on": word
+          has:
+            - Log in to dex
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

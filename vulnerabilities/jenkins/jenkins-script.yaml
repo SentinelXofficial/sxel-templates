@@ -1,0 +1,33 @@
+id: jenkins-script
+brief:
+    title: Jenkins - Remote Code Execution
+    by: philippedelteil
+    level: critical
+    about: Jenkins is susceptible to a remote code execution vulnerability due to accessible script functionality.
+    label:
+        - devops
+        - hackerone
+        - jenkins
+        - rce
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/script/'
+        - '{{BaseURL}}/jenkins/script'
+      signs:
+        - "on": word
+          has:
+            - println(Jenkins.instance.pluginManager.plugins)
+          in: body
+          need: all
+        - "on": word
+          has:
+            - Script Console
+            - Scriptconsole
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

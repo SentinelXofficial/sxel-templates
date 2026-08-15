@@ -1,0 +1,26 @@
+id: hack5-cloud-c2
+brief:
+    title: Hack5 Cloud C2 - Detect
+    by: pussycat0x
+    level: info
+    about: Cloud C² is a self-hosted web-based command and control suite for networked Hak5 gear that lets you pentest from anywhere. Linux, Mac and Windows computers can host the Cloud C² server while Hak5...
+    label:
+        - c2
+        - ir
+        - osint
+        - hack5c2
+        - panel
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Hak5 Cloud C²</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

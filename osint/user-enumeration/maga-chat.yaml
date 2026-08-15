@@ -1,0 +1,24 @@
+id: maga-chat
+brief:
+    title: MAGA-CHAT User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: MAGA-CHAT user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - maga-chat
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://maga-chat.com/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - Recent Updates
+          in: body
+          need: all

@@ -1,0 +1,24 @@
+id: ocs-inventory-login
+brief:
+    title: OCS Inventory Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: OCS Inventory login panel was detected.
+    label:
+        - ocs-inventory
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/ocsreports'
+      signs:
+        - "on": word
+          has:
+            - <title>OCS Inventory
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

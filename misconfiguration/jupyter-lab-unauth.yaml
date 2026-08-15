@@ -1,0 +1,33 @@
+id: unauth-jupyter-lab
+brief:
+    title: Jupyter Lab - Unauthenticated Access
+    by: j4vaovo
+    level: critical
+    about: JupyterLab was able to be accessed without authentication.
+    label:
+        - unauth
+        - jupyter
+        - jupyterlab
+        - misconfig
+        - vuln
+    score: CVSS:10.0
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/lab/api/settings/'
+      signs:
+        - "on": word
+          has:
+            - '"id":'
+            - '"settings"'
+            - '"schema":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

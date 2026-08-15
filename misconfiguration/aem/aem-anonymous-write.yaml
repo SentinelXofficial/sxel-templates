@@ -1,0 +1,35 @@
+id: aem-anonymous-write
+brief:
+    title: Adobe Experience Manager (AEM) - Anonymous JCR Node Creation
+    by: DhiyaneshDk
+    level: high
+    about: Anonymous users can create new JCR nodes via the AEM POST Servlet, which may allow attackers to inject malicious content, achieve persistent XSS, or abuse servlets registered by resource types for ...
+    label:
+        - aem
+        - adobe
+        - intrusive
+        - node
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Adobe Experience Manager
+          in: body
+    - verb: POST
+      to:
+        - '{{BaseURL}}{{path}}{{extension}}'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: <html>{{marker}}</html>
+      signs:
+        - "on": word
+          has:
+            - <td>Parent Location</td>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 201

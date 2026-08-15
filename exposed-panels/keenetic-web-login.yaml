@@ -1,0 +1,24 @@
+id: keenetic-web-login
+brief:
+    title: Keenetic Web Login Panel - Detect
+    by: dhiyaneshDK
+    level: info
+    about: Keenetic Web login panel was detected.
+    label:
+        - panel
+        - keenetic
+        - edb
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login#goto=%2Fdashboard'
+      signs:
+        - "on": word
+          has:
+            - <title ng-bind="$root.title">Keenetic Web</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

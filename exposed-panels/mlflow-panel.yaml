@@ -1,0 +1,27 @@
+id: mlflow-panel
+brief:
+    title: MLflow Panel - Detect
+    by: rxerium
+    level: info
+    about: MLflow is an open-source platform for managing the end-to-end machine learning
+    label:
+        - panel
+        - mlflow
+        - ml
+        - ai
+        - mlops
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - MLflow
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

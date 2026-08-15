@@ -1,0 +1,27 @@
+id: bonobo-server-panel
+brief:
+    title: Bonobo Git Server Login Panel - Detect
+    by: bhutch
+    level: info
+    about: Bonobo Git Server login panel was detected.
+    label:
+        - panel
+        - bonobo
+        - git
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/git'
+      signs:
+        - "on": word
+          has:
+            - <a href="https://github.com/jakubgarfield/Bonobo-Git-Server">
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

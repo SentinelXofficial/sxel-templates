@@ -1,0 +1,27 @@
+id: molgenis-panel
+brief:
+    title: Molgenis Panel - Exposure
+    by: matejsmycka
+    level: info
+    about: Molgenis emx2 data platform is a software that provides a web-based interface for managing and analyzing data. It might contain sensitive information without authentication.
+    label:
+        - panel
+        - molgenis
+        - login
+        - emx2
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/api'
+      signs:
+        - "on": word
+          has:
+            - molgenis-
+            - Welcome to MOLGENIS EMX2 POC
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

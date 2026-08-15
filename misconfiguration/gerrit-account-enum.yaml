@@ -1,0 +1,26 @@
+id: gerrit-account-enum
+brief:
+    title: Gerrit Code Review - Account Enumeration
+    by: DhiyaneshDk
+    level: medium
+    about: Gerrit Code Review exposes the /accounts/ REST API endpoint which can be used to enumerate user accounts.The endpoint allows querying for accounts by username, email, or name, potentially revealing...
+    label:
+        - gerrit
+        - enum
+        - exposure
+        - misconfig
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/accounts/?q=a&n=10'
+        - '{{BaseURL}}/accounts/?suggest&q=a&n=10'
+      signs:
+        - "on": word
+          has:
+            - _account_id
+            - username
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

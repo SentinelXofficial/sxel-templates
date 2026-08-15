@@ -1,0 +1,26 @@
+id: krayin-installer
+brief:
+    title: Krayin CMS - Installer
+    by: theamanrawat
+    level: high
+    about: Krayin CRM installer page was detected.
+    label:
+        - misconfig
+        - exposure
+        - krayin
+        - crm
+        - install
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install'
+      signs:
+        - "on": word
+          has:
+            - <title>Krayin Installer
+            - Welcome to Installation
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

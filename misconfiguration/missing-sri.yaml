@@ -1,0 +1,18 @@
+id: missing-sri
+brief:
+    title: Missing Subresource Integrity
+    by: lucky0x0d
+    level: info
+    about: Checks if external script and stylesheet tags in the HTML response are missing the Subresource Integrity (SRI) attribute.
+    label:
+        - compliance
+        - js
+        - css
+        - sri
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

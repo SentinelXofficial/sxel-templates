@@ -1,0 +1,17 @@
+id: strapi-panel
+brief:
+    title: Strapi Login Panel - Detect
+    by: idealphase
+    level: info
+    about: Strapi login panel was detected.
+    label:
+        - panel
+        - strapi
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/admin/auth/login'
+        - '{{BaseURL}}/admin/plugins/users-permissions/auth/login'
+      signs: []

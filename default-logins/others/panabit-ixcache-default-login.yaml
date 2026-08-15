@@ -1,0 +1,25 @@
+id: panabit-ixcache-default-login
+brief:
+    title: Panabit iXCache - Default Admin Login
+    by: ritikchaddha
+    level: high
+    about: Panabit iXCache default admin login credentials were successful.
+    label:
+        - default-login
+        - ixcache
+        - panabit
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login/userverify.cgi'
+      body: username={{username}}&password={{password}}
+      signs:
+        - "on": word
+          has:
+            - URL=/cgi-bin/monitor.cgi
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

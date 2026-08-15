@@ -1,0 +1,19 @@
+id: openspeedtest-speedtest
+brief:
+    title: OpenSpeedTest - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Detected the exposed default page of the OpenSpeedTest service.
+    label:
+        - tech
+        - openspeedtest
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - SpeedTest by OpenSpeedTest
+          in: body

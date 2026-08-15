@@ -1,0 +1,26 @@
+id: scrutinizer-config
+brief:
+    title: Scrutinizer Config - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Scrutinizer configuration information was detected.
+    label:
+        - exposure
+        - scrutinizer
+        - config
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.scrutinizer.yml'
+      signs:
+        - "on": word
+          has:
+            - 'build:'
+            - 'filter:'
+            - 'tools:'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

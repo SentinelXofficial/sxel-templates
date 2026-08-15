@@ -1,0 +1,18 @@
+id: gocron-panel
+brief:
+    title: Gocron Panel - Detect
+    by: ffffffff0x
+    level: info
+    about: Gocron panel was detected.
+    label:
+        - gocron
+        - panel
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 200

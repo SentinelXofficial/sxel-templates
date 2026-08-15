@@ -1,0 +1,21 @@
+id: zap-rest-api-detect
+brief:
+    title: ZAP Rest API Server Running
+    by: hahwul
+    level: info
+    about: ""
+    label:
+        - zap
+        - tech
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ZAP API UI</title>
+            - Welcome to the OWASP Zed Attack Proxy (ZAP)
+            - 'Access-Control-Allow-Headers: ZAP-Header'
+          in: response

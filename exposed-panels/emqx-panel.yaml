@@ -1,0 +1,17 @@
+id: emqx-panel
+brief:
+    title: EMQX Login Panel - Detect
+    by: righettod
+    level: info
+    about: EMQX login panel was detected.
+    label:
+        - panel
+        - emqx
+        - login
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

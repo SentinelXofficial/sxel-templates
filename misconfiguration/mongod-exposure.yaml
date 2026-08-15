@@ -1,0 +1,25 @@
+id: mongod-exposure
+brief:
+    title: MongoD Server - Exposure
+    by: DhiyaneshDk
+    level: low
+    about: ""
+    label:
+        - mongod
+        - exposure
+        - info-leak
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - <title>mongod
+            - List all commands
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

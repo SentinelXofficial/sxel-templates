@@ -1,0 +1,24 @@
+id: sophos-web-appliance
+brief:
+    title: Sophos Web Appliance
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - panel
+        - login
+        - sophos
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Sophos Web Appliance</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

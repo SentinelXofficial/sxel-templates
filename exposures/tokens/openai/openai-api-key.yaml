@@ -1,0 +1,17 @@
+id: openai-api-key
+brief:
+    title: OpenAI API Key
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - openai
+        - token
+        - exposure
+        - vuln
+        - ai
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

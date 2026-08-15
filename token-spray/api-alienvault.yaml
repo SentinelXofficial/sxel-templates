@@ -1,0 +1,23 @@
+id: api-alienvault
+brief:
+    title: AlienVault Open Threat Exchange (OTX) API Test
+    by: daffainfo
+    level: info
+    about: IP/domain/URL reputation
+    label:
+        - token-spray
+        - alienvault
+        - exchange
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}https://otx.alienvault.com/api/v1/pulses/subscribed?page=1'
+      head:
+        X-OTX-API-KEY: '{{token}}'
+      signs:
+        - "on": word
+          has:
+            - '"$schema":'
+            - '"properties":'
+          in: body
+          need: all

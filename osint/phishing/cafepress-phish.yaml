@@ -1,0 +1,25 @@
+id: cafepress-phish
+brief:
+    title: CafePress phishing Detection
+    by: rxerium
+    level: info
+    about: A CafePress phishing website was detected
+    label:
+        - phishing
+        - cafepress
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - CafePress
+            - <title> CafePress | Best merchandise to express yourself
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

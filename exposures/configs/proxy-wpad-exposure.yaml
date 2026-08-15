@@ -1,0 +1,26 @@
+id: proxy-wpad-exposure
+brief:
+    title: Web Proxy Auto-Discovery Configuration File - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Web Proxy Auto-Discovery configuration file was detected.
+    label:
+        - config
+        - exposure
+        - proxy
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wpad.dat'
+      signs:
+        - "on": word
+          has:
+            - FindProxyForURL
+            - url
+            - host
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

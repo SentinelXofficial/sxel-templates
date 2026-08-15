@@ -1,0 +1,26 @@
+id: koboldai-panel
+brief:
+    title: KoboldAI Panel - Detect
+    by: rxerium
+    level: info
+    about: KoboldAI was detected. KoboldAI was an AI text adventure and story generation interface that supports multiple local and remote language models including koboldcpp and AI Horde.
+    label:
+        - panel
+        - koboldai
+        - llm
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>KoboldAI Lite</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

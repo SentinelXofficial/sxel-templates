@@ -1,0 +1,27 @@
+id: polynote-panel
+brief:
+    title: Polynote Panel - Detect
+    by: rxerium
+    level: info
+    about: Polynote is a polyglot notebook supporting Scala, Python, SQL, and Spark with a rich UI
+    label:
+        - panel
+        - polynote
+        - notebook
+        - scala
+        - python
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Polynote</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,26 @@
+id: apache-kyuubi-config
+brief:
+    title: Apache Kyuubi - Configuration Exposure
+    by: icarot
+    level: medium
+    about: Detects if path Appconfigs of Apache Kyuubi web application is exposed, getting internal information about the configuration made.
+    label:
+        - config
+        - exposure
+        - kyuubi
+        - apache
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/engine-ui/0.0.0.0:4040/environment/'
+      signs:
+        - "on": word
+          has:
+            - Environment</title>
+            - kyuubi
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

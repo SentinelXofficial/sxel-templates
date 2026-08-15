@@ -1,0 +1,25 @@
+id: fanatical-phish
+brief:
+    title: Fanatical phishing Detection
+    by: rxerium
+    level: info
+    about: A Fanatical phishing website was detected
+    label:
+        - phishing
+        - fanatical
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Fanatical
+            - <title>Fanatical
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

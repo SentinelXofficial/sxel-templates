@@ -1,0 +1,25 @@
+id: footprints-panel
+brief:
+    title: FootPrints Service Core Login Panel - Detect
+    by: tess
+    level: info
+    about: FootPrints Service Core login panel was detected.
+    label:
+        - tech
+        - panel
+        - footprints
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/MRcgi/MRlogin.pl'
+        - '{{BaseURL}}/MRcgi/MRentrancePage.pl'
+      signs:
+        - "on": word
+          has:
+            - FootPrints Service Core Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

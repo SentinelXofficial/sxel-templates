@@ -1,0 +1,24 @@
+id: pixelfedsocial
+brief:
+    title: Pixelfed.social User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Pixelfed.social user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - pixelfedsocial
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://pixelfed.social/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - on pixelfed</title>
+          in: body
+          need: all

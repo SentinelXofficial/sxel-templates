@@ -1,0 +1,24 @@
+id: saracartershow
+brief:
+    title: SaraCarterShow User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: SaraCarterShow user name information check was conducted.
+    label:
+        - osint
+        - osint-political
+        - saracartershow
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://saraacarter.com/author/{{user}}/
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '| Sara A. Carter'
+          in: body
+          need: all

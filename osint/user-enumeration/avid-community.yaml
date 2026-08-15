@@ -1,0 +1,24 @@
+id: avid-community
+brief:
+    title: Avid Community User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Avid Community user name information check was conducted.
+    label:
+        - osint
+        - osint-music
+        - avid-community
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://community.avid.com/members/{{user}}/default.aspx
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - My Activity
+          in: body
+          need: all

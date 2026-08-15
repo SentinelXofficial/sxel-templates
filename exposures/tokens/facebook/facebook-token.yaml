@@ -1,0 +1,16 @@
+id: facebook-token
+brief:
+    title: Facebook API Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - facebook
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

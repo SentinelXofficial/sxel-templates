@@ -1,0 +1,22 @@
+id: phpmemcached-admin-panel
+brief:
+    title: phpMemcachedAdmin Panel
+    by: tess
+    level: medium
+    about: phpMemcachedAdmin Panel is exposed.
+    label:
+        - phpmemcached
+        - exposure
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - phpMemcachedAdmin
+            - Execute Commands on Servers
+          in: body
+          need: all

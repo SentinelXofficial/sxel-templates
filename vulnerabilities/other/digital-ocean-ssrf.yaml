@@ -1,0 +1,25 @@
+id: digital-ocean-ssrf
+brief:
+    title: Digital Ocean - Server-side request forgery (SSRF)
+    by: DhiyaneshDk
+    level: critical
+    about: Digital Ocean instance is vulnerable to SSRF.
+    label:
+        - digitalocean
+        - ssrf
+        - vuln
+    score: CVSS:9.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}{{BaseURL}}/metadata/v1.json'
+      signs:
+        - "on": word
+          has:
+            - '"droplet_id":'
+            - '"hostname":'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

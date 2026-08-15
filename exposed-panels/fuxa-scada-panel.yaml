@@ -1,0 +1,32 @@
+id: fuxa-scada-panel
+brief:
+    title: FUXA - SCADA/HMI Panel
+    by: rxerium
+    level: info
+    about: FUXA is an open-source web-based SCADA/HMI platform built on Node.js.
+    label:
+        - panel
+        - scada
+        - hmi
+        - ics
+        - fuxa
+        - open-source
+        - nodejs
+        - modbus
+        - opc-ua
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>FUXA</title>
+            - assets/lib/svgeditor
+            - FUXA
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

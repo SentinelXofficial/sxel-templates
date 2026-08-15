@@ -1,0 +1,17 @@
+id: jenkins-crumb-token
+brief:
+    title: Jenkins Token or Crumb
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - jenkins
+        - crumb
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

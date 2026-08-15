@@ -1,0 +1,24 @@
+id: zazzle-phish
+brief:
+    title: Zazzle phishing Detection
+    by: rxerium
+    level: info
+    about: A Zazzle phishing website was detected
+    label:
+        - phishing
+        - zazzle
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Celebrate life’s moments with custom invitations, announcements, photo cards, and more. Discover unique gifts crafted by our community of Independent Creators.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

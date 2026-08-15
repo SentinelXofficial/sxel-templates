@@ -1,0 +1,32 @@
+id: smartsense-default-login
+brief:
+    title: HortonWorks SmartSense Default Login
+    by: Techryptic (@Tech)
+    level: high
+    about: HortonWorks SmartSense default admin login information was detected.
+    label:
+        - hortonworks
+        - smartsense
+        - default-login
+        - vuln
+    score: CVSS:8.3
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/apt/v1/context'
+      head:
+        Authorization: Basic {{base64(username + ':' + password)}}
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: SUPPORTSESSIONID'
+          in: header
+          need: all
+        - "on": word
+          has:
+            - smartsenseId
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

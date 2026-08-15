@@ -1,0 +1,24 @@
+id: lastpass-phish
+brief:
+    title: lastpass phishing Detection
+    by: rxerium
+    level: info
+    about: A lastpass phishing website was detected
+    label:
+        - phishing
+        - lastpass
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '#1 Password Manager &amp; Vault App with Single-Sign On &amp; MFA Solutions - LastPass'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,34 @@
+id: wp-user-enum
+brief:
+    title: WordPress REST API User Enumeration
+    by: Manas_Harsh
+    level: low
+    about: The REST API exposed user data for all users who had authored a post of a public post type. WordPress 4.7.1 limits this to only post types which have specified that they should be shown within the ...
+    label:
+        - cve2017
+        - cve
+        - wordpress
+        - wp
+        - edb
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-json/wp/v2/users/'
+        - '{{BaseURL}}/?rest_route=/wp/v2/users/'
+      signs:
+        - "on": word
+          has:
+            - '"id":'
+            - '"name":'
+            - '"slug":'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

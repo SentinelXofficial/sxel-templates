@@ -1,0 +1,25 @@
+id: afterpay-phish
+brief:
+    title: Afterpay phishing Detection
+    by: rxerium
+    level: info
+    about: A Afterpay phishing website was detected
+    label:
+        - phishing
+        - afterpay
+        - payment
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Buy Now Pay Later with Afterpay
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

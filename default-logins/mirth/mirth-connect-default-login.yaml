@@ -1,0 +1,27 @@
+id: mirth-connect-default-login
+brief:
+    title: Mirth Connect - Default Admin Credentials
+    by: 0x_Akoko
+    level: high
+    about: Detected Mirth Connect was using default credentials admin:admin. Mirth Connect is a widely used healthcare integration engine for HL7, FHIR, and other medical data standards.
+    label:
+        - mirth
+        - default-login
+        - misconfig
+        - healthcare
+    score: CVSS:9.8
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/users/_login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        X-Requested-With: XMLHttpRequest
+      body: username={{username}}&password={{password}}
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/api/users/current'
+      head:
+        X-Requested-With: XMLHttpRequest
+      signs: []

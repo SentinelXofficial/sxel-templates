@@ -1,0 +1,26 @@
+id: dplus-dashboard
+brief:
+    title: DPLUS Dashboard Panel - Detect
+    by: tess
+    level: info
+    about: DPLUS Dashboard panel was detected.
+    label:
+        - panel
+        - dplus
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - DPLUS Dashboard
+            - Module A
+            - Module B
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,17 @@
+id: wordpress-velvet-blues-update-urls
+brief:
+    title: Velvet Blues Update URLs Detection
+    by: ricardomaia
+    level: info
+    about: ""
+    label:
+        - tech
+        - wordpress
+        - wp-plugin
+        - top-200
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/wp-content/plugins/velvet-blues-update-urls/readme.txt'
+      signs: []

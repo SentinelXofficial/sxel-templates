@@ -1,0 +1,18 @@
+id: akamai-cache-detect
+brief:
+    title: Akamai Cache Detection
+    by: nybble04
+    level: info
+    about: Sends a HEAD request with a Pragma header value of "akamai-x-cache-on" and looks for an akamai-specific response header value.
+    label:
+        - cache
+        - akamai
+        - tech
+        - discovery
+moves:
+    - verb: HEAD
+      to:
+        - '{{BaseURL}}'
+      head:
+        Pragma: akamai-x-cache-on
+      signs: []

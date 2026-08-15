@@ -1,0 +1,27 @@
+id: pyload-default-login
+brief:
+    title: PyLoad Default Login
+    by: DhiyaneshDk
+    level: high
+    about: PyLoad Default Credentials were discovered.
+    label:
+        - default-login
+        - pyload
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: do=login&username={{username}}&password={{password}}&submit=Login
+      signs:
+        - "on": word
+          has:
+            - 'Set-Cookie: pyload_session='
+            - /dashboard
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 302

@@ -1,0 +1,18 @@
+id: jamf-login
+brief:
+    title: Jamf Pro Login Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: Jamf Pro login panel was detected.
+    label:
+        - panel
+        - jamf
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": status
+          status:
+            - 401

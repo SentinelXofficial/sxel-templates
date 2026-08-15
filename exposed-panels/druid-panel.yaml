@@ -1,0 +1,24 @@
+id: druid-panel
+brief:
+    title: Druid Monitor Login Panel - Detect
+    by: pikpikcu
+    level: info
+    about: Druid Monitor login panel was detected.
+    label:
+        - panel
+        - druid
+        - apache
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/druid/login.html'
+      signs:
+        - "on": word
+          has:
+            - <title>druid monitor</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

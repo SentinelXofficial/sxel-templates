@@ -1,0 +1,23 @@
+id: sonicwall-analyzer-login
+brief:
+    title: SonicWall Analyzer Login Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: SonicWall Analyzer login panel was detected.
+    label:
+        - panel
+        - sonicwall
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sgms/auth'
+      signs:
+        - "on": word
+          has:
+            - SonicWall Analyzer Login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

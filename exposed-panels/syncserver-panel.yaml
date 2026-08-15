@@ -1,0 +1,28 @@
+id: syncserver-panel
+brief:
+    title: Symmetricom SyncServer Panel - Detect
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - panel
+        - login
+        - syncserver
+        - symmetricom
+        - detect
+        - microchip
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login.php'
+      signs:
+        - "on": word
+          has:
+            - Symmetricom SyncServer
+            - login
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

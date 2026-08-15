@@ -1,0 +1,27 @@
+id: couchdb-adminparty
+brief:
+    title: CouchDB Admin Default - Detect
+    by: organiccrap
+    level: high
+    about: CouchDB is susceptible to requests in the context of an admin user.
+    label:
+        - couchdb
+        - vuln
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_users/_all_docs'
+      signs:
+        - "on": word
+          has:
+            - CouchDB/
+            - Erlang OTP/
+          in: header
+          need: all
+        - "on": word
+          has:
+            - total_rows
+            - offset
+          in: body
+          need: all

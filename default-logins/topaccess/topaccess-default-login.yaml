@@ -1,0 +1,52 @@
+id: topaccess-default-login
+brief:
+    title: Toshiba TopAccess - Default-Login
+    by: ritikchaddha
+    level: high
+    about: ""
+    label:
+        - topaccess
+        - default-login
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - <name>Administrator
+            - STATUS_OK</statusOfOperation
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/xml
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: POST
+      to:
+        - '{{BaseURL}}/contentwebserver'
+      head:
+        Content-Type: text/plain; charset=UTF-8
+        csrfpId: '{{csrf_token}}'
+      body: <DeviceInformationModel><GetValue><Authentication><UserCredential></UserCredential></Authentication></GetValue><GetValue><Panel><DiagnosticMode><Mode_08><Code_8913></Code_8913></Mode_08></DiagnosticMode></Panel></GetValue><SetValue><Authentication><UserCredential><userName>{{username}}</userName><passwd>{{password}}</passwd><ipaddress></ipaddress><DepartmentManagement isEnable='false'><requireDepartment></requireDepartment></DepartmentManagement><domainName></domainName><applicationType>TOP_ACCESS</applicationType></UserCredential></Authentication></SetValue><SetValue><UserManager><View><Users><Information><passwd>admin</passwd></Information></Users></View></UserManager></SetValue><Command><Login><commandNode>Authentication/UserCredential</commandNode><Params><appName>TOPACCESS</appName></Params></Login></Command></DeviceInformationModel>
+      signs:
+        - "on": word
+          has:
+            - <name>Administrator
+            - STATUS_OK</statusOfOperation
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/xml
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

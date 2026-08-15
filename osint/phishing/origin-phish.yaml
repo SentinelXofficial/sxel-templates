@@ -1,0 +1,24 @@
+id: origin-phish
+brief:
+    title: Origin phishing Detection
+    by: rxerium
+    level: info
+    about: An Origin phishing website was detected
+    label:
+        - phishing
+        - origin
+        - osint
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Explore PC video games available for download right now. Electronic Arts is a leading publisher of games for the PC, consoles, and mobile.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

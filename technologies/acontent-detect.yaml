@@ -1,0 +1,24 @@
+id: acontent-detect
+brief:
+    title: AContent Detect
+    by: pikpikcu
+    level: info
+    about: ""
+    label:
+        - tech
+        - acontent
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '<title>AContent : Home</title>'
+            - AContent - Copyright 2010 by IDRC/IDI http://inclusivedesign.ca/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

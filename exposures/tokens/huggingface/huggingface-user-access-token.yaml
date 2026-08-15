@@ -1,0 +1,17 @@
+id: huggingface-user-access-token
+brief:
+    title: HuggingFace User Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - huggingface
+        - exposure
+        - tokens
+        - vuln
+        - ai
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

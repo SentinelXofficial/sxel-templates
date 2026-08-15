@@ -1,0 +1,21 @@
+id: lua-runtime-error
+brief:
+    title: LUA Runtime Error - Page
+    by: DhiyaneshDk
+    level: info
+    about: ""
+    label:
+        - error
+        - lua
+        - log
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'Error 500 : LUA Runtime Error'
+          in: body
+          need: all

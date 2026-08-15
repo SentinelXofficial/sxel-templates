@@ -1,0 +1,24 @@
+id: veeam-backup-gcp
+brief:
+    title: Veeam Backup for Google Cloud Platform Panel - Detect
+    by: DhiyaneshDK
+    level: info
+    about: Veeam Backup for Google Cloud Platform panel was detected.
+    label:
+        - panel
+        - google
+        - cloud
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Veeam Backup for GCP</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

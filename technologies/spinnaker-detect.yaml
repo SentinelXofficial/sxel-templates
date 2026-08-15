@@ -1,0 +1,19 @@
+id: spinnaker-detect
+brief:
+    title: Spinnaker Detect
+    by: Adam Crosser
+    level: info
+    about: Detects the Spinnaker continuous delivery software
+    label:
+        - tech
+        - spinnaker
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <spinnaker ng-if="!authenticating"></spinnaker>
+          in: body

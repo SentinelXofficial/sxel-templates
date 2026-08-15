@@ -1,0 +1,31 @@
+id: smf-installer
+brief:
+    title: SMF Installer
+    by: DhiyaneshDk
+    level: high
+    about: SMF is susceptible to the Installation page exposure due to misconfiguration.
+    label:
+        - misconfig
+        - smf
+        - install
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install.php'
+      signs:
+        - "on": word
+          has:
+            - SMF Installer
+            - Progress
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

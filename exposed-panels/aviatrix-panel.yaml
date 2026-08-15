@@ -1,0 +1,24 @@
+id: aviatrix-panel
+brief:
+    title: Aviatrix Cloud Controller Panel
+    by: pikpikcu
+    level: info
+    about: An Aviatrix Cloud Controller login panel was detected.
+    label:
+        - panel
+        - aviatrix
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Aviatrix
+            - Controller</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

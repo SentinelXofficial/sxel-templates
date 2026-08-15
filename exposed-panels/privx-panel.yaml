@@ -1,0 +1,23 @@
+id: privx-panel
+brief:
+    title: SSH PrivX Login Panel - Detect
+    by: korteke
+    level: info
+    about: SSH PrivX login panel was detected.
+    label:
+        - panel
+        - privx
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/auth/login'
+      signs:
+        - "on": word
+          has:
+            - <title>PrivX</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

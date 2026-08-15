@@ -1,0 +1,31 @@
+id: cisco-implant-detect
+brief:
+    title: Cisco IOS XE - Impant Detection
+    by: DhiyaneshDK
+    level: critical
+    about: Cisco is aware of active exploitation of a previously unknown vulnerability in the web UI feature of Cisco IOS XE Software when exposed to the internet or to untrusted networks. This vulnerability ...
+    label:
+        - backdoor
+        - cisco
+        - ios
+        - kev
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/webui'
+      signs:
+        - "on": word
+          has:
+            - webui-centerpanel-title
+          in: body_1
+    - verb: POST
+      to:
+        - '{{BaseURL}}/webui/logoutconfirm.html?logon_hash=1'
+      head:
+        Authorization: 0ff4fbf0ecffa77ce8d3852a29263e263838e9bb
+      signs:
+        - "on": word
+          has:
+            - webui-centerpanel-title
+          in: body_1

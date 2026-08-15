@@ -1,0 +1,33 @@
+id: argilla-panel
+brief:
+    title: Argilla Panel - Detect
+    by: rxerium
+    level: info
+    about: Argilla is an open-source data labelling platform for AI and LLM fine-tuning workflows.
+    label:
+        - panel
+        - argilla
+        - llm
+        - ai
+        - data-labelling
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Argilla</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - argilla.io
+            - __NUXT__
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

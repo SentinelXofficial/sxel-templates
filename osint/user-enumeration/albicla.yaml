@@ -1,0 +1,24 @@
+id: albicla
+brief:
+    title: Albicla User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Albicla user name information check was conducted.
+    label:
+        - osint
+        - osint-social
+        - albicla
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://albicla.com/{{user}}/post/1
+      signs:
+        - "on": status
+          status:
+            - 500
+        - "on": word
+          has:
+            - 500 Post tymczasowo niedostępny
+          in: body
+          need: all

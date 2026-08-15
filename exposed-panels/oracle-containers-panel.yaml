@@ -1,0 +1,25 @@
+id: oracle-containers-panel
+brief:
+    title: Oracle Containers for J2EE 10g Panel - Detect
+    by: dogasantos
+    level: info
+    about: Oracle Containers for J2EE 10g panel was detected.
+    label:
+        - panel
+        - oracle
+        - containers
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Welcome to Oracle Containers for J2EE 10g
+            - Administration Guide is included
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

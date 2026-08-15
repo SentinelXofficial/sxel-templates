@@ -1,0 +1,20 @@
+id: adonisjs-detect
+brief:
+    title: AdonisJS - Detect
+    by: rxerium
+    level: info
+    about: AdonisJS framework was detected.
+    label:
+        - tech
+        - adonisjs
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - 'X-Powered-By: AdonisJs'
+          in: header

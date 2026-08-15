@@ -1,0 +1,16 @@
+id: php-errors
+brief:
+    title: PHP errors
+    by: w4cky_
+    level: info
+    about: ""
+    label:
+        - debug
+        - php
+        - misconfig
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

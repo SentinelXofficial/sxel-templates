@@ -1,0 +1,23 @@
+id: davantis-panel
+brief:
+    title: Davantis Video Analytics Panel - Detect
+    by: robotshell
+    level: info
+    about: Davantis Video Analytics panel was detected.
+    label:
+        - panel
+        - davantis
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/index.html'
+      signs:
+        - "on": word
+          has:
+            - <title>Davantis</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,33 @@
+id: servicestack-requestlogs
+brief:
+    title: ServiceStack Request Logs - Unauthenticated Access
+    by: DhiyaneshDk
+    level: high
+    about: Detected ServiceStack Request Logs endpoint was accessible without authentication.
+    label:
+        - servicestack
+        - exposure
+        - misconfig
+        - logs
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/requestlogs'
+        - '{{BaseURL}}/api/requestlogs'
+        - '{{BaseURL}}/json/reply/RequestLogs'
+      signs:
+        - "on": word
+          has:
+            - '"Results":['
+            - '"Usage":{'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

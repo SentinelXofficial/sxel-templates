@@ -1,0 +1,16 @@
+id: thingsboard-access-token
+brief:
+    title: ThingsBoard Access Token
+    by: DhiyaneshDK
+    level: info
+    about: ""
+    label:
+        - thingsboard
+        - exposure
+        - tokens
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

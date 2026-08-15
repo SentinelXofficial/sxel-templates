@@ -1,0 +1,24 @@
+id: discusselasticco
+brief:
+    title: Discuss.elastic.co User Name Information - Detect
+    by: dwisiswant0
+    level: info
+    about: Discuss.elastic.co user name information check was conducted.
+    label:
+        - osint
+        - osint-tech
+        - discusselasticco
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - https://discuss.elastic.co/u/{{user}}
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - <title>  Profile
+          in: body
+          need: all

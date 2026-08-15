@@ -1,0 +1,25 @@
+id: framer-takeover
+brief:
+    title: Framer Takeover Detection
+    by: Amjad Ali
+    level: high
+    about: Framer takeover was detected.
+    label:
+        - takeover
+        - framer
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Site Not Found | Framer
+          in: body
+          need: all
+        - "on": word
+          has:
+            - text/html
+          in: content_type
+          need: all

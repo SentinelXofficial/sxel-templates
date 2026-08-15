@@ -1,0 +1,16 @@
+id: github-personal-access
+brief:
+    title: GitHub Personal Access Token
+    by: DhiyaneshDK
+    level: high
+    about: ""
+    label:
+        - github
+        - token
+        - exposure
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

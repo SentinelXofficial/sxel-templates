@@ -1,0 +1,20 @@
+id: iptime-router
+brief:
+    title: ipTIME Router Login Panel - Detect
+    by: gy741
+    level: info
+    about: ipTIME router login panel was detected.
+    label:
+        - panel
+        - login
+        - iptime
+        - router
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/sess-bin/login_session.cgi'
+      signs:
+        - "on": status
+          status:
+            - 200
