@@ -1,0 +1,29 @@
+id: fiftyone-panel
+brief:
+    title: FiftyOne Panel - Detect
+    by: rxerium
+    level: info
+    about: FiftyOne, an open-source dataset visualization and curation tool for computer vision workflows built by Voxel51, was detected. The app ships with no authentication by default, so any exposed instan...
+    label:
+        - panel
+        - fiftyone
+        - ml
+        - ai
+        - computer-vision
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>FiftyOne</title>
+            - Explore, Analyze, Curate
+            - id="colorModal"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

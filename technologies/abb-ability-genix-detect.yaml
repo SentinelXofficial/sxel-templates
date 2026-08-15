@@ -1,0 +1,26 @@
+id: abb-ability-genix-detect
+brief:
+    title: ABB Ability Genix Industrial Analytics and AI Suite - Detect
+    by: rxerium
+    level: info
+    about: ABB Ability Genix industrial analytics and artificial intelligence management portal was detected.
+    label:
+        - tech
+        - abb
+        - genix
+        - iiot
+        - ics
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>ABB Ability&trade; Genix Industrial Analytics and AI Suite</title>
+            - assets/abb_favicon.ico
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

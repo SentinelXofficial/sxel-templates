@@ -1,0 +1,25 @@
+id: tenable-sc-panel
+brief:
+    title: Tenable Security Center - Login Panel
+    by: rxerium
+    level: info
+    about: Tenable Security Center, formerly Tenable.sc and SecurityCenter, web management interface was detected.
+    label:
+        - panel
+        - tenable
+        - tenable-sc
+        - securitycenter
+        - vulnerability-management
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Tenable.sc</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

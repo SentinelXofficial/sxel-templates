@@ -1,0 +1,27 @@
+id: xen-orchestra-panel
+brief:
+    title: Xen Orchestra - Login Panel
+    by: rxerium
+    level: info
+    about: Xen Orchestra central management and backup web interface was detected.
+    label:
+        - panel
+        - xen-orchestra
+        - xcp-ng
+        - vates
+        - virtualization
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/signin'
+      signs:
+        - "on": word
+          has:
+            - <title>Xen Orchestra</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

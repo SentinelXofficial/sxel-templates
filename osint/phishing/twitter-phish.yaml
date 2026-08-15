@@ -18,8 +18,15 @@ moves:
         - "on": word
           has:
             - Sign in to X
-            - Happening now
-            - Join today
+            - Log in to X
+            - Sign in to Twitter
+            - Log in to Twitter
+          in: body
+          need: all
+        - "on": word
+          has:
+            - type="password"
+            - type='password'
           in: body
           need: all
         - "on": status

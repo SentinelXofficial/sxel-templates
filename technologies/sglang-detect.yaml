@@ -1,0 +1,17 @@
+id: sglang-detect
+brief:
+    title: SGLang - Detect
+    by: insidetrust
+    level: info
+    about: Detects SGLang, a high-performance LLM serving framework that provides an OpenAI-compatible API (default port 30000). This template identifies SGLang by checking for the unique /get_model_info endp...
+    label:
+        - tech
+        - detect
+        - sglang
+        - llm
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/get_model_info'
+        - '{{BaseURL}}/metrics'
+      signs: []

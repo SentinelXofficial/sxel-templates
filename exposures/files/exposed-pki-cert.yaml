@@ -12,5 +12,14 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}{{paths}}'
+        - '{{BaseURL}}/'
+        - '{{BaseURL}}/certsrv/'
+        - '{{BaseURL}}/pki/'
+        - '{{BaseURL}}/PKI/'
+        - '{{BaseURL}}/crl/'
+        - '{{BaseURL}}/CRL/'
+        - '{{BaseURL}}/.well-known/pki-validation/'
+        - '{{BaseURL}}/ocsp/'
+        - '{{BaseURL}}/CertEnroll/'
+        - '{{BaseURL}}/CertSrv/'
       signs: []

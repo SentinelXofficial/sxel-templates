@@ -13,7 +13,28 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}{{paths}}'
+        - '{{BaseURL}}/sa.bak'
+        - '{{BaseURL}}/wwwroot.bak'
+        - '{{BaseURL}}/backup.bak'
+        - '{{BaseURL}}/database.bak'
+        - '{{BaseURL}}/data.bak'
+        - '{{BaseURL}}/db_backup.bak'
+        - '{{BaseURL}}/dbdump.bak'
+        - '{{BaseURL}}/db.bak'
+        - '{{BaseURL}}/dump.bak'
+        - '{{BaseURL}}/{{Hostname}}.bak'
+        - '{{BaseURL}}/{{Hostname}}_db.bak'
+        - '{{BaseURL}}/localhost.bak'
+        - '{{BaseURL}}/mysqldump.bak'
+        - '{{BaseURL}}/mysql.bak'
+        - '{{BaseURL}}/site.bak'
+        - '{{BaseURL}}/sql.bak'
+        - '{{BaseURL}}/temp.bak'
+        - '{{BaseURL}}/translate.bak'
+        - '{{BaseURL}}/users.bak'
+        - '{{BaseURL}}/www.bak'
+        - '{{BaseURL}}/wp-content/uploads/dump.bak'
+        - '{{BaseURL}}/wp-content/mysql.bak'
       head:
         Range: bytes=0-500
       signs:

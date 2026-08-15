@@ -1,0 +1,27 @@
+id: maxkb-panel
+brief:
+    title: MaxKB Panel - Detect
+    by: rxerium
+    level: info
+    about: MaxKB, an open-source RAG-based knowledge base and LLM chatbot platform, was detected.
+    label:
+        - panel
+        - maxkb
+        - ai
+        - llm
+        - rag
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>MaxKB</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

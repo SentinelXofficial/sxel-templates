@@ -1,0 +1,18 @@
+id: bitnami-apache-solr
+brief:
+    title: Bitnami Apache Solr Stack - Detection
+    by: Th3l0newolf
+    level: info
+    about: Bitnami Apache Solr Stack welcome page was detected.
+    label:
+        - detect
+        - apache
+        - solr
+        - bitnami
+        - discovery
+        - tech
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

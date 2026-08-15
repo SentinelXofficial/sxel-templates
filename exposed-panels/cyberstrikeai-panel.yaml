@@ -1,0 +1,27 @@
+id: cyberstrikeai-panel
+brief:
+    title: Ed1s0nZ CyberStrikeAI - Panel
+    by: darses
+    level: info
+    about: Ed1s0nZ CyberStrikeAI panel was detected.
+    label:
+        - ed1s0nz
+        - cyberstrikeai
+        - detect
+        - panel
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - aria-label="CyberStrikeAI
+            - alt="CyberStrikeAI Logo
+            - /Ed1s0nZ/CyberStrikeAI
+            - placeholder="CyberStrikeAI
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

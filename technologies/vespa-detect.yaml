@@ -1,0 +1,25 @@
+id: vespa-detect
+brief:
+    title: Vespa - Detect
+    by: rxerium
+    level: info
+    about: Vespa, an open-source big-data serving engine used for low-latency search, recommendation, and vector/embedding retrieval, increasingly deployed as the retrieval backend in AI and RAG (retrieval-au...
+    label:
+        - tech
+        - vespa
+        - ai
+        - vector-db
+        - search
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ApplicationStatus'
+      signs:
+        - "on": word
+          has:
+            - '"vespa"'
+            - '"version"'
+          in: body
+          need: all

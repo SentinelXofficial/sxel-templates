@@ -1,0 +1,26 @@
+id: atera-customer-portal
+brief:
+    title: Atera Customer Portal - Login Panel
+    by: rxerium
+    level: info
+    about: Atera customer portal login interface was detected.
+    label:
+        - panel
+        - atera
+        - rmm
+        - login
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Atera - Customers Portal</title>
+            - window.ateraAnalyticsFirstLoad
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

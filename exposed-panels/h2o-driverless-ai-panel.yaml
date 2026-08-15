@@ -1,0 +1,32 @@
+id: h2o-driverless-ai-panel
+brief:
+    title: H2O Driverless AI Panel - Detect
+    by: rxerium
+    level: info
+    about: H2O Driverless AI, a commercial automated machine learning (AutoML) platform that provides a web UI typically served on port 12345 for building and deploying machine learning models, was detected. ...
+    label:
+        - panel
+        - h2o-driverless-ai
+        - ml
+        - ai
+        - automl
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - 'Server: H2O Driverless AI'
+          in: header
+          need: all
+        - "on": word
+          has:
+            - DRIVERLESS AI
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

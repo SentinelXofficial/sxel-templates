@@ -1,0 +1,28 @@
+id: aim-panel
+brief:
+    title: Aim Panel - Detect
+    by: rxerium
+    level: info
+    about: Aim, an open-source, self-hosted AI/ML experiment tracking tool used to log, query, and visualize machine learning training runs, was detected by matching its distinctive web UI page title and meta...
+    label:
+        - panel
+        - aim
+        - ml
+        - ai
+        - mlops
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Aim</title>
+            - Open-source, self-hosted AI experiment tracking tool
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

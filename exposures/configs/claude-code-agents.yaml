@@ -1,0 +1,26 @@
+id: claude-code-agents
+brief:
+    title: Claude Code Subagent Configuration - Exposure
+    by: shadowhunter-92
+    level: low
+    about: Claude Code subagent configuration files under `.claude/agents/` were detected on the web server. Each `.md` file in this directory defines a specialized AI subagent (name, description, tool allow-...
+    label:
+        - config
+        - exposure
+        - claude
+        - claude-code
+        - anthropic
+        - ai
+        - subagent
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.claude/agents/'
+        - '{{BaseURL}}/.claude/agents/index.md'
+        - '{{BaseURL}}/.claude/agents/README.md'
+        - '{{BaseURL}}/.claude/agents/code-reviewer.md'
+      signs:
+        - "on": status
+          status:
+            - 200

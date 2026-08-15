@@ -15,7 +15,11 @@ moves:
     - verb: GET
       to:
         - '{{BaseURL}}'
-        - '{{BaseURL}}/{{paths}}/'
+        - '{{BaseURL}}/db/'
+        - '{{BaseURL}}/sql/'
+        - '{{BaseURL}}/compalex/'
+        - '{{BaseURL}}/_db/'
+        - '{{BaseURL}}/dbdiff/'
       signs:
         - "on": word
           has:

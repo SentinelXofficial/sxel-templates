@@ -1,0 +1,28 @@
+id: fooocus-panel
+brief:
+    title: Fooocus Panel - Detect
+    by: rxerium
+    level: info
+    about: Fooocus, an open-source, offline Stable Diffusion image-generation UI built on Gradio and focused on simplified prompt-based image generation, was detected by matching its Fooocus-branded page meta...
+    label:
+        - panel
+        - fooocus
+        - ai
+        - image-generation
+        - gradio
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - og:title" content="Fooocus
+            - window.gradio_config
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

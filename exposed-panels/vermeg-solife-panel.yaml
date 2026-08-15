@@ -1,0 +1,17 @@
+id: vermeg-solife-panel
+brief:
+    title: Vermeg Solife Panel - Detect
+    by: righettod
+    level: info
+    about: Vermeg Solife was detected - A life insurance solution with cash, tax, legal, and claims management to boost operational efficiency and ensure compliance.
+    label:
+        - panel
+        - vermeg
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/solife/'
+        - '{{BaseURL}}/WebInterface/login.html'
+      signs: []

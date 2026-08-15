@@ -1,0 +1,24 @@
+id: seldon-core-detect
+brief:
+    title: Seldon Core - Detect
+    by: rxerium
+    level: info
+    about: Seldon Core, an open-source MLOps/LLMOps framework for deploying, monitoring, and scaling machine learning models on Kubernetes, was detected. Its Pipeline Gateway component, which routes inference...
+    label:
+        - tech
+        - seldon-core
+        - ml
+        - ai
+        - mlops
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - seldon-pipelinegateway
+          in: header
+          need: all

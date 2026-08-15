@@ -12,7 +12,23 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}{{paths}}'
+        - '{{BaseURL}}/phpmyadmin/scripts/setup.php'
+        - '{{BaseURL}}/phpMyAdmin/scripts/setup.php'
+        - '{{BaseURL}}/_phpmyadmin/scripts/setup.php'
+        - '{{BaseURL}}/forum/phpmyadmin/scripts/setup.php'
+        - '{{BaseURL}}/php/phpmyadmin/scripts/setup.php'
+        - '{{BaseURL}}/typo3/phpmyadmin/scripts/setup.php'
+        - '{{BaseURL}}/web/phpmyadmin/scripts/setup.php'
+        - '{{BaseURL}}/xampp/phpmyadmin/scripts/setup.php'
+        - '{{BaseURL}}/sysadmin/phpMyAdmin/scripts/setup.php'
+        - '{{BaseURL}}/phpmyadmin/setup/index.php'
+        - '{{BaseURL}}/phpMyAdmin/setup/index.php'
+        - '{{BaseURL}}/pma/setup/index.php'
+        - '{{BaseURL}}/admin/pma/setup/index.php'
+        - '{{BaseURL}}/phpmyadmin/setup/'
+        - '{{BaseURL}}/setup/index.php'
+        - '{{BaseURL}}/admin/'
+        - '{{BaseURL}}/phpMyAdminOLD/setup/index.php'
       signs:
         - "on": word
           has:

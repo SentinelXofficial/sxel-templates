@@ -1,0 +1,32 @@
+id: vllm-openai-api-exposed
+brief:
+    title: vLLM OpenAI-Compatible API - Unauthenticated Exposure
+    by: fsoppelsa
+    level: medium
+    about: Detects a vLLM inference server exposing its OpenAI-compatible API without authentication. The /v1/models endpoint returns the list of served models and is reachable by any unauthenticated client, ...
+    label:
+        - exposure
+        - vllm
+        - llm
+        - ai
+        - api
+        - unauth
+        - misconfig
+    score: CVSS:6.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v1/models'
+      signs:
+        - "on": word
+          has:
+            - '"max_model_len"'
+          in: body
+        - "on": word
+          has:
+            - application/json
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

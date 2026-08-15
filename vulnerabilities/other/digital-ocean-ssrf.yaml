@@ -12,7 +12,7 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}{{BaseURL}}/metadata/v1.json'
+        - '{{BaseURL}}/metadata/v1.json'
       signs:
         - "on": word
           has:

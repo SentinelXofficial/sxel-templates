@@ -15,5 +15,16 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}{{paths}}'
+        - '{{BaseURL}}/backup.sql'
+        - '{{BaseURL}}/database.sql'
+        - '{{BaseURL}}/db.sql'
+        - '{{BaseURL}}/dump.sql'
+        - '{{BaseURL}}/mysql.sql'
+        - '{{BaseURL}}/{{Hostname}}.sql'
+        - '{{BaseURL}}/wp-content/uploads/backup.sql'
+        - '{{BaseURL}}/wp-content/uploads/database.sql'
+        - '{{BaseURL}}/wp-content/uploads/dump.sql'
+        - '{{BaseURL}}/wp-content/uploads/{{Hostname}}.sql'
+        - '{{BaseURL}}/wp-content/database.sql'
+        - '{{BaseURL}}/backups/database.sql'
       signs: []

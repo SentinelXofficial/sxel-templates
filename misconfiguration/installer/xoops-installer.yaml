@@ -1,0 +1,17 @@
+id: xoops-installer
+brief:
+    title: XOOPS Installation Page - Exposure
+    by: princechaddha
+    level: high
+    about: Detects exposed XOOPS Installation page.
+    label:
+        - misconfig
+        - install
+        - exposure
+        - xoops
+        - vuln
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/install/page_start.php'
+      signs: []

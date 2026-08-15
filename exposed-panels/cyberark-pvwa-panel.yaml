@@ -1,0 +1,25 @@
+id: cyberark-pvwa-panel
+brief:
+    title: CyberArk Password Vault Web Access - Login Panel
+    by: rxerium
+    level: info
+    about: CyberArk Password Vault Web Access (PVWA) is the web interface for CyberArk Privileged Access Manager. The PVWA login panel was detected.
+    label:
+        - panel
+        - cyberark
+        - pvwa
+        - pam
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/PasswordVault/'
+      signs:
+        - "on": word
+          has:
+            - <title>Password Vault</title>
+            - /PasswordVault/v10/assets/cyb-loading-page
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

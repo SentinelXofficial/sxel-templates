@@ -1,0 +1,25 @@
+id: firebase-auth-fingerprint
+brief:
+    title: Firebase Authentication - Fingerprint
+    by: zomasec
+    level: info
+    about: Identifies applications using Firebase for authentication by requesting the auth helper script and checking for Firebase license, SDK version, and terms-of-service references.
+    label:
+        - firebase
+        - fingerprint
+        - tech
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/__/auth/handler.js'
+      signs:
+        - "on": word
+          has:
+            - '@license Firebase'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - https://firebase.google.com/terms/
+          in: body
+          need: all

@@ -15,5 +15,10 @@ moves:
     - verb: GET
       to:
         - '{{BaseURL}}'
-        - '{{BaseURL}}/{{path}}'
+        - '{{BaseURL}}/psp/csprd/?cmd=login&languageCd=ENG&'
+        - '{{BaseURL}}/psp/retess/?cmd=login&languageCd=ENG&'
+        - '{{BaseURL}}/psp/fscmprod/?cmd=login&languageCd=ENG&'
+        - '{{BaseURL}}/psp/CT920/?cmd=login&languageCd=ENG&'
+        - '{{BaseURL}}/psp/esshrprd/?cmd=login&languageCd=ENG&'
+        - '{{BaseURL}}/psp/ps/?&cmd=login&languageCd=ENG&'
       signs: []

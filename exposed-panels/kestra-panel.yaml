@@ -1,0 +1,25 @@
+id: kestra-panel
+brief:
+    title: Kestra Login - Panel Detect
+    by: Th3l0newolf
+    level: info
+    about: Kestra login interface was discovered.
+    label:
+        - panel
+        - login
+        - kestra
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/login?from=/dashboards'
+      signs:
+        - "on": word
+          has:
+            - <title>Kestra</title>
+            - window.KESTRA_UI_PATH = "/ui/";
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

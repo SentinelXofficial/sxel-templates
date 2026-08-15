@@ -1,0 +1,31 @@
+id: miniflux-panel
+brief:
+    title: Miniflux - Login Panel
+    by: ashish-cybersec
+    level: info
+    about: Miniflux is a minimalist and opinionated self-hosted feed reader written in Go. The login panel was detected.
+    label:
+        - panel
+        - miniflux
+        - rss
+        - login
+        - signin
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Sign In - Miniflux</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - data-add-subscription-url="/subscribe"
+            - data-refresh-all-feeds-url="/feeds/refresh"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

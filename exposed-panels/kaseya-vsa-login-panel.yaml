@@ -1,0 +1,25 @@
+id: kaseya-vsa-login-panel
+brief:
+    title: Kaseya VSA - Login Panel
+    by: rxerium
+    level: info
+    about: Kaseya Virtual System Administrator (VSA) login panel was detected.
+    label:
+        - panel
+        - kaseya
+        - vsa
+        - login
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - /vsapres/web20/core/login.aspx
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

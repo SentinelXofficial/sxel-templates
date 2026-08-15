@@ -1,0 +1,28 @@
+id: knime-server-panel
+brief:
+    title: KNIME Server / Business Hub WebPortal - Detect
+    by: rxerium
+    level: info
+    about: KNIME Server (and its successor KNIME Business Hub), a commercial platform from KNIME AG for deploying, executing, and managing data-science and machine learning workflows built in the KNIME Analyt...
+    label:
+        - panel
+        - knime
+        - ml
+        - ai
+        - data-science
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - webportal/_nuxt/theme/favicon
+            - _login/_nuxt
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

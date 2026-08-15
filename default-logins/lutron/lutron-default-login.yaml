@@ -13,7 +13,7 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}/login?login={{username}}&password={{password}}'
+        - '{{BaseURL}}/login?login=lutron&password=lutron'
       signs:
         - "on": word
           has:

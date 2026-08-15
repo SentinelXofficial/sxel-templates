@@ -1,0 +1,28 @@
+id: langtrace-panel
+brief:
+    title: Langtrace Panel - Detect
+    by: rxerium
+    level: info
+    about: Langtrace, an open-source, OpenTelemetry-based observability platform for LLM applications that provides tracing, monitoring, and analytics for LLM, vector database, and framework calls, was detect...
+    label:
+        - panel
+        - langtrace
+        - llm
+        - ai
+        - observability
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Langtrace</title>
+            - Open source observability for your LLM applications
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

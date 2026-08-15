@@ -1,28 +1,22 @@
 id: torchserve-detect
 brief:
-    title: TorchServe API Description - Detect
+    title: PyTorch TorchServe - Detect
     by: DhiyaneshDk
     level: info
-    about: Detects the presence of TorchServe APIs.
+    about: Detected PyTorch TorchServe, a model-serving framework for PyTorch models. The inference API (default port 8080) answers GET /ping with {"status":"Healthy"} and exposes /api-description; the manage...
     label:
         - tech
+        - detect
+        - torchserve
         - pytorch
-        - api
+        - ai
+        - llm
+        - inference
         - discovery
 moves:
     - verb: GET
       to:
         - '{{BaseURL}}/api-description'
-      signs:
-        - "on": word
-          has:
-            - TorchServe APIs"
-            - '"apiDescription"'
-            - 'operationId":'
-          in: body
-          need: all
-        - "on": word
-          has:
-            - application/json
-          in: content_type
-          need: all
+        - '{{BaseURL}}/models'
+        - '{{BaseURL}}/ping'
+      signs: []

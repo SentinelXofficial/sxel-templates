@@ -1,0 +1,26 @@
+id: 9router-default-login
+brief:
+    title: 9Router - Default Login
+    by: 0x_Akoko
+    level: high
+    about: Detected 9Router AI coding proxy was using default credentials (password 123456). 9Router ships with a hardcoded initial password that grants full dashboard access including connected provider API ...
+    label:
+        - default-login
+        - 9router
+        - ai
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/login'
+      signs:
+        - "on": word
+          has:
+            - 9Router
+          in: body
+    - verb: POST
+      to:
+        - '{{BaseURL}}/api/auth/login'
+      head:
+        Content-Type: application/json
+      body: '{"password":"{{password}}"}'
+      signs: []

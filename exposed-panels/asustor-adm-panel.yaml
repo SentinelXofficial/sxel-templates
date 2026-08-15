@@ -1,0 +1,27 @@
+id: asustor-adm-panel
+brief:
+    title: ASUSTOR ADM - Login Panel
+    by: rxerium
+    level: info
+    about: ASUSTOR Data Master network-attached storage management login panel was detected.
+    label:
+        - panel
+        - asustor
+        - adm
+        - nas
+        - storage
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Asustor Inc. All rights reserved.
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

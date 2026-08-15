@@ -12,5 +12,16 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}{{paths}}'
+        - '{{BaseURL}}/deployment.ini'
+        - '{{BaseURL}}/deploy.ini'
+        - '{{BaseURL}}/production.ini'
+        - '{{BaseURL}}/prod.ini'
+        - '{{BaseURL}}/deployment.production.ini'
+        - '{{BaseURL}}/deployment.prod.ini'
+        - '{{BaseURL}}/deploy.production.ini'
+        - '{{BaseURL}}/deploy.prod.ini'
+        - '{{BaseURL}}/server.ini'
+        - '{{BaseURL}}/ftp.ini'
+        - '{{BaseURL}}/ftps.ini'
+        - '{{BaseURL}}/sftp.ini'
       signs: []

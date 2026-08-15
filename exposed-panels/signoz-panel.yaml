@@ -1,0 +1,24 @@
+id: signoz-panel
+brief:
+    title: SigNoz - Login Panel
+    by: rxerium
+    level: info
+    about: SigNoz open-source observability platform web interface was detected.
+    label:
+        - panel
+        - signoz
+        - observability
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Open source Observability platform | SigNoz
+            - SigNoz is an open source observability platform
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

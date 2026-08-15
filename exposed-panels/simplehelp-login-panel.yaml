@@ -1,0 +1,24 @@
+id: simplehelp-login-panel
+brief:
+    title: SimpleHelp - Login Panel
+    by: rxerium
+    level: info
+    about: SimpleHelp remote support and management login panel was detected.
+    label:
+        - panel
+        - simplehelp
+        - login
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/welcome'
+      signs:
+        - "on": word
+          has:
+            - <title>Welcome to SimpleHelp</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

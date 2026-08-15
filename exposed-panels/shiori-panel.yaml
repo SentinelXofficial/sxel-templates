@@ -1,0 +1,16 @@
+id: shiori-panel
+brief:
+    title: Shiori Bookmark Manager - Detect
+    by: johnk3r
+    level: info
+    about: Detected A Shiori bookmark manager panel.
+    label:
+        - panel
+        - shiori
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

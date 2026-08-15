@@ -12,8 +12,13 @@ moves:
     - verb: GET
       to:
         - '{{BaseURL}}/?wsdl'
+        - '{{BaseURL}}?wsdl'
       signs:
         - "on": word
           has:
             - wsdl:definitions
           in: body
+          need: all
+        - "on": status
+          status:
+            - 200

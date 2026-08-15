@@ -1,0 +1,16 @@
+id: deskpro-on-default-page
+brief:
+    title: Deskpro On-Premise Controller - Default Page Detect
+    by: Th3l0newolf
+    level: info
+    about: Deskpro On-Premise Controller default page detected.
+    label:
+        - tech
+        - deskpro
+        - default-page
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

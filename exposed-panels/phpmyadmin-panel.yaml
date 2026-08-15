@@ -12,7 +12,21 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}{{paths}}'
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/phpmyadmin/'
+        - '{{BaseURL}}/admin/phpmyadmin/'
+        - '{{BaseURL}}/_phpmyadmin/'
+        - '{{BaseURL}}/administrator/components/com_joommyadmin/phpmyadmin/'
+        - '{{BaseURL}}/apache-default/phpmyadmin/'
+        - '{{BaseURL}}/blog/phpmyadmin/'
+        - '{{BaseURL}}/forum/phpmyadmin/'
+        - '{{BaseURL}}/php/phpmyadmin/'
+        - '{{BaseURL}}/typo3/phpmyadmin/'
+        - '{{BaseURL}}/web/phpmyadmin/'
+        - '{{BaseURL}}/xampp/phpmyadmin/'
+        - '{{BaseURL}}/phpMyAdmin/'
+        - '{{BaseURL}}/phpma/'
+        - '{{BaseURL}}/phpMyAdmin/index.php'
       signs:
         - "on": word
           has:

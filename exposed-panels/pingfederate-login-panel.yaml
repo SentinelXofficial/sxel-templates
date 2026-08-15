@@ -1,0 +1,24 @@
+id: pingfederate-login-panel
+brief:
+    title: PingFederate - Login Panel
+    by: rxerium
+    level: info
+    about: PingFederate is an enterprise federation server for single sign-on and identity management. The administrative login panel was detected.
+    label:
+        - panel
+        - pingfederate
+        - identity
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - /pingfederate/dist/styles.css
+            - /pingfederate/dist/index-bundle.js
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

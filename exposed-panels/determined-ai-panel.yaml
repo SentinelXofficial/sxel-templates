@@ -1,0 +1,28 @@
+id: determined-ai-panel
+brief:
+    title: Determined AI Panel - Detect
+    by: rxerium
+    level: info
+    about: Determined AI, an open-source deep learning training platform that provides distributed training, hyperparameter tuning, and experiment tracking through a web-based UI and a REST/gRPC-gateway API s...
+    label:
+        - panel
+        - determined-ai
+        - ml
+        - ai
+        - mlops
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Determined Deep Learning Training Platform
+            - <title>Determined</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

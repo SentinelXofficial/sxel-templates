@@ -11,7 +11,22 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}/{{roundcube_path}}'
+        - '{{BaseURL}}/roundcube/logs/sendmail'
+        - '{{BaseURL}}/roundcube/logs/sendmail.log'
+        - '{{BaseURL}}/roundcube/logs/errors.log'
+        - '{{BaseURL}}/roundcube/logs/errors'
+        - '{{BaseURL}}/webmail/logs/sendmail'
+        - '{{BaseURL}}/webmail/logs/sendmail.log'
+        - '{{BaseURL}}/webmail/logs/errors.log'
+        - '{{BaseURL}}/webmail/logs/errors'
+        - '{{BaseURL}}/mail/logs/sendmail'
+        - '{{BaseURL}}/mail/logs/sendmail.log'
+        - '{{BaseURL}}/mail/logs/errors.log'
+        - '{{BaseURL}}/mail/logs/errors'
+        - '{{BaseURL}}/logs/sendmail'
+        - '{{BaseURL}}/logs/sendmail.log'
+        - '{{BaseURL}}/logs/errors.log'
+        - '{{BaseURL}}/logs/errors'
       signs:
         - "on": word
           has:

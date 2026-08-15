@@ -16,6 +16,7 @@ moves:
         - "on": word
           has:
             - Dashboard [Jenkins]
+            - Dashboard - Jenkins
           in: body
           need: all
         - "on": status

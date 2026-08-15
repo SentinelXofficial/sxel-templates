@@ -13,7 +13,28 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}{{paths}}'
+        - '{{BaseURL}}/.env'
+        - '{{BaseURL}}/.env.bak'
+        - '{{BaseURL}}/.env.dev'
+        - '{{BaseURL}}/.env.dev.local'
+        - '{{BaseURL}}/.env.development.local'
+        - '{{BaseURL}}/.env.prod'
+        - '{{BaseURL}}/.env.prod.local'
+        - '{{BaseURL}}/.env.production'
+        - '{{BaseURL}}/.env.production.local'
+        - '{{BaseURL}}/.env.local'
+        - '{{BaseURL}}/.env.example'
+        - '{{BaseURL}}/.env.stage'
+        - '{{BaseURL}}/.env.live'
+        - '{{BaseURL}}/.env.backup'
+        - '{{BaseURL}}/.env.save'
+        - '{{BaseURL}}/.env.old'
+        - '{{BaseURL}}/.env.www'
+        - '{{BaseURL}}/.env_1'
+        - '{{BaseURL}}/.env_sample'
+        - '{{BaseURL}}/.env.{{DN}}'
+        - '{{BaseURL}}/.env.{{SD}}'
+        - '{{BaseURL}}/api/.env'
       signs:
         - "on": status
           status:

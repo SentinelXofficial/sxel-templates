@@ -1,0 +1,28 @@
+id: verba-panel
+brief:
+    title: Verba (The Golden RAGtriever) Panel - Detect
+    by: rxerium
+    level: info
+    about: Verba, also known as "The Golden RAGtriever", an open-source retrieval-augmented generation (RAG) chat application built by Weaviate that ships a Next.js frontend backed by a FastAPI/uvicorn server...
+    label:
+        - panel
+        - verba
+        - weaviate
+        - llm
+        - ai
+        - rag
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - bg-bg-verba
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

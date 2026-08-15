@@ -1,0 +1,26 @@
+id: one-identity-safeguard-spp-panel
+brief:
+    title: One Identity Safeguard for Privileged Passwords - Login Panel
+    by: rxerium
+    level: info
+    about: One Identity Safeguard for Privileged Passwords is a privileged password vault and session management platform. The login panel was detected.
+    label:
+        - panel
+        - oneidentity
+        - safeguard
+        - spp
+        - pam
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Safeguard for Privileged Passwords</title>
+            - /images/SafeguardLogo.png
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

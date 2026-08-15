@@ -1,0 +1,16 @@
+id: bizzy-panel
+brief:
+    title: BIZZY Login - Panel
+    by: Kazgangap
+    level: info
+    about: BIZZY login Panel was detected. BIZZY is a vulnerability management platform.
+    label:
+        - panel
+        - bizzy
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []

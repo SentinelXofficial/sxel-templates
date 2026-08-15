@@ -1,0 +1,25 @@
+id: sailpoint-identityiq-panel
+brief:
+    title: SailPoint IdentityIQ - Login Panel
+    by: rxerium
+    level: info
+    about: SailPoint IdentityIQ is an identity governance and administration platform. The IdentityIQ web login panel was detected.
+    label:
+        - panel
+        - sailpoint
+        - identityiq
+        - iga
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <TITLE>SailPoint IdentityIQ</TITLE>
+            - Copyright 2008 SailPoint Technologies
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

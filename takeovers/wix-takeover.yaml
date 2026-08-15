@@ -15,8 +15,7 @@ moves:
       signs:
         - "on": word
           has:
-            - Error ConnectYourDomain occurred
-            - wixErrorPagesApp
+            - ConnectYourDomain Error | Wix.com
           in: body
           need: all
         - "on": status

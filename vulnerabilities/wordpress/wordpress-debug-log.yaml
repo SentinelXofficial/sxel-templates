@@ -13,5 +13,8 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}/{{paths}}/debug.log'
+        - '{{BaseURL}}/wp-content/debug.log'
+        - '{{BaseURL}}/wordpress/debug.log'
+        - '{{BaseURL}}/wp/debug.log'
+        - '{{BaseURL}}/blog/debug.log'
       signs: []

@@ -12,5 +12,20 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}/{{path}}'
+        - '{{BaseURL}}/MicroStrategy/servlet/mstrWebAdmin/'
+        - '{{BaseURL}}/MicroStrategy/servlet/mstrWebAdmin'
+        - '{{BaseURL}}/MicroStrategy/servlet/taskProc/'
+        - '{{BaseURL}}/MicroStrategy/servlet/taskProc'
+        - '{{BaseURL}}/MicroStrategy/servlet/mstrWeb/'
+        - '{{BaseURL}}/MicroStrategy/servlet/mstrWeb'
+        - '{{BaseURL}}/MicroStrategy/'
+        - '{{BaseURL}}/MicroStrategy'
+        - '{{BaseURL}}/servlet/mstrWebAdmin/'
+        - '{{BaseURL}}/servlet/mstrWebAdmin'
+        - '{{BaseURL}}/servlet/taskProc/'
+        - '{{BaseURL}}/servlet/taskProc'
+        - '{{BaseURL}}/servlet/mstrWeb/'
+        - '{{BaseURL}}/servlet/mstrWeb'
+        - '{{BaseURL}}/asp/Main.aspx'
+        - '{{BaseURL}}/MicroStrategy/asp'
       signs: []

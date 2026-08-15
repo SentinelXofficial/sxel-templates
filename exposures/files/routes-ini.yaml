@@ -13,7 +13,21 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}{{paths}}'
+        - '{{BaseURL}}/routes.ini'
+        - '{{BaseURL}}/config/routes.ini'
+        - '{{BaseURL}}/admin/configs/routes.ini'
+        - '{{BaseURL}}/application/configs/routes.ini'
+        - '{{BaseURL}}/aplicacao/routes/configs/routes.ini'
+        - '{{BaseURL}}/routes/configs/routes.ini'
+        - '{{BaseURL}}/cloudexp/routes/configs/routes.ini'
+        - '{{BaseURL}}/cms/routes/configs/routes.ini'
+        - '{{BaseURL}}/moto/routes/configs/routes.ini'
+        - '{{BaseURL}}/Partners/routes/configs/routes.ini'
+        - '{{BaseURL}}/radio/routes/configs/routes.ini'
+        - '{{BaseURL}}/seminovos/routes/configs/routes.ini'
+        - '{{BaseURL}}/shop/routes/configs/routes.ini'
+        - '{{BaseURL}}/site_cg/routes/configs/routes.ini'
+        - '{{BaseURL}}/slr/routes/configs/routes.ini'
       signs:
         - "on": word
           has:

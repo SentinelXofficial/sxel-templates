@@ -13,7 +13,15 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}{{paths}}'
+        - '{{BaseURL}}/miscadmin'
+        - '{{BaseURL}}/mcmadmin#/content/dashboard'
+        - '{{BaseURL}}/miscadmin#/etc/mobile'
+        - '{{BaseURL}}/miscadmin#/etc/segmentation'
+        - '{{BaseURL}}/miscadmin#/etc/blueprints'
+        - '{{BaseURL}}/miscadmin#/etc/designs'
+        - '{{BaseURL}}/miscadmin#/etc/importers'
+        - '{{BaseURL}}/miscadmin#/etc/reports'
+        - '{{BaseURL}}/miscadmin#/etc/msm/rolloutconfigs'
       signs:
         - "on": word
           has:

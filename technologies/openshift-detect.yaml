@@ -1,0 +1,15 @@
+id: openshift-detect
+brief:
+    title: OpenShift Monitoring Plugin - Detect
+    by: righettod
+    level: info
+    about: OpenShift Monitoring Plugin was detected - This plugin enables frontend UI based on feature flags passed to the backend
+    label:
+        - tech
+        - openshift
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/plugin-manifest.json'
+      signs: []

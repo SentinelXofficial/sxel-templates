@@ -1,0 +1,27 @@
+id: xcp-ng-xo-lite-panel
+brief:
+    title: XCP-ng XO Lite - Login Panel
+    by: rxerium
+    level: info
+    about: XO Lite local management interface hosted directly by an XCP-ng server was detected.
+    label:
+        - panel
+        - xcp-ng
+        - xo-lite
+        - vates
+        - virtualization
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>XO Lite</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -1,0 +1,25 @@
+id: rustdesk-server-pro-panel
+brief:
+    title: RustDesk Server Pro - Login Panel
+    by: rxerium
+    level: info
+    about: RustDesk Server Pro administrative web console was detected.
+    label:
+        - panel
+        - rustdesk
+        - server-pro
+        - login
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/_admin/'
+      signs:
+        - "on": word
+          has:
+            - <title>Rustdesk API Admin</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

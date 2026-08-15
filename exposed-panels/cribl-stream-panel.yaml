@@ -1,0 +1,33 @@
+id: cribl-stream-panel
+brief:
+    title: Cribl Stream - Login Panel
+    by: rxerium
+    level: info
+    about: Cribl Stream, formerly known as Cribl LogStream, web interface was detected.
+    label:
+        - panel
+        - cribl
+        - stream
+        - logstream
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Cribl LogStream</title>
+            - <title>Cribl Stream</title>
+            - <title>Cribl</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - stream.ico
+            - window.CRIBL
+            - static/css/main-light.css
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

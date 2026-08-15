@@ -1,0 +1,35 @@
+id: prodigy-panel
+brief:
+    title: Prodigy Annotation Tool - Unauthenticated Exposure
+    by: rxerium
+    level: medium
+    about: Prodigy, a commercial scriptable annotation tool by Explosion AI used to label training data for machine learning and NLP models, was detected. Its local web server (default port 8080, built on uvi...
+    label:
+        - panel
+        - prodigy
+        - ai
+        - data-annotation
+        - misconfig
+        - exposure
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs:
+        - "on": word
+          has:
+            - <title>Prodigy</title>
+            - id="root"
+            - src="bundle.js"
+          in: body
+          need: all
+        - "on": word
+          has:
+            - uvicorn
+          in: header
+          need: all
+        - "on": status
+          status:
+            - 200

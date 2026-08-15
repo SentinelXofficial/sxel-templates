@@ -1,0 +1,26 @@
+id: 3xui-default-login
+brief:
+    title: 3X-UI - Default Login
+    by: mapioe
+    level: high
+    about: Detected 3X-UI contains default credentials admin/admin. An attacker can obtain access to the admin panel and manage VPN configurations, modify data, and execute unauthorized operations.
+    label:
+        - 3x-ui
+        - default-login
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/csrf-token'
+      signs: []
+    - verb: POST
+      to:
+        - '{{BaseURL}}/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+        X-Csrf-Token: '{{csrftoken}}'
+      body: username={{username}}&password={{password}}
+      signs: []

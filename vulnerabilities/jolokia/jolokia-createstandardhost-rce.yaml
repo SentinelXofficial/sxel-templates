@@ -12,13 +12,14 @@ moves:
     - verb: GET
       to:
         - '{{BaseURL}}/jolokia/list'
+        - '{{BaseURL}}/actuator/jolokia/list'
       signs:
-        - "on": status
-          status:
-            - 200
         - "on": word
           has:
             - '"desc":"Create a new StandardHost"'
             - '"desc":"Array of Diagnostic Commands Arguments and Options"'
           in: body
           need: all
+        - "on": status
+          status:
+            - 200

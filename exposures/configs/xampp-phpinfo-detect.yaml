@@ -13,7 +13,8 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}{{paths}}'
+        - '{{BaseURL}}/phpinfo.php'
+        - '{{BaseURL}}/dashboard/phpinfo.php'
       signs:
         - "on": word
           has:

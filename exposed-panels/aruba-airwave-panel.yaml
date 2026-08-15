@@ -1,0 +1,25 @@
+id: aruba-airwave-panel
+brief:
+    title: Aruba AirWave Management Platform - Login Panel
+    by: rxerium
+    level: info
+    about: Aruba AirWave Management Platform web management interface was detected.
+    label:
+        - panel
+        - aruba
+        - airwave
+        - network-management
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - '"short_product_name" : "AMP"'
+            - '"product_name" : "AirWave Management Platform"'
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

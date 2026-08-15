@@ -1,0 +1,27 @@
+id: nakivo-backup-replication-panel
+brief:
+    title: NAKIVO Backup & Replication - Login Panel
+    by: rxerium
+    level: info
+    about: NAKIVO Backup & Replication web management login panel was detected. NAKIVO provides backup, recovery, replication, and disaster recovery capabilities for virtual, physical, cloud, and SaaS workloads.
+    label:
+        - panel
+        - nakivo
+        - backup
+        - replication
+        - disaster-recovery
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/c/login'
+      signs:
+        - "on": word
+          has:
+            - <title>NAKIVO Backup & Replication v
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

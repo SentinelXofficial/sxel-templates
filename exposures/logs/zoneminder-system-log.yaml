@@ -1,0 +1,25 @@
+id: zoneminder-system-log
+brief:
+    title: ZoneMinder System Log - Detect
+    by: pussycat0x
+    level: low
+    about: ZoneMinder system log file exposed.
+    label:
+        - logs
+        - zoneminder
+        - exposure
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/?view=log'
+        - '{{BaseURL}}/zm/?view=log'
+      signs:
+        - "on": word
+          has:
+            - <title>ZM - System Log</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

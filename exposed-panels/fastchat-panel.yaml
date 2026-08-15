@@ -1,0 +1,27 @@
+id: fastchat-panel
+brief:
+    title: FastChat Panel - Detect
+    by: rxerium
+    level: info
+    about: FastChat, an open platform by LMSYS for training, serving, and evaluating large language model based chatbots (used by Vicuna and Chatbot Arena), was detected. An exposed, unauthenticated FastChat ...
+    label:
+        - panel
+        - fastchat
+        - llm
+        - ai
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Chat with Open Large Language Models
+            - notice_markdown
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

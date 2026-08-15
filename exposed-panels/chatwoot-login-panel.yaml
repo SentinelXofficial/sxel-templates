@@ -1,0 +1,16 @@
+id: chatwoot-login-panel
+brief:
+    title: Chatwoot Login Panel - Detect
+    by: Th3l0newolf
+    level: info
+    about: Chatwoot login panel detected.
+    label:
+        - panel
+        - login
+        - chatwoot
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/app/login'
+      signs: []

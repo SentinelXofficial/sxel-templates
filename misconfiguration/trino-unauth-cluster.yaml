@@ -1,0 +1,30 @@
+id: trino-unauth-cluster
+brief:
+    title: Trino Cluster Overview - Unauthenticated Dashboard Exposure
+    by: tess
+    level: medium
+    about: Cluster Overview dashboard is exposed.
+    label:
+        - cluster
+        - unauth
+        - trino
+        - misconfig
+        - vuln
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/ui/login'
+      head:
+        Content-Type: application/x-www-form-urlencoded
+      body: |
+        username={{randstr}}&password=&redirectPath=
+      signs:
+        - "on": word
+          has:
+            - Cluster Overview
+            - Query Details
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

@@ -17,5 +17,16 @@ moves:
       signs: []
     - verb: GET
       to:
-        - '{{BaseURL}}{{paths}}'
+        - '{{BaseURL}}/../nginx_status'
+        - '{{BaseURL}}/./nginx_status'
+        - '{{BaseURL}}/.//nginx_status'
+        - '{{BaseURL}}/./..;/nginx_status'
+        - '{{BaseURL}}/%2e%2e/nginx_status'
+        - '{{BaseURL}}/./%252e%252e/nginx_status'
+        - '{{BaseURL}}/./%6e%67%69%6e%78_%73%74%61%74%75%73'
+        - '{{BaseURL}}/;/nginx_status'
+        - '{{BaseURL}}/./?/nginx_status'
+        - '{{BaseURL}}/./nginx_status;'
+        - '{{BaseURL}}/./nginx_status%20'
+        - '{{BaseURL}}/./nginx_status/'
       signs: []

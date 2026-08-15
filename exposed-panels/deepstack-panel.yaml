@@ -1,0 +1,28 @@
+id: deepstack-panel
+brief:
+    title: DeepStack AI Server Panel - Detect
+    by: rxerium
+    level: info
+    about: DeepStack, an open-source, self-hosted computer-vision (AI) server that provides object, face, and scene detection APIs, commonly deployed alongside home-automation stacks such as Home Assistant an...
+    label:
+        - panel
+        - deepstack
+        - ai
+        - computer-vision
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - DeepStack Activated
+            - deepstack.cc
+            - <title>DeepStack</title>
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

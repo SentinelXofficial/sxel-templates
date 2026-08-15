@@ -1,0 +1,28 @@
+id: kubeflow-katib-panel
+brief:
+    title: Kubeflow Katib Panel - Detect
+    by: rxerium
+    level: info
+    about: Kubeflow Katib, a Kubernetes-native project for automated machine learning (AutoML) that performs hyperparameter tuning, early stopping, and neural architecture search, was detected. Its web UI is ...
+    label:
+        - panel
+        - kubeflow-katib
+        - ml
+        - ai
+        - mlops
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/katib/'
+      signs:
+        - "on": word
+          has:
+            - base href="/katib/"
+            - /katib/static/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

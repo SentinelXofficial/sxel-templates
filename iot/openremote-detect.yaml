@@ -1,0 +1,31 @@
+id: openremote-detect
+brief:
+    title: OpenRemote IoT Platform - Detection
+    by: pussycat0x
+    level: info
+    about: Detects exposed OpenRemote IoT platform instances by checking login page titles, API endpoints, and specific OpenRemote UI artifacts. OpenRemote isan open-source IoT platform with a Keycloak-backed...
+    label:
+        - openremote
+        - iot
+        - panel
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+        - '{{BaseURL}}/manager/'
+      signs:
+        - "on": word
+          has:
+            - OpenRemote
+            - openremote
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - openremote
+          in: header
+          need: all

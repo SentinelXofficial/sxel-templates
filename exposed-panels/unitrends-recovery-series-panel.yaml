@@ -1,0 +1,27 @@
+id: unitrends-recovery-series-panel
+brief:
+    title: Unitrends Recovery Series - Login Panel
+    by: rxerium
+    level: info
+    about: Unitrends Recovery Series backup appliance web management login panel was detected.
+    label:
+        - panel
+        - unitrends
+        - backup
+        - recovery
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/ui/'
+      signs:
+        - "on": word
+          has:
+            - <title ng-bind="Unitrends + Page.title()">Unitrends</title>
+            - ng-include="'app/login/login.html'"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

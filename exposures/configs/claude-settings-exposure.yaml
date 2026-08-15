@@ -1,0 +1,32 @@
+id: claude-settings-exposure
+brief:
+    title: Claude Code Project Settings Exposure
+    by: shadowhunter-92
+    level: medium
+    about: Claude Code project configuration file (.claude/settings.json or .claude/settings.local.json) was detected on the web server. This file controls Claude Code's runtime behavior including permission ...
+    label:
+        - config
+        - exposure
+        - claude
+        - claude-code
+        - anthropic
+        - ai
+    score: CVSS:7.5
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/.claude/settings.json'
+        - '{{BaseURL}}/.claude/settings.local.json'
+        - '{{BaseURL}}/.mcp.json'
+      signs:
+        - "on": word
+          has:
+            - application/json
+            - text/json
+            - text/plain
+            - application/octet-stream
+          in: content_type
+          need: all
+        - "on": status
+          status:
+            - 200

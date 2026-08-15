@@ -1,0 +1,27 @@
+id: buffalo-terastation-pro-panel
+brief:
+    title: Buffalo TeraStation Pro - Login Panel
+    by: rxerium
+    level: info
+    about: Buffalo TeraStation Pro network-attached storage management panel was detected.
+    label:
+        - panel
+        - buffalo
+        - terastation
+        - nas
+        - storage
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/cgi-bin/top.cgi'
+      signs:
+        - "on": word
+          has:
+            - <title>TeraStation PRO - TS-
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

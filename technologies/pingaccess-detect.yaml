@@ -1,0 +1,24 @@
+id: pingaccess-detect
+brief:
+    title: PingAccess - Detect
+    by: rxerium
+    level: info
+    about: PingAccess is an identity-aware access management proxy. A PingAccess response page was detected.
+    label:
+        - tech
+        - pingaccess
+        - identity
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - /pingaccess/assets/css/main.css
+            - /pingaccess/assets/images/favicon.ico
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 403

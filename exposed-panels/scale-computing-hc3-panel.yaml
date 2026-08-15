@@ -1,0 +1,27 @@
+id: scale-computing-hc3-panel
+brief:
+    title: Scale Computing HC3 - Login Panel
+    by: rxerium
+    level: info
+    about: Scale Computing HC3 web management login panel was detected. HC3, now part of the SC//HyperCore virtualization suite, provides hyperconverged compute, storage, and virtualization management.
+    label:
+        - panel
+        - scale-computing
+        - hc3
+        - hci
+        - virtualization
+        - login
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Scale System</title>
+            - branding/favicons/
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

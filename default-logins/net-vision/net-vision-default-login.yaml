@@ -1,0 +1,25 @@
+id: net-vision-default-login
+brief:
+    title: Net Vision UPS Monitor - Default Login
+    by: Th3l0newolf
+    level: high
+    about: Net Vision UPS Monitor default credentials were detected.
+    label:
+        - socomec
+        - net-vision
+        - ups
+        - default-login
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs: []
+    - verb: GET
+      to:
+        - '{{BaseURL}}/PageAEventlog.asp'
+      head:
+        Authorization: Basic YWRtaW46cHVibGlj
+      signs:
+        - "on": status
+          status:
+            - 200

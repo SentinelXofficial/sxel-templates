@@ -3,7 +3,7 @@ brief:
     title: Apache Airflow
     by: pdteam
     level: info
-    about: ""
+    about: Apache Airflow was detected - A platform to programmatically author, schedule and monitor workflows.
     label:
         - tech
         - apache
@@ -14,12 +14,5 @@ moves:
     - verb: GET
       to:
         - '{{BaseURL}}/{{randstr}}'
-      signs:
-        - "on": word
-          has:
-            - Airflow 404
-          in: body
-          need: all
-        - "on": status
-          status:
-            - 404
+        - '{{BaseURL}}/openapi.json'
+      signs: []

@@ -1,0 +1,22 @@
+id: huggingface-tei-tgi-detect
+brief:
+    title: HuggingFace TEI & TGI - Detect
+    by: insidetrust
+    level: info
+    about: Detected the presence of HuggingFace Text Embeddings Inference (TEI), a toolkit for serving text embedding and re-ranking models, and HuggingFace Text Generation Inference (TGI), a Rust/Python tool...
+    label:
+        - tech
+        - detect
+        - tei
+        - tgi
+        - llm
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/info'
+      signs:
+        - "on": word
+          has:
+            - '"model_id"'
+          in: body
+          need: all

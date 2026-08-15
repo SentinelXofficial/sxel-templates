@@ -1,0 +1,35 @@
+id: sentinel-default-login
+brief:
+    title: Alibaba Sentinel - Default Login
+    by: wujiecong
+    level: high
+    about: Alibaba Sentinel versions 1.6.0 and later may expose a basic login interface with default credentials sentinel/sentinel. This template checks for that default login behavior on affected versions.
+    label:
+        - alibaba
+        - sentinel
+        - default-login
+        - vuln
+    score: CVSS:8.8
+moves:
+    - verb: POST
+      to:
+        - '{{BaseURL}}/auth/login?password={{password}}&username={{username}}'
+      head:
+        Accept: application/json, text/plain, */*
+        Content-Length: "0"
+      signs:
+        - "on": status
+          status:
+            - 200
+        - "on": word
+          has:
+            - '"success":true'
+            - '"superUser":true'
+            - '"loginName":"sentinel"'
+          in: body
+          need: all
+        - "on": word
+          has:
+            - application/json
+          in: content_type
+          need: all

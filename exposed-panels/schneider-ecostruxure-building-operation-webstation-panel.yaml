@@ -1,0 +1,27 @@
+id: schneider-ecostruxure-building-operation-webstation-panel
+brief:
+    title: Schneider EcoStruxure Building Operation WebStation - Login Panel
+    by: rxerium
+    level: info
+    about: Schneider Electric EcoStruxure Building Operation WebStation interface was detected.
+    label:
+        - panel
+        - schneider
+        - ecostruxure
+        - webstation
+        - bms
+        - ics
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - <title>Building Operation WebStation</title>
+            - apple-mobile-web-app-title" content="WebStation"
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

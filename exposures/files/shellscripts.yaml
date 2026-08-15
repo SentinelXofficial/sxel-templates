@@ -12,7 +12,33 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}{{paths}}'
+        - '{{BaseURL}}/.build.sh'
+        - '{{BaseURL}}/.jenkins.sh'
+        - '{{BaseURL}}/.travis.sh'
+        - '{{BaseURL}}/install.sh'
+        - '{{BaseURL}}/update.sh'
+        - '{{BaseURL}}/upload.sh'
+        - '{{BaseURL}}/config.sh'
+        - '{{BaseURL}}/build.sh'
+        - '{{BaseURL}}/setup.sh'
+        - '{{BaseURL}}/run.sh'
+        - '{{BaseURL}}/backup.sh'
+        - '{{BaseURL}}/compile.sh'
+        - '{{BaseURL}}/env.sh'
+        - '{{BaseURL}}/init.sh'
+        - '{{BaseURL}}/startup.sh'
+        - '{{BaseURL}}/wp-setup.sh'
+        - '{{BaseURL}}/deploy.sh'
+        - '{{BaseURL}}/aws.sh'
+        - '{{BaseURL}}/reminder.sh'
+        - '{{BaseURL}}/mysqlbackup.sh'
+        - '{{BaseURL}}/dev2local.sh'
+        - '{{BaseURL}}/local2dev.sh'
+        - '{{BaseURL}}/local2prod.sh'
+        - '{{BaseURL}}/prod2local.sh'
+        - '{{BaseURL}}/rsync.sh'
+        - '{{BaseURL}}/sync.sh'
+        - '{{BaseURL}}/test.sh'
       signs:
         - "on": word
           has:

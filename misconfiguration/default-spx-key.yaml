@@ -14,7 +14,17 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}/?SPX_KEY={{api_key}}&SPX_UI_URI=/'
+        - '{{BaseURL}}/?SPX_KEY=dev&SPX_UI_URI=/'
+        - '{{BaseURL}}/?SPX_KEY=devel&SPX_UI_URI=/'
+        - '{{BaseURL}}/?SPX_KEY=stg&SPX_UI_URI=/'
+        - '{{BaseURL}}/?SPX_KEY=stag&SPX_UI_URI=/'
+        - '{{BaseURL}}/?SPX_KEY=staging&SPX_UI_URI=/'
+        - '{{BaseURL}}/?SPX_KEY=prd&SPX_UI_URI=/'
+        - '{{BaseURL}}/?SPX_KEY=prod&SPX_UI_URI=/'
+        - '{{BaseURL}}/?SPX_KEY=production&SPX_UI_URI=/'
+        - '{{BaseURL}}/?SPX_KEY=test&SPX_UI_URI=/'
+        - '{{BaseURL}}/?SPX_KEY=testing&SPX_UI_URI=/'
+        - '{{BaseURL}}/?SPX_KEY=spx&SPX_UI_URI=/'
       signs:
         - "on": word
           has:

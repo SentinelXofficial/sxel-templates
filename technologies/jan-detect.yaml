@@ -1,0 +1,17 @@
+id: jan-detect
+brief:
+    title: Jan AI - Detect
+    by: insidetrust
+    level: info
+    about: Detects the Jan AI local server, an open-source ChatGPT alternative that runs models locally and exposes a Cortex-powered, OpenAI-compatible API (default port 1337).
+    label:
+        - tech
+        - detect
+        - jan
+        - llm
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/v1/models'
+        - '{{BaseURL}}/healthz'
+      signs: []

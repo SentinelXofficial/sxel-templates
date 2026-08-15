@@ -1,0 +1,35 @@
+id: qualys-cloud-platform-login
+brief:
+    title: Qualys Cloud Platform Login Panel - Detect
+    by: rxerium
+    level: info
+    about: Qualys Cloud Platform login panel was detected.
+    label:
+        - panel
+        - qualys
+        - cloud
+        - login
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/fo/login.php'
+      signs:
+        - "on": word
+          has:
+            - <title>Qualys - Login</title>
+            - <title>Qualys&reg;</title>
+          in: body
+          need: all
+        - "on": word
+          has:
+            - top.location='fo/user_login.php'
+            - /fo/user_login.php
+            - id="myform_UserLogin"
+            - /images/qualys/product.png
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

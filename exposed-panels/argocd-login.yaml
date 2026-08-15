@@ -3,7 +3,7 @@ brief:
     title: Argo CD Login Panel
     by: Adam Crosser
     level: info
-    about: An Argo CD login panel was discovered.
+    about: ArgoCD was detected - A declarative, GitOps continuous delivery tool for Kubernetes.
     label:
         - panel
         - argocd
@@ -13,6 +13,8 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}/api/version'
+        - '{{BaseURL}}'
+        - '{{BaseURL}}/swagger.json'
         - '{{BaseURL}}/api/v1/settings'
+        - '{{BaseURL}}/api/version'
       signs: []

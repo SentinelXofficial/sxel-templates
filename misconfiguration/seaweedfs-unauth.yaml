@@ -1,0 +1,26 @@
+id: seaweedfs-unauth
+brief:
+    title: SeaweedFS Filer - Unauthenticated Access
+    by: Th3l0newolf
+    level: high
+    about: SeaweedFS Filer interface is exposed without authentication.Unauthenticated users may be able to upload, modify, or access files, potentially leading to malicious file hosting, data exposure, or re...
+    label:
+        - panel
+        - seaweedfs
+        - filer
+        - storage
+        - unauth
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - </span> New Folder
+            - </span> Upload
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

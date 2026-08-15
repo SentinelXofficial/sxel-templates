@@ -1,0 +1,27 @@
+id: helicone-panel
+brief:
+    title: Helicone Panel - Detect
+    by: rxerium
+    level: info
+    about: Helicone, an open-source LLM observability platform that provides logging, monitoring, and analytics for LLM applications and is commonly self-hosted via Docker, was detected. An exposed, unauthent...
+    label:
+        - panel
+        - helicone
+        - llm
+        - ai
+        - observability
+        - detect
+        - discovery
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}'
+      signs:
+        - "on": word
+          has:
+            - Helicone - Open-Source Generative AI Platform for Developers
+          in: body
+          need: all
+        - "on": status
+          status:
+            - 200

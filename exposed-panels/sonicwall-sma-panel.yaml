@@ -1,0 +1,31 @@
+id: sonicwall-sma-panel
+brief:
+    title: SonicWall Secure Mobile Access (SMA) Panel - Detection
+    by: DhiyaneshDk
+    level: info
+    about: Detected SonicWall Secure Mobile Access (SMA) appliances — an enterprise SSL-VPN gateway for secure remote access (SMA 1000/6200/7200 series).
+    label:
+        - sonicwall
+        - sma
+        - ssl-vpn
+        - vpn
+        - tech
+        - detect
+        - login
+        - panel
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+        - '{{BaseURL}}/workplace/home.action'
+      signs:
+        - "on": word
+          has:
+            - EXTRAWEB_REFERER
+          in: header
+        - "on": word
+          has:
+            - /__extraweb__/
+            - SonicWall
+          in: body
+          need: all

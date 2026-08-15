@@ -1,0 +1,17 @@
+id: arthas-web-console
+brief:
+    title: Alibaba Arthas Web Console - Detect
+    by: wujiecong
+    level: info
+    about: Detected Alibaba Arthas web console interface was detected. Arthas is a Java diagnostic tool that can expose a web-based console when enabled.
+    label:
+        - panel
+        - arthas
+        - alibaba
+        - web-console
+        - detect
+moves:
+    - verb: GET
+      to:
+        - '{{BaseURL}}/'
+      signs: []

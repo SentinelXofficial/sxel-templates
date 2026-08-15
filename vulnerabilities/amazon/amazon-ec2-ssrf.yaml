@@ -14,7 +14,7 @@ brief:
 moves:
     - verb: GET
       to:
-        - '{{BaseURL}}{{BaseURL}}/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance'
+        - '{{BaseURL}}/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance'
       signs:
         - "on": word
           has:

